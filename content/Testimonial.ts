@@ -1,4 +1,15 @@
-export const Testimonial = [
+export type TestimonialTypes = {
+  name: string;
+  headline: string | null;
+  img: string | null;
+  star: number | null;
+  testimonial: string;
+  homePage: boolean;
+  order: number;
+  testimonialPage: boolean;
+}[];
+
+export const Testimonial: TestimonialTypes = [
   {
     name: "Csaba Kissi",
     headline: "Solopreneur",
