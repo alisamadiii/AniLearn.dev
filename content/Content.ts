@@ -10,6 +10,7 @@ type ContentTypes = {
     twitter: string;
     youtube: null | string;
     link: string;
+    free: boolean;
   }[];
   CSS: {
     title: string;
@@ -20,6 +21,7 @@ type ContentTypes = {
     twitter: string;
     youtube: null | string;
     link: string;
+    free: boolean;
   }[];
   JS: {
     title: string;
@@ -30,6 +32,7 @@ type ContentTypes = {
     twitter: string;
     youtube: null | string;
     link: string;
+    free: boolean;
   }[];
 };
 
@@ -46,6 +49,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1621795869162102784?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
   ],
   CSS: [
@@ -59,6 +63,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1619625130153635846?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Specificity",
@@ -70,6 +75,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1622520536143396865?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "CSS Combinator",
@@ -82,6 +88,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1618896898303332352?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Justify and Align",
@@ -93,6 +100,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1610562316214632448?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Flex order",
@@ -105,6 +113,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1616366217438334977?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Flex Wrap",
@@ -117,6 +126,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1615665174522003456?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Grid Box",
@@ -129,6 +139,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1612013121111220224?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "When do I use grid and flex?",
@@ -141,6 +152,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1611286752538537984?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Position part |",
@@ -153,6 +165,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1618170789437771780?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Position part ||",
@@ -164,6 +177,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1619259244334960640?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Transform part |",
@@ -176,6 +190,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1618538835528515585?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Transform part ||",
@@ -187,6 +202,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1624695413730324480?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "4 ways of centering a div",
@@ -199,6 +215,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1621072217491795968?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "CSS short way",
@@ -210,6 +227,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1615998664610283522?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "different way of using padding and margin",
@@ -222,6 +240,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1620709031114584064?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "min-width & max-width",
@@ -234,6 +253,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1617085704215093250?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "calc()",
@@ -246,6 +266,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1619983939313213442?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Media Queries",
@@ -257,6 +278,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1616722384681316352?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "Hover (Media Queries)",
@@ -269,6 +291,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1613461326080376835?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
     {
       title: "CSS Pseudo",
@@ -280,6 +303,7 @@ export const CONTENTS: ContentTypes = {
         "https://twitter.com/Ali_Developer05/status/1612739431303360517?s=20&t=A_PuPnh4A43kwI__tVTHig",
       youtube: null,
       link: "twitter",
+      free: true,
     },
   ],
   JS: [
@@ -292,6 +316,7 @@ export const CONTENTS: ContentTypes = {
       twitter: "",
       youtube: null,
       link: "twitter",
+      free: true,
     },
   ],
 };
