@@ -44,8 +44,8 @@ export default function Testimonial({ data }: Props) {
         </div>
       </div>
       <div className="flex gap-1 my-2 text-yellow-500 text-xl">
-        {star.map(() => (
-          <AiFillStar />
+        {star.map((s, index) => (
+          <AiFillStar key={index} />
         ))}
       </div>
       <p className="opacity-75">{data.testimonial}</p>
