@@ -41,7 +41,7 @@ export const CONTENTS: ContentTypes = [
         title: "CSS In-line, Internal, External Style sheet",
         description: "You can use CSS styles in 3 different ways.",
         date: "29 Jan",
-        views: 0,
+        views: 10000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1619625130153635846?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -53,7 +53,7 @@ export const CONTENTS: ContentTypes = [
         title: "Specificity",
         description: "06 Feb",
         date: "The selector that is more specific than another one is going to win. (id, class, tag)",
-        views: 0,
+        views: 20000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1622520536143396865?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -66,7 +66,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "They combine other selectors in a way that gives them a useful relationship to each other and the location of content in the document.",
         date: "27 Jan",
-        views: 0,
+        views: 14000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1618896898303332352?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -130,7 +130,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "Grid & Flex are two major concepts in CSS which are used for layout.",
         date: "09 Jan",
-        views: 0,
+        views: 16000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1611286752538537984?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -143,7 +143,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "The position CSS property sets how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.",
         date: "25 Jan",
-        views: 0,
+        views: 44000,
         duration: 2,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1618170789437771780?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -155,7 +155,7 @@ export const CONTENTS: ContentTypes = [
         title: "Position part ||",
         description: "It was described in Position part |",
         date: "28 Jan",
-        views: 0,
+        views: 33000,
         duration: 2,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1619259244334960640?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -168,7 +168,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "The transform CSS property lets you rotate, scale, skew, or translate an element.",
         date: "26 Jan",
-        views: 0,
+        views: 42000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1618538835528515585?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -180,7 +180,7 @@ export const CONTENTS: ContentTypes = [
         title: "Transform part ||",
         description: "It was described in Transform part |",
         date: "12 Feb",
-        views: 0,
+        views: 48000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1624695413730324480?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -193,7 +193,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "You can center a div by using Flex, Grid, Position & Margin.",
         date: "2 Feb",
-        views: 0,
+        views: 20000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1621072217491795968?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -206,7 +206,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "Make your work easy by learning short way of writing CSS.",
         date: "19 Jan",
-        views: 0,
+        views: 23000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1615998664610283522?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -219,7 +219,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "You will learn about padding-inline/block & margin-inline/block.",
         date: "1 Feb",
-        views: 0,
+        views: 8000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1620709031114584064?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -232,10 +232,23 @@ export const CONTENTS: ContentTypes = [
         description:
           "These CSS properties set the minimum and maximum width of an element.",
         date: "22 Jan",
-        views: 0,
+        views: 17000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1617085704215093250?s=20&t=A_PuPnh4A43kwI__tVTHig",
+        youtube: null,
+        link: "twitter",
+        free: true,
+      },
+      {
+        title: "Clip-Path",
+        description:
+          "The clip-path CSS property creates a clipping region that sets what part of an element should be shown.",
+        date: "14 Feb",
+        views: 7000,
+        duration: 1,
+        twitter:
+          "https://twitter.com/Ali_Developer05/status/1625057270517366784?s=20&t=Ym-7UGFP0bt2uE9STvHluA",
         youtube: null,
         link: "twitter",
         free: true,
@@ -245,7 +258,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "The calc() CSS function lets you perform calculations when specifying CSS property values.",
         date: "30 Jan",
-        views: 0,
+        views: 32000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1619983939313213442?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -257,7 +270,7 @@ export const CONTENTS: ContentTypes = [
         title: "Media Queries",
         description: "It is used for making your website responsive.",
         date: "21 Jan",
-        views: 0,
+        views: 18000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1616722384681316352?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -270,7 +283,7 @@ export const CONTENTS: ContentTypes = [
         description:
           "when hover is supported, Watch the video, You will understand.",
         date: "12 Jan",
-        views: 0,
+        views: 3,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1613461326080376835?s=20&t=A_PuPnh4A43kwI__tVTHig",
@@ -282,7 +295,7 @@ export const CONTENTS: ContentTypes = [
         title: "CSS Pseudo",
         description: "You will learn about :is() & :has().",
         date: "10 Jan",
-        views: 0,
+        views: 21000,
         duration: 1,
         twitter:
           "https://twitter.com/Ali_Developer05/status/1612739431303360517?s=20&t=A_PuPnh4A43kwI__tVTHig",

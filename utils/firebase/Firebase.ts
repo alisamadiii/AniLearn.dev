@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, writeBatch, collection, doc } from "firebase/firestore";
 
 import { Testimonial } from "@/content/Testimonial";
+import { CONTENTS } from "@/content/Content";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_APIKEY,
@@ -26,6 +27,19 @@ export const sendingTestimonialToDB = async () => {
       message.name.toLocaleLowerCase().split(" ").join("_")
     );
     batch.set(docRef, message);
+  });
+
+  await batch.commit();
+  console.log("added");
+};
+
+export const sendingContentsToDB = async () => {
+  const colRef = collection(db, "contents");
+  const batch = writeBatch(db);
+
+  CONTENTS.forEach((content) => {
+    const docRef = doc(colRef, content.title.toLocaleLowerCase());
+    batch.set(docRef, content);
   });
 
   await batch.commit();
