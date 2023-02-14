@@ -1,5 +1,13 @@
 import Head from "next/head";
 
+import { DM_Sans } from "@next/font/google";
+
+const dm_sans = DM_Sans({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default function Home() {
   return (
     <>
@@ -9,7 +17,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className={dm_sans.className}>
         <h1 className="text-6xl text-center">AniLearn</h1>
       </main>
     </>
