@@ -12,7 +12,7 @@ type Props = {};
 export default function Navbar({}: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <nav className="w-full shadow-lg bg-white fixed top-0 left-0 px-4 md:px-8">
+    <nav className="w-full shadow-lg bg-white fixed top-0 left-0 px-4 md:px-8 z-50">
       <Container className="h-16 flex justify-between items-center">
         <Link href={"/"} className="flex gap-1 items-center text-xl font-bold">
           <MdAnimation />
