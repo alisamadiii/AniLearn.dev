@@ -3,6 +3,7 @@ import Head from "next/head";
 import { DM_Sans } from "@next/font/google";
 import Hero from "@/components/Hero";
 import Information from "@/components/Information";
+import Buying from "@/components/Buying";
 
 const dm_sans = DM_Sans({
   weight: ["400", "500", "700"],
@@ -22,6 +23,7 @@ export default function Home() {
       <main className={dm_sans.className}>
         <Hero />
         <Information />
+        <Buying />
       </main>
     </>
   );

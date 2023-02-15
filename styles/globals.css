@@ -29,4 +29,16 @@
     background-image: url("../assets/section1.gif");
     background-size: cover;
   }
+
+  .background-style::after {
+    content: "";
+    width: 100%;
+    height: 90%;
+    background: linear-gradient(to right, #0057ff, #0055ff6e);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: skewY(-5deg);
+  }
 }

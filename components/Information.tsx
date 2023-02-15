@@ -20,7 +20,7 @@ export default function Information({}: Props) {
             visual descriptions of development principles that We creates are
             very clear.
           </p>
-          <ul className="my-8 opacity-70">
+          <ul className="my-8 opacity-70 text-base md:text-lg">
             <li className="flex gap-2 items-center">
               <BsCheckAll className="text-xl text-green-600" />
               They are very short
