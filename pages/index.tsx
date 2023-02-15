@@ -1,9 +1,24 @@
 import Head from "next/head";
+import Masonry from "react-masonry-css";
+import Link from "next/link";
+
+import { db } from "@/utils/firebase/Firebase";
+import {
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+} from "firebase/firestore";
 
 import { DM_Sans } from "@next/font/google";
 import Hero from "@/components/Hero";
 import Information from "@/components/Information";
 import Buying from "@/components/Buying";
+import { useEffect, useState } from "react";
+import Container from "@/components/Container";
+import HeadingText from "@/components/HeadingText";
+import Testimonial from "@/components/Testimonial";
 
 const dm_sans = DM_Sans({
   weight: ["400", "500", "700"],
@@ -12,6 +27,27 @@ const dm_sans = DM_Sans({
 });
 
 export default function Home() {
+  const [testimonials, setTestimonials] = useState<any[]>([]);
+
+  useEffect(() => {
+    const colRef = collection(db, "testimonial");
+    const q = query(colRef, orderBy("order"), where("homePage", "==", true));
+    onSnapshot(q, (snapshot) => {
+      setTestimonials(
+        snapshot.docs.map((messages: any) => ({
+          ...messages.data(),
+          id: messages.id,
+        }))
+      );
+    });
+  }, []);
+
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 2,
+    768: 1,
+  };
+
   return (
     <>
       <Head>
@@ -24,6 +60,28 @@ export default function Home() {
         <Hero />
         <Information />
         <Buying />
+        <Container className="relative py-24 px-4 md:px-8">
+          <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3 mb-8">
+            What people have been saying
+          </HeadingText>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {testimonials.map((testimonial) => (
+              <Testimonial key={testimonial.order} data={testimonial} />
+            ))}
+          </Masonry>
+          <div className="w-full h-3/5 bg-gradient-to-t from-white to-transparent absolute bottom-0 left-0 flex justify-center items-end pb-36">
+            <Link
+              href={"/testimonial"}
+              className="inline-block bg-black text-white py-2 px-8 rounded-md shadow-button"
+            >
+              Read More
+            </Link>
+          </div>
+        </Container>
       </main>
     </>
   );

@@ -49,7 +49,7 @@ export default function Buying({}: Props) {
             xmlns="http://www.w3.org/2000/svg"
             width="300"
             height="278"
-            className="w-[200px] h-[178px] md:w-[300px] md:h-[278px] lg:absolute top-[-200px] right-0 rotate-45"
+            className="w-[200px] h-[178px] md:w-[300px] md:h-[278px] lg:absolute top-[-200px] right-[100px] rotate-45"
           >
             <path
               d="M18 2A14.041 14.041 0 0 0 4 16l17.737 3.737z"
