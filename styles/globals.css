@@ -23,4 +23,10 @@
     left: 0;
     z-index: -1;
   }
+
+  .bg {
+    width: 100%;
+    background-image: url("../assets/section1.gif");
+    background-size: cover;
+  }
 }
