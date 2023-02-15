@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import { DM_Sans } from "@next/font/google";
+import Hero from "@/components/Hero";
 
 const dm_sans = DM_Sans({
   weight: ["400", "500", "700"],
@@ -18,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={dm_sans.className}>
-        <h1 className="text-6xl text-center">AniLearn</h1>
+        <Hero />
       </main>
     </>
   );
