@@ -33,6 +33,7 @@ function Pricing({}: Props) {
           <a
             href="#"
             target={"_blank"}
+            rel="noreferrer"
             className="text-base inline-block bg-black text-center text-white py-2 px-8 rounded-md shadow-button mt-8"
           >
             Buy Now
@@ -57,6 +58,7 @@ function Pricing({}: Props) {
           <a
             href="https://www.paypal.com/paypalme/alirezasamadi"
             target={"_blank"}
+            rel="noreferrer"
             className="w-full inline-block bg-[#002C8A] text-center text-white py-2 px-8 rounded-md shadow-button mt-4"
           >
             Support my work
