@@ -3,17 +3,11 @@ import Image from "next/image";
 
 type Props = {};
 
-import { Manrope } from "@next/font/google";
 import { AiFillStar } from "react-icons/ai";
 import { GoPlay } from "react-icons/go";
 
 import HeroIMG from "../assets/hero.png";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
+import HeadingText from "./HeadingText";
 
 const developers: {
   id: number;
@@ -51,12 +45,10 @@ export default function Hero({}: Props) {
   return (
     <div className="pt-48 flex flex-col items-center bg-[#000000] bg-opacity-5">
       <h3 className="text-primary">ANIMATED CONTENT MADE EASY</h3>
-      <h1
-        className={`${manrope.className} text-3xl md:text-5xl font-bold text-center leading-[1.5] md:leading-[1.4]`}
-      >
+      <HeadingText className="text-3xl md:text-5xl font-bold text-center leading-[1.5] md:leading-[1.4]">
         Learning something with animation <br /> doesn&apos;t get easier than
         this
-      </h1>
+      </HeadingText>
       <h3 className="opacity-80 my-8">Watch video and share them</h3>
       <button className="bg-black text-white py-3 px-8 rounded-md shadow-button">
         Start Watching
