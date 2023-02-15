@@ -7,7 +7,7 @@ type Props = {
 
 export default function Layouts({ children }: Props) {
   return (
-    <div className="px-4">
+    <div>
       <Navbar />
       <div className="background"></div>
       <main>{children}</main>

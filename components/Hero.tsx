@@ -49,7 +49,7 @@ const developers: {
 
 export default function Hero({}: Props) {
   return (
-    <div className="pt-48 flex flex-col items-center">
+    <div className="pt-48 flex flex-col items-center bg-[#000000] bg-opacity-5">
       <h3 className="text-primary">ANIMATED CONTENT MADE EASY</h3>
       <h1
         className={`${manrope.className} text-3xl md:text-5xl font-bold text-center leading-[1.5] md:leading-[1.4]`}
