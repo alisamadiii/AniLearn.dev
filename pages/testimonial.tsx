@@ -8,10 +8,14 @@ import Masonry from "react-masonry-css";
 
 import Testimonial from "@/components/Testimonial";
 
+import { BsJournalText } from "react-icons/bs";
+import Link from "next/link";
+
 type Props = {};
 
 const TestimonialPage = (props: Props) => {
   const [testimonials, setTestimonials] = useState<any[]>([]);
+  const [isShown, setIsShown] = useState<boolean>(false);
 
   useEffect(() => {
     const colRef = collection(db, "testimonial");
@@ -21,6 +25,15 @@ const TestimonialPage = (props: Props) => {
         snapshot.docs.map((data) => ({ ...data.data(), id: data.id }))
       );
     });
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsShown(true);
+      setTimeout(() => {
+        setIsShown(false);
+      }, 5000);
+    }, 2000);
   }, []);
 
   const breakpointColumnsObj = {
@@ -46,6 +59,17 @@ const TestimonialPage = (props: Props) => {
           ))}
         </Masonry>
       </Container>
+      <Link
+        href={"/adding-testimonial"}
+        className="fixed bottom-4 right-4 text-2xl bg-black text-white p-3 rounded-full"
+      >
+        {isShown && (
+          <p className="absolute right-0 top-[-50px] bg-black text-white py-2 px-4 rounded-lg whitespace-nowrap text-base animate-bounce">
+            Add a <span className="font-bold">Testimonial</span> here
+          </p>
+        )}
+        <BsJournalText />
+      </Link>
     </div>
   );
 };
