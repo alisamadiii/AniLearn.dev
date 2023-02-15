@@ -21,7 +21,11 @@ export default function Testimonial({ data }: Props) {
       <div className="flex gap-2 items-center">
         <Image
           className="w-8 h-8 rounded-full"
-          src={data.img}
+          src={
+            data.img
+              ? data.img
+              : "https://cdn-icons-png.flaticon.com/512/9706/9706650.png"
+          }
           width={32}
           height={32}
           alt=""
@@ -33,11 +37,13 @@ export default function Testimonial({ data }: Props) {
           )}
         </div>
       </div>
-      <div className="flex gap-1 my-2 text-yellow-500 text-xl">
-        {[...Array(data.star).keys()].map((i) => (
-          <AiFillStar key={i} />
-        ))}
-      </div>
+      {data.star && (
+        <div className="flex gap-1 my-2 text-yellow-500 text-xl">
+          {[...Array(data.star).keys()].map((i) => (
+            <AiFillStar key={i} />
+          ))}
+        </div>
+      )}
       <p className="opacity-75">{data.testimonial}</p>
     </div>
   );
