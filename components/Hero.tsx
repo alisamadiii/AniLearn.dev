@@ -5,6 +5,9 @@ type Props = {};
 
 import { Manrope } from "@next/font/google";
 import { AiFillStar } from "react-icons/ai";
+import { GoPlay } from "react-icons/go";
+
+import HeroIMG from "../assets/hero.png";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -58,7 +61,7 @@ export default function Hero({}: Props) {
       <button className="bg-black text-white py-3 px-8 rounded-md shadow-button">
         Start Watching
       </button>
-      <div className="flex items-center gap-4 mt-4">
+      <div className="flex items-center gap-4 my-4">
         <div className="flex my-8 space-x-[-10px]">
           {developers.map((developer) => (
             <Image
@@ -81,6 +84,10 @@ export default function Hero({}: Props) {
           </div>
           <p className="text-xs opacity-70">loved by 100+ people</p>
         </div>
+      </div>
+      <div className="relative flex justify-center items-center">
+        <GoPlay className="absolute text-7xl text-primary drop-shadow-2xl cursor-pointer animate-pulse" />
+        <Image src={HeroIMG} width={1000} height={600} alt="" />
       </div>
     </div>
   );
