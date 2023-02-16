@@ -8,11 +8,15 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 type Props = {};
 
 import Profile from "../assets/profile.jpg";
-import { AiFillStar, AiFillBackward } from "react-icons/ai";
+import { AiFillBackward } from "react-icons/ai";
+import Input from "@/components/Input";
+import ThanksMessage from "@/components/ThanksMessage";
+import Star from "@/components/Star";
+import FormError from "@/components/FormError";
 
 const INITIAL_VALUE = {
   name: "",
-  emailAddress: "",
+  email: "",
   website: "",
   headline: "",
   testimonial: "",
@@ -59,22 +63,11 @@ export default function AddingTestimonial(props: Props) {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       {sent ? (
-        <div className="w-full max-w-[500px] bg-white p-4 shadow-2xl rounded-xl space-y-4">
-          <Image src={Profile} width={44} height={44} alt="" />
-          <HeadingText className="text-xl font-medium">
-            Thank You 🙏
-          </HeadingText>
-          <p className="opacity-80">
-            Thank you so much for your support! I appreciate your support and I
-            hope you enjoy seeing my content.
-          </p>
-        </div>
+        <ThanksMessage />
       ) : (
         <>
-          <form
-            action=""
-            className="relative w-full max-w-[726px] h-full overflow-x-hidden"
-          >
+          <form className="relative w-full max-w-[726px] h-full overflow-x-hidden">
+            {/* First Form */}
             <div
               className={`w-full max-w-[412px] bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 shadow-2xl rounded-xl space-y-3 ${
                 formNum == 2 && "-translate-x-[700px]"
@@ -88,38 +81,7 @@ export default function AddingTestimonial(props: Props) {
                 <li>What do you like most about me?</li>
                 <li>Should I continue making this kind of content?</li>
               </ul>
-              <div className="flex">
-                <AiFillStar
-                  className={`text-2xl ${
-                    star >= 1 ? "text-yellow-500" : "text-[#c7c7c7]"
-                  }`}
-                  onClick={() => setStar(1)}
-                />
-                <AiFillStar
-                  className={`text-2xl ${
-                    star >= 2 ? "text-yellow-500" : "text-[#c7c7c7]"
-                  }`}
-                  onClick={() => setStar(2)}
-                />
-                <AiFillStar
-                  className={`text-2xl ${
-                    star >= 3 ? "text-yellow-500" : "text-[#c7c7c7]"
-                  }`}
-                  onClick={() => setStar(3)}
-                />
-                <AiFillStar
-                  className={`text-2xl ${
-                    star >= 4 ? "text-yellow-500" : "text-[#c7c7c7]"
-                  }`}
-                  onClick={() => setStar(4)}
-                />
-                <AiFillStar
-                  className={`text-2xl ${
-                    star >= 5 ? "text-yellow-500" : "text-[#c7c7c7]"
-                  }`}
-                  onClick={() => setStar(5)}
-                />
-              </div>
+              <Star star={star} setStar={setStar} /> {/* Star Component */}
               <textarea
                 name="testimonial"
                 rows={6}
@@ -134,6 +96,8 @@ export default function AddingTestimonial(props: Props) {
                 Next
               </button>
             </div>
+
+            {/* Second Form */}
             <div
               className={`w-full max-w-[412px] bg-white absolute top-[55%] -translate-x-1/2 -translate-y-1/2 p-4 shadow-2xl rounded-xl space-y-3 ${
                 formNum == 2 ? "left-[50%]" : "left-[850px]"
@@ -151,71 +115,41 @@ export default function AddingTestimonial(props: Props) {
               <HeadingText className="text-2xl font-medium">
                 Almost done 🙌
               </HeadingText>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm text-[#575757]">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Ali Reza"
-                  id="name"
-                  name="name"
-                  className="text-sm p-2 outline-none border-2 border-[#CFCFCF] rounded-md focus:border-black"
-                  onChange={onChangeHandler}
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm text-[#575757]">
-                  Email Address
-                </label>
-                <input
-                  type="gmail"
-                  placeholder="ali@example.com"
-                  id="email"
-                  name="emailAddress"
-                  className="text-sm p-2 outline-none border-2 border-[#CFCFCF] rounded-md focus:border-black"
-                  onChange={onChangeHandler}
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="headline" className="text-sm text-[#575757]">
-                  Headline
-                </label>
-                <input
-                  type="text"
-                  placeholder="ex. DevRel"
-                  id="headline"
-                  name="headline"
-                  className="text-sm p-2 outline-none border-2 border-[#CFCFCF] rounded-md focus:border-black"
-                  onChange={onChangeHandler}
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="website" className="text-sm text-[#575757]">
-                  Your Website
-                </label>
-                <input
-                  type="url"
-                  placeholder="https://example.com"
-                  id="website"
-                  name="website"
-                  className="text-sm p-2 outline-none border-2 border-[#CFCFCF] rounded-md focus:border-black"
-                  onChange={onChangeHandler}
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="avatar" className="text-sm text-[#575757]">
-                  Your Avatar
-                </label>
-                <input
-                  type="url"
-                  placeholder="https://example.png"
-                  id="avatar"
-                  name="image"
-                  className="text-sm p-2 outline-none border-2 border-[#CFCFCF] rounded-md focus:border-black"
-                  onChange={onChangeHandler}
-                />
-              </div>
+              <Input
+                title="Your Name"
+                value="name"
+                placeHolder="Ali Reza"
+                type="text"
+                onChange={onChangeHandler}
+              />
+              <Input
+                title="Email Address"
+                value="email"
+                placeHolder="ali@example.com"
+                type="email"
+                onChange={onChangeHandler}
+              />
+              <Input
+                title="Headline"
+                value="headline"
+                placeHolder="ex. DevRel"
+                type="text"
+                onChange={onChangeHandler}
+              />
+              <Input
+                title="Your Website"
+                value="website"
+                placeHolder="https://example.com"
+                type="url"
+                onChange={onChangeHandler}
+              />
+              <Input
+                title="Your Avatar"
+                value="image"
+                placeHolder="https://example.png"
+                type="url"
+                onChange={onChangeHandler}
+              />
               <button
                 type="button"
                 onClick={submittingTheForm}
@@ -224,16 +158,7 @@ export default function AddingTestimonial(props: Props) {
                 Submit
               </button>
 
-              {error && (
-                <ul className="pl-8 text-sm list-disc">
-                  <li>
-                    Name<span className="text-red-700">*</span>
-                  </li>
-                  <li>
-                    Testimonial<span className="text-red-700">*</span>
-                  </li>
-                </ul>
-              )}
+              {error && <FormError />}
             </div>
 
             <div
