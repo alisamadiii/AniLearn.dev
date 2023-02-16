@@ -116,8 +116,8 @@ export default function AddingTestimonial(props: Props) {
           </button>
         </div>
         <div
-          className={`w-full max-w-[412px] bg-white absolute top-[55%] left-[850px] -translate-x-1/2 -translate-y-1/2 p-4 shadow-2xl rounded-xl space-y-3 ${
-            formNum == 2 && "left-[50%]"
+          className={`w-full max-w-[412px] bg-white absolute top-[55%] -translate-x-1/2 -translate-y-1/2 p-4 shadow-2xl rounded-xl space-y-3 ${
+            formNum == 2 ? "left-[50%]" : "left-[850px]"
           } duration-300`}
         >
           <Image src={Profile} width={44} height={44} alt="" />
