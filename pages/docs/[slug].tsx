@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -28,17 +28,49 @@ const components = {
 };
 
 export default function Slug({ data, mdxSource }: Props) {
+  const [first, setFirst] = useState<any[]>([]);
+  const [html, setHtml] = useState<any[]>([]);
+
+  useEffect(() => {
+    const filteringFirst = data.filter((h) => {
+      return h.frontmatter.category.includes("first");
+    });
+    setFirst(filteringFirst);
+  }, []);
+
+  useEffect(() => {
+    const filteringHTML = data.filter((h) => {
+      return h.frontmatter.category.includes("html");
+    });
+    setHtml(filteringHTML);
+  }, []);
+
   return (
-    <Container className="mt-24 flex gap-8 px-4 md:px-8">
-      <nav className="w-96">
-        {data.map((d) => (
-          <Link
-            key={d.frontmatter.title}
-            href={`/docs/${d.slug.replace(".mdx", "")}`}
-          >
-            <p>{d.slug.replace(".mdx", "")}</p>
-          </Link>
-        ))}
+    <Container className="mt-24 flex items-start gap-8 px-4 md:px-8">
+      <nav className="sticky top-0 left-0">
+        <div className="w-64">
+          {first.map((d) => (
+            <Link
+              key={d.frontmatter.title}
+              href={`/docs/${d.slug.replace(".mdx", "")}`}
+            >
+              <p className="p-4">{d.slug.replace(".mdx", "")}</p>
+            </Link>
+          ))}
+        </div>
+        <div className="w-64 px-4">
+          <h1 className="font-medium">HTML</h1>
+          {html.map((d) => (
+            <Link
+              key={d.frontmatter.title}
+              href={`/docs/${d.slug.replace(".mdx", "")}`}
+            >
+              <p className="px-4 py-1 mt-2 border-l-2 border-transparent hover:border-primary">
+                {d.slug.replace(".mdx", "")}
+              </p>
+            </Link>
+          ))}
+        </div>
       </nav>
       <div>
         <MDXRemote {...mdxSource} components={components}></MDXRemote>
