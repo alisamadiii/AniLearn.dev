@@ -8,7 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 type Props = {};
 
 import Profile from "../assets/profile.jpg";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiFillBackward } from "react-icons/ai";
 
 const INITIAL_VALUE = {
   name: "",
@@ -23,8 +23,12 @@ export default function AddingTestimonial(props: Props) {
   const [star, setStar] = useState(5);
   const [formNum, setFormNum] = useState(1);
   const [userInformation, setUserInformation] = useState(INITIAL_VALUE);
+  const [error, setError] = useState(false);
 
   const submittingTheForm = async (e: any) => {
+    if (!userInformation.name || !userInformation.testimonial)
+      return setError(true);
+
     e.preventDefault();
     const docRef = doc(
       db,
@@ -39,9 +43,9 @@ export default function AddingTestimonial(props: Props) {
       testimonial: userInformation.testimonial,
       homePage: false,
       testimonialPage: false,
-      image: userInformation.image,
+      img: userInformation.image,
     }).then(() => {
-      console.log("DOne");
+      console.log("Done");
     });
   };
 
@@ -120,7 +124,15 @@ export default function AddingTestimonial(props: Props) {
             formNum == 2 ? "left-[50%]" : "left-[850px]"
           } duration-300`}
         >
-          <Image src={Profile} width={44} height={44} alt="" />
+          <div className="flex justify-between items-center">
+            <Image src={Profile} width={44} height={44} alt="" />
+            <div
+              className="bg-black text-white py-2 px-3 rounded-md cursor-pointer"
+              onClick={() => setFormNum(1)}
+            >
+              <AiFillBackward />
+            </div>
+          </div>
           <HeadingText className="text-2xl font-medium">
             Almost done 🙌
           </HeadingText>
@@ -190,13 +202,32 @@ export default function AddingTestimonial(props: Props) {
             />
           </div>
           <button
-            type="submit"
+            type="button"
             onClick={submittingTheForm}
             className="w-full text-center bg-black text-white py-2 px-8 rounded-md shadow-button"
           >
             Submit
           </button>
+
+          {error && (
+            <ul className="pl-8 text-sm list-disc">
+              <li>
+                Name<span className="text-red-700">*</span>
+              </li>
+              <li>
+                Testimonial<span className="text-red-700">*</span>
+              </li>
+            </ul>
+          )}
         </div>
+
+        <div
+          className={`w-[30%] h-full absolute top-0 from-transparent to-white pointer-events-none hidden md:block ${
+            formNum == 1
+              ? "bg-gradient-to-r right-0"
+              : "bg-gradient-to-l left-0"
+          }`}
+        ></div>
       </form>
     </div>
   );
