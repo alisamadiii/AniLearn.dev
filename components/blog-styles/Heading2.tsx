@@ -5,7 +5,9 @@ type props = {
 };
 
 const Text = ({ children }: props) => {
-  return <h1 className="text-4xl opacity-80 mb-8 font-bold">{children}</h1>;
+  return (
+    <h2 className="text-2xl opacity-80 mt-8 mb-4 font-bold">{children}</h2>
+  );
 };
 
 export default Text;

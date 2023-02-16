@@ -61,8 +61,15 @@
   }
 }
 
+pre {
+  @apply w-[400px] sm:w-full;
+  /* background-color: red;
+  padding: 1em; */
+  overflow-x: auto;
+}
+
 .hljs {
-  @apply text-[3vw] md:text-base;
+  @apply text-sm md:text-base;
   background: #000a1e !important;
   padding: 1em !important;
   border-radius: 0.5em;
