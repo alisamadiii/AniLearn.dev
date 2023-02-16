@@ -60,3 +60,11 @@
     margin-bottom: 20px;
   }
 }
+
+.hljs {
+  @apply text-sm md:text-base;
+  background: #000a1e !important;
+  padding: 1em !important;
+  border-radius: 0.5em;
+  border: 2px solid rgb(130, 130, 130);
+}
