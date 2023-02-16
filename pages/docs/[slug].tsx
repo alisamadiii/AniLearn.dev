@@ -10,6 +10,7 @@ import "highlight.js/styles/atom-one-dark.css";
 
 import Container from "@/components/Container";
 import { fileNames, pathFiles } from "@/utils/mdxFies";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import Heading from "@/components/blog-styles/Heading";
 import Text from "@/components/blog-styles/Text";
@@ -28,6 +29,7 @@ const components = {
 };
 
 export default function Slug({ data, mdxSource }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
   const [first, setFirst] = useState<any[]>([]);
   const [html, setHtml] = useState<any[]>([]);
 
@@ -47,7 +49,11 @@ export default function Slug({ data, mdxSource }: Props) {
 
   return (
     <Container className="mt-24 flex items-start gap-8 px-4 md:px-8">
-      <nav className="sticky top-0 left-0">
+      <nav
+        className={`fixed bg-white md:bg-transparent md:sticky top-0 left-0 h-screen md:h-auto z-50 ${
+          isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        } duration-200`}
+      >
         <div className="w-64">
           {first.map((d) => (
             <Link
@@ -72,6 +78,14 @@ export default function Slug({ data, mdxSource }: Props) {
           ))}
         </div>
       </nav>
+      <div
+        className={`md:hidden bg-black text-white p-3 rounded-full fixed bottom-4 left-4 ${
+          isOpen && "translate-x-64"
+        } duration-200`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <AiOutlineMenu />
+      </div>
       <div>
         <MDXRemote {...mdxSource} components={components}></MDXRemote>
       </div>
