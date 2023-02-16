@@ -19,6 +19,8 @@ import Heading from "@/components/blog-styles/Heading";
 import Heading2 from "@/components/blog-styles/Heading2";
 import Text from "@/components/blog-styles/Text";
 import List from "@/components/blog-styles/List";
+import BlockQuote from "@/components/blog-styles/BlockQuote";
+import Anchor from "@/components/blog-styles/Anchor";
 
 type Props = {
   data: {
@@ -33,6 +35,8 @@ const components = {
   h2: (props: any) => <Heading2 {...props}></Heading2>,
   p: (props: any) => <Text {...props}></Text>,
   ul: (props: any) => <List {...props}></List>,
+  blockquote: (props: any) => <BlockQuote {...props}></BlockQuote>,
+  a: (props: any) => <Anchor {...props}></Anchor>,
 };
 
 export default function Slug({ data, mdxSource }: Props) {
@@ -136,7 +140,7 @@ export default function Slug({ data, mdxSource }: Props) {
           <AiOutlineMenu />
         </div>
 
-        <div className="pb-8 pr-4">
+        <div className="pb-24 pr-4" id="content">
           <MDXRemote {...mdxSource} components={components}></MDXRemote>
         </div>
       </Container>

@@ -65,7 +65,7 @@ pre {
   @apply w-[300px] sm:w-full;
   /* background-color: red;
   padding: 1em; */
-  overflow-x: auto;
+  /* overflow-x: hidden; */
 }
 
 .hljs {
@@ -74,4 +74,8 @@ pre {
   padding: 1em !important;
   border-radius: 0.5em;
   border: 2px solid rgb(130, 130, 130);
+}
+
+#content > p {
+  @apply text-base md:text-lg leading-[1.8] md:leading-[2] opacity-90;
 }
