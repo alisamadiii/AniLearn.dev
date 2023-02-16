@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import Container from "@/components/Container";
 import HeadingText from "@/components/HeadingText";
 import Testimonial from "@/components/Testimonial";
+import Contents from "@/components/Contents";
 
 const dm_sans = DM_Sans({
   weight: ["400", "500", "700"],
@@ -28,6 +29,7 @@ const dm_sans = DM_Sans({
 
 export default function Home() {
   const [testimonials, setTestimonials] = useState<any[]>([]);
+  const [isContentOpen, setIsContentOpen] = useState<boolean>(true);
 
   useEffect(() => {
     const colRef = collection(db, "testimonial");
@@ -82,6 +84,8 @@ export default function Home() {
             </Link>
           </div>
         </Container>
+
+        {isContentOpen && <Contents />}
       </main>
     </>
   );
