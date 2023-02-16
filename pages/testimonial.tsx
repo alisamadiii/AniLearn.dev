@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { db } from "@/utils/firebase/Firebase";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+} from "firebase/firestore";
 
 import HeadingText from "@/components/HeadingText";
 import Container from "@/components/Container";
@@ -19,7 +25,11 @@ const TestimonialPage = (props: Props) => {
 
   useEffect(() => {
     const colRef = collection(db, "testimonial");
-    const q = query(colRef, orderBy("order"));
+    const q = query(
+      colRef,
+      orderBy("order"),
+      where("testimonialPage", "==", true)
+    );
     onSnapshot(q, (snapshot) => {
       setTestimonials(
         snapshot.docs.map((data) => ({ ...data.data(), id: data.id }))
@@ -42,7 +52,6 @@ const TestimonialPage = (props: Props) => {
     768: 1,
   };
 
-  console.log(testimonials);
   return (
     <div className="px-4 md:px-8">
       <HeadingText className="text-center text-4xl sm:text-5xl md:text-7xl mt-24 font-black mb-12">
