@@ -61,8 +61,8 @@ export default function Contents({
     <div className="w-full h-screen fixed top-0 left-0 bg-white bg-opacity-90 z-50 flex justify-center items-center">
       <div className="relative w-full max-w-[900px] h-[589px] flex bg-white shadow-2xl rounded-2xl overflow-hidden">
         <nav
-          className={`w-32 h-full bg-[#EFEFEF] absolute top-0 left-0 -translate-x-full md:translate-x-0 md:static z-30 ${
-            isNavOpen ? " -translate-x-0" : "-translate-x-full"
+          className={`w-32 h-full bg-[#EFEFEF] absolute top-0 left-0 md:translate-x-0 md:static z-30 ${
+            isNavOpen ? "-translate-x-0" : "-translate-x-full"
           } duration-300`}
         >
           <ul>
