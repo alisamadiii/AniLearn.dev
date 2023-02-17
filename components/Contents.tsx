@@ -43,6 +43,7 @@ export default function Contents({
 }: Props) {
   const [technology, setTechnology] = useState<number>(2);
   const [contents, setContents] = useState<any>({});
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState<boolean>(false);
 
   const choosingTechnologies = (): any => {
     if (technology == 1) return "html";
@@ -65,7 +66,7 @@ export default function Contents({
             isNavOpen ? "-translate-x-0" : "-translate-x-full"
           } duration-300`}
         >
-          <ul>
+          <ul className="flex flex-col h-full">
             <li
               className={`p-8 text-center font-medium text-2xl cursor-pointer ${
                 technology == 1 && "bg-white"
@@ -90,6 +91,14 @@ export default function Contents({
             >
               JS
             </li>
+            <li
+              className={`mt-auto p-8 text-center font-medium text-2xl cursor-pointer ${
+                isPrivacyOpen && "bg-red-600"
+              }`}
+              onClick={() => setIsPrivacyOpen(!isPrivacyOpen)}
+            >
+              I
+            </li>
           </ul>
         </nav>
         <Masonry
@@ -103,6 +112,22 @@ export default function Contents({
             ))}
           <div className="w-full h-[100px] bg-gradient-to-t from-white to-transparent absolute bottom-[-30px] left-0 pointer-events-none"></div>
         </Masonry>
+
+        <div
+          className={`w-full max-w-[400px] h-[400px] bg-white absolute right-0 bottom-0 p-4 duration-200 ${
+            isPrivacyOpen ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
+          <h1 className="text-3xl font-medium">Privacy</h1>
+          <p className="opacity-75 mt-2">
+            You are not allow to use any of this video for social media, unless
+            you mention the creator & did not add anything onto the vide.
+          </p>
+          <p className="mt-9">
+            <span className="font-bold">Note</span>: Right now, All the video
+            are on Twitter but in the future, you can see them on YouTube.
+          </p>
+        </div>
       </div>
 
       <AiFillCloseSquare
