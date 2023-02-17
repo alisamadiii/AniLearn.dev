@@ -32,7 +32,7 @@ const breakpointColumnsObj = {
 
 export default function Contents({}: Props) {
   const [technology, setTechnology] = useState<number>(2);
-  const [contents, setContents] = useState<ContentTypes>({});
+  const [contents, setContents] = useState<any>({});
 
   const choosingTechnologies = (): any => {
     if (technology == 1) return "html";
@@ -86,7 +86,7 @@ export default function Contents({}: Props) {
           columnClassName="my-masonry-grid_column"
         >
           {contents.content &&
-            contents.content.map((content) => (
+            contents.content.map((content: any) => (
               <Content key={content.title} content={content} />
             ))}
         </Masonry>
