@@ -94,13 +94,14 @@ export default function Contents({
         </nav>
         <Masonry
           breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid m-0 pr-4 py-4 w-full overflow-auto"
+          className="my-masonry-grid m-0 pr-4 pt-4 w-full overflow-auto"
           columnClassName="my-masonry-grid_column"
         >
           {contents.content &&
             contents.content.map((content: any) => (
               <Content key={content.title} content={content} />
             ))}
+          <div className="w-full h-[100px] bg-gradient-to-t from-white to-transparent absolute bottom-[-30px] left-0 pointer-events-none"></div>
         </Masonry>
       </div>
 
