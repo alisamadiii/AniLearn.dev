@@ -29,7 +29,7 @@ const dm_sans = DM_Sans({
 
 export default function Home() {
   const [testimonials, setTestimonials] = useState<any[]>([]);
-  const [isContentOpen, setIsContentOpen] = useState<boolean>(true);
+  const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const colRef = collection(db, "testimonial");
@@ -43,6 +43,12 @@ export default function Home() {
       );
     });
   }, []);
+
+  useEffect(() => {
+    if (isContentOpen == true) {
+      document.documentElement.style.overflow = "hidden";
+    }
+  }, [isContentOpen]);
 
   const breakpointColumnsObj = {
     default: 3,
@@ -59,7 +65,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={dm_sans.className}>
-        <Hero />
+        <Hero setIsContentOpen={setIsContentOpen} />
         <Information />
         <Buying />
         <Container className="relative py-24 px-4 md:px-8">

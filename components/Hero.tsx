@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-type Props = {};
+type Props = {
+  setIsContentOpen: (a: boolean) => void;
+};
 
 import { AiFillStar } from "react-icons/ai";
 import { GoPlay } from "react-icons/go";
@@ -41,7 +43,7 @@ const developers: {
   },
 ];
 
-export default function Hero({}: Props) {
+export default function Hero({ setIsContentOpen }: Props) {
   return (
     <div className="pt-48 flex flex-col items-center bg-[#000000] bg-opacity-5">
       <h3 className="text-primary">ANIMATED CONTENT MADE EASY</h3>
@@ -50,7 +52,10 @@ export default function Hero({}: Props) {
         this
       </HeadingText>
       <h3 className="opacity-80 my-8">Watch video and share them</h3>
-      <button className="bg-black text-white py-3 px-8 rounded-md shadow-button">
+      <button
+        className="bg-black text-white py-3 px-8 rounded-md shadow-button"
+        onClick={() => setIsContentOpen(true)}
+      >
         Start Watching
       </button>
       <div className="flex items-center gap-4 my-4">
