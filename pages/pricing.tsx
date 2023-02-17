@@ -32,11 +32,11 @@ function Pricing({}: Props) {
           </ul>
           <a
             href="#"
-            target={"_blank"}
-            rel="noreferrer"
+            // target={"_blank"}
+            // rel="noreferrer"
             className="text-base inline-block bg-black text-center text-white py-2 px-8 rounded-md shadow-button mt-8"
           >
-            Buy Now
+            Not Available
           </a>
         </div>
       </div>

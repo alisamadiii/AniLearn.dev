@@ -2,18 +2,11 @@ import React from "react";
 import Image from "next/image";
 
 type Props = {
-  data: {
-    id: string;
-    name: string;
-    headline: string;
-    img: string;
-    order: number;
-    star: number;
-    testimonial: string;
-  };
+  data: OneTestimonial;
 };
 
 import { AiFillStar } from "react-icons/ai";
+import { OneTestimonial } from "@/types/Testimonial";
 
 export default function Testimonial({ data }: Props) {
   return (
