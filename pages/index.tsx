@@ -30,6 +30,7 @@ const dm_sans = DM_Sans({
 export default function Home() {
   const [testimonials, setTestimonials] = useState<any[]>([]);
   const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const colRef = collection(db, "testimonial");
@@ -93,7 +94,13 @@ export default function Home() {
           </div>
         </Container>
 
-        {isContentOpen && <Contents setIsContentOpen={setIsContentOpen} />}
+        {isContentOpen && (
+          <Contents
+            setIsContentOpen={setIsContentOpen}
+            isNavOpen={isNavOpen}
+            setIsNavOpen={setIsNavOpen}
+          />
+        )}
       </main>
     </>
   );

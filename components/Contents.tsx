@@ -6,12 +6,14 @@ import Content from "./Content";
 
 import Masonry from "react-masonry-css";
 
-import { AiFillCloseSquare } from "react-icons/ai";
+import { AiFillCloseSquare, AiOutlineMenu } from "react-icons/ai";
 
 // import { ContentTypes } from "../content/Content";
 
 type Props = {
   setIsContentOpen: (a: boolean) => void;
+  isNavOpen: boolean;
+  setIsNavOpen: (a: boolean) => void;
 };
 
 type ContentTypes = {
@@ -34,7 +36,11 @@ const breakpointColumnsObj = {
   768: 1,
 };
 
-export default function Contents({ setIsContentOpen }: Props) {
+export default function Contents({
+  setIsContentOpen,
+  isNavOpen,
+  setIsNavOpen,
+}: Props) {
   const [technology, setTechnology] = useState<number>(2);
   const [contents, setContents] = useState<any>({});
 
@@ -55,7 +61,9 @@ export default function Contents({ setIsContentOpen }: Props) {
     <div className="w-full h-screen fixed top-0 left-0 bg-white bg-opacity-90 z-50 flex justify-center items-center">
       <div className="relative w-full max-w-[900px] h-[589px] flex bg-white shadow-2xl rounded-2xl overflow-hidden">
         <nav
-          className={`w-32 h-full bg-[#EFEFEF] absolute top-0 left-0 -translate-x-full md:translate-x-0 md:static z-30`}
+          className={`w-32 h-full bg-[#EFEFEF] absolute top-0 left-0 -translate-x-full md:translate-x-0 md:static z-30 ${
+            isNavOpen ? " -translate-x-0" : "-translate-x-full"
+          } duration-300`}
         >
           <ul>
             <li
@@ -100,6 +108,12 @@ export default function Contents({ setIsContentOpen }: Props) {
         className="text-4xl absolute top-5 right-5 cursor-pointer"
         onClick={() => setIsContentOpen(false)}
       />
+      <div
+        className={`md:hidden bg-black text-white text-xl p-1 absolute top-6 right-16 rounded-sm cursor-pointer`}
+        onClick={() => setIsNavOpen(!isNavOpen)}
+      >
+        <AiOutlineMenu />
+      </div>
     </div>
   );
 }
