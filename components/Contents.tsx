@@ -6,9 +6,13 @@ import Content from "./Content";
 
 import Masonry from "react-masonry-css";
 
+import { AiFillCloseSquare } from "react-icons/ai";
+
 // import { ContentTypes } from "../content/Content";
 
-type Props = {};
+type Props = {
+  setIsContentOpen: (a: boolean) => void;
+};
 
 type ContentTypes = {
   title: string;
@@ -30,7 +34,7 @@ const breakpointColumnsObj = {
   768: 1,
 };
 
-export default function Contents({}: Props) {
+export default function Contents({ setIsContentOpen }: Props) {
   const [technology, setTechnology] = useState<number>(2);
   const [contents, setContents] = useState<any>({});
 
@@ -91,6 +95,11 @@ export default function Contents({}: Props) {
             ))}
         </Masonry>
       </div>
+
+      <AiFillCloseSquare
+        className="text-4xl absolute top-5 right-5 cursor-pointer"
+        onClick={() => setIsContentOpen(false)}
+      />
     </div>
   );
 }

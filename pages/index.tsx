@@ -47,6 +47,8 @@ export default function Home() {
   useEffect(() => {
     if (isContentOpen == true) {
       document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "auto";
     }
   }, [isContentOpen]);
 
@@ -91,7 +93,7 @@ export default function Home() {
           </div>
         </Container>
 
-        {isContentOpen && <Contents />}
+        {isContentOpen && <Contents setIsContentOpen={setIsContentOpen} />}
       </main>
     </>
   );
