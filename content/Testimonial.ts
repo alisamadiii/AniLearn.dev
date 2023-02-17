@@ -66,6 +66,17 @@ export const Testimonial: TestimonialTypes = [
     testimonialPage: true,
   },
   {
+    name: "Dennis Ivy",
+    headline: "Bridge Systems Engineer/Community Manager",
+    img: "https://pbs.twimg.com/profile_images/1489066537407365126/iViPGBVE_400x400.jpg",
+    star: 5,
+    testimonial:
+      "New fan here. Getting hooked on Ali's mini videos and awesome design skills!",
+    homePage: true,
+    order: 6,
+    testimonialPage: true,
+  },
+  {
     name: "Avie",
     headline: "Bridge Systems Engineer/Community Manager",
     img: "https://pbs.twimg.com/profile_images/1592898593324937217/X1mJmFDY_400x400.jpg",
@@ -193,6 +204,28 @@ export const Testimonial: TestimonialTypes = [
       "Your teachings make learning much more easier. I always look forward to your contents. I'm glad I came across you, Thank you for the knowledge shared",
     homePage: false,
     order: 17,
+    testimonialPage: true,
+  },
+  {
+    name: "Shoruntech",
+    headline: "Full-Stack Web Developer",
+    img: "https://pbs.twimg.com/profile_images/1625873284968611842/IzY2Jc3G_400x400.jpg",
+    star: null,
+    testimonial:
+      "I met this amazing brother from 4C community, we use to do competition when it comes to game, from there I knew his going far in life, because is always willing to learn and explore new technology. Brother you are just getting started, more greatness is still coming your way. Keep it up.",
+    homePage: false,
+    order: 18,
+    testimonialPage: true,
+  },
+  {
+    name: "Harsh Deep",
+    headline: "Computer Science Undergrad",
+    img: "https://pbs.twimg.com/profile_images/1625873284968611842/IzY2Jc3G_400x400.jpg",
+    star: 5,
+    testimonial:
+      "Ali Reza is an exceptional front-end developer with an amazing talent for creating visually stunning and interactive animated content. He has been an invaluable asset to the community, bringing a high level of creativity. I highly recommend Ali Reza for any front-end development or animation project.",
+    homePage: false,
+    order: 19,
     testimonialPage: true,
   },
 ];
