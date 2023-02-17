@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, writeBatch, collection, doc } from "firebase/firestore";
 
-import { Testimonial } from "@/content/Testimonial";
-import { CONTENTS } from "@/content/Content";
+// import { Testimonial } from "@/content/Testimonial";
+// import { CONTENTS } from "@/content/Content";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_APIKEY,
@@ -17,31 +17,31 @@ const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore();
 
-export const sendingTestimonialToDB = async () => {
-  const colRef = collection(db, "testimonial");
-  const batch = writeBatch(db);
+// export const sendingTestimonialToDB = async () => {
+//   const colRef = collection(db, "testimonial");
+//   const batch = writeBatch(db);
 
-  Testimonial.forEach((message) => {
-    const docRef = doc(
-      colRef,
-      message.name.toLocaleLowerCase().split(" ").join("_")
-    );
-    batch.set(docRef, message);
-  });
+//   Testimonial.forEach((message) => {
+//     const docRef = doc(
+//       colRef,
+//       message.name.toLocaleLowerCase().split(" ").join("_")
+//     );
+//     batch.set(docRef, message);
+//   });
 
-  await batch.commit();
-  console.log("added");
-};
+//   await batch.commit();
+//   console.log("added");
+// };
 
-export const sendingContentsToDB = async () => {
-  const colRef = collection(db, "contents");
-  const batch = writeBatch(db);
+// export const sendingContentsToDB = async () => {
+//   const colRef = collection(db, "contents");
+//   const batch = writeBatch(db);
 
-  CONTENTS.forEach((content) => {
-    const docRef = doc(colRef, content.title.toLocaleLowerCase());
-    batch.set(docRef, content);
-  });
+//   CONTENTS.forEach((content) => {
+//     const docRef = doc(colRef, content.title.toLocaleLowerCase());
+//     batch.set(docRef, content);
+//   });
 
-  await batch.commit();
-  console.log("added");
-};
+//   await batch.commit();
+//   console.log("added");
+// };
