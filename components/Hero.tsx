@@ -1,14 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-type Props = {
-  setIsContentOpen: (a: boolean) => void;
-};
-
 import { AiFillStar } from "react-icons/ai";
 import { GoPlay } from "react-icons/go";
 
 import HeroIMG from "../assets/hero.png";
+
 import HeadingText from "./HeadingText";
 
 const developers: {
@@ -43,9 +40,13 @@ const developers: {
   },
 ];
 
+type Props = {
+  setIsContentOpen: (a: boolean) => void;
+};
+
 export default function Hero({ setIsContentOpen }: Props) {
   return (
-    <div className="pt-48 flex flex-col items-center bg-[#000000] bg-opacity-5">
+    <div className="pt-48 flex flex-col items-center bg-black bg-opacity-5">
       <h3 className="text-primary">ANIMATED CONTENT MADE EASY</h3>
       <HeadingText className="text-3xl md:text-5xl font-bold text-center leading-[1.5] md:leading-[1.4]">
         Learning something with animation <br /> doesn&apos;t get easier than
@@ -53,13 +54,13 @@ export default function Hero({ setIsContentOpen }: Props) {
       </HeadingText>
       <h3 className="opacity-80 my-8">Watch video and share them</h3>
       <button
-        className="bg-black text-white py-3 px-8 rounded-md shadow-button"
+        className="bg-black text-white py-3 px-8 rounded-md shadow-button hover:opacity-90 active:scale-95 duration-150"
         onClick={() => setIsContentOpen(true)}
       >
         Start Watching
       </button>
       <div className="flex items-center gap-4 my-4">
-        <div className="flex my-8 space-x-[-10px]">
+        <div className="flex my-8 space-x-img_overlapping">
           {developers.map((developer) => (
             <Image
               key={developer.id}
@@ -83,7 +84,10 @@ export default function Hero({ setIsContentOpen }: Props) {
         </div>
       </div>
       <div className="relative flex justify-center items-center">
-        <GoPlay className="absolute text-7xl text-primary drop-shadow-2xl cursor-pointer animate-pulse" />
+        <GoPlay
+          className="absolute text-7xl text-primary drop-shadow-2xl cursor-pointer animate-pulse hover:scale-125 hover:-rotate-12 duration-150"
+          onClick={() => setIsContentOpen(true)}
+        />
         <Image src={HeroIMG} width={1000} height={600} alt="" />
       </div>
     </div>

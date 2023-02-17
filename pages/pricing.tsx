@@ -1,16 +1,17 @@
-import Container from "@/components/Container";
 import React from "react";
 import Image from "next/image";
 
+import Container from "@/components/Container";
+
 type Props = {};
 
-function Pricing({}: Props) {
+export default function Pricing({}: Props) {
   return (
     <Container className="pt-36 pb-8 space-y-24 px-4 md:px-8">
       <div className="grid md:grid-cols-2 gap-8">
         <Image
           src="https://assets-global.website-files.com/6171b265e5c8aa59b42c3472/618ea7afd990103829d614ff_gumroad-logo.svg"
-          alt=""
+          alt="Gumroad Logo"
           width={"400"}
           height={"300"}
         />
@@ -43,7 +44,7 @@ function Pricing({}: Props) {
       <div className="grid md:grid-cols-2 gap-8">
         <Image
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c530.png"
-          alt=""
+          alt="PayPal Logo"
           width={"400"}
           height={"300"}
         />
@@ -59,7 +60,7 @@ function Pricing({}: Props) {
             href="https://www.paypal.com/paypalme/alirezasamadi"
             target={"_blank"}
             rel="noreferrer"
-            className="w-full inline-block bg-[#002C8A] text-center text-white py-2 px-8 rounded-md shadow-button mt-4"
+            className="w-full inline-block bg-paypal text-center text-white py-2 px-8 rounded-md shadow-button mt-4"
           >
             Support my work
           </a>
@@ -68,5 +69,3 @@ function Pricing({}: Props) {
     </Container>
   );
 }
-
-export default Pricing;

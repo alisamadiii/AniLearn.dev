@@ -1,4 +1,5 @@
 import React from "react";
+
 import Container from "./Container";
 import HeadingText from "./HeadingText";
 
@@ -34,11 +35,11 @@ export default function Information({}: Props) {
               They are free
             </li>
           </ul>
-          <button className="bg-black text-white py-2 px-8 rounded-md shadow-button">
+          <button className="bg-black text-white py-2 px-8 rounded-md shadow-button hover:opacity-90 active:scale-95 duration-150">
             Start Watching
           </button>
         </div>
-        <div className="w-full h-[291px] sm:h-[491px] md:h-[591px] bg rounded-xl"></div>
+        <div className="w-full h-[291px] sm:h-[491px] md:h-[591px] bg-slide-animation bg-cover rounded-xl"></div>
       </Container>
     </div>
   );

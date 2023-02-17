@@ -1,26 +1,23 @@
+// Packages
 import React, { useEffect, useState } from "react";
-import { db } from "@/utils/firebase/Firebase";
-import {
-  collection,
-  onSnapshot,
-  query,
-  orderBy,
-  where,
-} from "firebase/firestore";
-
-import HeadingText from "@/components/HeadingText";
-import Container from "@/components/Container";
+import Link from "next/link";
 import Masonry from "react-masonry-css";
 
-import Testimonial from "@/components/Testimonial";
+// Firebase
+import { db } from "@/utils/firebase/Firebase";
+import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
+
+// Components
+import { Container, HeadingText, Testimonial } from "@/components";
 
 import { BsJournalText } from "react-icons/bs";
-import Link from "next/link";
 
+// Types
 type Props = {};
+import { TestimonialTypes } from "@/types/Testimonial";
 
-const TestimonialPage = (props: Props) => {
-  const [testimonials, setTestimonials] = useState<any[]>([]);
+export default function TestimonialPage({}: Props) {
+  const [testimonials, setTestimonials] = useState<TestimonialTypes>([]);
   const [isShown, setIsShown] = useState<boolean>(false);
 
   useEffect(() => {
@@ -30,11 +27,16 @@ const TestimonialPage = (props: Props) => {
       orderBy("order"),
       where("testimonialPage", "==", true)
     );
-    onSnapshot(q, (snapshot) => {
-      setTestimonials(
-        snapshot.docs.map((data) => ({ ...data.data(), id: data.id }))
-      );
-    });
+    const gettingTestimonial = async () => {
+      const testimonials = await getDocs(q);
+      const snapshot: any = testimonials.docs.map((messages) => ({
+        ...messages.data(),
+        id: messages.id,
+      }));
+      setTestimonials(snapshot);
+    };
+
+    gettingTestimonial();
   }, []);
 
   useEffect(() => {
@@ -81,6 +83,4 @@ const TestimonialPage = (props: Props) => {
       </Link>
     </div>
   );
-};
-
-export default TestimonialPage;
+}

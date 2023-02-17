@@ -1,43 +1,44 @@
 import React from "react";
 import Image from "next/image";
 
+import { AiFillStar } from "react-icons/ai";
+
+// Types
 type Props = {
   data: OneTestimonial;
 };
-
-import { AiFillStar } from "react-icons/ai";
 import { OneTestimonial } from "@/types/Testimonial";
 
 export default function Testimonial({ data }: Props) {
+  const { name, headline, img, star, testimonial } = data;
+
   return (
     <div className="bg-white shadow-lg p-4 rounded-lg">
       <div className="flex gap-2 items-center">
         <Image
           className="w-8 h-8 rounded-full"
           src={
-            data.img
-              ? data.img
+            img
+              ? img
               : "https://cdn-icons-png.flaticon.com/512/9706/9706650.png"
           }
           width={32}
           height={32}
-          alt=""
+          alt={img ? `${name} - ${headline}` : "User's Image"}
         />
         <div>
-          <h1 className="font-medium">{data.name}</h1>
-          {data.headline && (
-            <h2 className="text-xs opacity-40">{data.headline}</h2>
-          )}
+          <h1 className="font-medium">{name}</h1>
+          {headline && <h2 className="text-xs opacity-40">{headline}</h2>}
         </div>
       </div>
-      {data.star && (
+      {star && (
         <div className="flex gap-1 my-2 text-yellow-500 text-xl">
-          {[...Array(data.star).keys()].map((i) => (
+          {[...Array(star).keys()].map((i) => (
             <AiFillStar key={i} />
           ))}
         </div>
       )}
-      <p className="opacity-75">{data.testimonial}</p>
+      <p className="opacity-75">{testimonial}</p>
     </div>
   );
 }
