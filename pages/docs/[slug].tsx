@@ -101,9 +101,10 @@ export default function Slug({ data, mdxSource }: Props) {
                 href={`/docs/${d.slug.replace(".mdx", "")}`}
               >
                 <p
-                  className={`px-4 py-1 mt-2 border-l-2 border-transparent hover:border-primary ${
-                    slug == d.slug.replace(".mdx", "") &&
-                    "text-primary border-primary"
+                  className={`px-4 py-1 mt-2 border-l-2 hover:border-primary ${
+                    slug == d.slug.replace(".mdx", "")
+                      ? "text-primary border-primary"
+                      : "border-transparent"
                   }`}
                 >
                   {d.slug.replace(".mdx", "")}
@@ -119,12 +120,13 @@ export default function Slug({ data, mdxSource }: Props) {
                 href={`/docs/${d.slug.replace(".mdx", "")}`}
               >
                 <p
-                  className={`px-4 py-1 mt-2 border-l-2 border-transparent hover:border-primary ${
-                    slug == d.slug.replace(".mdx", "") &&
-                    "text-primary border-primary"
+                  className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize ${
+                    slug == d.slug.replace(".mdx", "")
+                      ? "text-primary border-primary"
+                      : "border-transparent"
                   }`}
                 >
-                  {d.slug.replace(".mdx", "")}
+                  {d.slug.replace(".mdx", "").replaceAll("-", " ")}
                 </p>
               </Link>
             ))}
@@ -140,7 +142,7 @@ export default function Slug({ data, mdxSource }: Props) {
           <AiOutlineMenu />
         </div>
 
-        <div className="pb-24 pr-4" id="content">
+        <div className="w-full pb-24" id="content">
           <MDXRemote {...mdxSource} components={components}></MDXRemote>
         </div>
       </Container>

@@ -62,7 +62,7 @@
 }
 
 pre {
-  @apply w-[300px] sm:w-full;
+  @apply w-full sm:w-full;
   /* background-color: red;
   padding: 1em; */
   /* overflow-x: hidden; */
