@@ -24,7 +24,7 @@ export default function Content({ content }: Props) {
 
   return (
     <a
-      href={content.link == "twitter" ? content.twitter : content.youtube}
+      href={content.twitter}
       target={"_blank"}
       rel="noreferrer"
       className="p-4 inline-block border-2 w-full mb-6 rounded-lg hover:border-primary"
