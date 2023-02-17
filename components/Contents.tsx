@@ -41,7 +41,7 @@ export default function Contents({
   isNavOpen,
   setIsNavOpen,
 }: Props) {
-  const [technology, setTechnology] = useState<number>(2);
+  const [technology, setTechnology] = useState<number>(1);
   const [contents, setContents] = useState<any>({});
   const [isPrivacyOpen, setIsPrivacyOpen] = useState<boolean>(false);
 
