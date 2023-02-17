@@ -79,3 +79,7 @@ pre {
 #content > p {
   @apply text-base md:text-lg leading-[1.8] md:leading-[2] opacity-90;
 }
+
+#content img {
+  @apply w-full rounded-2xl my-8 p-1 border-2 shadow-2xl;
+}
