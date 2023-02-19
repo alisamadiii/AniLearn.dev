@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 type Props = {
   title: string;
   value: string;
   placeHolder: string;
   type: string;
-  onChange: (e: any) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function Input({
