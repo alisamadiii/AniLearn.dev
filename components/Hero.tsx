@@ -7,36 +7,43 @@ import { GoPlay } from "react-icons/go";
 import HeroIMG from "../assets/hero.png";
 
 import HeadingText from "./HeadingText";
+import Link from "next/link";
 
 const developers: {
   id: number;
   name: string;
   img: string;
+  twitter: string;
 }[] = [
   {
     id: 1,
     name: "Csaba Kissi",
     img: "https://pbs.twimg.com/profile_images/1454861068233228289/6sn9BYOf_400x400.jpg",
+    twitter: "https://twitter.com/csaba_kissi",
   },
   {
     id: 2,
     name: "Francesco",
     img: "https://pbs.twimg.com/profile_images/1617044903636123650/pYUcGGOu_400x400.jpg",
+    twitter: "https://twitter.com/FrancescoCiull4",
   },
   {
     id: 3,
     name: "Savio ッ",
     img: "https://pbs.twimg.com/profile_images/1617899739172995072/qF-3t5w8_400x400.jpg",
+    twitter: "https://twitter.com/saviomartin7",
   },
   {
     id: 4,
     name: "Graham",
     img: "https://pbs.twimg.com/profile_images/1609891169500004353/5ZhB2ZTV_400x400.jpg",
+    twitter: "https://twitter.com/GrahamTheDev",
   },
   {
     id: 5,
     name: "Madza",
     img: "https://pbs.twimg.com/profile_images/1526471322762715136/w25QtNnl_400x400.jpg",
+    twitter: "https://twitter.com/madzadev",
   },
 ];
 
@@ -62,14 +69,19 @@ export default function Hero({ setIsContentOpen }: Props) {
       <div className="flex items-center gap-4 my-4">
         <div className="flex my-8 space-x-img_overlapping">
           {developers.map((developer) => (
-            <Image
-              key={developer.id}
-              src={developer.img}
-              alt=""
-              width={31}
-              height={31}
-              className="rounded-full border-2 border-white"
-            />
+            <Link
+              href={developer.twitter}
+              className="hover:scale-105 hover:rotate-12 duration-100"
+            >
+              <Image
+                key={developer.id}
+                src={developer.img}
+                alt=""
+                width={31}
+                height={31}
+                className="rounded-full border-2 border-white"
+              />
+            </Link>
           ))}
         </div>
         <div>

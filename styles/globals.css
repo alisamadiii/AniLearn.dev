@@ -10,7 +10,7 @@ html {
   @apply h-full;
 }
 body {
-  @apply relative min-h-full pb-12;
+  @apply relative min-h-full pb-28;
 }
 
 @layer components {
