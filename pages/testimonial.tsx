@@ -9,6 +9,7 @@ import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
 
 // Components
 import { Container, HeadingText, Testimonial } from "@/components";
+import Skeleton from "@/components/Skeleton";
 
 import { BsJournalText } from "react-icons/bs";
 
@@ -59,17 +60,21 @@ export default function TestimonialPage({}: Props) {
       <HeadingText className="text-center text-4xl sm:text-5xl md:text-7xl mt-24 font-black mb-12">
         Testimonials
       </HeadingText>
-      <Container>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {testimonials.map((testimonial) => (
-            <Testimonial key={testimonial.order} data={testimonial} />
-          ))}
-        </Masonry>
-      </Container>
+      {testimonials.length == 0 ? (
+        <Skeleton type="testimonial" />
+      ) : (
+        <Container>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {testimonials.map((testimonial) => (
+              <Testimonial key={testimonial.order} data={testimonial} />
+            ))}
+          </Masonry>
+        </Container>
+      )}
       <Link
         href={"/adding-testimonial"}
         className="fixed bottom-4 right-4 text-2xl bg-black text-white p-3 rounded-full"

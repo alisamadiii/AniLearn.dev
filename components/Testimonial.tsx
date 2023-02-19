@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { AiFillStar } from "react-icons/ai";
 
@@ -13,7 +14,11 @@ export default function Testimonial({ data }: Props) {
   const { name, headline, img, star, testimonial } = data;
 
   return (
-    <div className="bg-white shadow-lg p-4 rounded-lg">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="bg-white shadow-lg p-4 rounded-lg"
+    >
       <div className="flex gap-2 items-center">
         <Image
           className="w-8 h-8 rounded-full"
@@ -39,6 +44,6 @@ export default function Testimonial({ data }: Props) {
         </div>
       )}
       <p className="opacity-75">{testimonial}</p>
-    </div>
+    </motion.div>
   );
 }
