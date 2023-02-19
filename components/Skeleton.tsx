@@ -9,8 +9,11 @@ export default function Skeleton({ type }: Props) {
   if (type == "testimonial") {
     return (
       <Container className="flex flex-wrap gap-4">
-        {[...Array(9).keys()].map(() => (
-          <div className="bg-[#e5e5e5] h-36 basis-[300px] grow rounded-lg animate-pulse"></div>
+        {[...Array(9).keys()].map((_, i) => (
+          <div
+            key={i}
+            className="bg-[#e5e5e5] h-36 basis-[300px] grow rounded-lg animate-pulse"
+          ></div>
         ))}
       </Container>
     );
