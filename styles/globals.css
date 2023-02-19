@@ -6,6 +6,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply h-full;
+}
+body {
+  @apply relative min-h-full pb-12;
+}
+
 @layer components {
   .background-style::after {
     content: "";

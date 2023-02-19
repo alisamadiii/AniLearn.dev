@@ -23,7 +23,7 @@ export default function Navbar({}: Props) {
           onClick={() => setIsOpen(true)}
         />
         <ul className="space-x-8 hidden md:block">
-          <Link href={"/docs"}>Docs</Link>
+          <Link href={"/docs/intro"}>Docs</Link>
           <Link href={"/pricing"}>Pricing</Link>
           <button className="bg-black text-white py-2 px-8 rounded-md shadow-button">
             Start Watching
@@ -56,7 +56,7 @@ const NavbarSmall = ({ setIsOpen }: INavbarSmall) => {
           <MdAnimation />
           AniLearn.dev
         </h1>
-        <Link href={"/docs"} className="px-4 py-2">
+        <Link href={"/docs/intro"} className="px-4 py-2">
           Docs
         </Link>
         <Link href={"/pricing"} className="px-4 py-2 mb-4">

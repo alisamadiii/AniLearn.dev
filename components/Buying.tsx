@@ -19,9 +19,8 @@ export default function Buying({}: Props) {
             Having the video & PowerPoint
           </HeadingText>
           <p className="text-lg">
-            We provide you the best content to learn something very easily. The
-            visual descriptions of development principles that We creates are
-            very clear.
+            If you want to have the video and source file (learning it), then
+            they are available in Gumroad.
           </p>
           <ul className="text-base md:text-lg">
             <li className="flex gap-2">
