@@ -68,7 +68,10 @@ export default function Contents({}: Props) {
               className={`p-8 text-center font-medium text-2xl cursor-pointer ${
                 technology == 1 && "bg-white"
               }`}
-              onClick={() => setTechnology(1)}
+              onClick={() => {
+                setTechnology(1);
+                setIsNavOpen(false);
+              }}
             >
               HTML
             </li>
@@ -76,7 +79,10 @@ export default function Contents({}: Props) {
               className={`p-8 text-center font-medium text-2xl cursor-pointer ${
                 technology == 2 && "bg-white"
               }`}
-              onClick={() => setTechnology(2)}
+              onClick={() => {
+                setTechnology(2);
+                setIsNavOpen(false);
+              }}
             >
               CSS
             </li>
@@ -84,7 +90,10 @@ export default function Contents({}: Props) {
               className={`p-8 text-center font-medium text-2xl cursor-pointer ${
                 technology == 3 && "bg-white"
               }`}
-              onClick={() => setTechnology(3)}
+              onClick={() => {
+                setTechnology(3);
+                setIsNavOpen(false);
+              }}
             >
               JS
             </li>
@@ -92,7 +101,10 @@ export default function Contents({}: Props) {
               className={`mt-auto p-8 text-center font-medium text-2xl cursor-pointer ${
                 isPrivacyOpen && "bg-red-600"
               }`}
-              onClick={() => setIsPrivacyOpen(!isPrivacyOpen)}
+              onClick={() => {
+                setIsPrivacyOpen(!isPrivacyOpen);
+                setIsNavOpen(false);
+              }}
             >
               I
             </li>
