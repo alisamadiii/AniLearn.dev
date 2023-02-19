@@ -1,5 +1,8 @@
+import React, { useContext } from "react";
+
+import { ContentsProvider } from "@/context/Contents";
+
 import Navbar from "@/components/Navbar";
-import React from "react";
 import Footer from "../components/Footer";
 
 type Props = {
@@ -8,11 +11,11 @@ type Props = {
 
 export default function Layouts({ children }: Props) {
   return (
-    <div>
+    <ContentsProvider>
       <Navbar />
       <div className="w-full h-screen fixed top-0 left-0 bg-white bg-square-pattern bg-pattern -z-50"></div>
       <main>{children}</main>
       <Footer />
-    </div>
+    </ContentsProvider>
   );
 }

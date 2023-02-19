@@ -1,8 +1,11 @@
 // Packages
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Head from "next/head";
 import Masonry from "react-masonry-css";
 import Link from "next/link";
+
+// Context
+import { ContentsContext } from "@/context/Contents";
 
 // Firebase
 import { db } from "@/utils/firebase/Firebase";
@@ -26,8 +29,9 @@ import { TestimonialTypes } from "@/types/Testimonial";
 
 export default function Home() {
   const [testimonials, setTestimonials] = useState<TestimonialTypes>([]);
-  const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
-  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+  // const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
+
+  const { isContentOpen } = useContext(ContentsContext);
 
   useEffect(() => {
     const colRef = collection(db, "testimonial");
@@ -70,7 +74,7 @@ doesn't get easier than this"
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={dm_sans.className}>
-        <Hero setIsContentOpen={setIsContentOpen} />
+        <Hero />
         <Information />
         <Buying />
         <Container className="relative py-24 px-4 md:px-8">
@@ -96,13 +100,7 @@ doesn't get easier than this"
           </div>
         </Container>
 
-        {isContentOpen && (
-          <Contents
-            setIsContentOpen={setIsContentOpen}
-            isNavOpen={isNavOpen}
-            setIsNavOpen={setIsNavOpen}
-          />
-        )}
+        {isContentOpen && <Contents />}
       </main>
     </>
   );

@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Container from "./Container";
 import HeadingText from "./HeadingText";
+
+import { ContentsContext } from "@/context/Contents";
 
 type Props = {};
 
 import { BsCheckAll } from "react-icons/bs";
 
 export default function Information({}: Props) {
+  const { setIsContentOpen } = useContext(ContentsContext);
+
   return (
     <div className="py-36 px-4 md:px-8">
       <Container className="grid lg:grid-cols-2 gap-8 lg:gap-4">
@@ -35,7 +39,10 @@ export default function Information({}: Props) {
               They are free
             </li>
           </ul>
-          <button className="bg-black text-white py-2 px-8 rounded-md shadow-button hover:opacity-90 active:scale-95 duration-150">
+          <button
+            className="bg-black text-white py-2 px-8 rounded-md shadow-button hover:opacity-90 active:scale-95 duration-150"
+            onClick={() => setIsContentOpen(true)}
+          >
             Start Watching
           </button>
         </div>

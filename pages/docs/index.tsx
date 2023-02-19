@@ -6,6 +6,6 @@ type Props = {};
 export default function Index() {
   const router = useRouter();
   useEffect(() => {
-    router.push("/docs/intro");
+    router.pathname == "/docs" && router.push("/docs/intro");
   }, []);
 }

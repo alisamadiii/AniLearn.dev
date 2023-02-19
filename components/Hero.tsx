@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+
+import { ContentsContext } from "@/context/Contents";
 
 import { AiFillStar } from "react-icons/ai";
 import { GoPlay } from "react-icons/go";
@@ -47,11 +49,11 @@ const developers: {
   },
 ];
 
-type Props = {
-  setIsContentOpen: (a: boolean) => void;
-};
+type Props = {};
 
-export default function Hero({ setIsContentOpen }: Props) {
+export default function Hero({}: Props) {
+  const { setIsContentOpen } = useContext(ContentsContext);
+
   return (
     <div className="pt-48 flex flex-col items-center bg-black bg-opacity-5">
       <h3 className="text-primary">ANIMATED CONTENT MADE EASY</h3>
@@ -70,11 +72,11 @@ export default function Hero({ setIsContentOpen }: Props) {
         <div className="flex my-8 space-x-img_overlapping">
           {developers.map((developer) => (
             <Link
+              key={developer.id}
               href={developer.twitter}
               className="hover:scale-105 hover:rotate-12 duration-100"
             >
               <Image
-                key={developer.id}
                 src={developer.img}
                 alt=""
                 width={31}

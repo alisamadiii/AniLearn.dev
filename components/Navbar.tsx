@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 import Container from "./Container";
+
+import { ContentsContext } from "@/context/Contents";
 
 import { MdAnimation } from "react-icons/md";
 import { RiMenu3Fill } from "react-icons/ri";
@@ -11,6 +14,18 @@ type Props = {};
 
 export default function Navbar({}: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const router = useRouter();
+  const { setIsContentOpen } = useContext(ContentsContext);
+
+  const onClickHandler = () => {
+    const { pathname } = router;
+    if (pathname == "/") {
+      setIsContentOpen(true);
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <nav className="w-full shadow-lg bg-white fixed top-0 left-0 px-4 md:px-8 z-50">
       <Container className="h-16 flex justify-between items-center">
@@ -25,7 +40,10 @@ export default function Navbar({}: Props) {
         <ul className="space-x-8 hidden md:block">
           <Link href={"/docs/intro"}>Docs</Link>
           <Link href={"/pricing"}>Pricing</Link>
-          <button className="bg-black text-white py-2 px-8 rounded-md shadow-button">
+          <button
+            className="bg-black text-white py-2 px-8 rounded-md shadow-button"
+            onClick={onClickHandler}
+          >
             Start Watching
           </button>
         </ul>

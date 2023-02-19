@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
+import { ContentsContext } from "@/context/Contents";
 
 import { db } from "@/utils/firebase/Firebase";
 import { doc, onSnapshot } from "firebase/firestore";
@@ -10,40 +12,35 @@ import { AiFillCloseSquare, AiOutlineMenu } from "react-icons/ai";
 
 // import { ContentTypes } from "../content/Content";
 
-type Props = {
-  setIsContentOpen: (a: boolean) => void;
-  isNavOpen: boolean;
-  setIsNavOpen: (a: boolean) => void;
-};
+type Props = {};
 
-type ContentTypes = {
-  title: string;
-  content: {
-    title: string;
-    description: string;
-    date: string;
-    views: number;
-    duration: number;
-    twitter: string;
-    youtube: null | string;
-    link: string;
-    free: boolean;
-  }[];
-};
+// type ContentTypes = {
+//   title: string;
+//   content: {
+//     title: string;
+//     description: string;
+//     date: string;
+//     views: number;
+//     duration: number;
+//     twitter: string;
+//     youtube: null | string;
+//     link: string;
+//     free: boolean;
+//   }[];
+// };
 
 const breakpointColumnsObj = {
   default: 2,
   768: 1,
 };
 
-export default function Contents({
-  setIsContentOpen,
-  isNavOpen,
-  setIsNavOpen,
-}: Props) {
+export default function Contents({}: Props) {
   const [technology, setTechnology] = useState<number>(1);
   const [contents, setContents] = useState<any>({});
   const [isPrivacyOpen, setIsPrivacyOpen] = useState<boolean>(false);
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+
+  const { setIsContentOpen } = useContext(ContentsContext);
 
   const choosingTechnologies = (): any => {
     if (technology == 1) return "html";
