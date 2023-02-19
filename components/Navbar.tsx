@@ -47,7 +47,9 @@ export default function Navbar({}: Props) {
             Start Watching
           </button>
         </ul>
-        {isOpen && <NavbarSmall setIsOpen={setIsOpen} />}
+        {isOpen && (
+          <NavbarSmall setIsOpen={setIsOpen} onClickHandler={onClickHandler} />
+        )}
       </Container>
     </nav>
   );
@@ -55,13 +57,14 @@ export default function Navbar({}: Props) {
 
 interface INavbarSmall {
   setIsOpen: (active: boolean) => void;
+  onClickHandler: () => void;
 }
 
-const NavbarSmall = ({ setIsOpen }: INavbarSmall) => {
+const NavbarSmall = ({ setIsOpen, onClickHandler }: INavbarSmall) => {
   return (
     <>
       <div
-        className="w-full h-screen bg-white bg-opacity-50 absolute top-0 left-0"
+        className="md:hidden w-full h-screen bg-white bg-opacity-50 absolute top-0 left-0"
         onClick={() => setIsOpen(false)}
       ></div>
       <motion.ul
@@ -74,13 +77,27 @@ const NavbarSmall = ({ setIsOpen }: INavbarSmall) => {
           <MdAnimation />
           AniLearn.dev
         </h1>
-        <Link href={"/docs/intro"} className="px-4 py-2">
+        <Link
+          href={"/docs/intro"}
+          className="px-4 py-2"
+          onClick={() => setIsOpen(false)}
+        >
           Docs
         </Link>
-        <Link href={"/pricing"} className="px-4 py-2 mb-4">
+        <Link
+          href={"/pricing"}
+          className="px-4 py-2 mb-4"
+          onClick={() => setIsOpen(false)}
+        >
           Pricing
         </Link>
-        <button className="bg-black text-white py-2 px-8 rounded-md shadow-button">
+        <button
+          className="bg-black text-white py-2 px-8 rounded-md shadow-button"
+          onClick={() => {
+            onClickHandler();
+            setIsOpen(false);
+          }}
+        >
           Start Watching
         </button>
       </motion.ul>
