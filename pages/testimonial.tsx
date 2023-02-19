@@ -1,6 +1,7 @@
 // Packages
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import Masonry from "react-masonry-css";
 
 // Firebase
@@ -56,36 +57,44 @@ export default function TestimonialPage({}: Props) {
   };
 
   return (
-    <div className="px-4 md:px-8">
-      <HeadingText className="text-center text-4xl sm:text-5xl md:text-7xl mt-24 font-black mb-12">
-        Testimonials
-      </HeadingText>
-      {testimonials.length == 0 ? (
-        <Skeleton type="testimonial" />
-      ) : (
-        <Container>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            {testimonials.map((testimonial) => (
-              <Testimonial key={testimonial.order} data={testimonial} />
-            ))}
-          </Masonry>
-        </Container>
-      )}
-      <Link
-        href={"/adding-testimonial"}
-        className="fixed bottom-4 right-4 text-2xl bg-black text-white p-3 rounded-full"
-      >
-        {isShown && (
-          <p className="absolute right-0 top-[-50px] bg-black text-white py-2 px-4 rounded-lg whitespace-nowrap text-base animate-bounce">
-            Add a <span className="font-bold">Testimonial</span> here
-          </p>
+    <>
+      <Head>
+        <title>Testimonial</title>
+        <meta name="description" content="Supporting my work" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
+      <div className="px-4 md:px-8">
+        <HeadingText className="text-center text-4xl sm:text-5xl md:text-7xl mt-24 font-black mb-12">
+          Testimonials
+        </HeadingText>
+        {testimonials.length == 0 ? (
+          <Skeleton type="testimonial" />
+        ) : (
+          <Container>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
+              {testimonials.map((testimonial) => (
+                <Testimonial key={testimonial.order} data={testimonial} />
+              ))}
+            </Masonry>
+          </Container>
         )}
-        <BsJournalText />
-      </Link>
-    </div>
+        <Link
+          href={"/adding-testimonial"}
+          className="fixed bottom-4 right-4 text-2xl bg-black text-white p-3 rounded-full"
+        >
+          {isShown && (
+            <p className="absolute right-0 top-[-50px] bg-black text-white py-2 px-4 rounded-lg whitespace-nowrap text-base animate-bounce">
+              Add a <span className="font-bold">Testimonial</span> here
+            </p>
+          )}
+          <BsJournalText />
+        </Link>
+      </div>
+    </>
   );
 }

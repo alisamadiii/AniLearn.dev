@@ -71,7 +71,7 @@ export default function Home() {
 doesn't get easier than this"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <main className={dm_sans.className}>
         <Hero />
