@@ -3,14 +3,18 @@
 
 # <img width="30" height="30" src="https://user-images.githubusercontent.com/99729607/219909050-57b80c04-d9c8-4276-90a8-e00be48ed267.png" /> AniLearn.dev
 
-We provide you the best content to learn something very easily. The visual descriptions of development principles that We creates are very clear.
+We provide you the best `content` to learn something very easily. The visual descriptions of development principles that We creates are very clear.
 - They are very short
 - Making content for HTML, CSS & JS
 - They are free
 
-If you want to have the video and source file for learning it, then they are available in [Gumroad](https://alireza05.gumroad.com/l/animated-content).
+> **Note** <br />
+> If you want to have the video and source file for learning it, then they are available in [Gumroad](https://alireza05.gumroad.com/l/animated-content).
 
-## Website Preview
+## Demo 💻
+You can see the live demo at: https://www.anilearn.dev/
+
+## Website Preview 🌐
 
 - [Home](https://www.anilearn.dev/)
 - [Docs](https://www.anilearn.dev/docs/intro)
