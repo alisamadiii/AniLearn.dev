@@ -12,15 +12,14 @@ If you want to have the video and source file for learning it, then they are ava
 
 ## Website Preview
 
-|Information|Images|
-|-------|:----:|
-|Home Page|<img width="50%" src="https://user-images.githubusercontent.com/99729607/219909468-1b631db2-4bc5-4277-904c-df36feac1107.png" />|
-|Testimonials|<img width="50%" src="https://user-images.githubusercontent.com/99729607/219909365-52e843eb-86db-4622-a8d2-f4cf11321331.png" />|
-|Add your own Testimonial|<img width="50%" src="https://user-images.githubusercontent.com/99729607/219909433-59c02a04-9c6f-461f-bab4-4a484104a6eb.png" />|
-|Use all the animated contents|<img width="50%" src="https://user-images.githubusercontent.com/99729607/219909459-fff43bed-aeb8-4e79-97d5-08a9f9309d0c.png" />|
-|You can read the docs and Learn something new|<img width="50%" src="https://user-images.githubusercontent.com/99729607/219909676-3f8d4770-b63f-40a3-af5e-7e7bf86a2465.png" />|
+- [Home](https://www.anilearn.dev/)
+- [Docs](https://www.anilearn.dev/docs/intro)
+- [Testimonial](https://www.anilearn.dev/testimonial)
+- [Adding Testimonial](https://www.anilearn.dev/adding-testimonial)
+- [Pricing](https://www.anilearn.dev/pricing)
+- ...
 
-
+![image](https://user-images.githubusercontent.com/99729607/219942592-d625ba3e-4b35-4740-bebb-21c4e1111df1.png)
 
 ## Getting Started
 
