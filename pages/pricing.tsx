@@ -42,12 +42,12 @@ export default function Pricing({}: Props) {
               <li className="w-full text-center py-2 font-medium">✅</li>
             </ul>
             <a
-              href="#"
-              // target={"_blank"}
-              // rel="noreferrer"
+              href="https://alireza05.gumroad.com/l/animated-content"
+              target={"_blank"}
+              rel="noreferrer"
               className="text-base inline-block bg-black text-center text-white py-2 px-8 rounded-md shadow-button mt-8"
             >
-              Not Available
+              But Now
             </a>
           </div>
         </div>
