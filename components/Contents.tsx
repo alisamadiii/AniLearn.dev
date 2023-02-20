@@ -9,6 +9,7 @@ import Content from "./Content";
 import Masonry from "react-masonry-css";
 
 import { AiFillCloseSquare, AiOutlineMenu } from "react-icons/ai";
+import { HiInformationCircle } from "react-icons/hi";
 
 // import { ContentTypes } from "../content/Content";
 
@@ -98,15 +99,15 @@ export default function Contents({}: Props) {
               JS
             </li>
             <li
-              className={`mt-auto p-8 text-center font-medium text-2xl cursor-pointer ${
-                isPrivacyOpen && "bg-red-600"
-              }`}
+              className={`mt-auto p-8 flex justify-center items-center font-medium text-3xl cursor-pointer ${
+                isPrivacyOpen && "bg-red-600 text-white"
+              } duration-150`}
               onClick={() => {
                 setIsPrivacyOpen(!isPrivacyOpen);
                 setIsNavOpen(false);
               }}
             >
-              I
+              <HiInformationCircle />
             </li>
           </ul>
         </nav>
@@ -123,7 +124,7 @@ export default function Contents({}: Props) {
         </Masonry>
 
         <div
-          className={`w-full max-w-[400px] h-[400px] bg-white absolute right-0 bottom-0 p-4 duration-200 ${
+          className={`w-full max-w-[400px] h-[400px] bg-white border-t-2 border-l-2 absolute right-0 bottom-0 p-4 duration-200 ${
             isPrivacyOpen ? "translate-y-0" : "translate-y-full"
           }`}
         >
