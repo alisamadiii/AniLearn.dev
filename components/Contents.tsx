@@ -130,7 +130,7 @@ export default function Contents({}: Props) {
           <h1 className="text-3xl font-medium">Privacy</h1>
           <p className="opacity-75 mt-2">
             You are not allow to use any of this video for social media, unless
-            you mention the creator & did not add anything onto the vide.
+            you mention the creator & did not add anything onto the video.
           </p>
           <p className="mt-9">
             <span className="font-bold">Note</span>: Right now, All the video

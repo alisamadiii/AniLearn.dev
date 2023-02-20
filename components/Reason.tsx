@@ -17,7 +17,10 @@ export default function Reason({}: Props) {
         </HeadingText>
         <div className="border-l-4 border-primary mt-12 mx-6 flex flex-col gap-4">
           {REASONS.map((reason) => (
-            <div key={reason.id} className="relative p-4 pl-12">
+            <div
+              key={reason.id}
+              className="relative p-4 pl-12 hover:bg-primary hover:text-white duration-150"
+            >
               <motion.div
                 initial={{ x: -100, opacity: 0, rotate: 30 }}
                 whileInView={{ x: -26, opacity: 1, rotate: 0 }}
@@ -30,6 +33,7 @@ export default function Reason({}: Props) {
               <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <HeadingText className="text-xl md:text-2xl font-semibold mb-3">
@@ -39,6 +43,7 @@ export default function Reason({}: Props) {
               <motion.p
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="opacity-75 font-medium text-sm md:text-base"
               >

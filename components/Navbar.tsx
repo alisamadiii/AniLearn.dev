@@ -29,8 +29,11 @@ export default function Navbar({}: Props) {
   return (
     <nav className="w-full shadow-lg bg-white fixed top-0 left-0 px-4 md:px-8 z-50">
       <Container className="h-16 flex justify-between items-center">
-        <Link href={"/"} className="flex gap-1 items-center text-xl font-bold">
-          <MdAnimation />
+        <Link
+          href={"/"}
+          className="flex gap-1 items-center text-xl font-bold group"
+        >
+          <MdAnimation className="group-hover:rotate-45 duration-200" />
           AniLearn.dev
         </Link>
         <RiMenu3Fill
@@ -38,8 +41,12 @@ export default function Navbar({}: Props) {
           onClick={() => setIsOpen(true)}
         />
         <ul className="space-x-8 hidden md:block">
-          <Link href={"/docs/intro"}>Docs</Link>
-          <Link href={"/pricing"}>Pricing</Link>
+          <Link href={"/docs/intro"} className="opacity-80 hover:opacity-100">
+            Docs
+          </Link>
+          <Link href={"/pricing"} className="opacity-80 hover:opacity-100">
+            Pricing
+          </Link>
           <button
             className="bg-black text-white py-2 px-8 rounded-md shadow-button"
             onClick={onClickHandler}
