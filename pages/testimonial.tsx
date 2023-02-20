@@ -65,7 +65,7 @@ export default function TestimonialPage({}: Props) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <div className="px-4 md:px-8">
-        <HeadingText className="text-center text-4xl sm:text-5xl md:text-7xl mt-24 font-black mb-12">
+        <HeadingText className="mt-24 mb-12 text-4xl font-black text-center sm:text-5xl md:text-7xl">
           Testimonials
         </HeadingText>
         {testimonials.length == 0 ? (
@@ -85,7 +85,7 @@ export default function TestimonialPage({}: Props) {
         )}
         <Link
           href={"/adding-testimonial"}
-          className="fixed bottom-4 right-4 text-2xl bg-black text-white p-3 rounded-full"
+          className="fixed p-3 text-2xl text-white bg-black rounded-full bottom-4 right-4"
         >
           {isShown && (
             <p className="absolute right-0 top-[-50px] bg-black text-white py-2 px-4 rounded-lg whitespace-nowrap text-base animate-bounce">

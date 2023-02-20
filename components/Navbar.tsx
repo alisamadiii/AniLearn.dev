@@ -27,20 +27,20 @@ export default function Navbar({}: Props) {
   };
 
   return (
-    <nav className="w-full shadow-lg bg-white fixed top-0 left-0 px-4 md:px-8 z-50">
-      <Container className="h-16 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 z-50 w-full px-4 bg-white shadow-lg md:px-8">
+      <Container className="flex items-center justify-between h-16">
         <Link
           href={"/"}
-          className="flex gap-1 items-center text-xl font-bold group"
+          className="flex items-center gap-1 text-xl font-bold group"
         >
-          <MdAnimation className="group-hover:rotate-45 duration-200" />
+          <MdAnimation className="duration-200 group-hover:rotate-45" />
           AniLearn.dev
         </Link>
         <RiMenu3Fill
-          className="block md:hidden text-xl"
+          className="block text-xl md:hidden"
           onClick={() => setIsOpen(true)}
         />
-        <ul className="space-x-8 hidden md:block">
+        <ul className="hidden space-x-8 md:block">
           <Link href={"/docs/intro"} className="opacity-80 hover:opacity-100">
             Docs
           </Link>
@@ -48,7 +48,7 @@ export default function Navbar({}: Props) {
             Pricing
           </Link>
           <button
-            className="bg-black text-white py-2 px-8 rounded-md shadow-button"
+            className="px-8 py-2 text-white bg-black rounded-md shadow-button"
             onClick={onClickHandler}
           >
             Start Watching
@@ -71,16 +71,16 @@ const NavbarSmall = ({ setIsOpen, onClickHandler }: INavbarSmall) => {
   return (
     <>
       <div
-        className="md:hidden w-full h-screen bg-white bg-opacity-50 absolute top-0 left-0"
+        className="absolute top-0 left-0 w-full h-screen bg-white bg-opacity-50 md:hidden"
         onClick={() => setIsOpen(false)}
       ></div>
       <motion.ul
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="absolute top-0 right-0 h-screen w-3/4 sm:w-1/2 bg-white flex flex-col p-4 md:hidden"
+        className="absolute top-0 right-0 flex flex-col w-3/4 h-screen p-4 bg-white sm:w-1/2 md:hidden"
       >
-        <h1 className="flex gap-1 items-center text-2xl font-bold mb-8">
+        <h1 className="flex items-center gap-1 mb-8 text-2xl font-bold">
           <MdAnimation />
           AniLearn.dev
         </h1>
@@ -99,7 +99,7 @@ const NavbarSmall = ({ setIsOpen, onClickHandler }: INavbarSmall) => {
           Pricing
         </Link>
         <button
-          className="bg-black text-white py-2 px-8 rounded-md shadow-button"
+          className="px-8 py-2 text-white bg-black rounded-md shadow-button"
           onClick={() => {
             onClickHandler();
             setIsOpen(false);

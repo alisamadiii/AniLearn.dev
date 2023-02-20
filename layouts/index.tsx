@@ -13,7 +13,7 @@ export default function Layouts({ children }: Props) {
   return (
     <ContentsProvider>
       <Navbar />
-      <div className="w-full h-screen fixed top-0 left-0 bg-white bg-square-pattern bg-pattern -z-50"></div>
+      <div className="fixed top-0 left-0 w-full h-screen bg-white bg-square-pattern bg-pattern -z-50"></div>
       <main>{children}</main>
       <Footer />
     </ContentsProvider>

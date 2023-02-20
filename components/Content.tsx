@@ -27,16 +27,16 @@ export default function Content({ content }: Props) {
       href={content.twitter}
       target={"_blank"}
       rel="noreferrer"
-      className="p-4 inline-block border-2 w-full mb-6 rounded-lg hover:border-primary"
+      className="inline-block w-full p-4 mb-6 border-2 rounded-lg hover:border-primary"
     >
-      <div className="flex justify-between items-baseline">
+      <div className="flex items-baseline justify-between">
         <HeadingText className="text-2xl font-bold">
           {content.title}
         </HeadingText>
-        <p className="text-sm opacity-50 w-24 text-right">{content.date}</p>
+        <p className="w-24 text-sm text-right opacity-50">{content.date}</p>
       </div>
-      <p className="opacity-70 mt-2 mb-4">{content.description}</p>
-      <div className="flex justify-between items-center text-sm opacity-50">
+      <p className="mt-2 mb-4 opacity-70">{content.description}</p>
+      <div className="flex items-center justify-between text-sm opacity-50">
         <p>+{formattingNumber(content.views)} views</p>
         <p>{content.duration} m</p>
       </div>

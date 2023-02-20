@@ -61,7 +61,7 @@ export default function AddingTestimonial(props: Props) {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="flex items-center justify-center w-full h-screen">
       {sent ? (
         <ThanksMessage />
       ) : (
@@ -77,7 +77,7 @@ export default function AddingTestimonial(props: Props) {
               <HeadingText className="text-2xl font-medium">
                 Write a text testimonial
               </HeadingText>
-              <ul className="list-disc text-sm pl-8">
+              <ul className="pl-8 text-sm list-disc">
                 <li>What do you like most about me?</li>
                 <li>Should I continue making this kind of content?</li>
               </ul>
@@ -90,7 +90,7 @@ export default function AddingTestimonial(props: Props) {
               ></textarea>
               <button
                 type="button"
-                className="w-full text-center bg-black text-white py-2 px-8 rounded-md shadow-button"
+                className="w-full px-8 py-2 text-center text-white bg-black rounded-md shadow-button"
                 onClick={() => setFormNum(2)}
               >
                 Next
@@ -103,10 +103,10 @@ export default function AddingTestimonial(props: Props) {
                 formNum == 2 ? "left-[50%]" : "left-[850px]"
               } duration-300`}
             >
-              <div className="flex justify-between items-center">
+              <div className="flex items-center justify-between">
                 <Image src={Profile} width={44} height={44} alt="" />
                 <div
-                  className="bg-black text-white py-2 px-3 rounded-md cursor-pointer"
+                  className="px-3 py-2 text-white bg-black rounded-md cursor-pointer"
                   onClick={() => setFormNum(1)}
                 >
                   <AiFillBackward />
@@ -153,7 +153,7 @@ export default function AddingTestimonial(props: Props) {
               <button
                 type="button"
                 onClick={submittingTheForm}
-                className="w-full text-center bg-black text-white py-2 px-8 rounded-md shadow-button"
+                className="w-full px-8 py-2 text-center text-white bg-black rounded-md shadow-button"
               >
                 Submit
               </button>

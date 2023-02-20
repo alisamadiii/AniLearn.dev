@@ -79,7 +79,7 @@ doesn't get easier than this"
         <Information />
         <Reason />
         <Buying />
-        <Container className="relative py-24 px-4 md:px-8">
+        <Container className="relative px-4 py-24 md:px-8">
           <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3 mb-8">
             What people have been saying
           </HeadingText>
@@ -92,10 +92,10 @@ doesn't get easier than this"
               <Testimonial key={testimonial.name} data={testimonial} />
             ))}
           </Masonry>
-          <div className="w-full h-3/5 bg-gradient-to-t from-white to-transparent absolute bottom-0 left-0 flex justify-center items-end pb-36">
+          <div className="absolute bottom-0 left-0 flex items-end justify-center w-full h-3/5 bg-gradient-to-t from-white to-transparent pb-36">
             <Link
               href={"/testimonial"}
-              className="inline-block bg-black text-white py-2 px-8 rounded-md shadow-button"
+              className="inline-block px-8 py-2 text-white bg-black rounded-md shadow-button"
             >
               Read More
             </Link>

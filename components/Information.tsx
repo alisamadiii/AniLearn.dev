@@ -13,8 +13,8 @@ export default function Information({}: Props) {
   const { setIsContentOpen } = useContext(ContentsContext);
 
   return (
-    <div className="py-36 px-4 md:px-8">
-      <Container className="grid lg:grid-cols-2 gap-8 lg:gap-4">
+    <div className="px-4 py-36 md:px-8">
+      <Container className="grid gap-8 lg:grid-cols-2 lg:gap-4">
         <div>
           <h3 className="text-primary">ANIMATION MADE EASY</h3>
           <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3">
@@ -25,22 +25,22 @@ export default function Information({}: Props) {
             visual descriptions of development principles that We creates are
             very clear.
           </p>
-          <ul className="my-8 opacity-70 text-base md:text-lg">
-            <li className="flex gap-2 items-center">
+          <ul className="my-8 text-base opacity-70 md:text-lg">
+            <li className="flex items-center gap-2">
               <BsCheckAll className="text-xl text-green-600" />
               They are very short
             </li>
-            <li className="flex gap-2 items-center">
+            <li className="flex items-center gap-2">
               <BsCheckAll className="text-xl text-green-600" />
               Making content for HTML, CSS & JS
             </li>
-            <li className="flex gap-2 items-center">
+            <li className="flex items-center gap-2">
               <BsCheckAll className="text-xl text-green-600" />
               They are free
             </li>
           </ul>
           <button
-            className="bg-black text-white py-2 px-8 rounded-md shadow-button hover:opacity-90 active:scale-95 duration-150"
+            className="px-8 py-2 text-white duration-150 bg-black rounded-md shadow-button hover:opacity-90 active:scale-95"
             onClick={() => setIsContentOpen(true)}
           >
             Start Watching

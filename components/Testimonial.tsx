@@ -17,9 +17,9 @@ export default function Testimonial({ data }: Props) {
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="bg-white shadow-lg p-4 rounded-lg"
+      className="p-4 bg-white rounded-lg shadow-lg"
     >
-      <div className="flex gap-2 items-center">
+      <div className="flex items-center gap-2">
         <Image
           className="w-8 h-8 rounded-full"
           src={
@@ -37,7 +37,7 @@ export default function Testimonial({ data }: Props) {
         </div>
       </div>
       {star && (
-        <div className="flex gap-1 my-2 text-yellow-500 text-xl">
+        <div className="flex gap-1 my-2 text-xl text-yellow-500">
           {[...Array(star).keys()].map((i) => (
             <AiFillStar key={i} />
           ))}

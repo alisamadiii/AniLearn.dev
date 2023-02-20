@@ -10,16 +10,16 @@ type Props = {};
 
 export default function Reason({}: Props) {
   return (
-    <div className="py-12 pb-36 px-4 md:px-8">
+    <div className="px-4 py-12 pb-36 md:px-8">
       <Container>
         <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3">
           Why animated contents?
         </HeadingText>
-        <div className="border-l-4 border-primary mt-12 mx-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mx-6 mt-12 border-l-4 border-primary">
           {REASONS.map((reason) => (
             <div
               key={reason.id}
-              className="relative p-4 pl-12 hover:bg-primary hover:text-white duration-150"
+              className="relative p-4 pl-12 duration-150 hover:bg-primary hover:text-white"
             >
               <motion.div
                 initial={{ x: -100, opacity: 0, rotate: 30 }}
@@ -36,7 +36,7 @@ export default function Reason({}: Props) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                <HeadingText className="text-xl md:text-2xl font-semibold mb-3">
+                <HeadingText className="mb-3 text-xl font-semibold md:text-2xl">
                   {reason.title}
                 </HeadingText>
               </motion.div>
@@ -45,7 +45,7 @@ export default function Reason({}: Props) {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.2 }}
-                className="opacity-75 font-medium text-sm md:text-base"
+                className="text-sm font-medium opacity-75 md:text-base"
               >
                 {reason.description}
               </motion.p>
