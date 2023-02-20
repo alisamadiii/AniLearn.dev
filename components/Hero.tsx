@@ -11,43 +11,7 @@ import HeroIMG from "../assets/hero.webp";
 import HeadingText from "./HeadingText";
 import Link from "next/link";
 
-const developers: {
-  id: number;
-  name: string;
-  img: string;
-  twitter: string;
-}[] = [
-  {
-    id: 1,
-    name: "Csaba Kissi",
-    img: "https://pbs.twimg.com/profile_images/1454861068233228289/6sn9BYOf_400x400.jpg",
-    twitter: "https://twitter.com/csaba_kissi",
-  },
-  {
-    id: 2,
-    name: "Francesco",
-    img: "https://pbs.twimg.com/profile_images/1617044903636123650/pYUcGGOu_400x400.jpg",
-    twitter: "https://twitter.com/FrancescoCiull4",
-  },
-  {
-    id: 3,
-    name: "Savio ッ",
-    img: "https://pbs.twimg.com/profile_images/1617899739172995072/qF-3t5w8_400x400.jpg",
-    twitter: "https://twitter.com/saviomartin7",
-  },
-  {
-    id: 4,
-    name: "Graham",
-    img: "https://pbs.twimg.com/profile_images/1609891169500004353/5ZhB2ZTV_400x400.jpg",
-    twitter: "https://twitter.com/GrahamTheDev",
-  },
-  {
-    id: 5,
-    name: "Madza",
-    img: "https://pbs.twimg.com/profile_images/1526471322762715136/w25QtNnl_400x400.jpg",
-    twitter: "https://twitter.com/madzadev",
-  },
-];
+import { DEVELOPERS } from "@/content/Details";
 
 type Props = {};
 
@@ -70,7 +34,7 @@ export default function Hero({}: Props) {
       </button>
       <div className="flex items-center gap-4 my-4">
         <div className="flex my-8 space-x-img_overlapping">
-          {developers.map((developer) => (
+          {DEVELOPERS.map((developer) => (
             <Link
               key={developer.id}
               href={developer.twitter}
