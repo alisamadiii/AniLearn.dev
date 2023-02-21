@@ -46,14 +46,11 @@ body {
 }
 
 pre {
-  @apply w-full sm:w-full;
-  /* background-color: red;
-  padding: 1em; */
-  /* overflow-x: hidden; */
+  @apply w-full sm:w-full max-w-[500px] lg:max-w-full;
 }
 
 .hljs {
-  @apply text-sm md:text-base;
+  @apply w-full text-sm md:text-base;
   background: #000a1e !important;
   padding: 1em !important;
   border-radius: 0.5em;

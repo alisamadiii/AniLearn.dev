@@ -38,4 +38,6 @@ export type NavProps = {
   }[];
   technology: string;
   slug?: string | string[] | undefined;
+  isOpen?: boolean;
+  setIsOpen?: any;
 };

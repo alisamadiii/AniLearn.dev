@@ -107,6 +107,11 @@ const NavbarSmall = ({ setIsOpen, onClickHandler }: INavbarSmall) => {
         >
           Start Watching
         </button>
+        <p className="mt-auto text-sm opacity-80">
+          Visual videos are a highly engaging way to learn. They can hold your
+          attention, increase your focus and make learning more interesting and
+          enjoyable.
+        </p>
       </motion.ul>
     </>
   );

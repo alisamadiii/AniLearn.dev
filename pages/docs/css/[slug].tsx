@@ -12,9 +12,9 @@ import "highlight.js/styles/atom-one-dark.css";
 
 import Container from "@/components/Container";
 import { cssPathFiles, cssFileNames } from "@/utils/mdxFies";
-import { AiOutlineMenu, AiFillEdit } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
 
-import Navbar from "@/components/blog-styles/Navbar";
+import Navbar, { NavbarSmall } from "@/components/blog-styles/Navbar";
 import { MDXComponents } from "@/components/blog-styles/MDXComponents";
 import Link from "next/link";
 
@@ -57,19 +57,19 @@ export default function Slug({ data, mdxSource }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
+
+      <NavbarSmall setIsOpen={setIsOpen} />
+
       <Container className="flex items-start gap-8 px-4 mt-24 md:px-8">
-        <Navbar links={sortingArray} slug={slug} technology="CSS" />
+        <Navbar
+          links={sortingArray}
+          slug={slug}
+          technology="CSS"
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
 
-        <div
-          className={`md:hidden bg-black text-white p-3 rounded-full fixed bottom-4 left-4 ${
-            isOpen && "translate-x-64"
-          } duration-200 z-50`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <AiOutlineMenu />
-        </div>
-
-        <div className="w-full pb-24" id="content">
+        <div className="w-full pb-24 mt-12 md:mt-0" id="content">
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
           <Link
             href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/${slug}.mdx`}

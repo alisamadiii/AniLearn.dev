@@ -6,7 +6,7 @@ type Props = {};
 export default function Index() {
   return (
     <div className="mt-32">
-      <Docs />
+      <Docs headingText="Documentations" />
     </div>
   );
 }
