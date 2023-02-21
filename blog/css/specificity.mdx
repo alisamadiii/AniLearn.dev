@@ -2,72 +2,133 @@
 title: Specificity
 author: Ali Reza
 category: [css]
+description: The selector that is more specific than another one is going to win. (id, class, tag)
 order: 2
+edit: https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/specificity.mdx
 ---
 
 # Specificity
 
-## Specificity
+## What is Specificity?
 
-There are three ways of inserting a style sheet:
+If there are two or more CSS rules that point to the same element, the selector with the highest specificity value will "win", and its style declaration will be applied to that HTML element.
 
-- External CSS
-- Internal CSS
-- Inline CSS
+Think of specificity as a score/rank that determines which style declaration is ultimately applied to an element.
 
-## External CSS
-
-With an external style sheet, you can change the look of an entire website by changing just one file!
+Look at the following examples:
 
 ```html index.html
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="mystyle.css" />
-  </head>
-  <body>
-    <h1>This is a heading</h1>
-    <p>This is a paragraph.</p>
-  </body>
-</html>
-```
-
-## Internal CSS
-
-An internal style sheet may be used if one single HTML page has a unique style.
-
-```html
-<!DOCTYPE html>
 <html>
   <head>
     <style>
-      body {
-        background-color: linen;
-      }
-
-      h1 {
-        color: maroon;
-        margin-left: 40px;
+      p {
+        color: red;
       }
     </style>
   </head>
   <body>
-    <h1>This is a heading</h1>
-    <p>This is a paragraph.</p>
+    <p>Hello World!</p>
   </body>
 </html>
 ```
 
-## Inline CSS
+Now, look at example 2:
 
-An inline style may be used to apply a unique style for a single element.
+## Example 2
+
+In this example, we have added a class selector (named "test"), and specified a green color for this class. The text will now be green (even though we have specified a red color for the element selector "p"). This is because the class selector is given higher priority:
 
 ```html
-<!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      .test {
+        color: green;
+      }
+      p {
+        color: red;
+      }
+    </style>
+  </head>
   <body>
-    <h1 style="color:blue;text-align:center;">This is a heading</h1>
-    <p style="color:red;">This is a paragraph.</p>
+    <p class="test">Hello World!</p>
   </body>
 </html>
 ```
+
+Now, look at example 3:
+
+## Example 3
+
+In this example, we have added the id selector (named "demo"). The text will now be blue, because the id selector is given higher priority:
+
+```html
+<html>
+  <head>
+    <style>
+      #demo {
+        color: blue;
+      }
+      .test {
+        color: green;
+      }
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo" class="test">Hello World!</p>
+  </body>
+</html>
+```
+
+Now, look at example 4:
+
+## Example 4
+
+In this example, we have added an inline style for the "p" element. The text will now be pink, because the inline style is given the highest priority:
+
+```html
+<html>
+  <head>
+    <style>
+      #demo {
+        color: blue;
+      }
+      .test {
+        color: green;
+      }
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo" class="test" style="color: pink;">Hello World!</p>
+  </body>
+</html>
+```
+
+## Specificity Hierarchy
+
+Every CSS selector has its place in the specificity hierarchy.
+
+There are four categories which define the specificity level of a selector:
+
+- **Inline styles** - Example:
+- **IDs** - Example: #navbar
+- **Classes, pseudo-classes, attribute selectors** - Example: .test, :hover, [href]
+- **Elements and pseudo-elements** - Example: h1, :before
+
+<hr />
+
+## How to Calculate Specificity?
+
+Memorize how to calculate specificity!
+
+Start at 0, add 100 for each ID value, add 10 for each class value (or pseudo-class or attribute selector), add 1 for each element selector or pseudo-element.
+
+> **Note**: Inline style gets a specificity value of 1000, and is always given the highest priority!
+
+> **Note 2**: There is one exception to this rule: if you use the !important rule, it will even override inline styles!

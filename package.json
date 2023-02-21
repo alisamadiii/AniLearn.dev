@@ -26,6 +26,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-masonry-css": "^1.0.16",
+    "reading-time": "^1.5.0",
     "rehype-highlight": "^6.0.0",
     "typescript": "4.9.5"
   },

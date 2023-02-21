@@ -12,10 +12,11 @@ import "highlight.js/styles/atom-one-dark.css";
 
 import Container from "@/components/Container";
 import { cssPathFiles, cssFileNames } from "@/utils/mdxFies";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiFillEdit } from "react-icons/ai";
 
 import Navbar from "@/components/blog-styles/Navbar";
 import { MDXComponents } from "@/components/blog-styles/MDXComponents";
+import Link from "next/link";
 
 type Props = {
   data: {
@@ -24,6 +25,14 @@ type Props = {
       author: string;
       category: string[];
       order: number;
+      description: string;
+      edit: string;
+    };
+    readingTime: {
+      minutes: number;
+      text: string;
+      time: number;
+      words: number;
     };
     slug: string;
   }[];
@@ -62,6 +71,12 @@ export default function Slug({ data, mdxSource }: Props) {
 
         <div className="w-full pb-24" id="content">
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
+          <Link
+            href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/${slug}.mdx`}
+            className="flex items-center gap-2 mt-8 text-lg opacity-75 hover:opacity-100"
+          >
+            Edit the page <AiFillEdit />
+          </Link>
         </div>
       </Container>
     </>

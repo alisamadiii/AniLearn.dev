@@ -5,6 +5,14 @@ export type BlogProps = {
       category: string[];
       author: string;
       order: number;
+      description: string;
+      edit: string;
+    };
+    readingTime: {
+      minutes: number;
+      text: string;
+      time: number;
+      words: number;
     };
     slug: string;
   }[];
@@ -17,6 +25,14 @@ export type NavProps = {
       category: string[];
       author: string;
       order: number;
+      description: string;
+      edit: string;
+    };
+    readingTime: {
+      minutes: number;
+      text: string;
+      time: number;
+      words: number;
     };
     slug: string;
   }[];
