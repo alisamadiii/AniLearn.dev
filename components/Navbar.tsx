@@ -85,7 +85,7 @@ const NavbarSmall = ({ setIsOpen, onClickHandler }: INavbarSmall) => {
           AniLearn.dev
         </h1>
         <Link
-          href={"/docs/intro"}
+          href={"/docs"}
           className="px-4 py-2"
           onClick={() => setIsOpen(false)}
         >

@@ -68,3 +68,13 @@ pre {
 #content img {
   @apply w-full p-1 my-8 border-2 shadow-2xl rounded-2xl;
 }
+
+.card-hover:hover {
+  @apply text-white bg-primary border-primary;
+}
+
+@media (min-width: 1024px) {
+  .card-hover:hover ~ .card-hover {
+    @apply scale-95 translate-x-48 opacity-80 rotate-12;
+  }
+}

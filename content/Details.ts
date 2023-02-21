@@ -82,3 +82,38 @@ export const REASONS: IReasonTypes = [
       "Visual videos can be a cost-effective way of learning. Many educational videos are available for free on platforms like YouTube or Khan Academy, and even premium educational videos are often less expensive than traditional classroom-based training.",
   },
 ];
+
+type DocsTypes = {
+  id: number;
+  technology: string;
+  description: string;
+  link: string;
+}[];
+
+export const DOCS: DocsTypes = [
+  {
+    id: 1,
+    technology: "HTML",
+    description: "is the standard markup language for Web pages.",
+    link: "/docs/html",
+  },
+  {
+    id: 2,
+    technology: "CSS",
+    description: "is the language we use to style an HTML document.",
+    link: "/docs/css",
+  },
+  {
+    id: 3,
+    technology: "JS",
+    description: "is the programming language of the Web.",
+    link: "/docs/js",
+  },
+  {
+    id: 4,
+    technology: "Open Source",
+    description:
+      "Open source software is code that is designed to be publicly accessible",
+    link: "/docs/open-source",
+  },
+];

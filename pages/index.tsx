@@ -27,6 +27,7 @@ const dm_sans = DM_Sans({
 // Types
 import { TestimonialTypes } from "@/types/Testimonial";
 import Reason from "@/components/Reason";
+import Docs from "@/components/Docs";
 
 export default function Home() {
   const [testimonials, setTestimonials] = useState<TestimonialTypes>([]);
@@ -78,6 +79,7 @@ doesn't get easier than this"
         <Hero />
         <Information />
         <Reason />
+        <Docs />
         <Buying />
         <Container className="relative px-4 py-24 md:px-8">
           <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3 mb-8">
