@@ -12,7 +12,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 
 import Container from "@/components/Container";
-import { fileNames, pathFiles } from "@/utils/mdxFies";
+import { cssPathFiles, cssFileNames } from "@/utils/mdxFies";
 import { AiOutlineMenu } from "react-icons/ai";
 
 import Heading from "@/components/blog-styles/Heading";
@@ -24,7 +24,12 @@ import Anchor from "@/components/blog-styles/Anchor";
 
 type Props = {
   data: {
-    frontmatter: { title: string; author: string; category: string[] };
+    frontmatter: {
+      title: string;
+      author: string;
+      category: string[];
+      order: number;
+    };
     slug: string;
   }[];
   mdxSource: any;
@@ -41,33 +46,13 @@ const components = {
 
 export default function Slug({ data, mdxSource }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const [first, setFirst] = useState<any[]>([]);
-  const [html, setHtml] = useState<any[]>([]);
-  const [css, setCss] = useState<any[]>([]);
 
   const router = useRouter();
   const { slug } = router.query;
 
-  useEffect(() => {
-    const filteringFirst = data.filter((h) => {
-      return h.frontmatter.category.includes("first");
-    });
-    setFirst(filteringFirst);
-  }, []);
-
-  useEffect(() => {
-    const filteringHTML = data.filter((h) => {
-      return h.frontmatter.category.includes("html");
-    });
-    setHtml(filteringHTML);
-  }, []);
-
-  useEffect(() => {
-    const filteringCSS = data.filter((h) => {
-      return h.frontmatter.category.includes("css");
-    });
-    setCss(filteringCSS);
-  }, []);
+  const sortingArray = data.sort((a, b) => {
+    return a.frontmatter.order - b.frontmatter.order;
+  });
 
   return (
     <>
@@ -77,54 +62,19 @@ export default function Slug({ data, mdxSource }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <Container className="mt-24 flex items-start gap-8 px-4 md:px-8">
+      <Container className="flex items-start gap-8 px-4 mt-24 md:px-8">
         <nav
-          className={`fixed bg-white md:bg-transparent md:sticky top-0 md:top-24 left-0 h-screen md:h-auto z-50 ${
-            isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-          } duration-200`}
+          className={`fixed bg-white md:bg-transparent md:sticky top-0 md:top-24 left-0 h-screen md:h-auto z-50  duration-200`}
         >
-          <div className="w-64">
-            {first.map((d) => (
-              <Link
-                key={d.frontmatter.title}
-                href={`/docs/${d.slug.replace(".mdx", "")}`}
-              >
-                <p className="p-4">{d.slug.replace(".mdx", "")}</p>
-              </Link>
-            ))}
-          </div>
-          <div className="w-64 px-4">
-            <h1 className="font-medium">HTML</h1>
-            {html.map((d) => (
-              <Link
-                key={d.frontmatter.title}
-                href={`/docs/${d.slug.replace(".mdx", "")}`}
-              >
-                <p
-                  className={`px-4 py-1 mt-2 border-l-2 hover:border-primary ${
-                    slug == d.slug.replace(".mdx", "")
-                      ? "text-primary border-primary"
-                      : "border-transparent"
-                  }`}
-                >
-                  {d.slug.replace(".mdx", "")}
-                </p>
-              </Link>
-            ))}
-          </div>
           <div className="w-64 px-4 mt-4">
             <h1 className="font-medium">CSS</h1>
-            {css.map((d) => (
+            {sortingArray.map((d) => (
               <Link
                 key={d.frontmatter.title}
-                href={`/docs/${d.slug.replace(".mdx", "")}`}
+                href={`${d.slug.replace(".mdx", "")}`}
               >
                 <p
-                  className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize ${
-                    slug == d.slug.replace(".mdx", "")
-                      ? "text-primary border-primary"
-                      : "border-transparent"
-                  }`}
+                  className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize`}
                 >
                   {d.slug.replace(".mdx", "").replaceAll("-", " ")}
                 </p>
@@ -151,8 +101,8 @@ export default function Slug({ data, mdxSource }: Props) {
 }
 
 export const getStaticProps = async ({ params }: any) => {
-  const posts = fileNames.map((slug: any) => {
-    const content = fs.readFileSync(path.join(pathFiles, slug));
+  const posts = cssFileNames.map((slug: any) => {
+    const content = fs.readFileSync(path.join(cssPathFiles, slug));
     const { data } = matter(content);
     return {
       frontmatter: data,
@@ -161,7 +111,7 @@ export const getStaticProps = async ({ params }: any) => {
   });
 
   const { slug } = params;
-  const filePath = path.join(pathFiles, `${slug}.mdx`);
+  const filePath = path.join(cssPathFiles, `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter, content } = matter(fileContent);
   const mdxSource = await serialize(content, {
@@ -181,7 +131,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export async function getStaticPaths() {
-  const postsPath = fileNames.map((slug: any) => {
+  const postsPath = cssFileNames.map((slug: any) => {
     return {
       params: {
         slug: slug.replace(/\.mdx?$/, ""),
