@@ -4,21 +4,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Container } from "@/components";
-import Link from "next/link";
+import Navbar from "@/components/blog-styles/Navbar";
+import { BlogProps } from "@/types/Blogs";
 
-type Props = {
-  blogs: {
-    frontmatter: {
-      title: string;
-      category: string[];
-      author: string;
-      order: number;
-    };
-    slug: string;
-  }[];
-};
-
-export default function Index({ blogs }: Props) {
+export default function Index({ blogs }: BlogProps) {
   const sortingArray = blogs.sort((a, b) => {
     return a.frontmatter.order - b.frontmatter.order;
   });
@@ -27,25 +16,7 @@ export default function Index({ blogs }: Props) {
 
   return (
     <Container className="mt-24">
-      <nav
-        className={`fixed bg-white md:bg-transparent md:sticky top-0 md:top-24 left-0 h-screen md:h-auto z-50  duration-200`}
-      >
-        <div className="w-64 px-4 mt-4">
-          <h1 className="font-medium">CSS</h1>
-          {sortingArray.map((d) => (
-            <Link
-              key={d.frontmatter.title}
-              href={`css/${d.slug.replace(".mdx", "")}`}
-            >
-              <p
-                className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize`}
-              >
-                {d.slug.replace(".mdx", "").replaceAll("-", " ")}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <Navbar links={sortingArray} technology="CSS" />
     </Container>
   );
 }

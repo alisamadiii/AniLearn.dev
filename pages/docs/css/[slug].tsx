@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import rehypeHighlight from "rehype-highlight";
@@ -15,12 +14,8 @@ import Container from "@/components/Container";
 import { cssPathFiles, cssFileNames } from "@/utils/mdxFies";
 import { AiOutlineMenu } from "react-icons/ai";
 
-import Heading from "@/components/blog-styles/Heading";
-import Heading2 from "@/components/blog-styles/Heading2";
-import Text from "@/components/blog-styles/Text";
-import List from "@/components/blog-styles/List";
-import BlockQuote from "@/components/blog-styles/BlockQuote";
-import Anchor from "@/components/blog-styles/Anchor";
+import Navbar from "@/components/blog-styles/Navbar";
+import { MDXComponents } from "@/components/blog-styles/MDXComponents";
 
 type Props = {
   data: {
@@ -33,15 +28,6 @@ type Props = {
     slug: string;
   }[];
   mdxSource: any;
-};
-
-const components = {
-  h1: (props: any) => <Heading {...props}></Heading>,
-  h2: (props: any) => <Heading2 {...props}></Heading2>,
-  p: (props: any) => <Text {...props}></Text>,
-  ul: (props: any) => <List {...props}></List>,
-  blockquote: (props: any) => <BlockQuote {...props}></BlockQuote>,
-  a: (props: any) => <Anchor {...props}></Anchor>,
 };
 
 export default function Slug({ data, mdxSource }: Props) {
@@ -63,25 +49,7 @@ export default function Slug({ data, mdxSource }: Props) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <Container className="flex items-start gap-8 px-4 mt-24 md:px-8">
-        <nav
-          className={`fixed bg-white md:bg-transparent md:sticky top-0 md:top-24 left-0 h-screen md:h-auto z-50  duration-200`}
-        >
-          <div className="w-64 px-4 mt-4">
-            <h1 className="font-medium">CSS</h1>
-            {sortingArray.map((d) => (
-              <Link
-                key={d.frontmatter.title}
-                href={`${d.slug.replace(".mdx", "")}`}
-              >
-                <p
-                  className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize`}
-                >
-                  {d.slug.replace(".mdx", "").replaceAll("-", " ")}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </nav>
+        <Navbar links={sortingArray} slug={slug} technology="CSS" />
 
         <div
           className={`md:hidden bg-black text-white p-3 rounded-full fixed bottom-4 left-4 ${
@@ -93,7 +61,7 @@ export default function Slug({ data, mdxSource }: Props) {
         </div>
 
         <div className="w-full pb-24" id="content">
-          <MDXRemote {...mdxSource} components={components}></MDXRemote>
+          <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
         </div>
       </Container>
     </>

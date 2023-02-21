@@ -41,7 +41,7 @@ export default function Navbar({}: Props) {
           onClick={() => setIsOpen(true)}
         />
         <ul className="hidden space-x-8 md:block">
-          <Link href={"/docs/intro"} className="opacity-80 hover:opacity-100">
+          <Link href={"/docs"} className="opacity-80 hover:opacity-100">
             Docs
           </Link>
           <Link href={"/pricing"} className="opacity-80 hover:opacity-100">
