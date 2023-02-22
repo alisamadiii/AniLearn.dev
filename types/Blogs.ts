@@ -1,3 +1,24 @@
+export type SlugProps = {
+  data: {
+    frontmatter: {
+      title: string;
+      author: string;
+      category: string[];
+      order: number;
+      description: string;
+      edit: string;
+    };
+    readingTime: {
+      minutes: number;
+      text: string;
+      time: number;
+      words: number;
+    };
+    slug: string;
+  }[];
+  mdxSource: any;
+};
+
 export type BlogProps = {
   blogs: {
     frontmatter: {

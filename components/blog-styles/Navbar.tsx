@@ -29,6 +29,7 @@ export default function Navbar({
                   ? d.slug.replace(".mdx", "")
                   : `${technology.toLowerCase()}/${d.slug.replace(".mdx", "")}`
               }`}
+              onClick={() => setIsOpen(false)}
             >
               <p
                 className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize ${

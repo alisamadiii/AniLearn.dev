@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
 
-// // HTML
-// export const htmlPathFiles = path.join(process.cwd(), "blog/html");
-// export const htmlFileNames = fs.readdirSync(htmlPathFiles, {
-//   withFileTypes: false,
-// });
+// HTML
+export const htmlPathFiles = path.join(process.cwd(), "blog/html");
+export const htmlFileNames = fs.readdirSync(htmlPathFiles, {
+  withFileTypes: false,
+});
 
 // CSS
 export const cssPathFiles = path.join(process.cwd(), "blog/css");

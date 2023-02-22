@@ -8,11 +8,11 @@ import Masonry from "react-masonry-css";
 import readingTime from "reading-time";
 
 // Components + filePath/fileNames
-import { cssPathFiles, cssFileNames } from "@/utils/mdxFiles";
+import { htmlPathFiles, htmlFileNames } from "@/utils/mdxFiles";
 import { Container, HeadingText } from "@/components";
 
 // Icons
-import { FaCss3Alt } from "react-icons/fa";
+import { AiFillHtml5 } from "react-icons/ai";
 
 // Types
 import { BlogProps } from "@/types/Blogs";
@@ -31,7 +31,7 @@ export default function Index({ blogs }: BlogProps) {
   return (
     <Container className="px-4 mt-24 md:px-8">
       <HeadingText className="flex items-center justify-center gap-2 font-black text-center text-8xl">
-        CSS <FaCss3Alt className="text-primary" />
+        HTML <AiFillHtml5 className="text-orange-600" />
       </HeadingText>
       <Masonry
         breakpointCols={breakpointColumnsObj}
@@ -41,7 +41,7 @@ export default function Index({ blogs }: BlogProps) {
         {sortingArray.map((docs) => (
           <Link
             key={docs.frontmatter.title}
-            href={`css/${docs.slug.replace(".mdx", "")}`}
+            href={`html/${docs.slug.replace(".mdx", "")}`}
             className="inline-block w-full p-4 mt-4 bg-white border-2 rounded-lg hover:border-primary hover:shadow-md"
           >
             <HeadingText className="mb-2 text-2xl font-bold">
@@ -59,8 +59,8 @@ export default function Index({ blogs }: BlogProps) {
 }
 
 export const getStaticProps = async () => {
-  const posts = cssFileNames.map((slug: any) => {
-    const content = fs.readFileSync(path.join(cssPathFiles, slug));
+  const posts = htmlFileNames.map((slug: any) => {
+    const content = fs.readFileSync(path.join(htmlPathFiles, slug));
     const { data, content: contents } = matter(content);
     return {
       frontmatter: data,
