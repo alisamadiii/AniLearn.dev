@@ -5,6 +5,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 import { NavProps } from "@/types/Blogs";
 
+import { HiArrowNarrowRight } from "react-icons/hi";
+
 export default function Navbar({
   links,
   technology,
@@ -55,18 +57,35 @@ export default function Navbar({
 
 type NavbarSmallProps = {
   setIsOpen: (a: boolean) => void;
+  technology?: string;
+  title?: string;
 };
 
-export const NavbarSmall = ({ setIsOpen }: NavbarSmallProps) => {
+export const NavbarSmall = ({
+  setIsOpen,
+  technology,
+  title,
+}: NavbarSmallProps) => {
   return (
-    <div className="fixed z-20 flex items-center w-full gap-3 px-4 bg-white border-b-2 opacity-95 backdrop-blur-md md:hidden h-14 top-16 md:px-8">
+    <div className="fixed z-20 flex items-center w-full gap-2 px-4 bg-white border-b-2 opacity-95 backdrop-blur-md md:hidden h-14 top-16 md:px-8">
       <AiOutlineMenu className="text-xl" onClick={() => setIsOpen(true)} />
       <Link
         href={"/docs"}
-        className="px-3 py-1 text-sm rounded-full bg-opacity-30 bg-primary"
+        className="px-3 py-1 text-xs rounded-full sm:text-sm bg-opacity-30 bg-primary"
       >
         Home
       </Link>
+      <HiArrowNarrowRight />
+      <Link
+        href={"/docs/css"}
+        className="px-3 py-1 text-xs rounded-full sm:text-sm bg-opacity-20 bg-slate-300"
+      >
+        {technology}
+      </Link>
+      <HiArrowNarrowRight />
+      <button className="px-3 py-1 text-xs truncate rounded-full sm:text-sm bg-opacity-20 bg-slate-300">
+        {title}
+      </button>
     </div>
   );
 };

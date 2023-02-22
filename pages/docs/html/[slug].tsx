@@ -18,6 +18,7 @@ import Head from "@/components/blog-styles/Head";
 
 // Icons
 import { AiFillEdit } from "react-icons/ai";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 // Types
 import { SlugProps } from "@/types/Blogs";
@@ -40,7 +41,11 @@ export default function Slug({ data, mdxSource }: SlugProps) {
     <>
       <Head title={findingData!.frontmatter.title} content={findingData!} />
 
-      <NavbarSmall setIsOpen={setIsOpen} />
+      <NavbarSmall
+        setIsOpen={setIsOpen}
+        technology="HTML"
+        title={findingData!.frontmatter.title}
+      />
 
       <Container className="flex items-start gap-8 px-4 mt-24 md:px-8">
         <Navbar
@@ -52,6 +57,25 @@ export default function Slug({ data, mdxSource }: SlugProps) {
         />
 
         <div className="w-full pb-24 mt-12 md:mt-0" id="content">
+          <div className="items-center hidden gap-2 mb-8 md:flex">
+            <Link
+              href={"/docs"}
+              className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-primary"
+            >
+              Home
+            </Link>
+            <HiArrowNarrowRight />
+            <Link
+              href={"/docs/css"}
+              className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-slate-300"
+            >
+              HTML
+            </Link>
+            <HiArrowNarrowRight />
+            <button className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-slate-300">
+              {findingData!.frontmatter.title}
+            </button>
+          </div>
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
           <Link
             href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/${slug}.mdx`}
