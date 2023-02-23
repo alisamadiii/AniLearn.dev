@@ -10,7 +10,7 @@ import { MDXRemote } from "next-mdx-remote";
 import rehypeHighlight from "rehype-highlight";
 
 // Components + filePath/fileNames
-import { htmlPathFiles, htmlFileNames } from "@/utils/mdxFiles";
+import { openSourcePathFiles, openSourceFileNames } from "@/utils/mdxFiles";
 import Container from "@/components/Container";
 import Navbar, { NavbarSmall } from "@/components/blog-styles/Navbar";
 import { MDXComponents } from "@/components/blog-styles/MDXComponents";
@@ -44,7 +44,7 @@ export default function Slug({ data, mdxSource }: SlugProps) {
 
       <NavbarSmall
         setIsOpen={setIsOpen}
-        technology="HTML"
+        technology="Open Source"
         title={findingData!.frontmatter.title}
       />
 
@@ -52,7 +52,7 @@ export default function Slug({ data, mdxSource }: SlugProps) {
         <Navbar
           links={sortingArray}
           slug={slug}
-          technology="HTML"
+          technology="Open Source"
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
@@ -67,10 +67,10 @@ export default function Slug({ data, mdxSource }: SlugProps) {
             </Link>
             <HiArrowNarrowRight />
             <Link
-              href={"/docs/html"}
+              href={"/docs/open-source"}
               className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-slate-300"
             >
-              HTML
+              Open Source
             </Link>
             <HiArrowNarrowRight />
             <button className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-slate-300">
@@ -97,8 +97,8 @@ export default function Slug({ data, mdxSource }: SlugProps) {
 }
 
 export const getStaticProps = async ({ params }: any) => {
-  const posts = htmlFileNames.map((slug: any) => {
-    const content = fs.readFileSync(path.join(htmlPathFiles, slug));
+  const posts = openSourceFileNames.map((slug: any) => {
+    const content = fs.readFileSync(path.join(openSourcePathFiles, slug));
     const { data } = matter(content);
     return {
       frontmatter: data,
@@ -107,7 +107,7 @@ export const getStaticProps = async ({ params }: any) => {
   });
 
   const { slug } = params;
-  const filePath = path.join(htmlPathFiles, `${slug}.mdx`);
+  const filePath = path.join(openSourcePathFiles, `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data: frontmatter, content } = matter(fileContent);
   const mdxSource = await serialize(content, {
@@ -127,7 +127,7 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 export async function getStaticPaths() {
-  const postsPath = htmlFileNames.map((slug: any) => {
+  const postsPath = openSourceFileNames.map((slug: any) => {
     return {
       params: {
         slug: slug.replace(/\.mdx?$/, ""),
