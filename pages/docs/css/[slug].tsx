@@ -77,12 +77,6 @@ export default function Slug({ data, mdxSource }: SlugProps) {
             </button>
           </div>
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
-          <Author
-            name={findingData!.frontmatter.author}
-            image={findingData!.frontmatter.image}
-            headline={findingData!.frontmatter.headline}
-            social_link={findingData!.frontmatter.link}
-          />
           <Link
             href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/${slug}.mdx`}
             className="flex items-center gap-2 mt-8 text-lg opacity-75 hover:opacity-100"
