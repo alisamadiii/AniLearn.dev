@@ -4,10 +4,8 @@ type props = {
   children: React.ReactNode;
 };
 
-const Text = ({ children }: props) => {
+export default function Heading2({ children }: props) {
   return (
-    <h2 className="text-2xl opacity-80 mt-8 mb-4 font-bold">{children}</h2>
+    <h2 className="mt-8 mb-4 text-3xl font-bold opacity-80">{children}</h2>
   );
-};
-
-export default Text;
+}

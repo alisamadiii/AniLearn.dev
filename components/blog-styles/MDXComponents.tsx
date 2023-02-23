@@ -1,6 +1,8 @@
 import {
   Heading,
   Heading2,
+  Heading3,
+  Heading4,
   Text,
   List,
   BlockQuote,
@@ -9,11 +11,14 @@ import {
   Warning,
   Error,
   Success,
+  Charts,
 } from "./elements";
 
 export const MDXComponents = {
   h1: (props: any) => <Heading {...props}></Heading>,
   h2: (props: any) => <Heading2 {...props}></Heading2>,
+  h3: (props: any) => <Heading3 {...props}></Heading3>,
+  h4: (props: any) => <Heading4 {...props}></Heading4>,
   p: (props: any) => <Text {...props}></Text>,
   ul: (props: any) => <List {...props}></List>,
   blockquote: (props: any) => <BlockQuote {...props}></BlockQuote>,
@@ -22,4 +27,5 @@ export const MDXComponents = {
   Warning,
   Error,
   Success,
+  Charts,
 };
