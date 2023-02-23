@@ -11,10 +11,13 @@ import rehypeHighlight from "rehype-highlight";
 
 // Components + filePath/fileNames
 import { jsPathFiles, jsFileNames } from "@/utils/mdxFiles";
-import Container from "@/components/Container";
-import Navbar, { NavbarSmall } from "@/components/blog-styles/Navbar";
-import { MDXComponents } from "@/components/blog-styles/MDXComponents";
-import Head from "@/components/blog-styles/Head";
+import Container from "@/layouts/Container";
+import {
+  Head,
+  Navbar,
+  NavbarSmall,
+  MDXComponents,
+} from "@/components/blog-styles";
 
 // Icons
 import { AiFillEdit } from "react-icons/ai";

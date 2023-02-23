@@ -1,4 +1,4 @@
-import HeadingText from "@/components/HeadingText";
+import HeadingText from "@/layouts/HeadingText";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -7,12 +7,10 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 type Props = {};
 
+import { ThanksMessage, Star, FormError, Input } from "@/components";
+
 import Profile from "../assets/profile.jpg";
 import { AiFillBackward } from "react-icons/ai";
-import Input from "@/components/Input";
-import ThanksMessage from "@/components/ThanksMessage";
-import Star from "@/components/Star";
-import FormError from "@/components/FormError";
 
 const INITIAL_VALUE = {
   name: "",
@@ -23,7 +21,7 @@ const INITIAL_VALUE = {
   image: "",
 };
 
-export default function AddingTestimonial(props: Props) {
+export default function AddingTestimonial({}: Props) {
   const [star, setStar] = useState(5);
   const [formNum, setFormNum] = useState(1);
   const [userInformation, setUserInformation] = useState(INITIAL_VALUE);

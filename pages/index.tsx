@@ -12,8 +12,14 @@ import { db } from "@/utils/firebase/Firebase";
 import { collection, query, orderBy, where, getDocs } from "firebase/firestore";
 
 // Components
-import { Hero, Information, Buying, Testimonial, Contents } from "@/components";
-import { Container, HeadingText } from "@/components";
+import { Hero, Information, Buying, Reason } from "@/components/Home Page";
+import {
+  Testimonial,
+  Contents,
+  Container,
+  HeadingText,
+  Docs,
+} from "@/components";
 
 // Fonts
 import { DM_Sans } from "@next/font/google";
@@ -26,12 +32,9 @@ const dm_sans = DM_Sans({
 
 // Types
 import { TestimonialTypes } from "@/types/Testimonial";
-import Reason from "@/components/Reason";
-import Docs from "@/components/Docs";
 
 export default function Home() {
   const [testimonials, setTestimonials] = useState<TestimonialTypes>([]);
-  // const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
 
   const { isContentOpen } = useContext(ContentsContext);
 

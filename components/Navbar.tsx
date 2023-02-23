@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-import Container from "./Container";
+import Container from "../layouts/Container";
 
 import { ContentsContext } from "@/context/Contents";
 

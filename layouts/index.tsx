@@ -3,7 +3,7 @@ import React from "react";
 import { ContentsProvider } from "@/context/Contents";
 
 import Navbar from "@/components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 
 import "highlight.js/styles/atom-one-dark.css";
 

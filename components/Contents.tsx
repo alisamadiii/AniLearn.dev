@@ -4,14 +4,13 @@ import { ContentsContext } from "@/context/Contents";
 
 import { db } from "@/utils/firebase/Firebase";
 import { doc, onSnapshot } from "firebase/firestore";
+
 import Content from "./Content";
 
 import Masonry from "react-masonry-css";
 
 import { AiFillCloseSquare, AiOutlineMenu } from "react-icons/ai";
 import { HiInformationCircle } from "react-icons/hi";
-
-// import { ContentTypes } from "../content/Content";
 
 type Props = {};
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Container from "./Container";
+import Container from "../layouts/Container";
 
 type Props = {};
 

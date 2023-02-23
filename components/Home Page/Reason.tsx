@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 import { REASONS } from "@/content/Details";
 
-import Container from "./Container";
-import HeadingText from "./HeadingText";
+import Container from "../../layouts/Container";
+import HeadingText from "../../layouts/HeadingText";
 
 type Props = {};
 

@@ -1,8 +1,8 @@
 import { DOCS } from "@/content/Details";
 import Link from "next/link";
 import React from "react";
-import Container from "./Container";
-import HeadingText from "./HeadingText";
+import Container from "../layouts/Container";
+import HeadingText from "../layouts/HeadingText";
 
 type Props = {
   headingText: string;

@@ -6,9 +6,9 @@ import { ContentsContext } from "@/context/Contents";
 import { AiFillStar } from "react-icons/ai";
 import { GoPlay } from "react-icons/go";
 
-import HeroIMG from "../assets/hero.webp";
+import HeroIMG from "@/assets/hero.webp";
 
-import HeadingText from "./HeadingText";
+import HeadingText from "../../layouts/HeadingText";
 import Link from "next/link";
 
 import { DEVELOPERS } from "@/content/Details";

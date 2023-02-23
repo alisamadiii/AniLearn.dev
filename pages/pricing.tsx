@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 
-import Container from "@/components/Container";
+import Container from "@/layouts/Container";
 
 type Props = {};
 

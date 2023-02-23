@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
-import Container from "./Container";
-import HeadingText from "./HeadingText";
+import Container from "../../layouts/Container";
+import HeadingText from "../../layouts/HeadingText";
 
 import { ContentsContext } from "@/context/Contents";
 

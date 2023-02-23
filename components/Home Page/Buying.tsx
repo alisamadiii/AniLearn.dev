@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-import Container from "./Container";
-import HeadingText from "./HeadingText";
+import Container from "../../layouts/Container";
+import HeadingText from "../../layouts/HeadingText";
 
 type Props = {};
 
 import { BsCheckAll } from "react-icons/bs";
 import { GoPlay } from "react-icons/go";
-import PowerPoint from "./icons/PowerPoint";
+import PowerPoint from "../icons/PowerPoint";
 
 export default function Buying({}: Props) {
   return (

@@ -9,9 +9,9 @@ import { db } from "@/utils/firebase/Firebase";
 import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
 
 // Components
-import { Container, HeadingText, Testimonial } from "@/components";
-import Skeleton from "@/components/Skeleton";
+import { Container, HeadingText, Testimonial, Skeleton } from "@/components";
 
+// Icons
 import { BsJournalText } from "react-icons/bs";
 
 // Types
