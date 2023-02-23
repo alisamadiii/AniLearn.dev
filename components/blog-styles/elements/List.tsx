@@ -5,7 +5,7 @@ type props = {
 };
 
 const List = ({ children }: props) => {
-  return <ul className="list-disc pl-8 mb-8">{children}</ul>;
+  return <ul className="pl-8 mb-8 list-disc">{children}</ul>;
 };
 
 export default List;

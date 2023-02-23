@@ -15,14 +15,14 @@ import {
 } from "./elements";
 
 export const MDXComponents = {
-  h1: (props: any) => <Heading {...props}></Heading>,
-  h2: (props: any) => <Heading2 {...props}></Heading2>,
-  h3: (props: any) => <Heading3 {...props}></Heading3>,
-  h4: (props: any) => <Heading4 {...props}></Heading4>,
-  p: (props: any) => <Text {...props}></Text>,
-  ul: (props: any) => <List {...props}></List>,
-  blockquote: (props: any) => <BlockQuote {...props}></BlockQuote>,
-  a: (props: any) => <Anchor {...props}></Anchor>,
+  h1: Heading,
+  h2: Heading2,
+  h3: Heading3,
+  h4: Heading4,
+  p: Text,
+  ul: List,
+  blockquote: BlockQuote,
+  a: Anchor,
   Author,
   Warning,
   Error,
