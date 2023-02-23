@@ -1,5 +1,15 @@
-import { Heading, Heading2, Text, List, BlockQuote, Anchor } from "./elements";
-import Author from "./Author";
+import {
+  Heading,
+  Heading2,
+  Text,
+  List,
+  BlockQuote,
+  Anchor,
+  Author,
+  Warning,
+  Error,
+  Success,
+} from "./elements";
 
 export const MDXComponents = {
   h1: (props: any) => <Heading {...props}></Heading>,
@@ -9,4 +19,7 @@ export const MDXComponents = {
   blockquote: (props: any) => <BlockQuote {...props}></BlockQuote>,
   a: (props: any) => <Anchor {...props}></Anchor>,
   Author,
+  Warning,
+  Error,
+  Success,
 };

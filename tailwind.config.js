@@ -11,10 +11,16 @@ module.exports = {
       boxShadow: {
         button: "0 11px 31px rgba(0, 0, 0, .25)",
         card: "-1rem 0 20px rgba(0, 0, 0, .25)",
+        warning: "inset 0 0 5px",
+        error: "inset 0 0 5px",
+        success: "inset 0 0 5px",
       },
       colors: {
         primary: "#0057FF",
         paypal: "#002C8A",
+        warning: "#FFCC00",
+        error: "red",
+        success: "green",
       },
       space: {
         img_overlapping: "-10px",

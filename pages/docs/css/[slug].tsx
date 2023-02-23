@@ -22,7 +22,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 // Types
 import { SlugProps } from "@/types/Blogs";
-import Author from "@/components/blog-styles/Author";
+import Author from "@/components/blog-styles/elements/Author";
 
 export default function Slug({ data, mdxSource }: SlugProps) {
   const [isOpen, setIsOpen] = useState(false);

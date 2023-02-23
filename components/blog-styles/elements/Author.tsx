@@ -9,7 +9,7 @@ type Props = {
 };
 
 import { AiOutlineLink } from "react-icons/ai";
-import HeadingText from "../HeadingText";
+import HeadingText from "../../HeadingText";
 
 export default function Author({ name, image, headline, link }: Props) {
   return (
