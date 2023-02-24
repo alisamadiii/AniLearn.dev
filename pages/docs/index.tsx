@@ -14,7 +14,10 @@ export default function Index() {
         description="Learn by reading Docs"
       />
       <div className="mt-32">
-        <Docs headingText="Documentations" />
+        <Docs
+          headingText="Documentations"
+          paragraph="Discover the valuable insights and information you need to succeed by checking out our comprehensive documentation today!"
+        />
       </div>
     </>
   );

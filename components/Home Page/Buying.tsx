@@ -19,21 +19,21 @@ export default function Buying({}: Props) {
             Having the video & PowerPoint
           </HeadingText>
           <p className="text-lg">
-            If you want to have the video and source file (learning it), then
-            they are available in Gumroad.
+            If you want to access the video and source files for learning, they
+            are available on Gumroad
           </p>
           <ul className="text-base md:text-lg">
             <li className="flex gap-2">
               <BsCheckAll className="text-xl text-green-600" />
-              They are very short
+              You will learn about PowerPoint
             </li>
             <li className="flex items-center gap-2">
               <BsCheckAll className="text-xl text-green-600" />
-              Making content for HTML, CSS & JS
+              You will start your own content
             </li>
             <li className="flex items-center gap-2">
               <BsCheckAll className="text-xl text-green-600" />
-              They are free
+              You will watch high quality video
             </li>
           </ul>
           <Link

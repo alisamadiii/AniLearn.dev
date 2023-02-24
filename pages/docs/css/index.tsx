@@ -30,7 +30,7 @@ export default function Index({ blogs }: BlogProps) {
 
   return (
     <Container className="px-4 mt-24 md:px-8">
-      <HeadingText className="flex items-center justify-center gap-2 font-black text-center text-8xl">
+      <HeadingText className="flex items-center justify-center gap-2 text-3xl font-black text-center md:text-5xl lg:text-8xl">
         CSS <FaCss3Alt className="text-primary" />
       </HeadingText>
       <Masonry

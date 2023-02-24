@@ -21,8 +21,8 @@ export default function Information({}: Props) {
             Let animated content to help you
           </HeadingText>
           <p className="text-lg opacity-70">
-            We provide you the best content to learn something very easily. The
-            visual descriptions of development principles that We creates are
+            We provide the best content to learn something very easily. The
+            visual descriptions of development principles that We create are
             very clear.
           </p>
           <ul className="my-8 text-base opacity-70 md:text-lg">
