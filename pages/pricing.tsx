@@ -71,7 +71,7 @@ export default function Pricing({}: Props) {
               rel="noreferrer"
               className="inline-block w-full px-8 py-2 mt-4 text-center text-white rounded-md bg-paypal shadow-button"
             >
-              Support my work
+              Support our work
             </a>
           </div>
         </div>

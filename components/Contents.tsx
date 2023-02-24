@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ContentsContext } from "@/context/Contents";
 
 import { db } from "@/utils/firebase/Firebase";
-import { doc, onSnapshot, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 import Content from "./Content";
 
@@ -11,6 +11,7 @@ import Masonry from "react-masonry-css";
 
 import { AiFillCloseSquare, AiOutlineMenu } from "react-icons/ai";
 import { HiInformationCircle } from "react-icons/hi";
+import Skeleton from "./Skeleton";
 
 type Props = {};
 
@@ -39,6 +40,7 @@ export default function Contents({}: Props) {
   const [contents, setContents] = useState<any>({});
   const [isPrivacyOpen, setIsPrivacyOpen] = useState<boolean>(false);
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
+  const [skeleton, setSkeleton] = useState<boolean>(true);
 
   const { setIsContentOpen } = useContext(ContentsContext);
 
@@ -54,6 +56,7 @@ export default function Contents({}: Props) {
       const contents = await getDoc(docRef);
       const snapshot: any = { ...contents.data(), id: contents.id };
       setContents(snapshot);
+      setSkeleton(false);
     };
     gettingContents();
   }, [technology]);
@@ -113,17 +116,21 @@ export default function Contents({}: Props) {
             </li>
           </ul>
         </nav>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="w-full pt-4 pr-4 m-0 overflow-auto my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {contents.content &&
-            contents.content.map((content: any) => (
-              <Content key={content.title} content={content} />
-            ))}
-          <div className="w-full h-[100px] bg-gradient-to-t from-white to-transparent absolute bottom-[-30px] left-0 pointer-events-none"></div>
-        </Masonry>
+        {skeleton ? (
+          <Skeleton type="contents" />
+        ) : (
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="w-full pt-4 pr-4 m-0 overflow-auto my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {contents.content &&
+              contents.content.map((content: any) => (
+                <Content key={content.title} content={content} />
+              ))}
+            <div className="w-full h-[100px] bg-gradient-to-t from-white to-transparent absolute bottom-[-30px] left-0 pointer-events-none"></div>
+          </Masonry>
+        )}
 
         <div
           className={`w-full max-w-[400px] h-[400px] bg-white border-t-2 border-l-2 absolute right-0 bottom-0 p-4 duration-200 ${

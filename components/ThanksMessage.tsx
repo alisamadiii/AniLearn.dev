@@ -12,8 +12,8 @@ export default function ThanksMessage({}: Props) {
       <Image src={Profile} width={44} height={44} alt="" />
       <HeadingText className="text-xl font-medium">Thank You 🙏</HeadingText>
       <p className="opacity-80">
-        Thank you so much for your support! I appreciate your support and I hope
-        you enjoy seeing my content.
+        Thank you for your support! Your encouragement means a lot to me, and I
+        hope you find my content enjoyable and informative.
       </p>
     </div>
   );

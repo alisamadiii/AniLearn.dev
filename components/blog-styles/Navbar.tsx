@@ -78,7 +78,9 @@ export const NavbarSmall = ({
       <HiArrowNarrowRight />
       <Link
         href={"/docs/css"}
-        className="px-3 py-1 text-xs rounded-full sm:text-sm bg-opacity-20 bg-slate-300"
+        className={`px-3 py-1 text-xs rounded-full sm:text-sm bg-opacity-20 bg-slate-300 ${
+          technology!.length > 5 && "truncate"
+        }`}
       >
         {technology}
       </Link>
