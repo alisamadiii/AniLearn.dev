@@ -1,0 +1,116 @@
+---
+title: Styles Guides
+order: 0
+---
+
+# Typography
+
+These are the styles you can use to make your blog beautiful.
+
+# Heading
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+
+- list 1
+- list 2
+- list 3
+- list 4
+
+1. list 1
+1. list 2
+1. list 3
+1. list 4
+
+```md:[blog].mdx
+# Heading
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+
+- list 1
+- list 2
+- list 3
+- list 4
+
+1. list 1
+1. list 2
+1. list 3
+1. list 4
+```
+
+# Success, Warning & Error
+
+```md:[blog].mdx
+<Success>...</Success>
+<Warning>...</Warning>
+<Error>...</Error>
+```
+
+<Success>Success</Success>
+
+<Warning>Warning</Warning>
+
+<Error>Error</Error>
+
+## Importing Image
+
+```md:[blog].mdx
+<img src="https://..." />
+```
+
+<img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+
+# Code syntax highlighter
+
+```js:app.js
+const randNumber = () => {
+  return Math.floor(Math.random() * 100);
+};
+```
+
+```python:app.py
+print ("hello World")
+```
+
+# Charts for your data
+
+<Charts
+  dataKey="downloaded"
+  data={[
+    { name: "Reactjs", downloaded: 800 },
+    { name: "Vue", downloaded: 400 },
+    { name: "Angular", downloaded: 500 },
+  ]}
+/>
+
+```jsx:[blog].mdx
+<Charts
+  dataKey="downloaded" // You can add your own dataKey
+  data={[
+    { name: "Reactjs", downloaded: 800 }, // Second value must be your dataKey
+    { name: "Vue", downloaded: 400 },
+    { name: "Angular", downloaded: 500 },
+  ]}
+/>
+```
+
+# You are the writer of this blog
+
+<Author
+  name="Ali Reza"
+  headline="Front-End Developer"
+  image="https://pbs.twimg.com/profile_images/1598932468492476416/tTkHaLF7_400x400.jpg"
+  link="https://twitter.com/Ali_Developer05"
+/>
+```

@@ -10,9 +10,6 @@ type Props = {
       author: string;
       order: number;
       description: string;
-      image: string;
-      headline: string;
-      link: string;
     };
     slug: string;
   };

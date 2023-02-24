@@ -4,8 +4,16 @@ type props = {
   children: React.ReactNode;
 };
 
-const List = ({ children }: props) => {
-  return <ul className="pl-8 mb-8 list-disc">{children}</ul>;
+export const UlList = ({ children }: props) => {
+  return (
+    <ul className="pl-8 mb-8 list-disc md:leading-8 md:text-lg">{children}</ul>
+  );
 };
 
-export default List;
+export const OlList = ({ children }: props) => {
+  return (
+    <ol className="pl-8 mb-8 list-decimal md:leading-8 md:text-lg">
+      {children}
+    </ol>
+  );
+};

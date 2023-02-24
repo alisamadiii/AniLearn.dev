@@ -5,21 +5,33 @@ type props = {
 };
 
 export function Heading({ children }: props) {
-  return <h1 className="mb-8 text-4xl font-bold opacity-80">{children}</h1>;
+  return (
+    <h1 className="relative mt-12 mb-8 text-4xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+      {children}
+    </h1>
+  );
 }
 
 export function Heading2({ children }: props) {
   return (
-    <h2 className="mt-8 mb-4 text-3xl font-bold opacity-80">{children}</h2>
+    <h2 className="relative mt-8 mb-4 text-3xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+      {children}
+    </h2>
   );
 }
 
 export function Heading3({ children }: props) {
   return (
-    <h3 className="mt-8 mb-4 text-2xl font-bold opacity-80">{children}</h3>
+    <h3 className="relative mt-8 mb-4 text-2xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+      {children}
+    </h3>
   );
 }
 
 export function Heading4({ children }: props) {
-  return <h4 className="mt-8 mb-4 text-xl font-bold opacity-80">{children}</h4>;
+  return (
+    <h4 className="relative mt-8 mb-4 text-xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+      {children}
+    </h4>
+  );
 }

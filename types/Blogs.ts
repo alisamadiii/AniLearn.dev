@@ -6,9 +6,6 @@ export type SlugProps = {
       category: string[];
       order: number;
       description: string;
-      image: string;
-      headline: string;
-      link: string;
     };
     readingTime: {
       minutes: number;
@@ -29,9 +26,6 @@ export type BlogProps = {
       author: string;
       order: number;
       description: string;
-      image: string;
-      headline: string;
-      link: string;
     };
     readingTime: {
       minutes: number;
@@ -51,9 +45,6 @@ export type NavProps = {
       author: string;
       order: number;
       description: string;
-      image: string;
-      headline: string;
-      link: string;
     };
     readingTime: {
       minutes: number;

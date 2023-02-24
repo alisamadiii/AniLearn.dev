@@ -1,13 +1,8 @@
 ---
 title: CSS Combinator
+author: Ali Reza
 category: [css]
 description: They combine other selectors in a way that gives them a useful relationship to each other and the location of content in the document.
-
-author: Ali Reza
-headline: Front-End Developer
-image: https://pbs.twimg.com/profile_images/1598932468492476416/tTkHaLF7_400x400.jpg
-link: https://twitter.com/Ali_Developer05
-
 order: 3
 ---
 
@@ -25,7 +20,7 @@ There are three ways of inserting a style sheet:
 
 With an external style sheet, you can change the look of an entire website by changing just one file!
 
-```html index.html
+```html:index.html
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,7 +37,7 @@ With an external style sheet, you can change the look of an entire website by ch
 
 An internal style sheet may be used if one single HTML page has a unique style.
 
-```html
+```html:index.html
 <!DOCTYPE html>
 <html>
   <head>
@@ -68,7 +63,7 @@ An internal style sheet may be used if one single HTML page has a unique style.
 
 An inline style may be used to apply a unique style for a single element.
 
-```html
+```html:index.html
 <!DOCTYPE html>
 <html>
   <body>
@@ -76,6 +71,22 @@ An inline style may be used to apply a unique style for a single element.
     <p style="color:red;">This is a paragraph.</p>
   </body>
 </html>
+```
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: blue;
+}
+
+p {
+  font-size: 24px;
+}
 ```
 
 <Author

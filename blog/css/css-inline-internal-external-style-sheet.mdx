@@ -20,13 +20,13 @@ It is clear by its name, You can add your styles inside a element tag, like the 
 
 ### Example 1
 
-```html
+```html:index.html
 <h1 style="font-size: 1em; color: red;">...</h1>
 ```
 
 ### Example 2
 
-```html
+```html:index.html
 <div class="width: 300px; height: 300px;">
   <p style="color: blue;">...</p>
 </div>
@@ -40,7 +40,7 @@ It is clear by its name, You can add your styles inside a element tag, like the 
 
 You can add you styles inside the head tag, like the following code:
 
-```html
+```html:index.html
 <html>
   <head>
     <style>
@@ -69,11 +69,11 @@ You can make a file for CSS, and connect your **\*.html** file to your **\*.css*
 
 You can use the following code inside the head tag.
 
-```html
+```html:index.html
 <link rel="stylesheet" href="*.css" />
 ```
 
-```html
+```html:index.html
 <html>
   <head>
     <link rel="stylesheet" href="*.css" />
@@ -82,6 +82,22 @@ You can use the following code inside the head tag.
     <h1>...</h1>
   </body>
 </html>
+```
+
+```css:style.css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: blue;
+}
+
+p {
+  font-size: 24px;
+}
 ```
 
 _**\*** represents your file name._
