@@ -3,22 +3,11 @@ import Head from "next/head";
 
 type Props = {
   title: string;
-  content: {
-    frontmatter: {
-      title: string;
-      category: string[];
-      author: string;
-      order: number;
-      description: string;
-      image: string;
-      headline: string;
-      link: string;
-    };
-    slug: string;
-  };
+  description: string;
+  banner: string;
 };
 
-export default function HeadTags({ title, content }: Props) {
+export default function HeadTags({ title, description, banner }: Props) {
   return (
     <Head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,34 +16,22 @@ export default function HeadTags({ title, content }: Props) {
       {/* <!-- HTML Meta Tags --> */}
       <title>{title}</title>
       <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
-      <meta name="description" content={content.frontmatter.description} />
+      <meta name="description" content={description} />
 
       {/* <!-- Facebook Meta Tags --> */}
       <meta property="og:url" content="https://www.anilearn.dev/" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={`AniLearn - ${title}`} />
-      <meta
-        property="og:description"
-        content={content.frontmatter.description}
-      />
-      <meta
-        property="og:image"
-        content="https://i.ibb.co/n79vrKr/Documentation.png"
-      />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={banner} />
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="anilearn.dev" />
       <meta property="twitter:url" content="https://www.anilearn.dev/" />
       <meta name="twitter:title" content={`AniLearn - ${title}`} />
-      <meta
-        name="twitter:description"
-        content={content.frontmatter.description}
-      />
-      <meta
-        name="twitter:image"
-        content="https://i.ibb.co/n79vrKr/Documentation.png"
-      />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={banner} />
     </Head>
   );
 }

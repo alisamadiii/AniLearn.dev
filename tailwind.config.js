@@ -26,7 +26,7 @@ module.exports = {
         img_overlapping: "-10px",
       },
       backgroundImage: {
-        "slide-animation": "url('../assets/section1.gif')",
+        "slide-animation": "url('../public/section1.gif')",
         "square-pattern": `linear-gradient(rgba(0, 0, 0, 0.036) 2px, transparent 2px), linear-gradient(90deg, rgba(0, 0, 0, 0.036) 1px, transparent 1px);`,
       },
       backgroundSize: {

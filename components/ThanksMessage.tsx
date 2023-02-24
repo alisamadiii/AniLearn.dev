@@ -4,7 +4,7 @@ import HeadingText from "../layouts/HeadingText";
 
 type Props = {};
 
-import Profile from "../assets/profile.jpg";
+import Profile from "../public/profile.jpg";
 
 export default function ThanksMessage({}: Props) {
   return (

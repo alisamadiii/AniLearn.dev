@@ -1,6 +1,5 @@
 // Packages
 import { useEffect, useState, useContext } from "react";
-import Head from "next/head";
 import Masonry from "react-masonry-css";
 import Link from "next/link";
 
@@ -20,6 +19,7 @@ import {
   HeadingText,
   Docs,
 } from "@/components";
+import HeadTags from "@/layouts/Head";
 
 // Fonts
 import { DM_Sans } from "@next/font/google";
@@ -68,16 +68,11 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>AniLearn | Animation Content</title>
-        <meta
-          name="description"
-          content="Learning something with animation
-doesn't get easier than this"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <HeadTags
+        title="AniLearn | Animation Content"
+        banner="https://i.ibb.co/Jt33tGq/Mac-Book-Pro-14-1.png"
+        description="Learning something with animation doesn't get easier than this"
+      />
       <main className={dm_sans.className}>
         <Hero />
         <Information />

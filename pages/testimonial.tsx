@@ -1,7 +1,6 @@
 // Packages
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Head from "next/head";
 import Masonry from "react-masonry-css";
 
 // Firebase
@@ -10,6 +9,7 @@ import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
 
 // Components
 import { Container, HeadingText, Testimonial, Skeleton } from "@/components";
+import HeadTags from "@/layouts/Head";
 
 // Icons
 import { BsJournalText } from "react-icons/bs";
@@ -58,12 +58,11 @@ export default function TestimonialPage({}: Props) {
 
   return (
     <>
-      <Head>
-        <title>Testimonial</title>
-        <meta name="description" content="Supporting my work" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <HeadTags
+        title="Testimonial"
+        banner="https://i.ibb.co/7J8JWLf/Testimonial.png"
+        description="What people have been saying"
+      />
       <div className="px-4 md:px-8">
         <HeadingText className="mt-24 mb-12 text-4xl font-black text-center sm:text-5xl md:text-7xl">
           Testimonials

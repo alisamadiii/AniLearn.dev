@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ContentsContext } from "@/context/Contents";
 
 import { db } from "@/utils/firebase/Firebase";
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot, getDoc } from "firebase/firestore";
 
 import Content from "./Content";
 
@@ -42,17 +42,20 @@ export default function Contents({}: Props) {
 
   const { setIsContentOpen } = useContext(ContentsContext);
 
-  const choosingTechnologies = (): any => {
-    if (technology == 1) return "html";
-    else if (technology == 2) return "css";
-    else if (technology == 3) return "js";
-  };
-
   useEffect(() => {
+    const choosingTechnologies = (): any => {
+      if (technology == 1) return "html";
+      else if (technology == 2) return "css";
+      else if (technology == 3) return "js";
+    };
+
     const docRef = doc(db, "contents", choosingTechnologies());
-    onSnapshot(docRef, (snapshot: any) => {
-      setContents(snapshot.data());
-    });
+    const gettingContents = async () => {
+      const contents = await getDoc(docRef);
+      const snapshot: any = { ...contents.data(), id: contents.id };
+      setContents(snapshot);
+    };
+    gettingContents();
   }, [technology]);
 
   return (

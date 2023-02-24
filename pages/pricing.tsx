@@ -1,20 +1,19 @@
 import React from "react";
 import Image from "next/image";
-import Head from "next/head";
 
 import Container from "@/layouts/Container";
+import HeadTags from "@/layouts/Head";
 
 type Props = {};
 
 export default function Pricing({}: Props) {
   return (
     <>
-      <Head>
-        <title>Pricing</title>
-        <meta name="description" content="Supporting my work" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
+      <HeadTags
+        title="Pricing"
+        banner="https://i.ibb.co/kgCFZXk/Pricing.png"
+        description="I appreciate your willingness to support my work, it means a lot to me!"
+      />
       <Container className="px-4 pb-8 space-y-24 pt-36 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           <Image
