@@ -1,19 +1,20 @@
-import HeadingText from "@/layouts/HeadingText";
-import Image from "next/image";
+// Packages
 import React, { useState } from "react";
+import Image from "next/image";
 
 import { db } from "@/utils/firebase/Firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
-type Props = {};
-
+// Components / Layouts
 import { ThanksMessage, Star, FormError, Input } from "@/components";
 import HeadTags from "@/layouts/Head";
+import HeadingText from "@/layouts/HeadingText";
 
 import Profile from "../public/profile.jpg";
 import { AiFillBackward } from "react-icons/ai";
+import { AddingTestimonialTypes } from "@/types/Forms";
 
-const INITIAL_VALUE = {
+const INITIAL_VALUE: AddingTestimonialTypes = {
   name: "",
   email: "",
   website: "",
@@ -22,32 +23,34 @@ const INITIAL_VALUE = {
   image: "",
 };
 
+type Props = {};
+
 export default function AddingTestimonial({}: Props) {
-  const [star, setStar] = useState(5);
-  const [formNum, setFormNum] = useState(1);
   const [userInformation, setUserInformation] = useState(INITIAL_VALUE);
-  const [error, setError] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [star, setStar] = useState(5); // Rating
+  const [formNum, setFormNum] = useState(1); // Two Forms
+  const [error, setError] = useState(false); // Name and Testimonial are crucial
+  const [sent, setSent] = useState(false); // Thanks Message
+
+  const { name, email, website, headline, testimonial, image } =
+    userInformation;
 
   const submittingTheForm = async (e: any) => {
-    if (!userInformation.name || !userInformation.testimonial)
-      return setError(true);
+    if (!name || !testimonial) return setError(true);
 
     e.preventDefault();
-    const docRef = doc(
-      db,
-      "testimonial",
-      userInformation.name.toLocaleLowerCase()
-    );
+    const docRef = doc(db, "testimonial", name.toLocaleLowerCase());
     await setDoc(docRef, {
-      name: userInformation.name,
-      headline: userInformation.headline,
+      name: name,
+      headline: headline,
       order: 100,
       star: star,
-      testimonial: userInformation.testimonial,
+      testimonial: testimonial,
       homePage: false,
       testimonialPage: false,
-      img: userInformation.image,
+      img: image,
+      email,
+      website,
       createdAt: serverTimestamp(),
     }).then(() => {
       setSent(true);

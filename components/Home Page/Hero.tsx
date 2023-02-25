@@ -1,17 +1,18 @@
+// Packages
 import React, { useContext } from "react";
 import Image from "next/image";
-
-import { ContentsContext } from "@/context/Contents";
-
-import { AiFillStar } from "react-icons/ai";
-import { GoPlay } from "react-icons/go";
-
-import HeroIMG from "@/public/hero.webp";
-
-import HeadingText from "../../layouts/HeadingText";
 import Link from "next/link";
 
+// Layouts / Context
+import HeadingText from "../../layouts/HeadingText";
+import { ContentsContext } from "@/context/Contents";
+
 import { DEVELOPERS } from "@/content/Details";
+
+// Icons / Images
+import { AiFillStar } from "react-icons/ai";
+import { GoPlay } from "react-icons/go";
+import HeroIMG from "@/public/hero.webp";
 
 type Props = {};
 
@@ -34,21 +35,24 @@ export default function Hero({}: Props) {
       </button>
       <div className="flex items-center gap-4 my-4">
         <div className="flex my-8 space-x-img_overlapping">
-          {DEVELOPERS.map((developer) => (
-            <Link
-              key={developer.id}
-              href={developer.twitter}
-              className="duration-100 hover:scale-105 hover:rotate-12"
-            >
-              <Image
-                src={developer.img}
-                alt=""
-                width={31}
-                height={31}
-                className="border-2 border-white rounded-full"
-              />
-            </Link>
-          ))}
+          {DEVELOPERS.map((developer) => {
+            const { id, name, img, twitter } = developer;
+            return (
+              <Link
+                key={id}
+                href={twitter}
+                className="duration-100 hover:scale-105 hover:rotate-12"
+              >
+                <Image
+                  src={img}
+                  alt=""
+                  width={31}
+                  height={31}
+                  className="border-2 border-white rounded-full"
+                />
+              </Link>
+            );
+          })}
         </div>
         <div>
           <div className="flex text-xl text-yellow-500">

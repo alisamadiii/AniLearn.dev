@@ -1,43 +1,32 @@
+// Packages
 import React, { useState, useEffect, useContext } from "react";
+import Masonry from "react-masonry-css";
 
-import { ContentsContext } from "@/context/Contents";
-
+// Firebase
 import { db } from "@/utils/firebase/Firebase";
 import { doc, getDoc } from "firebase/firestore";
 
+// Components / Context
 import Content from "./Content";
+import Skeleton from "./Skeleton";
+import { ContentsContext } from "@/context/Contents";
 
-import Masonry from "react-masonry-css";
-
+// Icons
 import { AiFillCloseSquare, AiOutlineMenu } from "react-icons/ai";
 import { HiInformationCircle } from "react-icons/hi";
-import Skeleton from "./Skeleton";
-
-type Props = {};
-
-// type ContentTypes = {
-//   title: string;
-//   content: {
-//     title: string;
-//     description: string;
-//     date: string;
-//     views: number;
-//     duration: number;
-//     twitter: string;
-//     youtube: null | string;
-//     link: string;
-//     free: boolean;
-//   }[];
-// };
 
 const breakpointColumnsObj = {
   default: 2,
   768: 1,
 };
 
+// Types
+type Props = {};
+import { ContentTypes, OneContent } from "@/types/Contents";
+
 export default function Contents({}: Props) {
   const [technology, setTechnology] = useState<number>(1);
-  const [contents, setContents] = useState<any>({});
+  const [contents, setContents] = useState<ContentTypes | undefined>(undefined);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState<boolean>(false);
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [skeleton, setSkeleton] = useState<boolean>(true);
@@ -124,10 +113,9 @@ export default function Contents({}: Props) {
             className="w-full pt-4 pr-4 m-0 overflow-auto my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {contents.content &&
-              contents.content.map((content: any) => (
-                <Content key={content.title} content={content} />
-              ))}
+            {contents!.content.map((content: OneContent) => (
+              <Content key={content.title} content={content} />
+            ))}
             <div className="w-full h-[100px] bg-gradient-to-t from-white to-transparent absolute bottom-[-30px] left-0 pointer-events-none"></div>
           </Masonry>
         )}

@@ -21,15 +21,6 @@ import {
 } from "@/components";
 import HeadTags from "@/layouts/Head";
 
-// Fonts
-import { DM_Sans } from "@next/font/google";
-
-const dm_sans = DM_Sans({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
 // Types
 import { TestimonialTypes } from "@/types/Testimonial";
 
@@ -73,7 +64,7 @@ export default function Home() {
         banner="https://i.ibb.co/Jt33tGq/Mac-Book-Pro-14-1.png"
         description="Learning something with animation doesn't get easier than this"
       />
-      <main className={dm_sans.className}>
+      <main>
         <Hero />
         <Information />
         <Reason />
