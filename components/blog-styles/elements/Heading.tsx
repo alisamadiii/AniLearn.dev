@@ -1,3 +1,4 @@
+import HeadingText from "@/layouts/HeadingText";
 import React from "react";
 
 type props = {
@@ -6,9 +7,9 @@ type props = {
 
 export function Heading({ children }: props) {
   return (
-    <h1 className="relative mt-12 mb-8 text-4xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+    <HeadingText className="relative mb-8 text-4xl font-black opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
       {children}
-    </h1>
+    </HeadingText>
   );
 }
 

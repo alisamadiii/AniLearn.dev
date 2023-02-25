@@ -59,7 +59,10 @@ export default function Slug({ data, mdxSource }: SlugProps) {
           setIsOpen={setIsOpen}
         />
 
-        <div className="w-full pb-24 mt-12 md:mt-0" id="content">
+        <div
+          className="w-full p-4 pb-24 mt-12 bg-white shadow-xl rounded-2xl md:mt-0"
+          id="content"
+        >
           <div className="items-center hidden gap-2 mb-8 md:flex">
             <Link
               href={"/docs"}
