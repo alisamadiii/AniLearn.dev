@@ -9,26 +9,33 @@ import rehypeCodeTitles from "rehype-code-titles";
 
 import { MDXComponents } from "@/components/blog-styles";
 import { Container } from "@/components";
+import HeadTags from "@/layouts/Head";
 
 type Props = {
-  data: {};
   mdxSource: any;
 };
 
-export default function StyleGuides({ data, mdxSource }: Props) {
+export default function StyleGuides({ mdxSource }: Props) {
   return (
-    <div className="px-4 mt-24 md:px-8" id="content">
-      <Container>
-        <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
-      </Container>
-    </div>
+    <>
+      <HeadTags
+        title="Style Guides"
+        banner="https://i.ibb.co/pLxh03q/style-guides.png"
+        description="Make your blog beautiful by following these style guides."
+      />
+      <div className="px-4 mt-24 md:px-8" id="content">
+        <Container>
+          <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
+        </Container>
+      </div>
+    </>
   );
 }
 
 export const getStaticProps = async () => {
   const pathFile = path.join(process.cwd(), "blog");
   const readFile = fs.readFileSync(path.join(pathFile, "style-guides.mdx"));
-  const { data, content } = matter(readFile);
+  const { content } = matter(readFile);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeCodeTitles, rehypeHighlight],
@@ -36,7 +43,6 @@ export const getStaticProps = async () => {
   });
   return {
     props: {
-      data,
       mdxSource,
     },
   };
