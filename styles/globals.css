@@ -59,15 +59,13 @@ pre {
 }
 
 .rehype-code-title {
-  @apply w-full sm:w-full max-w-[500px] lg:max-w-full bg-[#1d2c4b] text-white px-4 py-2;
+  @apply w-full sm:w-full max-w-[500px] lg:max-w-full bg-[#1d2c4b] rounded-t-md md:rounded-t-xl text-white px-4 py-2;
   border: 2px solid rgb(130, 130, 130);
   border-bottom: none;
-  border-radius: 1em 1em 0 0;
 }
 
 .rehype-code-title + pre .hljs {
-  border-radius: 0 0 1em 1em;
-  border-top: none;
+  @apply border-t-0 rounded-t-none rounded-b-md md:rounded-b-xl;
 }
 
 #content > p {

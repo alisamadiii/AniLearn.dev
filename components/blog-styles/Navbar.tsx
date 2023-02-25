@@ -47,7 +47,7 @@ export default function Navbar({
       </nav>
       {isOpen && (
         <div
-          className="md:hidden fixed left-0 w-[100vw] h-screen bg-white bg-opacity-80 backdrop-blur-sm top-0 z-50"
+          className="md:hidden fixed left-0 w-[100vw] h-screen bg-white bg-opacity-80 top-0 z-50"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
@@ -57,7 +57,7 @@ export default function Navbar({
 
 type NavbarSmallProps = {
   setIsOpen: (a: boolean) => void;
-  technology?: string;
+  technology: string;
   title?: string;
 };
 
@@ -67,7 +67,7 @@ export const NavbarSmall = ({
   title,
 }: NavbarSmallProps) => {
   return (
-    <div className="fixed z-20 flex items-center w-full gap-2 px-4 bg-white border-b-2 opacity-95 backdrop-blur-md md:hidden h-14 top-16 md:px-8">
+    <div className="fixed z-50 flex items-center w-full gap-2 px-4 border-b-2 bg-gradient-to-b from-white to-[#ffffffe2] md:hidden h-14 top-16 md:px-8">
       <AiOutlineMenu className="text-xl" onClick={() => setIsOpen(true)} />
       <Link
         href={"/docs"}
@@ -77,7 +77,7 @@ export const NavbarSmall = ({
       </Link>
       <HiArrowNarrowRight />
       <Link
-        href={"/docs/css"}
+        href={`/docs/${technology!.replaceAll(" ", "-").toLowerCase()}`}
         className={`px-3 py-1 text-xs rounded-full sm:text-sm bg-opacity-20 bg-slate-300 ${
           technology!.length > 5 && "truncate"
         }`}
