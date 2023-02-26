@@ -2,7 +2,7 @@
 
 # <img width="30" height="30" src="https://user-images.githubusercontent.com/99729607/219909050-57b80c04-d9c8-4276-90a8-e00be48ed267.png" /> AniLearn.dev
 
-We provide you the best `content` to learn something very easily. The visual descriptions of development principles that We creates are very clear.
+We provide the best `content` to learn something very easily. The visual descriptions of development principles that We create are very clear.
 
 - They are very short
 - Making content for HTML, CSS & JS
@@ -35,27 +35,19 @@ You can see the live demo at: https://www.anilearn.dev/
 
 ## 💁 How to contribute?
 
-I must say that one part of this website is open-source which you can contribute and bring value.
-It is very easy, It is like writing a blog.
-If you see this [page](https://www.anilearn.dev/docs/intro), We need to write docs and somehow make the concepts easy for others to learn them.
+I must say that one part of this website is open-source, which means you can contribute and bring value. It's very easy; it's like writing a blog. If you visit this [page](https://www.anilearn.dev/docs), you'll see that we need to write docs and make the concepts easy for others to learn.
 
 Come and write your own lesson.
 
 ### How to write the docs?
 
-The steps that you need to follow:
+Step by step quickstart guide can be found [here](https://github.com/AliReza1083/AniLearn.dev/blob/main/CONTRIBUTING.md)
 
-1. Go to the blog folder `./blog`
-2. Choose a topic that you want to make a blog about
-   > **Warning** <br />
-   > You are not allowed to add new folders in `./blog`.
-3. Make a file (`*.mdx`)
+#### I don't know about `mdx`!
 
-### I don't know about `mdx`!
+It's okay, you can take a look at other files to understand how MDX works.
 
-It is okay, you can take a look on other files for understanding how MDX works.
-
-You can see the styles [here]() to make your blog beautiful.
+You can also find styles [here](https://www.anilearn.dev/style-guides) to make your blog beautiful.
 
 ## 🛡️ License
 

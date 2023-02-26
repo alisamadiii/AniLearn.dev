@@ -18,7 +18,7 @@ export default function Information({}: Props) {
         <div>
           <h3 className="text-primary">ANIMATION MADE EASY</h3>
           <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3">
-            Let animated content to help you
+            Let animated content help you
           </HeadingText>
           <p className="text-lg opacity-70">
             We provide the best content to learn something very easily. The
