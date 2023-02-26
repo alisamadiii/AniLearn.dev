@@ -67,7 +67,7 @@ export const NavbarSmall = ({
   title,
 }: NavbarSmallProps) => {
   return (
-    <div className="fixed z-50 flex items-center w-full gap-2 px-4 border-b-2 bg-gradient-to-b from-white to-[#ffffffe2] md:hidden h-14 top-16 md:px-8">
+    <div className="fixed z-20 flex items-center w-full gap-2 px-4 border-b-2 bg-gradient-to-b from-white to-[#ffffffe2] md:hidden h-14 top-16 md:px-8">
       <AiOutlineMenu className="text-xl" onClick={() => setIsOpen(true)} />
       <Link
         href={"/docs"}
