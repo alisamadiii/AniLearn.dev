@@ -46,7 +46,7 @@ export default function Pricing({}: Props) {
               rel="noreferrer"
               className="inline-block px-8 py-2 mt-8 text-base text-center text-white bg-black rounded-md shadow-button"
             >
-              But Now
+              Buy Now
             </a>
           </div>
         </div>
