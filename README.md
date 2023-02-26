@@ -2,6 +2,8 @@
 
 # <img width="30" height="30" src="https://user-images.githubusercontent.com/99729607/219909050-57b80c04-d9c8-4276-90a8-e00be48ed267.png" /> AniLearn.dev
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AliReza1083/AniLearn.dev)](https://github.com/AliReza1083/AniLearn.dev/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/AliReza1083/AniLearn.dev)
+
 We provide the best `content` to learn something very easily. The visual descriptions of development principles that We create are very clear.
 
 - They are very short
@@ -39,11 +41,15 @@ I must say that one part of this website is open-source, which means you can con
 
 Come and write your own lesson.
 
-### How to write the docs?
+### How to write a blog AniLearn.dev?
 
-Step by step quickstart guide can be found [here](https://github.com/AliReza1083/AniLearn.dev/blob/main/CONTRIBUTING.md)
+1. Step by step quickstart guide can be found [here](https://github.com/AliReza1083/AniLearn.dev/blob/main/CONTRIBUTING.md) or
+2. Watch animated video to learn it.
+   Download the video:
+   - [anilearn-guides.mp4](https://github.com/AliReza1083/AniLearn.dev/releases/download/v1.0.0/anilearn-guides.mp4)
+   - [anilearn-guides-small-size.mp4](https://github.com/AliReza1083/AniLearn.dev/releases/download/v1.0.0/Anilearn-guides-small-size.mp4)
 
-#### I don't know about `mdx`!
+### I don't know about `mdx`!
 
 It's okay, you can take a look at other files to understand how MDX works.
 
@@ -51,7 +57,7 @@ You can also find styles [here](https://www.anilearn.dev/style-guides) to make y
 
 ## 🛡️ License
 
-AniLearn is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+AniLearn is licensed under the MIT License - see the [LICENSE.md](https://github.com/AliReza1083/AniLearn.dev/blob/main/LICENSE) file for details
 
 ## 🧰 Contributing
 
