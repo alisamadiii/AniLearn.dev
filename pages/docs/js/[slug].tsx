@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import rehypeHighlight from "rehype-highlight";
+import rehypeCodeTitles from "rehype-code-titles";
 
 // Components + filePath/fileNames
 import { jsPathFiles, jsFileNames } from "@/utils/mdxFiles";
@@ -112,7 +113,7 @@ export const getStaticProps = async ({ params }: any) => {
   const { data: frontmatter, content } = matter(fileContent);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      rehypePlugins: [rehypeHighlight],
+      rehypePlugins: [rehypeCodeTitles, rehypeHighlight],
     },
   });
 

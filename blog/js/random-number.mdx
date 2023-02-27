@@ -8,49 +8,43 @@ order: 1
 
 # Random Number
 
-By the end of this blog, You will learn about Favicon.
+Have you ever asked yourself, how will I be able to get a random number? If so, then you will learn by the end of this blog.
 
-## What is favicon?
+## How to get a random number in JS?
 
-<img
-  src="https://media.licdn.com/dms/image/C5612AQFagKdI9nIRoQ/article-cover_image-shrink_720_1280/0/1582844080590?e=2147483647&v=beta&t=K0XcR7Jtl4eo6A4udtGcI7SJyQYgdKbrhtXBnv9naVU"
-  title="https://www.linkedin.com/pulse/favicon-lets-get-your-logo-next-site-title-kapil-tanwani"
-/>
+`Math.random()` always returns a number lower than 1.
 
-If you see all the websites, they are having a logo beside their website's name, That is called _Favicon_.
-
-**e.g**
-
-- [Google](https://www.google.com)
-- [AniLearn](https://www.anilearn.dev)
-- [Twitter](https://www.twitter.com)
-- and...
-
-## How to add your own favicon?
-
-In order to add your _Favicon_, You need to add a link tag inside the **head** tag, Like the following code:
-
-```html
-<link rel="icon" href="yourImage.png"></link>
+```js:app.js
+const randNum = Math.random();
+// 0.33508977219265534
+// 0.6803118467078817
+// 0.8607315010012833
+// ...
 ```
 
-Your code should look something like this:
+To fix the problem, You must multiply it with a number.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="icon" href="yourImage.png"></link>
-  </head>
-  <body></body>
-</html>
+```js:app.js
+const randNum = Math.random() * 100;
+// 52.622168316210114
+// 42.53375359884042
+// 19.23626329198578
+// ...
 ```
 
-## That is how you can add your _Favicon_
+If you see the example above, We are getting a number with its decimal.
+
+To remove the decimal, we can use `Math.floor`.
+
+`Math.floor()` & `Math.random()` are used to give us a random number without decimals.
+
+```js:app.js
+const randNum = Math.floor(Math.random() * 100);
+// 28
+// 65
+// 56
+// ...
+```
 
 <Author
   name="Ali Reza"

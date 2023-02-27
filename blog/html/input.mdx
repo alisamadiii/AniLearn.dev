@@ -2,7 +2,7 @@
 title: Input
 author: Ali Reza
 category: [html]
-description: Learn all the inputs
+description: an input element is used to create a form control that accepts user input.
 order: 2
 ---
 
@@ -10,15 +10,19 @@ order: 2
 
 ## Definition and Usage
 
-The `<input>` tag specifies an input field where the user can enter data.
+In HTML, an input element is used to create a form control that accepts user input. An input element can be used to create various types of form controls such as text boxes, checkboxes, radio buttons, email fields, password fields, and more.
 
-The `<input>` element is the most important form element.
+The input element can have various attributes that define its behavior and appearance, such as **"type"** (which defines the type of input control), **"name"** (which gives the input a name to be submitted with the form data), **"placeholder"** (which displays placeholder text in the input field), "required" (which makes the input field required), and more.
 
-The `<input>` element can be displayed in several ways, depending on the type attribute.
+Here is an example of using type, name, placeholder:
 
-The different input types are as follows:
+```html:index.html
+<input type="text" placeholder="your name" name="username">
+```
 
-```html
+Here are the inputs which you can use them:
+
+```html:index.html
 <input type="button">
 <input type="checkbox">
 <input type="color">
@@ -37,8 +41,12 @@ The different input types are as follows:
 <input type="search">
 <input type="submit">
 <input type="tel">
-<input type="text"> (default value)
+<input type="text"> <!-- default value -->
 <input type="time">
 <input type="url">
 <input type="week">
 ```
+
+This image might help you to understand all the inputs:
+
+<img src="https://user-images.githubusercontent.com/99729607/221445510-45a02df6-7d67-4eee-afb4-2fd1f04856ab.png" />
