@@ -47,7 +47,7 @@ To do this, you need a GitHub account. If you do not have one yet, you can creat
    > **Note**
    > You can have a template.mdx and download from [here](https://github.com/AliReza1083/AniLearn.dev/releases/download/v1.0.0/template.mdx).
 
-1. Scroll to the bottom and commit new file by adding the commit message that starts blog: followed by your file name (for example blog: input.mdx)
+1. Scroll to the bottom and commit new file by adding the commit message that starts blog: followed by your file name (for example `[blog]: input.mdx`)
 
    You can skip `optional extended message`
 

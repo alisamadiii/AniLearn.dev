@@ -1,0 +1,91 @@
+---
+title: justify-content & align-items
+author: Ali Reza
+category: [css]
+description: They are used to align and position elements within a container.
+order: 2
+---
+
+# justify-content & align-items
+
+`justify-content` and `align-items` are CSS properties used to align and position elements within a container.
+
+## justify-content
+
+`justify-content` defines how the elements are horizontally aligned within a container, and it accepts several values, such as:
+
+### flex-start
+
+aligns elements to the left side of the container
+![image](https://user-images.githubusercontent.com/99729607/221776671-c59c5000-79c8-427d-a4ec-2ab742705c71.png)
+
+### flex-end
+
+aligns elements to the right side of the container
+![image](https://user-images.githubusercontent.com/99729607/221776972-ed55288e-d0b0-4628-a339-c2b3e308941b.png)
+
+### center
+
+centers the elements horizontally within the container
+![image](https://user-images.githubusercontent.com/99729607/221777032-3646f81b-89a3-4268-b5f3-10e528af2e42.png)
+
+### space-between
+
+evenly distributes the elements along the main axis, leaving extra space between the first and last elements
+![image](https://user-images.githubusercontent.com/99729607/221777142-8fe1ec53-dd88-4118-bc1a-f05b53062840.png)
+
+### space-around
+
+evenly distributes the elements along the main axis, leaving equal space around them
+![image](https://user-images.githubusercontent.com/99729607/221777269-94b899bd-943f-46cc-9ed0-e7eca5409abe.png)
+
+```css:style.css
+justify-content: flex-start; /* Default */
+justify-content: flex-end;
+justify-content: center;
+justify-content: space-between;
+justify-content: space-around;
+```
+
+## align-items
+
+`align-items` defines how the elements are vertically aligned within a container, and it accepts several values, such as:
+
+## flex-start
+
+aligns elements to the top of the container
+![image](https://user-images.githubusercontent.com/99729607/221778141-7034c028-0f29-45a7-9683-fb920c028158.png)
+
+## flex-end
+
+aligns elements to the bottom of the container
+![image](https://user-images.githubusercontent.com/99729607/221778226-9080bb6e-1061-4e54-9c79-9795e620e195.png)
+
+## center
+
+centers the elements vertically within the container
+![image](https://user-images.githubusercontent.com/99729607/221781309-0a04bd8d-e6d8-41fc-9db8-d1bd598299bc.png)
+
+## baseline
+
+aligns the elements such that their baselines align
+![image](https://user-images.githubusercontent.com/99729607/221779900-f3bfb495-08db-4ae6-a9cc-0af873ceacf4.png)
+
+## stretch
+
+stretches the elements to fill the container vertically
+![image](https://user-images.githubusercontent.com/99729607/221779163-9c40a9d5-d3c0-4360-8c6d-10ffe06d7117.png)
+
+<Warning>
+  You can not use **space-between**, **space-around** & **space-evenly**.
+</Warning>
+
+```css:style.css
+align-items: flex-start; /* Default */
+align-items: flex-end;
+align-items: center;
+align-items: baseline;
+align-items: stretch;
+```
+
+> You can easily center a div by using flex-box.
