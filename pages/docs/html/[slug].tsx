@@ -84,13 +84,20 @@ export default function Slug({ data, mdxSource }: SlugProps) {
             </button>
           </div>
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
-          <Link
-            href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/html/${slug}.mdx`}
-            target={"_blank"}
-            className="flex items-center gap-2 mt-8 text-lg opacity-75 hover:opacity-100"
-          >
-            Edit the page <AiFillEdit />
-          </Link>
+          <div className="p-4 mt-8 bg-red-300 border-2 border-red-800 rounded-md">
+            <p className="flex items-center gap-2 mt-0 text-sm font-bold text-red-900 md:text-lg">
+              If you&apos;re interested in contributing to the project by adding
+              your own blog post and sharing your knowledge, take a look at the
+              Repo for more details.
+            </p>
+            <Link
+              href={"https://github.com/AliReza1083/AniLearn.dev"}
+              target="_blank"
+              className="inline-block px-4 py-2 mt-3 text-sm text-white bg-red-900 rounded-md bg-back"
+            >
+              I want to contribute
+            </Link>
+          </div>
         </div>
       </Container>
     </>
