@@ -1,0 +1,94 @@
+---
+title: 4 ways of centering a div
+author: Ali Reza
+category: [css]
+description: Have you ever had trouble centering a div? This blog is designed to guide you through the process and make it easier.
+order: 3
+---
+
+# 4 ways of centering a div
+
+If you struggle with centering a div, you're not alone. This blog is here to provide you with some helpful tips.
+
+There are 4 ways which we center a div
+
+## 1. Flex-Box
+
+by using flex-box properties, you can easily center a div with 3 lines of code.
+
+```css:style.css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Giving it a hight to center them completely */
+}
+```
+
+> Check out this [blog](https://www.anilearn.dev/docs/css/justify-content-and-align-items) for learning `justify-content & align-items`
+
+## 2. Grid-Box
+
+You can center a div with 2 and 3 lines of code by using Grid-Box properties.
+
+3 lines of code:
+
+```css:style.css
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Giving it a hight to center them completely */
+}
+```
+
+2 lines of code:
+
+```css:style.css
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Giving it a hight to center them completely */
+}
+```
+
+## 3. position - absolute
+
+You can center a div by following code:
+
+```css:style.css
+.item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+```
+
+<Warning>
+  Avoid using `position: absolute` to position an element, as it can be
+  inefficient and cause significant responsiveness issues.
+</Warning>
+
+## 4. margin
+
+```css:style.css
+.item {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+```
+
+<Success>
+  For **flex-box** and **grid-box**, we target the container, which affects the
+  items inside it. However, for **absolute** and **margin**, we target only one
+  item.
+</Success>
+
+<Author
+  name="Ali Reza"
+  headline="Front-End Developer"
+  image="https://pbs.twimg.com/profile_images/1598932468492476416/tTkHaLF7_400x400.jpg"
+  link="https://twitter.com/Ali_Developer05"
+/>
