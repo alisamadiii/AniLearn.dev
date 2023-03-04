@@ -7,7 +7,8 @@ type props = {
 const Anchor = ({ ...props }: props) => {
   return (
     <a
-      className="font-medium text-blue-600 underline hover:no-underline"
+      className="relative px-1 py-1 font-medium text-blue-600 duration-200 hover:text-white isolate"
+      id="anchor"
       target={"_blank"}
       {...props}
     />

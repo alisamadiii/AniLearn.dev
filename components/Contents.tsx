@@ -131,8 +131,9 @@ export default function Contents({}: Props) {
             you mention the creator & did not add anything onto the video.
           </p>
           <p className="mt-9">
-            <span className="font-bold">Note</span>: Right now, All the video
-            are on Twitter but in the future, you can see them on YouTube.
+            <span className="font-bold">Note</span>: At present, all the videos
+            can be accessed on Twitter, however, in the future, they will be
+            available on YouTube.
           </p>
         </div>
       </div>

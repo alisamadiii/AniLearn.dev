@@ -26,6 +26,21 @@ body {
     transform: skewY(-5deg);
   }
 
+  #anchor::after {
+    @apply absolute bottom-0 left-0 w-full h-0 duration-150 bg-blue-700 rounded-md -z-10;
+    content: "";
+  }
+  #anchor:hover::after {
+    @apply h-full;
+  }
+
+  #tips > ol,
+  #tips > ul,
+  #Notes > ol,
+  #Notes > ul {
+    margin: 0 !important;
+  }
+
   .my-masonry-grid {
     display: -webkit-box; /* Not needed if autoprefixing */
     display: -ms-flexbox; /* Not needed if autoprefixing */

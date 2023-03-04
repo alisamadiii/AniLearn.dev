@@ -21,7 +21,7 @@ export default function Author({ name, image, headline, link }: Props) {
           width={200}
           height={200}
           alt={`Image - ${name}`}
-          className="!w-24 md:!w-32 !rounded-full !m-0 !shadow-md"
+          className="!w-24 md:!w-32 !h-24 md:!h-32 !rounded-full !m-0 !shadow-md object-cover"
         />
         <div className="text-center md:text-start">
           <h1 className="text-xl font-medium">{name}</h1>
