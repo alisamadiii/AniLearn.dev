@@ -13,19 +13,17 @@ import HeadingText from "../../../layouts/HeadingText";
 
 export default function Author({ name, image, headline, link }: Props) {
   return (
-    <>
-      <HeadingText className="mt-12 mb-2 text-2xl font-bold">
-        Author
-      </HeadingText>
-      <div className="flex flex-col items-center justify-center gap-2 p-4 mb-12 text-center rounded-lg bg-gradient-to-tr from-primary to-[#0055ffa6] text-white">
+    <div className="my-12">
+      <HeadingText className="mb-4 text-2xl font-bold">Written by</HeadingText>
+      <div className="flex flex-col items-center gap-4 md:items-start md:flex-row">
         <Image
           src={image}
-          width={100}
-          height={100}
+          width={200}
+          height={200}
           alt={`Image - ${name}`}
-          className="!w-20 !rounded-full !m-0"
+          className="!w-24 md:!w-32 !rounded-full !m-0 !shadow-md"
         />
-        <div>
+        <div className="text-center md:text-start">
           <h1 className="text-xl font-medium">{name}</h1>
           <p className="text-sm opacity-60">{headline}</p>
           <a
@@ -38,6 +36,6 @@ export default function Author({ name, image, headline, link }: Props) {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }

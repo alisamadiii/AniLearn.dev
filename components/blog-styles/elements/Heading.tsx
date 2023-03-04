@@ -7,7 +7,7 @@ type props = {
 
 export function Heading({ children }: props) {
   return (
-    <HeadingText className="relative mb-8 text-4xl font-black opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+    <HeadingText className="border-b-2 pb-4 relative mb-8 text-4xl font-black opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
       {children}
     </HeadingText>
   );
