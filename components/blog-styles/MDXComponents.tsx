@@ -13,6 +13,8 @@ import {
   Error,
   Success,
   Charts,
+  Tips,
+  Notes,
 } from "./elements";
 
 export const MDXComponents = {
@@ -30,4 +32,6 @@ export const MDXComponents = {
   Error,
   Success,
   Charts,
+  Tips,
+  Notes,
 };

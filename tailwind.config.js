@@ -21,6 +21,8 @@ module.exports = {
         warning: "#FFCC00",
         error: "red",
         success: "green",
+        "code-background": "rgb(40, 44, 52)",
+        "code-title": "rgb(53, 59, 69)",
       },
       space: {
         img_overlapping: "-10px",

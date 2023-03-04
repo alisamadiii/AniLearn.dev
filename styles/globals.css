@@ -50,18 +50,13 @@ pre {
 }
 
 .hljs {
-  @apply w-full text-sm md:text-base;
-  background: #000a1e !important;
+  @apply w-full mb-8 text-sm md:text-base bg-code-background;
   padding: 1em !important;
   border-radius: 0.5em;
-  margin-bottom: 1em;
-  border: 2px solid rgb(130, 130, 130);
 }
 
 .rehype-code-title {
-  @apply w-full sm:w-full max-w-[500px] lg:max-w-full bg-[#1d2c4b] rounded-t-md md:rounded-t-xl text-white px-4 py-2;
-  border: 2px solid rgb(130, 130, 130);
-  border-bottom: none;
+  @apply w-full sm:w-full max-w-[500px] lg:max-w-full bg-code-title rounded-t-md md:rounded-t-xl text-white px-4 py-2 mt-5;
 }
 
 .rehype-code-title + pre .hljs {

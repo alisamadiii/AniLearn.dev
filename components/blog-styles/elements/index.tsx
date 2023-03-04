@@ -6,3 +6,4 @@ export { default as Text } from "./Text";
 export { default as Anchor } from "./Anchor";
 export { default as Author } from "./Author";
 export { default as Charts } from "./Charts";
+export { Tips, Notes } from "./TipsNotes";
