@@ -11,7 +11,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeCodeTitles from "rehype-code-titles";
 
 // Components + filePath/fileNames
-import { htmlPathFiles, htmlFileNames } from "@/utils/mdxFiles";
+import { pathFiles, fileNames } from "@/utils/mdxFiles";
 import Container from "@/layouts/Container";
 import {
   Head,
@@ -27,41 +27,39 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 // Types
 import { SlugProps } from "@/types/Blogs";
 
-export default function Slug({ data, mdxSource }: SlugProps) {
+export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
-  const { slug }: any = router.query;
+  const { blog }: any = router.query;
 
-  const sortingArray = data.sort((a, b) => {
+  const sortingArray = docs.sort((a, b) => {
     return a.frontmatter.order - b.frontmatter.order;
   });
 
-  const findingData = data.find((d) => {
-    return d.slug.toLowerCase().includes(slug);
+  const findingData = docs.find((d) => {
+    return d.blog.toLowerCase().includes(blog);
   });
 
   return (
     <>
-      <Head title={findingData!.frontmatter.title} content={findingData!} />
-
       <NavbarSmall
         setIsOpen={setIsOpen}
-        technology="HTML"
+        technology={blogs}
         title={findingData!.frontmatter.title}
       />
 
       <Container className="flex items-start gap-8 px-4 mt-24 md:px-8">
         <Navbar
           links={sortingArray}
-          slug={slug}
-          technology="HTML"
+          slug={blog}
+          technology={blogs}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
 
         <div
-          className="w-full p-4 pb-24 mt-12 bg-white shadow-xl rounded-2xl md:mt-0"
+          className="w-full p-4 pb-12 mt-12 bg-white shadow-xl rounded-2xl md:mt-0"
           id="content"
         >
           <div className="items-center hidden gap-2 mb-8 md:flex">
@@ -73,10 +71,10 @@ export default function Slug({ data, mdxSource }: SlugProps) {
             </Link>
             <HiArrowNarrowRight />
             <Link
-              href={"/docs/html"}
+              href={`/docs/${blogs!.replaceAll(" ", "-").toLowerCase()}`}
               className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-slate-300"
             >
-              HTML
+              {blogs}
             </Link>
             <HiArrowNarrowRight />
             <button className="px-3 py-1 text-sm rounded-full bg-opacity-20 bg-slate-300">
@@ -84,6 +82,13 @@ export default function Slug({ data, mdxSource }: SlugProps) {
             </button>
           </div>
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
+          <Link
+            href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/${blog}.mdx`}
+            className="flex items-center gap-2 mt-8 text-lg opacity-75 hover:opacity-100"
+          >
+            Edit the page <AiFillEdit />
+          </Link>
+
           <div className="p-4 mt-8 bg-red-300 border-2 border-red-800 rounded-md">
             <p className="flex items-center gap-2 mt-0 text-sm font-bold text-red-900 md:text-lg">
               If you&apos;re interested in contributing to the project by adding
@@ -104,20 +109,21 @@ export default function Slug({ data, mdxSource }: SlugProps) {
   );
 }
 
-export const getStaticProps = async ({ params }: any) => {
-  const posts = htmlFileNames.map((slug: any) => {
-    const content = fs.readFileSync(path.join(htmlPathFiles, slug));
+export async function getServerSideProps(context: any) {
+  const { blogs, blog } = context.query;
+
+  const docs = fileNames(blogs).map((blog: any) => {
+    const content = fs.readFileSync(path.join(pathFiles(blogs), blog));
     const { data } = matter(content);
     return {
       frontmatter: data,
-      slug,
+      blog,
     };
   });
 
-  const { slug } = params;
-  const filePath = path.join(htmlPathFiles, `${slug}.mdx`);
+  const filePath = path.join(pathFiles(blogs), `${blog}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data: frontmatter, content } = matter(fileContent);
+  const { content } = matter(fileContent);
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeCodeTitles, rehypeHighlight],
@@ -126,24 +132,9 @@ export const getStaticProps = async ({ params }: any) => {
 
   return {
     props: {
-      data: posts,
       mdxSource,
-      frontmatter: JSON.parse(JSON.stringify(frontmatter)),
-      slug,
-    },
-  };
-};
-
-export async function getStaticPaths() {
-  const postsPath = htmlFileNames.map((slug: any) => {
-    return {
-      params: {
-        slug: slug.replace(/\.mdx?$/, ""),
-      },
-    };
-  });
-  return {
-    paths: postsPath,
-    fallback: false,
+      docs,
+      blogs,
+    }, // will be passed to the page component as props
   };
 }

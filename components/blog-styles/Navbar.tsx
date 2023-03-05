@@ -26,20 +26,16 @@ export default function Navbar({
           {links.map((d) => (
             <Link
               key={d.frontmatter.title}
-              href={`${
-                slug
-                  ? d.slug.replace(".mdx", "")
-                  : `${technology.toLowerCase()}/${d.slug.replace(".mdx", "")}`
-              }`}
+              href={`/docs/${technology}/${d.blog.replace(".mdx", "")}`}
               onClick={() => setIsOpen(false)}
             >
               <p
                 className={`px-4 py-1 mt-2 border-l-2 hover:border-primary capitalize ${
-                  slug == d.slug.replace(".mdx", "") &&
+                  slug == d.blog.replace(".mdx", "") &&
                   "text-primary border-primary"
                 }`}
               >
-                {d.slug.replace(".mdx", "").replaceAll("-", " ")}
+                {d.blog.replace(".mdx", "").replaceAll("-", " ")}
               </p>
             </Link>
           ))}

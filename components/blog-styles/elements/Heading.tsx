@@ -15,7 +15,7 @@ export function Heading({ children }: props) {
 
 export function Heading2({ children }: props) {
   return (
-    <h2 className="relative mt-8 mb-4 text-3xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+    <h2 className="relative mt-8 mb-4 text-3xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary leading-10">
       {children}
     </h2>
   );

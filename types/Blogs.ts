@@ -1,5 +1,5 @@
 export type SlugProps = {
-  data: {
+  docs: {
     frontmatter: {
       title: string;
       author: string;
@@ -7,19 +7,14 @@ export type SlugProps = {
       order: number;
       description: string;
     };
-    readingTime: {
-      minutes: number;
-      text: string;
-      time: number;
-      words: number;
-    };
-    slug: string;
+    blog: string;
   }[];
   mdxSource: any;
+  blogs: string;
 };
 
 export type BlogProps = {
-  blogs: {
+  data: {
     frontmatter: {
       title: string;
       category: string[];
@@ -33,7 +28,7 @@ export type BlogProps = {
       time: number;
       words: number;
     };
-    slug: string;
+    blog: string;
   }[];
 };
 
@@ -46,13 +41,7 @@ export type NavProps = {
       order: number;
       description: string;
     };
-    readingTime: {
-      minutes: number;
-      text: string;
-      time: number;
-      words: number;
-    };
-    slug: string;
+    blog: string;
   }[];
   technology: string;
   slug?: string | string[] | undefined;
