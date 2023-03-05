@@ -58,6 +58,14 @@ body {
     /* change div to reference your elements you put in <Masonry> */
     margin-bottom: 20px;
   }
+
+  code {
+    @apply px-1 bg-gray-200 rounded-md text-primary;
+  }
+
+  blockquote code {
+    @apply text-black;
+  }
 }
 
 pre {

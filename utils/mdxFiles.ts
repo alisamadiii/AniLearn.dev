@@ -24,3 +24,16 @@ export const openSourcePathFiles = path.join(process.cwd(), "blog/open-source");
 export const openSourceFileNames = fs.readdirSync(openSourcePathFiles, {
   withFileTypes: false,
 });
+
+export const pathFiles = (technology: string) => {
+  return path.join(process.cwd(), `blog/${technology}`);
+};
+
+export const fileNames = (technology: string) => {
+  const pathFiles = path.join(process.cwd(), `blog/${technology}`);
+  const fileNames = fs.readdirSync(pathFiles, {
+    withFileTypes: false,
+  });
+
+  return fileNames;
+};
