@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
+  Bar,
 } from "recharts";
 
 type Props = {
@@ -17,7 +18,7 @@ type Props = {
 
 export default function Charts({ data, dataKey }: Props) {
   return (
-    <div className="relative bg-[#313e4c] py-2 px-4 md:p-8 rounded-md">
+    <div className="relative px-4 py-2 bg-white rounded-md md:p-8">
       <ResponsiveContainer width={"100%"} height={350}>
         <AreaChart data={data}>
           <defs>
@@ -26,7 +27,13 @@ export default function Charts({ data, dataKey }: Props) {
               <stop offset={"70%"} stopColor="#2451b7" stopOpacity={".05"} />
             </linearGradient>
           </defs>
-          <Area dataKey={dataKey} stroke={"#2451b7"} fill="url('#color')" />
+          <Area
+            type={"monotoneX"}
+            dataKey={dataKey}
+            stroke={"#2451b7"}
+            fill="url('#color')"
+            strokeWidth={2}
+          />
           <XAxis dataKey="name" />
           <YAxis axisLine={false} tickLine={false} />
           <Tooltip
@@ -37,7 +44,7 @@ export default function Charts({ data, dataKey }: Props) {
           <Legend
             formatter={(value, entry, index) => {
               return (
-                <span className="inline-block pt-8 text-white capitalize">
+                <span className="inline-block pt-8 text-black capitalize">
                   {value}
                 </span>
               );
