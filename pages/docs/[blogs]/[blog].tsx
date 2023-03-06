@@ -41,8 +41,12 @@ export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
     return d.blog.toLowerCase().includes(blog);
   });
 
+  console.log(findingData);
+
   return (
     <>
+      <Head title={findingData!.frontmatter.title} content={findingData!} />
+
       <NavbarSmall
         setIsOpen={setIsOpen}
         technology={blogs}

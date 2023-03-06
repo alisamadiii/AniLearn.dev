@@ -5,12 +5,13 @@ import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import { Container, HeadingText } from "@/components";
-import { FaCss3Alt } from "react-icons/fa";
 import Masonry from "react-masonry-css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import formatDistance from "date-fns/formatDistance";
 
 import { BlogProps } from "@/types/Blogs";
+import HeadTags from "@/layouts/Head";
 
 export default function Index({ data }: BlogProps) {
   const router = useRouter();
@@ -26,33 +27,55 @@ export default function Index({ data }: BlogProps) {
     768: 1,
   };
 
+  const timeFormat = (date: string) => {
+    return formatDistance(new Date(date), new Date());
+  };
+
   return (
-    <Container className="px-4 mt-24 md:px-8">
-      <HeadingText className="flex items-center justify-center gap-2 text-3xl font-black text-center md:text-5xl lg:text-8xl">
-        {blogs} <FaCss3Alt className="text-primary" />
-      </HeadingText>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="mt-4 my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        {sortingArray.map((docs) => (
-          <Link
-            key={docs.frontmatter.title}
-            href={`${blogs}/${docs.blog.replace(".mdx", "")}`}
-            className="inline-block w-full p-4 mt-4 bg-white border-2 rounded-lg hover:border-primary hover:shadow-md"
-          >
-            <HeadingText className="mb-2 text-2xl font-bold">
-              {docs.frontmatter.title}
-            </HeadingText>
-            <p>{docs.frontmatter.description}</p>
-            <p className="w-full mt-2 text-sm text-right opacity-80">
-              {docs.readingTime.text}
-            </p>
-          </Link>
-        ))}
-      </Masonry>
-    </Container>
+    <>
+      <HeadTags
+        title={blogs}
+        description="Discover the valuable insights and information you need to succeed by checking out our comprehensive documentation today!"
+        banner="https://i.ibb.co/tqgtB1B/Documentation.png"
+      />
+      <Container className="px-4 mt-24 md:px-8">
+        <HeadingText className="flex items-center justify-center gap-2 text-3xl font-black text-center md:text-5xl lg:text-8xl">
+          {blogs}
+        </HeadingText>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="mt-4 my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {sortingArray.map((docs) => (
+            <Link
+              key={docs.frontmatter.title}
+              href={`${blogs}/${docs.blog.replace(".mdx", "")}`}
+              className="inline-block w-full p-4 mt-4 bg-white border-2 rounded-lg hover:border-primary hover:shadow-md"
+            >
+              <HeadingText className="mb-2 text-2xl font-bold">
+                {docs.frontmatter.title}
+              </HeadingText>
+              <p>{docs.frontmatter.description}</p>
+              <div className="flex flex-wrap items-center justify-between gap-2 mt-4 text-xs">
+                <p>
+                  by{" "}
+                  <span className="italic font-medium">
+                    {docs.frontmatter.author}
+                  </span>
+                </p>
+                <div className="flex items-center gap-2">
+                  <p>{timeFormat(docs.frontmatter.date)}</p>
+                  <p className="px-2 py-1 font-medium text-white rounded-md bg-primary">
+                    {docs.readingTime.text}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </Masonry>
+      </Container>
+    </>
   );
 }
 

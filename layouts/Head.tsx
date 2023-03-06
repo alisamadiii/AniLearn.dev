@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 
 type Props = {
-  title: string;
+  title: string | string[] | undefined;
   description: string;
   banner: string;
 };

@@ -11,7 +11,7 @@ type Props = {
       order: number;
       description: string;
     };
-    slug: string;
+    blog: string;
   };
 };
 

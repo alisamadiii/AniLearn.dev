@@ -66,6 +66,10 @@ body {
   blockquote code {
     @apply text-black;
   }
+
+  .recharts-layer text {
+    fill: red !important;
+  }
 }
 
 pre {

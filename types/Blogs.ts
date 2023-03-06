@@ -3,6 +3,7 @@ export type SlugProps = {
     frontmatter: {
       title: string;
       author: string;
+      date: string;
       category: string[];
       order: number;
       description: string;
@@ -18,6 +19,7 @@ export type BlogProps = {
     frontmatter: {
       title: string;
       category: string[];
+      date: string;
       author: string;
       order: number;
       description: string;
@@ -37,6 +39,7 @@ export type NavProps = {
     frontmatter: {
       title: string;
       category: string[];
+      date: string;
       author: string;
       order: number;
       description: string;
