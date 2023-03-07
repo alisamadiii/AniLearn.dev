@@ -87,7 +87,7 @@ export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
           </div>
           <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
           <Link
-            href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/css/${blog}.mdx`}
+            href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/blog/${blogs}/${blog}.mdx`}
             className="flex items-center gap-2 mt-8 text-lg opacity-75 hover:opacity-100"
           >
             Edit the page <AiFillEdit />
