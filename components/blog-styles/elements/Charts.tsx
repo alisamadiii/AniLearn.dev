@@ -18,12 +18,15 @@ type Props = {
 
 export default function Charts({ data, dataKey }: Props) {
   return (
-    <div className="relative px-4 py-2 bg-white rounded-md md:p-8">
-      <ResponsiveContainer width={"100%"} height={350}>
+    <div className="relative px-4 py-2 text-xs bg-white rounded-md md:text-base">
+      <ResponsiveContainer
+        height={350}
+        className="!w-full md:!w-3/4 lg:!w-full"
+      >
         <AreaChart data={data}>
           <defs>
             <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-              <stop offset={"0%"} stopColor="#2451b7" stopOpacity={".4"} />
+              <stop offset={"0%"} stopColor="#2451b7" stopOpacity={".8"} />
               <stop offset={"70%"} stopColor="#2451b7" stopOpacity={".05"} />
             </linearGradient>
           </defs>
@@ -35,7 +38,7 @@ export default function Charts({ data, dataKey }: Props) {
             strokeWidth={2}
           />
           <XAxis dataKey="name" />
-          <YAxis axisLine={false} tickLine={false} />
+          <YAxis axisLine={false} tickLine={false} width={30} />
           <Tooltip
             content={<CustomTooltip />}
             wrapperStyle={{ outline: "none" }}

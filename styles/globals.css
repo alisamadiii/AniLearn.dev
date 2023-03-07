@@ -70,6 +70,14 @@ body {
   .recharts-layer text {
     fill: red !important;
   }
+
+  li blockquote {
+    @apply text-sm;
+  }
+
+  .icon {
+    @apply !w-8 md:!w-12 border-none !rounded-none !shadow-none !my-0;
+  }
 }
 
 pre {

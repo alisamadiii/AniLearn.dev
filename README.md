@@ -41,7 +41,7 @@ I must say that one part of this website is open-source, which means you can con
 
 Come and write your own lesson.
 
-### How to write a blog AniLearn.dev?
+### How to write a blog in AniLearn.dev?
 
 1. Step by step quickstart guide can be found [here](https://github.com/AliReza1083/AniLearn.dev/blob/main/CONTRIBUTING.md) or
 2. Watch animated video to learn it.

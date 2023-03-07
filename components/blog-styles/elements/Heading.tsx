@@ -23,7 +23,7 @@ export function Heading2({ children }: props) {
 
 export function Heading3({ children }: props) {
   return (
-    <h3 className="relative mt-8 mb-4 text-2xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
+    <h3 className="relative flex items-center gap-1 mt-8 mb-4 text-2xl font-bold opacity-80 before:hidden xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary">
       {children}
     </h3>
   );

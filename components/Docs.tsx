@@ -11,7 +11,7 @@ type Props = {
 
 export default function Docs({ headingText, paragraph }: Props) {
   return (
-    <div className="px-4 pb-24 md:px-8">
+    <div className="px-4 pb-24 overflow-hidden md:px-8">
       <Container>
         <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3">
           {headingText}

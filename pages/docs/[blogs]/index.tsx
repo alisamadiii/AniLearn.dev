@@ -79,7 +79,7 @@ export default function Index({ data }: BlogProps) {
   );
 }
 
-const routes = ["html", "css", "js", "open-source"];
+const routes = ["html", "css", "js", "open-source", "optional"];
 
 export const getStaticProps = ({ params }: any) => {
   const posts = fileNames(params.blogs).map((blog: any) => {

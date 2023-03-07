@@ -116,4 +116,10 @@ export const DOCS: DocsTypes = [
       "Open source software is code that is designed to be publicly accessible",
     link: "/docs/open-source",
   },
+  {
+    id: 5,
+    technology: "Optional",
+    description: "About everything :)",
+    link: "/docs/optional",
+  },
 ];
