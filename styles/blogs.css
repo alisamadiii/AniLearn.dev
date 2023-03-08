@@ -28,13 +28,25 @@ pre {
 }
 
 .hljs {
-  @apply w-full mb-8 text-sm md:text-base bg-code-background;
+  @apply w-full mb-8 text-sm md:text-base !bg-code-background;
   padding: 1em !important;
   border-radius: 0.5em;
 }
 
 .rehype-code-title {
-  @apply w-full sm:w-full max-w-[500px] lg:max-w-full bg-code-title rounded-t-md md:rounded-t-xl text-white px-4 py-2 mt-5;
+  @apply relative overflow-hidden w-full sm:w-full max-w-[500px] lg:max-w-full bg-code-title rounded-t-md md:rounded-t-xl text-[#7dd3fc] text-sm px-4 py-2 mt-5 border-b-[1px] border-[#7dd3fc];
+}
+
+.rehype-code-title::after {
+  content: "";
+  width: 80%;
+  height: 100%;
+  background-color: #33415580;
+  position: absolute;
+  border-radius: 0.5em 0 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.153);
+  top: 0;
+  right: 0;
 }
 
 .rehype-code-title + pre .hljs {
@@ -50,7 +62,7 @@ pre {
 /* Images */
 
 #content img {
-  @apply w-full p-1 my-8 border-2 shadow-2xl rounded-2xl;
+  @apply w-full p-1 my-8 border-2 shadow-md rounded-2xl;
 }
 .icon {
   @apply !w-8 md:!w-12 border-none !rounded-none !shadow-none !my-0;
@@ -58,8 +70,17 @@ pre {
 
 /* Text + List */
 
+@media (min-width: 768px) {
+  .link-heading::after {
+    @apply content-['#'] text-base bg-gray-200 w-6 h-6 flex justify-center items-center absolute -left-9 top-1/2 -translate-y-4 opacity-0 rounded-md text-gray-800 duration-200;
+  }
+  .link-heading:hover::after {
+    @apply -translate-y-1/2 opacity-100;
+  }
+}
+
 #content > p {
-  @apply text-base leading-[1.8] md:leading-[2] opacity-90 text-[#334155];
+  @apply text-base leading-[1.7];
 }
 
 li blockquote {

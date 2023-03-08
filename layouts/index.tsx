@@ -6,7 +6,7 @@ import { ContentsProvider } from "@/context/Contents";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/github-dark.css";
 
 type Props = {
   children: React.ReactNode;

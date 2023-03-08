@@ -31,7 +31,7 @@ export default function Navbar({}: Props) {
       <Container className="flex items-center justify-between h-16">
         <Link
           href={"/"}
-          className="flex items-center gap-1 text-xl font-bold rounded-md group focus:outline-none focus:text-primary focus:border-b-2"
+          className="flex items-center gap-1 text-xl font-bold rounded-md group focus:outline-none focus:text-primary"
         >
           <MdAnimation className="duration-200 group-hover:rotate-45" />
           AniLearn.dev

@@ -28,7 +28,7 @@ export default function Docs({ headingText, paragraph }: Props) {
               <HeadingText className="mb-2 text-3xl font-semibold md:text-4xl group-hover:text-white">
                 {doc.technology}
               </HeadingText>
-              <p className="text-xl font-bold md:text-2xl">{doc.description}</p>
+              <p className="text-xl md:text-2xl">{doc.description}</p>
               <Link
                 href={doc.link}
                 className="px-5 py-2 mt-auto font-medium text-white rounded-lg bg-primary group-hover:bg-white group-hover:text-black"
