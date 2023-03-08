@@ -33,15 +33,9 @@ export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
   const router = useRouter();
   const { blog }: any = router.query;
 
-  const sortingArray = docs.sort((a, b) => {
-    return a.frontmatter.order - b.frontmatter.order;
-  });
-
   const findingData = docs.find((d) => {
     return d.blog.toLowerCase().includes(blog);
   });
-
-  console.log(findingData);
 
   return (
     <>
@@ -55,7 +49,7 @@ export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
 
       <Container className="flex items-start gap-8 px-4 mt-24 md:px-8">
         <Navbar
-          links={sortingArray}
+          links={docs}
           slug={blog}
           technology={blogs}
           isOpen={isOpen}
@@ -116,14 +110,16 @@ export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
 export async function getServerSideProps(context: any) {
   const { blogs, blog } = context.query;
 
-  const docs = fileNames(blogs).map((blog: any) => {
-    const content = fs.readFileSync(path.join(pathFiles(blogs), blog));
-    const { data } = matter(content);
-    return {
-      frontmatter: data,
-      blog,
-    };
-  });
+  const docs = fileNames(blogs)
+    .map((blog: any) => {
+      const content = fs.readFileSync(path.join(pathFiles(blogs), blog));
+      const { data } = matter(content);
+      return {
+        frontmatter: data,
+        blog,
+      };
+    })
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 
   const filePath = path.join(pathFiles(blogs), `${blog}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -139,6 +135,6 @@ export async function getServerSideProps(context: any) {
       mdxSource,
       docs,
       blogs,
-    }, // will be passed to the page component as props
+    },
   };
 }

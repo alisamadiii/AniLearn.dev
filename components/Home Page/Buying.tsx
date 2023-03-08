@@ -38,7 +38,7 @@ export default function Buying({}: Props) {
           </ul>
           <Link
             href={"/pricing"}
-            className="inline-block px-8 py-2 text-white duration-150 bg-black rounded-md shadow-button hover:opacity-90 active:scale-95"
+            className="inline-block px-8 py-2 text-white duration-150 bg-black rounded-md shadow-button hover:opacity-90 active:scale-95 button-focus"
           >
             Buy Now
           </Link>

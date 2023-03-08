@@ -28,7 +28,7 @@ export default function Hero({}: Props) {
       </HeadingText>
       <h3 className="my-8 opacity-80">Watch video and share them</h3>
       <button
-        className="px-8 py-3 text-white duration-150 bg-black rounded-md shadow-button hover:opacity-90 active:scale-95"
+        className="px-8 py-3 text-white duration-150 bg-black rounded-md shadow-button hover:opacity-90 active:scale-95 button-focus"
         onClick={() => setIsContentOpen(true)}
       >
         Start Watching

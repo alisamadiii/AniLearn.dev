@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/blogs.css";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 

@@ -26,8 +26,6 @@ export default function Content({ content }: Props) {
     return n;
   };
 
-  console.log(youtube);
-
   return (
     <a
       href={youtube == null ? twitter : youtube}

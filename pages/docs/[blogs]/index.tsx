@@ -17,10 +17,6 @@ export default function Index({ data }: BlogProps) {
   const router = useRouter();
   const { blogs } = router.query;
 
-  const sortingArray = data.sort((a, b) => {
-    return a.frontmatter.order - b.frontmatter.order;
-  });
-
   const breakpointColumnsObj = {
     default: 3,
     1100: 2,
@@ -47,7 +43,7 @@ export default function Index({ data }: BlogProps) {
           className="mt-4 my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {sortingArray.map((docs) => (
+          {data.map((docs) => (
             <Link
               key={docs.frontmatter.title}
               href={`${blogs}/${docs.blog.replace(".mdx", "")}`}
@@ -82,15 +78,18 @@ export default function Index({ data }: BlogProps) {
 const routes = ["html", "css", "js", "open-source", "optional"];
 
 export const getStaticProps = ({ params }: any) => {
-  const posts = fileNames(params.blogs).map((blog: any) => {
-    const content = fs.readFileSync(path.join(pathFiles(params.blogs), blog));
-    const { data, content: contents } = matter(content);
-    return {
-      frontmatter: data,
-      blog,
-      readingTime: readingTime(contents),
-    };
-  });
+  const posts = fileNames(params.blogs)
+    .map((blog: any) => {
+      const content = fs.readFileSync(path.join(pathFiles(params.blogs), blog));
+      const { data, content: contents } = matter(content);
+      return {
+        frontmatter: data,
+        blog,
+        readingTime: readingTime(contents),
+      };
+    })
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
   return {
     props: {
       data: posts,

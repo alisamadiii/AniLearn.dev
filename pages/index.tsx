@@ -86,7 +86,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 flex items-end justify-center w-full h-3/5 bg-gradient-to-t from-white to-transparent pb-36">
             <Link
               href={"/testimonial"}
-              className="inline-block px-8 py-2 text-white bg-black rounded-md shadow-button"
+              className="inline-block px-8 py-2 text-white bg-black rounded-md shadow-button button-focus"
             >
               Read More
             </Link>

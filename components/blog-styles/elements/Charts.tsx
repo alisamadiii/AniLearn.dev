@@ -38,7 +38,7 @@ export default function Charts({ data, dataKey }: Props) {
             strokeWidth={2}
           />
           <XAxis dataKey="name" />
-          <YAxis axisLine={false} tickLine={false} width={30} />
+          <YAxis width={30} />
           <Tooltip
             content={<CustomTooltip />}
             wrapperStyle={{ outline: "none" }}

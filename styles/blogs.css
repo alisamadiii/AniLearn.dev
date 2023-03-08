@@ -1,0 +1,67 @@
+/* Anchor */
+#anchor::after {
+  @apply absolute bottom-0 left-0 w-full h-0 duration-150 bg-blue-700 rounded-md -z-10;
+  content: "";
+}
+#anchor:hover::after {
+  @apply h-full;
+}
+
+/* Tips & Notes */
+#tips > ol,
+#tips > ul,
+#Notes > ol,
+#Notes > ul {
+  margin: 0 !important;
+}
+
+/* Codes */
+blockquote code {
+  @apply text-black;
+}
+code {
+  @apply px-1 bg-gray-200 rounded-md text-primary;
+}
+
+pre {
+  @apply w-full sm:w-full max-w-[500px] lg:max-w-full;
+}
+
+.hljs {
+  @apply w-full mb-8 text-sm md:text-base bg-code-background;
+  padding: 1em !important;
+  border-radius: 0.5em;
+}
+
+.rehype-code-title {
+  @apply w-full sm:w-full max-w-[500px] lg:max-w-full bg-code-title rounded-t-md md:rounded-t-xl text-white px-4 py-2 mt-5;
+}
+
+.rehype-code-title + pre .hljs {
+  @apply border-t-0 rounded-t-none rounded-b-md md:rounded-b-xl;
+}
+
+/* Recharts */
+
+.recharts-layer text {
+  @apply fill-gray-700;
+}
+
+/* Images */
+
+#content img {
+  @apply w-full p-1 my-8 border-2 shadow-2xl rounded-2xl;
+}
+.icon {
+  @apply !w-8 md:!w-12 border-none !rounded-none !shadow-none !my-0;
+}
+
+/* Text + List */
+
+#content > p {
+  @apply text-base md:text-lg leading-[1.8] md:leading-[2] opacity-90;
+}
+
+li blockquote {
+  @apply text-sm;
+}

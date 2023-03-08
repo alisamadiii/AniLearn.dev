@@ -31,7 +31,7 @@ export default function Navbar({}: Props) {
       <Container className="flex items-center justify-between h-16">
         <Link
           href={"/"}
-          className="flex items-center gap-1 text-xl font-bold group"
+          className="flex items-center gap-1 text-xl font-bold rounded-md group focus:outline-none focus:text-primary focus:border-b-2"
         >
           <MdAnimation className="duration-200 group-hover:rotate-45" />
           AniLearn.dev
@@ -48,7 +48,7 @@ export default function Navbar({}: Props) {
             Pricing
           </Link>
           <button
-            className="px-8 py-2 text-white bg-black rounded-md shadow-button"
+            className="px-8 py-2 text-white duration-150 bg-black border-black rounded-md shadow-button button-focus"
             onClick={onClickHandler}
           >
             Start Watching
