@@ -33,7 +33,7 @@ export default function Testimonial({ data }: Props) {
         />
         <div>
           <h1 className="font-medium">{name}</h1>
-          {headline && <h2 className="text-xs opacity-40">{headline}</h2>}
+          {headline && <h2 className="text-xs opacity-80">{headline}</h2>}
         </div>
       </div>
       {star && (
@@ -43,7 +43,7 @@ export default function Testimonial({ data }: Props) {
           ))}
         </div>
       )}
-      <p className="opacity-75">{testimonial}</p>
+      <p>{testimonial}</p>
     </motion.div>
   );
 }

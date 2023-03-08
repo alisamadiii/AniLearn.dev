@@ -57,7 +57,7 @@ export default function Slug({ mdxSource, docs, blogs }: SlugProps) {
         />
 
         <div
-          className="w-full p-4 pb-12 mt-12 bg-white shadow-xl rounded-2xl md:mt-0"
+          className="w-full p-4 pb-12 mt-12 bg-white shadow-xl md:shadow-none rounded-2xl md:mt-0"
           id="content"
         >
           <div className="items-center hidden gap-2 mb-8 md:flex">

@@ -17,6 +17,8 @@ module.exports = {
       },
       colors: {
         primary: "#0057FF",
+        heading: "#0f172a",
+        paragraph: "#64748b",
         paypal: "#002C8A",
         warning: "#FFCC00",
         error: "red",

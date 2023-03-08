@@ -25,12 +25,10 @@ export default function Docs({ headingText, paragraph }: Props) {
               key={doc.id}
               className="card-hover duration-200 relative w-full max-w-[350px] h-[300px] md:h-[418px] border-2 py-8 px-5 flex flex-col items-start rounded-xl bg-white lg:shadow-card group"
             >
-              <HeadingText className="mb-2 text-3xl font-semibold md:text-4xl">
+              <HeadingText className="mb-2 text-3xl font-semibold md:text-4xl group-hover:text-white">
                 {doc.technology}
               </HeadingText>
-              <p className="text-xl font-bold opacity-75 md:text-2xl">
-                {doc.description}
-              </p>
+              <p className="text-xl font-bold md:text-2xl">{doc.description}</p>
               <Link
                 href={doc.link}
                 className="px-5 py-2 mt-auto font-medium text-white rounded-lg bg-primary group-hover:bg-white group-hover:text-black"

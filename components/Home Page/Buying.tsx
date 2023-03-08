@@ -15,7 +15,7 @@ export default function Buying({}: Props) {
     <div className="relative px-4 py-24 text-white background-style md:px-8 isolate">
       <Container className="grid gap-8 lg:grid-cols-2">
         <div className="space-y-4">
-          <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4]">
+          <HeadingText className="text-white text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4]">
             Having the video & PowerPoint
           </HeadingText>
           <p className="text-lg">

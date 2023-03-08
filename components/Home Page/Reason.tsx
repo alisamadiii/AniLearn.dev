@@ -19,16 +19,13 @@ export default function Reason({}: Props) {
           {REASONS.map((reason) => {
             const { id, title, description } = reason;
             return (
-              <div
-                key={id}
-                className="relative p-4 pl-12 duration-150 hover:bg-primary hover:text-white"
-              >
+              <div key={id} className="relative p-4 pl-12 duration-150 group">
                 <motion.div
                   initial={{ x: -100, opacity: 0, rotate: 30 }}
                   whileInView={{ x: -26, opacity: 1, rotate: 0 }}
                   viewport={{ once: false, amount: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="absolute top-0 left-0 !-translate-x-[26px] -translate-y-6 bg-primary w-12 h-12 rounded-full grid place-items-center text-white border-4 border-white"
+                  className="absolute top-0 left-0 !-translate-x-[26px] -translate-y-6 bg-primary w-12 h-12 rounded-full grid place-items-center text-white border-4 border-white group-hover:scale-110 duration-150"
                 >
                   {id}
                 </motion.div>

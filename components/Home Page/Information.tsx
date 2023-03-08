@@ -17,15 +17,15 @@ export default function Information({}: Props) {
       <Container className="grid gap-8 lg:grid-cols-2 lg:gap-4">
         <div>
           <h3 className="text-primary">ANIMATION MADE EASY</h3>
-          <HeadingText className="text-3xl md:text-4xl font-bold leading-[1.5] md:leading-[1.4] my-3">
+          <HeadingText className="text-3xl md:text-4xl leading-[1.5] md:leading-[1.4] my-3 font-extrabold tracking-tight">
             Let animated content help you
           </HeadingText>
-          <p className="text-lg opacity-70">
+          <p className="text-lg">
             We provide the best content to learn something very easily. The
             visual descriptions of development principles that We create are
             very clear.
           </p>
-          <ul className="my-8 text-base opacity-70 md:text-lg">
+          <ul className="my-8 text-base md:text-lg">
             <li className="flex items-center gap-2">
               <BsCheckAll className="text-xl text-green-600" />
               They are very short

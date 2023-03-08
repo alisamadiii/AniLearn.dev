@@ -20,9 +20,13 @@ export default function Hero({}: Props) {
   const { setIsContentOpen } = useContext(ContentsContext);
 
   return (
-    <div className="flex flex-col items-center pt-48 overflow-hidden bg-black bg-opacity-5 md:rounded-br-full md:shadow-xl">
-      <h3 className="text-primary">ANIMATED CONTENT MADE EASY</h3>
-      <HeadingText className="text-3xl md:text-5xl font-bold text-center leading-[1.5] md:leading-[1.4]">
+    <div
+      id="hero-background"
+      className="relative flex flex-col items-center pt-48 overflow-hidden bg-black bg-opacity-0 md:shadow-xl"
+    >
+      <div className="absolute top-0 left-0 w-full h-full bg-white bg-square-pattern bg-pattern -z-50"></div>
+      <h3 className="mb-4 text-primary">ANIMATED CONTENT MADE EASY</h3>
+      <HeadingText className="text-3xl md:text-6xl font-black text-center leading-[1.1] md:leading-[1.2] tracking-tight">
         Learning something with animation <br /> doesn&apos;t get easier than
         this
       </HeadingText>

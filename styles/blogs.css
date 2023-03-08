@@ -59,7 +59,7 @@ pre {
 /* Text + List */
 
 #content > p {
-  @apply text-base md:text-lg leading-[1.8] md:leading-[2] opacity-90;
+  @apply text-base leading-[1.8] md:leading-[2] opacity-90 text-[#334155];
 }
 
 li blockquote {

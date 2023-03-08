@@ -6,7 +6,7 @@ html {
   @apply h-full;
 }
 body {
-  @apply relative min-h-full pb-28;
+  @apply relative min-h-full text-paragraph pb-28;
 }
 
 @layer components {
@@ -15,13 +15,17 @@ body {
     content: "";
   }
 
-  a {
-    @apply focus:outline-none focus:text-black focus:border-b-2;
+  #hero-background {
+    background: url("../public/Hero\ background.png") center/cover;
   }
 
-  .button-focus {
+  /* a {
+    @apply focus:outline-none focus:text-black focus:border-b-2;
+  } */
+
+  /* .button-focus {
     @apply text-white focus:outline-none focus:-translate-y-1 focus:bg-opacity-70;
-  }
+  } */
 
   .card-hover:hover {
     @apply text-white bg-primary border-primary;
