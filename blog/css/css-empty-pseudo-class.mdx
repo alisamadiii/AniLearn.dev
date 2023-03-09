@@ -1,0 +1,75 @@
+---
+title: CSS Empty Pseudo-class
+author: Abbas Roholamin
+date: 2023/03/09
+category: [css]
+description: Now we can target empty element without using JS.
+order: 5
+---
+
+# CSS Empty Pseudo-class
+
+The CSS pseudo-class __:empty__ represents each element with no children. Children can be either element nodes or text (including spaces). Comments, processing instructions, and CSS content do not affect whether an element is considered empty..
+
+## Empty Elements
+
+These types of elements are assumed to be empty elements and have this style applied.
+
+```css:style.css
+  div:empty {
+    outline: 2px solid deeppink;
+    height: 1em;
+  }
+```
+
+```html:index.html
+    <div></div>
+```
+
+```html:index.html
+  <div><!-- Simple Comment --></div>
+```
+
+## Non-empty Elements
+
+These types of elements are not considered empty elements and this style is not applied.
+
+
+```css:style.css
+  div:empty {
+    outline: 2px solid deeppink;
+    height: 1em;
+  }
+```
+
+
+```html:index.html
+  <div>    </div>
+```
+
+```html:index.html
+  <div><p></p></div>
+```  
+
+```html:index.html
+  <div>
+    <!-- Simple Comment -->
+  </div>
+```
+
+```html:index.html
+  <div>Some text</div>
+```
+
+> Example [codepen.io](https://codepen.io/abbas-roholamin/pen/LYJObpx)
+
+<Tips>
+  The inputs are considered empty elements even though content can be typed into them.
+</Tips>
+
+<Author
+  name="Abbas Roholamin"
+  headline="Web Designer & Developer"
+  image="https://i.ibb.co/h1ppgNp/photo-2023-02-28-14-46-31.jpg"
+  link="https://twitter.com/abbas_roholamin"
+/>
