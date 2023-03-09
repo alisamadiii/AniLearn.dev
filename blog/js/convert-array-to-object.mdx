@@ -1,0 +1,50 @@
+---
+title: Convert Array to Object
+author: Abbas Roholamin
+date: 2023/03/09
+category: [js]
+description: Let's take a look at Object.fromEntries() function to convert an array to object.
+order: 4
+---
+
+# Object.fromEntries()
+
+The __Object.fromEntries()__ method takes a list of key-value pairs and returns a new object with properties specified by those entries.
+
+
+ES6 introduces the __Object.entries()__ method that can be used to cast an object to an array.
+
+```js:scripy.js
+  const obj = { name: "Abbas", age: 27 }
+  const arr = Object.entries(obj);
+
+  console.log(arr); /* [["name","Abbas"],["age",42]] */
+```
+
+But what if you wanted to do the opposite and convert a list of key-value pairs into an object?
+
+ES2019 introduced the __Object.fromEntries()__ method to easily convert a list of key-value pairs to an object.
+
+
+```js:scripy.js
+  const arr = [["name", "Abbas"],["age", 27]];
+  const obj = Object.fromEntries(arr);
+
+  console.log(obj); /* { "name": "Abbas", "age": 27 } */
+```
+
+> Example [Object.entries](https://codepen.io/abbas-roholamin/pen/zYJPNQJ) 
+> [Object.fromEntries](https://codepen.io/abbas-roholamin/pen/eYLevNj) 
+ 
+
+
+<Tips>
+    You can convert javascript __Map__ to Object as well
+</Tips>
+
+<Author
+  name="Abbas Roholamin"
+  headline="Web Designer & Developer"
+  image="https://i.ibb.co/h1ppgNp/photo-2023-02-28-14-46-31.jpg"
+  link="https://twitter.com/abbas_roholamin"
+/>
