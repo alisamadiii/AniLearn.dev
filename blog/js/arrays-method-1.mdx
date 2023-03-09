@@ -1,0 +1,97 @@
+---
+title: Arrays Method 1
+author: Ali Reza
+date: 2023/03/09
+category: [js]
+description: Adding + Deleting item from an Array
+order: 3
+---
+
+# Arrays Method 1
+
+An `array` is a data structure that can be used to store items (data), such as the following code:
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+```
+
+We are going to learn
+
+- Adding items in the end `push()`
+- Deleting an item from the end `pop()`
+- Adding items in the beginning `unshift()`
+- Deleting an item from the beginning `shift()`
+
+## push()
+
+By `push()` array method, you can add items in the end of an array, like the following code:
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+
+users.push("Mahdi") // ["Ali Reza", "Ahmad", "Hassan", "Mahdi"]
+```
+
+You can add more than one items.
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+
+users.push("Mahdi") // ["Ali Reza", "Ahmad", "Hassan", "Mahdi"]
+users.push("Sajjad") // ["Ali Reza", "Ahmad", "Hassan", "Mahdi", "Sajjad"]
+
+// Or
+
+users.push("Mahdi", "Sajjad") // ["Ali Reza", "Ahmad", "Hassan", "Mahdi", "Sajjad"]
+```
+
+## pop()
+
+By `pop()` array method, you can delete an item from the end of an array, like the following code:
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+
+users.pop() // ["Ali Reza", "Ahmad"]
+```
+
+You only able to delete one item, but if you want to delete more than that, You can call it again.
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+
+users.pop() // ["Ali Reza", "Ahmad"]
+users.pop() // ["Ali Reza"]
+```
+
+## unshift()
+
+By `unshift()` array method, you can add items in the beginning of an array, like the following code:
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+
+users.unshift("Mahdi") // ["Mahdi", "Ali Reza", "Ahmad", "Hassan"]
+users.unshift("Sajjad") // ["Sajjad", "Mahdi", "Ali Reza", "Ahmad", "Hassan"]
+
+// or
+
+users.unshift("Sajjad", "Mahdi") // ["Sajjad", "Mahdi", "Ali Reza", "Ahmad"]
+```
+
+> You can add more than one items.
+
+## shift()
+
+By `unshift()` array method, you can remove an item from the beginning of an array, like the following code:
+
+```js:app.js
+const users = ["Ali Reza", "Ahmad", "Hassan"];
+
+users.shift() // ["Ahmad", "Hassan"]
+users.shift() // ["Hassan"]
+```
+
+# Conclusion
+
+In order to add items to the end of an array, `push()` can be used, while `pop()` can be used to delete items from the end. To add items to the beginning of an array, `unshift()` can be used, and `shift()` can be used to delete items from the start.

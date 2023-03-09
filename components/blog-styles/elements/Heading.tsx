@@ -5,12 +5,9 @@ type props = {
   children: React.ReactNode;
 };
 
-const beforeClassName =
-  "xl:before:block before:content-['#'] before:absolute before:-left-8 before:opacity-0 hover:before:opacity-100 before:text-primary";
-
 export function Heading({ children }: props) {
   return (
-    <HeadingText className="relative pb-4 mb-8 text-4xl font-black border-b-2 opacity-80 link-heading">
+    <HeadingText className="relative py-4 mb-8 text-4xl font-black border-b-2 opacity-80 link-heading">
       {children}
     </HeadingText>
   );

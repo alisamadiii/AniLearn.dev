@@ -38,8 +38,8 @@ pre {
 }
 
 .rehype-code-title::after {
+  @apply w-8/12 sm:w-10/12;
   content: "";
-  width: 80%;
   height: 100%;
   background-color: #33415580;
   position: absolute;
