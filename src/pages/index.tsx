@@ -1,3 +1,4 @@
+import Buttons from "@/components/Buttons";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-center text-4xl">Hello World</h1>
+        <Buttons />
       </main>
     </>
   );
