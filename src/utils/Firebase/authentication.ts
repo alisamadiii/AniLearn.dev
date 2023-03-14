@@ -6,8 +6,17 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
-import { getFirestore, setDoc, doc, serverTimestamp } from "firebase/firestore";
+import {
+  getFirestore,
+  setDoc,
+  doc,
+  serverTimestamp,
+  getDoc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHpPZ2axUpNN0pTF1cleIfXNQBCRZ47K0",
@@ -33,21 +42,42 @@ export const signInWithGoogleProvider = () =>
 
 export const db = getFirestore();
 
-export const savingUserInformation = async (userAuth: any) => {
+export const savingUserInformation = async (
+  userAuth: any,
+  AdditionalInformation?: any
+) => {
   const docRef = doc(db, "users", userAuth.uid);
   const { displayName, email, photoURL, uid } = userAuth;
 
   const createdAt = serverTimestamp();
 
-  await setDoc(docRef, {
-    displayName,
-    email,
-    photoURL,
-    uid,
-    createdAt,
-  });
+  const snapshot = await getDoc(docRef);
+  console.log(snapshot.exists());
+
+  if (!snapshot.exists()) {
+    await setDoc(docRef, {
+      displayName,
+      email,
+      photoURL,
+      uid,
+      createdAt,
+      ...AdditionalInformation,
+    });
+  }
 };
 
 export const isSignedIn = (callback: any) => {
   return onAuthStateChanged(auth, callback);
 };
+
+export const createWithEmailAndPasswordAuth = (
+  email: string,
+  password: string
+) => createUserWithEmailAndPassword(auth, email, password);
+
+export const signInWithEmailAndPasswordAuth = (
+  email: string,
+  password: string
+) => signInWithEmailAndPassword(auth, email, password);
+
+export const logOut = () => signOut(auth);

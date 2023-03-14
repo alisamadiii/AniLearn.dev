@@ -2,18 +2,29 @@ import Container from "@/layouts/Container";
 import { userSelector } from "@/redux/user/user.selector";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {};
 
 import { MdAnimation } from "react-icons/md";
 import { AiOutlineMenu, AiOutlineUser, AiOutlineClose } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { isSignedIn, logOut } from "@/utils/Firebase/authentication";
+import { userAction } from "@/redux/user/user.action";
+import { USER_TYPES } from "@/redux/user/user.types";
 
 export default function Navbar({}: Props) {
   const [isUserToggle, setIsUserToggle] = useState<boolean>(false);
   const CURRENT_USER = useSelector(userSelector);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    isSignedIn((user: any) => {
+      dispatch(userAction(USER_TYPES.user, user));
+    });
+  });
 
   return (
     <nav className="absolute top-0 left-0 z-50 w-full px-4 font-medium bg-white">
@@ -32,7 +43,7 @@ export default function Navbar({}: Props) {
           {CURRENT_USER == null ? (
             <Link
               href={"/authentication"}
-              className="px-4 py-2 font-bold text-white duration-150 bg-black rounded-md focus:shadow-button"
+              className="px-4 py-2 font-bold duration-150 rounded-md text-slate-700 bg-slate-100 focus:shadow-button"
             >
               Log In / Sign Up
             </Link>
@@ -46,7 +57,11 @@ export default function Navbar({}: Props) {
                   />
                 ) : (
                   <Image
-                    src={CURRENT_USER.photoURL}
+                    src={
+                      CURRENT_USER.photoURL == null
+                        ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                        : CURRENT_USER.photoURL
+                    }
                     width={60}
                     height={60}
                     alt=""
@@ -84,15 +99,22 @@ export const UserToggle = ({ currentUser, classNames }: UserToggleTypes) => {
       className={`${classNames} flex flex-col items-center p-2 pt-4 text-center bg-white border-2 shadow-anilearn`}
     >
       <Image
-        src={currentUser.photoURL}
+        src={
+          currentUser.photoURL == null
+            ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+            : currentUser.photoURL
+        }
         width={200}
         height={200}
         alt=""
         className="w-12 rounded-full"
       />
-      <h3>{currentUser.displayName}</h3>
+      <h3>{currentUser.displayName || "User"}</h3>
       <small className="text-xs opacity-70">{currentUser.email}</small>
-      <button className="w-full py-1 mt-8 text-white duration-150 bg-red-700 rounded-md focus:shadow-button">
+      <button
+        onClick={logOut}
+        className="w-full py-1 mt-8 text-white duration-150 bg-red-700 rounded-md focus:shadow-button"
+      >
         log out
       </button>
     </motion.div>
@@ -129,7 +151,11 @@ const NavbarSmall = () => {
           <AiOutlineUser />
         ) : (
           <Image
-            src={CURRENT_USER.photoURL}
+            src={
+              CURRENT_USER.photoURL == null
+                ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                : CURRENT_USER.photoURL
+            }
             width={60}
             height={60}
             alt=""

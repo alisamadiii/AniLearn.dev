@@ -1,7 +1,11 @@
 import Buttons from "@/components/Buttons";
+import { userSelector } from "@/redux/user/user.selector";
 import Head from "next/head";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+  const user = useSelector(userSelector);
+  console.log(user);
   return (
     <>
       <Head>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Provider } from "react-redux";
+import React, { useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
 
 import { store } from "@/redux/store";
 import Navbar from "@/components/Navbar";
@@ -18,7 +18,7 @@ const inter = Inter({
 export default function Layouts({ children }: Props) {
   return (
     <Provider store={store}>
-      <div className={`${inter.className} overflow-x-hidden text-slate-500`}>
+      <div className={`${inter.className} text-slate-500`}>
         <Navbar />
         <main>{children}</main>
         {/* <footer>Footer</footer> */}
