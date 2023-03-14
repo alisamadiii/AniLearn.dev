@@ -1,16 +1,19 @@
-import Container from "@/layouts/Container";
-import { userSelector } from "@/redux/user/user.selector";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
+
+import Container from "@/layouts/Container";
+import { userSelector } from "@/redux/user/user.selector";
 
 type Props = {};
 
 import { MdAnimation } from "react-icons/md";
 import { AiOutlineMenu, AiOutlineUser, AiOutlineClose } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+
 import { isSignedIn, logOut } from "@/utils/Firebase/authentication";
+
 import { userAction } from "@/redux/user/user.action";
 import { USER_TYPES } from "@/redux/user/user.types";
 
@@ -31,7 +34,7 @@ export default function Navbar({}: Props) {
       <Container className="items-center justify-between hidden h-20 md:flex">
         <Link
           href={"/"}
-          className="flex items-center gap-1 text-xl font-bold text-black"
+          className="flex items-center gap-1 text-xl font-bold text-[#334155]"
         >
           <MdAnimation />
           AniLearn.dev
@@ -166,7 +169,11 @@ const NavbarSmall = () => {
 
       <AnimatePresence mode="wait">
         {isNavOpen && (
-          <ul className="absolute top-0 left-0 w-full h-screen p-4 bg-slate-800/30">
+          <ul className="absolute top-0 left-0 w-full h-screen p-4 isolate">
+            <div
+              className="absolute top-0 left-0 w-full h-full bg-slate-800/30 -z-10"
+              onClick={() => setIsNavOpen(false)}
+            ></div>
             <motion.div
               {...userToggleAnimation}
               className="w-full h-auto p-4 bg-white rounded-xl"
@@ -194,7 +201,7 @@ const NavbarSmall = () => {
                     Log In / Sign Up
                   </Link>
                 ) : (
-                  <small className="self-start px-4 py-1 font-bold rounded-md bg-primary/20 text-primary">
+                  <small className="self-start px-4 py-1 mt-2 font-bold rounded-md bg-primary/20 text-primary">
                     Signed In
                   </small>
                 )}

@@ -1,11 +1,12 @@
-import Buttons from "@/components/Buttons";
-import { userSelector } from "@/redux/user/user.selector";
 import Head from "next/head";
-import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
-  const user = useSelector(userSelector);
-  console.log(user);
+  const route = useRouter();
+  useEffect(() => {
+    route.push("/products/animated-content");
+  });
   return (
     <>
       <Head>
@@ -14,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>{/* <Buttons /> */}</main>
+      <main></main>
     </>
   );
 }
