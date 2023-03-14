@@ -9,9 +9,6 @@ type Props = {
 };
 
 import { Inter } from "next/font/google";
-import NavbarBehind from "@/components/NavbarBehind";
-import AsideContent from "./AsideContent";
-
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
@@ -21,13 +18,10 @@ const inter = Inter({
 export default function Layouts({ children }: Props) {
   return (
     <Provider store={store}>
-      <div className={`${inter.className} overflow-x-hidden`}>
-        <NavbarBehind />
-        <AsideContent>
-          <Navbar />
-          <main>{children}</main>
-          <footer>Footer</footer>
-        </AsideContent>
+      <div className={`${inter.className} overflow-x-hidden text-slate-500`}>
+        <Navbar />
+        <main>{children}</main>
+        {/* <footer>Footer</footer> */}
       </div>
     </Provider>
   );
