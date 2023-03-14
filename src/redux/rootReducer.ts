@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
-
-import { buttonReducer } from "./test/Button.reduce";
+import { generalReducer } from "./general/general.reducer";
+import { userReducer } from "./user/user.reducer";
 
 export const rootReducer = combineReducers({
-  button: buttonReducer,
+  user: userReducer,
+  general: generalReducer,
 });

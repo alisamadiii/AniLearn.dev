@@ -8,10 +8,12 @@ specifiers:
   eslint: 8.36.0
   eslint-config-next: 13.2.4
   firebase: ^9.17.2
+  framer-motion: ^10.2.5
   next: 13.2.4
   postcss: ^8.4.21
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.8.0
   react-redux: ^8.0.5
   redux: ^4.2.1
   tailwindcss: ^3.2.7
@@ -24,9 +26,11 @@ dependencies:
   eslint: 8.36.0
   eslint-config-next: 13.2.4_vgl77cfdswitgr47lm5swmv43m
   firebase: 9.17.2
+  framer-motion: 10.2.5_biqbaboplfbrettd7655fr4n2y
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.8.0_react@18.2.0
   react-redux: 8.0.5_ctrls2ti7t7iutxbwkm5ipogyy
   redux: 4.2.1
   typescript: 4.9.5
@@ -44,6 +48,19 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
     dev: false
+
+  /@emotion/is-prop-valid/0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
+  /@emotion/memoize/0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: false
+    optional: true
 
   /@eslint-community/eslint-utils/4.2.0_eslint@8.36.0:
     resolution: {integrity: sha512-gB8T4H4DEfX2IV9zGDJPOBgP1e/DbfCPDTtEqUMckpvzS1OYtva8JdFYBqMwYk7xAQ429WGF/UPqn8uQ//h2vQ==}
@@ -1783,6 +1800,24 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
+  /framer-motion/10.2.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-8CoKYlWK5ICv26LUAqhbU3y7LZ4u1FLFarYBO9KIjUVTM7XQE010HBka68ymIpnr6VavPp/gcMw8MorpTz4QOQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.5.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
   /fs.realpath/1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: false
@@ -2709,6 +2744,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons/4.8.0_react@18.2.0:
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

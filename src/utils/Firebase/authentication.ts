@@ -1,5 +1,12 @@
+// https://console.firebase.google.com/u/0/project/anilearn-v2/authentication/users
+
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { getFirestore, setDoc, doc, serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -39,4 +46,8 @@ export const savingUserInformation = async (userAuth: any) => {
     uid,
     createdAt,
   });
+};
+
+export const isSignedIn = (callback: any) => {
+  return onAuthStateChanged(auth, callback);
 };
