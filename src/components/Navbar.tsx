@@ -40,9 +40,12 @@ export default function Navbar({}: Props) {
           AniLearn.dev
         </Link>
         <ul className="items-center hidden gap-8 md:flex">
-          <a href="#" className="text-[#64748B] hover:text-slate-700">
+          <Link
+            href="/products/animated-content/buy"
+            className="text-[#64748B] hover:text-slate-700"
+          >
             Buy Now
-          </a>
+          </Link>
           {CURRENT_USER == null ? (
             <Link
               href={"/authentication"}
@@ -153,17 +156,19 @@ const NavbarSmall = () => {
         {CURRENT_USER == null ? (
           <AiOutlineUser />
         ) : (
-          <Image
-            src={
-              CURRENT_USER.photoURL == null
-                ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
-                : CURRENT_USER.photoURL
-            }
-            width={60}
-            height={60}
-            alt=""
-            className="w-8 rounded-full"
-          />
+          <Link href={"/authentication"}>
+            <Image
+              src={
+                CURRENT_USER.photoURL == null
+                  ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                  : CURRENT_USER.photoURL
+              }
+              width={60}
+              height={60}
+              alt=""
+              className="w-8 rounded-full"
+            />
+          </Link>
         )}
       </div>
 
@@ -190,7 +195,7 @@ const NavbarSmall = () => {
                 </div>
               </div>
               <div className="flex flex-col mt-2 text-lg font-medium">
-                <Link href={"/"} className="py-4">
+                <Link href={"/products/animated-content/buy"} className="py-4">
                   Buy Now
                 </Link>
                 {CURRENT_USER == null ? (

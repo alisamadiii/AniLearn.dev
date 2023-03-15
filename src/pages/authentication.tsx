@@ -6,6 +6,7 @@ type Props = {};
 import { FcGoogle } from "react-icons/fc";
 import {
   createWithEmailAndPasswordAuth,
+  logOut,
   savingUserInformation,
   signInWithEmailAndPasswordAuth,
   signInWithGoogleProvider,
@@ -14,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "@/redux/user/user.action";
 import { USER_TYPES } from "@/redux/user/user.types";
 import { userSelector } from "@/redux/user/user.selector";
+import Container from "@/layouts/Container";
 
 const INITIAL_VALUE = {
   name: "",
@@ -145,9 +147,32 @@ export default function Authentication({}: Props) {
           </button>
         </>
       ) : (
-        <h1 className="px-3 py-2 text-2xl font-bold rounded-md bg-primary/20 text-primary">
-          Signed in
-        </h1>
+        <Container className="px-4">
+          <p className="mb-4 text-2xl font-bold text-slate-700">
+            Hi {CURRENT_USER.displayName || ""},
+          </p>
+          <p>
+            You are successfully{" "}
+            <span className="px-3 py-1 text-orange-500 rounded-md bg-orange-500/20">
+              Signed in
+            </span>
+            .
+          </p>
+          <div className="space-x-4">
+            <button
+              onClick={logOut}
+              className="px-8 py-1 mt-8 text-white duration-150 bg-red-700 rounded-md focus:shadow-button"
+            >
+              log out
+            </button>
+            <button
+              onClick={logOut}
+              className="px-8 py-1 mt-8 text-white duration-150 bg-red-700 rounded-md focus:shadow-button"
+            >
+              Delete Account
+            </button>
+          </div>
+        </Container>
       )}
     </div>
   );

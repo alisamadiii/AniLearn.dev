@@ -49,11 +49,11 @@ export default function AnimatedContent({}: Props) {
                 colors={["orange", "blue"]}
               />
             </div>
-            <div className="space-y-3 md:col-span-2">
+            <div className="md:col-span-2">
               <h1 className="text-3xl font-bold text-slate-700">
                 Animated Video
               </h1>
-              <p>
+              <p className="my-3">
                 There are some videos that will make your lesson easy to learn
                 some concepts of HTML, CSS & JavaScript.
               </p>
@@ -62,6 +62,9 @@ export default function AnimatedContent({}: Props) {
                 <Badge color="green">Easy to learn</Badge>
                 <Badge color="blue">4k</Badge>
               </div>
+              <button className="px-4 py-2 mt-8 font-bold duration-150 rounded-md shadow-2xl text-slate-700 bg-primary focus:shadow-button">
+                Purchase Now
+              </button>
             </div>
             <div className="md:hidden">
               <Image
