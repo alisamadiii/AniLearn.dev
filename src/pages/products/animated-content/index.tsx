@@ -58,7 +58,7 @@ export default function AnimatedContent({}: Props) {
             </div>
           </div>
           <div>
-            <Image src={GIF} width={1000} height={10000} alt="" />
+            <Image src={GIF} width={1000} height={1000} alt="" />
           </div>
         </section>
 
@@ -82,7 +82,7 @@ export default function AnimatedContent({}: Props) {
       <section id="banner" className="relative px-4 py-24 isolate">
         <Container className="flex flex-col-reverse gap-8 lg:flex-row">
           <div className="basis-[400px] grow">
-            <Image src={GIF2} width={1000} height={10000} alt="" />
+            <Image src={GIF2} width={1000} height={1000} alt="" />
           </div>
           <div className="text-slate-100 grow">
             <h2 className="mb-4 text-3xl font-bold">
