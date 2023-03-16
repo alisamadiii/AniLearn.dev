@@ -9,6 +9,7 @@ type Props = {
 };
 
 import { Inter } from "next/font/google";
+import NotVerified from "@/components/NotVerified";
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
@@ -21,6 +22,7 @@ export default function Layouts({ children }: Props) {
       <div className={`${inter.className} text-slate-500`}>
         <Navbar />
         <main>{children}</main>
+        <NotVerified />
         {/* <footer>Footer</footer> */}
       </div>
     </Provider>

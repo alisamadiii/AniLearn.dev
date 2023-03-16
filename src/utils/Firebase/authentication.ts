@@ -9,6 +9,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  sendEmailVerification,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -29,7 +30,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth();
+export const auth: any = getAuth();
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -37,8 +38,9 @@ googleProvider.setCustomParameters({
   prompt: "select_account",
 });
 
-export const signInWithGoogleProvider = () =>
-  signInWithPopup(auth, googleProvider);
+export const signInWithGoogleProvider = async () => {
+  return signInWithPopup(auth, googleProvider);
+};
 
 export const db = getFirestore();
 
@@ -52,7 +54,6 @@ export const savingUserInformation = async (
   const createdAt = serverTimestamp();
 
   const snapshot = await getDoc(docRef);
-  console.log(snapshot.exists());
 
   if (!snapshot.exists()) {
     await setDoc(docRef, {
@@ -63,6 +64,10 @@ export const savingUserInformation = async (
       createdAt,
       ...AdditionalInformation,
     });
+  }
+
+  if (auth.currentUser.emailVerified == false) {
+    sendEmailVerification(auth.currentUser).then(() => console.log("sent"));
   }
 };
 

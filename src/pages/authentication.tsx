@@ -16,6 +16,9 @@ import { userAction } from "@/redux/user/user.action";
 import { USER_TYPES } from "@/redux/user/user.types";
 import { userSelector } from "@/redux/user/user.selector";
 import Container from "@/layouts/Container";
+import Image from "next/image";
+
+import { GoVerified } from "react-icons/go";
 
 const INITIAL_VALUE = {
   name: "",
@@ -37,6 +40,9 @@ export default function Authentication({}: Props) {
 
   const onSubmitHandler = async (e: any) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirm_password) return;
+
     const { user } = await createWithEmailAndPasswordAuth(
       formData.email,
       formData.password
@@ -138,6 +144,9 @@ export default function Authentication({}: Props) {
 
           <h3 className="my-5 text-xl">or</h3>
 
+          <p className="w-full max-w-[350px] text-xs md:text-sm mb-3 text-red-900">
+            We recommend you to sign in with Google *
+          </p>
           <button
             onClick={signInWith}
             className="flex items-center justify-center py-2 rounded-md w-full max-w-[350px] gap-4 bg-slate-100 focus:shadow-button duration-150"
@@ -147,31 +156,30 @@ export default function Authentication({}: Props) {
           </button>
         </>
       ) : (
-        <Container className="px-4">
-          <p className="mb-4 text-2xl font-bold text-slate-700">
-            Hi {CURRENT_USER.displayName || ""},
-          </p>
-          <p>
-            You are successfully{" "}
-            <span className="px-3 py-1 text-orange-500 rounded-md bg-orange-500/20">
-              Signed in
-            </span>
-            .
-          </p>
-          <div className="space-x-4">
-            <button
-              onClick={logOut}
-              className="px-8 py-1 mt-8 text-white duration-150 bg-red-700 rounded-md focus:shadow-button"
-            >
-              log out
-            </button>
-            <button
-              onClick={logOut}
-              className="px-8 py-1 mt-8 text-white duration-150 bg-red-700 rounded-md focus:shadow-button"
-            >
-              Delete Account
-            </button>
+        <Container className="flex flex-col items-center px-4">
+          <Image
+            src={
+              CURRENT_USER.photoURL == null
+                ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                : CURRENT_USER.photoURL
+            }
+            width={200}
+            height={200}
+            alt=""
+            className="w-24 rounded-full"
+          />
+          <div className="flex items-center gap-2 mt-2">
+            <h1 className="text-xl font-semibold text-slate-700">
+              {CURRENT_USER.displayName || "Unknown"}
+            </h1>
+            {CURRENT_USER.emailVerified == true && (
+              <GoVerified className="text-blue-600" />
+            )}
           </div>
+          <small>{CURRENT_USER.email}</small>
+          <button onClick={logOut} className="mt-8">
+            Log Out
+          </button>
         </Container>
       )}
     </div>
