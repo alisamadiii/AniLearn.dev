@@ -12,7 +12,7 @@ import GIF2 from "@/assets/information2.gif";
 
 import { FaRegEye } from "react-icons/fa";
 
-export default function AnimatedContent({}: Props) {
+export default function Index({}: Props) {
   return (
     <>
       <Container className="flex flex-col items-center px-4 py-36">
