@@ -160,7 +160,7 @@ export default function Authentication({}: Props) {
           <Image
             src={
               CURRENT_USER.photoURL == null
-                ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                ? "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
                 : CURRENT_USER.photoURL
             }
             width={200}

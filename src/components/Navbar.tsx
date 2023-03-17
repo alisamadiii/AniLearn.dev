@@ -65,7 +65,7 @@ export default function Navbar({}: Props) {
                   <Image
                     src={
                       CURRENT_USER.photoURL == null
-                        ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                        ? "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
                         : CURRENT_USER.photoURL
                     }
                     width={60}
@@ -107,7 +107,7 @@ export const UserToggle = ({ currentUser, classNames }: UserToggleTypes) => {
       <Image
         src={
           currentUser.photoURL == null
-            ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+            ? "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
             : currentUser.photoURL
         }
         width={200}
@@ -160,7 +160,7 @@ const NavbarSmall = () => {
             <Image
               src={
                 CURRENT_USER.photoURL == null
-                  ? "https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                  ? "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
                   : CURRENT_USER.photoURL
               }
               width={60}

@@ -12,6 +12,8 @@ import Image from "next/image";
 
 import { BiCart } from "react-icons/bi";
 import { IoInformationOutline } from "react-icons/io5";
+import { BsCheck2Circle } from "react-icons/bs";
+import { AiOutlineCloseSquare, AiFillWarning } from "react-icons/ai";
 import { REASONS } from "@/contents/Reasons";
 
 export default function AnimatedContent({}: Props) {
@@ -62,23 +64,136 @@ export default function AnimatedContent({}: Props) {
                 <Badge color="green">Easy to learn</Badge>
                 <Badge color="blue">4k</Badge>
               </div>
-              <button className="px-4 py-2 mt-8 font-bold duration-150 rounded-md shadow-2xl text-slate-700 bg-primary focus:shadow-button">
-                Purchase Now
-              </button>
-            </div>
-            <div className="md:hidden">
-              <Image
-                src={ProductIMG}
-                width={700}
-                height={400}
-                alt=""
-                className="w-full"
-              />
-              <Legend
-                className="mt-3"
-                categories={["Quality", "Cool Effects"]}
-                colors={["orange", "blue"]}
-              />
+              <div className="my-12 md:hidden">
+                <Image
+                  src={ProductIMG}
+                  width={700}
+                  height={400}
+                  alt=""
+                  className="w-full"
+                />
+                <Legend
+                  className="mt-3"
+                  categories={["Quality", "Cool Effects"]}
+                  colors={["orange", "blue"]}
+                />
+              </div>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <div className="flex flex-col basis-[300px] items-center p-4 rounded-lg grow bg-slate-100">
+                  <small>Basis</small>
+                  <p className="my-4 text-4xl font-black text-slate-700">$9</p>
+                  <ul className="w-full mb-8 space-y-4">
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        Video
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        PowerPoint
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <AiOutlineCloseSquare className="text-xl text-red-600" />{" "}
+                        Share Video
+                      </p>
+                      <ul className="mt-2 space-y-2 text-sm list-disc pl-[20%]">
+                        <li>to your friends</li>
+                        <li>to social media</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a
+                    href="#"
+                    className="w-full py-2 mt-auto font-bold text-center rounded-md text-slate-700 bg-slate-300"
+                  >
+                    Purchase Now
+                  </a>
+                </div>
+                <div className="flex flex-col basis-[300px] items-center p-4 rounded-lg grow bg-slate-100">
+                  <small>Advance</small>
+                  <p className="my-4 text-4xl font-black text-slate-700">$40</p>
+                  <ul className="w-full space-y-4">
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        Video
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        PowerPoint
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        Share Video
+                      </p>
+                      <ul className="mt-2 space-y-2 text-sm list-disc pl-[20%]">
+                        <li>to your friends</li>
+                        <li>to social media</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <AiFillWarning className="text-xl text-orange-400" />
+                        Need Attribution
+                      </p>
+                    </li>
+                  </ul>
+                  <a
+                    href="#"
+                    className="w-full py-2 mt-8 font-bold text-center rounded-md text-slate-700 bg-slate-300"
+                  >
+                    Purchase Now
+                  </a>
+                </div>
+                <div className="flex flex-col basis-[300px] items-center p-4 rounded-lg grow bg-slate-100">
+                  <small>Advance</small>
+                  <p className="my-4 text-4xl font-black text-slate-700">$55</p>
+                  <ul className="w-full space-y-4">
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        Video
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        PowerPoint
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        Share Video
+                      </p>
+                      <ul className="mt-2 space-y-2 text-sm list-disc pl-[20%]">
+                        <li>to your friends</li>
+                        <li>to social media</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-4">
+                        <BsCheck2Circle className="text-xl text-green-600" />
+                        No Attribution
+                      </p>
+                    </li>
+                  </ul>
+                  <a
+                    href="#"
+                    className="w-full py-2 mt-8 font-bold text-center rounded-md text-slate-700 bg-slate-300"
+                  >
+                    Purchase Now
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ) : (
