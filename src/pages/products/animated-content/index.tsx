@@ -9,16 +9,23 @@ type Props = {};
 import HeroIMG from "@/assets/Hero img.png";
 import GIF from "@/assets/information.gif";
 import GIF2 from "@/assets/information2.gif";
+import GIF3 from "@/assets/Section 4.gif";
 
 import { FaRegEye } from "react-icons/fa";
+import { AiFillHtml5 } from "react-icons/ai";
+import { DiCss3 } from "react-icons/di";
+import { SiTailwindcss, SiJavascript } from "react-icons/si";
 
 export default function Index({}: Props) {
   return (
     <>
       <Container className="flex flex-col items-center px-4 py-36">
-        <header className="text-center">
+        <header className="relative text-center" id="hero-section">
           <small className="text-primary">ANIMATED CONTENT MADE EASY</small>
-          <h1 className="text-[#334155] font-black text-3xl md:text-[5vw] lg:text-6xl leading-tight md:leading-tight lg:leading-tight tracking-tight">
+          <h1
+            style={{ textShadow: "0 3px 5px rgba(0, 0, 0, .2)" }}
+            className="text-[#334155] font-black text-3xl md:text-[5vw] lg:text-6xl leading-tight md:leading-tight lg:leading-tight tracking-tight"
+          >
             Learning something with{" "}
             <span className="relative inline-block before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-slate-200 before:-z-10">
               animation
@@ -62,6 +69,27 @@ export default function Index({}: Props) {
           </div>
         </section>
 
+        <section className="py-12 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-slate-700">
+            You can learn some main concepts of
+          </h2>
+          <div className="flex flex-wrap justify-center gap-6 mt-8 text-slate-400">
+            <div className="flex items-center gap-2 text-2xl font-bold">
+              <AiFillHtml5 /> HTML
+            </div>
+            <div className="flex items-center gap-2 text-2xl font-bold">
+              <DiCss3 /> CSS
+            </div>
+            <div className="flex items-center gap-2 text-2xl font-bold">
+              <SiJavascript /> JavaScript
+            </div>
+            <div className="flex items-center gap-2 text-2xl font-bold">
+              <SiTailwindcss /> Tailwind
+            </div>
+          </div>
+          <Image src={GIF3} width={1000} height={1000} alt="" />
+        </section>
+
         <section className="w-full mt-12">
           <h2 className="flex items-center gap-2 text-3xl font-bold md:text-4xl text-slate-700">
             <span className="p-1 text-2xl rounded-md text-primary bg-primary/20">
@@ -74,22 +102,19 @@ export default function Index({}: Props) {
             <TwitterVideoEmbed id={"1616366217438334977"} />
             <TwitterVideoEmbed id={"1623970161408741377"} />
           </div>
-          <div className="flex justify-center mt-8">
-            <Buttons />
-          </div>
         </section>
       </Container>
 
-      <section id="banner" className="relative px-4 py-24 isolate">
-        <Container className="flex flex-col-reverse gap-8 lg:flex-row">
-          <div className="basis-[400px] grow">
+      <section id="banner" className="relative px-4 py-14 isolate">
+        <Container className="flex flex-col-reverse items-center gap-8 lg:flex-row">
+          <div className="basis-[700px] grow">
             <Image src={GIF2} width={1000} height={1000} alt="" />
           </div>
-          <div className="text-slate-100 grow">
-            <h2 className="mb-4 text-3xl font-bold">
+          <div className="text-slate-900 grow">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               Having the video & PowerPoint
             </h2>
-            <p className="text-slate-200">
+            <p className="text-lg md:text-2xl text-slate-800">
               If you want to access the video and source files for learning,
               they are available on Notion.
             </p>

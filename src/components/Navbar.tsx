@@ -9,13 +9,13 @@ import { userSelector } from "@/redux/user/user.selector";
 
 type Props = {};
 
-import { MdAnimation } from "react-icons/md";
 import { AiOutlineMenu, AiOutlineUser, AiOutlineClose } from "react-icons/ai";
 
 import { isSignedIn, logOut } from "@/utils/Firebase/authentication";
 
 import { userAction } from "@/redux/user/user.action";
 import { USER_TYPES } from "@/redux/user/user.types";
+import Logo from "@/assets/Icons/Logo";
 
 export default function Navbar({}: Props) {
   const [isUserToggle, setIsUserToggle] = useState<boolean>(false);
@@ -34,10 +34,9 @@ export default function Navbar({}: Props) {
       <Container className="items-center justify-between hidden h-20 md:flex">
         <Link
           href={"/"}
-          className="flex items-center gap-1 text-xl font-bold text-[#334155]"
+          className="flex items-center gap-1 text-xl font-bold text-slate-700"
         >
-          <MdAnimation />
-          AniLearn.dev
+          <Logo /> niLearn.dev
         </Link>
         <ul className="items-center hidden gap-8 md:flex">
           <Link
@@ -146,12 +145,11 @@ const NavbarSmall = () => {
       >
         <AiOutlineMenu />
       </div>
-      <Link
-        href={"/"}
-        className="text-xl font-bold text-center text-black grow"
-      >
-        AniLearn.dev
-      </Link>
+      <div className="flex justify-center grow">
+        <Link href={"/"}>
+          <Logo />
+        </Link>
+      </div>
       <div className="text-xl">
         {CURRENT_USER == null ? (
           <AiOutlineUser />
