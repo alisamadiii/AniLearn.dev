@@ -15,6 +15,7 @@ import { FaRegEye } from "react-icons/fa";
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { SiTailwindcss, SiJavascript } from "react-icons/si";
+import Price from "@/components/Price";
 
 export default function Index({}: Props) {
   return (
@@ -35,8 +36,9 @@ export default function Index({}: Props) {
           <p className="mt-4 text-sm md:text-lg">
             learn something like a piece of cake
           </p>
-          <div className="mt-12">
+          <div className="flex items-center justify-center gap-2 mt-12">
             <Buttons />
+            <Price />
           </div>
           <div className="p-4 mt-8">
             <Image
@@ -70,20 +72,20 @@ export default function Index({}: Props) {
         </section>
 
         <section className="py-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-slate-700">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl text-slate-700">
             You can learn some main concepts of
           </h2>
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-slate-400">
-            <div className="flex items-center gap-2 text-2xl font-bold">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
               <AiFillHtml5 /> HTML
             </div>
-            <div className="flex items-center gap-2 text-2xl font-bold">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
               <DiCss3 /> CSS
             </div>
-            <div className="flex items-center gap-2 text-2xl font-bold">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
               <SiJavascript /> JavaScript
             </div>
-            <div className="flex items-center gap-2 text-2xl font-bold">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
               <SiTailwindcss /> Tailwind
             </div>
           </div>
@@ -106,8 +108,8 @@ export default function Index({}: Props) {
       </Container>
 
       <section id="banner" className="relative px-4 py-14 isolate">
-        <Container className="flex flex-col-reverse items-center gap-8 lg:flex-row">
-          <div className="basis-[700px] grow">
+        <Container className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row">
+          <div className="max-w-[700px] grow">
             <Image src={GIF2} width={1000} height={1000} alt="" />
           </div>
           <div className="text-slate-900 grow">

@@ -36,8 +36,8 @@ export default function AnimatedContent({}: Props) {
           />
         </TabList>
         {showCard == "1" ? (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="hidden md:block">
+          <div className="grid items-start grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="sticky left-0 hidden top-12 md:block">
               <Image
                 src={ProductIMG}
                 width={700}
@@ -81,7 +81,9 @@ export default function AnimatedContent({}: Props) {
               <div className="flex flex-wrap gap-4 mt-8">
                 <div className="flex flex-col basis-[300px] items-center p-4 rounded-lg grow bg-slate-100">
                   <small>Basis</small>
-                  <p className="my-4 text-4xl font-black text-slate-700">$9</p>
+                  <p className="my-4 text-4xl font-black text-slate-700">
+                    <del className="mr-4 opacity-40">$29</del>$9
+                  </p>
                   <ul className="w-full mb-8 space-y-4">
                     <li>
                       <p className="flex items-center gap-4">
@@ -114,7 +116,7 @@ export default function AnimatedContent({}: Props) {
                   </a>
                 </div>
                 <div className="flex flex-col basis-[300px] items-center p-4 rounded-lg grow bg-slate-100">
-                  <small>Advance</small>
+                  <small>Intermediate</small>
                   <p className="my-4 text-4xl font-black text-slate-700">$40</p>
                   <ul className="w-full space-y-4">
                     <li>

@@ -20,7 +20,7 @@ body {
   }
 
   #hero-section::before {
-    @apply bg-slate-400;
+    @apply bg-slate-400/30 md:bg-slate-400;
     content: "";
     width: 300px;
     height: 300px;

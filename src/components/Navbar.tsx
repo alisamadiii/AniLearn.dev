@@ -30,7 +30,7 @@ export default function Navbar({}: Props) {
   });
 
   return (
-    <nav className="absolute top-0 left-0 z-50 w-full px-4 font-medium bg-white">
+    <nav className="absolute top-0 left-0 z-50 w-full px-4 font-medium">
       <Container className="items-center justify-between hidden h-20 md:flex">
         <Link
           href={"/"}
