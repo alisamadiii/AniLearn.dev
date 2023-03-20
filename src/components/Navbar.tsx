@@ -34,21 +34,21 @@ export default function Navbar({}: Props) {
       <Container className="items-center justify-between hidden h-20 md:flex">
         <Link
           href={"/"}
-          className="flex items-center gap-1 text-xl font-bold text-slate-700"
+          className="flex items-center gap-1 text-xl font-bold text-slate-700 dark:text-white"
         >
           <Logo /> niLearn.dev
         </Link>
         <ul className="items-center hidden gap-8 md:flex">
           <Link
             href="/products/animated-content/buy"
-            className="text-[#64748B] hover:text-slate-700"
+            className="hover:text-slate-700"
           >
             Buy Now
           </Link>
           {CURRENT_USER == null ? (
             <Link
               href={"/authentication"}
-              className="px-4 py-2 font-bold duration-150 rounded-md text-slate-700 bg-slate-100 focus:shadow-button"
+              className="px-4 py-2 font-bold duration-150 rounded-md text-slate-700 bg-slate-100 dark:bg-[#1ed760] dark:text-black focus:shadow-button"
             >
               Log In / Sign Up
             </Link>
@@ -140,7 +140,7 @@ const NavbarSmall = () => {
   return (
     <Container className="flex items-center h-20 md:hidden">
       <div
-        className="p-2 rounded-lg bg-slate-100 text-slate-400 hover:text-slate-500"
+        className="p-2 rounded-lg bg-slate-100 text-slate-400 hover:text-slate-500 dark:bg-dark-primary dark:text-black"
         onClick={() => setIsNavOpen(true)}
       >
         <AiOutlineMenu />
@@ -179,14 +179,17 @@ const NavbarSmall = () => {
             ></div>
             <motion.div
               {...userToggleAnimation}
-              className="w-full h-auto p-4 bg-white rounded-xl"
+              className="w-full h-auto p-4 bg-white dark:bg-[#2F3437] rounded-xl"
             >
               <div className="flex items-center justify-between">
-                <Link href={"/"} className="text-xl font-bold text-slate-700">
+                <Link
+                  href={"/"}
+                  className="text-xl font-bold text-slate-700 dark:text-white"
+                >
                   AniLearn.dev
                 </Link>
                 <div
-                  className="p-2 rounded-lg bg-slate-100 text-slate-400 hover:text-slate-500"
+                  className="p-2 rounded-lg bg-slate-100 text-slate-400 hover:text-slate-500 dark:bg-dark-primary dark:text-black"
                   onClick={() => setIsNavOpen(false)}
                 >
                   <AiOutlineClose />
@@ -199,7 +202,7 @@ const NavbarSmall = () => {
                 {CURRENT_USER == null ? (
                   <Link
                     href={"/authentication"}
-                    className="px-4 py-2 mt-8 text-base font-bold text-center text-white duration-150 bg-black rounded-md focus:shadow-button"
+                    className="px-4 py-2 mt-8 text-base font-bold text-center text-white duration-150 bg-black rounded-md dark:bg-dark-primary dark:text-black focus:shadow-button"
                   >
                     Log In / Sign Up
                   </Link>

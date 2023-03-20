@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply overflow-x-hidden;
+  @apply overflow-x-hidden dark:bg-[#191919];
 }
 
 @layer components {

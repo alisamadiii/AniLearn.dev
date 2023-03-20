@@ -20,7 +20,7 @@ const inter = Inter({
 export default function Layouts({ children }: Props) {
   return (
     <Provider store={store}>
-      <div className={`${inter.className} text-slate-500`}>
+      <div className={`${inter.className} text-slate-500 dark:text-white`}>
         <Navbar />
         <main>{children}</main>
         <NotVerified />

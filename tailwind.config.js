@@ -4,10 +4,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         primary: "#FFC700",
+        "dark-primary": "#1ed760",
       },
       boxShadow: {
         button: "0 0 0px 2px white, 0 0 0px 4px black",
