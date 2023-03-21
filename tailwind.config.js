@@ -16,6 +16,15 @@ module.exports = {
         anilearn:
           "0 20px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05)",
       },
+      backgroundImage: {
+        pattern: `linear-gradient(#191919 2px, transparent 2px), linear-gradient(90deg, #191919 1px, transparent 1px);`,
+      },
+      backgroundSize: {
+        pattern: "40px 40px, 40px 40px, 20px 20px, 20px 20px",
+      },
+      backgroundPosition: {
+        pattern: "-2px -2px, -2px -2px, -1px -1px, -1px -1px",
+      },
       animation: {
         "gradient-1": "animate-gradient-1 8s infinite",
         "gradient-2": "animate-gradient-2 8s infinite",

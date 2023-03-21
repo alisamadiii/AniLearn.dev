@@ -1,3 +1,4 @@
+import Logo from "@/assets/Icons/Logo";
 import Container from "@/layouts/Container";
 import Image from "next/image";
 import React, { useEffect } from "react";
@@ -8,19 +9,16 @@ type Props = {
 
 export default function Products({ data }: Props) {
   console.log(data);
-  useEffect(() => {
-    document.documentElement.classList.add("dark");
-  });
 
   return (
-    <div className="px-4 pb-8 mt-24">
+    <div className="mt-24">
       <h1
         className="mb-8 text-4xl font-black tracking-tight text-center md:text-6xl lg:text-7xl"
         style={{ textShadow: "0 2px 0px rgba(30, 215, 96, .5)" }}
       >
         Products
       </h1>
-      <Container className="flex flex-wrap items-start justify-center gap-4">
+      <Container className="flex flex-wrap items-start justify-center gap-4 px-4 mb-24">
         {data.products
           .filter((d: any) => d.published == true)
           .map((d: any) => (
@@ -28,7 +26,7 @@ export default function Products({ data }: Props) {
               key={d.name}
               className="basis-[400px] p-4 rounded-md bg-[#505558]/20 flex flex-col gap-3 items-start hover:-translate-y-2 duration-150"
             >
-              <div className="relative">
+              <div className="relative w-full">
                 <Image
                   src={d.thumbnail_url}
                   width={600}
@@ -61,6 +59,13 @@ export default function Products({ data }: Props) {
             </div>
           ))}
       </Container>
+      <div className="relative flex flex-col items-center w-full overflow-hidden border-t-4 h-96 border-dark-primary">
+        <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
+        <div className="w-36 h-36 bg-dark-primary -z-50 blur-[200px]"></div>
+        <p className="z-50 flex items-center gap-1 text-4xl font-bold text-slate-700 dark:text-white">
+          <Logo size="50" /> niLearn.dev
+        </p>
+      </div>
     </div>
   );
 }

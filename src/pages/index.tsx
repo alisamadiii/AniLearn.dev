@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function Home() {
   const route = useRouter();
   useEffect(() => {
-    route.push("/products/animated-content");
+    route.push("/products");
   });
   return (
     <>

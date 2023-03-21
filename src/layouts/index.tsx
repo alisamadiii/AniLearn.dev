@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 
 import { store } from "@/redux/store";
@@ -11,6 +11,7 @@ type Props = {
 import NotVerified from "@/components/NotVerified";
 
 import { Inter } from "next/font/google";
+import { useRouter } from "next/router";
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
@@ -18,6 +19,14 @@ const inter = Inter({
 });
 
 export default function Layouts({ children }: Props) {
+  const route = useRouter();
+  useEffect(() => {
+    if (route.pathname == "/products") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  });
   return (
     <Provider store={store}>
       <div className={`${inter.className} text-slate-500 dark:text-white`}>

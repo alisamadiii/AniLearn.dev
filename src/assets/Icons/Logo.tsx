@@ -1,11 +1,13 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  size: string;
+};
 
-export default function Logo({}: Props) {
+export default function Logo({ size }: Props) {
   return (
     <svg
-      width="32"
+      width={size}
       viewBox="0 0 452 447"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

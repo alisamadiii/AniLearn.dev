@@ -36,14 +36,14 @@ export default function Navbar({}: Props) {
           href={"/"}
           className="flex items-center gap-1 text-xl font-bold text-slate-700 dark:text-white"
         >
-          <Logo /> niLearn.dev
+          <Logo size="30" /> niLearn.dev
         </Link>
         <ul className="items-center hidden gap-8 md:flex">
           <Link
-            href="/products/animated-content/buy"
-            className="hover:text-slate-700"
+            href="/products"
+            className="hover:text-slate-700 dark:hover:text-dark-primary"
           >
-            Buy Now
+            Products
           </Link>
           {CURRENT_USER == null ? (
             <Link
@@ -101,7 +101,7 @@ export const UserToggle = ({ currentUser, classNames }: UserToggleTypes) => {
   return (
     <motion.div
       {...userToggleAnimation}
-      className={`${classNames} flex flex-col items-center p-2 pt-4 text-center bg-white border-2 shadow-anilearn`}
+      className={`${classNames} flex flex-col items-center p-2 pt-4 text-center bg-white dark:bg-[#2F3437] dark:border-[#25292c] border-2 shadow-anilearn`}
     >
       <Image
         src={
@@ -147,7 +147,7 @@ const NavbarSmall = () => {
       </div>
       <div className="flex justify-center grow">
         <Link href={"/"}>
-          <Logo />
+          <Logo size="30" />
         </Link>
       </div>
       <div className="text-xl">
@@ -196,8 +196,8 @@ const NavbarSmall = () => {
                 </div>
               </div>
               <div className="flex flex-col mt-2 text-lg font-medium">
-                <Link href={"/products/animated-content/buy"} className="py-4">
-                  Buy Now
+                <Link href={"/products"} className="py-4">
+                  Products
                 </Link>
                 {CURRENT_USER == null ? (
                   <Link
