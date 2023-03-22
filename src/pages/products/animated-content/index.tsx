@@ -1,5 +1,3 @@
-import Buttons from "@/components/Buttons";
-import Container from "@/layouts/Container";
 import React from "react";
 import Image from "next/image";
 import { TwitterVideoEmbed } from "react-twitter-embed";
@@ -15,6 +13,9 @@ import { FaRegEye } from "react-icons/fa";
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { SiTailwindcss, SiJavascript } from "react-icons/si";
+
+import Buttons from "@/components/Buttons";
+import Container from "@/layouts/Container";
 import Price from "@/components/Price";
 
 export default function Index({}: Props) {

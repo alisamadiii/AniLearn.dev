@@ -56,7 +56,10 @@ export default function Navbar({}: Props) {
             <div className="relative">
               <div onClick={() => setIsUserToggle(!isUserToggle)}>
                 {isUserToggle ? (
-                  <img
+                  <Image
+                    width={60}
+                    height={60}
+                    alt=""
                     src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
                     className="w-8"
                   />
