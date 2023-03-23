@@ -14,6 +14,8 @@ export default function Products({ data }: Props) {
 
   return (
     <div className="mt-24">
+      <div className="absolute top-0 left-0 w-full bg-gradient-to-b from-dark-primary/10 to-transparent h-96 -z-10 animate-background"></div>
+      <div className="absolute top-0 left-0 w-full bg-pattern h-96 -z-10"></div>
       <h1
         className="mb-8 text-4xl font-black tracking-tight text-center md:text-6xl lg:text-7xl"
         style={{ textShadow: "0 2px 0px rgba(30, 215, 96, .5)" }}
@@ -40,7 +42,7 @@ export default function Products({ data }: Props) {
 
 export const getStaticProps = async () => {
   const headers = {
-    Authorization: `Bearer ancHYYmYmKluspQX9Ddvm3dbiwn9fN7CZsVqLJFU10Q`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_GUMROADTOKEN}`,
   };
   const res = await fetch("https://api.gumroad.com/v2/products", {
     headers,

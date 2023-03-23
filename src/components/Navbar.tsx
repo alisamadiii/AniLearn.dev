@@ -16,6 +16,7 @@ import { isSignedIn, logOut } from "@/utils/Firebase/authentication";
 import { userAction } from "@/redux/user/user.action";
 import { USER_TYPES } from "@/redux/user/user.types";
 import Logo from "@/assets/Icons/Logo";
+import { AiFillGithub } from "react-icons/ai";
 
 export default function Navbar({}: Props) {
   const [isUserToggle, setIsUserToggle] = useState<boolean>(false);
@@ -39,6 +40,13 @@ export default function Navbar({}: Props) {
           <Logo size="30" /> niLearn.dev
         </Link>
         <ul className="items-center hidden gap-8 md:flex">
+          <a
+            href="https://github.com/AliReza1083/AniLearn.dev"
+            target={"_blank"}
+            className="text-2xl"
+          >
+            <AiFillGithub />
+          </a>
           <Link
             href="/products"
             className="hover:text-slate-700 dark:hover:text-dark-primary"
@@ -202,6 +210,13 @@ const NavbarSmall = () => {
                 <Link href={"/products"} className="py-4">
                   Products
                 </Link>
+                <a
+                  href="https://github.com/AliReza1083/AniLearn.dev"
+                  target={"_blank"}
+                  className="mb-4 text-2xl"
+                >
+                  <AiFillGithub />
+                </a>
                 {CURRENT_USER == null ? (
                   <Link
                     href={"/authentication"}

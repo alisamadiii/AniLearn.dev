@@ -25,6 +25,15 @@ module.exports = {
       backgroundPosition: {
         pattern: "-2px -2px, -2px -2px, -1px -1px, -1px -1px",
       },
+      animation: {
+        background: "background 10s infinite alternate",
+      },
+      keyframes: {
+        background: {
+          "0%": { filter: "hue-rotate(0deg)" },
+          "100%": { filter: "hue-rotate(360deg)" },
+        },
+      },
     },
   },
   plugins: [],

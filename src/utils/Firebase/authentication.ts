@@ -20,12 +20,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCHpPZ2axUpNN0pTF1cleIfXNQBCRZ47K0",
-  authDomain: "anilearn-v2.firebaseapp.com",
-  projectId: "anilearn-v2",
-  storageBucket: "anilearn-v2.appspot.com",
-  messagingSenderId: "1002911157226",
-  appId: "1:1002911157226:web:b1121e662cec10d1298093",
+  apiKey: process.env.NEXT_PUBLIC_APIKEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECTID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+  appId: process.env.NEXT_PUBLIC_APPID,
 };
 
 const app = initializeApp(firebaseConfig);
