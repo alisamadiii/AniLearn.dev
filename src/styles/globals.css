@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-x-hidden dark:bg-[#191919];
+}
+
+@layer components {
+  #banner::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #9db5c1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: skewY(-5deg);
+  }
+
+  #hero-section::before {
+    @apply bg-slate-400/30 md:bg-slate-400;
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(200px);
+    z-index: 9999;
+    pointer-events: none;
+  }
+}
