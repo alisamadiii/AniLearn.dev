@@ -19,7 +19,7 @@ export default function NotFound({}: Props) {
         <Link href="/authentication" className="text-blue-800">
           /authentication
         </Link>
-        <Link href="/products/animated-content" className="text-blue-800">
+        <Link href="/products" className="text-blue-800">
           /product
         </Link>
       </ul>
