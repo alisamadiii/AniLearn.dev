@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
-import { Provider } from "react-redux";
 
-import { store } from "@/redux/store";
 import Navbar from "@/components/Navbar";
 
 type Props = {
   children: React.ReactNode;
 };
-
-import NotVerified from "@/components/NotVerified";
 
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
@@ -28,13 +24,10 @@ export default function Layouts({ children }: Props) {
     }
   });
   return (
-    <Provider store={store}>
-      <div className={`${inter.className} text-slate-500 dark:text-white`}>
-        <Navbar />
-        <main>{children}</main>
-        <NotVerified />
-        {/* <footer>Footer</footer> */}
-      </div>
-    </Provider>
+    <div className={`${inter.className} text-slate-500 dark:text-white`}>
+      <Navbar />
+      <main>{children}</main>
+      {/* <footer>Footer</footer> */}
+    </div>
   );
 }

@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply overflow-x-hidden dark:bg-[#191919];
 }
 
 @layer components {
   #banner::before {
+    @apply bg-slate-100;
     content: "";
     width: 100%;
     height: 100%;
-    background-color: #9db5c1;
     position: absolute;
     top: 0;
     left: 0;

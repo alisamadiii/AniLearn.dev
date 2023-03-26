@@ -17,6 +17,7 @@ import { SiTailwindcss, SiJavascript } from "react-icons/si";
 import Buttons from "@/components/Buttons";
 import Container from "@/layouts/Container";
 import Price from "@/components/Price";
+import FAQ from "@/components/FAQ";
 
 export default function Index({}: Props) {
   return (
@@ -127,6 +128,7 @@ export default function Index({}: Props) {
           </div>
         </Container>
       </section>
+      <FAQ />
     </>
   );
 }
