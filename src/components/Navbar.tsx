@@ -30,10 +30,22 @@ export default function Navbar({}: Props) {
             <AiFillGithub />
           </a>
           <a
+            href="#preview"
+            className="hover:text-slate-700 dark:hover:text-dark-primary"
+          >
+            Preview
+          </a>
+          <a
             href="#pricing"
             className="hover:text-slate-700 dark:hover:text-dark-primary"
           >
             Pricing
+          </a>
+          <a
+            href="#faq"
+            className="hover:text-slate-700 dark:hover:text-dark-primary"
+          >
+            FAQ
           </a>
         </ul>
       </Container>
@@ -92,8 +104,26 @@ const NavbarSmall = () => {
                 </div>
               </div>
               <div className="flex flex-col mt-2 text-lg font-medium">
-                <a href={"#pricing"} className="py-4">
+                <a
+                  href={"#preview"}
+                  className="py-2"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  Preview
+                </a>
+                <a
+                  href={"#pricing"}
+                  className="py-2"
+                  onClick={() => setIsNavOpen(false)}
+                >
                   Pricing
+                </a>
+                <a
+                  href={"#faq"}
+                  className="py-2 mb-8"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  FAQ
                 </a>
                 <a
                   href="https://github.com/AliReza1083/AniLearn.dev"

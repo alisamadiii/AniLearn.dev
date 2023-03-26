@@ -1,33 +1,44 @@
-import Container from "@/layouts/Container";
 import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { motion } from "framer-motion";
+type Props = {
+  faq: { num: number; question: string; answer: string };
+};
 
-type Props = {};
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-export default function FAQ({}: Props) {
-  const [toggle, setToggle] = useState(true);
+export default function FAQ({ faq }: Props) {
+  const { num, question, answer } = faq;
+  const [toggle, setToggle] = useState(false);
 
   return (
-    <Container className="pb-4">
-      <h2 className="text-5xl font-black text-slate-700">FAQ</h2>
-      <div className={`w-full max-w-[700px] mx-auto bg-slate-300 rounded-md`}>
-        <div onClick={() => setToggle(!toggle)} className="p-4">
-          <h3>Why animated content.</h3>
-        </div>
-        <div
-          className={`duration-500 px-4 overflow-hidden ${
-            toggle ? "max-h-[300px]" : "max-h-0"
-          }`}
-        >
-          <motion.p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Perspiciatis blanditiis eaque quo magnam necessitatibus non, odit
-            explicabo laudantium eos, recusandae quasi distinctio eligendi
-            temporibus hic reiciendis adipisci. Possimus, nesciunt sit!
-          </motion.p>
-        </div>
+    <div
+      className={`w-full max-w-[800px] mx-auto rounded-md mb-4 bg-slate-500/10 overflow-hidden text-xl`}
+    >
+      <div
+        onClick={() => setToggle(!toggle)}
+        className={`flex justify-between items-center p-4 font-semibold duration-150 cursor-pointer ${
+          toggle && "text-slate-900 bg-slate-500/20"
+        }`}
+      >
+        <h3>{question}</h3>
+        {toggle ? <AiOutlineMinus /> : <AiOutlinePlus />}
       </div>
-    </Container>
+      <AnimatePresence mode="wait">
+        {toggle && (
+          <div className={`duration-500 overflow-hidden text-lg p-4 `}>
+            <motion.p
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              className="p-2 border-l-2 border-slate-300"
+            >
+              {answer}
+            </motion.p>
+          </div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

@@ -18,11 +18,13 @@ import Buttons from "@/components/Buttons";
 import Container from "@/layouts/Container";
 import Price from "@/components/Price";
 import FAQ from "@/components/FAQ";
+import { FAQ_DATA } from "@/contents/FAQ";
+import Pricing from "@/components/Pricing";
 
 export default function Index({}: Props) {
   return (
     <>
-      <Container className="flex flex-col items-center px-4 py-36">
+      <Container className="flex flex-col items-center px-4 pt-36">
         <header className="relative text-center" id="hero-section">
           <small className="text-primary">ANIMATED CONTENT MADE EASY</small>
           <h1
@@ -74,31 +76,28 @@ export default function Index({}: Props) {
         </section>
 
         <section className="py-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl text-slate-700">
+          <h2 className="mb-8 text-3xl font-bold text-center text-slate-700">
             You can learn some main concepts of
           </h2>
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-slate-400">
-            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-xl">
               <AiFillHtml5 /> HTML
             </div>
-            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-xl">
               <DiCss3 /> CSS
             </div>
-            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-xl">
               <SiJavascript /> JavaScript
             </div>
-            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-2xl">
+            <div className="flex items-center gap-2 text-lg font-semibold md:text-xl lg:text-xl">
               <SiTailwindcss /> Tailwind
             </div>
           </div>
           <Image src={GIF3} width={1000} height={1000} alt="" />
         </section>
 
-        <section className="w-full mt-12">
-          <h2 className="flex items-center gap-2 text-3xl font-bold md:text-4xl text-slate-700">
-            <span className="p-1 text-2xl rounded-md text-primary bg-primary/20">
-              <FaRegEye />
-            </span>
+        <section className="w-full mt-12" id="preview">
+          <h2 className="mb-8 text-3xl font-bold text-center text-slate-700">
             Preview
           </h2>
           <div className="grid grid-cols-1 gap-0 mt-8 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -109,9 +108,20 @@ export default function Index({}: Props) {
         </section>
       </Container>
 
-      <section id="pricing"></section>
+      <section id="pricing" className="py-24">
+        <Pricing />
+      </section>
 
-      <FAQ />
+      <section id="faq">
+        <h2 className="mb-8 text-3xl font-bold text-center text-slate-700">
+          Frequently Asked Questions
+        </h2>
+        <Container className="pb-24">
+          {FAQ_DATA.map((faq) => (
+            <FAQ key={faq.num} faq={faq} />
+          ))}
+        </Container>
+      </section>
     </>
   );
 }
