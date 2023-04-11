@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@tremor/react': ^2.0.0
+  '@types/canvas-confetti': ^1.6.0
   '@types/node': 18.15.1
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -42,6 +43,7 @@ dependencies:
   typescript: 4.9.5
 
 devDependencies:
+  '@types/canvas-confetti': 1.6.0
   autoprefixer: 10.4.14_postcss@8.4.21
   postcss: 8.4.21
   tailwindcss: 3.2.7_postcss@8.4.21
@@ -341,6 +343,10 @@ packages:
       - prop-types
       - react-dom
     dev: false
+
+  /@types/canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
+    dev: true
 
   /@types/d3-array/3.0.4:
     resolution: {integrity: sha512-nwvEkG9vYOc0Ic7G7kwgviY4AQlTfYGIZ0fqB7CQHXGyYM6nO7kJh5EguSNA3jfh4rq7Sb7eMVq8isuvg2/miQ==}
