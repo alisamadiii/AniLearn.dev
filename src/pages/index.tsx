@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { TwitterVideoEmbed } from "react-twitter-embed";
+import Masonry from "react-masonry-css";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -9,7 +11,6 @@ import GIF from "@/assets/information.gif";
 import GIF2 from "@/assets/information2.gif";
 import GIF3 from "@/assets/Section 4.gif";
 
-import { FaRegEye } from "react-icons/fa";
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { SiTailwindcss, SiJavascript } from "react-icons/si";
@@ -20,14 +21,33 @@ import Price from "@/components/Price";
 import FAQ from "@/components/FAQ";
 import { FAQ_DATA } from "@/contents/FAQ";
 import Pricing from "@/components/Pricing";
+import { TESTIMONIAL } from "@/contents/Testimonial";
+import Testimonial from "@/components/Testimonial";
+
+const breakpointColumnsObj = {
+  default: 3,
+  992: 3,
+  768: 2,
+  576: 1,
+};
 
 export default function Index({}: Props) {
   return (
     <>
       <Container className="flex flex-col items-center px-4 pt-36">
         <header className="relative text-center" id="hero-section">
-          <small className="text-primary">ANIMATED CONTENT MADE EASY</small>
-          <h1
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-primary"
+          >
+            ANIMATED CONTENT MADE EASY
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.1 }}
             style={{ textShadow: "0 3px 5px rgba(0, 0, 0, .2)" }}
             className="text-[#334155] font-black text-3xl md:text-[5vw] lg:text-6xl leading-tight md:leading-tight lg:leading-tight tracking-tight"
           >
@@ -36,15 +56,30 @@ export default function Index({}: Props) {
               animation
             </span>{" "}
             doesn&lsquo;t get easier than this
-          </h1>
-          <p className="mt-4 text-sm md:text-lg">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mt-4 text-sm md:text-lg"
+          >
             learn something like a piece of cake
-          </p>
-          <div className="flex items-center justify-center gap-2 mt-12">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="flex items-center justify-center gap-2 mt-12"
+          >
             <Buttons />
             <Price />
-          </div>
-          <div className="p-4 mt-8">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="p-4 mt-8"
+          >
             <Image
               src={HeroIMG}
               width={2000}
@@ -52,11 +87,16 @@ export default function Index({}: Props) {
               alt=""
               className="w-full"
             />
-          </div>
+          </motion.div>
         </header>
 
         <section className="grid items-center w-full grid-cols-1 gap-4 mt-24 md:grid-cols-2">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
             <small className="text-primary">ANIMATION MADE EASY</small>
             <h2 className="text-[#334155] text-4xl font-bold mb-4">
               Let animated content help you
@@ -69,10 +109,15 @@ export default function Index({}: Props) {
             <div className="mt-8">
               <Buttons />
             </div>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.1 }}
+          >
             <Image src={GIF} width={1000} height={1000} alt="" />
-          </div>
+          </motion.div>
         </section>
 
         <section className="py-12 text-center">
@@ -108,7 +153,10 @@ export default function Index({}: Props) {
         </section>
       </Container>
 
-      <section id="pricing" className="py-24">
+      <section id="pricing" className="my-24">
+        <h2 className="mb-8 text-3xl font-bold text-center text-slate-700">
+          Pricing
+        </h2>
         <Pricing />
       </section>
 
@@ -116,10 +164,27 @@ export default function Index({}: Props) {
         <h2 className="mb-8 text-3xl font-bold text-center text-slate-700">
           Frequently Asked Questions
         </h2>
-        <Container className="pb-24">
+        <Container className="px-4 pb-24">
           {FAQ_DATA.map((faq) => (
             <FAQ key={faq.num} faq={faq} />
           ))}
+        </Container>
+      </section>
+
+      <section id="faq" className="pb-24">
+        <h2 className="mb-8 text-3xl font-bold text-center text-slate-700">
+          Testimonial
+        </h2>
+        <Container className="px-4">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {TESTIMONIAL.map((message) => (
+              <Testimonial key={message.num} testimonial={message} />
+            ))}
+          </Masonry>
         </Container>
       </section>
     </>

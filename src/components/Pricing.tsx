@@ -1,6 +1,8 @@
+import React from "react";
+import { motion } from "framer-motion";
+
 import { PRICING } from "@/contents/Pricing";
 import Container from "@/layouts/Container";
-import React from "react";
 
 type Props = {};
 
@@ -13,12 +15,17 @@ export default function Pricing({}: Props) {
     const firstEquation = price * percentage;
     return (price - firstEquation / 100).toFixed(2);
   };
+
   return (
     <Container className="flex flex-wrap gap-4 px-4">
-      {PRICING.map((pricing) => (
-        <div
+      {PRICING.map((pricing, index) => (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, margin: "-200px" }}
+          transition={{ duration: 1, delay: 0.05 * index }}
           key={pricing.level}
-          className="flex flex-col grow basis-[300px] bg-slate-100 p-4 rounded-xl shadow-anilearn"
+          className="flex flex-col grow basis-[300px] bg-slate-100 p-4 rounded-xl shadow-anilearn overflow-hidden"
         >
           <small className="block text-center">{pricing.level}</small>
           <h2 className="my-3 text-3xl font-black text-center text-slate-700">
@@ -94,7 +101,7 @@ export default function Pricing({}: Props) {
           >
             Get Now
           </a>
-        </div>
+        </motion.div>
       ))}
     </Container>
   );

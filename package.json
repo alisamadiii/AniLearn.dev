@@ -13,6 +13,7 @@
     "@types/node": "18.15.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "canvas-confetti": "^1.6.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.2.5",
@@ -20,7 +21,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-intersection-observer": "^9.4.3",
+    "react-masonry-css": "^1.0.16",
     "react-twitter-embed": "^4.0.4",
+    "react-use-measure": "^2.1.1",
     "typescript": "4.9.5"
   },
   "devDependencies": {

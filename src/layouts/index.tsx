@@ -24,7 +24,9 @@ export default function Layouts({ children }: Props) {
     }
   });
   return (
-    <div className={`${inter.className} text-slate-500 dark:text-white`}>
+    <div
+      className={`${inter.className} text-slate-500 dark:text-white overflow-hidden`}
+    >
       <Navbar />
       <main>{children}</main>
       {/* <footer>Footer</footer> */}

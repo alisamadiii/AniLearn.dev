@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 import Container from "@/layouts/Container";
 
@@ -31,19 +31,19 @@ export default function Navbar({}: Props) {
           </a>
           <a
             href="#preview"
-            className="hover:text-slate-700 dark:hover:text-dark-primary"
+            className={`hover:text-slate-700 dark:hover:text-dark-primary`}
           >
             Preview
           </a>
           <a
             href="#pricing"
-            className="hover:text-slate-700 dark:hover:text-dark-primary"
+            className={`hover:text-slate-700 dark:hover:text-dark-primary`}
           >
             Pricing
           </a>
           <a
             href="#faq"
-            className="hover:text-slate-700 dark:hover:text-dark-primary"
+            className={`hover:text-slate-700 dark:hover:text-dark-primary`}
           >
             FAQ
           </a>
@@ -57,8 +57,14 @@ export default function Navbar({}: Props) {
 const userToggleAnimation = {
   initial: { opacity: 0, scale: 0.9 },
   animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.9 },
+  exit: { opacity: 0, scale: 0.9, transition: { delay: 0.5 } },
   transition: { duration: 0.1 },
+};
+
+const linksVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 10 },
 };
 
 const NavbarSmall = () => {
@@ -104,34 +110,53 @@ const NavbarSmall = () => {
                 </div>
               </div>
               <div className="flex flex-col mt-2 text-lg font-medium">
-                <a
+                <motion.a
+                  variants={linksVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ duration: 0.5, type: "spring" }}
                   href={"#preview"}
                   className="py-2"
                   onClick={() => setIsNavOpen(false)}
                 >
                   Preview
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  variants={linksVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1,
+                    type: "spring",
+                  }}
                   href={"#pricing"}
-                  className="py-2"
+                  className="inline-block py-2"
                   onClick={() => setIsNavOpen(false)}
                 >
                   Pricing
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  variants={linksVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
                   href={"#faq"}
                   className="py-2 mb-8"
                   onClick={() => setIsNavOpen(false)}
                 >
                   FAQ
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="https://github.com/AliReza1083/AniLearn.dev"
                   target={"_blank"}
                   className="mb-4 text-2xl"
                 >
                   <AiFillGithub />
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           </ul>
