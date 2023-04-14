@@ -7,7 +7,7 @@ type Props = {
 };
 
 import { CiDiscount1 } from "react-icons/ci";
-import { FiCopy } from "react-icons/fi";
+import { FiCopy,FiCheck } from "react-icons/fi";
 
 const ItemVariants: Variants = {
   hidden: { opacity: 0, y: 1000 },
@@ -21,26 +21,35 @@ const ItemVariants: Variants = {
 
 export default function Discount_Code({ setOpen }: Props) {
   const [copied, setCopied] = useState(false);
-
+  const [showMessage, setShowMessage] = useState(false);
   const onDragging = (event: any, info: any) => {
     info.offset.y > 100 ? setOpen(false) : setOpen(true);
   };
 
   const copyToClipboard = (value: string) => {
-    navigator.clipboard.writeText(value);
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      origin: {
-        x: Math.random(),
-        // since they fall down, start a bit higher than random
-        y: Math.random() - 0.2,
-      },
+    navigator.clipboard.writeText(value)
+    .then(() => {
+      // Copy successful
+      confetti({
+        particleCount: 100,
+        startVelocity: 30,
+        spread: 360,
+        origin: {
+          x: Math.random(),
+          y: Math.random() - 0.2,
+        },
+      });
+      setCopied(true);
+    })
+    .catch((err) => {
+      // Copy failed
+      setShowMessage(true);
     });
-    setCopied(true);
   };
+ 
+  
 
+  
   return (
     <motion.div
       variants={ItemVariants}
@@ -64,13 +73,21 @@ export default function Discount_Code({ setOpen }: Props) {
       <div className="flex items-center mt-2 overflow-hidden bg-gray-100 rounded-lg">
         <code className="px-3 grow">anilearn83</code>
         <button
-          onClick={() => copyToClipboard("anilearn83")}
-          className={`px-3 py-2 text-white duration-200 ${
-            copied ? "bg-black" : "bg-green-800"
-          }`}
-        >
-          <FiCopy />
-        </button>
+        onClick={() => copyToClipboard("anilearn83")}
+        className={`px-3 py-2 text-white duration-200 ${
+          copied ? "bg-black cursor-not-allowed" : "bg-green-800"
+        }`}
+        disabled={copied} // Disable button when text is already copied
+      >
+        {copied ? (
+          <FiCheck /> // Render tick mark icon when copied
+        ) : (
+          <FiCopy /> // Render copy icon by default
+        )}
+      </button>
+      {showMessage && (
+        <p className="text-red-500 mt-2">Text already copied!</p>
+      )}
       </div>
     </motion.div>
   );
