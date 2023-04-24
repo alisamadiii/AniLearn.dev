@@ -22,7 +22,7 @@ export default function Pricing({}: Props) {
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-200px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, delay: 0.05 * index }}
           key={pricing.level}
           className="flex flex-col grow basis-[300px] bg-slate-100 p-4 rounded-xl shadow-anilearn overflow-hidden"

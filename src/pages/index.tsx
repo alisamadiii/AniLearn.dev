@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { TwitterVideoEmbed } from "react-twitter-embed";
 import Masonry from "react-masonry-css";
@@ -23,6 +23,7 @@ import { FAQ_DATA } from "@/contents/FAQ";
 import Pricing from "@/components/Pricing";
 import { TESTIMONIAL } from "@/contents/Testimonial";
 import Testimonial from "@/components/Testimonial";
+import BannerBG from "@/assets/Banner-bg";
 
 const breakpointColumnsObj = {
   default: 3,
@@ -32,9 +33,12 @@ const breakpointColumnsObj = {
 };
 
 export default function Index({}: Props) {
+  const [faqNum, setFaqNum] = useState<number>(1);
+
   return (
     <>
-      <Container className="flex flex-col items-center px-4 pt-36">
+      {/* <BannerBG /> */}
+      <Container className="relative flex flex-col items-center px-4 pt-36">
         <header className="relative text-center" id="hero-section">
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -166,7 +170,12 @@ export default function Index({}: Props) {
         </h2>
         <Container className="px-4 pb-24">
           {FAQ_DATA.map((faq) => (
-            <FAQ key={faq.num} faq={faq} />
+            <FAQ
+              key={faq.num}
+              faq={faq}
+              faqNum={faqNum}
+              setFaqNum={setFaqNum}
+            />
           ))}
         </Container>
       </section>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
@@ -12,13 +12,32 @@ import Logo from "@/assets/Icons/Logo";
 import { AiFillGithub } from "react-icons/ai";
 
 export default function Navbar({}: Props) {
+  const [navbarDesign, setNavbarDesign] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      if (window.scrollY > 50) {
+        setNavbarDesign(true);
+      } else {
+        setNavbarDesign(false);
+      }
+    });
+  });
+
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full px-4 font-medium bg-white bg-opacity-60 backdrop-blur-md">
-      <Container className="items-center justify-between hidden h-20 md:flex">
-        <Link
-          href={"/"}
-          className="flex items-center gap-1 text-xl font-bold text-slate-700 dark:text-white"
-        >
+    <nav
+      className={`fixed top-0 left-0 z-50 w-full px-4 font-medium duration-200 ${
+        navbarDesign
+          ? "bg-white bg-opacity-60 backdrop-blur-md"
+          : "text-slate-500"
+      }`}
+    >
+      <Container
+        className={`items-center justify-between hidden md:flex duration-200 ${
+          navbarDesign ? "h-16" : "h-20"
+        }`}
+      >
+        <Link href={"/"} className="flex items-center gap-1 text-xl font-bold">
           <Logo size="30" /> niLearn.dev
         </Link>
         <ul className="items-center hidden gap-8 md:flex">
@@ -29,22 +48,13 @@ export default function Navbar({}: Props) {
           >
             <AiFillGithub />
           </a>
-          <a
-            href="#preview"
-            className={`hover:text-slate-700 dark:hover:text-dark-primary`}
-          >
+          <a href="#preview" className={`hover:text-slate-700`}>
             Preview
           </a>
-          <a
-            href="#pricing"
-            className={`hover:text-slate-700 dark:hover:text-dark-primary`}
-          >
+          <a href="#pricing" className={`hover:text-slate-700`}>
             Pricing
           </a>
-          <a
-            href="#faq"
-            className={`hover:text-slate-700 dark:hover:text-dark-primary`}
-          >
+          <a href="#faq" className={`hover:text-slate-700`}>
             FAQ
           </a>
         </ul>
@@ -71,7 +81,7 @@ const NavbarSmall = () => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
   return (
-    <Container className="grid items-center justify-between h-20 grid-cols-3 md:hidden">
+    <Container className="grid items-center justify-between h-20 grid-cols-3 md:hidden text-slate-500">
       <div
         className="p-2 rounded-lg justify-self-start bg-slate-100 text-slate-400 hover:text-slate-500 dark:bg-dark-primary dark:text-black"
         onClick={() => setIsNavOpen(true)}
