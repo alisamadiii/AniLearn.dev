@@ -5,3 +5,9 @@
 body {
   @apply text-font-clr bg-background-clr;
 }
+
+@layer components {
+  .scroll-image {
+    transform: perspective(300px) rotateX(-10deg) scale(0.6);
+  }
+}

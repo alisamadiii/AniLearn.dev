@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
@@ -19,6 +15,12 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",
+        "gradient-text-2":
+          "radial-gradient(rgba(227, 229, 232, 0.56), #0D0E12)",
+      },
+      boxShadow: {
+        "main-button": "0px 1px 17px rgba(170, 63, 255, 0.46)",
+        "main-button-hover": "0px 1px 30px 3px rgba(170, 63, 255, 0.46)",
       },
     },
   },
