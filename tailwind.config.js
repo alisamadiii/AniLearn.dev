@@ -18,10 +18,17 @@ module.exports = {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",
         "gradient-text-2":
           "radial-gradient(73.51% 119.23% at 50% 49.23%, rgba(227, 229, 232, 0.52) 0%, rgba(227, 229, 232, 0.26) 100%)",
+        pattern: `linear-gradient(rgba(227, 229, 232, 0.02) 2px, transparent 2px), linear-gradient(90deg, rgba(227, 229, 232, 0.02) 1px, transparent 1px);`,
       },
       boxShadow: {
         "main-button": "0px 1px 17px rgba(170, 63, 255, 0.46)",
         "main-button-hover": "0px 1px 30px 3px rgba(170, 63, 255, 0.46)",
+      },
+      backgroundSize: {
+        pattern: "44px 44px, 44px 44px, 20px 20px, 20px 20px",
+      },
+      backgroundPosition: {
+        // pattern: "-2px -2px, -2px -2px, -1px -1px, -1px -1px",
       },
     },
   },
