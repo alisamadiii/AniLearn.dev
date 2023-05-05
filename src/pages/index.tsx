@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { Heading_1, Heading_2, Heading_3 } from "@components/index";
+import { Heading_1, Heading_2 } from "@components/index";
 import Container from "@layouts/Container";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,7 +35,8 @@ export default function Home() {
               AniLearn.dev
             </Link>
             <Link
-              href={"#"}
+              href={"#get-started"}
+              scroll={false}
               className="flex items-center px-4 py-2 text-xs text-white rounded-full bg-button group"
             >
               Start Now
@@ -56,7 +57,8 @@ export default function Home() {
             development principles.
           </p>
           <Link
-            href={"#"}
+            href={"#get-started"}
+            scroll={false}
             className="px-5 py-2 mt-12 text-sm text-black duration-200 bg-white rounded-full shadow-main-button hover:shadow-main-button-hover"
           >
             Start Now
@@ -77,7 +79,7 @@ export default function Home() {
         </Container>
       </header>
 
-      <section className="py-12">
+      <section id="get-started" className="py-12">
         <Container className="relative">
           <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
             technologies
@@ -96,14 +98,14 @@ export default function Home() {
               name="HTML"
               description="HTML stands for HyperText Markup Language. It is a standard markup language for web page creation. It allows the creation and structure of sections, paragraphs, and links using HTML elements (the building blocks of a web page) such as tags and attributes."
               Icon={AiFillHtml5}
-              link="#"
+              link="/html"
             />
             {/* item-2 */}
             <Technology
               name="CSS"
               description="CSS was developed by W3C (World Wide Web Consortium) in 1996 for a rather simple reason. HTML element was not designed to have tags that would help format the page. You were only supposed to write the markup for the web page."
               Icon={IoLogoCss3}
-              link="#"
+              link="/css"
             />
           </div>
         </Container>

@@ -17,13 +17,25 @@ type Props = {
 };
 
 export function Heading_1({ children, className }: Props) {
-  return <h1 className={`${SuisseIntl.className} ${className}`}>{children}</h1>;
+  return (
+    <h1 className={`${SuisseIntl.className} text-white ${className}`}>
+      {children}
+    </h1>
+  );
 }
 
 export function Heading_2({ children, className }: Props) {
-  return <h2 className={`${SuisseIntl.className} ${className}`}>{children}</h2>;
+  return (
+    <h2 className={`${SuisseIntl.className} text-white ${className}`}>
+      {children}
+    </h2>
+  );
 }
 
 export function Heading_3({ children, className }: Props) {
-  return <h3 className={`${SuisseIntl.className} ${className}`}>{children}</h3>;
+  return (
+    <h3 className={`${SuisseIntl.className} text-white ${className}`}>
+      {children}
+    </h3>
+  );
 }
