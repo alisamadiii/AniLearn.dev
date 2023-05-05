@@ -10,4 +10,46 @@ body {
   .scroll-image {
     transform: perspective(300px) rotateX(-10deg) scale(0.6);
   }
+
+  @media (min-width: 768px) {
+    #box::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      transition: opacity 500ms;
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.6),
+        transparent 20%
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    #box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(
+        500px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.04),
+        transparent 30%
+      );
+      opacity: 0;
+      z-index: 3;
+      transition: opacity 500ms;
+      pointer-events: none;
+    }
+
+    #box:hover::before {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
+  }
 }

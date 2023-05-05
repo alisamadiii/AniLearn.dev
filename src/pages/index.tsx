@@ -13,6 +13,7 @@ import HeaderRects from "@assets/Header-rects";
 import { IoIosArrowForward, IoLogoCss3 } from "react-icons/io";
 import { AiFillHtml5 } from "react-icons/ai";
 import Technology from "@components/Technology";
+import Image from "next/image";
 
 export default function Home() {
   const [isImage, setIsImage] = useState<boolean>(false);
@@ -64,8 +65,10 @@ export default function Home() {
         {/* Image */}
         <Container className="relative flex items-center justify-center p-3 mt-12">
           <HeaderRects />
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80"
+            width={800}
+            height={500}
             alt=""
             className={`w-full max-w-[800px] duration-1000 rounded-xl ${
               isImage == false && ""
@@ -87,7 +90,7 @@ export default function Home() {
           <div className="absolute h-24 translate-y-24 w-96 bg-primary/20 -z-10 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-24 w-96 bg-primary/10 -z-10 blur-3xl" />
           {/* container */}
-          <div className="grid gap-8 mt-8 md:grid-cols-2">
+          <div className="relative grid gap-8 mt-8 md:grid-cols-2">
             {/* item-1 */}
             <Technology
               name="HTML"

@@ -101,9 +101,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -136,9 +136,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -171,9 +171,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -206,9 +206,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -241,9 +241,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -276,9 +276,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -311,9 +311,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -346,9 +346,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -381,9 +381,9 @@ export default function HeaderRects({}: Props) {
           width="374"
           height="65"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -417,8 +417,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(1037 112) rotate(9.61973) scale(59.8415 559.598)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#0047FF" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#0047FF" />
         </radialGradient>
         <radialGradient
           id="paint1_radial_7_17"
@@ -428,8 +428,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(710 41) rotate(9.61973) scale(59.8415 559.598)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#0047FF" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#0047FF" />
         </radialGradient>
         <radialGradient
           id="paint2_radial_7_17"
@@ -439,8 +439,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(263 112) rotate(9.61973) scale(59.8415 559.598)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#0047FF" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#0047FF" />
         </radialGradient>
         <radialGradient
           id="paint3_radial_7_17"
@@ -450,8 +450,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(972 183) rotate(9.61973) scale(59.8415 559.598)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#8000FF" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#8000FF" />
         </radialGradient>
         <radialGradient
           id="paint4_radial_7_17"
@@ -461,8 +461,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(645 112) rotate(9.61973) scale(59.8415 559.598)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#8000FF" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#8000FF" />
         </radialGradient>
         <radialGradient
           id="paint5_radial_7_17"
@@ -472,8 +472,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(198 183) rotate(9.61973) scale(59.8415 559.598)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#8000FF" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#8000FF" />
         </radialGradient>
         <radialGradient
           id="paint6_radial_7_17"
@@ -483,8 +483,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(1043 256) rotate(174.428) scale(82.3893 770.451)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#D10000" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#D10000" />
         </radialGradient>
         <radialGradient
           id="paint7_radial_7_17"
@@ -494,8 +494,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(716 185) rotate(174.428) scale(82.3893 770.451)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#D10000" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#D10000" />
         </radialGradient>
         <radialGradient
           id="paint8_radial_7_17"
@@ -505,8 +505,8 @@ export default function HeaderRects({}: Props) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(269 256) rotate(174.428) scale(82.3893 770.451)"
         >
-          <stop stop-color="#A3BDFF" />
-          <stop offset="1" stop-color="#D10000" />
+          <stop stopColor="#A3BDFF" />
+          <stop offset="1" stopColor="#D10000" />
         </radialGradient>
       </defs>
     </svg>
