@@ -22,6 +22,10 @@ export default function Flex_Position({}: Props) {
   const [justifySelf, setJustifySelf] = useState("justify-self-start");
   const [alignSelf, setAlignSelf] = useState("self-start");
 
+  const [flexDirection, setFlexDirection] = useState<"flex-col" | "flex-row">(
+    "flex-row"
+  );
+
   const rectsFunction = (value: "increase" | "decrease") => {
     if (value == "increase") {
       setRectsNum(rectsNum + 1);
@@ -92,6 +96,11 @@ export default function Flex_Position({}: Props) {
       </div>
       <p className="mt-1 text-sm italic">Number of Rectangular</p>
 
+      <div className="flex flex-wrap gap-4 my-4">
+        <button onClick={() => setFlexDirection("flex-row")}>Row</button>
+        <button onClick={() => setFlexDirection("flex-col")}>Column</button>
+      </div>
+
       <Heading_3 className="mt-8 text-3xl">
         justify-content & align-items
       </Heading_3>
@@ -100,7 +109,7 @@ export default function Flex_Position({}: Props) {
         <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
         {/* Demo */}
         <div
-          className={`w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${justifyContent} ${alignItems}`}
+          className={`w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${flexDirection} ${justifyContent} ${alignItems}`}
         >
           <AnimatePresence initial={false}>
             {[...Array(rectsNum)].map((_, index) => (
@@ -269,11 +278,12 @@ export default function Flex_Position({}: Props) {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 layout
-                className={`bg-white rounded-lg grow text-black basis-32 ${
-                  index == 0 && `${justifySelf} ${alignSelf} bg-primary`
+                className={`bg-white rounded-lg grow text-black basis-32 p-2 ${
+                  index == 0 &&
+                  `${justifySelf} ${alignSelf} !bg-primary !text-white`
                 }`}
               >
-                {index} Items
+                {index + 1} Items
               </motion.div>
             ))}
           </AnimatePresence>
