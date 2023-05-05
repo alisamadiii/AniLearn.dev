@@ -16,7 +16,7 @@ export default function Flex_Position({}: Props) {
   const [alignItems, setAlignItems] = useState("items-start");
 
   // Second State Management
-  const [alignContent, setAlignContent] = useState("align-start");
+  const [alignContent, setAlignContent] = useState("content-start");
 
   // Third State Management
   const [justifySelf, setJustifySelf] = useState("justify-self-start");
