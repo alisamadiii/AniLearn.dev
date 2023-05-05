@@ -175,8 +175,151 @@ export default function Flex_Position({}: Props) {
       </div>
 
       <Heading_3 className="mt-8 text-3xl">align-content</Heading_3>
+      {/* Workplace */}
+      <div className="mt-8">
+        {/* Demo */}
+        <div
+          className={`w-full max-w-[905px] mx-auto bg-box border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${alignContent} flex-wrap`}
+          style={{ height: 50 * rectsNum }}
+        >
+          <AnimatePresence initial={false}>
+            {[...Array(rectsNum)].map((_, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                layout
+                className="bg-white rounded-lg w-11 h-11 basis-1/3 grow"
+              />
+            ))}
+          </AnimatePresence>
+        </div>
+        {/* Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <Button_Tech
+            value="start"
+            classNameValue="content-start"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="end"
+            classNameValue="content-end"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="center"
+            classNameValue="content-center"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="space-between"
+            classNameValue="content-between"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="space-evenly"
+            classNameValue="content-evenly"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="space-around"
+            classNameValue="content-around"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="stretch"
+            classNameValue="content-scratch"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+          <Button_Tech
+            value="baseline"
+            classNameValue="content-baseline"
+            className={alignContent}
+            setClassName={setAlignContent}
+          />
+        </div>
+      </div>
 
       <Heading_3 className="mt-8 text-3xl">justify-self & align-self</Heading_3>
+      {/* Workplace */}
+      <div className="mt-8">
+        {/* Demo */}
+        <div
+          className={`w-full max-w-[905px] mx-auto h-36 bg-box border border-white-low-opacity rounded-lg grid grid-cols-3 gap-1 overflow-hidden`}
+        >
+          <AnimatePresence initial={false}>
+            {[...Array(rectsNum)].map((_, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                layout
+                className={`bg-white rounded-lg grow text-black basis-32 ${
+                  index == 0 && `${justifySelf} ${alignSelf} bg-primary`
+                }`}
+              >
+                {index} Items
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+        {/* Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <Button_Tech
+            value="start"
+            classNameValue="justify-self-start"
+            className={justifySelf}
+            setClassName={setJustifySelf}
+          />
+          <Button_Tech
+            value="end"
+            classNameValue="justify-self-end"
+            className={justifySelf}
+            setClassName={setJustifySelf}
+          />
+          <Button_Tech
+            value="center"
+            classNameValue="justify-self-center"
+            className={justifySelf}
+            setClassName={setJustifySelf}
+          />
+          <Button_Tech
+            value="stretch"
+            classNameValue="justify-self-stretch"
+            className={justifySelf}
+            setClassName={setJustifySelf}
+          />
+        </div>
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
+          <Button_Tech
+            value="start"
+            classNameValue="self-start"
+            className={alignSelf}
+            setClassName={setAlignSelf}
+          />
+          <Button_Tech
+            value="end"
+            classNameValue="self-end"
+            className={alignSelf}
+            setClassName={setAlignSelf}
+          />
+          <Button_Tech
+            value="center"
+            classNameValue="self-center"
+            className={alignSelf}
+            setClassName={setAlignSelf}
+          />
+        </div>
+      </div>
     </Container>
   );
 }
