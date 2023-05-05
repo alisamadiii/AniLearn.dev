@@ -10,8 +10,9 @@ module.exports = {
         "font-clr": "rgba(227, 229, 232, 0.56)",
         "background-clr": "#0D0E12",
         "blur-clr": "rgba(170, 63, 255, 0.07)",
-        box: "rgba(18, 20, 24, 0.54)",
+        box: "rgba(18, 20, 24)",
         "mouse-move": "rgba(92, 92, 92, 0.09)",
+        "white-low-opacity": "rgba(255, 255, 255, 0.07)",
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",
