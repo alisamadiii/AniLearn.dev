@@ -25,6 +25,29 @@ export default function Open_Graph({}: Props) {
   const [platforms, setPlatforms] = useState<
     "facebook" | "twitter" | "linkedin" | "discord"
   >("facebook");
+  // Platforms Data
+  const platformsData: {
+    id: number;
+    platform: "facebook" | "twitter" | "linkedin" | "discord";
+  }[] = [
+    {
+      id: 1,
+      platform: "facebook",
+    },
+    {
+      id: 2,
+      platform: "twitter",
+    },
+    {
+      id: 3,
+      platform: "linkedin",
+    },
+    {
+      id: 4,
+      platform: "discord",
+    },
+  ];
+  const [isSelected, setIsSelected] = useState(platformsData[0].id);
 
   const copyFunction = () => {
     navigator.clipboard.writeText(`
@@ -157,38 +180,28 @@ export default function Open_Graph({}: Props) {
         <div>
           {/* Buttons for selecting platforms */}
           <div className="mb-4">
-            <button
-              className={`px-4 py-1 text-sm rounded-full ${
-                platforms == "facebook" && "bg-button text-white"
-              }`}
-              onClick={() => setPlatforms("facebook")}
-            >
-              facebook
-            </button>
-            <button
-              className={`px-4 py-1 text-sm rounded-full ${
-                platforms == "twitter" && "bg-button text-white"
-              }`}
-              onClick={() => setPlatforms("twitter")}
-            >
-              twitter
-            </button>
-            <button
-              className={`px-4 py-1 text-sm rounded-full ${
-                platforms == "linkedin" && "bg-button text-white"
-              }`}
-              onClick={() => setPlatforms("linkedin")}
-            >
-              linkedin
-            </button>
-            <button
-              className={`px-4 py-1 text-sm rounded-full ${
-                platforms == "discord" && "bg-button text-white"
-              }`}
-              onClick={() => setPlatforms("discord")}
-            >
-              discord
-            </button>
+            {platformsData.map((platform) => (
+              <button
+                key={platform.id}
+                className={`relative px-4 py-1 text-sm rounded-full duration-200 ${
+                  platforms == platform.platform && "text-white"
+                }`}
+                onClick={() => {
+                  setPlatforms(platform.platform);
+                  setIsSelected(platform.id);
+                }}
+              >
+                {isSelected == platform.id && (
+                  <motion.div
+                    layoutId="button"
+                    className="absolute inset-0 bg-button -z-10"
+                    style={{ borderRadius: "9999px" }}
+                    transition={{ duration: 0.2 }}
+                  />
+                )}
+                {platform.platform}
+              </button>
+            ))}
           </div>
           {platforms == "facebook" ? (
             <div className="bg-[#3a3b3c] duration-200 text-white">
