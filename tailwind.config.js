@@ -18,7 +18,7 @@ module.exports = {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",
         "gradient-text-2":
           "radial-gradient(73.51% 119.23% at 50% 49.23%, rgba(227, 229, 232, 0.52) 0%, rgba(227, 229, 232, 0.26) 100%)",
-        pattern: `linear-gradient(rgba(227, 229, 232, 0.02) 2px, transparent 2px), linear-gradient(90deg, rgba(227, 229, 232, 0.02) 1px, transparent 1px);`,
+        pattern: `linear-gradient(rgba(13, 14, 18, .3) 2px, transparent 2px), linear-gradient(90deg, rgba(13, 14, 18, .3) 1px, transparent 1px);`,
       },
       boxShadow: {
         "main-button": "0px 1px 17px rgba(170, 63, 255, 0.46)",

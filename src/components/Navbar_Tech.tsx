@@ -40,7 +40,7 @@ export default function Navbar_Tech({}: Props) {
   return (
     <Fragment>
       <nav
-        className={`fixed md:sticky top-0 left-0 w-[220px] px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr md:translate-x-0 duration-200 z-50 ${
+        className={`fixed md:sticky top-0 left-0 w-[220px] px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
           isNavbar ? "translate-x-0" : " -translate-x-full"
         }`}
       >

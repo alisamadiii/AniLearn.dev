@@ -1,10 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/canvas-confetti': ^1.6.0
   '@types/node': 18.16.3
   '@types/react': 18.2.3
   '@types/react-dom': 18.2.3
   autoprefixer: 10.4.14
+  canvas-confetti: ^1.6.0
   eslint: 8.39.0
   eslint-config-next: 13.3.4
   framer-motion: ^10.12.7
@@ -21,6 +23,7 @@ dependencies:
   '@types/react': 18.2.3
   '@types/react-dom': 18.2.3
   autoprefixer: 10.4.14_postcss@8.4.23
+  canvas-confetti: 1.6.0
   eslint: 8.39.0
   eslint-config-next: 13.3.4_iacogk7kkaymxepzhgcbytyi7q
   framer-motion: 10.12.7_biqbaboplfbrettd7655fr4n2y
@@ -31,6 +34,9 @@ dependencies:
   react-icons: 4.8.0_react@18.2.0
   tailwindcss: 3.3.2
   typescript: 5.0.4
+
+devDependencies:
+  '@types/canvas-confetti': 1.6.0
 
 packages:
 
@@ -283,6 +289,10 @@ packages:
     dependencies:
       tslib: 2.5.0
     dev: false
+
+  /@types/canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
+    dev: true
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -605,6 +615,10 @@ packages:
 
   /caniuse-lite/1.0.30001482:
     resolution: {integrity: sha512-F1ZInsg53cegyjroxLNW9DmrEQ1SuGRTO1QlpA0o2/6OpQ0gFeDRoq1yFmnr8Sakn9qwwt9DmbxHB6w167OSuQ==}
+    dev: false
+
+  /canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==}
     dev: false
 
   /chalk/4.1.2:

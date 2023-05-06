@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import confetti from "canvas-confetti";
 
 type Props = {};
 
@@ -47,6 +48,15 @@ export default function Open_Graph({}: Props) {
   <meta name="twitter:image" content="${image}">
     `);
     setIsSaved(["Copied", true]);
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      origin: {
+        x: Math.random(),
+        y: Math.random() - 0.2,
+      },
+    });
 
     setTimeout(() => {
       setIsSaved(["Copy", false]);
@@ -136,11 +146,11 @@ export default function Open_Graph({}: Props) {
           </div>
           <button
             onClick={copyFunction}
-            className={`flex items-center gap-2 px-3 py-2 mt-3 text-white rounded-md ${
+            className={`flex items-center gap-2 px-3 py-2 mt-7 text-white rounded-md ${
               isSaved[1] ? "bg-green-600" : "bg-primary"
             }`}
           >
-            {isSaved ? <BsFillClipboard2CheckFill /> : <MdContentCopy />}
+            {isSaved[1] ? <BsFillClipboard2CheckFill /> : <MdContentCopy />}
             {isSaved[0]}
           </button>
         </div>

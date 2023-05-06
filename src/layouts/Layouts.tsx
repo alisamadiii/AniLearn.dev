@@ -13,7 +13,11 @@ export default function Layouts({ children }: Props) {
     return (
       <div className="flex">
         <Navbar_Tech />
-        <main className="w-full">{children}</main>
+        <main className="relative w-full">
+          <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-l from-primary to-secondary blur-[100px] -z-50" />
+          <div className="absolute inset-0 w-full bg-pattern -z-40" />
+          {children}
+        </main>
       </div>
     );
   } else {

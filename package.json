@@ -13,6 +13,7 @@
     "@types/react": "18.2.3",
     "@types/react-dom": "18.2.3",
     "autoprefixer": "10.4.14",
+    "canvas-confetti": "^1.6.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "framer-motion": "^10.12.7",
@@ -23,5 +24,8 @@
     "react-icons": "^4.8.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.6.0"
   }
 }
