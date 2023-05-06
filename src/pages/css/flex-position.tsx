@@ -264,7 +264,7 @@ export default function Flex_Position({}: Props) {
         </div>
       </div>
 
-      <Heading_3>justify-self & align-self</Heading_3>
+      <Heading_3 margin={true}>justify-self & align-self</Heading_3>
       {/* Workplace */}
       <div className="flex flex-col items-center mt-8">
         <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />

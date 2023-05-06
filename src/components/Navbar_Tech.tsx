@@ -3,15 +3,17 @@ import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Props = {};
+type Props = {
+  isNavbar: boolean;
+  setIsNavbar: (a: boolean) => void;
+};
 
 // Icons
 import { IoIosArrowDown, IoLogoCss3 } from "react-icons/io";
 import { AiFillHtml5 } from "react-icons/ai";
 import { HiMenuAlt2 } from "react-icons/hi";
 
-export default function Navbar_Tech({}: Props) {
-  const [isNavbar, setIsNavbar] = useState<boolean>(false);
+export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
   const [open, setOpen] = useState<number>(1);
 
   const router = useRouter();
