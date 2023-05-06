@@ -141,10 +141,10 @@ export default function Open_Graph({}: Props) {
                 className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
               />
             </label>
-            <label htmlFor="title" className="flex flex-col gap-1">
+            <label htmlFor="description" className="flex flex-col gap-1">
               <span className="text-lg text-white">Description</span>
               <textarea
-                id="title"
+                id="description"
                 rows={5}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -183,7 +183,7 @@ export default function Open_Graph({}: Props) {
             {platformsData.map((platform) => (
               <button
                 key={platform.id}
-                className={`relative px-4 py-1 text-sm rounded-full duration-200 ${
+                className={`relative px-4 py-1 text-sm rounded-full duration-200 capitalize ${
                   platforms == platform.platform && "text-white"
                 }`}
                 onClick={() => {
