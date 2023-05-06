@@ -137,7 +137,7 @@ export default function Navbar_Tech({}: Props) {
       </nav>
       {/* Opening and Closing Navbar in small devices */}
       <div
-        className={`fixed p-2 text-2xl rounded-full bottom-4 left-4 md:hidden bg-background-clr duration-200 ${
+        className={`fixed p-2 text-2xl rounded-full bottom-4 left-4 md:hidden bg-background-clr duration-200 z-50 ${
           isNavbar ? "translate-x-56 rotate-12 bg-red-700" : "translate-x-0"
         }`}
         onClick={() => setIsNavbar(!isNavbar)}

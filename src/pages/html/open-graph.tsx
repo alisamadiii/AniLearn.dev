@@ -6,7 +6,12 @@ type Props = {};
 import Container from "@layouts/Container";
 import { Heading_1, Paragraph } from "@components/Tech/Typography_Tech";
 
+// Icons
+import { MdContentCopy } from "react-icons/md";
+import { BsFillClipboard2CheckFill } from "react-icons/bs";
+
 export default function Open_Graph({}: Props) {
+  const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
   // Inputs
   const [title, setTitle] = useState("Ali Reza - Portfolio");
   const [description, setDescription] = useState(
@@ -19,6 +24,34 @@ export default function Open_Graph({}: Props) {
   const [platforms, setPlatforms] = useState<
     "facebook" | "twitter" | "linkedin" | "discord"
   >("facebook");
+
+  const copyFunction = () => {
+    navigator.clipboard.writeText(`
+  <!-- HTML Meta Tags -->
+  <title>${title}</title>
+  <meta name="description" content="${description}">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="${website}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:image" content="${image}">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="${website}">
+  <meta property="twitter:url" content="${website}">
+  <meta name="twitter:title" content="${title}">
+  <meta name="twitter:description" content="${description}">
+  <meta name="twitter:image" content="${image}">
+    `);
+    setIsSaved(["Copied", true]);
+
+    setTimeout(() => {
+      setIsSaved(["Copy", false]);
+    }, 3000);
+  };
 
   return (
     <Container className="py-12">
@@ -101,6 +134,15 @@ export default function Open_Graph({}: Props) {
               />
             </label>
           </div>
+          <button
+            onClick={copyFunction}
+            className={`flex items-center gap-2 px-3 py-2 mt-3 text-white rounded-md ${
+              isSaved[1] ? "bg-green-600" : "bg-primary"
+            }`}
+          >
+            {isSaved ? <BsFillClipboard2CheckFill /> : <MdContentCopy />}
+            {isSaved[0]}
+          </button>
         </div>
         <div>
           {/* Buttons for selecting platforms */}
@@ -139,7 +181,7 @@ export default function Open_Graph({}: Props) {
             </button>
           </div>
           {platforms == "facebook" ? (
-            <div className="bg-[#3a3b3c] text-white">
+            <div className="bg-[#3a3b3c] duration-200 text-white">
               <motion.img
                 layoutId="image"
                 className="object-cover aspect-video"
@@ -154,7 +196,7 @@ export default function Open_Graph({}: Props) {
               </div>
             </div>
           ) : platforms == "twitter" ? (
-            <div className="overflow-hidden rounded-2xl">
+            <div className="overflow-hidden duration-200 rounded-2xl">
               <motion.img
                 layoutId="image"
                 className="object-cover aspect-video"
@@ -169,7 +211,7 @@ export default function Open_Graph({}: Props) {
               </div>
             </div>
           ) : platforms == "linkedin" ? (
-            <div className="text-white bg-slate-700">
+            <div className="text-white duration-200 bg-slate-700">
               <motion.img
                 layoutId="image"
                 className="object-cover aspect-video"
@@ -181,7 +223,7 @@ export default function Open_Graph({}: Props) {
               </div>
             </div>
           ) : platforms == "discord" ? (
-            <div className="bg-[#25272b] p-4 rounded-md border-l-2 border-[#1c1e21]">
+            <div className="bg-[#25272b] p-4 duration-200 rounded-md border-l-2 border-[#1c1e21]">
               <div className="py-1 pb-2 mb-2">
                 <h3 className="font-semibold text-lg/8 text-sky-600">
                   {title}
