@@ -106,6 +106,30 @@ export default function Flex_Position({}: Props) {
       </div>
 
       <Heading_3 margin={true}>justify-content & align-items</Heading_3>
+      <div className="flex flex-col gap-2 mt-4">
+        <code>
+          justify-content:{" "}
+          <motion.span
+            key={justifyContent}
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+          >
+            {justifyContent}
+          </motion.span>
+          ;
+        </code>
+        <code>
+          align-items:{" "}
+          <motion.span
+            key={alignItems}
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+          >
+            {alignItems}
+          </motion.span>
+          ;
+        </code>
+      </div>
       {/* Workplace */}
       <div className="flex flex-col items-center mt-8">
         <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
