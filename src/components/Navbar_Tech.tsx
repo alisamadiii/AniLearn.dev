@@ -12,9 +12,17 @@ import { HiMenuAlt2 } from "react-icons/hi";
 
 export default function Navbar_Tech({}: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
-  const [open, setOpen] = useState<number>(0);
+  const [open, setOpen] = useState<number>(1);
 
   const router = useRouter();
+
+  const HTML = [
+    {
+      id: 1,
+      name: "Open Graph",
+      link: "/html/open-graph",
+    },
+  ];
 
   const CSS = [
     {
@@ -43,16 +51,48 @@ export default function Navbar_Tech({}: Props) {
           Learning something with animation doesn&apos;t get easier than this
         </p>
         <ul className="mt-4 space-y-4">
-          <li className="bg-[#22262F]/80 p-2 rounded-md border border-white-low-opacity text-white">
+          {/* HTML */}
+          <li className="bg-[#22262F]/80 p-2 rounded-md border border-white-low-opacity">
             <div
-              className="flex items-center gap-1 cursor-pointer"
+              className="flex items-center gap-1 text-white cursor-pointer"
               onClick={() => setOpen(1)}
             >
               <AiFillHtml5 />
               <span className="grow">HTML</span>
               <IoIosArrowDown />
             </div>
+            {/* HTML LISTS */}
+            <AnimatePresence initial={false}>
+              {open == 1 && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="flex flex-col overflow-hidden font-light"
+                >
+                  {HTML.map((html) => (
+                    <div
+                      key={html.id}
+                      className={`p-[.8px] ${
+                        router.pathname == html.link &&
+                        "bg-gradient-to-t from-primary to-background-clr rounded-md"
+                      } ${html.id == 1 && "mt-4"}`}
+                    >
+                      <Link
+                        href={html.link}
+                        className={`w-full inline-block py-1 px-2 rounded-md ${
+                          router.pathname == html.link && "bg-[#15171E]"
+                        }`}
+                      >
+                        {html.name}
+                      </Link>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </li>
+          {/* CSS */}
           <li className="bg-[#22262F]/80 p-2 rounded-md border border-white-low-opacity">
             <div
               className="flex items-center gap-1 text-white cursor-pointer"
@@ -62,6 +102,7 @@ export default function Navbar_Tech({}: Props) {
               <span className="grow">CSS</span>
               <IoIosArrowDown />
             </div>
+            {/* CSS LISTS */}
             <AnimatePresence>
               {open == 2 && (
                 <motion.div
@@ -94,6 +135,7 @@ export default function Navbar_Tech({}: Props) {
           </li>
         </ul>
       </nav>
+      {/* Opening and Closing Navbar in small devices */}
       <div
         className={`fixed p-2 text-2xl rounded-full bottom-4 left-4 md:hidden bg-background-clr duration-200 ${
           isNavbar ? "translate-x-56 rotate-12 bg-red-700" : "translate-x-0"
