@@ -8,6 +8,8 @@ type Props = {
   setIsNavbar: (a: boolean) => void;
 };
 
+import { HTML, CSS } from "@contents/Data";
+
 // Icons
 import { IoIosArrowDown, IoLogoCss3 } from "react-icons/io";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -17,27 +19,6 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
   const [open, setOpen] = useState<number>(1);
 
   const router = useRouter();
-
-  const HTML = [
-    {
-      id: 1,
-      name: "Open Graph",
-      link: "/html/open-graph",
-    },
-  ];
-
-  const CSS = [
-    {
-      id: 1,
-      name: "Flexbox Position",
-      link: "/css/flex-position",
-    },
-    {
-      id: 2,
-      name: "Z-Index",
-      link: "/css/z-index",
-    },
-  ];
 
   return (
     <Fragment>

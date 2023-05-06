@@ -6,6 +6,7 @@ type Props = {};
 
 import Container from "@layouts/Container";
 import { Heading_1, Paragraph } from "@components/Tech/Typography_Tech";
+import { platformsData } from "@contents/Data";
 
 // Icons
 import { MdContentCopy } from "react-icons/md";
@@ -25,28 +26,7 @@ export default function Open_Graph({}: Props) {
   const [platforms, setPlatforms] = useState<
     "facebook" | "twitter" | "linkedin" | "discord"
   >("facebook");
-  // Platforms Data
-  const platformsData: {
-    id: number;
-    platform: "facebook" | "twitter" | "linkedin" | "discord";
-  }[] = [
-    {
-      id: 1,
-      platform: "facebook",
-    },
-    {
-      id: 2,
-      platform: "twitter",
-    },
-    {
-      id: 3,
-      platform: "linkedin",
-    },
-    {
-      id: 4,
-      platform: "discord",
-    },
-  ];
+
   const [isSelected, setIsSelected] = useState(platformsData[0].id);
 
   const copyFunction = () => {
