@@ -1,15 +1,10 @@
 import Container from "@layouts/Container";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {};
 
-import {
-  Heading_1,
-  Heading_2,
-  Heading_3,
-  Paragraph,
-} from "@components/Tech/Typography_Tech";
+import { Heading_1, Paragraph } from "@components/Tech/Typography_Tech";
 import { Gradients } from "@contents/Gradients";
 
 // Icons
@@ -62,21 +57,21 @@ export default function Gradients_Page({}: Props) {
         </code>
       </div>
 
-      <section className="relative my-12">
+      <motion.section layout className="relative my-12">
+        <motion.div
+          key={Math.floor(Math.random() * 1000)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute w-full h-52 rounded-xl -z-10 blur-2xl"
+          style={{
+            background: `linear-gradient(${45}deg, ${Gradients[
+              selectedGradient
+            ].colors.map((color) => `${color}80`)})`,
+          }}
+        />
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            key={Gradients[selectedGradient].name}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute w-full h-52 rounded-xl -z-10 blur-2xl"
-            style={{
-              background: `linear-gradient(${45}deg, ${Gradients[
-                selectedGradient
-              ].colors.map((color) => `${color}80`)})`,
-            }}
-          />
-          <motion.div
-            key={Gradients[selectedGradient].name}
+            key={Math.floor(Math.random() * 1000)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="w-full py-4 font-medium text-center text-white h-52 rounded-xl"
@@ -104,7 +99,7 @@ export default function Gradients_Page({}: Props) {
             <IoIosArrowForward />
           </button>
         </div>
-      </section>
+      </motion.section>
     </Container>
   );
 }
