@@ -12,7 +12,7 @@ import { platformsData } from "@contents/Data";
 import { MdContentCopy } from "react-icons/md";
 import { BsFillClipboard2CheckFill } from "react-icons/bs";
 
-export default function Open_Graph({}: Props) {
+export default function Open_Graph_Page({}: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
   // Inputs
   const [title, setTitle] = useState("Ali Reza - Portfolio");

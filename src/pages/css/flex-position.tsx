@@ -15,7 +15,7 @@ import {
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import Button_Tech from "@components/Button_Tech";
 
-export default function Flex_Position({}: Props) {
+export default function Flex_Position_Page({}: Props) {
   const [rectsNum, setRectsNum] = useState(3);
   // First State Management
   const [justifyContent, setJustifyContent] = useState("justify-start");

@@ -27,7 +27,11 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
           isNavbar ? "translate-x-0" : " -translate-x-full"
         }`}
       >
-        <Link href={"/"} className="text-lg font-black text-white">
+        <Link
+          href={"/"}
+          onClick={() => setIsNavbar(false)}
+          className="text-lg font-black text-white"
+        >
           AniLearn.dev
         </Link>
         <p className="text-xs">

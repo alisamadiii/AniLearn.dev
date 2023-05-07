@@ -40,4 +40,9 @@ export const CSS = [
     name: "Filter",
     link: "/css/filter",
   },
+  {
+    id: 3,
+    name: "Gradients",
+    link: "/css/gradients",
+  },
 ];

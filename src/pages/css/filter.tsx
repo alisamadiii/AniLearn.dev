@@ -14,7 +14,7 @@ import {
   Paragraph,
 } from "@components/Tech/Typography_Tech";
 
-export default function Z_Index({}: Props) {
+export default function Filter_Page({}: Props) {
   // Filters State Management
   const [blur, setBlur] = useState(0);
   const [contrast, setContrast] = useState(100);
