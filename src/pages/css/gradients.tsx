@@ -4,7 +4,11 @@ import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {};
 
-import { Heading_1, Paragraph } from "@components/Tech/Typography_Tech";
+import {
+  Heading_1,
+  Heading_2,
+  Paragraph,
+} from "@components/Tech/Typography_Tech";
 import { Gradients } from "@contents/Gradients";
 
 // Icons
@@ -56,6 +60,9 @@ export default function Gradients_Page({}: Props) {
           </span>
         </code>
       </div>
+
+      <Heading_2 margin={true}>Working Place</Heading_2>
+      <Paragraph>This is the place where you can try them.</Paragraph>
 
       <motion.section layout className="relative my-12">
         <motion.div

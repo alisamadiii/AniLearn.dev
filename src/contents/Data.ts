@@ -45,4 +45,9 @@ export const CSS = [
     name: "Gradients",
     link: "/css/gradients",
   },
+  {
+    id: 4,
+    name: "Position",
+    link: "/css/position",
+  },
 ];

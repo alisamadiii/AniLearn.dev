@@ -34,6 +34,9 @@ export default function Filter_Page({}: Props) {
         of images, backgrounds, and borders.
       </Paragraph>
 
+      <Heading_2 margin={true}>Working Place</Heading_2>
+      <Paragraph>This is the place where you can try them.</Paragraph>
+
       {/* Image Comparison */}
       <ReactCompareSlider
         itemOne={
