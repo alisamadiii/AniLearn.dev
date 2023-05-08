@@ -35,7 +35,7 @@ export default function Display_Property({}: Props) {
         <small className="absolute top-0 left-0 px-4 py-1 text-white -translate-y-full bg-gradient-to-l from-primary to-secondary rounded-t-md">
           Code
         </small>
-        <code>display: {display};</code>
+        <code>display: {display == "hidden" ? "none" : display};</code>
       </div>
 
       <div className="relative w-full p-4 mt-12 overflow-hidden border rounded-lg bg-box border-white-low-opacity">

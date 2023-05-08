@@ -60,4 +60,9 @@ export const CSS = [
     name: "Display-Property",
     link: "/css/display-property",
   },
+  {
+    id: 7,
+    name: "Transform",
+    link: "/css/transform",
+  },
 ];
