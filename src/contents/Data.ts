@@ -50,4 +50,9 @@ export const CSS = [
     name: "Position",
     link: "/css/position",
   },
+  {
+    id: 5,
+    name: "Box-Model",
+    link: "/css/box-model",
+  },
 ];

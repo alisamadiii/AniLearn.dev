@@ -178,25 +178,25 @@ export default function Position({}: Props) {
       <div className="grid gap-8 md:grid-cols-2">
         <Range
           filterName="top"
-          maxNum={100}
+          maxNum={300}
           value={positionValue.top}
           onChange={onChangeHandler}
         />
         <Range
           filterName="left"
-          maxNum={100}
+          maxNum={300}
           value={positionValue.left}
           onChange={onChangeHandler}
         />
         <Range
           filterName="bottom"
-          maxNum={100}
+          maxNum={300}
           value={positionValue.bottom}
           onChange={onChangeHandler}
         />
         <Range
           filterName="right"
-          maxNum={100}
+          maxNum={300}
           value={positionValue.right}
           onChange={onChangeHandler}
         />
