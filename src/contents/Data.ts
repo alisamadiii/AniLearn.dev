@@ -55,4 +55,9 @@ export const CSS = [
     name: "Box-Model",
     link: "/css/box-model",
   },
+  {
+    id: 6,
+    name: "Display-Property",
+    link: "/css/display-property",
+  },
 ];
