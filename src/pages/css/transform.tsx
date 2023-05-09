@@ -6,7 +6,6 @@ type Props = {};
 import {
   Heading_1,
   Heading_2,
-  Heading_3,
   Paragraph,
 } from "@components/Tech/Typography_Tech";
 import Image from "next/image";
@@ -45,7 +44,7 @@ export default function Transform({}: Props) {
           width={400}
           height={400}
           alt="Image"
-          className="duration-200 rounded-md w-44"
+          className="duration-200 ease-out rounded-md w-44"
           style={
             perspective == false
               ? {

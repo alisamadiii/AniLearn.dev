@@ -65,4 +65,9 @@ export const CSS = [
     name: "Transform",
     link: "/css/transform",
   },
+  {
+    id: 8,
+    name: "Transition",
+    link: "/css/transition",
+  },
 ];
