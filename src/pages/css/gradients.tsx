@@ -107,6 +107,40 @@ export default function Gradients_Page({}: Props) {
           </button>
         </div>
       </motion.section>
+
+      <Heading_2 margin={true}>Text Gradient</Heading_2>
+      <Paragraph>This is the place where you can try them.</Paragraph>
+
+      {/* Code */}
+      <div className="relative w-full p-4 mt-16 border rounded-lg rounded-tl-none bg-box border-white-low-opacity">
+        <small className="absolute top-0 left-0 px-4 py-1 text-white -translate-y-full bg-gradient-to-l from-primary to-secondary rounded-t-md">
+          Code
+        </small>
+        <code className="space-y-2">
+          <div>
+            background: &quot;linear-gradient({45}deg,{" "}
+            {Gradients[selectedGradient].colors.join(", ")})&quot;;{" "}
+            <span className="opacity-70">
+              &#47;&#47; {Gradients[selectedGradient].name}
+            </span>
+          </div>
+          <div>-webkit-background-clip: text;</div>
+          <div>-webkit-text-fill-color: transparent;</div>
+        </code>
+      </div>
+
+      <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
+        <h1
+          className="text-4xl md:text-5xl font-black text-transparent !bg-clip-text"
+          style={{
+            background: `linear-gradient(${45}deg, ${Gradients[
+              selectedGradient
+            ].colors.join(", ")})`,
+          }}
+        >
+          Text-Gradient
+        </h1>
+      </div>
     </Container>
   );
 }
