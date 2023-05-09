@@ -10,9 +10,9 @@ type Props = {};
 import {
   Heading_1,
   Heading_2,
-  Heading_3,
   Paragraph,
 } from "@components/Tech/Typography_Tech";
+import { Range } from "@components/Tech/Range";
 
 export default function Filter_Page({}: Props) {
   const [image, setImage] = useState<null | string>(null);
@@ -103,63 +103,43 @@ export default function Filter_Page({}: Props) {
 
       {/* Range */}
       <div className="mt-12 space-y-5">
-        <Range maxNum={100} filterName="Blur" value={blur} setValue={setBlur} />
+        <Range
+          maxNum={100}
+          filterName="Blur"
+          value={blur}
+          onChange={(e) => setBlur(Number(e.target.value))}
+        />
         <Range
           maxNum={300}
           filterName="Contrast"
           value={contrast}
-          setValue={setContrast}
+          onChange={(e) => setContrast(Number(e.target.value))}
         />
         <Range
           maxNum={300}
           filterName="Grayscale"
           value={grayscale}
-          setValue={setGrayscale}
+          onChange={(e) => setGrayscale(Number(e.target.value))}
         />
         <Range
           maxNum={360}
           filterName="Hue-Rotate"
           value={hueRotate}
-          setValue={setHueRotate}
+          onChange={(e) => setHueRotate(Number(e.target.value))}
         />
         <Range
           maxNum={100}
           filterName="Saturate"
           value={saturate}
-          setValue={setSaturate}
+          onChange={(e) => setSaturate(Number(e.target.value))}
         />
         <Range
           maxNum={100}
           filterName="Brightness"
           value={brightness}
-          setValue={setBrightness}
+          onChange={(e) => setBrightness(Number(e.target.value))}
         />
       </div>
     </Container>
   );
 }
-
-type RangeProps = {
-  maxNum: number;
-  filterName: string;
-  value: number;
-  setValue: (a: number) => void;
-};
-
-const Range = ({ maxNum, filterName, value, setValue }: RangeProps) => {
-  return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-      <p className="basis-[200px]">{filterName}</p>
-      <div className="grow basis-[500px] range-slider">
-        <input
-          className="range-slider__range"
-          type="range"
-          value={value}
-          max={maxNum}
-          onChange={(e) => setValue(Number(e.target.value))}
-        />
-        <span className="range-slider__value">{value}</span>
-      </div>
-    </div>
-  );
-};

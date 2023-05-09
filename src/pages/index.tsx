@@ -19,21 +19,26 @@ import { AiFillHtml5 } from "react-icons/ai";
 import Technology from "@components/Technology";
 
 export default function Home() {
-  const [isImage, setIsImage] = useState<boolean>(false);
+  const [navbarBg, setNavbarBg] = useState<boolean>(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const y = window.scrollY;
 
-      scrollY > 300 ? setIsImage(true) : setIsImage(false);
+      scrollY > 100 ? setNavbarBg(true) : setNavbarBg(false);
     });
   }, []);
 
   return (
     <main className={`${inter.className}`}>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1500px] h-96 bg-center bg-cover -z-50 bg-header-image"></div>
       <header className="py-12">
         {/* Navbar */}
-        <nav className="fixed top-0 left-0 z-50 flex items-center w-full h-16 bg-background-clr">
+        <nav
+          className={`fixed top-0 left-0 z-50 flex items-center w-full h-16 duration-200 ${
+            navbarBg && "bg-background-clr"
+          }`}
+        >
           <Container className="flex items-center justify-between">
             <Link href={"#"} className="text-lg font-semibold text-white">
               AniLearn.dev
@@ -76,9 +81,7 @@ export default function Home() {
             width={2000}
             height={1400}
             alt=""
-            className={`w-full max-w-[1000px] rounded-xl ${
-              isImage == false && ""
-            }`}
+            className={`w-full max-w-[1000px] rounded-xl`}
           />
         </Container>
       </header>

@@ -35,6 +35,11 @@ export const CSS = [
     name: "Flexbox Position",
     link: "/css/flex-position",
   },
+  // {
+  //   id: 9,
+  //   name: "Flex-Order",
+  //   link: "/css/flex-order",
+  // },
   {
     id: 2,
     name: "Filter",
@@ -69,5 +74,24 @@ export const CSS = [
     id: 8,
     name: "Transition",
     link: "/css/transition",
+  },
+];
+
+// Flex Order
+export const FLEX_ORDER = [
+  {
+    id: 1,
+    name: "item 1",
+    order: 1,
+  },
+  {
+    id: 2,
+    name: "item 2",
+    order: 2,
+  },
+  {
+    id: 3,
+    name: "item 3",
+    order: 3,
   },
 ];
