@@ -75,6 +75,7 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
                         className={`w-full inline-block py-1 px-2 rounded-md ${
                           router.pathname == html.link && "bg-[#15171E]"
                         }`}
+                        onClick={() => setIsNavbar(false)}
                       >
                         {html.name}
                       </Link>
@@ -116,6 +117,7 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
                         className={`w-full inline-block py-1 px-2 rounded-md ${
                           router.pathname == css.link && "bg-[#15171E]"
                         }`}
+                        onClick={() => setIsNavbar(false)}
                       >
                         {css.name}
                       </Link>

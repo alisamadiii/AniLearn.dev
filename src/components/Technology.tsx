@@ -30,7 +30,7 @@ export default function Technology({ name, description, link, Icon }: Props) {
   return (
     <div
       id="box" // This is for using Pseudo Element (::before & ::after)
-      className="md:p-[2px] overflow-hidden border bg-box/40 rounded-xl border-white-low-opacity backdrop-blur-sm"
+      className="md:p-[2px] overflow-hidden border rounded-xl border-white-low-opacity backdrop-blur-sm"
     >
       <div className="z-20 flex flex-col items-start h-full p-4 bg-box rounded-xl">
         <div className="bg-[#1B1E22] p-2 rounded-md text-3xl text-white">

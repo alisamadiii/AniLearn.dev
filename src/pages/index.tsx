@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 import { Heading_1, Heading_2 } from "@components/index";
 import Container from "@layouts/Container";
@@ -21,10 +22,13 @@ import Technology from "@components/Technology";
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
 
+  //
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["30%", "-20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-
       scrollY > 100 ? setNavbarBg(true) : setNavbarBg(false);
     });
   }, []);
@@ -56,7 +60,10 @@ export default function Home() {
         {/* Section */}
         <Container className="flex flex-col items-center gap-4 mt-32 text-center">
           <Heading_1 className="text-4xl text-center text-white md:text-5xl lg:text-6xl">
-            Animation eases learning process.
+            <span className="relative p-2 isolate font-black before:content-[''] before:w-full before:h-full before:bg-white before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-l before:from-primary before:to-secondary before:-skew-y-2 before:rounded-md">
+              Animation
+            </span>{" "}
+            eases learning process.
           </Heading_1>
           <Heading_2 className="text-2xl text-transparent md:text-4xl bg-clip-text bg-gradient-text-2">
             Learning something with animation doesn&apos;t get easier than this
@@ -76,13 +83,17 @@ export default function Home() {
         {/* Image */}
         <Container className="relative flex items-center justify-center p-3 mt-12">
           <HeaderRects />
-          <Image
-            src={HeaderIMG}
-            width={2000}
-            height={1400}
-            alt=""
-            className={`w-full max-w-[1000px] rounded-xl`}
-          />
+          <motion.div style={{ y, opacity }}>
+            <Image
+              src={
+                "https://www.howtogeek.com/wp-content/uploads/2022/08/MidJourney-wizard-hall.jpg?height=200p&trim=2,2,2,2&crop=16:9"
+              }
+              width={2000}
+              height={1400}
+              alt=""
+              className={`w-full max-w-[1000px] rounded-xl`}
+            />
+          </motion.div>
         </Container>
       </header>
 

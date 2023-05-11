@@ -7,7 +7,6 @@ type Props = {};
 import {
   Heading_1,
   Heading_2,
-  Heading_3,
   Paragraph,
 } from "@components/Tech/Typography_Tech";
 import Button_Tech from "@components/Button_Tech";
