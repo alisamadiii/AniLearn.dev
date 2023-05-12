@@ -139,6 +139,14 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* ShoutOut */}
+      <section className="flex items-center justify-center px-4 py-12">
+        <div
+          className="relative w-full max-w-[1000px] bg-box h-52 overflow-hidden rounded-xl flex justify-center items-center"
+          id="shout-out-box"
+        ></div>
+      </section>
     </main>
   );
 }
