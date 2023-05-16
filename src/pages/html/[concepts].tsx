@@ -4,6 +4,8 @@ import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { folderPathFor, mdxStyling } from "mdxFiles";
+import { Components } from "@components/Tech/MDXComponents";
+import Container from "@layouts/Container";
 
 type Props = {
   mdxSource: any;
@@ -11,9 +13,9 @@ type Props = {
 
 export default function Concepts({ mdxSource }: Props) {
   return (
-    <div>
-      <MDXRemote {...mdxSource}></MDXRemote>
-    </div>
+    <Container className="pt-12 pb-20">
+      <MDXRemote {...mdxSource} components={Components}></MDXRemote>
+    </Container>
   );
 }
 
