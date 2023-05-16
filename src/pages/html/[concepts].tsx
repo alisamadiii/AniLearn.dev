@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
-import { folderPathFor, mdxStyling } from "mdxFiles";
+import { folderPathFor, mdxStyling } from "utils/mdxFiles";
 import { Components } from "@components/Tech/MDXComponents";
 import Container from "@layouts/Container";
 
