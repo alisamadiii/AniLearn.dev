@@ -22,12 +22,11 @@ pre[class*="language-"] {
 }
 pre[class*="language-"] {
   padding-block: 1em;
-  margin: 0.5em 0;
   overflow: auto;
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  @apply border rounded-lg bg-gradient-to-br from-box via-secondary/5 to-box border-white-low-opacity;
+  @apply relative z-10 border rounded-lg rounded-tl-none bg-gradient-to-br from-box via-secondary/5 to-box border-[#222] backdrop-blur;
 }
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
@@ -40,7 +39,20 @@ pre > code {
 }
 
 pre > code > span {
-  @apply px-4;
+  @apply relative pl-10 pr-4;
+}
+
+pre > code > span::after {
+  @apply absolute text-sm -translate-y-1/2 opacity-50 left-2 top-1/2;
+  content: attr(line);
+}
+
+pre > code > span:hover::after {
+  @apply opacity-100;
+}
+
+.rehype-code-title {
+  @apply inline-block px-2 pb-2 mt-8 text-white translate-y-2 bg-secondary rounded-t-md;
 }
 
 .token.block-comment,
@@ -110,7 +122,7 @@ pre[data-line] {
   padding: 1em 0 1em 3em;
 }
 .highlight-line {
-  @apply relative py-1 whitespace-pre pointer-events-none isolate before:absolute before:top-0 before:left-0 before:w-[200%] sm:before:w-full before:h-full before:bg-secondary/5 before:-z-10;
+  @apply relative py-1 duration-200 whitespace-pre pointer-events-none isolate before:absolute before:top-0 before:left-0 before:w-[200%] sm:before:w-full before:h-full before:bg-secondary/5 before:-z-10 before:duration-200;
 }
 
 @media print {

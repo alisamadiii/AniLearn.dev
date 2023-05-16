@@ -36,7 +36,7 @@ export function Heading_2({ children }: Props) {
 
 export function Heading_3({ children }: Props) {
   return (
-    <h3 className={`${SuisseIntl.className} text-3xl text-white`}>
+    <h3 className={`${SuisseIntl.className} text-3xl text-white mt-12 mb-3`}>
       {children}
     </h3>
   );

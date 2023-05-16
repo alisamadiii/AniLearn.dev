@@ -87,6 +87,10 @@ body {
     scale: 0.98;
     border-radius: 1em;
   }
+
+  p > code {
+    @apply text-white;
+  }
 }
 
 .range-slider {
