@@ -128,7 +128,7 @@ pre[data-line] {
 @media print {
   .highlight-line {
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 .line-numbers .highlight-line:after,

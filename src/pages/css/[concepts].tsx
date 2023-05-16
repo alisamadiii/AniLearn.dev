@@ -44,8 +44,6 @@ export const getStaticProps = async ({ params }: any) => {
   const { data, content: techContent } = matter(content);
   const mdxSource = await mdxStyling(techContent);
 
-  console.log(data);
-
   return {
     props: {
       data,
