@@ -59,7 +59,7 @@ export function JustifyContent({}: Props) {
 
 export function AlignItems({}: Props) {
   // First State Management
-  const [alignItems, setAlignItems] = useState("item-start");
+  const [alignItems, setAlignItems] = useState("items-start");
 
   return (
     <div>

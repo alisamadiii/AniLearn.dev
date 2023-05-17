@@ -5,6 +5,7 @@ import {
 } from "react-compare-slider";
 
 import { Range } from "@components/Tech/Range";
+import SaveButton from "@components/SaveButton";
 
 type Props = {};
 
@@ -103,6 +104,9 @@ export default function Filter({}: Props) {
           filterName="Brightness"
           value={brightness}
           onChange={(e) => setBrightness(Number(e.target.value))}
+        />
+        <SaveButton
+          content={`filter: blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate});`}
         />
       </div>
     </div>

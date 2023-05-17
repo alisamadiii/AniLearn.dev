@@ -18,7 +18,7 @@ const SuisseIntl = localFont({
 export function Heading_1({ children, ...otherProps }: Props) {
   return (
     <h1
-      className={`${SuisseIntl.className} mt-1 mb-3 text-5xl text-white`}
+      className={`${SuisseIntl.className} relative mt-1 mb-3 text-5xl text-white`}
       {...otherProps}
     >
       {children}
@@ -26,17 +26,23 @@ export function Heading_1({ children, ...otherProps }: Props) {
   );
 }
 
-export function Heading_2({ children }: Props) {
+export function Heading_2({ children, ...otherProps }: Props) {
   return (
-    <h2 className={`${SuisseIntl.className} text-4xl text-white mt-12 mb-3`}>
+    <h2
+      className={`${SuisseIntl.className} relative text-4xl text-white mt-12 mb-3`}
+      {...otherProps}
+    >
       {children}
     </h2>
   );
 }
 
-export function Heading_3({ children }: Props) {
+export function Heading_3({ children, ...otherProps }: Props) {
   return (
-    <h3 className={`${SuisseIntl.className} text-3xl text-white mt-12 mb-3`}>
+    <h3
+      className={`${SuisseIntl.className} relative text-3xl text-white mt-12 mb-3`}
+      {...otherProps}
+    >
       {children}
     </h3>
   );

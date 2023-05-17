@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  scroll-behavior: smooth;
+  @apply scroll-smooth scroll-pt-12;
 }
 
 body {
@@ -100,5 +100,12 @@ body {
 
   .range-slider__range:active::-webkit-slider-thumb {
     box-shadow: -507px 0 0 500px #8000ff89;
+  }
+
+  #mdx > :is(h1, h2, h3) > a::before {
+    @apply content-["#"] absolute top-1/2 right-0 md:-left-8 mr-2 font-light inline-block opacity-0 duration-200;
+  }
+  #mdx > :is(h1, h2, h3):hover > a::before {
+    @apply -translate-y-1/2 opacity-50;
   }
 }
