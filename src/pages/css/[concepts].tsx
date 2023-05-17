@@ -14,13 +14,15 @@ type Props = {
 export default function Concepts({ mdxSource }: Props) {
   return (
     <Container className="pt-12 pb-20">
-      <MDXRemote {...mdxSource} components={Components} />
+      <div id="mdx">
+        <MDXRemote {...mdxSource} components={Components} />
+      </div>
     </Container>
   );
 }
 
 export const getStaticPaths = () => {
-  const folderPath = path.join(process.cwd(), "src/tech/css");
+  const folderPath = path.join(process.cwd(), "src/docs/css");
   const fileNames = fs.readdirSync(folderPath);
   const paths = fileNames.map((fileName) => {
     return {

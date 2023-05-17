@@ -4,6 +4,8 @@ tech: CSS
 order: 1
 ---
 
+<Small_Gradient>flexbox</Small_Gradient>
+
 # Flex Position
 
 Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).
@@ -14,9 +16,9 @@ If “regular” layout is based on both block and inline flow directions, the f
 
 This is the place where you can try them.
 
-### justify-content & align-items
+### justify-content
 
-```css {1} showLineNumbers
+```css:style.css {1} showLineNumbers
 /* Justify Content */
 justify-content: start;
 justify-content: end;
@@ -26,4 +28,29 @@ justify-content: space-evenly;
 justify-content: space-around;
 ```
 
-<FlexPosition />
+<JustifyContent />
+
+### align-items
+
+```css:style.css {1} showLineNumbers
+/* Align Items */
+align-items: start;
+align-items: end;
+align-items: center;
+```
+
+<AlignItems />
+
+### align-content
+
+```css:style.css {1} showLineNumbers
+/* Justify Content */
+align-content: start;
+align-content: end;
+align-content: center;
+align-content: space-between;
+align-content: space-evenly;
+align-content: space-around;
+```
+
+<AlignContent />

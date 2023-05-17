@@ -35,14 +35,16 @@ export default function Layouts({ children }: Props) {
             isNavbar && "translate-y-5 opacity-60"
           }`}
         >
-          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-l from-primary to-secondary blur-[100px] -z-50" />
-          {isGradient && (
+          <div
+            className={`absolute top-0 left-0 w-full h-24 bg-gradient-to-l from-primary to-secondary blur-[100px] -z-50`}
+          />
+          {/* {isGradient && (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               className="fixed top-0 left-0 z-30 w-full h-24 pointer-events-none bg-gradient-to-b from-background-clr to-transparent"
             />
-          )}
+          )} */}
           <div className="absolute inset-0 w-full bg-pattern -z-40" />
           {children}
         </main>

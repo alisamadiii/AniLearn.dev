@@ -5,8 +5,12 @@ import {
   Paragraph,
   Small_Gradient,
 } from "./Typography";
-import FlexPosition from "./Workplace/css/flex-position";
-import OpenGraph from "./Workplace/html/OpenGraph";
+import {
+  JustifyContent,
+  AlignItems,
+  AlignContent,
+} from "../Workplace/css/flex-position";
+import OpenGraph from "../Workplace/html/OpenGraph";
 
 export const Components = {
   h1: Heading_1,
@@ -15,7 +19,9 @@ export const Components = {
   p: Paragraph,
   Small_Gradient,
   // CSS WORKPLACE
-  FlexPosition,
+  JustifyContent,
+  AlignItems,
+  AlignContent,
   // HTML WORKPLACE
   OpenGraph,
 };

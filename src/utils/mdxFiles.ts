@@ -15,6 +15,7 @@ export const mdxStyling = (techContent: any) => {
         rehypeSlug,
         rehypeAutolinkHeadings,
         rehypeCodeTitles,
+        // [rehypePrettyCode],
         rehypePrism,
       ],
       format: "mdx",
@@ -27,5 +28,5 @@ export const folderPathFor: (a: "html" | "css", b: string) => void = (
   tech,
   concepts
 ) => {
-  return path.join(process.cwd(), `src/tech/${tech}/${concepts}.mdx`);
+  return path.join(process.cwd(), `src/docs/${tech}/${concepts}.mdx`);
 };
