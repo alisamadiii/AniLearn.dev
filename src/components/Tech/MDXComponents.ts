@@ -10,6 +10,7 @@ import {
   AlignItems,
   AlignContent,
 } from "../Workplace/css/flex-position";
+import Filter from "../Workplace/css/filter";
 import OpenGraph from "../Workplace/html/OpenGraph";
 
 export const Components = {
@@ -22,6 +23,9 @@ export const Components = {
   JustifyContent,
   AlignItems,
   AlignContent,
+  // FIlter
+  Filter,
+
   // HTML WORKPLACE
   OpenGraph,
 };
