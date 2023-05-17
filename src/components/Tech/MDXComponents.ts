@@ -11,6 +11,8 @@ import {
   AlignContent,
 } from "../Workplace/css/flex-position";
 import Filter from "../Workplace/css/filter";
+import Gradient from "../Workplace/css/gradient";
+
 import OpenGraph from "../Workplace/html/OpenGraph";
 
 export const Components = {
@@ -25,6 +27,8 @@ export const Components = {
   AlignContent,
   // FIlter
   Filter,
+  // Gradient
+  Gradient,
 
   // HTML WORKPLACE
   OpenGraph,

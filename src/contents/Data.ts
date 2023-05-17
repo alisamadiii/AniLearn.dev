@@ -47,8 +47,8 @@ export const CSS = [
   },
   {
     id: 3,
-    name: "Gradients",
-    link: "/css/gradients",
+    name: "Gradient",
+    link: "/css/gradient",
   },
   {
     id: 4,
