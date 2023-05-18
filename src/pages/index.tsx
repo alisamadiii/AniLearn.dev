@@ -26,7 +26,7 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["30%", "-20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
-  const rotateX = useTransform(scrollYProgress, [0, 0.5], ["30deg", "0deg"]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.3], ["30deg", "0deg"]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {

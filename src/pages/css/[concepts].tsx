@@ -21,6 +21,7 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { HiArrowLongRight } from "react-icons/hi2";
+import ExtraInformation from "@components/ExtraInformation";
 
 export default function Concepts({ mdxSource }: Props) {
   const router = useRouter();
@@ -47,47 +48,7 @@ export default function Concepts({ mdxSource }: Props) {
         <MDXRemote {...mdxSource} components={Components} />
       </div>
       {/* Contact */}
-      <div className="pt-8 border-t-2 border-white-low-opacity">
-        <h2 className="mb-1 text-3xl font-bold text-white">Contact Us</h2>
-        <p className="mb-6">
-          If you have any questions, you can reach out to us through these three
-          platforms.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="mailto:webdeve1083@gmail.com"
-            className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-primary/5 to-background-clr border-white-low-opacity hover:border-primary"
-          >
-            <p className="p-2 text-xl rounded-md text-primary bg-primary/10">
-              <AiOutlineMail />
-            </p>
-            <h3 className="mt-2 text-xl text-white">Email</h3>
-            <p>webdeve1083@gmail.com</p>
-          </a>
-          <a
-            href="https://twitter.com/Ali_Developer05"
-            target="_blank"
-            className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-primary/5 to-background-clr border-white-low-opacity hover:border-primary"
-          >
-            <p className="p-2 text-xl rounded-md text-primary bg-primary/10">
-              <AiOutlineTwitter />
-            </p>
-            <h3 className="mt-2 text-xl text-white">Twitter</h3>
-            <p>@Ali_Developer05</p>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/alireza17/"
-            target="_blank"
-            className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-primary/5 to-background-clr border-white-low-opacity hover:border-primary"
-          >
-            <p className="p-2 text-xl rounded-md text-primary bg-primary/10">
-              <AiFillLinkedin />
-            </p>
-            <h3 className="mt-2 text-xl text-white">LinkedIn</h3>
-            <p>@Ali Reza</p>
-          </a>
-        </div>
-      </div>
+      <ExtraInformation />
     </Container>
   );
 }
