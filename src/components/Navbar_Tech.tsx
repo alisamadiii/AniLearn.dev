@@ -42,91 +42,9 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
         <p className="text-xs">
           Learning something with animation doesn&apos;t get easier than this
         </p>
-        <ul className="mt-4 space-y-4">
-          {/* HTML */}
-          <li className="bg-[#22262F]/80 p-2 rounded-md border border-white-low-opacity">
-            <div
-              className="flex items-center gap-1 text-white cursor-pointer"
-              onClick={() => setOpen(1)}
-            >
-              <AiFillHtml5 />
-              <span className="grow">HTML</span>
-              <IoIosArrowDown />
-            </div>
-            {/* HTML LISTS */}
-            <AnimatePresence initial={false}>
-              {open == 1 && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="flex flex-col overflow-hidden font-light"
-                >
-                  {HTML.map((html) => (
-                    <div
-                      key={html.id}
-                      className={`p-[.8px] ${
-                        router.pathname == html.link &&
-                        "bg-gradient-to-t from-primary to-background-clr rounded-md"
-                      } ${html.id == 1 && "mt-4"}`}
-                    >
-                      <Link
-                        href={html.link}
-                        className={`w-full inline-block py-1 px-2 rounded-md ${
-                          router.pathname == html.link && "bg-[#15171E]"
-                        }`}
-                        onClick={() => setIsNavbar(false)}
-                      >
-                        {html.name}
-                      </Link>
-                    </div>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </li>
-          {/* CSS */}
-          <li className="bg-[#22262F]/80 p-2 rounded-md border border-white-low-opacity">
-            <div
-              className="flex items-center gap-1 text-white cursor-pointer"
-              onClick={() => setOpen(2)}
-            >
-              <IoLogoCss3 />
-              <span className="grow">CSS</span>
-              <IoIosArrowDown />
-            </div>
-            {/* CSS LISTS */}
-            <AnimatePresence>
-              {open == 2 && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="flex flex-col overflow-hidden font-light"
-                >
-                  {CSS.map((css) => (
-                    <div
-                      key={css.id}
-                      className={`p-[.8px] ${
-                        router.pathname == css.link &&
-                        "bg-gradient-to-t from-primary to-background-clr rounded-md"
-                      } ${css.id == 1 && "mt-4"}`}
-                    >
-                      <Link
-                        href={css.link}
-                        className={`w-full inline-block py-1 px-2 rounded-md ${
-                          router.pathname == css.link && "bg-[#15171E]"
-                        }`}
-                        onClick={() => setIsNavbar(false)}
-                      >
-                        {css.name}
-                      </Link>
-                    </div>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </li>
+        <ul className="mt-4">
+          <Links techName="HTML" tech={HTML} />
+          <Links techName="CSS" tech={CSS} />
         </ul>
       </nav>
       {/* Opening and Closing Navbar in small devices */}
@@ -141,3 +59,60 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
     </Fragment>
   );
 }
+
+type LinksProps = {
+  tech: {
+    id: number;
+    name: string;
+    link: string;
+  }[];
+  techName: string;
+};
+
+export const Links = ({ tech, techName }: LinksProps) => {
+  const [open, setOpen] = useState<boolean>(false);
+
+  const router = useRouter();
+
+  return (
+    <li className="mt-2">
+      <div
+        className={`flex items-center gap-1 px-2 py-1 rounded mb-2 text-white cursor-pointer ${
+          open && "bg-white-low-opacity"
+        }`}
+        onClick={() => setOpen(!open)}
+      >
+        <span className="grow">{techName}</span>
+        <IoIosArrowDown
+          className={`duration-200 ${open ? "rotate-0" : "-rotate-90"} `}
+        />
+      </div>
+      <div className="px-2">
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="flex flex-col overflow-hidden font-light"
+            >
+              {tech.map((t) => (
+                <Link
+                  key={t.id}
+                  href={t.link}
+                  className={`w-full inline-block py-1 px-2 hover:text-white border-l-2 ${
+                    router.asPath == t.link
+                      ? "text-white border-white"
+                      : "border-white-low-opacity"
+                  }`}
+                >
+                  {t.name}
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </li>
+  );
+};

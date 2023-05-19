@@ -26,7 +26,7 @@ pre[class*="language-"] {
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  @apply relative z-10 border rounded-lg rounded-tl-none bg-gradient-to-br from-box via-secondary/10 to-box border-[#222] backdrop-blur shadow-2xl shadow-secondary/5;
+  @apply relative z-10 border rounded-lg rounded-tl-none bg-gradient-to-br from-box via-secondary/5 to-box border-[#222] backdrop-blur shadow-2xl shadow-secondary/5;
 }
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
