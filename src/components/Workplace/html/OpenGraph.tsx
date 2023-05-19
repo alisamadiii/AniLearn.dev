@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import confetti from "canvas-confetti";
 
 type Props = {};
 
-import Container from "@layouts/Container";
-import { Heading_1, Paragraph } from "@components/Tech/Typography_Tech";
 import { platformsData } from "@contents/Data";
+import SaveButton from "@components/SaveButton";
 
-// Icons
-import { MdContentCopy } from "react-icons/md";
-import { BsFillClipboard2CheckFill } from "react-icons/bs";
-
-export default function Open_Graph_Page({}: Props) {
-  const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
+export default function OpenGraph({}: Props) {
   // Inputs
   const [title, setTitle] = useState("Ali Reza - Portfolio");
   const [description, setDescription] = useState(
@@ -29,63 +22,8 @@ export default function Open_Graph_Page({}: Props) {
 
   const [isSelected, setIsSelected] = useState(platformsData[0].id);
 
-  const copyFunction = () => {
-    navigator.clipboard.writeText(`
-  <!-- HTML Meta Tags -->
-  <title>${title}</title>
-  <meta name="description" content="${description}">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="${website}">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="${title}">
-  <meta property="og:description" content="${description}">
-  <meta property="og:image" content="${image}">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="${website}">
-  <meta property="twitter:url" content="${website}">
-  <meta name="twitter:title" content="${title}">
-  <meta name="twitter:description" content="${description}">
-  <meta name="twitter:image" content="${image}">
-    `);
-    setIsSaved(["Copied", true]);
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      origin: {
-        x: Math.random(),
-        y: Math.random() - 0.2,
-      },
-    });
-
-    setTimeout(() => {
-      setIsSaved(["Copy", false]);
-    }, 3000);
-  };
-
   return (
-    <Container className="py-12">
-      <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-        meta-tags
-      </small>
-
-      <Heading_1>Open Graph</Heading_1>
-      <Paragraph margin={true}>
-        The Open Graph protocol enables any web page to become a rich object in
-        a social graph. For instance, this is used on Facebook to allow any web
-        page to have the same functionality as any other object on Facebook.
-      </Paragraph>
-      <Paragraph>
-        To turn your web pages into graph objects, you need to add basic
-        metadata to your page. We&apos;ve based the initial version of the
-        protocol on RDFa which means that you&apos;ll place additional{" "}
-        <span className="text-white">&lt;meta&gt;</span> tags in the{" "}
-        <span className="text-white">&lt;head&gt;</span> of your web page.
-      </Paragraph>
-
+    <>
       {/* Workplace */}
       <section className="grid items-start gap-4 mt-12 md:grid-cols-2">
         <div className="p-6 border rounded-lg border-white-low-opacity">
@@ -147,15 +85,28 @@ export default function Open_Graph_Page({}: Props) {
               />
             </label>
           </div>
-          <button
-            onClick={copyFunction}
-            className={`flex items-center gap-2 px-3 py-2 mt-7 text-white rounded-md ${
-              isSaved[1] ? "bg-green-600" : "bg-primary"
-            }`}
-          >
-            {isSaved[1] ? <BsFillClipboard2CheckFill /> : <MdContentCopy />}
-            {isSaved[0]}
-          </button>
+          <SaveButton
+            content={`
+  <!-- HTML Meta Tags -->
+  <title>${title}</title>
+  <meta name="description" content="${description}">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="${website}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:image" content="${image}">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="${website}">
+  <meta property="twitter:url" content="${website}">
+  <meta name="twitter:title" content="${title}">
+  <meta name="twitter:description" content="${description}">
+  <meta name="twitter:image" content="${image}">
+    `}
+          />
         </div>
         <div>
           {/* Buttons for selecting platforms */}
@@ -246,6 +197,6 @@ export default function Open_Graph_Page({}: Props) {
           )}
         </div>
       </section>
-    </Container>
+    </>
   );
 }

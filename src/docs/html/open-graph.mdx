@@ -1,0 +1,42 @@
+---
+title: Open-Graph
+tech: HTML
+order: 1
+---
+
+<Small_Gradient>Meta Tags</Small_Gradient>
+
+# Open-Graph
+
+The Open Graph protocol enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
+
+To turn your web pages into graph objects, you need to add basic metadata to your page. We've based the initial version of the protocol on RDFa which means that you'll place additional `<meta>` tags in the `<head>` of your web page.
+
+```html:index.html {3,4,7,9,10,11,15,16,17,18,19} showLineNumbers
+<head>
+  <!-- HTML Meta Tags -->
+  <title>${title}</title>
+  <meta name="description" content="${description}" />
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" *content="${website}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${title}" />
+  <meta property="og:description" content="${description}" />
+  <meta property="og:image" content="${image}" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="${website}" />
+  <meta property="twitter:url" content="${website}" />
+  <meta name="twitter:title" content="${title}" />
+  <meta name="twitter:description" content="${description}" />
+  <meta name="twitter:image" content="${image}" />
+</head>
+```
+
+## Working Place
+
+This is the place where you can try them.
+
+<OpenGraph />

@@ -1,20 +1,15 @@
-import Container from "@layouts/Container";
 import React, { useState } from "react";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
 
+import { Range } from "@components/Tech/Range";
+import SaveButton from "@components/SaveButton";
+
 type Props = {};
 
-import {
-  Heading_1,
-  Heading_2,
-  Paragraph,
-} from "@components/Tech/Typography_Tech";
-import { Range } from "@components/Tech/Range";
-
-export default function Filter_Page({}: Props) {
+export default function Filter({}: Props) {
   const [image, setImage] = useState<null | string>(null);
   const [landscape, setLandscape] = useState<boolean>(true);
   // Filters State Management
@@ -29,21 +24,7 @@ export default function Filter_Page({}: Props) {
     "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80";
 
   return (
-    <Container className="pt-12 pb-20">
-      <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-        filter
-      </small>
-
-      <Heading_1>Filter Image</Heading_1>
-      <Paragraph>
-        The filter CSS property applies graphical effects like blur or color
-        shift to an element. Filters are commonly used to adjust the rendering
-        of images, backgrounds, and borders.
-      </Paragraph>
-
-      <Heading_2 margin={true}>Working Place</Heading_2>
-      <Paragraph>This is the place where you can try them.</Paragraph>
-
+    <div>
       <div className="flex flex-col items-center gap-4 my-12">
         <input
           type="url"
@@ -68,7 +49,6 @@ export default function Filter_Page({}: Props) {
           <option value="landscape">Landscape</option>
           <option value="portrait">Portrait</option>
         </select>
-
         {/* Image Comparison */}
         <ReactCompareSlider
           itemOne={
@@ -88,20 +68,6 @@ export default function Filter_Page({}: Props) {
           }`}
         />
       </div>
-
-      {/* Code */}
-      <div className="relative w-full p-4 border rounded-lg rounded-tl-none bg-box border-white-low-opacity">
-        <small className="absolute top-0 left-0 px-4 py-1 text-white -translate-y-full bg-gradient-to-l from-primary to-secondary rounded-t-md">
-          Code
-        </small>
-        <code>
-          filter: blur({blur}px) contrast({contrast}%) grayscale({grayscale}
-          %) hue-rotate({hueRotate}deg) brightness({brightness}%) saturate(
-          {saturate});
-        </code>
-      </div>
-
-      {/* Range */}
       <div className="mt-12 space-y-5">
         <Range
           maxNum={100}
@@ -139,7 +105,10 @@ export default function Filter_Page({}: Props) {
           value={brightness}
           onChange={(e) => setBrightness(Number(e.target.value))}
         />
+        <SaveButton
+          content={`filter: blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate});`}
+        />
       </div>
-    </Container>
+    </div>
   );
 }

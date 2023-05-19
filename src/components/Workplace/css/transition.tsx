@@ -1,15 +1,10 @@
-import Container from "@layouts/Container";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-import {
-  Heading_1,
-  Heading_2,
-  Paragraph,
-} from "@components/Tech/Typography_Tech";
+import Workplace from "..";
 import { Range } from "@components/Tech/Range";
+
+type Props = {};
 
 export default function Transition({}: Props) {
   const [isClicked, setIsClicked] = useState(false);
@@ -26,25 +21,7 @@ export default function Transition({}: Props) {
   };
 
   return (
-    <Container className="pt-12 pb-20">
-      <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-        transition
-      </small>
-
-      <Heading_1>Transition Timing Functions</Heading_1>
-      <Paragraph>
-        CSS transitions provide a way to control animation speed when changing
-        CSS properties. Instead of having property changes take effect
-        immediately, you can cause the changes in a property to take place over
-        a period of time. For example, if you change the color of an element
-        from white to black, usually the change is instantaneous. With CSS
-        transitions enabled, changes occur at time intervals that follow an
-        acceleration curve, all of which can be customized.
-      </Paragraph>
-
-      <Heading_2 margin={true}>Working Place</Heading_2>
-      <Paragraph>This is the place where you can try them.</Paragraph>
-
+    <Workplace>
       <div className="mt-12">
         <Range
           maxNum={200}
@@ -53,7 +30,6 @@ export default function Transition({}: Props) {
           onChange={(e) => setDuration(e.target.value)}
         />
       </div>
-
       <div
         className={`relative w-full p-4 mt-12 space-y-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity flex flex-col ${
           isClicked && "items-end"
@@ -96,6 +72,6 @@ export default function Transition({}: Props) {
       >
         Animate it
       </button>
-    </Container>
+    </Workplace>
   );
 }

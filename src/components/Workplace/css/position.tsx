@@ -1,9 +1,9 @@
-import Container from "@layouts/Container";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Button_Tech from "@components/Button_Tech";
 
-type Props = {};
+import Workplace from "..";
+import { Range } from "@components/Tech/Range";
+import Button_Tech from "@components/Button_Tech";
 
 const INITIAL_VALUE: {
   top: number;
@@ -17,12 +17,7 @@ const INITIAL_VALUE: {
   left: 0,
 };
 
-import {
-  Heading_1,
-  Heading_2,
-  Paragraph,
-} from "@components/Tech/Typography_Tech";
-import { Range } from "@components/Tech/Range";
+type Props = {};
 
 export default function Position({}: Props) {
   const [position, setPosition] = useState("static");
@@ -35,20 +30,7 @@ export default function Position({}: Props) {
   };
 
   return (
-    <Container className="relative pt-12 pb-24">
-      <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-        Position
-      </small>
-
-      <Heading_1>Position</Heading_1>
-      <Paragraph margin={true}>
-        The position property specifies the type of positioning method used for
-        an element (static, relative, fixed, absolute or sticky).
-      </Paragraph>
-
-      <Heading_2 margin={true}>Working Place</Heading_2>
-      <Paragraph>This is the place where you can try them.</Paragraph>
-
+    <Workplace>
       <div className="relative w-full mt-12 overflow-y-auto border rounded-lg bg-box h-96 border-white-low-opacity">
         <nav
           className={`${position} flex items-center w-full h-12 px-4 text-black z-20 ${
@@ -122,7 +104,6 @@ export default function Position({}: Props) {
           </p>
         </motion.section>
       </div>
-      {/* buttons for changing the position of the navbar  */}
       <div className="flex flex-wrap gap-4 mt-12">
         <Button_Tech
           value="static"
@@ -202,6 +183,6 @@ export default function Position({}: Props) {
           onChange={onChangeHandler}
         />
       </div>
-    </Container>
+    </Workplace>
   );
 }

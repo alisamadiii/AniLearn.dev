@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
-
-import Container from "@layouts/Container";
+import Workplace from "..";
+import { Range } from "@components/Tech/Range";
 
 type Props = {};
-
-import {
-  Heading_1,
-  Heading_2,
-  Paragraph,
-} from "@components/Tech/Typography_Tech";
-import { Range } from "@components/Tech/Range";
 
 export default function Transform({}: Props) {
   const [scale, setScale] = useState(100);
@@ -26,20 +19,7 @@ export default function Transform({}: Props) {
     "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80";
 
   return (
-    <Container className="pt-12 pb-20">
-      <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-        transform
-      </small>
-
-      <Heading_1>CSS transform Property</Heading_1>
-      <Paragraph>
-        The transform property applies a 2D or 3D transformation to an element.
-        This property allows you to rotate, scale, move, skew, etc., elements.
-      </Paragraph>
-
-      <Heading_2 margin={true}>Working Place</Heading_2>
-      <Paragraph>This is the place where you can try them.</Paragraph>
-
+    <Workplace>
       <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
         <Image
           src={IMAGE}
@@ -62,8 +42,6 @@ export default function Transform({}: Props) {
           }
         />
       </div>
-
-      {/* Range */}
       <div className="mt-12 space-y-4">
         <label htmlFor="perspective">
           <input
@@ -116,6 +94,6 @@ export default function Transform({}: Props) {
           onChange={(e) => setSkewY(e.target.value)}
         />
       </div>
-    </Container>
+    </Workplace>
   );
 }
