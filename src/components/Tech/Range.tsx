@@ -27,7 +27,7 @@ export const Range = ({ maxNum, filterName, value, ...otherProps }: Props) => {
           key={value}
           className="text-right range-slider__value basis-28"
         >
-          {value.toFixed(1)}
+          {value}
         </motion.span>
       </div>
     </div>

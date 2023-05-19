@@ -5,13 +5,20 @@ import {
   Paragraph,
   Small_Gradient,
 } from "./Typography";
+
+// CSS WORKPLACE
 import {
   JustifyContent,
   AlignItems,
   AlignContent,
-} from "../Workplace/css/flex-position";
-import Filter from "../Workplace/css/filter";
-import Gradient from "../Workplace/css/gradient";
+  Filter,
+  Gradient,
+  Position,
+  BoxModel,
+  DisplayProperty,
+  Transform,
+  Transition,
+} from "@components/Workplace/css";
 
 import OpenGraph from "../Workplace/html/OpenGraph";
 
@@ -25,10 +32,13 @@ export const Components = {
   JustifyContent,
   AlignItems,
   AlignContent,
-  // FIlter
   Filter,
-  // Gradient
   Gradient,
+  Position,
+  BoxModel,
+  DisplayProperty,
+  Transform,
+  Transition,
 
   // HTML WORKPLACE
   OpenGraph,
