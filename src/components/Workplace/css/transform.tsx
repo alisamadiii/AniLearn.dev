@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Workplace from "..";
 import { Range } from "@components/Tech/Range";
+import Checkbox from "@components/Checkbox";
 
 type Props = {};
 
@@ -43,14 +44,10 @@ export default function Transform({}: Props) {
         />
       </div>
       <div className="mt-12 space-y-4">
-        <label htmlFor="perspective">
-          <input
-            type="checkbox"
-            id="perspective"
-            onClick={(e: any) => setPerspective(e.target.checked)}
-          />
-          perspective
-        </label>
+        <Checkbox
+          name="perspective"
+          onClick={(e: any) => setPerspective(e.target.checked)}
+        />
         <Range
           maxNum={200}
           filterName="Scale"
