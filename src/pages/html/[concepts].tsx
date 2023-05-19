@@ -14,12 +14,7 @@ type Props = {
 };
 
 // Icons
-import {
-  AiOutlineHome,
-  AiOutlineMail,
-  AiOutlineTwitter,
-  AiFillLinkedin,
-} from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
 import { HiArrowLongRight } from "react-icons/hi2";
 import ExtraInformation from "@components/ExtraInformation";
 
@@ -30,7 +25,7 @@ export default function Concepts({ mdxSource }: Props) {
 
   return (
     <Container className="pt-12 pb-20">
-      <div className="flex items-center gap-1 mb-4">
+      {/* <div className="flex items-center gap-1 mb-4">
         <Link
           href={"/"}
           className="px-2 py-1 text-white rounded-md bg-white/30"
@@ -43,7 +38,7 @@ export default function Concepts({ mdxSource }: Props) {
         <div className="px-2 text-white capitalize ">
           {concepts!.replaceAll("-", " ")}
         </div>
-      </div>
+      </div> */}
       <div id="mdx" className="pb-8">
         <MDXRemote {...mdxSource} components={Components} />
       </div>

@@ -11,25 +11,15 @@ type Props = {
 import { HTML, CSS } from "@contents/Data";
 
 // Icons
-import { IoIosArrowDown, IoLogoCss3 } from "react-icons/io";
-import { AiFillHtml5 } from "react-icons/ai";
+import { IoIosArrowDown } from "react-icons/io";
 import { HiMenuAlt2 } from "react-icons/hi";
 
 export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
-  const [open, setOpen] = useState<number>(1);
-
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.pathname.includes("css")) setOpen(2);
-    else if (router.pathname.includes("html")) setOpen(1);
-  }, []);
-
   return (
     <Fragment>
       <nav
-        className={`fixed md:sticky top-0 left-0 w-[220px] px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
-          isNavbar ? "translate-x-0" : " -translate-x-full"
+        className={`fixed md:sticky top-0 left-0 w-full md:w-[220px] px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
+          isNavbar ? "translate-y-0" : "-translate-y-full md:-translate-y-0"
         }`}
       >
         <Link
@@ -48,14 +38,14 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
         </ul>
       </nav>
       {/* Opening and Closing Navbar in small devices */}
-      <div
-        className={`fixed p-2 text-2xl rounded-full bottom-4 left-4 md:hidden bg-background-clr duration-200 z-50 ${
-          isNavbar ? "translate-x-56 rotate-12 bg-red-700" : "translate-x-0"
+      <motion.div
+        className={`fixed p-2 text-2xl rounded-full bottom-4 left-4 md:hidden bg-box duration-200 z-50 ${
+          isNavbar && "ml-auto bg-red-700 !rotate-45"
         }`}
         onClick={() => setIsNavbar(!isNavbar)}
       >
         <HiMenuAlt2 />
-      </div>
+      </motion.div>
     </Fragment>
   );
 }

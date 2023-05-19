@@ -66,7 +66,7 @@ background: linear-gradient(${45}deg, ${Gradients[selectedGradient].colors.join(
         </AnimatePresence>
         <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
           <h1
-            className="text-4xl md:text-5xl font-black text-transparent !bg-clip-text"
+            className="text-4xl md:text-5xl text-center font-black text-transparent !bg-clip-text"
             style={{
               background: `linear-gradient(${45}deg, ${Gradients[
                 selectedGradient
