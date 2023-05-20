@@ -16,8 +16,6 @@ export default function SaveButton({ content }: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
 
   const copyFunction = () => {
-    const saveSound = new Audio("/save.mp3");
-
     navigator.clipboard.writeText(content);
     setIsSaved(["Copied", true]);
     confetti({
@@ -30,7 +28,6 @@ export default function SaveButton({ content }: Props) {
       },
     });
     setDisable(true);
-    saveSound.play();
 
     setTimeout(() => {
       setIsSaved(["Copy", false]);

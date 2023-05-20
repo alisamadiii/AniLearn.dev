@@ -26,7 +26,7 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["30%", "-20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
-  const rotateX = useTransform(scrollYProgress, [0, 0.3], ["30deg", "0deg"]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.5], ["10deg", "0deg"]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -141,11 +141,29 @@ export default function Home() {
       </section>
 
       {/* ShoutOut */}
-      <section className="flex items-center justify-center px-4 py-12">
-        <div
-          className="relative w-full max-w-[1000px] bg-box h-52 overflow-hidden rounded-xl flex justify-center items-center"
-          id="shout-out-box"
-        ></div>
+      <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
+        <div className="relative w-full max-w-[1000px] bg-box/90 backdrop-blur-sm border border-white-low-opacity overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
+          <h2 className="font-medium text-white text-2xl/8">
+            I am making animated contents on Twitter, and I know they will be
+            helpful when learning something.
+          </h2>
+          <div className="flex gap-2">
+            <a
+              href="https://www.alirezasamadi.com/twitter-activity/works"
+              target="_blank"
+              className="underline decoration-2 hover:text-white"
+            >
+              Website
+            </a>
+            <a
+              href="https://twitter.com/Ali_Developer05"
+              target="_blank"
+              className="underline decoration-2 hover:text-white"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );
