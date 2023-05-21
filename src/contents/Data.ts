@@ -27,6 +27,11 @@ export const HTML = [
     name: "Open Graph",
     link: "/html/open-graph",
   },
+  {
+    id: 2,
+    name: "Inputs",
+    link: "/html/inputs",
+  },
 ];
 
 export const CSS = [

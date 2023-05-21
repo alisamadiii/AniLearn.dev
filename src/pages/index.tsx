@@ -26,7 +26,7 @@ export default function Home() {
   //
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.5], ["10%", "0%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
   const rotateX = useTransform(scrollYProgress, [0, 0.2], ["10deg", "0deg"]);
 
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function Home() {
               width={2000}
               height={1400}
               alt=""
-              className={`w-full max-w-[1000px] rounded-xl opacity-95`}
+              className={`w-full max-w-[1000px] rounded-xl`}
             />
           </motion.div>
         </Container>

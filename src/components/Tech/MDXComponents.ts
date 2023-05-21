@@ -20,7 +20,7 @@ import {
   Transition,
 } from "@components/Workplace/css";
 
-import OpenGraph from "../Workplace/html/OpenGraph";
+import { OpenGraph, Inputs } from "../Workplace/html";
 
 export const Components = {
   h1: Heading_1,
@@ -42,4 +42,5 @@ export const Components = {
 
   // HTML WORKPLACE
   OpenGraph,
+  Inputs,
 };
