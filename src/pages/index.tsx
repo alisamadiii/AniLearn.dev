@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-import { Heading_1, Heading_2 } from "@components/index";
+import { Heading_1, Heading_2, Heading_3 } from "@components/index";
 import Container from "@layouts/Container";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,15 +18,16 @@ import { IoIosArrowForward, IoLogoCss3 } from "react-icons/io";
 import { AiFillHtml5 } from "react-icons/ai";
 
 import Technology from "@components/Technology";
+import { REASONS } from "@contents/Data";
 
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
 
   //
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["30%", "-20%"]);
+  const y = useTransform(scrollYProgress, [0, 0.5], ["10%", "0%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.2, 1]);
-  const rotateX = useTransform(scrollYProgress, [0, 0.5], ["10deg", "0deg"]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.2], ["10deg", "0deg"]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -110,6 +111,9 @@ export default function Home() {
 
       <section id="get-started" className="py-12 overflow-hidden">
         <Container className="relative">
+          <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
+            Web development technologies
+          </div>
           <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
             technologies
           </small>
@@ -136,6 +140,42 @@ export default function Home() {
               Icon={IoLogoCss3}
               link="/css"
             />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-12 overflow-hidden">
+        <Container className="relative">
+          <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
+            Why this website?
+          </div>
+          <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
+            reasons
+          </small>
+          <Heading_2 className="mt-2 text-4xl text-white">
+            Why this website?
+          </Heading_2>
+          <p>
+            Using a website that allows users to visually work with CSS offers
+            several advantages:
+          </p>
+          {/* container */}
+          <div className="relative grid items-start gap-4 mt-8 md:grid-cols-2">
+            {REASONS.map((reason) => (
+              <motion.div
+                key={reason.id}
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ ease: "circOut" }}
+                className={`p-4 border rounded-lg bg-gradient-to-br from-box via-white/5 to-box border-white-low-opacity hover:!scale-95 duration-200 ${
+                  reason.id % 2 == 0 && "md:mt-4"
+                }`}
+              >
+                <h3 className="mb-2 text-xl text-white">{reason.title}</h3>
+                <p>{reason.reason}</p>
+              </motion.div>
+            ))}
           </div>
         </Container>
       </section>
