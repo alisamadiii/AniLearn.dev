@@ -88,22 +88,18 @@ export default function Home() {
           <motion.div
             style={{
               perspective: "500px",
+              transform: `rotate(10deg)`,
+              rotateX,
+              y,
+              opacity,
             }}
           >
-            <motion.img
-              src={
-                "https://www.howtogeek.com/wp-content/uploads/2022/08/MidJourney-wizard-hall.jpg?height=200p&trim=2,2,2,2&crop=16:9"
-              }
+            <Image
+              src={HeaderIMG}
               width={2000}
               height={1400}
               alt=""
-              className={`w-full max-w-[1000px] rounded-xl`}
-              style={{
-                transform: `rotate(10deg)`,
-                rotateX,
-                y,
-                opacity,
-              }}
+              className={`w-full max-w-[1000px] rounded-xl opacity-95`}
             />
           </motion.div>
         </Container>
