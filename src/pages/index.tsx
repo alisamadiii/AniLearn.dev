@@ -140,7 +140,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="py-12 overflow-hidden">
+      <section className="py-12 overflow-hidden bg-gradient-to-t from-background-clr via-primary/5 to-background-clr">
         <Container className="relative">
           <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
             Why this website?
@@ -164,7 +164,7 @@ export default function Home() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ ease: "circOut" }}
-                className={`grid md:grid-cols-2 items-center gap-4 bg-gradient-to-br from-background-clr via-box p-4 rounded-lg to-background-clr`}
+                className={`grid md:grid-cols-2 items-center gap-4 p-4 rounded-lg`}
               >
                 <div
                   className={`${
