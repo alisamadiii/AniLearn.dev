@@ -156,7 +156,7 @@ export default function Home() {
             several advantages:
           </p>
           {/* container */}
-          <div className="relative grid items-start gap-4 mt-8 md:grid-cols-2">
+          <div className="relative mt-8">
             {REASONS.map((reason) => (
               <motion.div
                 key={reason.id}
@@ -164,12 +164,25 @@ export default function Home() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ ease: "circOut" }}
-                className={`p-4 border rounded-lg bg-gradient-to-br from-box via-white/5 to-box border-white-low-opacity hover:!scale-95 duration-200 ${
-                  reason.id % 2 == 0 && "md:mt-4"
-                }`}
+                className={`grid md:grid-cols-2 items-center`}
               >
-                <h3 className="mb-2 text-xl text-white">{reason.title}</h3>
-                <p>{reason.reason}</p>
+                <div
+                  className={`${
+                    reason.id % 2 == 0 ? "md:order-2" : "md:order-1"
+                  }`}
+                >
+                  <h3 className="mb-2 text-xl text-white">{reason.title}</h3>
+                  <p>{reason.reason}</p>
+                </div>
+                <Image
+                  src={reason.image}
+                  width={800}
+                  height={800}
+                  alt=""
+                  className={`w-full ${
+                    reason.id % 2 == 1 ? "md:order-2" : "md:order-1"
+                  }`}
+                />
               </motion.div>
             ))}
           </div>
