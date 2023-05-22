@@ -19,6 +19,7 @@ import { AiFillHtml5 } from "react-icons/ai";
 
 import Technology from "@components/Technology";
 import { REASONS } from "@contents/Data";
+import Logo from "@assets/Logo";
 
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
@@ -46,7 +47,11 @@ export default function Home() {
           }`}
         >
           <Container className="flex items-center justify-between">
-            <Link href={"#"} className="text-lg font-semibold text-white">
+            <Link
+              href={"/"}
+              className="flex items-center gap-1 text-lg font-semibold text-white group"
+            >
+              <Logo />
               AniLearn.dev
             </Link>
             <Link
