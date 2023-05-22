@@ -102,6 +102,9 @@ export const FLEX_ORDER = [
 ];
 
 import Reason_1_IMG from "@assets/reason-1.png";
+import Reason_2_IMG from "@assets/reason-2.png";
+import Reason_3_IMG from "@assets/reason-3.png";
+import Reason_4_IMG from "@assets/reason-4.png";
 
 export const REASONS = [
   {
@@ -116,20 +119,20 @@ export const REASONS = [
     title: "Real-time feedback",
     reason:
       "With visual CSS editors, users can instantly see the results of their CSS modifications. This immediate feedback allows them to experiment, iterate, and fine-tune their designs on the spot, leading to a more efficient and streamlined workflow.",
-    image: Reason_1_IMG,
+    image: Reason_2_IMG,
   },
   {
     id: 3,
     title: "Increased productivity",
     reason:
       "By providing a visual interface for CSS editing, these websites can significantly boost productivity. Users can quickly prototype, explore different design options, and make adjustments without the need for manual coding and browser refreshes. This saves time and allows users to focus more on the creative aspects of web design.",
-    image: Reason_1_IMG,
+    image: Reason_3_IMG,
   },
   {
     id: 4,
     title: "Enhanced design exploration",
     reason:
       "Visual CSS editors enable users to explore and experiment with various design possibilities more easily. They can quickly modify CSS properties, adjust layout, and experiment with different styles, colors, and effects. This flexibility encourages creativity and enables users to push the boundaries of their designs, leading to more innovative and visually compelling websites.",
-    image: Reason_1_IMG,
+    image: Reason_4_IMG,
   },
 ];

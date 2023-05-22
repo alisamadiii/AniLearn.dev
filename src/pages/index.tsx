@@ -25,7 +25,7 @@ export default function Home() {
 
   //
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 0.5], ["10%", "0%"]);
+  const y = useTransform(scrollYProgress, [0, 0.5], ["10%", "-50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
   const rotateX = useTransform(scrollYProgress, [0, 0.2], ["10deg", "0deg"]);
 
@@ -156,7 +156,7 @@ export default function Home() {
             several advantages:
           </p>
           {/* container */}
-          <div className="relative mt-8">
+          <div className="relative mt-8 space-y-8">
             {REASONS.map((reason) => (
               <motion.div
                 key={reason.id}
@@ -164,7 +164,7 @@ export default function Home() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ ease: "circOut" }}
-                className={`grid md:grid-cols-2 items-center`}
+                className={`grid md:grid-cols-2 items-center gap-4 bg-gradient-to-br from-background-clr via-box p-4 rounded-lg to-background-clr`}
               >
                 <div
                   className={`${
