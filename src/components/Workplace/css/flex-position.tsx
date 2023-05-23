@@ -103,7 +103,7 @@ export function AlignContent({}: Props) {
         {/* Demo */}
         <Playground
           flexClassName={alignContent}
-          extraClassNameContainer="flex-wrap"
+          extraClassNameContainer="flex-wrap !h-64"
           extraClassNameRect="basis-[300px] grow"
         />
         <div className="flex flex-wrap gap-3 mt-8">

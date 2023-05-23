@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import localFont from "next/font/local";
 
 type Props = {
-  children: ReactNode;
+  children: ReactNode | any;
 };
 
 // Fonts
@@ -26,12 +26,19 @@ export function Heading_1({ children, ...otherProps }: Props) {
   );
 }
 
+import { AiFillSetting } from "react-icons/ai";
+
 export function Heading_2({ children, ...otherProps }: Props) {
   return (
     <h2
-      className={`${SuisseIntl.className} relative text-4xl text-white mt-12 mb-3`}
+      className={`${SuisseIntl.className} relative text-4xl text-white mt-12 mb-3 flex items-center gap-1`}
       {...otherProps}
     >
+      {children[1] == "Working Place" && (
+        <span className="p-1 text-2xl rounded bg-gradient-to-br from-primary to-secondary">
+          <AiFillSetting />
+        </span>
+      )}
       {children}
     </h2>
   );
