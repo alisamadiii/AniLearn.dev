@@ -5,13 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
   content: string;
+  margin: boolean;
 };
 
 // Icons
 import { MdContentCopy } from "react-icons/md";
 import { BsFillClipboard2CheckFill } from "react-icons/bs";
 
-export default function SaveButton({ content }: Props) {
+export default function SaveButton({ content, margin }: Props) {
   const [disable, setDisable] = useState(false);
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
 
@@ -40,9 +41,11 @@ export default function SaveButton({ content }: Props) {
   return (
     <motion.button
       onClick={copyFunction}
-      className={`flex items-center gap-2 px-3 py-2 mt-7 text-white rounded-md ${
+      className={`flex items-center gap-2 px-3 py-2 text-white rounded-md ${
         isSaved[1] ? "bg-green-600" : "bg-primary"
-      } ${!disable ? "cursor-pointer" : "cursor-not-allowed"}`}
+      } ${!disable ? "cursor-pointer" : "cursor-not-allowed"} ${
+        margin && "mt-7"
+      }`}
       disabled={disable}
     >
       <AnimatePresence mode="wait">

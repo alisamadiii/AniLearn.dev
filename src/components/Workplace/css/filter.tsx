@@ -107,6 +107,7 @@ export default function Filter({}: Props) {
         />
         <SaveButton
           content={`filter: blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate});`}
+          margin={true}
         />
       </div>
     </div>
