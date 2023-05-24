@@ -40,7 +40,7 @@ border: ${border}px solid white;
         />
       </div>
 
-      <SaveButton content={Content} />
+      <SaveButton content={Content} margin={true} />
 
       <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box border-white-low-opacity">
         {/* Changing Value */}

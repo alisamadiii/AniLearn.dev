@@ -106,6 +106,7 @@ export default function OpenGraph({}: Props) {
   <meta name="twitter:description" content="${description}">
   <meta name="twitter:image" content="${image}">
     `}
+            margin={true}
           />
         </div>
         <div>
