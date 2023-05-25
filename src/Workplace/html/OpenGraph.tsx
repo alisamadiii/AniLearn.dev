@@ -139,7 +139,7 @@ export default function OpenGraph({}: Props) {
             <div className="bg-[#3a3b3c] duration-200 text-white">
               <motion.img
                 layoutId="image"
-                className="object-cover aspect-video"
+                className="object-cover w-full aspect-video"
                 src={image}
               />
               <div className="px-4 py-1 pb-2 -space-y-1">
@@ -154,7 +154,7 @@ export default function OpenGraph({}: Props) {
             <div className="overflow-hidden duration-200 rounded-2xl">
               <motion.img
                 layoutId="image"
-                className="object-cover aspect-video"
+                className="object-cover w-full aspect-video"
                 src={image}
               />
               <div className="px-4 py-1 pb-2 -space-y-1 border-2 border-t-0 border-white-low-opacity rounded-b-2xl">
@@ -169,7 +169,7 @@ export default function OpenGraph({}: Props) {
             <div className="text-white duration-200 bg-slate-700">
               <motion.img
                 layoutId="image"
-                className="object-cover aspect-video"
+                className="object-cover w-full aspect-video"
                 src={image}
               />
               <div className="px-4 py-1 pb-2">
@@ -187,7 +187,7 @@ export default function OpenGraph({}: Props) {
               </div>
               <motion.img
                 layoutId="image"
-                className="object-cover aspect-video"
+                className="object-cover w-full aspect-video"
                 src={image}
               />
             </div>

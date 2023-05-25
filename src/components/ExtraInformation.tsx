@@ -18,9 +18,9 @@ export default function ExtraInformation({}: Props) {
       <div className="flex flex-wrap gap-4">
         <a
           href="mailto:webdeve1083@gmail.com"
-          className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-primary/5 to-background-clr border-white-low-opacity hover:border-primary"
+          className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-secondary/5 to-background-clr border-white-low-opacity hover:border-secondary"
         >
-          <p className="p-2 text-xl rounded-md text-primary bg-primary/10">
+          <p className="p-2 text-xl rounded-md text-secondary bg-secondary/10">
             <AiOutlineMail />
           </p>
           <h3 className="mt-2 text-xl text-white">Email</h3>
@@ -29,9 +29,9 @@ export default function ExtraInformation({}: Props) {
         <a
           href="https://twitter.com/Ali_Developer05"
           target="_blank"
-          className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-primary/5 to-background-clr border-white-low-opacity hover:border-primary"
+          className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-secondary/5 to-background-clr border-white-low-opacity hover:border-secondary"
         >
-          <p className="p-2 text-xl rounded-md text-primary bg-primary/10">
+          <p className="p-2 text-xl rounded-md text-secondary bg-secondary/10">
             <AiOutlineTwitter />
           </p>
           <h3 className="mt-2 text-xl text-white">Twitter</h3>
@@ -40,9 +40,9 @@ export default function ExtraInformation({}: Props) {
         <a
           href="https://www.linkedin.com/in/alireza17/"
           target="_blank"
-          className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-primary/5 to-background-clr border-white-low-opacity hover:border-primary"
+          className="flex flex-col items-start p-4 border rounded-md grow basis-80 bg-gradient-to-t from-secondary/5 to-background-clr border-white-low-opacity hover:border-secondary"
         >
-          <p className="p-2 text-xl rounded-md text-primary bg-primary/10">
+          <p className="p-2 text-xl rounded-md text-secondary bg-secondary/10">
             <AiFillLinkedin />
           </p>
           <h3 className="mt-2 text-xl text-white">LinkedIn</h3>
