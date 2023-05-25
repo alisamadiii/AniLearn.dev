@@ -18,9 +18,9 @@ import {
   DisplayProperty,
   Transform,
   Transition,
-} from "@components/Workplace/css";
+} from "@Workplace/css";
 
-import { OpenGraph, Inputs } from "../Workplace/html";
+import { OpenGraph, Inputs } from "@Workplace/html";
 
 export const Components = {
   h1: Heading_1,

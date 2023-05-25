@@ -51,57 +51,28 @@ export default function Position({}: Props) {
           <h1>Navbar</h1>
         </nav>
         <motion.section layout="position" className="p-4">
-          <h2 className="mb-3 text-3xl text-white">Lorem Ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore
-            doloremque eum et debitis repellendus inventore accusamus deserunt
-            corrupti autem officiis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi,
-            explicabo impedit sed ut dolore doloremque eum et debitis
-            repellendus inventore accusamus deserunt corrupti autem officiis?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore
-            doloremque eum et debitis repellendus inventore accusamus deserunt
-            corrupti autem officiis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi,
-            explicabo impedit sed ut dolore doloremque eum et debitis
-            repellendus inventore accusamus deserunt corrupti autem officiis?
-          </p>
-          <h2 className="mt-8 mb-3 text-3xl text-white">Lorem Ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore
-            doloremque eum et debitis repellendus inventore accusamus deserunt
-            corrupti autem officiis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi,
-            explicabo impedit sed ut dolore doloremque eum et debitis
-            repellendus inventore accusamus deserunt corrupti autem officiis?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore
-            doloremque eum et debitis repellendus inventore accusamus deserunt
-            corrupti autem officiis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi,
-            explicabo impedit sed ut dolore doloremque eum et debitis
-            repellendus inventore accusamus deserunt corrupti autem officiis?
-          </p>
-          <h2 className="mt-8 mb-3 text-3xl text-white">Lorem Ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore
-            doloremque eum et debitis repellendus inventore accusamus deserunt
-            corrupti autem officiis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi,
-            explicabo impedit sed ut dolore doloremque eum et debitis
-            repellendus inventore accusamus deserunt corrupti autem officiis?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore
-            doloremque eum et debitis repellendus inventore accusamus deserunt
-            corrupti autem officiis? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi,
-            explicabo impedit sed ut dolore doloremque eum et debitis
-            repellendus inventore accusamus deserunt corrupti autem officiis?
-          </p>
+          {[...Array(5)].map(() => (
+            <>
+              <h2 className="mb-3 text-3xl text-white">Lorem Ipsum</h2>
+              <p className="mb-8">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reiciendis pariatur aliquam amet, illum quasi, explicabo impedit
+                sed ut dolore doloremque eum et debitis repellendus inventore
+                accusamus deserunt corrupti autem officiis? Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Reiciendis pariatur
+                aliquam amet, illum quasi, explicabo impedit sed ut dolore
+                doloremque eum et debitis repellendus inventore accusamus
+                deserunt corrupti autem officiis? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Reiciendis pariatur aliquam amet,
+                illum quasi, explicabo impedit sed ut dolore doloremque eum et
+                debitis repellendus inventore accusamus deserunt corrupti autem
+                officiis? Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Reiciendis pariatur aliquam amet, illum quasi, explicabo
+                impedit sed ut dolore doloremque eum et debitis repellendus
+                inventore accusamus deserunt corrupti autem officiis?
+              </p>
+            </>
+          ))}
         </motion.section>
       </div>
       <div className="flex flex-wrap gap-4 mt-12">

@@ -21,7 +21,8 @@
       "@contents/*": ["./contents/*"],
       "@assets/*": ["./assets/*"],
       "@layouts/*": ["./layouts/*"],
-      "@tech/*": ["./components/Tech/*"]
+      "@tech/*": ["./components/Tech/*"],
+      "@Workplace/*": ["./Workplace/*"]
     }
   },
   "include": [
