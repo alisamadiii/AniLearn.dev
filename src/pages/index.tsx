@@ -20,6 +20,7 @@ import { AiFillHtml5 } from "react-icons/ai";
 import Technology from "@components/Technology";
 import { REASONS } from "@contents/Data";
 import Logo from "@assets/Logo";
+import ReasonComponent from "@components/Reason";
 
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
@@ -42,8 +43,8 @@ export default function Home() {
       <header className="py-12">
         {/* Navbar */}
         <nav
-          className={`fixed top-0 left-0 z-50 flex items-center w-full h-16 duration-200 ${
-            navbarBg && "bg-background-clr"
+          className={`fixed top-0 left-0 z-50 flex items-center w-full h-16 duration-200 backdrop-blur ${
+            navbarBg && "bg-background-clr/60"
           }`}
         >
           <Container className="flex items-center justify-between">
@@ -145,7 +146,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="py-12 overflow-hidden bg-gradient-to-t from-background-clr via-primary/5 to-background-clr">
+      <section className="py-12 overflow-hidden">
         <Container className="relative">
           <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
             Why this website?
@@ -161,42 +162,15 @@ export default function Home() {
             several advantages:
           </p>
           {/* container */}
-          <div className="relative mt-8 space-y-8">
-            {REASONS.map((reason) => (
-              <motion.div
-                key={reason.id}
-                initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ ease: "circOut" }}
-                className={`grid md:grid-cols-2 items-center gap-4 p-4 rounded-lg`}
-              >
-                <div
-                  className={`${
-                    reason.id % 2 == 0 ? "md:order-2" : "md:order-1"
-                  }`}
-                >
-                  <h3 className="mb-2 text-xl text-white">{reason.title}</h3>
-                  <p>{reason.reason}</p>
-                </div>
-                <Image
-                  src={reason.image}
-                  width={800}
-                  height={800}
-                  alt=""
-                  className={`w-full ${
-                    reason.id % 2 == 1 ? "md:order-2" : "md:order-1"
-                  }`}
-                />
-              </motion.div>
-            ))}
+          <div className="relative grid grid-cols-4 gap-4 mt-8">
+            <ReasonComponent />
           </div>
         </Container>
       </section>
 
       {/* ShoutOut */}
       <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
-        <div className="relative w-full max-w-[1000px] bg-box/90 backdrop-blur-sm border border-white-low-opacity overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
+        <div className="relative w-full max-w-[1000px] bg-box border border-white-low-opacity/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
           <h2 className="font-medium text-white text-2xl/8">
             I am making animated contents on Twitter, and I know they will be
             helpful when learning something.
@@ -219,6 +193,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      {/* <section className="py-24">
+        <Container className="flex flex-wrap gap-6">
+          {[...Array(10)].map(() => (
+            <div
+              className="relative p-4 overflow-hidden duration-200 rounded-lg isolate grow basis-72 hover:text-white hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
+              style={{
+                background:
+                  "linear-gradient(134.71deg, #0D0E12 36.46%, #161418 48.46%, #0D0E12 56.8%)",
+              }}
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                laudantium doloremque commodi, obcaecati necessitatibus delectus
+                magnam itaque a quam debitis ducimus assumenda fuga! Doloribus
+                ducimus quisquam nihil iure dolores soluta?
+              </p>
+              <div className="flex items-center gap-2 mt-8 font-medium">
+                <Image
+                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                  width={100}
+                  height={100}
+                  alt=""
+                  className="object-cover w-8 h-8 rounded-full"
+                />
+                <div className="">
+                  <h3 className="text-base/4">Lorem Ipsum</h3>
+                  <p className="text-xs">Front-End Developer</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Container>
+      </section> */}
     </main>
   );
 }

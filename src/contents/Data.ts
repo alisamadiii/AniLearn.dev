@@ -80,6 +80,11 @@ export const CSS = [
     name: "Transition",
     link: "/css/transition",
   },
+  {
+    id: 9,
+    name: "Centering a Div",
+    link: "/css/4-ways-of-centering-a-div",
+  },
 ];
 
 // Flex Order

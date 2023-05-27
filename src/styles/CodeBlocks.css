@@ -2,10 +2,10 @@
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+css-extras+typescript+typoscript&plugins=line-highlight+line-numbers+file-highlight+show-language+inline-color+toolbar */
 code[class*="language-"],
 pre[class*="language-"] {
+  @apply text-sm lg:text-base;
   color: #ccc;
   background: 0 0;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 1em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
