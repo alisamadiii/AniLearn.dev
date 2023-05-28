@@ -18,6 +18,7 @@ import {
   DisplayProperty,
   Transform,
   Transition,
+  CenteringADiv,
 } from "@Workplace/css";
 
 import { OpenGraph, Inputs } from "@Workplace/html";
@@ -39,6 +40,7 @@ export const Components = {
   DisplayProperty,
   Transform,
   Transition,
+  CenteringADiv,
 
   // HTML WORKPLACE
   OpenGraph,

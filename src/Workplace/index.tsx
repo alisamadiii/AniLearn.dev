@@ -7,7 +7,7 @@ type Props = {
 // ===== Workplace =====
 
 export default function Workplace({ children }: Props) {
-  return <div>{children}</div>;
+  return <div className="mt-12">{children}</div>;
 }
 
 // ===== Range =====

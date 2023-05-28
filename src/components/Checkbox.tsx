@@ -3,6 +3,7 @@ import React from "react";
 type Props = {
   name: string;
   onClick: (a: any) => void;
+  checked?: boolean;
 };
 
 export default function Checkbox({ name, ...otherProps }: Props) {
