@@ -56,7 +56,7 @@ export default function Transition({}: Props) {
             transition={{ ease: "easeInOut", duration: duration * 0.01 }}
             className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
           >
-            ease-out
+            ease-in-out
           </motion.div>
           <motion.div
             layout

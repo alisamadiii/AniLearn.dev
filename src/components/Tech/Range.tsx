@@ -3,12 +3,19 @@ import { motion } from "framer-motion";
 
 type Props = {
   maxNum: number;
+  minNum?: number;
   filterName: string;
   value: number;
   onChange: (e: any) => void;
 };
 
-export const Range = ({ maxNum, filterName, value, ...otherProps }: Props) => {
+export const Range = ({
+  maxNum,
+  minNum,
+  filterName,
+  value,
+  ...otherProps
+}: Props) => {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
       <p className="basis-[200px]">{filterName}</p>
@@ -18,6 +25,7 @@ export const Range = ({ maxNum, filterName, value, ...otherProps }: Props) => {
           type="range"
           name={filterName}
           value={value}
+          min={minNum ? minNum : 0}
           max={maxNum}
           {...otherProps}
         />

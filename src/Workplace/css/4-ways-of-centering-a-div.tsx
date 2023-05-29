@@ -76,22 +76,22 @@ export default function CenteringADiv({}: Props) {
       <BringChanges className="max-w-[905px] mx-auto mt-8 flex justify-between flex-wrap gap-8">
         <Checkbox
           name="Flexbox"
-          onClick={() => setCenterDiv(1)}
+          onChange={() => setCenterDiv(1)}
           checked={centerDiv == 1 ? true : false}
         />
         <Checkbox
           name="Gridbox I"
-          onClick={() => setCenterDiv(2)}
+          onChange={() => setCenterDiv(2)}
           checked={centerDiv == 2 ? true : false}
         />
         <Checkbox
           name="Gridbox II"
-          onClick={() => setCenterDiv(3)}
+          onChange={() => setCenterDiv(3)}
           checked={centerDiv == 3 ? true : false}
         />
         <Checkbox
           name="Transform"
-          onClick={() => setCenterDiv(4)}
+          onChange={() => setCenterDiv(4)}
           checked={centerDiv == 4 ? true : false}
         />
       </BringChanges>

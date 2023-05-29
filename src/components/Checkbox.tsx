@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {
   name: string;
-  onClick: (a: any) => void;
+  onChange: (a: any) => void;
   checked?: boolean;
 };
 

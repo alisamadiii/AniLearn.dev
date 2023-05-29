@@ -7,6 +7,7 @@ import Checkbox from "@components/Checkbox";
 type Props = {};
 
 export default function Transform({}: Props) {
+  const [image, setImage] = useState<string | null>(null);
   const [scale, setScale] = useState(100);
   const [rotate, setRotate] = useState(0);
   const [rotateX, setRotateX] = useState(0);
@@ -14,6 +15,10 @@ export default function Transform({}: Props) {
   const [skew, setSkew] = useState(0);
   const [skewX, setSkewX] = useState(0);
   const [skewY, setSkewY] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const [translateY, setTranslateY] = useState(0);
+  const [_translateX, _setTranslateX] = useState(0);
+  const [_translateY, _setTranslateY] = useState(0);
   const [perspective, setPerspective] = useState<boolean>(false);
 
   const IMAGE =
@@ -21,10 +26,20 @@ export default function Transform({}: Props) {
 
   return (
     <Workplace>
+      <BringChanges className="flex justify-center mb-8">
+        <input
+          type="url"
+          placeholder="https://"
+          id="website"
+          value={image || ""}
+          onChange={(e) => setImage(e.target.value)}
+          className="w-full max-w-[600px] p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+        />
+      </BringChanges>
       <LiveChanges>
         <div className="relative flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
-          <Image
-            src={IMAGE}
+          <img
+            src={image || IMAGE}
             width={400}
             height={400}
             alt="Image"
@@ -34,28 +49,61 @@ export default function Transform({}: Props) {
                 ? {
                     transform: `scale(${
                       scale * 0.01
-                    }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg)`,
+                    }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
                   }
                 : {
                     transform: `scale(${
                       scale * 0.01
-                    }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg)`,
+                    }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
                   }
             }
           />
         </div>
       </LiveChanges>
 
+      <button
+        className="px-4 py-2 mt-8 text-white rounded-md bg-primary hover:bg-primary/70"
+        onClick={() => {
+          setPerspective(false);
+          setScale(100);
+          setTranslateX(0);
+          setTranslateY(0);
+          setRotate(0);
+          setRotateX(0);
+          setRotateY(0);
+          setSkew(0);
+          setSkewX(0);
+          setSkewY(0);
+        }}
+      >
+        RESET
+      </button>
+
       <BringChanges className="mt-12 space-y-4">
         <Checkbox
           name="perspective"
-          onClick={(e: any) => setPerspective(e.target.checked)}
+          checked={perspective}
+          onChange={(e: any) => setPerspective(e.target.checked)}
         />
         <Range
           maxNum={200}
           filterName="Scale"
           value={scale}
           onChange={(e) => setScale(e.target.value)}
+        />
+        <Range
+          maxNum={200}
+          minNum={-200}
+          filterName="TranslateX"
+          value={translateX}
+          onChange={(e) => setTranslateX(e.target.value)}
+        />
+        <Range
+          maxNum={200}
+          minNum={-200}
+          filterName="TranslateY"
+          value={translateY}
+          onChange={(e) => setTranslateY(e.target.value)}
         />
         <Range
           maxNum={360}
