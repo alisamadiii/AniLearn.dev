@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Workplace, { BringChanges, LiveChanges } from "..";
 import { Range } from "@components/Tech/Range";
 import Checkbox from "@components/Checkbox";
@@ -17,8 +16,6 @@ export default function Transform({}: Props) {
   const [skewY, setSkewY] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
-  const [_translateX, _setTranslateX] = useState(0);
-  const [_translateY, _setTranslateY] = useState(0);
   const [perspective, setPerspective] = useState<boolean>(false);
 
   const IMAGE =

@@ -10,6 +10,15 @@ body {
   @apply text-font-clr bg-background-clr;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 @layer components {
   .scroll-image {
     transform: perspective(300px) rotateX(-10deg) scale(0.6);
@@ -81,7 +90,7 @@ body {
 
 /* CHECKBOX */
 .toggler-wrapper {
-  @apply block w-[45px] h-[25px] relative;
+  @apply block w-[35px] h-[20px] relative;
 }
 
 .toggler-wrapper input[type="checkbox"] {
@@ -108,9 +117,9 @@ body {
   input[type="checkbox"]:checked
   + .toggler-slider
   .toggler-knob {
-  left: calc(100% - 19px - 3px);
+  left: calc(100% - 14px - 3px);
 }
 
 .toggler-wrapper.style-12 .toggler-knob {
-  @apply w-[calc(25px-6px)] h-[calc(25px-6px)] rounded-[50%] left-[3px] top-[3px] bg-white bg-no-repeat bg-[80%] bg-center;
+  @apply w-[calc(20px-6px)] h-[calc(20px-6px)] rounded-[50%] left-[3px] top-[3px] bg-white bg-no-repeat bg-[80%] bg-center;
 }

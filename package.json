@@ -27,6 +27,7 @@
     "react-countup": "^6.4.2",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-use-measure": "^2.1.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-code-titles": "^1.2.0",
     "rehype-prism-plus": "^1.5.1",

@@ -7,3 +7,4 @@ export { default as DisplayProperty } from "./display-property";
 export { default as Transform } from "./transform";
 export { default as Transition } from "./transition";
 export { default as CenteringADiv } from "./4-ways-of-centering-a-div";
+export { default as FlexWrap } from "./flex-wrap";

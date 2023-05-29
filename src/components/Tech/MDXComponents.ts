@@ -19,6 +19,7 @@ import {
   Transform,
   Transition,
   CenteringADiv,
+  FlexWrap,
 } from "@Workplace/css";
 
 import { OpenGraph, Inputs } from "@Workplace/html";
@@ -41,6 +42,7 @@ export const Components = {
   Transform,
   Transition,
   CenteringADiv,
+  FlexWrap,
 
   // HTML WORKPLACE
   OpenGraph,

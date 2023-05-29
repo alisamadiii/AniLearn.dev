@@ -85,6 +85,11 @@ export const CSS = [
     name: "Centering a Div",
     link: "/css/4-ways-of-centering-a-div",
   },
+  {
+    id: 10,
+    name: "Flex-Wrap",
+    link: "/css/flex-wrap",
+  },
 ];
 
 // Flex Order
