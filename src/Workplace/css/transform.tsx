@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Workplace from "..";
+import Workplace, { BringChanges, LiveChanges } from "..";
 import { Range } from "@components/Tech/Range";
 import Checkbox from "@components/Checkbox";
 
@@ -21,29 +21,32 @@ export default function Transform({}: Props) {
 
   return (
     <Workplace>
-      <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
-        <Image
-          src={IMAGE}
-          width={400}
-          height={400}
-          alt="Image"
-          className="duration-200 ease-out rounded-md w-44"
-          style={
-            perspective == false
-              ? {
-                  transform: `scale(${
-                    scale * 0.01
-                  }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg)`,
-                }
-              : {
-                  transform: `scale(${
-                    scale * 0.01
-                  }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg)`,
-                }
-          }
-        />
-      </div>
-      <div className="mt-12 space-y-4">
+      <LiveChanges>
+        <div className="relative flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
+          <Image
+            src={IMAGE}
+            width={400}
+            height={400}
+            alt="Image"
+            className="duration-200 ease-out rounded-md w-44"
+            style={
+              perspective == false
+                ? {
+                    transform: `scale(${
+                      scale * 0.01
+                    }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg)`,
+                  }
+                : {
+                    transform: `scale(${
+                      scale * 0.01
+                    }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg)`,
+                  }
+            }
+          />
+        </div>
+      </LiveChanges>
+
+      <BringChanges className="mt-12 space-y-4">
         <Checkbox
           name="perspective"
           onClick={(e: any) => setPerspective(e.target.checked)}
@@ -90,7 +93,7 @@ export default function Transform({}: Props) {
           value={skewY}
           onChange={(e) => setSkewY(e.target.value)}
         />
-      </div>
+      </BringChanges>
     </Workplace>
   );
 }

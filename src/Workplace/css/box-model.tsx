@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Workplace from "..";
+import Workplace, { BringChanges, LiveChanges } from "..";
 import { Range } from "@components/Tech/Range";
 import SaveButton from "@components/SaveButton";
 
@@ -19,7 +19,7 @@ border: ${border}px solid white;
 
   return (
     <Workplace>
-      <div className="mt-12 space-y-4">
+      <BringChanges className="space-y-4">
         <Range
           maxNum={100}
           filterName="Margin"
@@ -38,19 +38,21 @@ border: ${border}px solid white;
           value={padding}
           onChange={(e) => setPadding(Number(e.target.value))}
         />
-      </div>
+      </BringChanges>
 
       <SaveButton content={Content} margin={true} />
 
-      <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box border-white-low-opacity">
-        {/* Changing Value */}
-        <div
-          className={`text-3xl font-medium text-white bg-primary`}
-          style={{ margin, padding, border: `${border}px solid` }}
-        >
-          Content
+      <LiveChanges>
+        <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box border-white-low-opacity">
+          {/* Changing Value */}
+          <div
+            className={`text-3xl font-medium text-white bg-primary`}
+            style={{ margin, padding, border: `${border}px solid` }}
+          >
+            Content
+          </div>
         </div>
-      </div>
+      </LiveChanges>
     </Workplace>
   );
 }

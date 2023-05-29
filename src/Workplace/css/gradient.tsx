@@ -6,6 +6,7 @@ type Props = {};
 import { Gradients } from "@contents/Gradients";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import SaveButton from "@components/SaveButton";
+import Workplace, { BringChanges, LiveChanges } from "..";
 
 // ======= Background Gradient ========
 export default function Gradient({}: Props) {
@@ -37,8 +38,8 @@ background: linear-gradient(${45}deg, ${Gradients[selectedGradient].colors.join(
   `;
 
   return (
-    <div>
-      <motion.section layout className="relative my-12">
+    <Workplace>
+      <LiveChanges>
         {/* Div */}
         <motion.div
           key={Math.floor(Math.random() * 1000)}
@@ -79,7 +80,9 @@ background: linear-gradient(${45}deg, ${Gradients[selectedGradient].colors.join(
             Text-Gradient
           </h1>
         </div>
-        {/* Increasing and Decreasing */}
+      </LiveChanges>
+
+      <BringChanges>
         <div className="flex gap-4 mt-4">
           <button
             className="px-4 py-2 text-white duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
@@ -103,10 +106,10 @@ background: linear-gradient(${45}deg, ${Gradients[selectedGradient].colors.join(
           </button>
           <SaveButton content={Content} margin={false} />
         </div>
-      </motion.section>
+      </BringChanges>
 
       {toggleShowAll && <AllColors />}
-    </div>
+    </Workplace>
   );
 }
 
@@ -116,7 +119,7 @@ export const AllColors = () => {
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 30 }}
-      className="relative overflow-hidden"
+      className="relative mt-8 overflow-hidden"
     >
       <div className="flex flex-wrap gap-4 p-4 overflow-auto rounded-lg w-w-full h-96 bg-box">
         {Gradients.map((gradient) => (

@@ -1,33 +1,36 @@
 import React from "react";
+import Workplace from "..";
 
 type Props = {};
 
 export default function Inputs({}: Props) {
   return (
-    <div className="grid mt-12 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
-      <Input name="button" type="button" />
-      <Input name="checkbox" type="checkbox" />
-      <Input name="color" type="color" />
-      <Input name="date" type="date" />
-      <Input name="datetime-local" type="datetime-local" />
-      <Input name="email" type="email" />
-      <Input name="file" type="file" />
-      <Input name="hidden" type="hidden" />
-      <Input name="image" type="image" />
-      <Input name="month" type="month" />
-      <Input name="number" type="number" />
-      <Input name="password" type="password" />
-      <Input name="radio" type="radio" />
-      <Input name="range" type="range" />
-      <Input name="reset" type="reset" />
-      <Input name="search" type="search" />
-      <Input name="submit" type="submit" />
-      <Input name="tel" type="tel" />
-      <Input name="text" type="text" />
-      <Input name="time" type="time" />
-      <Input name="url" type="url" />
-      <Input name="week" type="week" />
-    </div>
+    <Workplace>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+        <Input name="button" type="button" />
+        <Input name="checkbox" type="checkbox" />
+        <Input name="color" type="color" />
+        <Input name="date" type="date" />
+        <Input name="datetime-local" type="datetime-local" />
+        <Input name="email" type="email" />
+        <Input name="file" type="file" />
+        <Input name="hidden" type="hidden" />
+        <Input name="image" type="image" />
+        <Input name="month" type="month" />
+        <Input name="number" type="number" />
+        <Input name="password" type="password" />
+        <Input name="radio" type="radio" />
+        <Input name="range" type="range" />
+        <Input name="reset" type="reset" />
+        <Input name="search" type="search" />
+        <Input name="submit" type="submit" />
+        <Input name="tel" type="tel" />
+        <Input name="text" type="text" />
+        <Input name="time" type="time" />
+        <Input name="url" type="url" />
+        <Input name="week" type="week" />
+      </div>
+    </Workplace>
   );
 }
 

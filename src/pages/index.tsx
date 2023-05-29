@@ -15,10 +15,9 @@ import HeaderIMG from "@assets/header.png";
 
 // Icons
 import { IoIosArrowForward, IoLogoCss3 } from "react-icons/io";
-import { AiFillHtml5 } from "react-icons/ai";
+import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
 
 import Technology from "@components/Technology";
-import { REASONS } from "@contents/Data";
 import Logo from "@assets/Logo";
 import ReasonComponent from "@components/Reason";
 
@@ -55,14 +54,19 @@ export default function Home() {
               <Logo />
               AniLearn.dev
             </Link>
-            <Link
-              href={"#get-started"}
-              scroll={false}
-              className="flex items-center px-4 py-2 text-xs text-white rounded-full bg-button group"
-            >
-              Start Now
-              <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
-            </Link>
+            <div className="flex items-center gap-4">
+              <a href="#" target="_blank" className="text-2xl hover:text-white">
+                <AiFillGithub />
+              </a>
+              <Link
+                href={"#get-started"}
+                scroll={false}
+                className="flex items-center px-4 py-2 text-xs text-white rounded-full bg-button group"
+              >
+                Start Now
+                <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
           </Container>
         </nav>
         {/* Section */}

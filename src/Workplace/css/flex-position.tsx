@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import Button_Tech from "@components/Button_Tech";
+import Workplace, { BringChanges, LiveChanges } from "..";
 
 type Props = {};
 
@@ -9,51 +11,50 @@ export function JustifyContent({}: Props) {
   const [justifyContent, setJustifyContent] = useState("justify-start");
 
   return (
-    <div>
-      <div className="flex flex-col items-center mt-8">
-        <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
-        {/* Demo */}
+    <Workplace className="flex flex-col items-center">
+      <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
+      <LiveChanges>
         <Playground flexClassName={justifyContent} />
-        <div className="flex flex-wrap gap-3 mt-8">
-          <Button_Tech
-            value="start"
-            classNameValue="justify-start"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="end"
-            classNameValue="justify-end"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="center"
-            classNameValue="justify-center"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="space-between"
-            classNameValue="justify-between"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="space-evenly"
-            classNameValue="justify-evenly"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="space-around"
-            classNameValue="justify-around"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-        </div>
-      </div>
-    </div>
+      </LiveChanges>
+      <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
+        <Button_Tech
+          value="start"
+          classNameValue="justify-start"
+          className={justifyContent}
+          setClassName={setJustifyContent}
+        />
+        <Button_Tech
+          value="end"
+          classNameValue="justify-end"
+          className={justifyContent}
+          setClassName={setJustifyContent}
+        />
+        <Button_Tech
+          value="center"
+          classNameValue="justify-center"
+          className={justifyContent}
+          setClassName={setJustifyContent}
+        />
+        <Button_Tech
+          value="space-between"
+          classNameValue="justify-between"
+          className={justifyContent}
+          setClassName={setJustifyContent}
+        />
+        <Button_Tech
+          value="space-evenly"
+          classNameValue="justify-evenly"
+          className={justifyContent}
+          setClassName={setJustifyContent}
+        />
+        <Button_Tech
+          value="space-around"
+          classNameValue="justify-around"
+          className={justifyContent}
+          setClassName={setJustifyContent}
+        />
+      </BringChanges>
+    </Workplace>
   );
 }
 
@@ -62,33 +63,33 @@ export function AlignItems({}: Props) {
   const [alignItems, setAlignItems] = useState("items-start");
 
   return (
-    <div>
-      <div className="flex flex-col items-center mt-8">
-        <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
-        {/* Demo */}
+    <Workplace className="flex flex-col items-center">
+      <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
+      {/* Demo */}
+      <LiveChanges>
         <Playground flexClassName={alignItems} />
-        <div className="flex flex-wrap gap-3 mt-8">
-          <Button_Tech
-            value="start"
-            classNameValue="items-start"
-            className={alignItems}
-            setClassName={setAlignItems}
-          />
-          <Button_Tech
-            value="end"
-            classNameValue="items-end"
-            className={alignItems}
-            setClassName={setAlignItems}
-          />
-          <Button_Tech
-            value="center"
-            classNameValue="items-center"
-            className={alignItems}
-            setClassName={setAlignItems}
-          />
-        </div>
-      </div>
-    </div>
+      </LiveChanges>
+      <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
+        <Button_Tech
+          value="start"
+          classNameValue="items-start"
+          className={alignItems}
+          setClassName={setAlignItems}
+        />
+        <Button_Tech
+          value="end"
+          classNameValue="items-end"
+          className={alignItems}
+          setClassName={setAlignItems}
+        />
+        <Button_Tech
+          value="center"
+          classNameValue="items-center"
+          className={alignItems}
+          setClassName={setAlignItems}
+        />
+      </BringChanges>
+    </Workplace>
   );
 }
 
@@ -97,55 +98,55 @@ export function AlignContent({}: Props) {
   const [alignContent, setAlignContent] = useState("content-start");
 
   return (
-    <div>
-      <div className="flex flex-col items-center mt-8">
-        <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
-        {/* Demo */}
+    <Workplace className="flex flex-col items-center">
+      <div className="absolute h-24 w-52 bg-primary/20 blur-3xl -z-10" />
+      {/* Demo */}
+      <LiveChanges>
         <Playground
           flexClassName={alignContent}
           extraClassNameContainer="flex-wrap !h-64"
           extraClassNameRect="basis-[300px] grow"
         />
-        <div className="flex flex-wrap gap-3 mt-8">
-          <Button_Tech
-            value="start"
-            classNameValue="content-start"
-            className={alignContent}
-            setClassName={setAlignContent}
-          />
-          <Button_Tech
-            value="end"
-            classNameValue="content-end"
-            className={alignContent}
-            setClassName={setAlignContent}
-          />
-          <Button_Tech
-            value="center"
-            classNameValue="content-center"
-            className={alignContent}
-            setClassName={setAlignContent}
-          />
-          <Button_Tech
-            value="space-between"
-            classNameValue="content-between"
-            className={alignContent}
-            setClassName={setAlignContent}
-          />
-          <Button_Tech
-            value="space-evenly"
-            classNameValue="content-evenly"
-            className={alignContent}
-            setClassName={setAlignContent}
-          />
-          <Button_Tech
-            value="space-around"
-            classNameValue="content-around"
-            className={alignContent}
-            setClassName={setAlignContent}
-          />
-        </div>
-      </div>
-    </div>
+      </LiveChanges>
+      <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
+        <Button_Tech
+          value="start"
+          classNameValue="content-start"
+          className={alignContent}
+          setClassName={setAlignContent}
+        />
+        <Button_Tech
+          value="end"
+          classNameValue="content-end"
+          className={alignContent}
+          setClassName={setAlignContent}
+        />
+        <Button_Tech
+          value="center"
+          classNameValue="content-center"
+          className={alignContent}
+          setClassName={setAlignContent}
+        />
+        <Button_Tech
+          value="space-between"
+          classNameValue="content-between"
+          className={alignContent}
+          setClassName={setAlignContent}
+        />
+        <Button_Tech
+          value="space-evenly"
+          classNameValue="content-evenly"
+          className={alignContent}
+          setClassName={setAlignContent}
+        />
+        <Button_Tech
+          value="space-around"
+          classNameValue="content-around"
+          className={alignContent}
+          setClassName={setAlignContent}
+        />
+      </BringChanges>
+    </Workplace>
   );
 }
 
@@ -169,9 +170,13 @@ export const Playground = ({
           <motion.div
             key={index}
             initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
             exit={{ y: -10, opacity: 0 }}
             layout
+            transition={{ type: "spring", damping: 12 }}
             className={`bg-white rounded-lg w-11 h-11 ${extraClassNameRect}`}
           />
         ))}

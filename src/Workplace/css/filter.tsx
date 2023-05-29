@@ -6,6 +6,7 @@ import {
 
 import { Range } from "@components/Tech/Range";
 import SaveButton from "@components/SaveButton";
+import Workplace, { LiveChanges, BringChanges } from "..";
 
 type Props = {};
 
@@ -24,8 +25,8 @@ export default function Filter({}: Props) {
     "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80";
 
   return (
-    <div>
-      <div className="flex flex-col items-center gap-4 my-12">
+    <Workplace>
+      <BringChanges className="flex flex-col items-center gap-4 mb-4">
         <input
           type="url"
           placeholder="https://"
@@ -49,7 +50,8 @@ export default function Filter({}: Props) {
           <option value="landscape">Landscape</option>
           <option value="portrait">Portrait</option>
         </select>
-        {/* Image Comparison */}
+      </BringChanges>
+      <LiveChanges>
         <ReactCompareSlider
           itemOne={
             <ReactCompareSliderImage src={image || IMAGE} alt="Image one" />
@@ -67,8 +69,8 @@ export default function Filter({}: Props) {
             landscape ? "aspect-video" : "aspect-[3/4]"
           }`}
         />
-      </div>
-      <div className="mt-12 space-y-5">
+      </LiveChanges>
+      <BringChanges className="mt-12 space-y-5">
         <Range
           maxNum={100}
           filterName="Blur"
@@ -106,10 +108,10 @@ export default function Filter({}: Props) {
           onChange={(e) => setBrightness(Number(e.target.value))}
         />
         <SaveButton
-          content={`filter: blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate});`}
+          content={`filter: "blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate})";`}
           margin={true}
         />
-      </div>
-    </div>
+      </BringChanges>
+    </Workplace>
   );
 }
