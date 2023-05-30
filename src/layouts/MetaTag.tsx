@@ -34,7 +34,7 @@ export default function MetaTag({ title, description, image }: Props) {
         name="twitter:image"
         content={image || "https://i.ibb.co/9hyw1rL/Meta-Tag.png"}
       />
-      <link rel="icon" href="/logo.svg" />
+      <link rel="icon" href="/Logo.svg" />
     </Head>
   );
 }
