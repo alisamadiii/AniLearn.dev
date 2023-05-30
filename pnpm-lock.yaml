@@ -8,6 +8,7 @@ specifiers:
   autoprefixer: 10.4.14
   bezier-easing-editor: ^0.8.0
   canvas-confetti: ^1.6.0
+  color-convert: ^2.0.1
   eslint: 8.39.0
   eslint-config-next: 13.3.4
   framer-motion: ^10.12.7
@@ -36,6 +37,7 @@ dependencies:
   autoprefixer: 10.4.14_postcss@8.4.23
   bezier-easing-editor: 0.8.0_react@18.2.0
   canvas-confetti: 1.6.0
+  color-convert: 2.0.1
   eslint: 8.39.0
   eslint-config-next: 13.3.4_iacogk7kkaymxepzhgcbytyi7q
   framer-motion: 10.12.7_biqbaboplfbrettd7655fr4n2y

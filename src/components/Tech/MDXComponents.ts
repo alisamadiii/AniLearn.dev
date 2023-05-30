@@ -20,6 +20,7 @@ import {
   Transition,
   CenteringADiv,
   FlexWrap,
+  ColorsConverter,
 } from "@Workplace/css";
 
 import { OpenGraph, Inputs } from "@Workplace/html";
@@ -43,6 +44,7 @@ export const Components = {
   Transition,
   CenteringADiv,
   FlexWrap,
+  ColorsConverter,
 
   // HTML WORKPLACE
   OpenGraph,

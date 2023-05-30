@@ -28,39 +28,31 @@ export default function FlexWrap({}: Props) {
     <Workplace className="">
       <LiveChanges>
         <div
-          className={`w-full min-w-[300px] max-w-[905px] mx-auto p-4 h-48 bg-box/50 border resize-x border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${
+          className={`w-full min-w-[300px] max-w-[905px] mx-auto p-4 bg-box/50 border resize-x border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${
             flexWrap && "flex-wrap"
           }`}
           ref={playground}
         >
-          <motion.div
-            layout
-            className={`bg-white rounded-lg text-black flex items-center justify-center h-11 ${
-              flexGrow && "grow"
-            }`}
-          />
-          <motion.div
-            layout
-            className={`bg-white rounded-lg h-11 ${flexGrow && "grow"}`}
-            style={{ flexBasis }}
-          />
-          <motion.div
-            layout
-            className={`bg-white rounded-lg h-11 ${flexGrow && "grow"}`}
-            style={{ flexBasis }}
-          />
-          <motion.div
-            layout
-            className={`bg-white rounded-lg h-11 ${flexGrow && "grow"}`}
-            style={{ flexBasis }}
-          />
+          {[...Array(4)].map((_, index) => (
+            <Rectangular
+              key={index}
+              flexBasis={flexBasis}
+              flexGrow={flexGrow}
+            />
+          ))}
         </div>
         <div
-          className={`flex items-center gap-3 mx-auto text-right mt-3`}
+          className={`relative flex items-center justify-center gap-3 mx-auto text-right mt-3`}
           style={{ width: playgroundWidth }}
         >
-          <div className="h-1 rounded-full bg-white-low-opacity grow" />
-          {playgroundWidth}px
+          <div
+            className={`w-full h-1 rounded-full grow duration-200 absolute -z-10 ${
+              playgroundWidth == 300 ? "bg-red-700" : "bg-white-low-opacity"
+            }`}
+          />
+          <p className="px-4 bg-background-clr">
+            {Math.floor(playgroundWidth)}px
+          </p>
         </div>
         {/* This is the place where you can see your changes live */}
       </LiveChanges>
@@ -89,3 +81,18 @@ export default function FlexWrap({}: Props) {
     </Workplace>
   );
 }
+
+type RectangularProps = {
+  flexGrow: boolean;
+  flexBasis: number;
+};
+
+export const Rectangular = ({ flexGrow, flexBasis }: RectangularProps) => {
+  return (
+    <motion.div
+      layout
+      className={`bg-white rounded-lg h-11 ${flexGrow && "grow"}`}
+      style={{ flexBasis }}
+    />
+  );
+};
