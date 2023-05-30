@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Workplace, { BringChanges, LiveChanges } from "..";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { FaLongArrowAltRight } from "react-icons/fa";
 import SaveNotification from "@components/SaveNotification";
+import GivingComment from "@components/Comment";
 
 type Props = {};
 
@@ -20,22 +21,18 @@ export default function ColorsConverter({}: Props) {
       : setInputError(null);
   };
 
-  // function hexToRGBA(hexCode: string, alpha: number) {
-  //   // Remove the '#' symbol if present
-  //   hexCode = hexCode.replace("#", "");
+  function hexToRGB(hexCode: string) {
+    // Remove the '#' symbol if present
+    hexCode = hexCode.replace("#", "");
 
-  //   // Split the hexadecimal code into red, green, and blue components
-  //   var r = parseInt(hexCode.substring(0, 2), 16);
-  //   var g = parseInt(hexCode.substring(2, 4), 16);
-  //   var b = parseInt(hexCode.substring(4, 6), 16);
+    // Split the hexadecimal code into red, green, and blue components
+    var r = parseInt(hexCode.substring(0, 2), 16);
+    var g = parseInt(hexCode.substring(2, 4), 16);
+    var b = parseInt(hexCode.substring(4, 6), 16);
 
-  //   // Convert the alpha value to a decimal between 0 and 1
-  //   alpha = alpha || 1;
-  //   alpha = Math.min(Math.max(alpha, 0), 1);
-
-  //   // Return the RGBA color string
-  //   return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
-  // }
+    // Return the RGBA color string
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+  }
 
   function hexToHSL(hexCode: string) {
     // Remove the '#' symbol if present
@@ -176,23 +173,42 @@ export default function ColorsConverter({}: Props) {
         </label>
       </BringChanges>
       <motion.div layout>
-        <LiveChanges className="flex flex-col items-center justify-center mt-8 text-sm md:flex-row">
-          {generateTailwindColorGradient(colorNameArg(customColor)).map(
-            (color, index) => (
-              <div key={index} className="w-full">
-                {index == 11 && (
-                  <div className="hidden mx-4 text-3xl rotate-180 md:block">
-                    <FaLongArrowAltRight />
-                  </div>
-                )}
+        <LiveChanges>
+          <div className="w-full max-w-[600px] mx-auto mt-8 space-y-4">
+            <ConvertingColor
+              name="RGBA"
+              color={customColor}
+              convertFunction={hexToRGB}
+            />
+            <ConvertingColor
+              name="HSL"
+              color={customColor}
+              convertFunction={hexToHSL}
+            />
+            <GivingComment
+              comment={`Your text must be ${getContrastTextColor(
+                customColor
+              )} to match with the background.`}
+            >
+              <ConvertingColor
+                name="Text Color"
+                color={customColor}
+                convertFunction={getContrastTextColor}
+              />
+            </GivingComment>
+          </div>
+          <div className="flex flex-col items-center justify-center mt-8 text-sm md:flex-row">
+            {generateTailwindColorGradient(colorNameArg(customColor)).map(
+              (color, index) => (
                 <Colors
+                  key={index}
                   color={color}
                   index={index}
                   getContrastTextColor={getContrastTextColor}
                 />
-              </div>
-            )
-          )}
+              )
+            )}
+          </div>
         </LiveChanges>
       </motion.div>
     </Workplace>
@@ -236,6 +252,48 @@ export const Colors = ({ color, getContrastTextColor, index }: ColorProps) => {
       </div>
       <AnimatePresence>
         {isSaved && <SaveNotification name={`Saved - ${color}`} />}
+      </AnimatePresence>
+    </>
+  );
+};
+
+type ConvertingColorProps = {
+  name: string;
+  color: string;
+  convertFunction: (a: string) => ReactNode;
+};
+
+export const ConvertingColor = ({
+  name,
+  color,
+  convertFunction,
+}: ConvertingColorProps) => {
+  const [isSaved, setIsSaved] = useState(false);
+
+  const onClickHandler = () => {
+    setIsSaved(true);
+    const convertedColor: any = convertFunction(colorNameArg(color));
+    navigator.clipboard.writeText(convertedColor);
+
+    setTimeout(() => {
+      setIsSaved(false);
+    }, 2000);
+  };
+
+  return (
+    <>
+      <p
+        onClick={onClickHandler}
+        className="flex justify-between p-2 border rounded-md bg-box border-white-low-opacity hover:bg-green-950/30"
+      >
+        {name}: <span>{convertFunction(colorNameArg(color))}</span>
+      </p>
+      <AnimatePresence>
+        {isSaved && (
+          <SaveNotification
+            name={`Saved - ${convertFunction(colorNameArg(color))}`}
+          />
+        )}
       </AnimatePresence>
     </>
   );

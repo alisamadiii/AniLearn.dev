@@ -76,7 +76,10 @@ export default function FlexWrap({}: Props) {
               onChange={(e) => setFlexGrow(e.target.checked)}
             />
           </GivingComment>
-          <GivingComment comment="The flex-basis CSS property sets the initial main size of a flex item.">
+          <GivingComment
+            className="items-start"
+            comment="The flex-basis CSS property sets the initial main size of a flex item."
+          >
             <Input
               name="Flex Basis"
               value={flexBasis}

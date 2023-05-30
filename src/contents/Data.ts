@@ -90,6 +90,11 @@ export const CSS = [
     name: "Flex-Wrap",
     link: "/css/flex-wrap",
   },
+  {
+    id: 11,
+    name: "Colors Converter",
+    link: "/css/colors-converter",
+  },
 ];
 
 // Flex Order

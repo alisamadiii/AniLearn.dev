@@ -14,7 +14,7 @@ export default function SaveNotification({ name }: Props) {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      className="fixed flex items-center gap-1 px-4 py-2 text-white rounded-md top-4 bg-box"
+      className="fixed flex items-center gap-1 px-4 py-2 text-white rounded-md bottom-4 right-4 bg-box"
     >
       <motion.p
         initial={{ rotate: 180, scale: 0 }}
