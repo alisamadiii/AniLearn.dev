@@ -1,11 +1,14 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 
 type Props = {};
 
 export default function HTML({}: Props) {
   const router = useRouter();
-  router.push("/html/open-graph");
+
+  useEffect(() => {
+    router.push("/html/open-graph");
+  }, []);
 
   return (
     <div className="flex items-center justify-center w-full h-screen">

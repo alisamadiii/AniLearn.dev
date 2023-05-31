@@ -1,11 +1,14 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 
 type Props = {};
 
 export default function CSS({}: Props) {
   const router = useRouter();
-  router.push("/css/flex-position");
+
+  useEffect(() => {
+    router.push("/css/flex-position");
+  }, []);
 
   return (
     <div className="flex items-center justify-center w-full h-screen">
