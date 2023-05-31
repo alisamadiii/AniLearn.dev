@@ -2,7 +2,6 @@ import React, { ReactNode, useState } from "react";
 import Workplace, { BringChanges, LiveChanges } from "..";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { FaLongArrowAltRight } from "react-icons/fa";
 import SaveNotification from "@components/SaveNotification";
 import GivingComment from "@components/Comment";
 

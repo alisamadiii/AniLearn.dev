@@ -21,6 +21,7 @@ import {
   CenteringADiv,
   FlexWrap,
   ColorsConverter,
+  ButtonsGradient,
 } from "@Workplace/css";
 
 import { OpenGraph, Inputs } from "@Workplace/html";
@@ -45,6 +46,7 @@ export const Components = {
   CenteringADiv,
   FlexWrap,
   ColorsConverter,
+  ButtonsGradient,
 
   // HTML WORKPLACE
   OpenGraph,
