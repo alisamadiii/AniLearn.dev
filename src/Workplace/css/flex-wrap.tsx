@@ -30,7 +30,7 @@ export default function FlexWrap({}: Props) {
     <Workplace className="">
       <LiveChanges>
         <div
-          className={`w-full min-w-[300px] max-w-[905px] mx-auto p-4 bg-box/50 border resize-x border-white-low-opacity rounded-lg flex gap-3 overflow-hidden ${
+          className={`w-full min-w-[300px] max-w-playground mx-auto p-4 bg-box/50 border resize-x border-white-low-opacity rounded-lg flex gap-3 overflow-hidden ${
             flexWrap && "flex-wrap"
           }`}
           ref={playground}
@@ -58,7 +58,7 @@ export default function FlexWrap({}: Props) {
         </div>
         {/* This is the place where you can see your changes live */}
       </LiveChanges>
-      <BringChanges className="w-full max-w-[905px] mx-auto mt-8 space-y-6">
+      <BringChanges className="w-full mx-auto mt-8 space-y-6 max-w-playground">
         <div>
           <h2 className="mb-4 text-xl text-white">Parent</h2>
           <GivingComment comment="The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines.">

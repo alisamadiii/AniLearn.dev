@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-import { Heading_1, Heading_2, Heading_3 } from "@components/index";
+import { Heading_1, Heading_2 } from "@components/index";
 import Container from "@layouts/Container";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Workplace, { BringChanges, LiveChanges } from "..";
 import { Range } from "@components/Tech/Range";
 import Checkbox from "@components/Checkbox";
+import Image from "next/image";
 
 type Props = {};
 
@@ -30,12 +31,12 @@ export default function Transform({}: Props) {
           id="website"
           value={image || ""}
           onChange={(e) => setImage(e.target.value)}
-          className="w-full max-w-[600px] p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+          className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity focus:border-primary placeholder:opacity-50"
         />
       </BringChanges>
       <LiveChanges>
         <div className="relative flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
-          <img
+          <Image
             src={image || IMAGE}
             width={400}
             height={400}

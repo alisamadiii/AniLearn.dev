@@ -30,7 +30,7 @@ export default function CenteringADiv({}: Props) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`relative w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
+              className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
             >
               <motion.div layout className="bg-white rounded-lg w-11 h-11" />
             </motion.div>
@@ -41,7 +41,7 @@ export default function CenteringADiv({}: Props) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`relative w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
+              className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
             >
               <div className="bg-white rounded-lg w-11 h-11" />
             </motion.div>
@@ -52,7 +52,7 @@ export default function CenteringADiv({}: Props) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`relative w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
+              className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
             >
               <div className="bg-white rounded-lg w-11 h-11" />
             </motion.div>
@@ -63,7 +63,7 @@ export default function CenteringADiv({}: Props) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className={`relative w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
+              className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
             >
               <div className="bg-white rounded-lg w-11 h-11" />
             </motion.div>
@@ -73,7 +73,7 @@ export default function CenteringADiv({}: Props) {
         </AnimatePresence>
       </LiveChanges>
 
-      <BringChanges className="max-w-[905px] mx-auto mt-8 flex justify-between flex-wrap gap-8">
+      <BringChanges className="flex flex-wrap justify-between gap-8 mx-auto mt-8 max-w-playground">
         <Checkbox
           name="Flexbox"
           onChange={() => setCenterDiv(1)}

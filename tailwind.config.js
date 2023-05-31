@@ -3,6 +3,11 @@ module.exports = {
   content: ["./src/**/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      maxWidth: {
+        container: "1249px",
+        playground: "905px",
+        input: "600px",
+      },
       colors: {
         primary: "#8000FF",
         secondary: "#F8522E",
@@ -27,9 +32,6 @@ module.exports = {
       },
       backgroundSize: {
         pattern: "44px 44px, 44px 44px, 20px 20px, 20px 20px",
-      },
-      backgroundPosition: {
-        // pattern: "-2px -2px, -2px -2px, -1px -1px, -1px -1px",
       },
     },
   },

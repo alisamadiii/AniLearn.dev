@@ -148,7 +148,7 @@ export default function ColorsConverter({}: Props) {
   return (
     <Workplace>
       <BringChanges className="flex flex-col items-center">
-        <label htmlFor="" className="w-full max-w-[600px]">
+        <label htmlFor="" className="w-full max-w-input">
           <input
             type="text"
             placeholder="#ffffff"
@@ -173,7 +173,7 @@ export default function ColorsConverter({}: Props) {
       </BringChanges>
       <motion.div layout>
         <LiveChanges>
-          <div className="w-full max-w-[600px] mx-auto mt-8 space-y-4">
+          <div className="w-full mx-auto mt-8 space-y-4 max-w-input">
             <ConvertingColor
               name="RGBA"
               color={customColor}

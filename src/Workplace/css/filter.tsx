@@ -33,7 +33,7 @@ export default function Filter({}: Props) {
           id="website"
           value={image || ""}
           onChange={(e) => setImage(e.target.value)}
-          className="w-full max-w-[600px] p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+          className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity focus:border-primary placeholder:opacity-50"
         />
         <small>Add you own Image URL</small>
 
@@ -65,7 +65,7 @@ export default function Filter({}: Props) {
               }}
             />
           }
-          className={`w-full max-w-[600px] mx-auto object-cover rounded-lg duration-200 ${
+          className={`w-full max-w-input mx-auto object-cover rounded-lg duration-200 ${
             landscape ? "aspect-video" : "aspect-[3/4]"
           }`}
         />

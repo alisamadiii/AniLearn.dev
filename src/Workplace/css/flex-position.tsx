@@ -163,7 +163,7 @@ export const Playground = ({
 }: PlaygroundProps) => {
   return (
     <div
-      className={`w-full max-w-[905px] mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${flexClassName} ${extraClassNameContainer}`}
+      className={`w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden ${flexClassName} ${extraClassNameContainer}`}
     >
       <AnimatePresence initial={false}>
         {[...Array(4)].map((_, index) => (
