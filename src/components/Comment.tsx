@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   children: ReactNode;
@@ -10,7 +11,7 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 
 export default function GivingComment({ children, comment, className }: Props) {
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={twMerge("flex flex-col", className)}>
       {children}
       <small className="flex items-center gap-2 mt-2">
         <AiOutlineInfoCircle />
