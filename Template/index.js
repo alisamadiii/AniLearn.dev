@@ -1,6 +1,9 @@
 import path from "path";
 import fs from "fs";
 import inquirer from "inquirer";
+import { createSpinner } from "nanospinner";
+import figlet from "figlet";
+import gradient from "gradient-string";
 
 const capitalizeWord = (word) => {
   const firstLetter = word.charAt(0).toUpperCase();
@@ -8,7 +11,7 @@ const capitalizeWord = (word) => {
   return firstLetter + remainingLetters;
 };
 
-const ContentTSX = (fileName) => {
+const TemplateTSX = (fileName) => {
   return `import React from "react";
 import Workplace, { LiveChanges, BringChanges } from "../";
 
@@ -39,7 +42,7 @@ export default function ${capitalizeWord(
 `;
 };
 
-const ContentMDX = (fileName, tech) => {
+const TemplateMDX = (fileName, tech) => {
   return `---
 title: ${fileName}
 tech: ${tech}
@@ -60,7 +63,7 @@ order:
 `;
 };
 
-const ContentImportFileTSX = (fileName) =>
+const TemplateImportFileTSX = (fileName) =>
   `export { default as ${capitalizeWord(
     fileName.replaceAll("-", "")
   )} } from "./${fileName}";`;
@@ -73,29 +76,51 @@ function createFiles(fileName, tech) {
   const filePathTSX = path.join(folderPathForTSX, `${fileName}.tsx`);
   const filePathMDX = path.join(folderPathForMDX, `${fileName}.mdx`);
 
-  fs.writeFile(filePathTSX, ContentTSX(fileName), (err) => {
+  const Template_1 = createSpinner(
+    `File ${fileName} created successfully! -- TSX`
+  ).start();
+
+  fs.writeFile(filePathTSX, TemplateTSX(fileName), (err) => {
     if (err) {
       console.error(`Error creating file ${fileName}: ${err}`);
     } else {
-      console.log(`✅ File ${fileName} created successfully! -- TSX`);
+      setTimeout(() => {
+        Template_1.success();
+      }, 1000);
     }
   });
 
-  fs.writeFile(filePathMDX, ContentMDX(fileName, tech), (err) => {
+  const Template_2 = createSpinner(
+    `File ${fileName} created successfully! -- MDX`
+  ).start();
+
+  fs.writeFile(filePathMDX, TemplateMDX(fileName, tech), (err) => {
     if (err) {
       console.error(`Error creating file ${fileName}: ${err}`);
     } else {
-      console.log(`✅ File ${fileName} created successfully! -- MDX`);
+      setTimeout(() => {
+        Template_2.success();
+      }, 2000);
     }
   });
 
-  fs.appendFile(importingFileTSX, ContentImportFileTSX(fileName), (err) => {
+  const Template_3 = createSpinner(`Imported File successfully -- TSX`).start();
+
+  fs.appendFile(importingFileTSX, TemplateImportFileTSX(fileName), (err) => {
     if (err) {
       console.error(`Error creating file ${fileName}: ${err}`);
     } else {
-      console.log(`✅ Imported File successfully -- TSX`);
+      setTimeout(() => {
+        Template_3.success();
+      }, 3000);
     }
   });
+
+  setTimeout(() => {
+    figlet("Have FUN", (err, data) =>
+      console.log(gradient.pastel.multiline(data))
+    );
+  }, 3000);
 }
 
 inquirer

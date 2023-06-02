@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.6"
+    "figlet": "^1.6.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.6",
+    "nanospinner": "^0.3.2"
   }
 }
