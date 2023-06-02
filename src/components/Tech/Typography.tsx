@@ -18,7 +18,7 @@ const SuisseIntl = localFont({
 export function Heading_1({ children, ...otherProps }: Props) {
   return (
     <h1
-      className={`${SuisseIntl.className} relative mt-1 mb-3 pb-2 text-5xl text-white border-b-2 border-white-low-opacity`}
+      className={`${SuisseIntl.className} capitalize relative mt-1 mb-3 pb-2 text-5xl text-white border-b-2 border-white-low-opacity`}
       {...otherProps}
     >
       {children}
