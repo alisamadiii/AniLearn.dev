@@ -22,7 +22,8 @@
       "@assets/*": ["./assets/*"],
       "@layouts/*": ["./layouts/*"],
       "@tech/*": ["./components/Tech/*"],
-      "@Workplace/*": ["./Workplace/*"]
+      "@Workplace/*": ["./Workplace/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": [
