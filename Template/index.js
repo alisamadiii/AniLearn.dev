@@ -1,74 +1,14 @@
-import path from "path";
-import fs from "fs";
-import inquirer from "inquirer";
-import { createSpinner } from "nanospinner";
-import figlet from "figlet";
-import gradient from "gradient-string";
+const path = require("path");
+const fs = require("fs");
+const inquirer = require("inquirer");
+const { createSpinner } = require("nanospinner");
+const figlet = require("figlet");
+const gradient = require("gradient-string");
 
-const capitalizeWord = (word) => {
-  const firstLetter = word.charAt(0).toUpperCase();
-  const remainingLetters = word.slice(1);
-  return firstLetter + remainingLetters;
-};
+const { TemplateTSX, TemplateImportFileTSX } = require("./Templates/TSX");
+const { TemplateMDX } = require("./Templates/MDX");
 
-const TemplateTSX = (fileName) => {
-  return `import React from "react";
-import Workplace, { LiveChanges, BringChanges } from "../";
-
-type Props = {};
-
-export default function ${capitalizeWord(
-    fileName.replaceAll("-", "")
-  )}({}: Props) {
-  return (
-    // All your code must be inside the Workplace for writing a clean codes
-    // You can utility classes. (optional)
-
-    <Workplace className="">
-      <LiveChanges className="">
-        {/* This is the place where you can see your changes live */}
-        <p>This is the place where you can see your changes live</p>
-      </LiveChanges>
-      <BringChanges className="">
-        {/* This is the place where you can add your setting to change your items, e.g: buttons, ranges and more */}
-        <p>
-          This is the place where you can add your setting to change your items,
-          e.g: buttons, ranges and more
-        </p>
-      </BringChanges>
-    </Workplace>
-  );
-}
-`;
-};
-
-const TemplateMDX = (fileName, tech) => {
-  return `---
-title: ${fileName}
-tech: ${tech}
-order: 
----
-
-<Small_Gradient>${fileName}</Small_Gradient>
-
-# ${fileName}
-
-{/* You will get an error, You need to add this Components to MDXComponent so that MDX can read it. */}
-{/* Simply go to "./src/components/Tech/MDXComponent.ts" */}
-{/* Import your file and choose tech (HTML, CSS) correctly */}
-{/* Once You imported, Add it to the list of Components */}
-{/* Now You can brings and change the world 😀 */}
-
-<${capitalizeWord(fileName.replaceAll("-", ""))} />
-`;
-};
-
-const TemplateImportFileTSX = (fileName) =>
-  `export { default as ${capitalizeWord(
-    fileName.replaceAll("-", "")
-  )} } from "./${fileName}";`;
-
-function createFiles(fileName, tech) {
+function createFiles(fileName, tech, name) {
   const folderPathForTSX = `../anilearn/src/Workplace/${tech}`;
   const importingFileTSX = `../anilearn/src/Workplace/${tech}/index.ts`;
   const folderPathForMDX = `../anilearn/src/docs/${tech}`;
@@ -94,7 +34,7 @@ function createFiles(fileName, tech) {
     `File ${fileName} created successfully! -- MDX`
   ).start();
 
-  fs.writeFile(filePathMDX, TemplateMDX(fileName, tech), (err) => {
+  fs.writeFile(filePathMDX, TemplateMDX(fileName, tech, name), (err) => {
     if (err) {
       console.error(`Error creating file ${fileName}: ${err}`);
     } else {
@@ -127,6 +67,12 @@ inquirer
   .prompt([
     {
       type: "input",
+      name: "name",
+      message: "Your Name: ",
+      default: "Ali Reza",
+    },
+    {
+      type: "input",
       name: "FileName",
       message: "FileName: ",
       default: "position",
@@ -140,5 +86,9 @@ inquirer
     },
   ])
   .then((answers) => {
-    createFiles(answers.FileName.toLowerCase(), answers.Tech.toLowerCase());
+    createFiles(
+      answers.FileName.toLowerCase(),
+      answers.Tech.toLowerCase(),
+      answers.name
+    );
   });
