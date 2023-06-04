@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Workplace, { BringChanges, LiveChanges } from "..";
 import { Range } from "@components/Tech/Range";
-import Checkbox from "@components/Checkbox";
 import Image from "next/image";
 
 type Props = {};
@@ -17,7 +16,6 @@ export default function Transform({}: Props) {
   const [skewY, setSkewY] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
-  const [perspective, setPerspective] = useState<boolean>(false);
 
   const IMAGE =
     "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80";
@@ -34,27 +32,33 @@ export default function Transform({}: Props) {
           className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity focus:border-primary placeholder:opacity-50"
         />
       </BringChanges>
-      <LiveChanges>
-        <div className="relative flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
+      <LiveChanges className="flex flex-wrap gap-8">
+        <div className="relative flex items-center justify-center flex-grow p-4 overflow-hidden border rounded-lg basis-80 h-52 bg-box border-white-low-opacity before:content-['Without-Perspective'] before:bg-red-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
           <Image
             src={image || IMAGE}
             width={400}
             height={400}
             alt="Image"
             className="duration-200 ease-out rounded-md w-44"
-            style={
-              perspective == false
-                ? {
-                    transform: `scale(${
-                      scale * 0.01
-                    }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
-                  }
-                : {
-                    transform: `scale(${
-                      scale * 0.01
-                    }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
-                  }
-            }
+            style={{
+              transform: `scale(${
+                scale * 0.01
+              }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
+            }}
+          />
+        </div>
+        <div className="relative flex items-center justify-center flex-grow p-4 overflow-hidden border rounded-lg basis-80 h-52 bg-box border-white-low-opacity before:content-['Perspective'] before:bg-green-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
+          <Image
+            src={image || IMAGE}
+            width={400}
+            height={400}
+            alt="Image"
+            className="duration-300 ease-out rounded-md w-44"
+            style={{
+              transform: `scale(${
+                scale * 0.01
+              }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
+            }}
           />
         </div>
       </LiveChanges>
@@ -62,7 +66,6 @@ export default function Transform({}: Props) {
       <button
         className="px-4 py-2 mt-8 text-white rounded-md bg-primary hover:bg-primary/70"
         onClick={() => {
-          setPerspective(false);
           setScale(100);
           setTranslateX(0);
           setTranslateY(0);
@@ -78,11 +81,6 @@ export default function Transform({}: Props) {
       </button>
 
       <BringChanges className="mt-12 space-y-4">
-        <Checkbox
-          name="perspective"
-          checked={perspective}
-          onChange={(e: any) => setPerspective(e.target.checked)}
-        />
         <Range
           maxNum={200}
           filterName="Scale"
