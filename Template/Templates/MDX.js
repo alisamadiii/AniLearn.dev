@@ -17,6 +17,10 @@ order:
 {/* Once You imported, Add it to the list of Components */}
 {/* Now You can brings and change the world 😀 */}
 
+## Working Place
+
+This is the place where you can try them.
+
 <${capitalizeWord(fileName)} />
 `;
 };

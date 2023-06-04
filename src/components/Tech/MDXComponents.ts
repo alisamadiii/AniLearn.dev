@@ -22,6 +22,7 @@ import {
   FlexWrap,
   ColorsConverter,
   ButtonsGradient,
+  ObjectFit,
 } from "@Workplace/css";
 
 import { OpenGraph, Inputs } from "@Workplace/html";
@@ -47,6 +48,7 @@ export const Components = {
   FlexWrap,
   ColorsConverter,
   ButtonsGradient,
+  ObjectFit,
 
   // HTML WORKPLACE
   OpenGraph,

@@ -7,6 +7,13 @@ const TemplateTSX = (fileName) => {
   return `import React from "react";
 import Workplace, { LiveChanges, BringChanges } from "../";
 
+// You can use these Components.
+
+import Input from "@components/Tech/Input";
+import Checkbox from "@components/Checkbox";
+import GivingComment from "@components/Comment";
+import SaveButton from "@components/SaveButton";
+
 type Props = {};
 
 export default function ${capitalizeWord(fileName)}({}: Props) {

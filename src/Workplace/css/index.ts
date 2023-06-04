@@ -10,3 +10,4 @@ export { default as CenteringADiv } from "./4-ways-of-centering-a-div";
 export { default as FlexWrap } from "./flex-wrap";
 export { default as ColorsConverter } from "./colors-converter";
 export { default as ButtonsGradient } from "./buttons-gradient";
+export { default as ObjectFit } from "./object-fit";
