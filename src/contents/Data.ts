@@ -1,3 +1,5 @@
+import path from "path";
+
 export const platformsData: {
   id: number;
   platform: "facebook" | "twitter" | "linkedin" | "discord";
@@ -40,11 +42,6 @@ export const CSS = [
     name: "Flexbox Position",
     link: "/css/flex-position",
   },
-  // {
-  //   id: 9,
-  //   name: "Flex-Order",
-  //   link: "/css/flex-order",
-  // },
   {
     id: 2,
     name: "Filter",
@@ -62,12 +59,12 @@ export const CSS = [
   },
   {
     id: 5,
-    name: "Box-Model",
+    name: "Box Model",
     link: "/css/box-model",
   },
   {
     id: 6,
-    name: "Display-Property",
+    name: "Display Property",
     link: "/css/display-property",
   },
   {
@@ -87,7 +84,7 @@ export const CSS = [
   },
   {
     id: 10,
-    name: "Flex-Wrap",
+    name: "Flex Wrap",
     link: "/css/flex-wrap",
   },
   {
@@ -96,27 +93,13 @@ export const CSS = [
     link: "/css/colors-converter",
   },
   {
-    id: 11,
+    id: 12,
     name: "Object Fit",
     link: "/css/object-fit",
   },
 ];
 
-// Flex Order
-export const FLEX_ORDER = [
-  {
-    id: 1,
-    name: "item 1",
-    order: 1,
-  },
-  {
-    id: 2,
-    name: "item 2",
-    order: 2,
-  },
-  {
-    id: 3,
-    name: "item 3",
-    order: 3,
-  },
-];
+export function LinksByFolder(tech: "html" | "css") {
+  const folderPath = path.join(process.cwd(), `./src/docs/${tech}`);
+  console.log(folderPath);
+}

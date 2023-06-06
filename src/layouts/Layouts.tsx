@@ -1,7 +1,6 @@
 import Navbar_Tech from "@components/Navbar_Tech";
 import { useRouter } from "next/router";
 import React, { ReactNode, useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 type Props = {
   children: ReactNode;
@@ -9,7 +8,6 @@ type Props = {
 
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
-  const [isGradient, setIsGradient] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -17,14 +15,6 @@ export default function Layouts({ children }: Props) {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "");
   }, [isNavbar]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-
-      y > 200 ? setIsGradient(true) : setIsGradient(false);
-    });
-  }, []);
 
   if (router.pathname != "/") {
     return (

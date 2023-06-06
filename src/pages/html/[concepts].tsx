@@ -22,8 +22,6 @@ import ExtraInformation from "@components/ExtraInformation";
 import MetaTag from "@layouts/MetaTag";
 
 export default function Concepts({ data, mdxSource }: Props) {
-  const router = useRouter();
-
   return (
     <>
       <MetaTag title={data.title} description="" image={null} />

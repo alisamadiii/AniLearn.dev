@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {
@@ -86,19 +86,21 @@ export const Links = ({ tech, techName }: LinksProps) => {
               exit={{ opacity: 0, height: 0 }}
               className="flex flex-col overflow-hidden font-light"
             >
-              {tech.map((t) => (
-                <Link
-                  key={t.id}
-                  href={t.link}
-                  className={`w-full inline-block py-1 px-2 hover:text-white border-l-2 ${
-                    router.asPath == t.link
-                      ? "text-white border-white"
-                      : "border-white-low-opacity"
-                  }`}
-                >
-                  {t.name}
-                </Link>
-              ))}
+              {tech
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((t) => (
+                  <Link
+                    key={t.id}
+                    href={t.link}
+                    className={`w-full inline-block py-1 px-2 hover:text-white border-l-2 ${
+                      router.asPath == t.link
+                        ? "text-white border-white"
+                        : "border-white-low-opacity"
+                    }`}
+                  >
+                    {t.name}
+                  </Link>
+                ))}
             </motion.div>
           )}
         </AnimatePresence>
