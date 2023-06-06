@@ -23,7 +23,11 @@ import MetaTag from "@layouts/MetaTag";
 export default function Concepts({ data, mdxSource }: Props) {
   return (
     <>
-      <MetaTag title={data.title} description="" image={null} />
+      <MetaTag
+        title={data.title}
+        description=""
+        image={"https://i.ibb.co/ZxTJ1rm/header.png"}
+      />
       <Container className="pt-12 pb-20">
         <div id="mdx" className="pb-8">
           <MDXRemote {...mdxSource} components={Components} />
