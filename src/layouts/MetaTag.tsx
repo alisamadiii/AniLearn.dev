@@ -15,7 +15,7 @@ export default function MetaTag({ title, description, image }: Props) {
       <meta name="description" content={description} />
 
       {/* <!-- Facebook Meta Tags --> */}
-      <meta property="og:url" content="alirezasamadi.com" />
+      <meta property="og:url" content="anilearn.dev" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -26,8 +26,8 @@ export default function MetaTag({ title, description, image }: Props) {
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:domain" content="alirezasamadi.com" />
-      <meta property="twitter:url" content="alirezasamadi.com" />
+      <meta property="twitter:domain" content="anilearn.dev" />
+      <meta property="twitter:url" content="anilearn.dev" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta
