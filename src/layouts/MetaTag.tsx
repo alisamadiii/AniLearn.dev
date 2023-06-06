@@ -21,7 +21,7 @@ export default function MetaTag({ title, description, image }: Props) {
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content={image || "https://i.ibb.co/9hyw1rL/Meta-Tag.png"}
+        content={image || "https://i.ibb.co/ZxTJ1rm/header.png"}
       />
 
       {/* <!-- Twitter Meta Tags --> */}
@@ -32,7 +32,7 @@ export default function MetaTag({ title, description, image }: Props) {
       <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
-        content={image || "https://i.ibb.co/9hyw1rL/Meta-Tag.png"}
+        content={image || "https://i.ibb.co/ZxTJ1rm/header.png"}
       />
       <link rel="icon" href="/Logo.svg" />
     </Head>

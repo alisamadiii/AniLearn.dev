@@ -41,7 +41,7 @@ export default function Home() {
       <MetaTag
         title="AniLearn"
         description="We offer top-notch content for easy learning, with clear visual development principles."
-        image={"https://i.ibb.co/ZxTJ1rm/header.png"}
+        image={null}
       />
       <main className={`${inter.className}`}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1500px] h-96 bg-center bg-cover -z-50 bg-header-image"></div>
