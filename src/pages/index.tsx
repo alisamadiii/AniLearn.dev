@@ -20,6 +20,7 @@ import Technology from "@components/Technology";
 import Logo from "@assets/Logo";
 import ReasonComponent from "@components/Reason";
 import MetaTag from "@layouts/MetaTag";
+import { Testimonials } from "@contents/Data";
 
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
@@ -210,39 +211,64 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        {/* <section className="py-24">
-        <Container className="flex flex-wrap gap-6">
-          {[...Array(10)].map(() => (
-            <div
-              className="relative p-4 overflow-hidden duration-200 rounded-lg isolate grow basis-72 hover:text-white hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
-              style={{
-                background:
-                  "linear-gradient(134.71deg, #0D0E12 36.46%, #161418 48.46%, #0D0E12 56.8%)",
-              }}
-            >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                laudantium doloremque commodi, obcaecati necessitatibus delectus
-                magnam itaque a quam debitis ducimus assumenda fuga! Doloribus
-                ducimus quisquam nihil iure dolores soluta?
-              </p>
-              <div className="flex items-center gap-2 mt-8 font-medium">
-                <Image
-                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                  width={100}
-                  height={100}
-                  alt=""
-                  className="object-cover w-8 h-8 rounded-full"
-                />
-                <div className="">
-                  <h3 className="text-base/4">Lorem Ipsum</h3>
-                  <p className="text-xs">Front-End Developer</p>
-                </div>
-              </div>
+        <section className="py-24">
+          <Container>
+            <Heading_2 className="mt-2 mb-8 text-4xl text-white">
+              Testimonials
+            </Heading_2>
+            <div className="flex flex-wrap gap-6">
+              {Testimonials.map((t) => {
+                const { id, name, testimonial, headline, image } = t;
+                const Icon = t.from[0];
+                const SocialMedia = t.from[1];
+
+                return (
+                  <div
+                    key={id}
+                    className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 rounded-lg isolate grow basis-72 hover:text-white hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
+                    style={{
+                      background:
+                        "linear-gradient(134.71deg, #0D0E12 36.46%, #161418 48.46%, #0D0E12 56.8%)",
+                    }}
+                  >
+                    <p>{testimonial}</p>
+                    <div className="flex items-center gap-2 mt-auto font-medium">
+                      <div className="relative">
+                        <Image
+                          src={image}
+                          width={100}
+                          height={100}
+                          alt=""
+                          className="object-cover w-8 h-8 rounded-full"
+                        />
+                        <Icon
+                          className={`absolute bottom-0 right-0 text-lg translate-x-1 translate-y-1 ${
+                            SocialMedia == "twitter"
+                              ? "text-twitter"
+                              : "text-linkedin"
+                          }`}
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-base/4">{name}</h3>
+                        {headline && <p className="text-xs">{headline}</p>}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
-        </Container>
-      </section> */}
+          </Container>
+          <div className="flex items-center">
+            <a
+              href="https://twitter.com/Ali_Developer05/status/1666017211075694592?s=20"
+              target="_blank"
+              className="block py-3 mx-auto mt-8 font-bold text-center text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text"
+            >
+              Add your Testimonial
+            </a>
+          </div>
+        </section>
       </main>
     </>
   );

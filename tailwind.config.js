@@ -18,6 +18,8 @@ module.exports = {
         box: "rgba(18, 20, 24)",
         "mouse-move": "rgba(92, 92, 92, 0.09)",
         "white-low-opacity": "rgba(255, 255, 255, 0.07)",
+        twitter: "#1DA1F2",
+        linkedin: "#0A66C2",
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",
