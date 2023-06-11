@@ -23,6 +23,7 @@ import Checkbox from "@components/Checkbox";
 import GivingComment from "@components/Comment";
 import SaveButton from "@components/SaveButton";
 import Range from "@tech/Range";
+import Button_Tech from "@components/Button_Tech";
 
 type Props = {};
 
