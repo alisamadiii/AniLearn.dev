@@ -9,7 +9,15 @@ type Props = {
 // ===== Workplace =====
 
 export default function Workplace({ children, className }: Props) {
-  return <div className={twMerge("relative mt-12", className)}>{children}</div>;
+  return (
+    <div className="mt-4 mb-12">
+      <h1 className="relative pb-2 mt-8 text-3xl font-semibold text-white capitalize border-b-2 border-white-low-opacity">
+        Working Place
+      </h1>
+      <p className="mb-8">This is the place where you can try them.</p>
+      <div className={twMerge("relative", className)}>{children}</div>
+    </div>
+  );
 }
 
 export function LiveChanges({ children, className }: Props) {
