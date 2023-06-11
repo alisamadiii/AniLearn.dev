@@ -29,7 +29,7 @@ border: ${border}px solid white;
       <MetaTag title="box-model" image={null} description="" />
       <Container>
         <Information content="<h1>Box Model</h1><p>In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: <code>margins</code>, <code>borders</code>, <code>padding</code>, and the actual <code>content</code>.</p>" />
-        <CodeBlocks codeString={Codes} language="" fileName="index.html" />
+        <CodeBlocks codeString={Codes} language="css" fileName="index.html" />
 
         <Workplace className="">
           <BringChanges className="space-y-4">

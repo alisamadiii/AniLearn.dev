@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import confetti from "canvas-confetti";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   codeString: string;
   language: string;
   fileName: string;
   widthFull?: boolean;
+  className?: string;
 };
 
 // Icons
@@ -19,6 +21,7 @@ export default function CodeBlocks({
   language,
   fileName,
   widthFull = false,
+  className,
 }: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
 
@@ -42,9 +45,12 @@ export default function CodeBlocks({
 
   return (
     <div
-      className={`w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${
-        widthFull ? "" : "max-w-input"
-      }`}
+      className={twMerge(
+        `w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${
+          widthFull ? "" : "max-w-input"
+        }`,
+        className
+      )}
     >
       <div className="flex items-center justify-between px-4 py-2 border-b border-white-low-opacity">
         <p>{fileName}</p>
