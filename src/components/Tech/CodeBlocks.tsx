@@ -7,13 +7,19 @@ type Props = {
   codeString: string;
   language: string;
   fileName: string;
+  widthFull?: boolean;
 };
 
 // Icons
 import { MdContentCopy } from "react-icons/md";
 import { BsFillClipboard2CheckFill } from "react-icons/bs";
 
-export default function CodeBlocks({ codeString, language, fileName }: Props) {
+export default function CodeBlocks({
+  codeString,
+  language,
+  fileName,
+  widthFull = false,
+}: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
 
   const copyFunction = () => {
@@ -35,7 +41,11 @@ export default function CodeBlocks({ codeString, language, fileName }: Props) {
   };
 
   return (
-    <div className="w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity max-w-input">
+    <div
+      className={`w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${
+        widthFull ? "" : "max-w-input"
+      }`}
+    >
       <div className="flex items-center justify-between px-4 py-2 border-b border-white-low-opacity">
         <p>{fileName}</p>
         <div

@@ -16,7 +16,7 @@ import Information from "@components/Tech/Information";
 import CodeBlocks from "@components/Tech/CodeBlocks";
 
 // you can use these components 
-import Input from "@components/Tech/Input";
+import Input from "@tech/Input";
 import Checkbox from "@components/Checkbox";
 import GivingComment from "@components/Comment";
 import SaveButton from "@components/SaveButton";
