@@ -1,11 +1,29 @@
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import React from "react";
 import Workplace from "..";
 
 type Props = {};
 
 export default function Inputs({}: Props) {
+  const codeString = `img {
+  height: 100px;
+}
+  `;
+
   return (
     <Workplace>
+      <SyntaxHighlighter
+        language="css"
+        style={tomorrowNight}
+        customStyle={{
+          padding: "1em",
+          background: "#0D0E12",
+          border: "1px solid rgba(255, 255, 255, 0.07)",
+        }}
+      >
+        {codeString}
+      </SyntaxHighlighter>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
         <Input name="button" type="button" />
         <Input name="checkbox" type="checkbox" />

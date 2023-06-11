@@ -60,7 +60,7 @@ type LinksProps = {
 };
 
 export const Links = ({ tech, techName }: LinksProps) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(true);
 
   const router = useRouter();
 
