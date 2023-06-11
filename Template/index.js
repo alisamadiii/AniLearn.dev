@@ -7,7 +7,7 @@ const gradient = require("gradient-string");
 
 const { TemplateTSX } = require("./Templates/TSX");
 
-function createFiles(fileName, tech) {
+function createFiles(fileName, tech, contributor) {
   const folderPathForTSX = `../anilearn/src/pages/${tech}`;
 
   const filePathTSX = path.join(folderPathForTSX, `${fileName}.tsx`);
@@ -16,7 +16,7 @@ function createFiles(fileName, tech) {
     `File ${fileName} created successfully! -- TSX`
   ).start();
 
-  fs.writeFile(filePathTSX, TemplateTSX(fileName), (err) => {
+  fs.writeFile(filePathTSX, TemplateTSX(fileName, contributor), (err) => {
     if (err) {
       console.error(`Error creating file ${fileName}: ${err}`);
     } else {

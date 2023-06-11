@@ -9,13 +9,13 @@ type Props = {
   onChange: (e: any) => void;
 };
 
-export const Range = ({
+export default function Range({
   maxNum,
   minNum,
   filterName,
   value,
   ...otherProps
-}: Props) => {
+}: Props) {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
       <p className="basis-[200px]">{filterName}</p>
@@ -40,4 +40,4 @@ export const Range = ({
       </div>
     </div>
   );
-};
+}

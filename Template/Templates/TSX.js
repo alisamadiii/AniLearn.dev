@@ -3,8 +3,10 @@ const { capitalizeWord } = require(".");
 const TemplateImportFileTSX = (fileName) =>
   `export { default as ${capitalizeWord(fileName)} } from "./${fileName}";`;
 
-const TemplateTSX = (fileName) => {
-  return `import React from "react";
+const TemplateTSX = (fileName, contributor) => {
+  return `/* It is an open-source project, this page is going to be written by ${contributor} */
+  
+import React from "react";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
@@ -20,6 +22,7 @@ import Input from "@tech/Input";
 import Checkbox from "@components/Checkbox";
 import GivingComment from "@components/Comment";
 import SaveButton from "@components/SaveButton";
+import Range from "@tech/Range";
 
 type Props = {};
 
