@@ -1,10 +1,4 @@
-const { capitalizeWord } = require(".");
-
-const TemplateImportFileTSX = (fileName) =>
-  `export { default as ${capitalizeWord(fileName)} } from "./${fileName}";`;
-
-const TemplateTSX = (fileName) => {
-  return `import React from "react";
+import React from "react";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
@@ -23,14 +17,14 @@ import SaveButton from "@components/SaveButton";
 
 type Props = {};
 
-export default function ${capitalizeWord(fileName)}({}: Props) {
+export default function OpenGraph({}: Props) {
   const Codes = ""; // Use backtick for writing your code
 
   return (
     <>
-      <MetaTag title="${fileName}" image={null} description="" />
+      <MetaTag title="open-graph" image={null} description="" />
       <Container>
-        <Information content="<h1>${fileName}</h1><p>tell us information about ${fileName}</p>" />
+        <Information content="<h1>open-graph</h1><p>tell us information about open-graph</p>" />
         <CodeBlocks codeString={Codes} language="" fileName="index.html" />
 
         <Workplace className="">
@@ -50,7 +44,3 @@ export default function ${capitalizeWord(fileName)}({}: Props) {
     </>
   );
 }
-`;
-};
-
-module.exports = { TemplateImportFileTSX, TemplateTSX };

@@ -30,7 +30,7 @@ function createFiles(fileName, tech) {
     figlet("Have FUN", (err, data) =>
       console.log(gradient.pastel.multiline(data))
     );
-  }, 3000);
+  }, 1500);
 }
 
 inquirer
