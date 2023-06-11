@@ -5,16 +5,12 @@ const { createSpinner } = require("nanospinner");
 const figlet = require("figlet");
 const gradient = require("gradient-string");
 
-const { TemplateTSX, TemplateImportFileTSX } = require("./Templates/TSX");
-const { TemplateMDX } = require("./Templates/MDX");
+const { TemplateTSX } = require("./Templates/TSX");
 
-function createFiles(fileName, tech, name) {
-  const folderPathForTSX = `../anilearn/src/Workplace/${tech}`;
-  const importingFileTSX = `../anilearn/src/Workplace/${tech}/index.ts`;
-  const folderPathForMDX = `../anilearn/src/docs/${tech}`;
+function createFiles(fileName, tech) {
+  const folderPathForTSX = `../anilearn/src/pages/${tech}`;
 
   const filePathTSX = path.join(folderPathForTSX, `${fileName}.tsx`);
-  const filePathMDX = path.join(folderPathForMDX, `${fileName}.mdx`);
 
   const Template_1 = createSpinner(
     `File ${fileName} created successfully! -- TSX`
@@ -27,32 +23,6 @@ function createFiles(fileName, tech, name) {
       setTimeout(() => {
         Template_1.success();
       }, 1000);
-    }
-  });
-
-  const Template_2 = createSpinner(
-    `File ${fileName} created successfully! -- MDX`
-  ).start();
-
-  fs.writeFile(filePathMDX, TemplateMDX(fileName, tech, name), (err) => {
-    if (err) {
-      console.error(`Error creating file ${fileName}: ${err}`);
-    } else {
-      setTimeout(() => {
-        Template_2.success();
-      }, 2000);
-    }
-  });
-
-  const Template_3 = createSpinner(`Imported File successfully -- TSX`).start();
-
-  fs.appendFile(importingFileTSX, TemplateImportFileTSX(fileName), (err) => {
-    if (err) {
-      console.error(`Error creating file ${fileName}: ${err}`);
-    } else {
-      setTimeout(() => {
-        Template_3.success();
-      }, 3000);
     }
   });
 
