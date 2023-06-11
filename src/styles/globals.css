@@ -6,10 +6,6 @@
   @apply scroll-smooth scroll-pt-2;
 }
 
-body {
-  @apply text-font-clr bg-background-clr;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -19,6 +15,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 @layer components {
   .scroll-image {
     transform: perspective(300px) rotateX(-10deg) scale(0.6);

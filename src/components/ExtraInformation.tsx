@@ -1,3 +1,4 @@
+import Container from "@layouts/Container";
 import React from "react";
 import {
   AiFillLinkedin,
@@ -9,7 +10,7 @@ type Props = {};
 
 export default function ExtraInformation({}: Props) {
   return (
-    <div className="pt-8 border-t-2 border-white-low-opacity">
+    <Container className="pt-8 border-t-2 border-white-low-opacity">
       <h2 className="mb-1 text-3xl font-bold text-white">Contact Us</h2>
       <p className="mb-6">
         If you have any questions, you can reach out to us through these three
@@ -49,6 +50,6 @@ export default function ExtraInformation({}: Props) {
           <p>@Ali Reza</p>
         </a>
       </div>
-    </div>
+    </Container>
   );
 }
