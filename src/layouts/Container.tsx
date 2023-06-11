@@ -10,7 +10,7 @@ export default function Container({ children, className }: Props) {
   return (
     <div
       className={twMerge(
-        "w-full max-w-container mx-auto px-4 md:px-12 lg:px-8",
+        "relative w-full max-w-container mx-auto px-4 md:px-12 lg:px-8",
         className
       )}
     >

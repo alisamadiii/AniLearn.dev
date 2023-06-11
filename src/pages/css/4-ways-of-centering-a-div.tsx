@@ -11,11 +11,7 @@ import Information from "@components/Tech/Information";
 import CodeBlocks from "@components/Tech/CodeBlocks";
 
 // you can use these components
-import Input from "@tech/Input";
 import Checkbox from "@components/Checkbox";
-import GivingComment from "@components/Comment";
-import SaveButton from "@components/SaveButton";
-import Range from "@tech/Range";
 
 type Props = {};
 
@@ -57,7 +53,7 @@ export default function CenteringADiv({}: Props) {
     <>
       <MetaTag title="4-ways-of-centering-a-div" image={null} description="" />
       <Container>
-        <Information content="<h1>4-ways-of-centering-a-div</h1><p>In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>" />
+        <Information content="<h1>4 ways of centering a div</h1><p>In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>" />
 
         <div className="grid items-start gap-4 my-8 lg:grid-cols-2">
           <CodeBlocks
