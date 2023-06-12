@@ -149,14 +149,14 @@ export default function Home() {
                 name="HTML"
                 description="HTML stands for HyperText Markup Language. It is a standard markup language for web page creation. It allows the creation and structure of sections, paragraphs, and links using HTML elements (the building blocks of a web page) such as tags and attributes."
                 Icon={AiFillHtml5}
-                link="/html"
+                link="/html/inputs"
               />
               {/* item-2 */}
               <Technology
                 name="CSS"
                 description="CSS was developed by W3C (World Wide Web Consortium) in 1996 for a rather simple reason. HTML element was not designed to have tags that would help format the page. You were only supposed to write the markup for the web page."
                 Icon={IoLogoCss3}
-                link="/css"
+                link="/css/box-model"
               />
             </div>
           </Container>
