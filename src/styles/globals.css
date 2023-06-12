@@ -6,10 +6,6 @@
   @apply scroll-smooth scroll-pt-2;
 }
 
-body {
-  @apply text-font-clr bg-background-clr;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -19,6 +15,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 @layer components {
   .scroll-image {
     transform: perspective(300px) rotateX(-10deg) scale(0.6);
@@ -85,6 +82,13 @@ input[type="number"] {
   }
   #mdx > :is(h1, h2, h3):hover > a::before {
     @apply -translate-y-1/2 opacity-50;
+  }
+
+  .information h1 {
+    @apply relative pb-4 mt-8 mb-3 text-4xl font-semibold text-white capitalize border-b-2 border-white-low-opacity;
+  }
+  .information p {
+    @apply mb-3 text-lg font-light;
   }
 }
 

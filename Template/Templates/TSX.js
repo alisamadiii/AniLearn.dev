@@ -3,37 +3,57 @@ const { capitalizeWord } = require(".");
 const TemplateImportFileTSX = (fileName) =>
   `export { default as ${capitalizeWord(fileName)} } from "./${fileName}";`;
 
-const TemplateTSX = (fileName) => {
-  return `import React from "react";
-import Workplace, { LiveChanges, BringChanges } from "../";
+const TemplateTSX = (fileName, tech, contributor) => {
+  return `/* It is an open-source project, this page is going to be written by ${contributor} */
+  
+import React from "react";
 
-// You can use these Components.
+import Container from "@layouts/Container";
+import MetaTag from "@layouts/MetaTag";
+import Workplace, {
+  BringChanges,
+  LiveChanges,
+} from "@components/Tech/Workplace";
+import Information from "@components/Tech/Information";
+import CodeBlocks from "@components/Tech/CodeBlocks";
 
-import Input from "@components/Tech/Input";
+// you can use these components 
+import Input from "@tech/Input";
 import Checkbox from "@components/Checkbox";
 import GivingComment from "@components/Comment";
 import SaveButton from "@components/SaveButton";
+import Range from "@tech/Range";
+import Button_Tech from "@components/Button_Tech";
 
 type Props = {};
 
 export default function ${capitalizeWord(fileName)}({}: Props) {
-  return (
-    // All your code must be inside the Workplace for writing a clean codes
-    // You can utility classes. (optional)
+  const Codes = ""; // Use backtick for writing your code
 
-    <Workplace className="">
-      <LiveChanges className="">
-        {/* This is the place where you can see your changes live */}
-        <p>This is the place where you can see your changes live</p>
-      </LiveChanges>
-      <BringChanges className="">
-        {/* This is the place where you can add your setting to change your items, e.g: buttons, ranges and more */}
-        <p>
-          This is the place where you can add your setting to change your items,
-          e.g: buttons, ranges and more
-        </p>
-      </BringChanges>
-    </Workplace>
+  return (
+    <>
+      <MetaTag title="${fileName}" image={null} description="" />
+      <Container>
+        <Information content="<h1>${fileName}</h1><p>tell us information about ${fileName}</p>" />
+        <CodeBlocks codeString={Codes} language="${
+          tech == "html" ? "htmlbars" : "css"
+        }" fileName="${tech == "html" ? "index.html" : "style.css"}" />
+
+        <Workplace className="">
+          <LiveChanges className="">
+            {/* This is the place where you can see your changes live */}
+            <p>This is the place where you can see your changes live</p>
+          </LiveChanges>
+          <BringChanges className="">
+            {/* This is the place where you can add your setting to change your items, e.g: buttons, ranges and more */}
+            <p>
+              This is the place where you can add your setting to change your
+              items, e.g: buttons, ranges and more
+            </p>
+          </BringChanges>
+        </Workplace>
+      </Container>
+    </>
   );
 }
 `;

@@ -9,6 +9,7 @@ const nextConfig = {
       "media.licdn.com",
     ],
   },
+  transpilePackages: ["react-syntax-highlighter"],
 };
 
 module.exports = nextConfig;
