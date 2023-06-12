@@ -10,6 +10,7 @@ type Props = {
   fileName: string;
   widthFull?: boolean;
   className?: string;
+  wrapLongLines?: boolean;
 };
 
 // Icons
@@ -22,6 +23,7 @@ export default function CodeBlocks({
   fileName,
   widthFull = false,
   className,
+  wrapLongLines = false,
 }: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
 
@@ -73,6 +75,7 @@ export default function CodeBlocks({
       <SyntaxHighlighter
         language={language}
         style={tomorrowNight}
+        wrapLongLines={wrapLongLines}
         customStyle={{
           background: "none",
           paddingInline: "1em",
