@@ -1,8 +1,5 @@
 const { capitalizeWord } = require(".");
 
-const TemplateImportFileTSX = (fileName) =>
-  `export { default as ${capitalizeWord(fileName)} } from "./${fileName}";`;
-
 const TemplateTSX = (fileName, tech, contributor) => {
   return `/* It is an open-source project, this page is going to be written by ${contributor} */
   
@@ -59,4 +56,4 @@ export default function ${capitalizeWord(fileName)}({}: Props) {
 `;
 };
 
-module.exports = { TemplateImportFileTSX, TemplateTSX };
+module.exports = { TemplateTSX };
