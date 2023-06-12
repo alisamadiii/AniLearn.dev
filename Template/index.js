@@ -16,7 +16,7 @@ function createFiles(fileName, tech, contributor) {
     `File ${fileName} created successfully! -- TSX`
   ).start();
 
-  fs.writeFile(filePathTSX, TemplateTSX(fileName, contributor), (err) => {
+  fs.writeFile(filePathTSX, TemplateTSX(fileName, tech, contributor), (err) => {
     if (err) {
       console.error(`Error creating file ${fileName}: ${err}`);
     } else {

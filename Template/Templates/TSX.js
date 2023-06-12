@@ -3,7 +3,7 @@ const { capitalizeWord } = require(".");
 const TemplateImportFileTSX = (fileName) =>
   `export { default as ${capitalizeWord(fileName)} } from "./${fileName}";`;
 
-const TemplateTSX = (fileName, contributor) => {
+const TemplateTSX = (fileName, tech, contributor) => {
   return `/* It is an open-source project, this page is going to be written by ${contributor} */
   
 import React from "react";
@@ -35,7 +35,9 @@ export default function ${capitalizeWord(fileName)}({}: Props) {
       <MetaTag title="${fileName}" image={null} description="" />
       <Container>
         <Information content="<h1>${fileName}</h1><p>tell us information about ${fileName}</p>" />
-        <CodeBlocks codeString={Codes} language="" fileName="index.html" />
+        <CodeBlocks codeString={Codes} language="${
+          tech == "html" ? "htmlbars" : "css"
+        }" fileName="${tech == "html" ? "index.html" : "style.css"}" />
 
         <Workplace className="">
           <LiveChanges className="">
