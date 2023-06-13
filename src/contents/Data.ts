@@ -98,6 +98,11 @@ export const CSS = [
     name: "Object Fit",
     link: "/css/object-fit",
   },
+  {
+    id: 13,
+    name: "Overflow",
+    link: "/css/overflow",
+  },
 ];
 
 import { AiOutlineTwitter, AiFillLinkedin } from "react-icons/ai";

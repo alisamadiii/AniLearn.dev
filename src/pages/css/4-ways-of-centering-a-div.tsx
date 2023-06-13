@@ -165,7 +165,3 @@ export const Playground = ({ state }: PlaygroundProps) => {
     </motion.div>
   );
 };
-
-type TestingProps = {
-  state: boolean;
-};
