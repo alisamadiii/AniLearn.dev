@@ -11,7 +11,7 @@ type Props = {
 export default function Workplace({ children, className }: Props) {
   return (
     <div className="mt-4 mb-12">
-      <h1 className="pb-2 mt-12 text-3xl font-semibold text-white capitalize border-b-2 border-white-low-opacity before:absolute before:w-3 before:h-3 before:bg-primary before:left-0 before:-translate-x-1 before:rounded-full">
+      <h1 className="pb-2 mt-12 text-3xl font-semibold text-white capitalize border-b-2 border-white-low-opacity before:absolute before:w-3 before:h-3 before:bg-primary before:left-0 before:translate-x-1 before:rounded-full">
         Working Place
       </h1>
       <p className="mt-2 mb-8">This is the place where you can try them.</p>

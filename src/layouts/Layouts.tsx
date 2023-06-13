@@ -2,6 +2,7 @@ import ExtraInformation from "@components/ExtraInformation";
 import Navbar_Tech from "@components/Navbar_Tech";
 import { useRouter } from "next/router";
 import React, { ReactNode, useEffect, useState } from "react";
+import Container from "./Container";
 
 type Props = {
   children: ReactNode;
@@ -22,7 +23,7 @@ export default function Layouts({ children }: Props) {
       <div className="flex">
         <Navbar_Tech isNavbar={isNavbar} setIsNavbar={setIsNavbar} />
         <main
-          className={`relative w-full duration-200 pb-12 ${
+          className={`relative w-full duration-200 pb-12 flex gap-4 ${
             isNavbar && "translate-y-5 opacity-60"
           }`}
         >
@@ -32,8 +33,11 @@ export default function Layouts({ children }: Props) {
             }`}
           />
           <div className="absolute inset-0 w-full bg-pattern -z-40" /> */}
-          {children}
-          <ExtraInformation />
+          <Container>
+            {children}
+            <ExtraInformation />
+          </Container>
+          {/* <div className="w-[320px] bg-red-400 h-screen"></div> */}
         </main>
       </div>
     );

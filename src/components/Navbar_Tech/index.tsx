@@ -85,13 +85,18 @@ export const Links = ({ tech, techName }: LinksProps) => {
                   <Link
                     key={t.id}
                     href={t.link}
-                    className={`w-full inline-block py-1 px-2 hover:text-white border-l-2 ${
-                      router.asPath == t.link
-                        ? "text-white border-white"
-                        : "border-white-low-opacity"
+                    className={`relative w-full inline-block py-1 px-3 hover:text-white border-l-2 border-white-low-opacity focus:outline-none focus:text-white ${
+                      router.asPath == t.link && "text-white"
                     }`}
                   >
                     {t.name}
+                    {router.asPath == t.link && (
+                      <motion.div
+                        layoutId="link"
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-0 left-0 w-[2px] h-full bg-white"
+                      />
+                    )}
                   </Link>
                 ))}
             </motion.div>
