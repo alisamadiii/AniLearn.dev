@@ -9,7 +9,7 @@ import Workplace, {
 } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Checkbox, Information, CodeBlocks } from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, Tabs } from "@components/Tech";
 
 type Props = {};
 
@@ -24,7 +24,8 @@ const PlaygroundAnimation: Variants = {
 };
 
 export default function CenteringADiv({}: Props) {
-  const [centerDiv, setCenterDiv] = useState<number>(1);
+  const [showLine, setShowLine] = useState<boolean>(false);
+  const [tab, setTab] = useState<number>(1);
 
   const way1 = `div {
     display: flex;
@@ -59,7 +60,7 @@ export default function CenteringADiv({}: Props) {
             language="css"
             fileName="style.css"
             className={`my-0 duration-200 ${
-              centerDiv == 1 ? "" : "opacity-50 scale-95"
+              tab == 1 ? "" : "opacity-50 scale-95"
             }`}
           />
           <CodeBlocks
@@ -67,7 +68,7 @@ export default function CenteringADiv({}: Props) {
             language="css"
             fileName="style.css"
             className={`my-0 duration-200 ${
-              centerDiv == 2 ? "" : "opacity-50 scale-95"
+              tab == 2 ? "" : "opacity-50 scale-95"
             }`}
           />
           <CodeBlocks
@@ -75,7 +76,7 @@ export default function CenteringADiv({}: Props) {
             language="css"
             fileName="style.css"
             className={`my-0 duration-200 ${
-              centerDiv == 3 ? "" : "opacity-50 scale-95"
+              tab == 3 ? "" : "opacity-50 scale-95"
             }`}
           />
           <CodeBlocks
@@ -83,90 +84,88 @@ export default function CenteringADiv({}: Props) {
             language="css"
             fileName="style.css"
             className={`my-0 duration-200 ${
-              centerDiv == 4 ? "" : "opacity-50 scale-95"
+              tab == 4 ? "" : "opacity-50 scale-95"
             }`}
           />
         </div>
 
         <Workplace className="">
+          <Tabs
+            tabs={["Flex", "Grid", "Grid II", "Transform"]}
+            stateValue={tab}
+            setStateValue={setTab}
+          />
+
+          <BringChanges className="w-full mx-auto mb-6 max-w-playground">
+            <Checkbox
+              name="Show Line"
+              checked={showLine}
+              onChange={() => setShowLine(!showLine)}
+            />
+          </BringChanges>
+
           <LiveChanges className="">
             <AnimatePresence mode="wait" initial={false}>
-              {centerDiv == 1 ? (
-                <motion.div
-                  key={1}
-                  variants={PlaygroundAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
-                >
-                  <motion.div
-                    layout
-                    className="bg-white rounded-lg w-11 h-11"
-                  />
-                </motion.div>
-              ) : centerDiv == 2 ? (
-                <motion.div
-                  key={2}
-                  variants={PlaygroundAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
-                >
-                  <div className="bg-white rounded-lg w-11 h-11" />
-                </motion.div>
-              ) : centerDiv == 3 ? (
-                <motion.div
-                  key={3}
-                  variants={PlaygroundAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
-                >
-                  <div className="bg-white rounded-lg w-11 h-11" />
-                </motion.div>
-              ) : centerDiv == 4 ? (
-                <motion.div
-                  key={4}
-                  variants={PlaygroundAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className={`relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2 `}
-                >
-                  <div className="bg-white rounded-lg w-11 h-11" />
-                </motion.div>
+              {tab == 1 ? (
+                <Playground key={1} state={showLine} />
+              ) : tab == 2 ? (
+                <Playground key={2} state={showLine} />
+              ) : tab == 3 ? (
+                <Playground key={3} state={showLine} />
+              ) : tab == 4 ? (
+                <Playground key={4} state={showLine} />
               ) : (
                 <h1>Nothing</h1>
               )}
             </AnimatePresence>
           </LiveChanges>
-          <BringChanges className="flex flex-wrap justify-between gap-8 mx-auto mt-8 max-w-playground">
-            <Checkbox
-              name="Flexbox"
-              onChange={() => setCenterDiv(1)}
-              checked={centerDiv == 1 ? true : false}
-            />
-            <Checkbox
-              name="Gridbox I"
-              onChange={() => setCenterDiv(2)}
-              checked={centerDiv == 2 ? true : false}
-            />
-            <Checkbox
-              name="Gridbox II"
-              onChange={() => setCenterDiv(3)}
-              checked={centerDiv == 3 ? true : false}
-            />
-            <Checkbox
-              name="Transform"
-              onChange={() => setCenterDiv(4)}
-              checked={centerDiv == 4 ? true : false}
-            />
-          </BringChanges>
         </Workplace>
       </Container>
     </>
   );
 }
+
+type PlaygroundProps = {
+  state: boolean;
+};
+
+export const Playground = ({ state }: PlaygroundProps) => {
+  return (
+    <motion.div
+      variants={PlaygroundAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2`}
+    >
+      <AnimatePresence>
+        {state && (
+          <>
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: "100%" }}
+              exit={{ height: 0 }}
+              className="absolute w-[2px] h-full bg-red-700 -z-10"
+            />
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              exit={{ width: 0 }}
+              className="absolute w-full h-[2px] bg-red-700 -z-10"
+            />
+          </>
+        )}
+      </AnimatePresence>
+      <motion.div
+        layout
+        className={`rounded-lg w-11 h-11 duration-200 ${
+          state ? "bg-white/80" : "bg-white"
+        }`}
+      />
+    </motion.div>
+  );
+};
+
+type TestingProps = {
+  state: boolean;
+};

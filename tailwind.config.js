@@ -35,6 +35,17 @@ module.exports = {
       backgroundSize: {
         pattern: "44px 44px, 44px 44px, 20px 20px, 20px 20px",
       },
+      animation: {
+        "flag-icon": "flagIcon 1s",
+      },
+      keyframes: {
+        flagIcon: {
+          "0%": { transform: "scale(1) rotate(0deg)" },
+          "20%": {
+            transform: "scale(.5) rotate(10deg)",
+          },
+        },
+      },
     },
   },
   plugins: [],
