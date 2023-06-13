@@ -28,13 +28,15 @@ export default function FlexPosition({}: Props) {
       <Container>
         <Information content="<h1>flex position</h1><p>Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).</p><p>If “regular” layout is based on both block and inline flow directions, the flex layout is based on “flex-flow directions”. Please have a look at this figure from the specification, explaining the main idea behind the flex layout.</p>" />
 
-        <Workplace className="">
+        <Workplace className="overflow-hidden">
           <Tabs
             tabs={["Justify & Align", "Align-Content"]}
             stateValue={tab}
             setStateValue={setTab}
           />
-          {tab == 1 ? <FirstTab /> : <SecondTab />}
+          <AnimatePresence mode="wait" initial={false}>
+            {tab == 1 ? <FirstTab key={1} /> : <SecondTab key={2} />}
+          </AnimatePresence>
         </Workplace>
       </Container>
     </>
@@ -52,8 +54,12 @@ export const FirstTab = () => {
 }`; // Use backtick for writing your code
 
   return (
-    <div>
-      <CodeBlocks codeString={Codes} language="css" fileName="index.html" />
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -100, opacity: 0 }}
+    >
+      <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
 
       <LiveChanges className="">
         <div
@@ -140,7 +146,7 @@ export const FirstTab = () => {
           />
         </BringChanges>
       </GivingComment>
-    </div>
+    </motion.div>
   );
 };
 
@@ -158,8 +164,12 @@ export const SecondTab = () => {
 }`; // Use backtick for writing your code
 
   return (
-    <div>
-      <CodeBlocks codeString={Codes} language="css" fileName="index.html" />
+    <motion.div
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 100, opacity: 0 }}
+    >
+      <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
 
       <LiveChanges className="">
         <div
@@ -222,6 +232,6 @@ export const SecondTab = () => {
           setClassName={setAlignContent}
         />
       </BringChanges>
-    </div>
+    </motion.div>
   );
 };
