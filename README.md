@@ -8,7 +8,7 @@ The code base of this repo uses
 
 - [NextJS](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [MDX](https://mdxjs.com/docs/)
+- [Testing Library](https://testing-library.com/)
 
 For contributing to the code, you will need
 
@@ -18,7 +18,7 @@ For contributing to the code, you will need
 ### 🔖 Contribution steps
 
 1. Fork this repository
-2. Clone the repo
+2. Clone t
 
    ```console
    $ git clone git@github.com:<your github username>/AniLearn.dev.git
@@ -50,7 +50,6 @@ $ pnpm template
 
 by running this command, everything will be set up for you to start writing codes.
 
-- TSX for the functionality because You cann't do with MDX
-- MDX for giving description
+- TSX with all the components
 
 For example: [Demo](https://www.linkedin.com/posts/alireza17_nextjs-webdevelopment-activity-7070365787395391488-vDdj?utm_source=share&utm_medium=member_desktop)

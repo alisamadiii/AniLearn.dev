@@ -3,18 +3,19 @@ import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Props = {
-  isNavbar: boolean;
-  setIsNavbar: (a: boolean) => void;
-};
-
 import { HTML, CSS } from "@contents/Data";
 
 // Icons
 import { IoIosArrowDown } from "react-icons/io";
 import { HiMenuAlt2 } from "react-icons/hi";
 
-export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
+// Types
+import { LinksProps, NavbarTechProps } from "./index.types";
+
+export default function Navbar_Tech({
+  isNavbar,
+  setIsNavbar,
+}: NavbarTechProps) {
   return (
     <Fragment>
       <nav
@@ -50,15 +51,6 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: Props) {
   );
 }
 
-type LinksProps = {
-  tech: {
-    id: number;
-    name: string;
-    link: string;
-  }[];
-  techName: string;
-};
-
 export const Links = ({ tech, techName }: LinksProps) => {
   const [open, setOpen] = useState<boolean>(true);
 
@@ -66,17 +58,17 @@ export const Links = ({ tech, techName }: LinksProps) => {
 
   return (
     <li className="mt-2">
-      <div
-        className={`flex items-center gap-1 px-2 py-1 rounded mb-2 text-white cursor-pointer ${
+      <button
+        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-white cursor-pointer ${
           open && "bg-white-low-opacity"
         }`}
         onClick={() => setOpen(!open)}
       >
-        <span className="grow">{techName}</span>
+        <span>{techName}</span>
         <IoIosArrowDown
           className={`duration-200 ${open ? "rotate-0" : "-rotate-90"} `}
         />
-      </div>
+      </button>
       <div className="px-2">
         <AnimatePresence initial={false}>
           {open && (
@@ -85,6 +77,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="flex flex-col overflow-hidden font-light"
+              role="links"
             >
               {tech
                 .sort((a, b) => a.name.localeCompare(b.name))

@@ -2,14 +2,15 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-type Props = {};
-
 import Reason_1_IMG from "@assets/reason-1.png";
 import Reason_2_IMG from "@assets/reason-2.png";
 import Reason_3_IMG from "@assets/reason-3.png";
 import Reason_4_IMG from "@assets/reason-4.png";
 
-export default function ReasonComponent({}: Props) {
+// Types
+import { EachReasonProps, ReasonProps } from "./index.types";
+
+export default function ReasonComponent({}: ReasonProps) {
   return (
     <>
       <EachReason
@@ -44,15 +45,6 @@ export default function ReasonComponent({}: Props) {
     </>
   );
 }
-
-type EachReasonProps = {
-  div1ClassName: string;
-  div2ClassName: string;
-  imageClassName?: string;
-  title: string;
-  description: string;
-  image: any;
-};
 
 export const EachReason = ({
   div1ClassName,

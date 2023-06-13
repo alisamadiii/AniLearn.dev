@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 
-import { Heading_3 } from "./Headings";
-import { IconType } from "react-icons";
+import { Heading_3 } from "../Headings";
 
-type Props = {
-  name: string;
-  description: string;
-  link: string;
-  Icon: IconType;
-};
+// Types
+import { TechnologyProps } from "./index.types";
 
-export default function Technology({ name, description, link, Icon }: Props) {
+export default function Technology({
+  name,
+  description,
+  link,
+  Icon,
+}: TechnologyProps) {
   useEffect(() => {
     document.body.onmousemove = (e) => {
       const boxes = document.querySelectorAll<HTMLDivElement>("#box");

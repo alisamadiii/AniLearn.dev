@@ -7,10 +7,9 @@ import Workplace, {
   BringChanges,
   LiveChanges,
 } from "@components/Tech/Workplace";
-import Information from "@components/Tech/Information";
 
 // you can use these components
-import GivingComment from "@components/Comment";
+import { Information, GivingComment } from "@components/Tech";
 
 import {
   hexToRGB,

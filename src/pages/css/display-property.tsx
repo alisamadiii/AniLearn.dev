@@ -7,11 +7,9 @@ import Workplace, {
   BringChanges,
   LiveChanges,
 } from "@components/Tech/Workplace";
-import Information from "@components/Tech/Information";
-import CodeBlocks from "@components/Tech/CodeBlocks";
 
 // you can use these components
-import Button_Tech from "@components/Button_Tech";
+import { Information, CodeBlocks, Button_Tech } from "@components/Tech";
 
 type Props = {};
 

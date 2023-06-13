@@ -1,10 +1,11 @@
 import React from "react";
 
 import Workplace, { LiveChanges } from "@components/Tech/Workplace";
-import CodeBlocks from "@components/Tech/CodeBlocks";
-import Information from "@components/Tech/Information";
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
+
+// you can use these components
+import { Information, CodeBlocks } from "@components/Tech";
 
 type Props = {};
 

@@ -7,8 +7,9 @@ import Workplace, {
   BringChanges,
   LiveChanges,
 } from "@components/Tech/Workplace";
-import Information from "@components/Tech/Information";
-import CodeBlocks from "@components/Tech/CodeBlocks";
+
+// you can use these components
+import { Information, CodeBlocks } from "@components/Tech";
 
 import { platformsData } from "@contents/Data";
 

@@ -1,6 +1,5 @@
-/* It is an open-source project, this page is going to be written by Ali Reza */
-
 import React, { useState } from "react";
+import Image from "next/image";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
@@ -8,17 +7,9 @@ import Workplace, {
   BringChanges,
   LiveChanges,
 } from "@components/Tech/Workplace";
-import Information from "@components/Tech/Information";
-import CodeBlocks from "@components/Tech/CodeBlocks";
 
 // you can use these components
-import Input from "@tech/Input";
-import Checkbox from "@components/Checkbox";
-import GivingComment from "@components/Comment";
-import SaveButton from "@components/SaveButton";
-import Range from "@tech/Range";
-import Button_Tech from "@components/Button_Tech";
-import Image from "next/image";
+import { Information, CodeBlocks, Range } from "@components/Tech";
 
 type Props = {};
 

@@ -7,14 +7,16 @@ test("flex-position -> FlexPosition for exporting file", () => {
   expect(capitalizeWord(DEFAULT_TESTING)).toBe("FlexPosition");
 });
 
-test("the length of TemplateTSX must be greater than 1000 letters", () => {
-  expect(
-    TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza").length
-  ).toBeGreaterThan(1000);
-});
+describe("TSX Template", () => {
+  test("the length of TemplateTSX must be greater than 1000 letters", () => {
+    expect(
+      TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza").length
+    ).toBeGreaterThan(1000);
+  });
 
-test("The template must import react", () => {
-  expect(TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza")).toMatch(
-    /import React from "react"/
-  );
+  test("The template must import react", () => {
+    expect(TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza")).toMatch(
+      /import React from "react"/
+    );
+  });
 });

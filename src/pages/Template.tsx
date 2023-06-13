@@ -1,3 +1,5 @@
+/* It is an open-source project, this page is going to be written by Ali Reza */
+  
 import React from "react";
 
 import Container from "@layouts/Container";
@@ -6,20 +8,30 @@ import Workplace, {
   BringChanges,
   LiveChanges,
 } from "@components/Tech/Workplace";
-import Information from "@components/Tech/Information";
-import CodeBlocks from "@components/Tech/CodeBlocks";
+
+// you can use these components
+import {
+  Checkbox,
+  Information,
+  CodeBlocks,
+  Button_Tech,
+  GivingComment,
+  Input,
+  Range,
+  Tabs
+} from "@components/Tech";
 
 type Props = {};
 
 export default function Template({}: Props) {
-  const Codes = ``; // Write you codes here
+  const Codes = ""; // Use backtick for writing your code
 
   return (
     <>
-      <MetaTag title="Template" image={null} description="" />
+      <MetaTag title="template" image={null} description="" />
       <Container>
-        <Information content="<h1>Input Testing</h1><p>The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.</p>" />
-        <CodeBlocks codeString={Codes} language="" fileName="index.html" />
+        <Information content="<h1>template</h1><p>tell us information about template</p>" />
+        <CodeBlocks codeString={Codes} language="htmlbars" fileName="index.html" />
 
         <Workplace className="">
           <LiveChanges className="">
