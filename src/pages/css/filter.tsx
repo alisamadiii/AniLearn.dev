@@ -56,7 +56,7 @@ export default function Filter({}: Props) {
               onChange={(e) => setImage(e.target.value)}
               className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity focus:border-primary placeholder:opacity-50"
             />
-            <small>Add you own Image URL</small>
+            <small>Add your own Image URL</small>
 
             <select
               name=""
