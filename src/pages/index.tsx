@@ -83,7 +83,7 @@ export default function Home() {
           {/* Section */}
           <Container className="flex flex-col items-center gap-4 mt-32 text-center">
             <Heading_1 className="text-4xl text-center text-white md:text-5xl lg:text-6xl">
-              <span className="-z-10 relative p-2 isolate font-black before:content-[''] before:w-full before:h-full before:bg-white before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-l before:from-primary before:to-secondary before:-skew-y-2 before:rounded-md">
+              <span className="-z-10 relative p-2 isolate font-black before:content-[''] before:w-full before:h-full before:bg-white before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-l before:from-primary before:to-secondary before:rounded-md">
                 Animation
               </span>{" "}
               eases learning process.

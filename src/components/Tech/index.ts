@@ -6,3 +6,4 @@ export { default as Range } from "./Range";
 export { default as Button_Tech } from "./Button_Tech";
 export { default as Information } from "./Information";
 export { default as Tabs } from "../Tabs";
+export { default as Dropdown } from "./Dropdown";

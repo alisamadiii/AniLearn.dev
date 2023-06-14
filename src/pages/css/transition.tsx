@@ -9,13 +9,14 @@ import Workplace, {
 } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, Range } from "@components/Tech";
+import { Information, Range, Dropdown } from "@components/Tech";
 
 type Props = {};
 
 export default function Transition({}: Props) {
   const [isClicked, setIsClicked] = useState(false);
-  const [duration, setDuration] = useState(100);
+  const [duration, setDuration] = useState(1);
+  const [delay, setDelay] = useState(1);
 
   const onClickHandler = (e: any) => {
     setIsClicked(true);
@@ -24,7 +25,7 @@ export default function Transition({}: Props) {
     setTimeout(() => {
       setIsClicked(false);
       e.target.disabled = false;
-    }, duration * 20);
+    }, duration * 1500 * delay);
   };
 
   return (
@@ -34,12 +35,20 @@ export default function Transition({}: Props) {
         <Information content="<h1>transition</h1><p>CSS transitions provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized.</p>" />
 
         <Workplace className="">
-          <BringChanges>
-            <Range
-              maxNum={200}
-              filterName="Duration"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
+          <BringChanges className="flex flex-col items-start">
+            <Dropdown
+              name="transition duration"
+              lists={[1, 2, 3]}
+              unit={"s"}
+              stateValue={duration}
+              setStateValue={setDuration}
+            />
+            <Dropdown
+              name="transition delay"
+              lists={[1, 2, 3]}
+              unit={"s"}
+              stateValue={delay}
+              setStateValue={setDelay}
             />
           </BringChanges>
           <LiveChanges className="">
@@ -50,28 +59,28 @@ export default function Transition({}: Props) {
             >
               <motion.div
                 layout
-                transition={{ ease: "easeIn", duration: duration * 0.01 }}
+                transition={{ ease: "easeIn", duration, delay }}
                 className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 ease-in
               </motion.div>
               <motion.div
                 layout
-                transition={{ ease: "easeOut", duration: duration * 0.01 }}
+                transition={{ ease: "easeOut", duration, delay }}
                 className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 ease-out
               </motion.div>
               <motion.div
                 layout
-                transition={{ ease: "easeInOut", duration: duration * 0.01 }}
+                transition={{ ease: "easeInOut", duration, delay }}
                 className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 ease-in-out
               </motion.div>
               <motion.div
                 layout
-                transition={{ ease: "linear", duration: duration * 0.01 }}
+                transition={{ ease: "linear", duration, delay }}
                 className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 linear

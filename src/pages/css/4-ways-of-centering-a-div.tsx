@@ -125,52 +125,11 @@ export default function CenteringADiv({}: Props) {
   );
 }
 
-type PlaygroundProps = {
+type WaysOfCenteringADivProps = {
   state: boolean;
 };
 
-export const Playground = ({ state }: PlaygroundProps) => {
-  return (
-    <motion.div
-      variants={PlaygroundAnimation}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex justify-center items-center gap-1 overflow-hidden p-2`}
-    >
-      <AnimatePresence>
-        {state && (
-          <>
-            <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: "100%" }}
-              exit={{ height: 0 }}
-              className="absolute w-[2px] h-full bg-red-700 -z-10"
-            />
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              exit={{ width: 0 }}
-              className="absolute w-full h-[2px] bg-red-700 -z-10"
-            />
-          </>
-        )}
-      </AnimatePresence>
-      <motion.div
-        layout
-        className={`rounded-lg w-11 h-11 duration-200 ${
-          state ? "bg-white/80" : "bg-white"
-        }`}
-      />
-    </motion.div>
-  );
-};
-
-type TestingProps = {
-  state: boolean;
-};
-
-export const Flex = ({ state }: TestingProps) => {
+export const Flex = ({ state }: WaysOfCenteringADivProps) => {
   const [display, setDisplay] = useState("block");
   const [justifyContent, setJustifyContent] = useState("start");
   const [alignItems, setAlignItems] = useState("start");
@@ -186,24 +145,7 @@ export const Flex = ({ state }: TestingProps) => {
         className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
         style={{ display, justifyContent, alignItems }}
       >
-        <AnimatePresence>
-          {state && (
-            <>
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "100%" }}
-                exit={{ height: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
-              />
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                exit={{ width: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
-              />
-            </>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
@@ -235,7 +177,7 @@ export const Flex = ({ state }: TestingProps) => {
   );
 };
 
-export const Grid = ({ state }: TestingProps) => {
+export const Grid = ({ state }: WaysOfCenteringADivProps) => {
   const [display, setDisplay] = useState("block");
   const [justifyContent, setJustifyContent] = useState("start");
   const [alignItems, setAlignItems] = useState("start");
@@ -251,24 +193,7 @@ export const Grid = ({ state }: TestingProps) => {
         className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
         style={{ display, justifyContent, alignItems }}
       >
-        <AnimatePresence>
-          {state && (
-            <>
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "100%" }}
-                exit={{ height: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
-              />
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                exit={{ width: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
-              />
-            </>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
@@ -300,7 +225,7 @@ export const Grid = ({ state }: TestingProps) => {
   );
 };
 
-export const GridWay2 = ({ state }: TestingProps) => {
+export const GridWay2 = ({ state }: WaysOfCenteringADivProps) => {
   const [display, setDisplay] = useState("block");
   const [placeItems, setPlaceItems] = useState("start");
 
@@ -315,24 +240,7 @@ export const GridWay2 = ({ state }: TestingProps) => {
         className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
         style={{ display, placeItems }}
       >
-        <AnimatePresence>
-          {state && (
-            <>
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "100%" }}
-                exit={{ height: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
-              />
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                exit={{ width: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
-              />
-            </>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
@@ -358,7 +266,7 @@ export const GridWay2 = ({ state }: TestingProps) => {
   );
 };
 
-export const Transform = ({ state }: TestingProps) => {
+export const Transform = ({ state }: WaysOfCenteringADivProps) => {
   const [position, setPosition] = useState("static");
   const [top, setTop] = useState("0%");
   const [left, setLeft] = useState("0%");
@@ -374,24 +282,7 @@ export const Transform = ({ state }: TestingProps) => {
       <motion.div
         className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
       >
-        <AnimatePresence>
-          {state && (
-            <>
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "100%" }}
-                exit={{ height: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
-              />
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                exit={{ width: 0 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
-              />
-            </>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
@@ -424,5 +315,24 @@ export const Transform = ({ state }: TestingProps) => {
         />
       </BringChanges>
     </motion.div>
+  );
+};
+
+export const ShowLinesComponent = () => {
+  return (
+    <>
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: "100%" }}
+        exit={{ height: 0 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
+      />
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        exit={{ width: 0 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
+      />
+    </>
   );
 };
