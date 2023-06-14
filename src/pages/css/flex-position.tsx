@@ -55,9 +55,9 @@ export const FirstTab = () => {
 
   return (
     <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -100, opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
 
@@ -165,9 +165,9 @@ export const SecondTab = () => {
 
   return (
     <motion.div
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 100, opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
 

@@ -107,13 +107,13 @@ export default function CenteringADiv({}: Props) {
           <LiveChanges className="">
             <AnimatePresence mode="wait" initial={false}>
               {tab == 1 ? (
-                <Playground key={1} state={showLine} />
+                <Flex key={1} state={showLine} />
               ) : tab == 2 ? (
-                <Playground key={2} state={showLine} />
+                <Grid key={2} state={showLine} />
               ) : tab == 3 ? (
-                <Playground key={3} state={showLine} />
+                <GridWay2 key={3} state={showLine} />
               ) : tab == 4 ? (
-                <Playground key={4} state={showLine} />
+                <Transform key={4} state={showLine} />
               ) : (
                 <h1>Nothing</h1>
               )}
@@ -162,6 +162,267 @@ export const Playground = ({ state }: PlaygroundProps) => {
           state ? "bg-white/80" : "bg-white"
         }`}
       />
+    </motion.div>
+  );
+};
+
+type TestingProps = {
+  state: boolean;
+};
+
+export const Flex = ({ state }: TestingProps) => {
+  const [display, setDisplay] = useState("block");
+  const [justifyContent, setJustifyContent] = useState("start");
+  const [alignItems, setAlignItems] = useState("start");
+
+  return (
+    <motion.div
+      variants={PlaygroundAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <motion.div
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+        style={{ display, justifyContent, alignItems }}
+      >
+        <AnimatePresence>
+          {state && (
+            <>
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: "100%" }}
+                exit={{ height: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
+              />
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                exit={{ width: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
+              />
+            </>
+          )}
+        </AnimatePresence>
+        <motion.div
+          layout
+          className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
+            state ? "bg-white/80" : "bg-white"
+          }`}
+        />
+      </motion.div>
+      <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
+        <Checkbox
+          name="Flex"
+          onChange={(e) =>
+            setDisplay(e.target.checked == true ? "flex" : "block")
+          }
+        />
+        <Checkbox
+          name="Justify-Content"
+          onChange={(e) =>
+            setJustifyContent(e.target.checked == true ? "center" : "start")
+          }
+        />
+        <Checkbox
+          name="align-items"
+          onChange={(e) =>
+            setAlignItems(e.target.checked == true ? "center" : "start")
+          }
+        />
+      </BringChanges>
+    </motion.div>
+  );
+};
+
+export const Grid = ({ state }: TestingProps) => {
+  const [display, setDisplay] = useState("block");
+  const [justifyContent, setJustifyContent] = useState("start");
+  const [alignItems, setAlignItems] = useState("start");
+
+  return (
+    <motion.div
+      variants={PlaygroundAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <motion.div
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+        style={{ display, justifyContent, alignItems }}
+      >
+        <AnimatePresence>
+          {state && (
+            <>
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: "100%" }}
+                exit={{ height: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
+              />
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                exit={{ width: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
+              />
+            </>
+          )}
+        </AnimatePresence>
+        <motion.div
+          layout
+          className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
+            state ? "bg-white/80" : "bg-white"
+          }`}
+        />
+      </motion.div>
+      <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
+        <Checkbox
+          name="Grid"
+          onChange={(e) =>
+            setDisplay(e.target.checked == true ? "grid" : "block")
+          }
+        />
+        <Checkbox
+          name="Justify-Content"
+          onChange={(e) =>
+            setJustifyContent(e.target.checked == true ? "center" : "start")
+          }
+        />
+        <Checkbox
+          name="align-items"
+          onChange={(e) =>
+            setAlignItems(e.target.checked == true ? "center" : "start")
+          }
+        />
+      </BringChanges>
+    </motion.div>
+  );
+};
+
+export const GridWay2 = ({ state }: TestingProps) => {
+  const [display, setDisplay] = useState("block");
+  const [placeItems, setPlaceItems] = useState("start");
+
+  return (
+    <motion.div
+      variants={PlaygroundAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <motion.div
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+        style={{ display, placeItems }}
+      >
+        <AnimatePresence>
+          {state && (
+            <>
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: "100%" }}
+                exit={{ height: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
+              />
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                exit={{ width: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
+              />
+            </>
+          )}
+        </AnimatePresence>
+        <motion.div
+          layout
+          className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
+            state ? "bg-white/80" : "bg-white"
+          }`}
+        />
+      </motion.div>
+      <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
+        <Checkbox
+          name="Grid"
+          onChange={(e) =>
+            setDisplay(e.target.checked == true ? "grid" : "block")
+          }
+        />
+        <Checkbox
+          name="Place-Items"
+          onChange={(e) =>
+            setPlaceItems(e.target.checked == true ? "center" : "start")
+          }
+        />
+      </BringChanges>
+    </motion.div>
+  );
+};
+
+export const Transform = ({ state }: TestingProps) => {
+  const [position, setPosition] = useState("static");
+  const [top, setTop] = useState("0%");
+  const [left, setLeft] = useState("0%");
+  const [transform, setTransform] = useState(false);
+
+  return (
+    <motion.div
+      variants={PlaygroundAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <motion.div
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+      >
+        <AnimatePresence>
+          {state && (
+            <>
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: "100%" }}
+                exit={{ height: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-full bg-red-700 -z-10"
+              />
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                exit={{ width: 0 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[2px] bg-red-700 -z-10"
+              />
+            </>
+          )}
+        </AnimatePresence>
+        <motion.div
+          layout
+          className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
+            state ? "bg-white/80" : "bg-white"
+          } ${position} ${transform && "!-translate-x-1/2 !-translate-y-1/2"}`}
+          style={{
+            top,
+            left,
+          }}
+        />
+      </motion.div>
+      <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
+        <Checkbox
+          name="Position"
+          onChange={(e) =>
+            setPosition(e.target.checked == true ? "absolute" : "static")
+          }
+        />
+        <Checkbox
+          name="Top"
+          onChange={(e) => setTop(e.target.checked == true ? "50%" : "0%")}
+        />
+        <Checkbox
+          name="Left"
+          onChange={(e) => setLeft(e.target.checked == true ? "50%" : "0%")}
+        />
+        <Checkbox
+          name="Transform"
+          onChange={(e) => setTransform(e.target.checked)}
+        />
+      </BringChanges>
     </motion.div>
   );
 };
