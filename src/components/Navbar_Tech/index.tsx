@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HTML, CSS } from "@contents/Data";
 
 // Icons
-import { IoIosArrowDown } from "react-icons/io";
-import { HiMenuAlt2 } from "react-icons/hi";
+import { IoIosArrowDown, IoMdClose } from "react-icons/io";
 
 // Types
 import { LinksProps, NavbarTechProps } from "./index.types";
@@ -17,37 +16,32 @@ export default function Navbar_Tech({
   setIsNavbar,
 }: NavbarTechProps) {
   return (
-    <Fragment>
-      <nav
-        className={`fixed md:sticky top-0 left-0 w-full md:w-[220px] px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
-          isNavbar ? "translate-y-0" : "-translate-y-full md:-translate-y-0"
-        }`}
+    <nav
+      className={`fixed md:sticky top-0 left-0 w-full md:w-[220px] px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
+        isNavbar ? "translate-y-0" : "-translate-y-full md:-translate-y-0"
+      }`}
+    >
+      <Link
+        href={"/"}
+        onClick={() => setIsNavbar(false)}
+        className="text-lg font-black text-white"
       >
-        <Link
-          href={"/"}
-          onClick={() => setIsNavbar(false)}
-          className="text-lg font-black text-white"
-        >
-          AniLearn.dev
-        </Link>
-        <p className="text-xs">
-          Learning something with animation doesn&apos;t get easier than this
-        </p>
-        <ul className="mt-4">
-          <Links techName="HTML" tech={HTML} />
-          <Links techName="CSS" tech={CSS} />
-        </ul>
-      </nav>
-      {/* Opening and Closing Navbar in small devices */}
+        AniLearn.dev
+      </Link>
+      <p className="text-xs">
+        Learning something with animation doesn&apos;t get easier than this
+      </p>
+      <ul className="mt-4">
+        <Links techName="HTML" tech={HTML} />
+        <Links techName="CSS" tech={CSS} />
+      </ul>
       <motion.div
-        className={`fixed p-2 text-2xl rounded-full bottom-4 left-4 md:hidden bg-box duration-200 z-50 ${
-          isNavbar && "ml-auto bg-red-700 !rotate-45"
-        }`}
-        onClick={() => setIsNavbar(!isNavbar)}
+        className={`absolute bottom-4 left-4 p-2 text-2xl rounded-full md:hidden bg-red-700 duration-200 z-50`}
+        onClick={() => setIsNavbar(false)}
       >
-        <HiMenuAlt2 />
+        <IoMdClose />
       </motion.div>
-    </Fragment>
+    </nav>
   );
 }
 

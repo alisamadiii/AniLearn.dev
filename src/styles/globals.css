@@ -85,7 +85,7 @@ input[type="number"] {
   }
 
   .information h1 {
-    @apply relative pb-4 mt-8 mb-3 text-4xl font-semibold text-white capitalize border-b-2 border-white-low-opacity;
+    @apply relative pb-4 mt-6 mb-3 text-4xl font-semibold text-white capitalize border-b-2 border-white-low-opacity;
   }
   .information p {
     @apply mb-3 text-lg font-light;
