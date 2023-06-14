@@ -63,7 +63,7 @@ export default function Home() {
               </Link>
               <div className="flex items-center gap-4">
                 <a
-                  href="#"
+                  href="https://github.com/AliReza1083/AniLearn.dev"
                   target="_blank"
                   className="text-2xl hover:text-white"
                 >
