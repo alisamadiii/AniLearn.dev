@@ -68,7 +68,7 @@ export default function ObjectFit({}: Props) {
           </LiveChanges>
           <BringChanges className="mt-12 space-y-6">
             <div className="flex flex-col items-start mx-auto max-w-playground">
-              <h2 className="text-xl text-white">Parent</h2>
+              <h2 className="text-xl text-font-clr-1">Parent</h2>
               <Input
                 name="Width"
                 unit="px"
@@ -83,7 +83,7 @@ export default function ObjectFit({}: Props) {
               />
             </div>
             <div className="mx-auto max-w-playground">
-              <h2 className="mb-4 text-xl text-white">Children</h2>
+              <h2 className="mb-4 text-xl text-font-clr-1">Children</h2>
               <GivingComment comment={`object-fit: ${objectFit};`}>
                 <div className="flex flex-wrap gap-8">
                   <Checkbox

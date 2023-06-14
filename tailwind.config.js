@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
   theme: {
     extend: {
       maxWidth: {
@@ -9,17 +10,18 @@ module.exports = {
         input: "600px",
       },
       colors: {
-        primary: "#8000FF",
-        secondary: "#F8522E",
-        button: "#1C1F26",
-        "font-clr": "rgba(227, 229, 232, 0.56)",
-        "background-clr": "#0D0E12",
-        "blur-clr": "rgba(170, 63, 255, 0.07)",
-        box: "rgba(18, 20, 24)",
-        "mouse-move": "rgba(92, 92, 92, 0.09)",
-        "white-low-opacity": "rgba(255, 255, 255, 0.07)",
-        twitter: "#1DA1F2",
-        linkedin: "#0A66C2",
+        primary: "var(--clr-primary)",
+        secondary: "var(--clr-secondary)",
+        button: "var(--clr-button)",
+        "font-clr-1": "var(--clr-font-1)",
+        "font-clr-2": "var(--clr-font-2)",
+        "background-clr": "var(--clr-background)",
+        "blur-clr": "var(--clr-blur)",
+        box: "var(--clr-box)",
+        "mouse-move": "var(--mouse-move)",
+        "white-low-opacity": "var(--clr-white-low-opacity)",
+        twitter: "var(--clr-twitter)",
+        linkedin: "var(--clr-linkedin)",
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {
+  tomorrowNight,
+  tomorrow,
+} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import confetti from "canvas-confetti";
 import { twMerge } from "tailwind-merge";
 
@@ -45,6 +48,12 @@ export default function CodeBlocks({
     }, 3000);
   };
 
+  const themeChanging = () => {
+    const html = document.querySelector("html");
+    if (html?.classList.contains("dark")) return tomorrowNight;
+    else return tomorrow;
+  };
+
   return (
     <div
       className={twMerge(
@@ -74,7 +83,7 @@ export default function CodeBlocks({
       </div>
       <SyntaxHighlighter
         language={language}
-        style={tomorrowNight}
+        style={themeChanging()}
         wrapLongLines={wrapLongLines}
         customStyle={{
           background: "none",

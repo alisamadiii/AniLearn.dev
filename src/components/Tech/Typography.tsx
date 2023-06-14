@@ -18,7 +18,7 @@ const SuisseIntl = localFont({
 export function Heading_1({ children, ...otherProps }: Props) {
   return (
     <h1
-      className={`${SuisseIntl.className} capitalize relative mt-1 mb-3 pb-2 text-5xl text-white border-b-2 border-white-low-opacity`}
+      className={`${SuisseIntl.className} capitalize relative mt-1 mb-3 pb-2 text-5xl text-font-clr-1 border-b-2 border-white-low-opacity`}
       {...otherProps}
     >
       {children}
@@ -31,7 +31,7 @@ import { AiFillSetting } from "react-icons/ai";
 export function Heading_2({ children, ...otherProps }: Props) {
   return (
     <h2
-      className={`${SuisseIntl.className} relative text-4xl text-white mt-12 mb-3 flex items-center gap-1`}
+      className={`${SuisseIntl.className} relative text-4xl text-font-clr-1 mt-12 mb-3 flex items-center gap-1`}
       {...otherProps}
     >
       {children[1] == "Working Place" && (
@@ -47,7 +47,7 @@ export function Heading_2({ children, ...otherProps }: Props) {
 export function Heading_3({ children, ...otherProps }: Props) {
   return (
     <h3
-      className={`${SuisseIntl.className} relative text-3xl text-white mt-12 mb-3`}
+      className={`${SuisseIntl.className} relative text-3xl text-font-clr-1 mt-12 mb-3`}
       {...otherProps}
     >
       {children}

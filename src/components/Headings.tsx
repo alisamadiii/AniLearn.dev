@@ -18,7 +18,7 @@ type Props = {
 
 export function Heading_1({ children, className }: Props) {
   return (
-    <h1 className={`${SuisseIntl.className} text-white ${className}`}>
+    <h1 className={`${SuisseIntl.className} text-font-clr-1 ${className}`}>
       {children}
     </h1>
   );

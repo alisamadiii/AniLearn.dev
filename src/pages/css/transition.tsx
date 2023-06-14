@@ -60,28 +60,28 @@ export default function Transition({}: Props) {
               <motion.div
                 layout
                 transition={{ ease: "easeIn", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
               >
                 ease-in
               </motion.div>
               <motion.div
                 layout
                 transition={{ ease: "easeOut", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
               >
                 ease-out
               </motion.div>
               <motion.div
                 layout
                 transition={{ ease: "easeInOut", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
               >
                 ease-in-out
               </motion.div>
               <motion.div
                 layout
                 transition={{ ease: "linear", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
               >
                 linear
               </motion.div>
@@ -90,7 +90,7 @@ export default function Transition({}: Props) {
           <button
             className={`px-4 py-2 mt-3 rounded-md duration-200 ${
               isClicked
-                ? "bg-primary text-white cursor-not-allowed"
+                ? "bg-primary text-font-clr-1 cursor-not-allowed"
                 : "bg-button"
             }`}
             onClick={(e) => onClickHandler(e)}

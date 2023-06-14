@@ -13,7 +13,7 @@ import { BsFlag } from "react-icons/bs";
 export default function Workplace({ children, className }: Props) {
   return (
     <div className="mt-4 mb-12">
-      <h1 className="flex gap-2 pb-2 mt-12 text-3xl font-semibold text-white capitalize border-b-2 group border-white-low-opacity">
+      <h1 className="flex gap-2 pb-2 mt-12 text-3xl font-semibold text-font-clr-1 capitalize border-b-2 group border-white-low-opacity">
         <BsFlag className="group-hover:animate-flag-icon" />
         Working Place
       </h1>

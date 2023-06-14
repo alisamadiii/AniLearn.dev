@@ -12,7 +12,7 @@ type Props = {};
 export default function ExtraInformation({}: Props) {
   return (
     <Container className="pt-8 border-t-2 border-white-low-opacity">
-      <h2 className="mb-1 text-3xl font-bold text-white">Contact Us</h2>
+      <h2 className="mb-1 text-3xl font-bold text-font-clr-1">Contact Us</h2>
       <p className="mb-6">
         If you have any questions, you can reach out to us through these three
         platforms.
@@ -25,7 +25,7 @@ export default function ExtraInformation({}: Props) {
           <p className="p-2 text-xl rounded-md text-secondary bg-secondary/10">
             <AiOutlineMail />
           </p>
-          <h3 className="mt-2 text-xl text-white">Email</h3>
+          <h3 className="mt-2 text-xl text-font-clr-1">Email</h3>
           <p>webdeve1083@gmail.com</p>
         </a>
         <a
@@ -36,7 +36,7 @@ export default function ExtraInformation({}: Props) {
           <p className="p-2 text-xl rounded-md text-secondary bg-secondary/10">
             <AiOutlineTwitter />
           </p>
-          <h3 className="mt-2 text-xl text-white">Twitter</h3>
+          <h3 className="mt-2 text-xl text-font-clr-1">Twitter</h3>
           <p>@Ali_Developer05</p>
         </a>
         <a
@@ -47,7 +47,7 @@ export default function ExtraInformation({}: Props) {
           <p className="p-2 text-xl rounded-md text-secondary bg-secondary/10">
             <AiFillLinkedin />
           </p>
-          <h3 className="mt-2 text-xl text-white">LinkedIn</h3>
+          <h3 className="mt-2 text-xl text-font-clr-1">LinkedIn</h3>
           <p>@Ali Reza</p>
         </a>
       </div>

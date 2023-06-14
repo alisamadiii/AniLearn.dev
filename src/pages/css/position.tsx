@@ -65,7 +65,9 @@ export default function Position({}: Props) {
               <motion.section layout="position" className="p-4">
                 {[...Array(5)].map(() => (
                   <>
-                    <h2 className="mb-3 text-3xl text-white">Lorem Ipsum</h2>
+                    <h2 className="mb-3 text-3xl text-font-clr-1">
+                      Lorem Ipsum
+                    </h2>
                     <p className="mb-8">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Reiciendis pariatur aliquam amet, illum quasi, explicabo
