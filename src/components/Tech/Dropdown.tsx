@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
   name: string;
   lists: any[];
-  unit: string | null;
+  unit?: string | null;
   stateValue: any;
   setStateValue: (a: any) => void;
 };
@@ -17,16 +18,27 @@ export default function Dropdown({
   stateValue,
   setStateValue,
 }: Props) {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLUListElement>(null);
 
   const toggleList = () => {
-    setOpen(!isOpen);
+    setIsOpen(!isOpen);
   };
 
   const onClickHandler = (value: any) => {
     setStateValue(value);
-    setOpen(!isOpen);
+    setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="relative inline-block mb-3">
@@ -35,23 +47,33 @@ export default function Dropdown({
         onClick={toggleList}
       >
         {name}
-        <IoIosArrowDown className={`${isOpen ? "rotate-0" : "rotate-180"}`} />
+        <IoIosArrowDown
+          className={`duration-200 ${isOpen ? "rotate-0" : "rotate-180"}`}
+        />
       </button>
-      {isOpen && (
-        <ul className="absolute z-20 w-full p-1 mt-2 border rounded-md bg-box border-white-low-opacity">
-          {lists.map((list, index) => (
-            <li
-              key={index}
-              className={`px-2 py-1 rounded-md cursor-pointer hover:bg-white-low-opacity ${
-                stateValue == list && "bg-white-low-opacity"
-              }`}
-              onClick={() => onClickHandler(list)}
-            >
-              {list} {unit && unit}
-            </li>
-          ))}
-        </ul>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.ul
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            ref={dropdownRef}
+            className="absolute z-20 w-full p-1 mt-2 border rounded-md bg-box border-white-low-opacity"
+          >
+            {lists.map((list, index) => (
+              <li
+                key={index}
+                className={`px-2 py-1 rounded-md cursor-pointer hover:bg-white-low-opacity ${
+                  stateValue == list && "bg-white-low-opacity"
+                }`}
+                onClick={() => onClickHandler(list)}
+              >
+                {list} {unit && unit}
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

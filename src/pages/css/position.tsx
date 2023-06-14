@@ -9,7 +9,7 @@ import Workplace, {
 } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, Button_Tech, Range } from "@components/Tech";
+import { Information, Button_Tech, Range, Dropdown } from "@components/Tech";
 
 type Props = {};
 
@@ -123,25 +123,13 @@ export default function Position({}: Props) {
                 className={position}
               />
             </div>
-            <div className="my-12 space-x-4">
-              <label htmlFor="validPosition_1">
-                <input
-                  type="radio"
-                  name="validPosition"
-                  id="validPosition_1"
-                  onClick={(e) => e.isTrusted && setValidPosition("top")}
-                />
-                Top
-              </label>
-              <label htmlFor="validPosition_2">
-                <input
-                  type="radio"
-                  name="validPosition"
-                  id="validPosition_2"
-                  onClick={(e) => e.isTrusted && setValidPosition("bottom")}
-                />
-                Bottom
-              </label>
+            <div className="mt-8 mb-4">
+              <Dropdown
+                name="Direction"
+                lists={["top", "bottom"]}
+                stateValue={validPosition}
+                setStateValue={setValidPosition}
+              />
             </div>
             {/* Range for changing the position of the navbar  */}
             <div className="grid gap-8 md:grid-cols-2">

@@ -16,7 +16,7 @@ type Props = {};
 export default function Transition({}: Props) {
   const [isClicked, setIsClicked] = useState(false);
   const [duration, setDuration] = useState(1);
-  const [delay, setDelay] = useState(1);
+  const [delay, setDelay] = useState(0);
 
   const onClickHandler = (e: any) => {
     setIsClicked(true);
@@ -25,7 +25,7 @@ export default function Transition({}: Props) {
     setTimeout(() => {
       setIsClicked(false);
       e.target.disabled = false;
-    }, duration * 1500 * delay);
+    }, duration * 1000 * (delay + 1));
   };
 
   return (
@@ -45,7 +45,7 @@ export default function Transition({}: Props) {
             />
             <Dropdown
               name="transition delay"
-              lists={[1, 2, 3]}
+              lists={[0, 1, 2, 3]}
               unit={"s"}
               stateValue={delay}
               setStateValue={setDelay}
