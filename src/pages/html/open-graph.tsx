@@ -37,7 +37,7 @@ export default function OpenGraph({}: Props) {
   <meta name="description" content="${description}" />
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" *content="${website}" />
+  <meta property="og:url" content="${website}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
@@ -152,7 +152,7 @@ export default function OpenGraph({}: Props) {
               ))}
             </BringChanges>
             {platforms == "facebook" ? (
-              <div className="bg-[#3a3b3c] duration-200 text-font-clr-1">
+              <div className="bg-[#3a3b3c] duration-200 text-white">
                 <motion.img
                   layoutId="image"
                   className="object-cover w-full aspect-video"
@@ -186,7 +186,7 @@ export default function OpenGraph({}: Props) {
                 </div>
               </div>
             ) : platforms == "linkedin" ? (
-              <div className="text-font-clr-1 duration-200 bg-slate-700">
+              <div className="text-white duration-200 bg-slate-700">
                 <motion.img
                   layoutId="image"
                   className="object-cover w-full aspect-video"
@@ -203,7 +203,7 @@ export default function OpenGraph({}: Props) {
                   <h3 className="font-semibold text-lg/8 text-sky-600">
                     {title}
                   </h3>
-                  <p className="text-font-clr-1">{description}</p>
+                  <p className="text-white">{description}</p>
                 </div>
                 <motion.img
                   layoutId="image"

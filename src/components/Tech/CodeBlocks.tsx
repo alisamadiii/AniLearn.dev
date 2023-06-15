@@ -58,7 +58,7 @@ export default function CodeBlocks({
   return (
     <div
       className={twMerge(
-        `w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${
+        `w-full my-8 border-2 rounded-lg bg-gray-100 dark:bg-box border-white-low-opacity ${
           widthFull ? "" : "max-w-input"
         }`,
         className

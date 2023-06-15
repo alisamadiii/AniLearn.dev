@@ -61,7 +61,7 @@ input[type="number"] {
       transition: opacity 500ms;
       background: radial-gradient(
         600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.6),
+        rgba(0, 0, 0, 0.6),
         transparent 20%
       );
       position: absolute;
@@ -80,7 +80,7 @@ input[type="number"] {
       width: 100%;
       background: radial-gradient(
         500px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.04),
+        rgba(0, 0, 0, 0.04),
         transparent 30%
       );
       opacity: 0;
@@ -92,6 +92,22 @@ input[type="number"] {
     #box:hover::before {
       opacity: 1;
       transition: opacity 300ms;
+    }
+
+    html.dark #box::after {
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.6),
+        transparent 20%
+      );
+    }
+
+    html.dark #box::before {
+      background: radial-gradient(
+        500px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.04),
+        transparent 30%
+      );
     }
   }
 
