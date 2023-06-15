@@ -17,36 +17,74 @@ For contributing to the code, you will need
 
 ### 🔖 Contribution steps
 
-1. Fork this repository
-2. Clone t
+We welcome contributions from anyone who is interested in improving this project. If you'd like to contribute, here are some ways you can get started:
 
-   ```console
-   $ git clone git@github.com:<your github username>/AniLearn.dev.git
+- Submit a bug report if you find any issues with the application.
+- Suggest new features or improvements.
+- Submit a pull request to fix a bug or add a feature after an issue is assigned to you.
+
+To submit a pull request, please follow these steps:
+
+1. Fork this repository.
+2. Clone the forked repository.
+
+   ```sh
+   git clone https://github.com/<your-github-username>/AniLearn.dev.git
    ```
 
-3. Navigate to the cloned directory
+3. Navigate to the project directory.
 
-   ```console
-   $ cd 4c-site
+   ```sh
+   cd AniLearn.dev
    ```
 
 4. Install dependencies
 
-   ```console
-   $ pnpm install
+   ```sh
+   pnpm install
    ```
 
-5. Start the project on `localhost`
+5. Create a new branch.
 
-   ```console
-   $ pnpm dev
+   ```sh
+   git checkout -b <your_branch_name>
    ```
+
+6. Make changes.
+
+7. Stage your changes.
+
+   ```sh
+   git add <filename>
+   ```
+8. Commit your changes.
+
+   ```sh
+   git commit -m "<your-commit-message>"
+   ```
+9. View and review your changes locally before pushing it.
+
+10. To run and view the application on localhost
+
+    ```sh
+    pnpm dev
+    ```
+
+11. Push your changes into your branch
+
+    ```sh
+    git push origin <your_branch_name>
+    ```
+
+12. Create a pull request from your branch to the original repository. 
+
+13. Congratulations on creating the pull request! Now, patiently await the review, address any requested changes, and soon your contribution will be merged.
 
 ### 🔖 Make your Work ease
 
-```console
-$ pnpm template
-```
+   ```sh
+   pnpm template
+   ```
 
 by running this command, everything will be set up for you to start writing codes.
 
