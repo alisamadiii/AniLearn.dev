@@ -52,7 +52,7 @@ export const EachReason = ({
   imageClassName,
   title,
   description,
-  image,
+  image
 }: EachReasonProps) => {
   return (
     <motion.div

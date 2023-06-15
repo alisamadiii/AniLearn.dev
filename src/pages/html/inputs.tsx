@@ -35,7 +35,11 @@ export default function InputTesting({}: Props) {
 
   return (
     <>
-      <MetaTag title="Inputs" image={null} description="" />
+      <MetaTag
+        title="Inputs"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>Input Testing</h1><p>The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.</p>" />
         <CodeBlocks
@@ -45,28 +49,94 @@ export default function InputTesting({}: Props) {
         />
         <Workplace className="">
           <LiveChanges className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
-            <Input name="button" type="button" />
-            <Input name="checkbox" type="checkbox" />
-            <Input name="color" type="color" />
-            <Input name="date" type="date" />
-            <Input name="datetime-local" type="datetime-local" />
-            <Input name="email" type="email" />
-            <Input name="file" type="file" />
-            <Input name="hidden" type="hidden" />
-            <Input name="image" type="image" />
-            <Input name="month" type="month" />
-            <Input name="number" type="number" />
-            <Input name="password" type="password" />
-            <Input name="radio" type="radio" />
-            <Input name="range" type="range" />
-            <Input name="reset" type="reset" />
-            <Input name="search" type="search" />
-            <Input name="submit" type="submit" />
-            <Input name="tel" type="tel" />
-            <Input name="text" type="text" />
-            <Input name="time" type="time" />
-            <Input name="url" type="url" />
-            <Input name="week" type="week" />
+            <Input
+              name="button"
+              type="button"
+            />
+            <Input
+              name="checkbox"
+              type="checkbox"
+            />
+            <Input
+              name="color"
+              type="color"
+            />
+            <Input
+              name="date"
+              type="date"
+            />
+            <Input
+              name="datetime-local"
+              type="datetime-local"
+            />
+            <Input
+              name="email"
+              type="email"
+            />
+            <Input
+              name="file"
+              type="file"
+            />
+            <Input
+              name="hidden"
+              type="hidden"
+            />
+            <Input
+              name="image"
+              type="image"
+            />
+            <Input
+              name="month"
+              type="month"
+            />
+            <Input
+              name="number"
+              type="number"
+            />
+            <Input
+              name="password"
+              type="password"
+            />
+            <Input
+              name="radio"
+              type="radio"
+            />
+            <Input
+              name="range"
+              type="range"
+            />
+            <Input
+              name="reset"
+              type="reset"
+            />
+            <Input
+              name="search"
+              type="search"
+            />
+            <Input
+              name="submit"
+              type="submit"
+            />
+            <Input
+              name="tel"
+              type="tel"
+            />
+            <Input
+              name="text"
+              type="text"
+            />
+            <Input
+              name="time"
+              type="time"
+            />
+            <Input
+              name="url"
+              type="url"
+            />
+            <Input
+              name="week"
+              type="week"
+            />
           </LiveChanges>
         </Workplace>
       </Container>

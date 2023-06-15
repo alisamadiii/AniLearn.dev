@@ -82,8 +82,7 @@ function generateTailwindColorGradient(hexCode: string) {
     var newB = Math.min(Math.round(b * (brightness / 255)), 255);
 
     // Convert the RGB values to hexadecimal format
-    var newHex =
-      "#" + componentToHex(newR) + componentToHex(newG) + componentToHex(newB);
+    var newHex = "#" + componentToHex(newR) + componentToHex(newG) + componentToHex(newB);
 
     // Generate the tailwindcss class using the color utility
     var tailwindClass = `${newHex}`;
@@ -120,9 +119,4 @@ function getContrastTextColor(backgroundColor: string) {
   return luminance > 0.5 ? "black" : "white";
 }
 
-export {
-  hexToRGB,
-  hexToHSL,
-  getContrastTextColor,
-  generateTailwindColorGradient,
-};
+export { hexToRGB, hexToHSL, getContrastTextColor, generateTailwindColorGradient };

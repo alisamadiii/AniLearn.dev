@@ -3,19 +3,10 @@ import Image from "next/image";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import {
-  Checkbox,
-  Information,
-  CodeBlocks,
-  GivingComment,
-  Input,
-} from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, GivingComment, Input } from "@components/Tech";
 
 type Props = {};
 
@@ -35,10 +26,18 @@ export default function ObjectFit({}: Props) {
 
   return (
     <>
-      <MetaTag title="object-fit" image={null} description="" />
+      <MetaTag
+        title="object-fit"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>object-fit</h1><p>The object-fit CSS property sets how the content of a replaced element, such as an <code>img</code> or <code>video</code>, should be resized to fit its container.</p>" />
-        <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
+        <CodeBlocks
+          codeString={Codes}
+          language="css"
+          fileName="style.css"
+        />
 
         <Workplace className="">
           <BringChanges className="flex justify-center mb-8">

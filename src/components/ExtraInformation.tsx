@@ -1,11 +1,7 @@
 import Container from "@layouts/Container";
 import React from "react";
 
-import {
-  AiFillLinkedin,
-  AiOutlineMail,
-  AiOutlineTwitter,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiOutlineMail, AiOutlineTwitter } from "react-icons/ai";
 
 type Props = {};
 
@@ -13,10 +9,7 @@ export default function ExtraInformation({}: Props) {
   return (
     <Container className="pt-8 border-t-2 border-white-low-opacity">
       <h2 className="mb-1 text-3xl font-bold text-font-clr-1">Contact Us</h2>
-      <p className="mb-6">
-        If you have any questions, you can reach out to us through these three
-        platforms.
-      </p>
+      <p className="mb-6">If you have any questions, you can reach out to us through these three platforms.</p>
       <div className="flex flex-wrap gap-4">
         <a
           href="mailto:webdeve1083@gmail.com"

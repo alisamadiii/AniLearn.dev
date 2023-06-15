@@ -6,12 +6,7 @@ import { Heading_3 } from "../Headings";
 // Types
 import { TechnologyProps } from "./index.types";
 
-export default function Technology({
-  name,
-  description,
-  link,
-  Icon,
-}: TechnologyProps) {
+export default function Technology({ name, description, link, Icon }: TechnologyProps) {
   useEffect(() => {
     document.body.onmousemove = (e) => {
       const boxes = document.querySelectorAll<HTMLDivElement>("#box");
@@ -36,9 +31,7 @@ export default function Technology({
         <div className="bg-[#dbdbdb] dark:bg-[#1B1E22] p-2 rounded-md text-3xl text-font-clr-1">
           <Icon />
         </div>
-        <Heading_3 className="mt-4 mb-1 text-2xl text-font-clr-1">
-          {name}
-        </Heading_3>
+        <Heading_3 className="mt-4 mb-1 text-2xl text-font-clr-1">{name}</Heading_3>
         <p className="mb-8 text-base/6">{description}</p>
         <Link
           href={link}

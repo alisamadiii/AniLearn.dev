@@ -12,14 +12,7 @@ type Props = {
 
 import { IoIosArrowDown } from "react-icons/io";
 
-export default function Dropdown({
-  name,
-  lists,
-  unit = null,
-  stateValue,
-  setStateValue,
-  margin,
-}: Props) {
+export default function Dropdown({ name, lists, unit = null, stateValue, setStateValue, margin }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLUListElement>(null);
 
@@ -49,9 +42,7 @@ export default function Dropdown({
         onClick={toggleList}
       >
         {name}
-        <IoIosArrowDown
-          className={`duration-200 ${isOpen ? "rotate-0" : "rotate-180"}`}
-        />
+        <IoIosArrowDown className={`duration-200 ${isOpen ? "rotate-0" : "rotate-180"}`} />
       </button>
       <AnimatePresence>
         {isOpen && (

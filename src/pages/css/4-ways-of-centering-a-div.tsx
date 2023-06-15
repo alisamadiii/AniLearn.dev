@@ -3,10 +3,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Checkbox, Information, CodeBlocks, Tabs } from "@components/Tech";
@@ -18,9 +15,9 @@ const PlaygroundAnimation: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", damping: 8 },
+    transition: { type: "spring", damping: 8 }
   },
-  exit: { opacity: 0, y: -10 },
+  exit: { opacity: 0, y: -10 }
 };
 
 export default function CenteringADiv({}: Props) {
@@ -50,7 +47,11 @@ export default function CenteringADiv({}: Props) {
 
   return (
     <>
-      <MetaTag title="4-ways-of-centering-a-div" image={null} description="" />
+      <MetaTag
+        title="4-ways-of-centering-a-div"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>4 ways of centering a div</h1><p>In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>" />
 
@@ -59,33 +60,25 @@ export default function CenteringADiv({}: Props) {
             codeString={way1}
             language="css"
             fileName="style.css"
-            className={`my-0 duration-200 ${
-              tab == 1 ? "" : "opacity-50 scale-95"
-            }`}
+            className={`my-0 duration-200 ${tab == 1 ? "" : "opacity-50 scale-95"}`}
           />
           <CodeBlocks
             codeString={way2}
             language="css"
             fileName="style.css"
-            className={`my-0 duration-200 ${
-              tab == 2 ? "" : "opacity-50 scale-95"
-            }`}
+            className={`my-0 duration-200 ${tab == 2 ? "" : "opacity-50 scale-95"}`}
           />
           <CodeBlocks
             codeString={way3}
             language="css"
             fileName="style.css"
-            className={`my-0 duration-200 ${
-              tab == 3 ? "" : "opacity-50 scale-95"
-            }`}
+            className={`my-0 duration-200 ${tab == 3 ? "" : "opacity-50 scale-95"}`}
           />
           <CodeBlocks
             codeString={way4}
             language="css"
             fileName="style.css"
-            className={`my-0 duration-200 ${
-              tab == 4 ? "" : "opacity-50 scale-95"
-            }`}
+            className={`my-0 duration-200 ${tab == 4 ? "" : "opacity-50 scale-95"}`}
           />
         </div>
 
@@ -105,15 +98,30 @@ export default function CenteringADiv({}: Props) {
           </BringChanges>
 
           <LiveChanges className="">
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence
+              mode="wait"
+              initial={false}
+            >
               {tab == 1 ? (
-                <Flex key={1} state={showLine} />
+                <Flex
+                  key={1}
+                  state={showLine}
+                />
               ) : tab == 2 ? (
-                <Grid key={2} state={showLine} />
+                <Grid
+                  key={2}
+                  state={showLine}
+                />
               ) : tab == 3 ? (
-                <GridWay2 key={3} state={showLine} />
+                <GridWay2
+                  key={3}
+                  state={showLine}
+                />
               ) : tab == 4 ? (
-                <Transform key={4} state={showLine} />
+                <Transform
+                  key={4}
+                  state={showLine}
+                />
               ) : (
                 <h1>Nothing</h1>
               )}
@@ -156,21 +164,15 @@ export const Flex = ({ state }: WaysOfCenteringADivProps) => {
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Flex"
-          onChange={(e) =>
-            setDisplay(e.target.checked == true ? "flex" : "block")
-          }
+          onChange={(e) => setDisplay(e.target.checked == true ? "flex" : "block")}
         />
         <Checkbox
           name="Justify-Content"
-          onChange={(e) =>
-            setJustifyContent(e.target.checked == true ? "center" : "start")
-          }
+          onChange={(e) => setJustifyContent(e.target.checked == true ? "center" : "start")}
         />
         <Checkbox
           name="align-items"
-          onChange={(e) =>
-            setAlignItems(e.target.checked == true ? "center" : "start")
-          }
+          onChange={(e) => setAlignItems(e.target.checked == true ? "center" : "start")}
         />
       </BringChanges>
     </motion.div>
@@ -204,21 +206,15 @@ export const Grid = ({ state }: WaysOfCenteringADivProps) => {
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Grid"
-          onChange={(e) =>
-            setDisplay(e.target.checked == true ? "grid" : "block")
-          }
+          onChange={(e) => setDisplay(e.target.checked == true ? "grid" : "block")}
         />
         <Checkbox
           name="Justify-Content"
-          onChange={(e) =>
-            setJustifyContent(e.target.checked == true ? "center" : "start")
-          }
+          onChange={(e) => setJustifyContent(e.target.checked == true ? "center" : "start")}
         />
         <Checkbox
           name="align-items"
-          onChange={(e) =>
-            setAlignItems(e.target.checked == true ? "center" : "start")
-          }
+          onChange={(e) => setAlignItems(e.target.checked == true ? "center" : "start")}
         />
       </BringChanges>
     </motion.div>
@@ -251,15 +247,11 @@ export const GridWay2 = ({ state }: WaysOfCenteringADivProps) => {
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Grid"
-          onChange={(e) =>
-            setDisplay(e.target.checked == true ? "grid" : "block")
-          }
+          onChange={(e) => setDisplay(e.target.checked == true ? "grid" : "block")}
         />
         <Checkbox
           name="Place-Items"
-          onChange={(e) =>
-            setPlaceItems(e.target.checked == true ? "center" : "start")
-          }
+          onChange={(e) => setPlaceItems(e.target.checked == true ? "center" : "start")}
         />
       </BringChanges>
     </motion.div>
@@ -290,16 +282,14 @@ export const Transform = ({ state }: WaysOfCenteringADivProps) => {
           } ${position} ${transform && "!-translate-x-1/2 !-translate-y-1/2"}`}
           style={{
             top,
-            left,
+            left
           }}
         />
       </motion.div>
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Position"
-          onChange={(e) =>
-            setPosition(e.target.checked == true ? "absolute" : "static")
-          }
+          onChange={(e) => setPosition(e.target.checked == true ? "absolute" : "static")}
         />
         <Checkbox
           name="Top"

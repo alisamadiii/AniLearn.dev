@@ -10,7 +10,9 @@
     "template": "node ./Template",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "coverage": "pnpm test -- --coverage"
+    "coverage": "pnpm test -- --coverage",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.16.3",
@@ -42,7 +44,19 @@
     "@types/react": "18.2.3",
     "@types/react-syntax-highlighter": "^15.5.7",
     "@types/testing-library__jest-dom": "^5.14.6",
+    "husky": "^8.0.3",
     "jest": "^29.5.0",
-    "jest-environment-jsdom": "^29.5.0"
+    "jest-environment-jsdom": "^29.5.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "2.8.8"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --config ./.prettierrc.js --write"
+    ],
+    "**/*.{css,scss,md,html,json}": [
+      "prettier --config ./.prettierrc.js --write"
+    ]
   }
 }

@@ -35,9 +35,9 @@ export default function ${capitalizeWord(fileName)}({}: Props) {
       <MetaTag title="${fileName}" image={null} description="" />
       <Container>
         <Information content="<h1>${fileName}</h1><p>tell us information about ${fileName}</p>" />
-        <CodeBlocks codeString={Codes} language="${
-          tech == "html" ? "htmlbars" : "css"
-        }" fileName="${tech == "html" ? "index.html" : "style.css"}" />
+        <CodeBlocks codeString={Codes} language="${tech == "html" ? "htmlbars" : "css"}" fileName="${
+    tech == "html" ? "index.html" : "style.css"
+  }" />
 
         <Workplace className="">
           <LiveChanges className="">

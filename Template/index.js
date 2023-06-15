@@ -12,9 +12,7 @@ function createFiles(fileName, tech, contributor) {
 
   const filePathTSX = path.join(folderPathForTSX, `${fileName}.tsx`);
 
-  const Template_1 = createSpinner(
-    `File ${fileName} created successfully! -- TSX`
-  ).start();
+  const Template_1 = createSpinner(`File ${fileName} created successfully! -- TSX`).start();
 
   fs.writeFile(filePathTSX, TemplateTSX(fileName, tech, contributor), (err) => {
     if (err) {
@@ -27,9 +25,7 @@ function createFiles(fileName, tech, contributor) {
   });
 
   setTimeout(() => {
-    figlet("Have FUN", (err, data) =>
-      console.log(gradient.pastel.multiline(data))
-    );
+    figlet("Have FUN", (err, data) => console.log(gradient.pastel.multiline(data)));
   }, 1500);
 }
 
@@ -39,26 +35,22 @@ inquirer
       type: "input",
       name: "name",
       message: "Your Name: ",
-      default: "Ali Reza",
+      default: "Ali Reza"
     },
     {
       type: "input",
       name: "FileName",
       message: "FileName: ",
-      default: "position",
+      default: "position"
     },
     {
       type: "list",
       name: "Tech",
       message: "Tech Stack: ",
       choices: ["HTML", "CSS"],
-      default: "CSS",
-    },
+      default: "CSS"
+    }
   ])
   .then((answers) => {
-    createFiles(
-      answers.FileName.toLowerCase(),
-      answers.Tech.toLowerCase(),
-      answers.name
-    );
+    createFiles(answers.FileName.toLowerCase(), answers.Tech.toLowerCase(), answers.name);
   });

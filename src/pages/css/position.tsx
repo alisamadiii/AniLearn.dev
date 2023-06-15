@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Information, Button_Tech, Range, Dropdown } from "@components/Tech";
@@ -22,7 +19,7 @@ const INITIAL_VALUE: {
   top: 0,
   right: 0,
   bottom: 0,
-  left: 0,
+  left: 0
 };
 
 export default function Position({}: Props) {
@@ -37,7 +34,11 @@ export default function Position({}: Props) {
 
   return (
     <>
-      <MetaTag title="position" image={null} description="" />
+      <MetaTag
+        title="position"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>position</h1><p>The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).</p>" />
 
@@ -52,40 +53,34 @@ export default function Position({}: Props) {
                   validPosition == "top"
                     ? {
                         top: positionValue.top,
-                        left: positionValue.left,
+                        left: positionValue.left
                       }
                     : {
                         right: positionValue.right,
-                        bottom: positionValue.bottom,
+                        bottom: positionValue.bottom
                       }
                 }
               >
                 <h1>Navbar</h1>
               </nav>
-              <motion.section layout="position" className="p-4">
+              <motion.section
+                layout="position"
+                className="p-4"
+              >
                 {[...Array(5)].map(() => (
                   <>
-                    <h2 className="mb-3 text-3xl text-font-clr-1">
-                      Lorem Ipsum
-                    </h2>
+                    <h2 className="mb-3 text-3xl text-font-clr-1">Lorem Ipsum</h2>
                     <p className="mb-8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Reiciendis pariatur aliquam amet, illum quasi, explicabo
-                      impedit sed ut dolore doloremque eum et debitis
-                      repellendus inventore accusamus deserunt corrupti autem
-                      officiis? Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Reiciendis pariatur aliquam amet, illum
-                      quasi, explicabo impedit sed ut dolore doloremque eum et
-                      debitis repellendus inventore accusamus deserunt corrupti
-                      autem officiis? Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Reiciendis pariatur aliquam amet, illum
-                      quasi, explicabo impedit sed ut dolore doloremque eum et
-                      debitis repellendus inventore accusamus deserunt corrupti
-                      autem officiis? Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Reiciendis pariatur aliquam amet, illum
-                      quasi, explicabo impedit sed ut dolore doloremque eum et
-                      debitis repellendus inventore accusamus deserunt corrupti
-                      autem officiis?
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis pariatur aliquam amet, illum
+                      quasi, explicabo impedit sed ut dolore doloremque eum et debitis repellendus inventore accusamus
+                      deserunt corrupti autem officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Reiciendis pariatur aliquam amet, illum quasi, explicabo impedit sed ut dolore doloremque eum et
+                      debitis repellendus inventore accusamus deserunt corrupti autem officiis? Lorem ipsum dolor sit
+                      amet consectetur adipisicing elit. Reiciendis pariatur aliquam amet, illum quasi, explicabo
+                      impedit sed ut dolore doloremque eum et debitis repellendus inventore accusamus deserunt corrupti
+                      autem officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis pariatur
+                      aliquam amet, illum quasi, explicabo impedit sed ut dolore doloremque eum et debitis repellendus
+                      inventore accusamus deserunt corrupti autem officiis?
                     </p>
                   </>
                 ))}

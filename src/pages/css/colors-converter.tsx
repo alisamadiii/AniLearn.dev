@@ -3,20 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Information, GivingComment } from "@components/Tech";
 
-import {
-  hexToRGB,
-  hexToHSL,
-  getContrastTextColor,
-  generateTailwindColorGradient,
-} from "@utils/ColorConverter";
+import { hexToRGB, hexToHSL, getContrastTextColor, generateTailwindColorGradient } from "@utils/ColorConverter";
 import SaveNotification from "@components/SaveNotification";
 
 type Props = {};
@@ -38,13 +30,20 @@ export default function ColorsConverter({}: Props) {
 
   return (
     <>
-      <MetaTag title="colors-converter" image={null} description="" />
+      <MetaTag
+        title="colors-converter"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>colors-converter</h1><p>tell us information about colors-converter</p>" />
 
         <Workplace className="">
           <BringChanges className="flex flex-col items-center">
-            <label htmlFor="" className="w-full max-w-input">
+            <label
+              htmlFor=""
+              className="w-full max-w-input"
+            >
               <input
                 type="text"
                 placeholder="#ffffff"
@@ -81,9 +80,7 @@ export default function ColorsConverter({}: Props) {
                   convertFunction={hexToHSL}
                 />
                 <GivingComment
-                  comment={`Your text must be ${getContrastTextColor(
-                    customColor
-                  )} to match with the background.`}
+                  comment={`Your text must be ${getContrastTextColor(customColor)} to match with the background.`}
                 >
                   <ConvertingColor
                     name="Text Color"
@@ -93,16 +90,14 @@ export default function ColorsConverter({}: Props) {
                 </GivingComment>
               </div>
               <div className="flex flex-col items-center justify-center mt-8 text-sm md:flex-row">
-                {generateTailwindColorGradient(colorNameArg(customColor)).map(
-                  (color, index) => (
-                    <Colors
-                      key={index}
-                      color={color}
-                      index={index}
-                      getContrastTextColor={getContrastTextColor}
-                    />
-                  )
-                )}
+                {generateTailwindColorGradient(colorNameArg(customColor)).map((color, index) => (
+                  <Colors
+                    key={index}
+                    color={color}
+                    index={index}
+                    getContrastTextColor={getContrastTextColor}
+                  />
+                ))}
               </div>
             </LiveChanges>
           </motion.div>
@@ -137,15 +132,13 @@ export const Colors = ({ color, getContrastTextColor, index }: ColorProps) => {
         style={{
           background: color,
           color: getContrastTextColor(color),
-          transitionDuration: `${index * 0.2}s`,
+          transitionDuration: `${index * 0.2}s`
         }}
         onClick={onClickHandler}
       >
         {color.replace("#", "")}
       </div>
-      <AnimatePresence>
-        {isSaved && <SaveNotification name={`Saved - ${color}`} />}
-      </AnimatePresence>
+      <AnimatePresence>{isSaved && <SaveNotification name={`Saved - ${color}`} />}</AnimatePresence>
     </>
   );
 };
@@ -156,11 +149,7 @@ type ConvertingColorProps = {
   convertFunction: (a: string) => ReactNode;
 };
 
-export const ConvertingColor = ({
-  name,
-  color,
-  convertFunction,
-}: ConvertingColorProps) => {
+export const ConvertingColor = ({ name, color, convertFunction }: ConvertingColorProps) => {
   const [isSaved, setIsSaved] = useState(false);
 
   const onClickHandler = () => {
@@ -182,11 +171,7 @@ export const ConvertingColor = ({
         {name}: <span>{convertFunction(colorNameArg(color))}</span>
       </p>
       <AnimatePresence>
-        {isSaved && (
-          <SaveNotification
-            name={`Saved - ${convertFunction(colorNameArg(color))}`}
-          />
-        )}
+        {isSaved && <SaveNotification name={`Saved - ${convertFunction(colorNameArg(color))}`} />}
       </AnimatePresence>
     </>
   );

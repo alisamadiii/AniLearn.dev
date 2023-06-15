@@ -10,9 +10,9 @@ const SuisseIntl = localFont({
   src: [
     {
       path: "../../assets/Fonts/SuisseIntl-Light.otf",
-      weight: "400",
-    },
-  ],
+      weight: "400"
+    }
+  ]
 });
 
 export function Heading_1({ children, ...otherProps }: Props) {
@@ -60,9 +60,5 @@ export function Paragraph({ children }: Props) {
 }
 
 export function Small_Gradient({ children }: Props) {
-  return (
-    <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-      {children}
-    </small>
-  );
+  return <small className="text-transparent uppercase bg-gradient-text bg-clip-text">{children}</small>;
 }

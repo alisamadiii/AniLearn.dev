@@ -7,12 +7,7 @@ type Props = {
   setClassName: (a: string) => void;
 };
 
-export default function Button_Tech({
-  value,
-  classNameValue,
-  className,
-  setClassName,
-}: Props) {
+export default function Button_Tech({ value, classNameValue, className, setClassName }: Props) {
   return (
     <button
       onClick={() => setClassName(classNameValue)}

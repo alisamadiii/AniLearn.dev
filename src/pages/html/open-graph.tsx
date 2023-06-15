@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Information, CodeBlocks } from "@components/Tech";
@@ -25,9 +22,7 @@ export default function OpenGraph({}: Props) {
   const [image, setImage] = useState("https://i.ibb.co/9hyw1rL/Meta-Tag.png");
 
   // Platforms
-  const [platforms, setPlatforms] = useState<
-    "facebook" | "twitter" | "linkedin" | "discord"
-  >("facebook");
+  const [platforms, setPlatforms] = useState<"facebook" | "twitter" | "linkedin" | "discord">("facebook");
 
   const [isSelected, setIsSelected] = useState(platformsData[0].id);
 
@@ -54,7 +49,11 @@ export default function OpenGraph({}: Props) {
 
   return (
     <>
-      <MetaTag title="open-graph" image={null} description="" />
+      <MetaTag
+        title="open-graph"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>open-graph</h1><p>The Open Graph protocol enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.</p><p>To turn your web pages into graph objects, you need to add basic metadata to your page. We've based the initial version of the protocol on RDFa which means that you'll place additional <code>meta</code> tags in the <code>head</code> of your web page.</p>" />
         <CodeBlocks
@@ -67,12 +66,13 @@ export default function OpenGraph({}: Props) {
         <Workplace className="grid items-start gap-4 md:grid-cols-2">
           <BringChanges className="p-6 border rounded-lg border-white-low-opacity">
             <h4 className="text-3xl font-semibold text-font-clr-1">Edit</h4>
-            <p className="mt-2">
-              This information will be displayed on Google and social media.
-            </p>
+            <p className="mt-2">This information will be displayed on Google and social media.</p>
             {/* Inputs */}
             <div className="mt-8 space-y-4">
-              <label htmlFor="title" className="flex flex-col gap-1">
+              <label
+                htmlFor="title"
+                className="flex flex-col gap-1"
+              >
                 <span className="text-lg text-font-clr-1">Title</span>
                 <input
                   type="text"
@@ -83,11 +83,13 @@ export default function OpenGraph({}: Props) {
                   className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
                 />
                 <small>
-                  <span className="text-font-clr-1/80">Recommended</span>: 60
-                  characters
+                  <span className="text-font-clr-1/80">Recommended</span>: 60 characters
                 </small>
               </label>
-              <label htmlFor="website" className="flex flex-col gap-1">
+              <label
+                htmlFor="website"
+                className="flex flex-col gap-1"
+              >
                 <span className="text-lg text-font-clr-1">Website</span>
                 <input
                   type="url"
@@ -98,7 +100,10 @@ export default function OpenGraph({}: Props) {
                   className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
                 />
               </label>
-              <label htmlFor="description" className="flex flex-col gap-1">
+              <label
+                htmlFor="description"
+                className="flex flex-col gap-1"
+              >
                 <span className="text-lg text-font-clr-1">Description</span>
                 <textarea
                   id="description"
@@ -108,11 +113,13 @@ export default function OpenGraph({}: Props) {
                   className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
                 />
                 <small>
-                  <span className="text-font-clr-1/80">Recommended</span>: 155 -
-                  160 characters
+                  <span className="text-font-clr-1/80">Recommended</span>: 155 - 160 characters
                 </small>
               </label>
-              <label htmlFor="image" className="flex flex-col gap-1">
+              <label
+                htmlFor="image"
+                className="flex flex-col gap-1"
+              >
                 <span className="text-lg text-font-clr-1">Image</span>
                 <input
                   type="url"
@@ -159,13 +166,9 @@ export default function OpenGraph({}: Props) {
                   src={image}
                 />
                 <div className="px-4 py-1 pb-2 -space-y-1">
-                  <small className="font-light uppercase opacity-60">
-                    www.{website}
-                  </small>
+                  <small className="font-light uppercase opacity-60">www.{website}</small>
                   <h3 className="text-lg font-medium">{title}</h3>
-                  <p className="font-light text-sm/5 opacity-60">
-                    {description}
-                  </p>
+                  <p className="font-light text-sm/5 opacity-60">{description}</p>
                 </div>
               </div>
             ) : platforms == "twitter" ? (
@@ -176,13 +179,9 @@ export default function OpenGraph({}: Props) {
                   src={image}
                 />
                 <div className="px-4 py-1 pb-2 -space-y-1 border-2 border-t-0 border-white-low-opacity rounded-b-2xl">
-                  <small className="font-light uppercase opacity-60">
-                    www.{website}
-                  </small>
+                  <small className="font-light uppercase opacity-60">www.{website}</small>
                   <h3 className="text-font-clr-1">{title}</h3>
-                  <p className="font-light text-sm/5 opacity-60">
-                    {description}
-                  </p>
+                  <p className="font-light text-sm/5 opacity-60">{description}</p>
                 </div>
               </div>
             ) : platforms == "linkedin" ? (
@@ -200,9 +199,7 @@ export default function OpenGraph({}: Props) {
             ) : platforms == "discord" ? (
               <div className="bg-[#25272b] p-4 duration-200 rounded-md border-l-2 border-[#1c1e21]">
                 <div className="py-1 pb-2 mb-2">
-                  <h3 className="font-semibold text-lg/8 text-sky-600">
-                    {title}
-                  </h3>
+                  <h3 className="font-semibold text-lg/8 text-sky-600">{title}</h3>
                   <p className="text-font-clr-1">{description}</p>
                 </div>
                 <motion.img

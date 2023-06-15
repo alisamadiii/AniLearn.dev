@@ -2,14 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "images.unsplash.com",
-      "www.howtogeek.com",
-      "pbs.twimg.com",
-      "media.licdn.com",
-    ],
+    domains: ["images.unsplash.com", "www.howtogeek.com", "pbs.twimg.com", "media.licdn.com"]
   },
-  transpilePackages: ["react-syntax-highlighter"],
+  transpilePackages: ["react-syntax-highlighter"]
 };
 
 module.exports = nextConfig;

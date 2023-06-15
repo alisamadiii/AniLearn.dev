@@ -26,11 +26,6 @@
       "@utils/*": ["./utils/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/tech/html/inputs.mdx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/tech/html/inputs.mdx"],
   "exclude": ["node_modules"]
 }

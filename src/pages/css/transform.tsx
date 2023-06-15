@@ -3,10 +3,7 @@ import Image from "next/image";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Information, CodeBlocks, Range } from "@components/Tech";
@@ -42,7 +39,11 @@ export default function Transform({}: Props) {
 
   return (
     <>
-      <MetaTag title="transform" image={null} description="" />
+      <MetaTag
+        title="transform"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>transform</h1><p>The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.</p>" />
 
@@ -75,7 +76,7 @@ export default function Transform({}: Props) {
                   style={{
                     transform: `scale(${
                       scale * 0.01
-                    }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
+                    }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`
                   }}
                 />
               </div>
@@ -97,7 +98,7 @@ export default function Transform({}: Props) {
                   style={{
                     transform: `scale(${
                       scale * 0.01
-                    }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`,
+                    }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`
                   }}
                 />
               </div>

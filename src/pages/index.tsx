@@ -89,12 +89,10 @@ export default function Home() {
               eases learning process.
             </Heading_1>
             <Heading_2 className="text-2xl text-black dark:text-transparent md:text-4xl dark:bg-clip-text dark:bg-gradient-text-2">
-              Learning something with animation doesn&apos;t get easier than
-              this
+              Learning something with animation doesn&apos;t get easier than this
             </Heading_2>
             <p className="md:text-lg font-medium w-full max-w-[400px]">
-              We offer top-notch content for easy learning, with clear visual
-              development principles.
+              We offer top-notch content for easy learning, with clear visual development principles.
             </p>
             <Link
               href={"#get-started"}
@@ -113,7 +111,7 @@ export default function Home() {
                 transform: `rotate(10deg)`,
                 rotateX,
                 y,
-                opacity,
+                opacity
               }}
             >
               <Image
@@ -127,17 +125,16 @@ export default function Home() {
           </Container>
         </header>
 
-        <section id="get-started" className="py-12 overflow-hidden">
+        <section
+          id="get-started"
+          className="py-12 overflow-hidden"
+        >
           <Container className="relative">
             <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
               Web development technologies
             </div>
-            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-              technologies
-            </small>
-            <Heading_2 className="mt-2 text-4xl text-font-clr-1">
-              Web development technologies
-            </Heading_2>
+            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">technologies</small>
+            <Heading_2 className="mt-2 text-4xl text-font-clr-1">Web development technologies</Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
             {/* Gradient background */}
             <div className="absolute h-24 translate-y-24 w-96 bg-primary/20 -z-10 blur-3xl" />
@@ -167,16 +164,9 @@ export default function Home() {
             <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
               Why this website?
             </div>
-            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-              reasons
-            </small>
-            <Heading_2 className="mt-2 text-4xl text-font-clr-1">
-              Why this website?
-            </Heading_2>
-            <p>
-              Using a website that allows users to visually work with CSS offers
-              several advantages:
-            </p>
+            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">reasons</small>
+            <Heading_2 className="mt-2 text-4xl text-font-clr-1">Why this website?</Heading_2>
+            <p>Using a website that allows users to visually work with CSS offers several advantages:</p>
             {/* container */}
             <div className="relative grid grid-cols-4 gap-4 mt-8">
               <ReasonComponent />
@@ -188,8 +178,7 @@ export default function Home() {
         <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
           <div className="relative w-full max-w-[1000px] bg-box border border-white-low-opacity/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
             <h2 className="font-medium text-font-clr-1 text-2xl/8">
-              I am making animated contents on Twitter, and I know they will be
-              helpful when learning something.
+              I am making animated contents on Twitter, and I know they will be helpful when learning something.
             </h2>
             <div className="flex gap-2">
               <a
@@ -213,9 +202,7 @@ export default function Home() {
         {/* Testimonials */}
         <section className="py-24">
           <Container>
-            <Heading_2 className="mt-2 mb-8 text-4xl text-font-clr-1">
-              Testimonials
-            </Heading_2>
+            <Heading_2 className="mt-2 mb-8 text-4xl text-font-clr-1">Testimonials</Heading_2>
             <div className="flex flex-wrap gap-6">
               {Testimonials.map((t) => {
                 const { id, name, testimonial, headline, image } = t;
@@ -225,7 +212,7 @@ export default function Home() {
                 return (
                   <div
                     key={id}
-                    className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity bg-box isolate grow basis-72 hover:text-font-clr-1 hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
+                    className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity bg-box isolate grow basis-72 hover:text-font-clr-1 hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200 hover:text-white"
                   >
                     <p>{testimonial}</p>
                     <div className="flex items-center gap-2 mt-auto font-medium">
@@ -239,9 +226,7 @@ export default function Home() {
                         />
                         <Icon
                           className={`absolute bottom-0 right-0 text-lg translate-x-1 translate-y-1 ${
-                            SocialMedia == "twitter"
-                              ? "text-twitter"
-                              : "text-linkedin"
+                            SocialMedia == "twitter" ? "text-twitter" : "text-linkedin"
                           }`}
                         />
                       </div>

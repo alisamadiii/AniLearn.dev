@@ -149,10 +149,7 @@ input[type="number"] {
   transition: all 300ms ease;
 }
 
-.toggler-wrapper.style-12
-  input[type="checkbox"]:checked
-  + .toggler-slider
-  .toggler-knob {
+.toggler-wrapper.style-12 input[type="checkbox"]:checked + .toggler-slider .toggler-knob {
   left: calc(100% - 14px - 3px);
 }
 

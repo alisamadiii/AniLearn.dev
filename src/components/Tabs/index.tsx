@@ -13,9 +13,7 @@ export default function Tabs({ tabs, stateValue, setStateValue }: Props) {
       {tabs.map((tab, index) => (
         <li
           key={index}
-          className={`relative px-2 py-1 cursor-pointer hover:opacity-90 ${
-            index + 1 == stateValue && "text-white"
-          }`}
+          className={`relative px-2 py-1 cursor-pointer hover:opacity-90 ${index + 1 == stateValue && "text-white"}`}
           onClick={() => setStateValue(index + 1)}
         >
           {index + 1 == stateValue && (

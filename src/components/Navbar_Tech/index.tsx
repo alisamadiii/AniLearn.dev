@@ -11,10 +11,7 @@ import { IoIosArrowDown, IoMdClose } from "react-icons/io";
 // Types
 import { LinksProps, NavbarTechProps } from "./index.types";
 
-export default function Navbar_Tech({
-  isNavbar,
-  setIsNavbar,
-}: NavbarTechProps) {
+export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) {
   return (
     <nav
       className={`fixed md:sticky top-0 left-0 w-full md:w-[220px] overflow-auto px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
@@ -30,9 +27,7 @@ export default function Navbar_Tech({
           >
             AniLearn.dev
           </Link>
-          <p className="text-xs">
-            Learning something with animation doesn&apos;t get easier than this
-          </p>
+          <p className="text-xs">Learning something with animation doesn&apos;t get easier than this</p>
         </div>
         <motion.div
           className={`p-2 text-xl rounded-full md:hidden bg-red-700 duration-200 z-50`}
@@ -42,8 +37,14 @@ export default function Navbar_Tech({
         </motion.div>
       </div>
       <ul className="mt-4">
-        <Links techName="HTML" tech={HTML} />
-        <Links techName="CSS" tech={CSS} />
+        <Links
+          techName="HTML"
+          tech={HTML}
+        />
+        <Links
+          techName="CSS"
+          tech={CSS}
+        />
       </ul>
     </nav>
   );
@@ -63,9 +64,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
         onClick={() => setOpen(!open)}
       >
         <span>{techName}</span>
-        <IoIosArrowDown
-          className={`duration-200 ${open ? "rotate-0" : "-rotate-90"} `}
-        />
+        <IoIosArrowDown className={`duration-200 ${open ? "rotate-0" : "-rotate-90"} `} />
       </button>
       <div className="px-2">
         <AnimatePresence initial={false}>
