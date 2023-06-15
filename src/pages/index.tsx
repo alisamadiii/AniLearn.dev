@@ -56,7 +56,7 @@ export default function Home() {
             <Container className="flex items-center justify-between">
               <Link
                 href={"/"}
-                className="flex items-center gap-1 text-lg font-semibold text-font-clr-1 group"
+                className="flex items-center gap-1 text-lg font-semibold text-font-clr group"
               >
                 <Logo />
                 AniLearn.dev
@@ -65,14 +65,14 @@ export default function Home() {
                 <a
                   href="https://github.com/AliReza1083/AniLearn.dev"
                   target="_blank"
-                  className="text-2xl hover:text-font-clr-1"
+                  className="text-2xl hover:text-font-clr"
                 >
                   <AiFillGithub />
                 </a>
                 <Link
                   href={"#get-started"}
                   scroll={false}
-                  className="flex items-center px-4 py-2 text-xs rounded-full text-font-clr-1 bg-button group"
+                  className="flex items-center px-4 py-2 text-xs rounded-full text-font-clr bg-button group"
                 >
                   Start Now
                   <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
@@ -82,13 +82,13 @@ export default function Home() {
           </nav>
           {/* Section */}
           <Container className="flex flex-col items-center gap-4 mt-32 text-center">
-            <Heading_1 className="text-4xl text-center text-font-clr-1 md:text-5xl lg:text-6xl">
+            <Heading_1 className="text-4xl text-center text-white md:text-5xl lg:text-6xl">
               <span className="-z-10 relative p-2 isolate font-black before:content-[''] text-white before:w-full before:h-full before:bg-white before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-l before:from-primary before:to-secondary before:rounded-md">
                 Animation
               </span>{" "}
               eases learning process.
             </Heading_1>
-            <Heading_2 className="text-2xl text-black dark:text-transparent md:text-4xl dark:bg-clip-text dark:bg-gradient-text-2">
+            <Heading_2 className="text-2xl text-transparent md:text-4xl bg-clip-text bg-gradient-text-2">
               Learning something with animation doesn&apos;t get easier than
               this
             </Heading_2>
@@ -135,7 +135,7 @@ export default function Home() {
             <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
               technologies
             </small>
-            <Heading_2 className="mt-2 text-4xl text-font-clr-1">
+            <Heading_2 className="mt-2 text-4xl text-font-clr">
               Web development technologies
             </Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
@@ -170,7 +170,7 @@ export default function Home() {
             <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
               reasons
             </small>
-            <Heading_2 className="mt-2 text-4xl text-font-clr-1">
+            <Heading_2 className="mt-2 text-4xl text-font-clr">
               Why this website?
             </Heading_2>
             <p>
@@ -187,7 +187,7 @@ export default function Home() {
         {/* ShoutOut */}
         <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
           <div className="relative w-full max-w-[1000px] bg-box border border-white-low-opacity/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
-            <h2 className="font-medium text-font-clr-1 text-2xl/8">
+            <h2 className="font-medium text-font-clr text-2xl/8">
               I am making animated contents on Twitter, and I know they will be
               helpful when learning something.
             </h2>
@@ -195,14 +195,14 @@ export default function Home() {
               <a
                 href="https://www.alirezasamadi.com/twitter-activity/works"
                 target="_blank"
-                className="underline decoration-2 hover:text-font-clr-1"
+                className="underline decoration-2 hover:text-font-clr"
               >
                 Website
               </a>
               <a
                 href="https://twitter.com/Ali_Developer05"
                 target="_blank"
-                className="underline decoration-2 hover:text-font-clr-1"
+                className="underline decoration-2 hover:text-font-clr"
               >
                 Twitter
               </a>
@@ -213,7 +213,7 @@ export default function Home() {
         {/* Testimonials */}
         <section className="py-24">
           <Container>
-            <Heading_2 className="mt-2 mb-8 text-4xl text-font-clr-1">
+            <Heading_2 className="mt-2 mb-8 text-4xl text-font-clr">
               Testimonials
             </Heading_2>
             <div className="flex flex-wrap gap-6">
@@ -225,7 +225,7 @@ export default function Home() {
                 return (
                   <div
                     key={id}
-                    className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity bg-box isolate grow basis-72 hover:text-font-clr-1 hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
+                    className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity bg-box isolate grow basis-72 hover:text-font-clr hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
                   >
                     <p>{testimonial}</p>
                     <div className="flex items-center gap-2 mt-auto font-medium">

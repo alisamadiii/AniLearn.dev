@@ -82,7 +82,7 @@ export default function FlexWrap({}: Props) {
           </LiveChanges>
           <BringChanges className="w-full mx-auto mt-8 space-y-6 max-w-playground">
             <div>
-              <h2 className="mb-4 text-xl text-font-clr-1">Parent</h2>
+              <h2 className="mb-4 text-xl text-font-clr">Parent</h2>
               <GivingComment comment="The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines.">
                 <Checkbox
                   name="Flex Wrap"
@@ -91,7 +91,7 @@ export default function FlexWrap({}: Props) {
               </GivingComment>
             </div>
             <div className="flex flex-col items-start">
-              <h2 className="mb-4 text-xl text-font-clr-1">Children</h2>
+              <h2 className="mb-4 text-xl text-font-clr">Children</h2>
               <GivingComment comment="Flex-grow property assigns remaining space to flex items based on their specified grow factor.">
                 <Checkbox
                   name="Flex Grow"

@@ -26,7 +26,7 @@ export default function Navbar_Tech({
           <Link
             href={"/"}
             onClick={() => setIsNavbar(false)}
-            className="text-lg font-black text-font-clr-1"
+            className="text-lg font-black text-white"
           >
             AniLearn.dev
           </Link>
@@ -57,7 +57,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
   return (
     <li className="mt-2">
       <button
-        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-font-clr-1 cursor-pointer ${
+        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-white cursor-pointer ${
           open && "bg-white-low-opacity"
         }`}
         onClick={() => setOpen(!open)}
@@ -83,8 +83,8 @@ export const Links = ({ tech, techName }: LinksProps) => {
                   <Link
                     key={t.id}
                     href={t.link}
-                    className={`relative w-full inline-block py-1 px-3 hover:text-font-clr-1 border-l-2 border-white-low-opacity focus:outline-none focus:text-font-clr-1 ${
-                      router.asPath == t.link && "text-font-clr-1"
+                    className={`relative w-full inline-block py-1 px-3 hover:text-white border-l-2 border-white-low-opacity focus:outline-none focus:text-white ${
+                      router.asPath == t.link && "text-white"
                     }`}
                   >
                     {t.name}
@@ -92,7 +92,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
                       <motion.div
                         layoutId="link"
                         transition={{ duration: 0.2 }}
-                        className="absolute top-0 left-0 w-[2px] h-full bg-black dark:bg-white"
+                        className="absolute top-0 left-0 w-[2px] h-full bg-white"
                       />
                     )}
                   </Link>

@@ -92,7 +92,7 @@ export default function Transition({}: Props) {
           <button
             className={`px-4 py-2 mt-3 rounded-md duration-200 ${
               isClicked
-                ? "bg-primary text-font-clr-1 cursor-not-allowed"
+                ? "bg-primary text-font-clr cursor-not-allowed"
                 : "bg-button"
             }`}
             onClick={(e) => onClickHandler(e)}

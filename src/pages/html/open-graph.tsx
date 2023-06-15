@@ -66,14 +66,14 @@ export default function OpenGraph({}: Props) {
 
         <Workplace className="grid items-start gap-4 md:grid-cols-2">
           <BringChanges className="p-6 border rounded-lg border-white-low-opacity">
-            <h4 className="text-3xl font-semibold text-font-clr-1">Edit</h4>
+            <h4 className="text-3xl font-semibold text-font-clr">Edit</h4>
             <p className="mt-2">
               This information will be displayed on Google and social media.
             </p>
             {/* Inputs */}
             <div className="mt-8 space-y-4">
               <label htmlFor="title" className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr-1">Title</span>
+                <span className="text-lg text-font-clr">Title</span>
                 <input
                   type="text"
                   placeholder="Ali Reza | Portfolio"
@@ -83,12 +83,12 @@ export default function OpenGraph({}: Props) {
                   className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
                 />
                 <small>
-                  <span className="text-font-clr-1/80">Recommended</span>: 60
+                  <span className="text-font-clr/80">Recommended</span>: 60
                   characters
                 </small>
               </label>
               <label htmlFor="website" className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr-1">Website</span>
+                <span className="text-lg text-font-clr">Website</span>
                 <input
                   type="url"
                   placeholder="https://"
@@ -99,7 +99,7 @@ export default function OpenGraph({}: Props) {
                 />
               </label>
               <label htmlFor="description" className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr-1">Description</span>
+                <span className="text-lg text-font-clr">Description</span>
                 <textarea
                   id="description"
                   rows={5}
@@ -108,12 +108,12 @@ export default function OpenGraph({}: Props) {
                   className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
                 />
                 <small>
-                  <span className="text-font-clr-1/80">Recommended</span>: 155 -
+                  <span className="text-font-clr/80">Recommended</span>: 155 -
                   160 characters
                 </small>
               </label>
               <label htmlFor="image" className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr-1">Image</span>
+                <span className="text-lg text-font-clr">Image</span>
                 <input
                   type="url"
                   placeholder="https://"
@@ -132,7 +132,7 @@ export default function OpenGraph({}: Props) {
                 <button
                   key={platform.id}
                   className={`relative px-4 py-1 text-sm rounded-full duration-200 capitalize ${
-                    platforms == platform.platform && "text-font-clr-1"
+                    platforms == platform.platform && "text-font-clr"
                   }`}
                   onClick={() => {
                     setPlatforms(platform.platform);
@@ -179,7 +179,7 @@ export default function OpenGraph({}: Props) {
                   <small className="font-light uppercase opacity-60">
                     www.{website}
                   </small>
-                  <h3 className="text-font-clr-1">{title}</h3>
+                  <h3 className="text-font-clr">{title}</h3>
                   <p className="font-light text-sm/5 opacity-60">
                     {description}
                   </p>

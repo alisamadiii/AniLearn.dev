@@ -70,7 +70,7 @@ export default function Gradient({}: Props) {
                 key={Math.floor(Math.random() * 1000)}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="w-full py-4 font-medium text-center text-font-clr-1 h-52 rounded-xl"
+                className="w-full py-4 font-medium text-center text-font-clr h-52 rounded-xl"
                 style={{
                   background: `linear-gradient(${45}deg, ${Gradients[
                     selectedGradient
@@ -96,13 +96,13 @@ export default function Gradient({}: Props) {
           <BringChanges className="">
             <div className="flex gap-4 mt-4">
               <button
-                className="px-4 py-2 text-font-clr-1 duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
+                className="px-4 py-2 text-font-clr duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
                 onClick={() => changingGradient("decrease")}
               >
                 <IoIosArrowBack />
               </button>
               <button
-                className="px-4 py-2 text-font-clr-1 duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
+                className="px-4 py-2 text-font-clr duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
                 onClick={() => changingGradient("increase")}
               >
                 <IoIosArrowForward />
