@@ -6,6 +6,7 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import confetti from "canvas-confetti";
 import { twMerge } from "tailwind-merge";
+import { useTheme } from "next-themes";
 
 type Props = {
   codeString: string;
@@ -29,6 +30,7 @@ export default function CodeBlocks({
   wrapLongLines = false,
 }: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
+  const { theme, setTheme } = useTheme();
 
   const copyFunction = () => {
     navigator.clipboard.writeText(codeString);
@@ -49,8 +51,7 @@ export default function CodeBlocks({
   };
 
   const themeChanging = () => {
-    const html = document.querySelector("html");
-    if (html?.classList.contains("dark")) return tomorrowNight;
+    if (theme == "dark") return tomorrowNight;
     else return tomorrow;
   };
 

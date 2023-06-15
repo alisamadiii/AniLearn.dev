@@ -14,7 +14,7 @@ export default function Tabs({ tabs, stateValue, setStateValue }: Props) {
         <li
           key={index}
           className={`relative px-2 py-1 cursor-pointer hover:opacity-90 ${
-            index + 1 == stateValue && "text-font-clr-1"
+            index + 1 == stateValue && "text-white"
           }`}
           onClick={() => setStateValue(index + 1)}
         >

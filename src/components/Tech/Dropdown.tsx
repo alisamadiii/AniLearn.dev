@@ -7,6 +7,7 @@ type Props = {
   unit?: string | null;
   stateValue: any;
   setStateValue: (a: any) => void;
+  margin: boolean;
 };
 
 import { IoIosArrowDown } from "react-icons/io";
@@ -17,6 +18,7 @@ export default function Dropdown({
   unit = null,
   stateValue,
   setStateValue,
+  margin,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLUListElement>(null);
@@ -41,7 +43,7 @@ export default function Dropdown({
   }, []);
 
   return (
-    <div className="relative inline-block mb-3">
+    <div className={`relative inline-block ${margin && "mb-3"}`}>
       <button
         className="flex items-center w-full gap-4 px-2 py-1 text-left capitalize border rounded-md bg-box border-white-low-opacity"
         onClick={toggleList}

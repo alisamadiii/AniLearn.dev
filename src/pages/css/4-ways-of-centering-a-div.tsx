@@ -149,7 +149,7 @@ export const Flex = ({ state }: WaysOfCenteringADivProps) => {
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-white/80" : "bg-white"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
       </motion.div>
@@ -197,7 +197,7 @@ export const Grid = ({ state }: WaysOfCenteringADivProps) => {
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-white/80" : "bg-white"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
       </motion.div>
@@ -244,7 +244,7 @@ export const GridWay2 = ({ state }: WaysOfCenteringADivProps) => {
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-white/80" : "bg-white"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
       </motion.div>
@@ -286,7 +286,7 @@ export const Transform = ({ state }: WaysOfCenteringADivProps) => {
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-white/80" : "bg-white"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           } ${position} ${transform && "!-translate-x-1/2 !-translate-y-1/2"}`}
           style={{
             top,

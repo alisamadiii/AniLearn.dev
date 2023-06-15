@@ -88,7 +88,7 @@ export default function Home() {
               </span>{" "}
               eases learning process.
             </Heading_1>
-            <Heading_2 className="text-2xl text-transparent md:text-4xl bg-clip-text bg-gradient-text-2 dark:!text-black">
+            <Heading_2 className="text-2xl text-black dark:text-transparent md:text-4xl dark:bg-clip-text dark:bg-gradient-text-2">
               Learning something with animation doesn&apos;t get easier than
               this
             </Heading_2>

@@ -92,7 +92,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
                       <motion.div
                         layoutId="link"
                         transition={{ duration: 0.2 }}
-                        className="absolute top-0 left-0 w-[2px] h-full bg-white"
+                        className="absolute top-0 left-0 w-[2px] h-full bg-black dark:bg-white"
                       />
                     )}
                   </Link>
