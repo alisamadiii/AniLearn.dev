@@ -131,6 +131,7 @@ export default function Position({}: Props) {
                 lists={["top", "bottom"]}
                 stateValue={validPosition}
                 setStateValue={setValidPosition}
+                margin={true}
               />
             </div>
             {/* Range for changing the position of the navbar  */}
