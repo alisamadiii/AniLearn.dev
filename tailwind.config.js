@@ -16,6 +16,7 @@ module.exports = {
         "font-clr-1": "var(--clr-font-1)",
         "font-clr-2": "var(--clr-font-2)",
         "background-clr": "var(--clr-background)",
+        rectangular: "var(--clr-rectangular)",
         "blur-clr": "var(--clr-blur)",
         box: "var(--clr-box)",
         "mouse-move": "var(--mouse-move)",

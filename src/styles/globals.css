@@ -9,6 +9,7 @@
   --clr-font-1: rgb(0, 0, 0);
   --clr-font-2: rgba(0, 0, 0, 0.56);
   --clr-background: #ffffff;
+  --clr-rectangular: black;
   --clr-blur: rgba(170, 63, 255, 0.07);
   --clr-box: rgb(233, 233, 233);
   --clr-mouse-move: rgba(92, 92, 92, 0.09);
@@ -24,6 +25,7 @@ html.dark {
   --clr-font-1: white;
   --clr-font-2: rgba(227, 229, 232, 0.56);
   --clr-background: #0d0e12;
+  --clr-rectangular: white;
   --clr-blur: rgba(170, 63, 255, 0.07);
   --clr-box: rgba(18, 20, 24);
   --clr-mouse-move: rgba(92, 92, 92, 0.09);

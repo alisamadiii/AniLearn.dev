@@ -78,7 +78,7 @@ export const FirstTab = () => {
                 exit={{ y: -10, opacity: 0 }}
                 layout
                 transition={{ type: "spring", damping: 15 }}
-                className={`bg-white rounded-lg w-11 h-11`}
+                className={`bg-rectangular rounded-lg w-11 h-11`}
               />
             ))}
           </AnimatePresence>
@@ -188,7 +188,7 @@ export const SecondTab = () => {
                 exit={{ y: -10, opacity: 0 }}
                 layout
                 transition={{ type: "spring", damping: 15 }}
-                className={`bg-white rounded-lg basis-96 h-6 md:h-11`}
+                className={`bg-rectangular rounded-lg basis-96 h-6 md:h-11`}
               />
             ))}
           </AnimatePresence>

@@ -62,28 +62,28 @@ export default function Transition({}: Props) {
               <motion.div
                 layout
                 transition={{ ease: "easeIn", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 ease-in
               </motion.div>
               <motion.div
                 layout
                 transition={{ ease: "easeOut", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 ease-out
               </motion.div>
               <motion.div
                 layout
                 transition={{ ease: "easeInOut", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 ease-in-out
               </motion.div>
               <motion.div
                 layout
                 transition={{ ease: "linear", duration, delay }}
-                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-font-clr-1`}
+                className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}
               >
                 linear
               </motion.div>
