@@ -42,6 +42,7 @@ export default function Transition({}: Props) {
               unit={"s"}
               stateValue={duration}
               setStateValue={setDuration}
+              margin={true}
             />
             <Dropdown
               name="transition delay"
@@ -49,6 +50,7 @@ export default function Transition({}: Props) {
               unit={"s"}
               stateValue={delay}
               setStateValue={setDelay}
+              margin={true}
             />
           </BringChanges>
           <LiveChanges className="">
