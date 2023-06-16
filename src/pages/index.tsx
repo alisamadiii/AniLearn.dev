@@ -21,6 +21,7 @@ import Logo from "@assets/Logo";
 import ReasonComponent from "@components/Reason";
 import MetaTag from "@layouts/MetaTag";
 import { Testimonials } from "@contents/Data";
+import Testimonial from "@components/Testimonial";
 
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
@@ -135,7 +136,7 @@ export default function Home() {
             <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
               technologies
             </small>
-            <Heading_2 className="mt-2 text-4xl text-font-clr">
+            <Heading_2 className="mt-2 text-4xl text-white">
               Web development technologies
             </Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
@@ -170,7 +171,7 @@ export default function Home() {
             <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
               reasons
             </small>
-            <Heading_2 className="mt-2 text-4xl text-font-clr">
+            <Heading_2 className="mt-2 text-4xl text-white">
               Why this website?
             </Heading_2>
             <p>
@@ -187,7 +188,7 @@ export default function Home() {
         {/* ShoutOut */}
         <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
           <div className="relative w-full max-w-[1000px] bg-box border border-white-low-opacity/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
-            <h2 className="font-medium text-font-clr text-2xl/8">
+            <h2 className="font-medium text-white text-2xl/8">
               I am making animated contents on Twitter, and I know they will be
               helpful when learning something.
             </h2>
@@ -195,14 +196,14 @@ export default function Home() {
               <a
                 href="https://www.alirezasamadi.com/twitter-activity/works"
                 target="_blank"
-                className="underline decoration-2 hover:text-font-clr"
+                className="underline decoration-2 hover:text-white"
               >
                 Website
               </a>
               <a
                 href="https://twitter.com/Ali_Developer05"
                 target="_blank"
-                className="underline decoration-2 hover:text-font-clr"
+                className="underline decoration-2 hover:text-white"
               >
                 Twitter
               </a>
@@ -217,42 +218,9 @@ export default function Home() {
               Testimonials
             </Heading_2>
             <div className="flex flex-wrap gap-6">
-              {Testimonials.map((t) => {
-                const { id, name, testimonial, headline, image } = t;
-                const Icon = t.from[0];
-                const SocialMedia = t.from[1];
-
-                return (
-                  <div
-                    key={id}
-                    className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity bg-box isolate grow basis-72 hover:text-font-clr hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200"
-                  >
-                    <p>{testimonial}</p>
-                    <div className="flex items-center gap-2 mt-auto font-medium">
-                      <div className="relative">
-                        <Image
-                          src={image}
-                          width={100}
-                          height={100}
-                          alt=""
-                          className="object-cover w-8 h-8 rounded-full"
-                        />
-                        <Icon
-                          className={`absolute bottom-0 right-0 text-lg translate-x-1 translate-y-1 ${
-                            SocialMedia == "twitter"
-                              ? "text-twitter"
-                              : "text-linkedin"
-                          }`}
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-base/4">{name}</h3>
-                        {headline && <p className="text-xs">{headline}</p>}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {Testimonials.map((testimonial) => (
+                <Testimonial key={testimonial.id} testimonial={testimonial} />
+              ))}
             </div>
           </Container>
           <div className="flex items-center">
