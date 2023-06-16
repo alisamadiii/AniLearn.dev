@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/AliReza1083/AniLearn.dev)](https://github.com/AliReza1083/AniLearn.dev/releases) ![GitHub repo size](https://img.shields.io/github/repo-size/AliReza1083/AniLearn.dev)
 # AniLearn.dev
 
 ## 🎉 Want to contribute?
@@ -14,6 +15,7 @@ For contributing to the code, you will need
 
 - [Node](https://nodejs.org/en/) installed on your computer.
 - Basic knowledge of [Git](https://git-scm.com/)
+- Make sure you have [pnpm](https://pnpm.io/installation) installed.
 
 ### 🔖 Contribution steps
 
@@ -93,3 +95,11 @@ by running this command, everything will be set up for you to start writing code
 - TSX with all the components
 
 For example: [Demo](https://www.linkedin.com/posts/alireza17_nextjs-webdevelopment-activity-7070365787395391488-vDdj?utm_source=share&utm_medium=member_desktop)
+
+## License 📝
+
+This project is licensed under the MIT License. Check out [LICENSE](https://github.com/AliReza1083/AniLearn.dev/blob/main/LICENSE) for details.
+
+## Support ⭐
+
+If you consider this project useful and engaging, kindly express your support by awarding us a star on the repository.
