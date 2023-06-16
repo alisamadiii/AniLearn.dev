@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { HTML, CSS } from "@contents/Data";
@@ -81,6 +81,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
                       router.asPath == t.link && "text-white"
                     }`}>
                     {t.name}
+                    {t.new && <span className="px-2 ml-2 text-xs text-white rounded-full bg-secondary">New</span>}
                     {router.asPath == t.link && (
                       <motion.div
                         layoutId="link"

@@ -1,4 +1,3 @@
-import path from "path";
 import { IconType } from "react-icons";
 
 export const platformsData: {
@@ -96,12 +95,20 @@ export const CSS = [
   {
     id: 12,
     name: "Object Fit",
-    link: "/css/object-fit"
+    link: "/css/object-fit",
+    new: true
   },
   {
     id: 13,
     name: "Overflow",
-    link: "/css/overflow"
+    link: "/css/overflow",
+    new: true
+  },
+  {
+    id: 14,
+    name: "Cursor",
+    link: "/css/cursor",
+    new: true
   }
 ];
 

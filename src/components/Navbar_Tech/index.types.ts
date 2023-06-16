@@ -8,6 +8,7 @@ export type LinksProps = {
     id: number;
     name: string;
     link: string;
+    new?: boolean;
   }[];
   techName: string;
 };

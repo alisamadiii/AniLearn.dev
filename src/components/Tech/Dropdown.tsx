@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   name: string;
@@ -8,11 +9,20 @@ type Props = {
   stateValue: any;
   setStateValue: (a: any) => void;
   margin: boolean;
+  subListClassName?: string;
 };
 
 import { IoIosArrowDown } from "react-icons/io";
 
-export default function Dropdown({ name, lists, unit = null, stateValue, setStateValue, margin }: Props) {
+export default function Dropdown({
+  name,
+  lists,
+  unit = null,
+  stateValue,
+  setStateValue,
+  margin,
+  subListClassName
+}: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLUListElement>(null);
 
@@ -50,11 +60,14 @@ export default function Dropdown({ name, lists, unit = null, stateValue, setStat
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
             ref={dropdownRef}
-            className="absolute z-20 w-full p-1 mt-2 border rounded-md bg-box border-white-low-opacity">
+            className={twMerge(
+              "absolute z-20 w-full p-1 mt-2 overflow-auto border rounded-md bg-box border-white-low-opacity max-h-60 space-y-1",
+              subListClassName
+            )}>
             {lists.map((list, index) => (
               <li
                 key={index}
-                className={`px-2 py-1 rounded-md cursor-pointer hover:bg-white-low-opacity ${
+                className={`px-2 py-[2px] rounded-md cursor-pointer hover:bg-white-low-opacity ${
                   stateValue == list && "bg-white-low-opacity"
                 }`}
                 onClick={() => onClickHandler(list)}>

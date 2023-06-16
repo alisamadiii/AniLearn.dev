@@ -130,6 +130,10 @@ input[type="number"] {
   .information p {
     @apply mb-3 text-lg font-light;
   }
+
+  .custom__cursor {
+    cursor: url("https://s-media-cache-ak0.pinimg.com/236x/ca/88/8a/ca888a437cb00696552aab146423afd2.jpg"), auto;
+  }
 }
 
 /* CHECKBOX */
