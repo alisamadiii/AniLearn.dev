@@ -1,7 +1,7 @@
 name: Feature Request
 description: Suggest an idea for this project
-title: '[Feat]: '
-labels: ['🚦 status: awaiting triage']
+title: "[Feat]: "
+labels: ["🚦 status: awaiting triage"]
 body:
   - type: textarea
     id: description
@@ -19,7 +19,7 @@ body:
       label: Solution
       description: A clear and concise description of what you want to happen.
       placeholder: I want a discord command `!server` to be added where we can view the server member count
-      value: 'I want'
+      value: "I want"
     validations:
       required: false
 

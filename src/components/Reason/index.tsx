@@ -52,7 +52,7 @@ export const EachReason = ({
   imageClassName,
   title,
   description,
-  image,
+  image
 }: EachReasonProps) => {
   return (
     <motion.div
@@ -61,11 +61,9 @@ export const EachReason = ({
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ ease: "circOut" }}
-      className={`relative p-[2px] overflow-hidden rounded-lg ${div1ClassName}`}
-    >
+      className={`relative p-[2px] overflow-hidden rounded-lg ${div1ClassName}`}>
       <div
-        className={`grid items-center p-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity ${div2ClassName}`}
-      >
+        className={`grid items-center p-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity ${div2ClassName}`}>
         <div>
           <h3 className="mb-2 text-xl text-white">{title}</h3>
           <p>{description}</p>

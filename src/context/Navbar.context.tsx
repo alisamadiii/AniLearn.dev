@@ -7,7 +7,7 @@ type NavbarContextTypes = {
 
 export const NavbarContext = createContext<NavbarContextTypes>({
   isNavbarOpen: false,
-  setIsNavbarOpen: () => {},
+  setIsNavbarOpen: () => {}
 });
 
 type NavbarProps = {
@@ -18,7 +18,5 @@ export const NavbarProvider = ({ children }: NavbarProps) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
 
   const value = { isNavbarOpen, setIsNavbarOpen };
-  return (
-    <NavbarContext.Provider value={value}>{children}</NavbarContext.Provider>
-  );
+  return <NavbarContext.Provider value={value}>{children}</NavbarContext.Provider>;
 };

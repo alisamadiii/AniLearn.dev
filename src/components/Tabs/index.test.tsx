@@ -9,7 +9,11 @@ describe("Tabs", () => {
     const setStateValue = jest.fn();
 
     const { container } = render(
-      <Tabs tabs={tabs} stateValue={stateValue} setStateValue={setStateValue} />
+      <Tabs
+        tabs={tabs}
+        stateValue={stateValue}
+        setStateValue={setStateValue}
+      />
     );
     const ulElement = screen.getByRole("list");
     const liList = container.querySelectorAll("li");
@@ -25,7 +29,11 @@ describe("Tabs", () => {
     const setStateValue = jest.fn();
 
     render(
-      <Tabs tabs={tabs} stateValue={stateValue} setStateValue={setStateValue} />
+      <Tabs
+        tabs={tabs}
+        stateValue={stateValue}
+        setStateValue={setStateValue}
+      />
     );
 
     const firstTab = screen.getByText(tabs[0]);

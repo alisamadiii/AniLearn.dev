@@ -4,6 +4,6 @@ export const TESTIMONIAL = [
     name: "Lorem Ipsum",
     headLine: "",
     message: "",
-    image: "",
-  },
+    image: ""
+  }
 ];

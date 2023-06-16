@@ -1,15 +1,9 @@
 import React, { useState } from "react";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderImage,
-} from "react-compare-slider";
+import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Information, CodeBlocks, Range } from "@components/Tech";
@@ -41,10 +35,18 @@ export default function Filter({}: Props) {
 
   return (
     <>
-      <MetaTag title="filter" image={null} description="" />
+      <MetaTag
+        title="filter"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>filter</h1><p>The filter CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.</p>" />
-        <CodeBlocks codeString={Codes} language="" fileName="index.html" />
+        <CodeBlocks
+          codeString={Codes}
+          language=""
+          fileName="index.html"
+        />
 
         <Workplace>
           <BringChanges className="flex flex-col items-center gap-4 mb-4">
@@ -62,12 +64,7 @@ export default function Filter({}: Props) {
               name=""
               id=""
               className="p-2 rounded-md outline-none bg-button"
-              onInput={(e: any) =>
-                e.target.value == "portrait"
-                  ? setLandscape(false)
-                  : setLandscape(true)
-              }
-            >
+              onInput={(e: any) => (e.target.value == "portrait" ? setLandscape(false) : setLandscape(true))}>
               <option value="landscape">Landscape</option>
               <option value="portrait">Portrait</option>
             </select>
@@ -75,14 +72,17 @@ export default function Filter({}: Props) {
           <LiveChanges>
             <ReactCompareSlider
               itemOne={
-                <ReactCompareSliderImage src={image || IMAGE} alt="Image one" />
+                <ReactCompareSliderImage
+                  src={image || IMAGE}
+                  alt="Image one"
+                />
               }
               itemTwo={
                 <ReactCompareSliderImage
                   src={image || IMAGE}
                   alt="Image two"
                   style={{
-                    filter: `blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate}%)`,
+                    filter: `blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate}%)`
                   }}
                 />
               }

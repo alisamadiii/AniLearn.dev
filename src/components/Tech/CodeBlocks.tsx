@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {
-  tomorrowNight,
-  tomorrow,
-} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { tomorrowNight, tomorrow } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import confetti from "canvas-confetti";
 import { twMerge } from "tailwind-merge";
 import { useTheme } from "next-themes";
@@ -27,7 +24,7 @@ export default function CodeBlocks({
   fileName,
   widthFull = false,
   className,
-  wrapLongLines = false,
+  wrapLongLines = false
 }: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
   const { theme, setTheme } = useTheme();
@@ -41,8 +38,8 @@ export default function CodeBlocks({
       spread: 360,
       origin: {
         x: Math.random(),
-        y: Math.random() - 0.2,
-      },
+        y: Math.random() - 0.2
+      }
     });
 
     setTimeout(() => {
@@ -58,18 +55,14 @@ export default function CodeBlocks({
   return (
     <div
       className={twMerge(
-        `w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${
-          widthFull ? "" : "max-w-input"
-        }`,
+        `w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${widthFull ? "" : "max-w-input"}`,
         className
-      )}
-    >
+      )}>
       <div className="flex items-center justify-between px-4 py-2 border-b border-white-low-opacity">
         <p>{fileName}</p>
         <div
           className="flex items-center gap-1 text-sm cursor-pointer"
-          onClick={copyFunction}
-        >
+          onClick={copyFunction}>
           {isSaved[1] ? (
             <span>
               <BsFillClipboard2CheckFill />
@@ -88,9 +81,8 @@ export default function CodeBlocks({
         wrapLongLines={wrapLongLines}
         customStyle={{
           background: "none",
-          paddingInline: "1em",
-        }}
-      >
+          paddingInline: "1em"
+        }}>
         {codeString}
       </SyntaxHighlighter>
     </div>

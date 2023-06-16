@@ -57,11 +57,13 @@ To submit a pull request, please follow these steps:
    ```sh
    git add <filename>
    ```
+
 8. Commit your changes.
 
    ```sh
    git commit -m "<your-commit-message>"
    ```
+
 9. View and review your changes locally before pushing it.
 
 10. To run and view the application on localhost
@@ -76,15 +78,15 @@ To submit a pull request, please follow these steps:
     git push origin <your_branch_name>
     ```
 
-12. Create a pull request from your branch to the original repository. 
+12. Create a pull request from your branch to the original repository.
 
 13. Congratulations on creating the pull request! Now, patiently await the review, address any requested changes, and soon your contribution will be merged.
 
 ### 🔖 Make your Work ease
 
-   ```sh
-   pnpm template
-   ```
+```sh
+pnpm template
+```
 
 by running this command, everything will be set up for you to start writing codes.
 

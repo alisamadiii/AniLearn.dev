@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Navbar_Tech from ".";
 
 jest.mock("next/router", () => ({
-  useRouter: jest.fn(),
+  useRouter: jest.fn()
 }));
 
 describe("Navbar", () => {
@@ -12,14 +12,17 @@ describe("Navbar", () => {
     // @ts-expect-error
     useRouter.mockReturnValue({
       query: {},
-      push: () => {},
+      push: () => {}
     });
 
     const isNavbar = false;
     const setIsNavbar = jest.fn();
 
     const { container } = render(
-      <Navbar_Tech isNavbar={isNavbar} setIsNavbar={setIsNavbar} />
+      <Navbar_Tech
+        isNavbar={isNavbar}
+        setIsNavbar={setIsNavbar}
+      />
     );
     const link = screen.getByRole("link", { name: "AniLearn.dev" });
     const liElements = container.querySelectorAll("li");

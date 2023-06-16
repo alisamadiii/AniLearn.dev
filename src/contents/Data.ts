@@ -7,20 +7,20 @@ export const platformsData: {
 }[] = [
   {
     id: 1,
-    platform: "facebook",
+    platform: "facebook"
   },
   {
     id: 2,
-    platform: "twitter",
+    platform: "twitter"
   },
   {
     id: 3,
-    platform: "linkedin",
+    platform: "linkedin"
   },
   {
     id: 4,
-    platform: "discord",
-  },
+    platform: "discord"
+  }
 ];
 
 // Navbar
@@ -28,81 +28,81 @@ export const HTML = [
   {
     id: 1,
     name: "Open Graph",
-    link: "/html/open-graph",
+    link: "/html/open-graph"
   },
   {
     id: 2,
     name: "Inputs",
-    link: "/html/inputs",
-  },
+    link: "/html/inputs"
+  }
 ];
 
 export const CSS = [
   {
     id: 1,
     name: "Flexbox Position",
-    link: "/css/flex-position",
+    link: "/css/flex-position"
   },
   {
     id: 2,
     name: "Filter",
-    link: "/css/filter",
+    link: "/css/filter"
   },
   {
     id: 3,
     name: "Gradient",
-    link: "/css/gradient",
+    link: "/css/gradient"
   },
   {
     id: 4,
     name: "Position",
-    link: "/css/position",
+    link: "/css/position"
   },
   {
     id: 5,
     name: "Box Model",
-    link: "/css/box-model",
+    link: "/css/box-model"
   },
   {
     id: 6,
     name: "Display Property",
-    link: "/css/display-property",
+    link: "/css/display-property"
   },
   {
     id: 7,
     name: "Transform",
-    link: "/css/transform",
+    link: "/css/transform"
   },
   {
     id: 8,
     name: "Transition",
-    link: "/css/transition",
+    link: "/css/transition"
   },
   {
     id: 9,
     name: "Centering a Div",
-    link: "/css/4-ways-of-centering-a-div",
+    link: "/css/4-ways-of-centering-a-div"
   },
   {
     id: 10,
     name: "Flex Wrap",
-    link: "/css/flex-wrap",
+    link: "/css/flex-wrap"
   },
   {
     id: 11,
     name: "Colors Converter",
-    link: "/css/colors-converter",
+    link: "/css/colors-converter"
   },
   {
     id: 12,
     name: "Object Fit",
-    link: "/css/object-fit",
+    link: "/css/object-fit"
   },
   {
     id: 13,
     name: "Overflow",
-    link: "/css/overflow",
-  },
+    link: "/css/overflow"
+  }
 ];
 
 import { AiOutlineTwitter, AiFillLinkedin } from "react-icons/ai";
@@ -121,39 +121,34 @@ export const Testimonials: TestimonialsTypes = [
     id: 1,
     name: "Andrej",
     headline: null,
-    image:
-      "https://pbs.twimg.com/profile_images/1510928172686225411/bTCh20YN_400x400.jpg",
+    image: "https://pbs.twimg.com/profile_images/1510928172686225411/bTCh20YN_400x400.jpg",
     testimonial: "woah nice job with this project Ali",
-    from: [AiOutlineTwitter, "twitter"],
+    from: [AiOutlineTwitter, "twitter"]
   },
   {
     id: 2,
     name: "Tamal Das",
     headline: null,
-    image:
-      "https://pbs.twimg.com/profile_images/1639235422932074499/qiGUX-3O_400x400.png",
-    testimonial:
-      "Love the website, kudos to all your hard work and amazing skills !",
-    from: [AiOutlineTwitter, "twitter"],
+    image: "https://pbs.twimg.com/profile_images/1639235422932074499/qiGUX-3O_400x400.png",
+    testimonial: "Love the website, kudos to all your hard work and amazing skills !",
+    from: [AiOutlineTwitter, "twitter"]
   },
   {
     id: 3,
     name: "Tobiloba",
     headline: "Frontend Engineer",
-    image:
-      "https://pbs.twimg.com/profile_images/1643147713016463360/9CZmUksq_400x400.jpg",
+    image: "https://pbs.twimg.com/profile_images/1643147713016463360/9CZmUksq_400x400.jpg",
     testimonial: "This is amazing Ali!! Good job with this. 🙌🙌",
-    from: [AiOutlineTwitter, "twitter"],
+    from: [AiOutlineTwitter, "twitter"]
   },
   {
     id: 4,
     name: "Ankit Patel",
     headline: "Frontend Engineer",
-    image:
-      "https://pbs.twimg.com/profile_images/1598376248426008576/2odWMNah_400x400.jpg",
+    image: "https://pbs.twimg.com/profile_images/1598376248426008576/2odWMNah_400x400.jpg",
     testimonial:
       "This is really awesome. I tried it just now and its very good. I started learning CSS and now I get a great website. I will definitely use it daily to strong my understanding. Thanks a lot Ali😄. Looking forward to more products like these from you",
-    from: [AiOutlineTwitter, "twitter"],
+    from: [AiOutlineTwitter, "twitter"]
   },
   {
     id: 5,
@@ -162,6 +157,6 @@ export const Testimonials: TestimonialsTypes = [
     image:
       "https://media.licdn.com/dms/image/D4D03AQG-N84vn4yUAg/profile-displayphoto-shrink_400_400/0/1668233048413?e=1691625600&v=beta&t=qY4AB1R3cT64a2Lsu729qRjdQKx2W2ecc5jxkTCW0xU",
     testimonial: "I appreciate all the effort you put in, WELL DONE 😍",
-    from: [AiFillLinkedin, "linkedin"],
-  },
+    from: [AiFillLinkedin, "linkedin"]
+  }
 ];

@@ -2,10 +2,7 @@ import React, { useState } from "react";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
 import { Information, CodeBlocks, Range } from "@components/Tech";
@@ -24,10 +21,18 @@ border: ${border}px solid white;
 
   return (
     <>
-      <MetaTag title="box-model" image={null} description="" />
+      <MetaTag
+        title="box-model"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>Box Model</h1><p>In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: <code>margins</code>, <code>borders</code>, <code>padding</code>, and the actual <code>content</code>.</p>" />
-        <CodeBlocks codeString={Codes} language="css" fileName="index.html" />
+        <CodeBlocks
+          codeString={Codes}
+          language="css"
+          fileName="index.html"
+        />
 
         <Workplace className="">
           <BringChanges className="space-y-4">
@@ -55,8 +60,7 @@ border: ${border}px solid white;
               {/* Changing Value */}
               <div
                 className={`text-3xl font-medium text-font-clr bg-primary`}
-                style={{ margin, padding, border: `${border}px solid` }}
-              >
+                style={{ margin, padding, border: `${border}px solid` }}>
                 Content
               </div>
             </div>

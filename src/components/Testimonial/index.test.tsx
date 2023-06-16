@@ -7,10 +7,9 @@ const MOCK_DATA: TestimonialTypes = {
   id: 1,
   name: "Andrej",
   headline: null,
-  image:
-    "https://pbs.twimg.com/profile_images/1510928172686225411/bTCh20YN_400x400.jpg",
+  image: "https://pbs.twimg.com/profile_images/1510928172686225411/bTCh20YN_400x400.jpg",
   testimonial: "woah nice job with this project Ali",
-  from: [AiOutlineTwitter, "twitter"],
+  from: [AiOutlineTwitter, "twitter"]
 };
 
 describe("Testimonial", () => {

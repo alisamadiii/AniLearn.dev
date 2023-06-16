@@ -7,12 +7,7 @@ type Props = {
   setClassName: (a: string) => void;
 };
 
-export default function Button_Tech({
-  value,
-  classNameValue,
-  className,
-  setClassName,
-}: Props) {
+export default function Button_Tech({ value, classNameValue, className, setClassName }: Props) {
   return (
     <button
       onClick={() => setClassName(classNameValue)}
@@ -20,8 +15,7 @@ export default function Button_Tech({
         className == classNameValue
           ? "after:opacity-100 shadow-main-button text-white"
           : "after:opacity-0 opacity-75 scale-95 text-font-clr"
-      }`}
-    >
+      }`}>
       {value}
     </button>
   );

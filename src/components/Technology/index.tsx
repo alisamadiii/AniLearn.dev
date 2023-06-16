@@ -6,12 +6,7 @@ import { Heading_3 } from "../Headings";
 // Types
 import { TechnologyProps } from "./index.types";
 
-export default function Technology({
-  name,
-  description,
-  link,
-  Icon,
-}: TechnologyProps) {
+export default function Technology({ name, description, link, Icon }: TechnologyProps) {
   useEffect(() => {
     document.body.onmousemove = (e) => {
       const boxes = document.querySelectorAll<HTMLDivElement>("#box");
@@ -30,8 +25,7 @@ export default function Technology({
   return (
     <div
       id="box" // This is for using Pseudo Element (::before & ::after)
-      className="md:p-[2px] overflow-hidden border rounded-xl border-white-low-opacity backdrop-blur-sm"
-    >
+      className="md:p-[2px] overflow-hidden border rounded-xl border-white-low-opacity backdrop-blur-sm">
       <div className="z-20 flex flex-col items-start h-full p-4 bg-box rounded-xl">
         <div className="bg-[#1B1E22] p-2 rounded-md text-3xl text-white">
           <Icon />
@@ -41,8 +35,7 @@ export default function Technology({
         <Link
           href={link}
           scroll={false}
-          className="mt-auto text-transparent bg-gradient-text bg-clip-text"
-        >
+          className="mt-auto text-transparent bg-gradient-text bg-clip-text">
           Start Learning...
         </Link>
       </div>

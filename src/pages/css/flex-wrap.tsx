@@ -4,19 +4,10 @@ import useMeasure from "react-use-measure";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import {
-  Checkbox,
-  Information,
-  CodeBlocks,
-  GivingComment,
-  Input,
-} from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, GivingComment, Input } from "@components/Tech";
 
 type Props = {};
 
@@ -28,9 +19,7 @@ export default function FlexWrap({}: Props) {
   const [playground, { width: playgroundWidth }] = useMeasure();
 
   const onChangeHandler = (e: any) => {
-    return e.target.value == 0
-      ? setFlexBasis(200)
-      : setFlexBasis(Number(e.target.value));
+    return e.target.value == 0 ? setFlexBasis(200) : setFlexBasis(Number(e.target.value));
   };
 
   const Code = `.container {
@@ -45,10 +34,18 @@ export default function FlexWrap({}: Props) {
 
   return (
     <>
-      <MetaTag title="flex-wrap" image={null} description="" />
+      <MetaTag
+        title="flex-wrap"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>flex wrap</h1><p>The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.</p>" />
-        <CodeBlocks codeString={Code} language="css" fileName="style.css" />
+        <CodeBlocks
+          codeString={Code}
+          language="css"
+          fileName="style.css"
+        />
 
         <Workplace className="">
           <LiveChanges className="">
@@ -56,8 +53,7 @@ export default function FlexWrap({}: Props) {
               className={`w-full min-w-[300px] max-w-playground mx-auto p-4 bg-box/50 border resize-x border-white-low-opacity rounded-lg flex gap-3 overflow-hidden ${
                 flexWrap && "flex-wrap"
               }`}
-              ref={playground}
-            >
+              ref={playground}>
               {[...Array(4)].map((_, index) => (
                 <Rectangular
                   key={index}
@@ -68,16 +64,13 @@ export default function FlexWrap({}: Props) {
             </div>
             <div
               className={`relative flex items-center justify-center gap-3 mx-auto text-right mt-3`}
-              style={{ width: playgroundWidth }}
-            >
+              style={{ width: playgroundWidth }}>
               <div
                 className={`w-full h-1 rounded-full grow duration-200 absolute -z-10 ${
                   playgroundWidth == 300 ? "bg-red-700" : "bg-white-low-opacity"
                 }`}
               />
-              <p className="px-4 bg-background-clr">
-                {Math.floor(playgroundWidth)}px
-              </p>
+              <p className="px-4 bg-background-clr">{Math.floor(playgroundWidth)}px</p>
             </div>
           </LiveChanges>
           <BringChanges className="w-full mx-auto mt-8 space-y-6 max-w-playground">
@@ -100,8 +93,7 @@ export default function FlexWrap({}: Props) {
               </GivingComment>
               <GivingComment
                 className="items-start"
-                comment="The flex-basis CSS property sets the initial main size of a flex item."
-              >
+                comment="The flex-basis CSS property sets the initial main size of a flex item.">
                 <Input
                   name="Flex Basis"
                   value={flexBasis}
@@ -130,8 +122,7 @@ export const Rectangular = ({ flexGrow, flexBasis }: RectangularProps) => {
       layout
       ref={ref}
       className={`flex flex-col rounded-lg h-24 ${flexGrow && "grow"}`}
-      style={{ flexBasis }}
-    >
+      style={{ flexBasis }}>
       <div className={`bg-white rounded-lg w-full h-full`} />
       <div className="relative flex items-center justify-center">
         <div

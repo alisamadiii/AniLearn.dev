@@ -3,19 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Container from "@layouts/Container";
 import MetaTag from "@layouts/MetaTag";
-import Workplace, {
-  BringChanges,
-  LiveChanges,
-} from "@components/Tech/Workplace";
+import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import {
-  Information,
-  CodeBlocks,
-  Button_Tech,
-  GivingComment,
-  Tabs,
-} from "@components/Tech";
+import { Information, CodeBlocks, Button_Tech, GivingComment, Tabs } from "@components/Tech";
 
 type Props = {};
 
@@ -24,7 +15,11 @@ export default function FlexPosition({}: Props) {
 
   return (
     <>
-      <MetaTag title="flex-position" image={null} description="" />
+      <MetaTag
+        title="flex-position"
+        image={null}
+        description=""
+      />
       <Container>
         <Information content="<h1>flex position</h1><p>Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as “flex container”) whereas the others are meant to be set on the children (said “flex items”).</p><p>If “regular” layout is based on both block and inline flow directions, the flex layout is based on “flex-flow directions”. Please have a look at this figure from the specification, explaining the main idea behind the flex layout.</p>" />
 
@@ -34,7 +29,9 @@ export default function FlexPosition({}: Props) {
             stateValue={tab}
             setStateValue={setTab}
           />
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence
+            mode="wait"
+            initial={false}>
             {tab == 1 ? <FirstTab key={1} /> : <SecondTab key={2} />}
           </AnimatePresence>
         </Workplace>
@@ -57,15 +54,17 @@ export const FirstTab = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
+      exit={{ opacity: 0 }}>
+      <CodeBlocks
+        codeString={Codes}
+        language="css"
+        fileName="style.css"
+      />
 
       <LiveChanges className="">
         <div
           className={`w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden`}
-          style={{ justifyContent, alignItems }}
-        >
+          style={{ justifyContent, alignItems }}>
           <AnimatePresence initial={false}>
             {[...Array(4)].map((_, index) => (
               <motion.div
@@ -73,7 +72,7 @@ export const FirstTab = () => {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{
                   y: 0,
-                  opacity: 1,
+                  opacity: 1
                 }}
                 exit={{ y: -10, opacity: 0 }}
                 layout
@@ -167,15 +166,17 @@ export const SecondTab = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <CodeBlocks codeString={Codes} language="css" fileName="style.css" />
+      exit={{ opacity: 0 }}>
+      <CodeBlocks
+        codeString={Codes}
+        language="css"
+        fileName="style.css"
+      />
 
       <LiveChanges className="">
         <div
           className={`w-full max-w-playground mx-auto h-60 bg-box/50 border border-white-low-opacity rounded-lg flex flex-wrap gap-1 overflow-hidden`}
-          style={{ alignContent }}
-        >
+          style={{ alignContent }}>
           <AnimatePresence initial={false}>
             {[...Array(4)].map((_, index) => (
               <motion.div
@@ -183,7 +184,7 @@ export const SecondTab = () => {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{
                   y: 0,
-                  opacity: 1,
+                  opacity: 1
                 }}
                 exit={{ y: -10, opacity: 0 }}
                 layout

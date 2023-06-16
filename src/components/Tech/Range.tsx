@@ -9,13 +9,7 @@ type Props = {
   onChange: (e: any) => void;
 };
 
-export default function Range({
-  maxNum,
-  minNum,
-  filterName,
-  value,
-  ...otherProps
-}: Props) {
+export default function Range({ maxNum, minNum, filterName, value, ...otherProps }: Props) {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
       <p className="basis-[200px]">{filterName}</p>
@@ -33,8 +27,7 @@ export default function Range({
           initial={{ opacity: 0.7 }}
           animate={{ opacity: 1 }}
           key={value}
-          className="text-right range-slider__value basis-28"
-        >
+          className="text-right range-slider__value basis-28">
           {value}
         </motion.span>
       </div>

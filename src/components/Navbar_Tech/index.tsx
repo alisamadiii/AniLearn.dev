@@ -11,39 +11,37 @@ import { IoIosArrowDown, IoMdClose } from "react-icons/io";
 // Types
 import { LinksProps, NavbarTechProps } from "./index.types";
 
-export default function Navbar_Tech({
-  isNavbar,
-  setIsNavbar,
-}: NavbarTechProps) {
+export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) {
   return (
     <nav
       className={`fixed md:sticky top-0 left-0 w-full md:w-[220px] overflow-auto px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
         isNavbar ? "translate-y-0" : "-translate-y-full md:-translate-y-0"
-      }`}
-    >
+      }`}>
       <div className="flex items-center justify-between gap-8">
         <div>
           <Link
             href={"/"}
             onClick={() => setIsNavbar(false)}
-            className="text-lg font-black text-white"
-          >
+            className="text-lg font-black text-white">
             AniLearn.dev
           </Link>
-          <p className="text-xs">
-            Learning something with animation doesn&apos;t get easier than this
-          </p>
+          <p className="text-xs">Learning something with animation doesn&apos;t get easier than this</p>
         </div>
         <motion.div
           className={`p-2 text-xl rounded-full md:hidden bg-red-700 duration-200 z-50`}
-          onClick={() => setIsNavbar(false)}
-        >
+          onClick={() => setIsNavbar(false)}>
           <IoMdClose />
         </motion.div>
       </div>
       <ul className="mt-4">
-        <Links techName="HTML" tech={HTML} />
-        <Links techName="CSS" tech={CSS} />
+        <Links
+          techName="HTML"
+          tech={HTML}
+        />
+        <Links
+          techName="CSS"
+          tech={CSS}
+        />
       </ul>
     </nav>
   );
@@ -60,12 +58,9 @@ export const Links = ({ tech, techName }: LinksProps) => {
         className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-white cursor-pointer ${
           open && "bg-white-low-opacity"
         }`}
-        onClick={() => setOpen(!open)}
-      >
+        onClick={() => setOpen(!open)}>
         <span>{techName}</span>
-        <IoIosArrowDown
-          className={`duration-200 ${open ? "rotate-0" : "-rotate-90"} `}
-        />
+        <IoIosArrowDown className={`duration-200 ${open ? "rotate-0" : "-rotate-90"} `} />
       </button>
       <div className="px-2">
         <AnimatePresence initial={false}>
@@ -75,8 +70,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="flex flex-col overflow-hidden font-light"
-              role="links"
-            >
+              role="links">
               {tech
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((t) => (
@@ -85,8 +79,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
                     href={t.link}
                     className={`relative w-full inline-block py-1 px-3 hover:text-white border-l-2 border-white-low-opacity focus:outline-none focus:text-white ${
                       router.asPath == t.link && "text-white"
-                    }`}
-                  >
+                    }`}>
                     {t.name}
                     {router.asPath == t.link && (
                       <motion.div

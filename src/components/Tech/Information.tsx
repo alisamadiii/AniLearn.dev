@@ -8,7 +8,6 @@ export default function Information({ content }: Props) {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: content }}
-      className="information"
-    ></div>
+      className="information"></div>
   );
 }

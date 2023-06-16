@@ -52,13 +52,11 @@ export default function Home() {
           <nav
             className={`fixed top-0 left-0 z-50 flex items-center w-full h-16 duration-200 backdrop-blur ${
               navbarBg && "bg-background-clr/60"
-            }`}
-          >
+            }`}>
             <Container className="flex items-center justify-between">
               <Link
                 href={"/"}
-                className="flex items-center gap-1 text-lg font-semibold text-font-clr group"
-              >
+                className="flex items-center gap-1 text-lg font-semibold text-font-clr group">
                 <Logo />
                 AniLearn.dev
               </Link>
@@ -66,15 +64,13 @@ export default function Home() {
                 <a
                   href="https://github.com/AliReza1083/AniLearn.dev"
                   target="_blank"
-                  className="text-2xl hover:text-font-clr"
-                >
+                  className="text-2xl hover:text-font-clr">
                   <AiFillGithub />
                 </a>
                 <Link
                   href={"#get-started"}
                   scroll={false}
-                  className="flex items-center px-4 py-2 text-xs rounded-full text-font-clr bg-button group"
-                >
+                  className="flex items-center px-4 py-2 text-xs rounded-full text-font-clr bg-button group">
                   Start Now
                   <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
                 </Link>
@@ -90,18 +86,15 @@ export default function Home() {
               eases learning process.
             </Heading_1>
             <Heading_2 className="text-2xl text-transparent md:text-4xl bg-clip-text bg-gradient-text-2">
-              Learning something with animation doesn&apos;t get easier than
-              this
+              Learning something with animation doesn&apos;t get easier than this
             </Heading_2>
             <p className="md:text-lg font-medium w-full max-w-[400px]">
-              We offer top-notch content for easy learning, with clear visual
-              development principles.
+              We offer top-notch content for easy learning, with clear visual development principles.
             </p>
             <Link
               href={"#get-started"}
               scroll={false}
-              className="px-5 py-2 mt-12 text-sm text-black duration-200 bg-white rounded-full shadow-main-button hover:shadow-main-button-hover"
-            >
+              className="px-5 py-2 mt-12 text-sm text-black duration-200 bg-white rounded-full shadow-main-button hover:shadow-main-button-hover">
               Start Now
             </Link>
           </Container>
@@ -114,9 +107,8 @@ export default function Home() {
                 transform: `rotate(10deg)`,
                 rotateX,
                 y,
-                opacity,
-              }}
-            >
+                opacity
+              }}>
               <Image
                 src={HeaderIMG}
                 width={2000}
@@ -128,17 +120,15 @@ export default function Home() {
           </Container>
         </header>
 
-        <section id="get-started" className="py-12 overflow-hidden">
+        <section
+          id="get-started"
+          className="py-12 overflow-hidden">
           <Container className="relative">
             <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
               Web development technologies
             </div>
-            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-              technologies
-            </small>
-            <Heading_2 className="mt-2 text-4xl text-white">
-              Web development technologies
-            </Heading_2>
+            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">technologies</small>
+            <Heading_2 className="mt-2 text-4xl text-white">Web development technologies</Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
             {/* Gradient background */}
             <div className="absolute h-24 translate-y-24 w-96 bg-primary/20 -z-10 blur-3xl" />
@@ -168,16 +158,9 @@ export default function Home() {
             <div className="absolute left-0 text-box opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
               Why this website?
             </div>
-            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">
-              reasons
-            </small>
-            <Heading_2 className="mt-2 text-4xl text-white">
-              Why this website?
-            </Heading_2>
-            <p>
-              Using a website that allows users to visually work with CSS offers
-              several advantages:
-            </p>
+            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">reasons</small>
+            <Heading_2 className="mt-2 text-4xl text-white">Why this website?</Heading_2>
+            <p>Using a website that allows users to visually work with CSS offers several advantages:</p>
             {/* container */}
             <div className="relative grid grid-cols-4 gap-4 mt-8">
               <ReasonComponent />
@@ -189,22 +172,19 @@ export default function Home() {
         <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
           <div className="relative w-full max-w-[1000px] bg-box border border-white-low-opacity/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
             <h2 className="font-medium text-white text-2xl/8">
-              I am making animated contents on Twitter, and I know they will be
-              helpful when learning something.
+              I am making animated contents on Twitter, and I know they will be helpful when learning something.
             </h2>
             <div className="flex gap-2">
               <a
                 href="https://www.alirezasamadi.com/twitter-activity/works"
                 target="_blank"
-                className="underline decoration-2 hover:text-white"
-              >
+                className="underline decoration-2 hover:text-white">
                 Website
               </a>
               <a
                 href="https://twitter.com/Ali_Developer05"
                 target="_blank"
-                className="underline decoration-2 hover:text-white"
-              >
+                className="underline decoration-2 hover:text-white">
                 Twitter
               </a>
             </div>
@@ -214,12 +194,13 @@ export default function Home() {
         {/* Testimonials */}
         <section className="py-24">
           <Container>
-            <Heading_2 className="mt-2 mb-8 text-4xl text-font-clr">
-              Testimonials
-            </Heading_2>
+            <Heading_2 className="mt-2 mb-8 text-4xl text-font-clr">Testimonials</Heading_2>
             <div className="flex flex-wrap gap-6">
               {Testimonials.map((testimonial) => (
-                <Testimonial key={testimonial.id} testimonial={testimonial} />
+                <Testimonial
+                  key={testimonial.id}
+                  testimonial={testimonial}
+                />
               ))}
             </div>
           </Container>
@@ -227,8 +208,7 @@ export default function Home() {
             <a
               href="https://twitter.com/Ali_Developer05/status/1666017211075694592?s=20"
               target="_blank"
-              className="block py-3 mx-auto mt-8 font-bold text-center text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text"
-            >
+              className="block py-3 mx-auto mt-8 font-bold text-center text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">
               Add your Testimonial
             </a>
           </div>

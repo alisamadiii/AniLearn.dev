@@ -6,9 +6,9 @@ const SuisseIntl = localFont({
   src: [
     {
       path: "../assets/Fonts/SuisseIntl-Light.otf",
-      weight: "400",
-    },
-  ],
+      weight: "400"
+    }
+  ]
 });
 
 type Props = {
@@ -17,11 +17,7 @@ type Props = {
 };
 
 export function Heading_1({ children, className }: Props) {
-  return (
-    <h1 className={`${SuisseIntl.className} text-font-clr ${className}`}>
-      {children}
-    </h1>
-  );
+  return <h1 className={`${SuisseIntl.className} text-font-clr ${className}`}>{children}</h1>;
 }
 
 export function Heading_2({ children, className }: Props) {

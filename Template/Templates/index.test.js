@@ -9,14 +9,10 @@ test("flex-position -> FlexPosition for exporting file", () => {
 
 describe("TSX Template", () => {
   test("the length of TemplateTSX must be greater than 1000 letters", () => {
-    expect(
-      TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza").length
-    ).toBeGreaterThan(1000);
+    expect(TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza").length).toBeGreaterThan(1000);
   });
 
   test("The template must import react", () => {
-    expect(TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza")).toMatch(
-      /import React from "react"/
-    );
+    expect(TemplateTSX(DEFAULT_TESTING, "css", "Ali Reza")).toMatch(/import React from "react"/);
   });
 });

@@ -1,7 +1,7 @@
 name: Other
 description: Use this, Please DO NOT create blank issues
-title: '[Other]: '
-labels: ['🚦 status: awaiting triage']
+title: "[Other]: "
+labels: ["🚦 status: awaiting triage"]
 body:
   - type: textarea
     id: description
