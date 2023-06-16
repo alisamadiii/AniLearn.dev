@@ -14,7 +14,7 @@ import { LinksProps, NavbarTechProps } from "./index.types";
 export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) {
   return (
     <nav
-      className={`fixed md:sticky top-0 left-0 w-full md:w-[220px] overflow-auto px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
+      className={`fixed md:sticky top-0 left-0 w-full md:w-[250px] overflow-auto px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
         isNavbar ? "translate-y-0" : "-translate-y-full md:-translate-y-0"
       }`}>
       <div className="flex items-center justify-between gap-8">
@@ -28,7 +28,7 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) 
           <p className="text-xs">Learning something with animation doesn&apos;t get easier than this</p>
         </div>
         <motion.div
-          className={`p-2 text-xl rounded-full md:hidden bg-red-700 duration-200 z-50`}
+          className={`p-2 text-xl rounded-full md:hidden bg-red-700 text-white duration-200 z-50`}
           onClick={() => setIsNavbar(false)}>
           <IoMdClose />
         </motion.div>
@@ -79,14 +79,17 @@ export const Links = ({ tech, techName }: LinksProps) => {
                     href={t.link}
                     className={`relative w-full inline-block py-1 px-3 hover:text-white border-l-2 border-white-low-opacity focus:outline-none focus:text-white ${
                       router.asPath == t.link && "text-white"
-                    }`}>
+                    } ${t.soon == true && "cursor-not-allowed"}`}>
                     {t.name}
                     {t.new && <span className="px-2 ml-2 text-xs text-white rounded-full bg-secondary">New</span>}
+                    {t.soon && (
+                      <span className="px-2 ml-2 text-xs text-white rounded-full bg-white-low-opacity">Soon</span>
+                    )}
                     {router.asPath == t.link && (
                       <motion.div
                         layoutId="link"
                         transition={{ duration: 0.2 }}
-                        className="absolute top-0 left-0 w-[2px] h-full bg-white"
+                        className="absolute top-0 left-0 flex items-center w-full h-full rounded-r bg-white-low-opacity before:absolute before:h-4 before:w-[2px] before:bg-white before:rounded-full"
                       />
                     )}
                   </Link>

@@ -11,6 +11,7 @@ type Props = {
 import { HiMenuAlt2 } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
 import { Dropdown } from "@components/Tech";
+import Container from "./Container";
 
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
@@ -54,7 +55,7 @@ export default function Layouts({ children }: Props) {
               onClick={() => setIsNavbar(true)}
             />
           </div>
-          {children}
+          <main>{children}</main>
           <ExtraInformation />
         </main>
       </div>

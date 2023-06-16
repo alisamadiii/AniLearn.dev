@@ -9,6 +9,7 @@ export type LinksProps = {
     name: string;
     link: string;
     new?: boolean;
+    soon?: boolean;
   }[];
   techName: string;
 };

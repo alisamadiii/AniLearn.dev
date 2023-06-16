@@ -109,6 +109,12 @@ export const CSS = [
     name: "Cursor",
     link: "/css/cursor",
     new: true
+  },
+  {
+    id: 15,
+    name: "Flex Order",
+    link: "/css/flex-order",
+    soon: true
   }
 ];
 

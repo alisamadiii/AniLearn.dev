@@ -31,7 +31,8 @@ module.exports = {
       },
       boxShadow: {
         "main-button": "0px 1px 17px rgba(170, 63, 255, 0.46)",
-        "main-button-hover": "0px 1px 30px 3px rgba(170, 63, 255, 0.46)"
+        "main-button-hover": "0px 1px 30px 3px rgba(170, 63, 255, 0.46)",
+        "copy-button": "0 0 0px 2px green"
       },
       backgroundSize: {
         pattern: "44px 44px, 44px 44px, 20px 20px, 20px 20px"
