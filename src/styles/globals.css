@@ -2,36 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --clr-primary: #8000ff;
-  --clr-secondary: #f8522e;
-  --clr-button: #e8e8e8;
-  --clr-font-1: rgb(0, 0, 0);
-  --clr-font-2: rgba(0, 0, 0, 0.56);
-  --clr-background: #ffffff;
-  --clr-rectangular: black;
-  --clr-blur: rgba(170, 63, 255, 0.07);
-  --clr-box: rgb(233, 233, 233);
-  --clr-mouse-move: rgba(92, 92, 92, 0.09);
-  --clr-white-low-opacity: rgba(0, 0, 0, 0.07);
-  --clr-twitter: #1da1f2;
-  --clr-linkedin: #0a66c2;
+html ::-webkit-scrollbar {
+  width: 5px;
 }
 
-html.dark {
-  --clr-primary: #8000ff;
-  --clr-secondary: #f8522e;
-  --clr-button: #1c1f26;
-  --clr-font-1: white;
-  --clr-font-2: rgba(227, 229, 232, 0.56);
-  --clr-background: #0d0e12;
-  --clr-rectangular: white;
-  --clr-blur: rgba(170, 63, 255, 0.07);
-  --clr-box: rgba(18, 20, 24);
-  --clr-mouse-move: rgba(92, 92, 92, 0.09);
-  --clr-white-low-opacity: rgba(255, 255, 255, 0.07);
-  --clr-twitter: #1da1f2;
-  --clr-linkedin: #0a66c2;
+/* Handle */
+html ::-webkit-scrollbar-thumb {
+  @apply bg-box-d/50;
+  border-radius: 10px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  @apply bg-box/50;
+  border-radius: 10px;
 }
 
 * {
@@ -74,7 +57,7 @@ input[type="number"] {
       left: 0;
       height: 100%;
       width: 100%;
-      background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(0, 0, 0, 0.04), transparent 30%);
+      background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(0, 0, 0, 0.1), transparent 30%);
       opacity: 0;
       z-index: 3;
       transition: opacity 500ms;
@@ -129,10 +112,6 @@ input[type="number"] {
   }
   .information p {
     @apply mb-3 text-lg font-light;
-  }
-
-  .custom__cursor {
-    cursor: url("https://s-media-cache-ak0.pinimg.com/236x/ca/88/8a/ca888a437cb00696552aab146423afd2.jpg"), auto;
   }
 }
 

@@ -7,7 +7,7 @@ type Props = {};
 
 export default function ExtraInformation({}: Props) {
   return (
-    <Container className="pt-8 border-t-2 border-white-low-opacity">
+    <Container className="pt-8 border-t-2 border-white-low-opacity dark:border-white-low-opacity-d">
       <h2 className="mb-1 text-3xl font-bold text-black dark:text-white">Contact Us</h2>
       <p className="mb-6">If you have any questions, you can reach out to us through these three platforms.</p>
       <div className="flex flex-wrap gap-4">

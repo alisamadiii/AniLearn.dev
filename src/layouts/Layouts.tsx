@@ -11,7 +11,6 @@ type Props = {
 import { HiMenuAlt2 } from "react-icons/hi";
 import { AiFillGithub } from "react-icons/ai";
 import { Dropdown } from "@components/Tech";
-import Container from "./Container";
 
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
@@ -37,7 +36,7 @@ export default function Layouts({ children }: Props) {
         />
         <main className={`relative w-full duration-200 pb-12 ${isNavbar && "translate-y-5 opacity-60"}`}>
           <div className="fixed bottom-0 left-0 z-30 w-full h-8 pointer-events-none bg-gradient-to-b from-transparent to-background-clr dark:to-background-clr-d" />
-          <div className="sticky top-0 z-40 flex items-center justify-end gap-4 px-4 text-font-clr dark:text-font-clr-d h-14 bg-box/95 dark:bg-box-d/95 backdrop-blur-sm">
+          <div className="sticky top-0 z-40 flex items-center justify-end gap-4 px-4 text-font-clr dark:text-font-clr-d h-14 bg-box/70 dark:bg-box-d/70 backdrop-blur-sm">
             <Dropdown
               name="Theme"
               lists={["dark", "light"]}
