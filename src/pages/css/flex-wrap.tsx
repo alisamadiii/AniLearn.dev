@@ -50,7 +50,7 @@ export default function FlexWrap({}: Props) {
         <Workplace className="">
           <LiveChanges className="">
             <div
-              className={`w-full min-w-[300px] max-w-playground mx-auto p-4 bg-box/50 border resize-x border-white-low-opacity rounded-lg flex gap-3 overflow-hidden ${
+              className={`w-full min-w-[300px] max-w-playground mx-auto p-4 bg-box/50 dark:bg-box-d/50 border resize-x border-white-low-opacity dark:border-white-low-opacity-d rounded-lg flex gap-3 overflow-hidden ${
                 flexWrap && "flex-wrap"
               }`}
               ref={playground}>
@@ -67,15 +67,15 @@ export default function FlexWrap({}: Props) {
               style={{ width: playgroundWidth }}>
               <div
                 className={`w-full h-1 rounded-full grow duration-200 absolute -z-10 ${
-                  playgroundWidth == 300 ? "bg-red-700" : "bg-white-low-opacity"
+                  playgroundWidth == 300 ? "bg-red-700" : "bg-white-low-opacity dark:bg-white-low-opacity-d"
                 }`}
               />
-              <p className="px-4 bg-background-clr">{Math.floor(playgroundWidth)}px</p>
+              <p className="px-4 bg-background-clr dark:bg-background-clr-d">{Math.floor(playgroundWidth)}px</p>
             </div>
           </LiveChanges>
           <BringChanges className="w-full mx-auto mt-8 space-y-6 max-w-playground">
             <div>
-              <h2 className="mb-4 text-xl text-font-clr">Parent</h2>
+              <h2 className="mb-4 text-xl text-black dark:text-white">Parent</h2>
               <GivingComment comment="The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines.">
                 <Checkbox
                   name="Flex Wrap"
@@ -84,7 +84,7 @@ export default function FlexWrap({}: Props) {
               </GivingComment>
             </div>
             <div className="flex flex-col items-start">
-              <h2 className="mb-4 text-xl text-font-clr">Children</h2>
+              <h2 className="mb-4 text-xl text-black dark:text-white">Children</h2>
               <GivingComment comment="Flex-grow property assigns remaining space to flex items based on their specified grow factor.">
                 <Checkbox
                   name="Flex Grow"
@@ -123,12 +123,12 @@ export const Rectangular = ({ flexGrow, flexBasis }: RectangularProps) => {
       ref={ref}
       className={`flex flex-col rounded-lg h-24 ${flexGrow && "grow"}`}
       style={{ flexBasis }}>
-      <div className={`bg-black rounded-lg w-full h-full`} />
+      <div className={`bg-black dark:bg-white rounded-lg w-full h-full`} />
       <div className="relative flex items-center justify-center">
         <div
-          className={`w-full flex items-center justify-between h-1 rounded-full grow duration-200 bg-white-low-opacity absolute -z-10 before:w-[2px] before:h-3 before:absolute before:left-0 before:bg-white-low-opacity after:w-[2px] after:h-3 after:bg-white-low-opacity after:absolute after:right-0`}
+          className={`w-full flex items-center justify-between h-1 rounded-full grow duration-200 bg-white-low-opacity absolute -z-10 before:w-[2px] before:h-3 before:absolute before:left-0 before:bg-white-low-opacity dark:before:bg-white-low-opacity-d after:w-[2px] after:h-3 after:bg-white-low-opacity dark:after:bg-white-low-opacity-d after:absolute after:right-0`}
         />
-        <p className="px-4 bg-box/50">{Math.floor(width)}</p>
+        <p className="px-4 bg-box/50 dark:bg-box-d/50">{Math.floor(width)}</p>
       </div>
     </motion.div>
   );

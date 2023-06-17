@@ -52,7 +52,7 @@ export default function ColorsConverter({}: Props) {
                   setCustomColor(value.includes("#") ? value : `#${value}`);
                   errorFunction(e);
                 }}
-                className="w-full p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+                className="w-full p-2 bg-transparent border rounded-md outline-none border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
               />
               {customColor && (
                 <motion.small
@@ -162,7 +162,7 @@ export const ConvertingColor = ({ name, color, convertFunction }: ConvertingColo
     <>
       <p
         onClick={onClickHandler}
-        className="flex justify-between p-2 border rounded-md bg-box border-white-low-opacity hover:bg-green-950/30">
+        className="flex justify-between p-2 border rounded-md bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d hover:bg-green-950/30 dark:hover:bg-green-950/30">
         {name}: <span>{convertFunction(colorNameArg(color))}</span>
       </p>
       <AnimatePresence>

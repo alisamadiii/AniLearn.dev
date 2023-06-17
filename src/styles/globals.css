@@ -104,7 +104,7 @@ input[type="number"] {
   }
 
   p > code {
-    @apply text-font-clr;
+    @apply text-black dark:text-white;
   }
 
   .range-slider__range::-webkit-slider-thumb {
@@ -125,7 +125,7 @@ input[type="number"] {
   }
 
   .information h1 {
-    @apply relative pb-4 mt-6 mb-3 text-4xl font-semibold text-black capitalize border-b-2 border-white-low-opacity;
+    @apply relative pb-4 mt-6 mb-3 text-4xl font-semibold text-black capitalize border-b-2 dark:text-white border-white-low-opacity dark:border-white-low-opacity-d;
   }
   .information p {
     @apply mb-3 text-lg font-light;
@@ -150,7 +150,7 @@ input[type="number"] {
 }
 
 .toggler-wrapper .toggler-slider {
-  @apply w-full h-full rounded-full bg-white-low-opacity;
+  @apply w-full h-full rounded-full bg-white-low-opacity dark:bg-white-low-opacity-d;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }

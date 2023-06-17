@@ -56,7 +56,7 @@ export default function Transition({}: Props) {
           </BringChanges>
           <LiveChanges className="">
             <div
-              className={`relative w-full p-4 mt-12 space-y-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity flex flex-col ${
+              className={`relative w-full p-4 mt-12 space-y-4 overflow-hidden border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d flex flex-col ${
                 isClicked && "items-end"
               }`}>
               <motion.div
@@ -87,7 +87,7 @@ export default function Transition({}: Props) {
           </LiveChanges>
           <button
             className={`px-4 py-2 mt-3 rounded-md duration-200 ${
-              isClicked ? "bg-primary text-white cursor-not-allowed" : "bg-button"
+              isClicked ? "bg-primary text-white cursor-not-allowed" : "bg-button dark:bg-button-d"
             }`}
             onClick={(e) => onClickHandler(e)}>
             Animate it

@@ -9,7 +9,7 @@ type Props = {
 
 export default function Tabs({ tabs, stateValue, setStateValue }: Props) {
   return (
-    <ul className="flex py-2 mb-4 border-b-2 border-white-low-opacity">
+    <ul className="flex py-2 mb-4 border-b-2 border-white-low-opacity dark:border-white-low-opacity-d">
       {tabs.map((tab, index) => (
         <li
           key={index}

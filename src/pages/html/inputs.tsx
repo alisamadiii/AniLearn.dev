@@ -153,7 +153,7 @@ export const Input = ({ name, type }: InputProps) => {
   return (
     <label
       htmlFor={name}
-      className="grid items-center grid-cols-4 gap-6 p-4 border rounded-md shadow-sm cursor-pointer border-white-low-opacity hover:border-primary">
+      className="grid items-center grid-cols-4 gap-6 p-4 border rounded-md shadow-sm cursor-pointer border-white-low-opacity dark:border-white-low-opacity-d hover:border-primary dark:hover:border-primary">
       <span className="capitalize">{type}</span>
       <input
         type={type}

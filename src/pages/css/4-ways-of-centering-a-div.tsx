@@ -148,13 +148,13 @@ export const Flex = ({ state }: WaysOfCenteringADivProps) => {
       animate="visible"
       exit="exit">
       <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}
         style={{ display, justifyContent, alignItems }}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-black/80 dark:bg-white/80" : "bg-black"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
       </motion.div>
@@ -188,13 +188,13 @@ export const Grid = ({ state }: WaysOfCenteringADivProps) => {
       animate="visible"
       exit="exit">
       <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}
         style={{ display, justifyContent, alignItems }}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-black/80 dark:bg-white/80" : "bg-black"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
       </motion.div>
@@ -227,13 +227,13 @@ export const GridWay2 = ({ state }: WaysOfCenteringADivProps) => {
       animate="visible"
       exit="exit">
       <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}
         style={{ display, placeItems }}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-black/80 dark:bg-white/80" : "bg-black"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
       </motion.div>
@@ -264,12 +264,12 @@ export const Transform = ({ state }: WaysOfCenteringADivProps) => {
       animate="visible"
       exit="exit">
       <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg gap-1 overflow-hidden p-2`}>
+        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
           className={`rounded-lg w-11 h-11 transition-colors duration-200 ${
-            state ? "bg-black/80 dark:bg-white/80" : "bg-black"
+            state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           } ${position} ${transform && "!-translate-x-1/2 !-translate-y-1/2"}`}
           style={{
             top,

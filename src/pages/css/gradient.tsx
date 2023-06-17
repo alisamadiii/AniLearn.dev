@@ -84,7 +84,7 @@ export default function Gradient({}: Props) {
                 {Gradients[selectedGradient].name}
               </motion.div>
             </AnimatePresence>
-            <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box border-white-low-opacity">
+            <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d">
               <h1
                 className="text-4xl md:text-5xl text-center font-black text-transparent !bg-clip-text"
                 style={{
@@ -97,12 +97,12 @@ export default function Gradient({}: Props) {
           <BringChanges className="">
             <div className="flex gap-4 mt-4">
               <button
-                className="px-4 py-2 text-font-clr duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
+                className="px-4 py-2 text-black duration-200 border-2 rounded-md dark:text-white border-button bg-button dark:border-button-d dark:bg-button-d focus:border-primary"
                 onClick={() => changingGradient("decrease")}>
                 <IoIosArrowBack />
               </button>
               <button
-                className="px-4 py-2 text-font-clr duration-200 border-2 rounded-md border-button bg-button focus:border-primary"
+                className="px-4 py-2 text-black duration-200 border-2 rounded-md dark:text-white border-button bg-button dark:border-button-d dark:bg-button-d focus:border-primary"
                 onClick={() => changingGradient("increase")}>
                 <IoIosArrowForward />
               </button>

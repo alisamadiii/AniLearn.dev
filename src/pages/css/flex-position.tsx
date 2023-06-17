@@ -63,7 +63,7 @@ export const FirstTab = () => {
 
       <LiveChanges className="">
         <div
-          className={`w-full max-w-playground mx-auto h-36 bg-box/50 border border-white-low-opacity rounded-lg flex gap-1 overflow-hidden`}
+          className={`w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d/50 border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg flex gap-1 overflow-hidden`}
           style={{ justifyContent, alignItems }}>
           <AnimatePresence initial={false}>
             {[...Array(4)].map((_, index) => (
@@ -77,7 +77,7 @@ export const FirstTab = () => {
                 exit={{ y: -10, opacity: 0 }}
                 layout
                 transition={{ type: "spring", damping: 15 }}
-                className={`bg-black rounded-lg w-11 h-11`}
+                className={`bg-black dark:bg-white rounded-lg w-11 h-11`}
               />
             ))}
           </AnimatePresence>
@@ -175,7 +175,7 @@ export const SecondTab = () => {
 
       <LiveChanges className="">
         <div
-          className={`w-full max-w-playground mx-auto h-60 bg-box/50 border border-white-low-opacity rounded-lg flex flex-wrap gap-1 overflow-hidden`}
+          className={`w-full max-w-playground mx-auto h-60 bg-box/50 dark:bg-box-d/50 border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg flex flex-wrap gap-1 overflow-hidden`}
           style={{ alignContent }}>
           <AnimatePresence initial={false}>
             {[...Array(4)].map((_, index) => (
@@ -189,7 +189,7 @@ export const SecondTab = () => {
                 exit={{ y: -10, opacity: 0 }}
                 layout
                 transition={{ type: "spring", damping: 15 }}
-                className={`bg-black rounded-lg basis-96 h-6 md:h-11`}
+                className={`bg-black dark:bg-white rounded-lg basis-96 h-6 md:h-11`}
               />
             ))}
           </AnimatePresence>

@@ -65,65 +65,65 @@ export default function OpenGraph({}: Props) {
 
         <Workplace className="grid items-start gap-4 md:grid-cols-2">
           <BringChanges className="p-6 border rounded-lg border-white-low-opacity">
-            <h4 className="text-3xl font-semibold text-font-clr">Edit</h4>
+            <h4 className="text-3xl font-semibold text-black dark:text-white">Edit</h4>
             <p className="mt-2">This information will be displayed on Google and social media.</p>
             {/* Inputs */}
             <div className="mt-8 space-y-4">
               <label
                 htmlFor="title"
                 className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr">Title</span>
+                <span className="text-lg text-black dark:text-white">Title</span>
                 <input
                   type="text"
                   placeholder="Ali Reza | Portfolio"
                   id="title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
                 />
                 <small>
-                  <span className="text-font-clr/80">Recommended</span>: 60 characters
+                  <span className="text-black/80 dark:text-white/80">Recommended</span>: 60 characters
                 </small>
               </label>
               <label
                 htmlFor="website"
                 className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr">Website</span>
+                <span className="text-lg text-black dark:text-white">Website</span>
                 <input
                   type="url"
                   placeholder="https://"
                   id="website"
                   value={website}
                   onChange={(e) => setWebsite(e.target.value)}
-                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
                 />
               </label>
               <label
                 htmlFor="description"
                 className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr">Description</span>
+                <span className="text-lg text-black dark:text-white">Description</span>
                 <textarea
                   id="description"
                   rows={5}
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
                 />
                 <small>
-                  <span className="text-font-clr/80">Recommended</span>: 155 - 160 characters
+                  <span className="text-black/80 dark:text-white/80">Recommended</span>: 155 - 160 characters
                 </small>
               </label>
               <label
                 htmlFor="image"
                 className="flex flex-col gap-1">
-                <span className="text-lg text-font-clr">Image</span>
+                <span className="text-lg text-black dark:text-white">Image</span>
                 <input
                   type="url"
                   placeholder="https://"
                   id="image"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
-                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity focus:border-primary placeholder:opacity-50"
+                  className="p-2 bg-transparent border rounded-md outline-none border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
                 />
               </label>
             </div>
@@ -135,7 +135,7 @@ export default function OpenGraph({}: Props) {
                 <button
                   key={platform.id}
                   className={`relative px-4 py-1 text-sm rounded-full duration-200 capitalize ${
-                    platforms == platform.platform && "text-font-clr"
+                    platforms == platform.platform && "text-black dark:text-white"
                   }`}
                   onClick={() => {
                     setPlatforms(platform.platform);
@@ -144,7 +144,7 @@ export default function OpenGraph({}: Props) {
                   {isSelected == platform.id && (
                     <motion.div
                       layoutId="button"
-                      className="absolute inset-0 bg-button -z-10"
+                      className="absolute inset-0 bg-button dark:bg-button-d -z-10"
                       style={{ borderRadius: "9999px" }}
                       transition={{ duration: 0.2 }}
                     />

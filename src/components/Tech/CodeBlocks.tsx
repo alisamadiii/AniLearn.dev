@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { tomorrowNight, tomorrow } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import confetti from "canvas-confetti";
@@ -28,6 +28,7 @@ export default function CodeBlocks({
 }: Props) {
   const [isSaved, setIsSaved] = useState<[string, boolean]>(["Copy", false]);
   const { theme, setTheme } = useTheme();
+  const [codeTheme, setCodeTheme] = useState(tomorrow);
 
   const copyFunction = () => {
     navigator.clipboard.writeText(codeString);
@@ -47,18 +48,24 @@ export default function CodeBlocks({
     }, 3000);
   };
 
-  const themeChanging = () => {
-    if (theme == "dark") return tomorrowNight;
-    else return tomorrow;
-  };
+  useEffect(() => {
+    const themeChanging = () => {
+      if (theme == "dark") return setCodeTheme(tomorrowNight);
+      else return setCodeTheme(tomorrow);
+    };
+
+    themeChanging();
+  }, [theme]);
 
   return (
     <div
       className={twMerge(
-        `w-full my-8 border-2 rounded-lg bg-box border-white-low-opacity ${widthFull ? "" : "max-w-input"}`,
+        `w-full my-8 border-2 rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d ${
+          widthFull ? "" : "max-w-input"
+        }`,
         className
       )}>
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white-low-opacity">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-white-low-opacity dark:border-white-low-opacity-d">
         <p>{fileName}</p>
         <button
           className="flex items-center gap-1 p-1 text-sm duration-200 rounded cursor-pointer focus:shadow-copy-button"
@@ -77,7 +84,7 @@ export default function CodeBlocks({
       </div>
       <SyntaxHighlighter
         language={language}
-        style={tomorrow}
+        style={codeTheme}
         wrapLongLines={wrapLongLines}
         customStyle={{
           background: "none",

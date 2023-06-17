@@ -20,14 +20,14 @@ module.exports = {
         "mouse-move": "rgba(92, 92, 92, 0.09)",
         "white-low-opacity": "rgba(0, 0, 0, 0.07)",
         twitter: "#1DA1F2",
-        linkedin: "#0A66C2"
-        // button: "#1C1F26",
-        // "font-clr": "rgba(227, 229, 232, 0.56)",
-        // "background-clr": "#0D0E12",
-        // "blur-clr": "rgba(170, 63, 255, 0.07)",
-        // box: "rgba(18, 20, 24)",
-        // "mouse-move": "rgba(92, 92, 92, 0.09)",
-        // "white-low-opacity": "rgba(255, 255, 255, 0.07)"
+        linkedin: "#0A66C2",
+        "button-d": "#1C1F26",
+        "font-clr-d": "rgba(227, 229, 232, 0.56)",
+        "background-clr-d": "#0D0E12",
+        "blur-clr-d": "rgba(170, 63, 255, 0.07)",
+        "box-d": "rgba(18, 20, 24)",
+        "mouse-move-d": "rgba(92, 92, 92, 0.09)",
+        "white-low-opacity-d": "rgba(255, 255, 255, 0.07)"
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",

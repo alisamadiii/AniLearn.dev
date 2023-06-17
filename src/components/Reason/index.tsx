@@ -63,9 +63,9 @@ export const EachReason = ({
       transition={{ ease: "circOut" }}
       className={`relative p-[2px] overflow-hidden rounded-lg ${div1ClassName}`}>
       <div
-        className={`grid items-center p-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity ${div2ClassName}`}>
+        className={`grid items-center p-4 overflow-hidden border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d ${div2ClassName}`}>
         <div>
-          <h3 className="mb-2 text-xl text-black">{title}</h3>
+          <h3 className="mb-2 text-xl text-black dark:text-white">{title}</h3>
           <p>{description}</p>
         </div>
         <Image

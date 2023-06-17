@@ -26,11 +26,11 @@ export default function Technology({ name, description, link, Icon }: Technology
     <div
       id="box" // This is for using Pseudo Element (::before & ::after)
       className="md:p-[2px] overflow-hidden border rounded-xl border-white-low-opacity backdrop-blur-sm">
-      <div className="z-20 flex flex-col items-start h-full p-4 bg-box rounded-xl">
-        <div className="bg-[#dfdfdf] p-2 rounded-md text-3xl text-black">
+      <div className="z-20 flex flex-col items-start h-full p-4 bg-box dark:bg-box-d rounded-xl">
+        <div className="bg-[#dfdfdf] dark:bg-[#292929] p-2 rounded-md text-3xl text-black dark:text-white">
           <Icon />
         </div>
-        <Heading_3 className="mt-4 mb-1 text-2xl text-black">{name}</Heading_3>
+        <Heading_3 className="mt-4 mb-1 text-2xl text-black dark:text-white">{name}</Heading_3>
         <p className="mb-8 text-base/6">{description}</p>
         <Link
           href={link}

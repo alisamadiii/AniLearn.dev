@@ -56,10 +56,10 @@ border: ${border}px solid white;
             />
           </BringChanges>
           <LiveChanges className="">
-            <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box border-white-low-opacity">
+            <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d">
               {/* Changing Value */}
               <div
-                className={`text-3xl font-medium text-black bg-primary`}
+                className={`text-3xl font-medium text-white bg-primary`}
                 style={{ margin, padding, border: `${border}px solid` }}>
                 Content
               </div>

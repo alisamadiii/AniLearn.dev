@@ -56,14 +56,14 @@ export default function Filter({}: Props) {
               id="website"
               value={image || ""}
               onChange={(e) => setImage(e.target.value)}
-              className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity focus:border-primary placeholder:opacity-50"
+              className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
             />
             <small>Add your own Image URL</small>
 
             <select
               name=""
               id=""
-              className="p-2 rounded-md outline-none bg-button"
+              className="p-2 rounded-md outline-none bg-button dark:bg-button-d"
               onInput={(e: any) => (e.target.value == "portrait" ? setLandscape(false) : setLandscape(true))}>
               <option value="landscape">Landscape</option>
               <option value="portrait">Portrait</option>

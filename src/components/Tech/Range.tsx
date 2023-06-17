@@ -15,7 +15,7 @@ export default function Range({ maxNum, minNum, filterName, value, ...otherProps
       <p className="basis-[200px]">{filterName}</p>
       <div className="grow basis-[500px] flex items-center gap-4">
         <input
-          className="w-full h-4 overflow-hidden rounded-full appearance-none bg-box range-slider__range"
+          className="w-full h-4 overflow-hidden rounded-full appearance-none bg-box dark:bg-box-d range-slider__range"
           type="range"
           name={filterName}
           value={value}

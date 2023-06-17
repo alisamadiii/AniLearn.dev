@@ -47,12 +47,12 @@ export default function ObjectFit({}: Props) {
               id="website"
               value={image || ""}
               onChange={(e) => setImage(e.target.value)}
-              className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity focus:border-primary placeholder:opacity-50"
+              className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
             />
           </BringChanges>
           <LiveChanges className="flex justify-center">
             <div
-              className="overflow-hidden duration-200 border rounded-lg bg-box border-white-low-opacity"
+              className="overflow-hidden duration-200 border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d"
               style={{ width, height }}>
               <Image
                 src={image || IMAGE}
@@ -66,7 +66,7 @@ export default function ObjectFit({}: Props) {
           </LiveChanges>
           <BringChanges className="mt-12 space-y-6">
             <div className="flex flex-col items-start mx-auto max-w-playground">
-              <h2 className="text-xl text-font-clr">Parent</h2>
+              <h2 className="text-xl text-black dark:text-white">Parent</h2>
               <Input
                 name="Width"
                 unit="px"
@@ -81,7 +81,7 @@ export default function ObjectFit({}: Props) {
               />
             </div>
             <div className="mx-auto max-w-playground">
-              <h2 className="mb-4 text-xl text-font-clr">Children</h2>
+              <h2 className="mb-4 text-xl text-black dark:text-white">Children</h2>
               <GivingComment comment={`object-fit: ${objectFit};`}>
                 <div className="flex flex-wrap gap-8">
                   <Checkbox

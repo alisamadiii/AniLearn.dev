@@ -8,7 +8,7 @@ export default function Testimonial({ testimonial }: TestimonialProps) {
   const SocialMedia = testimonial.from[1];
 
   return (
-    <div className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity bg-box isolate grow basis-72 hover:text-white hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200">
+    <div className="relative flex flex-col gap-8 p-4 overflow-hidden duration-200 border rounded-lg border-white-low-opacity dark:border-white-low-opacity-d bg-box dark:bg-box-d isolate grow basis-72 hover:text-white hover:-translate-y-2 hover:rotate-1 before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary before:to-secondary before:-z-10 before:opacity-0 hover:before:opacity-100 before:duration-200">
       <p>{feedback}</p>
       <div className="flex items-center gap-2 mt-auto font-medium">
         <div className="relative">

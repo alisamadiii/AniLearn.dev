@@ -37,7 +37,7 @@ export default function Overflow({}: Props) {
           <LiveChanges className="">
             {/* This is the place where you can see your changes live */}
             <p
-              className="w-full max-w-[300px] h-40 mx-auto bg-box p-4 rounded-lg"
+              className="w-full max-w-[300px] h-40 mx-auto bg-box dark:bg-box-d p-4 rounded-lg"
               style={{ overflow }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolorem dolor et ut eum, magnam
               exercitationem excepturi laboriosam odio optio unde neque incidunt repellat iure id totam magni minus

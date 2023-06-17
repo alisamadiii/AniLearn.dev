@@ -44,10 +44,10 @@ export default function Position({}: Props) {
 
         <Workplace className="">
           <LiveChanges className="">
-            <div className="relative w-full overflow-y-auto border rounded-lg bg-box h-96 border-white-low-opacity">
+            <div className="relative w-full overflow-y-auto border rounded-lg bg-box dark:bg-box-d h-96 border-white-low-opacity dark:border-white-low-opacity-d">
               <nav
-                className={`${position} flex items-center w-full h-12 px-4 text-black z-20 ${
-                  position == "absolute" ? "bg-white/90" : "bg-white"
+                className={`${position} flex items-center w-full h-12 px-4 text-black dark:text-white z-20 ${
+                  position == "absolute" ? "bg-white/90 dark:bg-black/90" : "bg-white dark:bg-black"
                 }`}
                 style={
                   validPosition == "top"
@@ -67,7 +67,7 @@ export default function Position({}: Props) {
                 className="p-4">
                 {[...Array(5)].map(() => (
                   <>
-                    <h2 className="mb-3 text-3xl text-font-clr">Lorem Ipsum</h2>
+                    <h2 className="mb-3 text-3xl text-black dark:text-white">Lorem Ipsum</h2>
                     <p className="mb-8">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis pariatur aliquam amet, illum
                       quasi, explicabo impedit sed ut dolore doloremque eum et debitis repellendus inventore accusamus
