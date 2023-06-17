@@ -59,7 +59,7 @@ border: ${border}px solid white;
             <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box border-white-low-opacity">
               {/* Changing Value */}
               <div
-                className={`text-3xl font-medium text-white bg-primary`}
+                className={`text-3xl font-medium text-black bg-primary`}
                 style={{ margin, padding, border: `${border}px solid` }}>
                 Content
               </div>

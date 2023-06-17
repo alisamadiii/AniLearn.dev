@@ -65,7 +65,7 @@ export const EachReason = ({
       <div
         className={`grid items-center p-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity ${div2ClassName}`}>
         <div>
-          <h3 className="mb-2 text-xl text-white">{title}</h3>
+          <h3 className="mb-2 text-xl text-black">{title}</h3>
           <p>{description}</p>
         </div>
         <Image

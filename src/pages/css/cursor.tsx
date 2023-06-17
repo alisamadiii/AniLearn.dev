@@ -74,7 +74,7 @@ export default function Cursor({}: Props) {
           </BringChanges>
           <LiveChanges className="">
             <div
-              className="flex flex-col items-center justify-center w-full mx-auto text-5xl text-white duration-200 bg-red-700 max-w-playground md:bg-box h-96 rounded-xl hover:bg-box/70"
+              className="flex flex-col items-center justify-center w-full mx-auto text-5xl text-black duration-200 bg-red-700 max-w-playground md:bg-box h-96 rounded-xl hover:bg-box/70"
               style={{ cursor }}>
               <h3>Hover me</h3>
               <p className="mt-2 text-sm text-font-clr">Not available for phone</p>

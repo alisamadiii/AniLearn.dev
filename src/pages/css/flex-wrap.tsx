@@ -123,7 +123,7 @@ export const Rectangular = ({ flexGrow, flexBasis }: RectangularProps) => {
       ref={ref}
       className={`flex flex-col rounded-lg h-24 ${flexGrow && "grow"}`}
       style={{ flexBasis }}>
-      <div className={`bg-white rounded-lg w-full h-full`} />
+      <div className={`bg-black rounded-lg w-full h-full`} />
       <div className="relative flex items-center justify-center">
         <div
           className={`w-full flex items-center justify-between h-1 rounded-full grow duration-200 bg-white-low-opacity absolute -z-10 before:w-[2px] before:h-3 before:absolute before:left-0 before:bg-white-low-opacity after:w-[2px] after:h-3 after:bg-white-low-opacity after:absolute after:right-0`}

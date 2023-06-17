@@ -87,7 +87,7 @@ export default function Transition({}: Props) {
           </LiveChanges>
           <button
             className={`px-4 py-2 mt-3 rounded-md duration-200 ${
-              isClicked ? "bg-primary text-font-clr cursor-not-allowed" : "bg-button"
+              isClicked ? "bg-primary text-white cursor-not-allowed" : "bg-button"
             }`}
             onClick={(e) => onClickHandler(e)}>
             Animate it

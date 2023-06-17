@@ -79,13 +79,13 @@ export default function Home() {
           </nav>
           {/* Section */}
           <Container className="flex flex-col items-center gap-4 mt-32 text-center">
-            <Heading_1 className="text-4xl text-center text-white md:text-5xl lg:text-6xl">
+            <Heading_1 className="text-4xl text-center md:text-5xl lg:text-6xl">
               <span className="-z-10 relative p-2 isolate font-black before:content-[''] text-white before:w-full before:h-full before:bg-white before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-l before:from-primary before:to-secondary before:rounded-md">
                 Animation
               </span>{" "}
               eases learning process.
             </Heading_1>
-            <Heading_2 className="text-2xl text-transparent md:text-4xl bg-clip-text bg-gradient-text-2">
+            <Heading_2 className="text-2xl dark:text-transparent md:text-4xl dark:bg-clip-text dark:bg-gradient-text-2">
               Learning something with animation doesn&apos;t get easier than this
             </Heading_2>
             <p className="md:text-lg font-medium w-full max-w-[400px]">
@@ -128,7 +128,7 @@ export default function Home() {
               Web development technologies
             </div>
             <small className="text-transparent uppercase bg-gradient-text bg-clip-text">technologies</small>
-            <Heading_2 className="mt-2 text-4xl text-white">Web development technologies</Heading_2>
+            <Heading_2 className="mt-2 text-4xl text-black">Web development technologies</Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
             {/* Gradient background */}
             <div className="absolute h-24 translate-y-24 w-96 bg-primary/20 -z-10 blur-3xl" />
@@ -159,7 +159,7 @@ export default function Home() {
               Why this website?
             </div>
             <small className="text-transparent uppercase bg-gradient-text bg-clip-text">reasons</small>
-            <Heading_2 className="mt-2 text-4xl text-white">Why this website?</Heading_2>
+            <Heading_2 className="mt-2 text-4xl text-black">Why this website?</Heading_2>
             <p>Using a website that allows users to visually work with CSS offers several advantages:</p>
             {/* container */}
             <div className="relative grid grid-cols-4 gap-4 mt-8">
@@ -171,20 +171,20 @@ export default function Home() {
         {/* ShoutOut */}
         <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
           <div className="relative w-full max-w-[1000px] bg-box border border-white-low-opacity/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
-            <h2 className="font-medium text-white text-2xl/8">
+            <h2 className="font-medium text-black text-2xl/8">
               I am making animated contents on Twitter, and I know they will be helpful when learning something.
             </h2>
             <div className="flex gap-2">
               <a
                 href="https://www.alirezasamadi.com/twitter-activity/works"
                 target="_blank"
-                className="underline decoration-2 hover:text-white">
+                className="underline decoration-2 hover:text-black">
                 Website
               </a>
               <a
                 href="https://twitter.com/Ali_Developer05"
                 target="_blank"
-                className="underline decoration-2 hover:text-white">
+                className="underline decoration-2 hover:text-black">
                 Twitter
               </a>
             </div>

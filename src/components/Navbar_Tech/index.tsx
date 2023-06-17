@@ -22,13 +22,13 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) 
           <Link
             href={"/"}
             onClick={() => setIsNavbar(false)}
-            className="text-lg font-black text-white">
+            className="text-lg font-black text-black">
             AniLearn.dev
           </Link>
           <p className="text-xs">Learning something with animation doesn&apos;t get easier than this</p>
         </div>
         <motion.div
-          className={`p-2 text-xl rounded-full md:hidden bg-red-700 text-white duration-200 z-50`}
+          className={`p-2 text-xl rounded-full md:hidden bg-red-700 text-black duration-200 z-50`}
           onClick={() => setIsNavbar(false)}>
           <IoMdClose />
         </motion.div>
@@ -55,7 +55,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
   return (
     <li className="mt-2">
       <button
-        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-white cursor-pointer ${
+        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-black cursor-pointer ${
           open && "bg-white-low-opacity"
         }`}
         onClick={() => setOpen(!open)}>
@@ -77,19 +77,19 @@ export const Links = ({ tech, techName }: LinksProps) => {
                   <Link
                     key={t.id}
                     href={t.link}
-                    className={`relative w-full inline-block py-1 px-3 hover:text-white border-l-2 border-white-low-opacity focus:outline-none focus:text-white ${
-                      router.asPath == t.link && "text-white"
+                    className={`relative w-full inline-block py-1 px-3 hover:text-black border-l-2 border-white-low-opacity focus:outline-none focus:text-black ${
+                      router.asPath == t.link && "text-black"
                     } ${t.soon == true && "cursor-not-allowed"}`}>
                     {t.name}
-                    {t.new && <span className="px-2 ml-2 text-xs text-white rounded-full bg-secondary">New</span>}
+                    {t.new && <span className="px-2 ml-2 text-xs text-black rounded-full bg-secondary">New</span>}
                     {t.soon && (
-                      <span className="px-2 ml-2 text-xs text-white rounded-full bg-white-low-opacity">Soon</span>
+                      <span className="px-2 ml-2 text-xs text-black rounded-full bg-white-low-opacity">Soon</span>
                     )}
                     {router.asPath == t.link && (
                       <motion.div
                         layoutId="link"
                         transition={{ duration: 0.2 }}
-                        className="absolute top-0 left-0 flex items-center w-full h-full rounded-r bg-white-low-opacity before:absolute before:h-4 before:w-[2px] before:bg-white before:rounded-full"
+                        className="absolute top-0 left-0 flex items-center w-full h-full rounded-r bg-white-low-opacity before:absolute before:h-4 before:w-[2px] before:bg-black before:rounded-full"
                       />
                     )}
                   </Link>

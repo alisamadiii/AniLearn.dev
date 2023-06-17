@@ -36,7 +36,7 @@ export default function DisplayProperty({}: Props) {
           <LiveChanges className="">
             <div className="relative w-full p-4 overflow-hidden border rounded-lg bg-box border-white-low-opacity">
               <h1
-                className={`text-3xl text-white bg-primary`}
+                className={`text-3xl text-black bg-primary`}
                 style={{ display }}>
                 Lorem Ipsum
               </h1>

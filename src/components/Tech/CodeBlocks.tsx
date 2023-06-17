@@ -77,7 +77,7 @@ export default function CodeBlocks({
       </div>
       <SyntaxHighlighter
         language={language}
-        style={tomorrowNight}
+        style={tomorrow}
         wrapLongLines={wrapLongLines}
         customStyle={{
           background: "none",
