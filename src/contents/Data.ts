@@ -115,6 +115,12 @@ export const CSS = [
     name: "Flex Order",
     link: "/css/flex-order",
     soon: true
+  },
+  {
+    id: 15,
+    name: "Rounded Corners",
+    link: "/css/rounded-corners",
+    soon: true
   }
 ];
 
