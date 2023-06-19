@@ -56,7 +56,7 @@ export default function Transition({}: Props) {
           </BringChanges>
           <LiveChanges className="">
             <div
-              className={`relative w-full p-4 mt-12 space-y-4 overflow-hidden border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d flex flex-col ${
+              className={`relative w-full p-4 mt-12 space-y-4 overflow-hidden border rounded-lg playground__background flex flex-col ${
                 isClicked && "items-end"
               }`}>
               <motion.div

@@ -56,7 +56,7 @@ border: ${border}px solid white;
             />
           </BringChanges>
           <LiveChanges className="">
-            <div className="relative w-full mt-12 overflow-hidden border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d">
+            <div className="relative w-full mt-12 overflow-hidden border rounded-lg playground__background">
               {/* Changing Value */}
               <div
                 className={`text-3xl font-medium text-white bg-primary`}

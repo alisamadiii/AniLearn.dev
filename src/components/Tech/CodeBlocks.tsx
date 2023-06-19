@@ -60,9 +60,7 @@ export default function CodeBlocks({
   return (
     <div
       className={twMerge(
-        `w-full my-8 border-2 rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d ${
-          widthFull ? "" : "max-w-input"
-        }`,
+        `w-full my-8 border-2 rounded-lg playground__background ${widthFull ? "" : "max-w-input"}`,
         className
       )}>
       <div className="flex items-center justify-between px-4 py-2 border-b border-white-low-opacity dark:border-white-low-opacity-d">

@@ -52,7 +52,7 @@ export default function ObjectFit({}: Props) {
           </BringChanges>
           <LiveChanges className="flex justify-center">
             <div
-              className="overflow-hidden duration-200 border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d"
+              className="overflow-hidden duration-200 border rounded-lg playground__background"
               style={{ width, height }}>
               <Image
                 src={image || IMAGE}

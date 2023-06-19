@@ -162,7 +162,7 @@ export const ConvertingColor = ({ name, color, convertFunction }: ConvertingColo
     <>
       <p
         onClick={onClickHandler}
-        className="flex justify-between p-2 border rounded-md bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d hover:bg-green-950/30 dark:hover:bg-green-950/30">
+        className="flex justify-between p-2 border rounded-md playground__background hover:bg-green-950/30 dark:hover:bg-green-950/30">
         {name}: <span>{convertFunction(colorNameArg(color))}</span>
       </p>
       <AnimatePresence>

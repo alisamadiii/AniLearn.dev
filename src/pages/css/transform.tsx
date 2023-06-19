@@ -66,7 +66,7 @@ export default function Transform({}: Props) {
                 fileName="style.css"
                 wrapLongLines={true}
               />
-              <div className="relative flex items-center justify-center flex-grow p-4 overflow-hidden border rounded-lg h-52 bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d before:content-['Without-Perspective'] before:bg-red-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
+              <div className="relative flex items-center justify-center flex-grow p-4 overflow-hidden border rounded-lg h-52 playground__background before:content-['Without-Perspective'] before:bg-red-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
                 <Image
                   src={image || IMAGE}
                   width={400}
@@ -88,7 +88,7 @@ export default function Transform({}: Props) {
                 fileName="style.css"
                 wrapLongLines={true}
               />
-              <div className="relative flex items-center justify-center p-4 overflow-hidden border rounded-lg h-52 bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d before:content-['Perspective'] before:bg-green-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
+              <div className="relative flex items-center justify-center p-4 overflow-hidden border rounded-lg h-52 playground__background before:content-['Perspective'] before:bg-green-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
                 <Image
                   src={image || IMAGE}
                   width={400}

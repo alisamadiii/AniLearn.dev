@@ -84,7 +84,7 @@ export default function Gradient({}: Props) {
                 {Gradients[selectedGradient].name}
               </motion.div>
             </AnimatePresence>
-            <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d">
+            <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 playground__background">
               <h1
                 className="text-4xl md:text-5xl text-center font-black text-transparent !bg-clip-text"
                 style={{

@@ -6,13 +6,13 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Range } from "@components/Tech";
+import { Information, CodeBlocks, Range, Dropdown } from "@components/Tech";
 
 type Props = {};
 
 export default function Filter({}: Props) {
   const [image, setImage] = useState<null | string>(null);
-  const [landscape, setLandscape] = useState<boolean>(true);
+  const [ratio, setRatio] = useState<"landscape" | "portrait">("landscape");
   // Filters State Management
   const [blur, setBlur] = useState(0);
   const [contrast, setContrast] = useState(100);
@@ -60,14 +60,14 @@ export default function Filter({}: Props) {
             />
             <small>Add your own Image URL</small>
 
-            <select
-              name=""
-              id=""
-              className="p-2 rounded-md outline-none bg-button dark:bg-button-d"
-              onInput={(e: any) => (e.target.value == "portrait" ? setLandscape(false) : setLandscape(true))}>
-              <option value="landscape">Landscape</option>
-              <option value="portrait">Portrait</option>
-            </select>
+            <Dropdown
+              name="Ratio"
+              lists={["landscape", "Portrait"]}
+              margin={true}
+              stateValue={ratio}
+              setStateValue={setRatio}
+              subListClassName="w-40"
+            />
           </BringChanges>
           <LiveChanges>
             <ReactCompareSlider
@@ -87,7 +87,7 @@ export default function Filter({}: Props) {
                 />
               }
               className={`w-full max-w-input mx-auto object-cover rounded-lg duration-200 ${
-                landscape ? "aspect-video" : "aspect-[3/4]"
+                ratio == "landscape" ? "aspect-video" : "aspect-[3/4]"
               }`}
             />
           </LiveChanges>

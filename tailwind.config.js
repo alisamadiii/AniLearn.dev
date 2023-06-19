@@ -13,7 +13,7 @@ module.exports = {
         primary: "#8000FF",
         secondary: "#F8522E",
         button: "#f2f2f2",
-        "font-clr": "rgba(0, 0, 0, 0.80)",
+        "font-clr": "rgba(0, 0, 0, .9)",
         "background-clr": "white",
         "blur-clr": "rgba(170, 63, 255, 0.07)",
         box: "#f2f2f2",

@@ -34,7 +34,7 @@ export default function DisplayProperty({}: Props) {
 
         <Workplace className="">
           <LiveChanges className="">
-            <div className="relative w-full p-4 overflow-hidden border rounded-lg bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d">
+            <div className="relative w-full p-4 overflow-hidden border rounded-lg playground__background">
               <h1
                 className={`text-3xl text-white dark:text-white bg-primary`}
                 style={{ display }}>

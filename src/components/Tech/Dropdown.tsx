@@ -48,7 +48,7 @@ export default function Dropdown({
   return (
     <div className={`relative inline-block ${margin && "mb-3"}`}>
       <button
-        className="flex items-center w-full gap-4 px-2 py-1 text-left capitalize border rounded-md bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d"
+        className="flex items-center w-full gap-4 px-2 py-1 text-left capitalize border rounded-md playground__background"
         onClick={toggleList}>
         {name}
         <IoIosArrowDown className={`duration-200 ${isOpen ? "rotate-0" : "rotate-180"}`} />
@@ -61,7 +61,7 @@ export default function Dropdown({
             exit={{ opacity: 0, y: -5 }}
             ref={dropdownRef}
             className={twMerge(
-              "absolute z-20 w-full p-1 mt-2 overflow-auto border rounded-md bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d max-h-60 space-y-1",
+              "absolute z-20 w-full p-1 mt-2 overflow-auto border rounded-md playground__background max-h-60 space-y-1",
               subListClassName
             )}>
             {lists.map((list, index) => (
