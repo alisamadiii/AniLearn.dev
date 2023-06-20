@@ -6,15 +6,14 @@ import { HTML, CSS } from "@contents/Data";
 import Link from "next/link";
 
 export default function SearchBox({}: Props) {
-  const [contents, setContents] = useState([...HTML, ...CSS]);
   const [searchField, setSearchField] = useState("");
   const [searchContents, setSearchContents] = useState<{ id: number; name: string; link: string }[]>([]);
 
   useEffect(() => {
-    const filteringContents = contents.filter((content) => {
+    const filteringContents = [...HTML, ...CSS].filter((content) => {
       if (searchField.length == 0) return;
 
-      return content.name.toLocaleLowerCase().includes(searchField);
+      return content.name.toLocaleLowerCase().includes(searchField.toLocaleLowerCase());
     });
 
     setSearchContents(filteringContents);

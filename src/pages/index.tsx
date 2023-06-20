@@ -23,6 +23,7 @@ import ReasonComponent from "@components/Reason";
 import MetaTag from "@layouts/MetaTag";
 import { Testimonials } from "@contents/Testimonial";
 import Testimonial from "@components/Testimonial";
+import Footer from "@components/Footer";
 
 export default function Home() {
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
@@ -41,9 +42,8 @@ export default function Home() {
 
   const breakpointColumnsObj = {
     default: 3,
-    1100: 3,
-    700: 2,
-    500: 1
+    1100: 2,
+    700: 1
   };
 
   return (
@@ -200,7 +200,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-24">
+        <section className="mt-24">
           <Container>
             <Heading_2 className="mt-2 mb-8 text-4xl text-black dark:text-white">Testimonials</Heading_2>
             <Masonry
@@ -224,6 +224,8 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        <Footer />
       </main>
     </>
   );

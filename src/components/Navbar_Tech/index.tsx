@@ -14,7 +14,7 @@ import { LinksProps, NavbarTechProps } from "./index.types";
 export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) {
   return (
     <nav
-      className={`fixed md:sticky top-0 left-0 w-full md:w-[250px] overflow-auto px-2 py-3 border-r-2 border-white-low-opacity h-screen bg-background-clr/50 dark:bg-background-clr-d/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
+      className={`fixed md:sticky top-0 left-0 w-full md:w-[250px] overflow-auto px-2 py-3 border-r-2 border-white-low-opacity dark:border-white-low-opacity-d h-screen bg-background-clr/50 dark:bg-background-clr-d/50 backdrop-blur-lg md:translate-x-0 duration-200 z-50 ${
         isNavbar ? "translate-y-0" : "-translate-y-full md:-translate-y-0"
       }`}>
       <div className="flex items-center justify-between gap-8">
