@@ -21,18 +21,11 @@ import Logo from "@assets/Logo";
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
 
   useEffect(() => {
     isNavbar ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "");
   }, [isNavbar]);
-
-  useEffect(() => {
-    theme == "light"
-      ? document.documentElement.classList.remove("dark")
-      : document.documentElement.classList.add("dark");
-  }, [theme]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -52,13 +45,6 @@ export default function Layouts({ children }: Props) {
             <div className="fixed bottom-0 left-0 z-30 w-full h-8 pointer-events-none bg-gradient-to-b from-transparent to-background-clr dark:to-background-clr-d" />
             <div className="sticky top-0 z-40 flex items-center justify-end gap-4 px-4 text-font-clr dark:text-font-clr-d h-14 bg-box/70 dark:bg-box-d/70 backdrop-blur-sm">
               <SearchBox />
-              <Dropdown
-                name="Theme"
-                lists={["dark", "light"]}
-                stateValue={theme}
-                setStateValue={setTheme}
-                margin={false}
-              />
               <a
                 href="#"
                 className="text-2xl">

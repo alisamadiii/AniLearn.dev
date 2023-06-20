@@ -46,10 +46,9 @@ export const Testimonials: TestimonialsTypes = [
   },
   {
     id: 5,
-    name: "Ankit Patel",
+    name: "Abbas roholamin",
     headline: "Frontend Developer",
-    image:
-      "https://media.licdn.com/dms/image/D4D03AQG-N84vn4yUAg/profile-displayphoto-shrink_400_400/0/1668233048413?e=1691625600&v=beta&t=qY4AB1R3cT64a2Lsu729qRjdQKx2W2ecc5jxkTCW0xU",
+    image: "https://pbs.twimg.com/profile_images/1640603884606423043/GVXO3qUD_400x400.jpg",
     testimonial: "I appreciate all the effort you put in, WELL DONE 😍",
     from: [AiFillLinkedin, "linkedin"]
   },
