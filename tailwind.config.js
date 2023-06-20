@@ -18,7 +18,7 @@ module.exports = {
         "blur-clr": "rgba(170, 63, 255, 0.07)",
         box: "#f2f2f2",
         "mouse-move": "rgba(92, 92, 92, 0.09)",
-        "white-low-opacity": "rgba(0, 0, 0, 0.07)",
+        "white-low-opacity": "rgba(0, 0, 0, 0.1)",
         twitter: "#1DA1F2",
         linkedin: "#0A66C2",
         "button-d": "#1C1F26",

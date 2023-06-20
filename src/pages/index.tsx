@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Masonry from "react-masonry-css";
 
 import { Heading_1, Heading_2 } from "@components/index";
 import Container from "@layouts/Container";
@@ -20,7 +21,7 @@ import Technology from "@components/Technology";
 import Logo from "@assets/Logo";
 import ReasonComponent from "@components/Reason";
 import MetaTag from "@layouts/MetaTag";
-import { Testimonials } from "@contents/Data";
+import { Testimonials } from "@contents/Testimonial";
 import Testimonial from "@components/Testimonial";
 
 export default function Home() {
@@ -37,6 +38,13 @@ export default function Home() {
       scrollY > 100 ? setNavbarBg(true) : setNavbarBg(false);
     });
   }, []);
+
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
 
   return (
     <>
@@ -195,14 +203,17 @@ export default function Home() {
         <section className="py-24">
           <Container>
             <Heading_2 className="mt-2 mb-8 text-4xl text-black dark:text-white">Testimonials</Heading_2>
-            <div className="flex flex-wrap gap-6">
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column">
               {Testimonials.map((testimonial) => (
                 <Testimonial
                   key={testimonial.id}
                   testimonial={testimonial}
                 />
               ))}
-            </div>
+            </Masonry>
           </Container>
           <div className="flex items-center">
             <a
