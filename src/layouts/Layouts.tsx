@@ -13,9 +13,14 @@ import { AiFillGithub } from "react-icons/ai";
 import { Dropdown } from "@components/Tech";
 import SearchBox from "@components/SearchBox";
 import Footer from "@components/Footer";
+import Link from "next/link";
+import { IoIosArrowForward } from "react-icons/io";
+import Container from "./Container";
+import Logo from "@assets/Logo";
 
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
+  const [navbarBg, setNavbarBg] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
   const router = useRouter();
 
@@ -29,7 +34,13 @@ export default function Layouts({ children }: Props) {
       : document.documentElement.classList.add("dark");
   }, [theme]);
 
-  if (router.pathname != "/") {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      scrollY > 100 ? setNavbarBg(true) : setNavbarBg(false);
+    });
+  }, []);
+
+  if (router.pathname.includes("/css") || router.pathname.includes("/html")) {
     return (
       <>
         <div className="flex">
@@ -66,6 +77,39 @@ export default function Layouts({ children }: Props) {
       </>
     );
   } else {
-    return <main>{children}</main>;
+    return (
+      <>
+        <nav
+          className={`fixed top-0 left-0 z-50 flex items-center w-full h-16 duration-200 backdrop-blur ${
+            navbarBg && "bg-background-clr/60 dark:bg-background-clr-d/60"
+          }`}>
+          <Container className="flex items-center justify-between">
+            <Link
+              href={"/"}
+              className="flex items-center gap-1 text-lg font-semibold text-black dark:text-white group">
+              <Logo />
+              AniLearn.dev
+            </Link>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/AliReza1083/AniLearn.dev"
+                target="_blank"
+                className="text-2xl hover:text-font-clr dark:hover:text-white">
+                <AiFillGithub />
+              </a>
+              <Link
+                href={"#get-started"}
+                scroll={false}
+                className="flex items-center px-4 py-2 text-xs rounded-full bg-button dark:bg-button-d group">
+                Start Now
+                <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </Container>
+        </nav>
+        <main>{children}</main>
+        <Footer />
+      </>
+    );
   }
 }

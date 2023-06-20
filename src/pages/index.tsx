@@ -14,31 +14,21 @@ import HeaderRects from "@assets/Header-rects";
 import HeaderIMG from "@assets/header.png";
 
 // Icons
-import { IoIosArrowForward, IoLogoCss3 } from "react-icons/io";
-import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
+import { IoLogoCss3 } from "react-icons/io";
+import { AiFillHtml5 } from "react-icons/ai";
 
 import Technology from "@components/Technology";
-import Logo from "@assets/Logo";
 import ReasonComponent from "@components/Reason";
 import MetaTag from "@layouts/MetaTag";
 import { Testimonials } from "@contents/Testimonial";
 import Testimonial from "@components/Testimonial";
-import Footer from "@components/Footer";
 
 export default function Home() {
-  const [navbarBg, setNavbarBg] = useState<boolean>(false);
-
   //
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.5], ["10%", "-50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
   const rotateX = useTransform(scrollYProgress, [0, 0.2], ["10deg", "0deg"]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      scrollY > 100 ? setNavbarBg(true) : setNavbarBg(false);
-    });
-  }, []);
 
   const breakpointColumnsObj = {
     default: 3,
@@ -56,35 +46,6 @@ export default function Home() {
       <main className={`${inter.className}`}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1500px] h-96 bg-center bg-cover -z-50 bg-header-image"></div>
         <header className="py-12">
-          {/* Navbar */}
-          <nav
-            className={`fixed top-0 left-0 z-50 flex items-center w-full h-16 duration-200 backdrop-blur ${
-              navbarBg && "bg-background-clr/60 dark:bg-background-clr-d/60"
-            }`}>
-            <Container className="flex items-center justify-between">
-              <Link
-                href={"/"}
-                className="flex items-center gap-1 text-lg font-semibold text-black dark:text-white group">
-                <Logo />
-                AniLearn.dev
-              </Link>
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://github.com/AliReza1083/AniLearn.dev"
-                  target="_blank"
-                  className="text-2xl hover:text-font-clr dark:hover:text-white">
-                  <AiFillGithub />
-                </a>
-                <Link
-                  href={"#get-started"}
-                  scroll={false}
-                  className="flex items-center px-4 py-2 text-xs rounded-full bg-button dark:bg-button-d group">
-                  Start Now
-                  <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </Container>
-          </nav>
           {/* Section */}
           <Container className="flex flex-col items-center gap-4 mt-32 text-center">
             <Heading_1 className="text-4xl text-center md:text-5xl lg:text-6xl">
@@ -224,8 +185,6 @@ export default function Home() {
             </a>
           </div>
         </section>
-
-        <Footer />
       </main>
     </>
   );
