@@ -120,6 +120,6 @@ export const CSS = [
     id: 16,
     name: "Rounded Corners",
     link: "/css/rounded-corners",
-    soon: true
+    new: true
   }
 ];
