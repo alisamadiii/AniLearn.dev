@@ -68,11 +68,17 @@ export default function FlexOrder({}: Props) {
   };
 
   const updatingValues = (selected: number, inputValue: number) => {
-    const clickedIndex = rects.findIndex((rect) => rect.id === selected);
-    const updatedRects = [...rects];
-
-    updatedRects[clickedIndex].order = inputValue;
-    setRects(updatedRects);
+    setRects((prevRects) => {
+      return prevRects.map((rect) => {
+        if (rect.id === selected) {
+          return {
+            ...rect,
+            order: inputValue
+          };
+        }
+        return rect;
+      });
+    });
   };
 
   return (

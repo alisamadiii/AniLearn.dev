@@ -114,7 +114,7 @@ export const CSS = [
     id: 15,
     name: "Flex Order",
     link: "/css/flex-order",
-    soon: true
+    new: true
   },
   {
     id: 16,

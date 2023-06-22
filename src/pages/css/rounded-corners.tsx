@@ -51,7 +51,7 @@ export default function RoundedCorners({}: Props) {
               style={{ borderRadius: `${topLeft}px ${topRight}px ${bottomLeft}px ${bottomRight}px` }}
             />
           </LiveChanges>
-          <BringChanges className="flex flex-col items-start w-full mx-auto mt-8 max-w-input">
+          <BringChanges className="flex flex-wrap items-start w-full mx-auto mt-8 gap-x-4 max-w-input">
             <Input
               name="Top Left"
               value={topLeft}
