@@ -18,7 +18,7 @@ export default function InputTesting({}: Props) {
 <input type="email">
 <input type="file">
 <input type="hidden">
-<input type="image">
+<input type="image" src="image.png">
 <input type="month">
 <input type="number">
 <input type="password">
@@ -81,10 +81,17 @@ export default function InputTesting({}: Props) {
               name="hidden"
               type="hidden"
             />
-            <Input
-              name="image"
-              type="image"
-            />
+            <label
+              htmlFor={"image"}
+              className="grid items-center grid-cols-4 gap-6 p-4 border rounded-md shadow-sm cursor-pointer border-white-low-opacity dark:border-white-low-opacity-d hover:border-primary dark:hover:border-primary">
+              <span className="capitalize">Image</span>
+              <input
+                type={"image"}
+                id={"image"}
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80"
+                className="w-full col-span-3 px-2 py-1 text-black bg-white border-2 rounded outline-none focus:border-primary"
+              />
+            </label>
             <Input
               name="month"
               type="month"

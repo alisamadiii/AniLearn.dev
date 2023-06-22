@@ -40,7 +40,7 @@ export default function DisplayProperty({}: Props) {
                 style={{ display }}>
                 Lorem Ipsum
               </h1>
-              <p>
+              <p className="inline">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe laboriosam fuga veniam eum doloremque!
                 Pariatur aliquam sunt, quae nobis asperiores eligendi! Error sunt laborum dignissimos nostrum odit ipsum
                 rem ut!
