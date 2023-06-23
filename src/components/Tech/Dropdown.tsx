@@ -12,7 +12,7 @@ type Props = {
   subListClassName?: string;
 };
 
-import { IoIosArrowDown } from "react-icons/io";
+import { BsArrowsExpand } from "react-icons/bs";
 
 export default function Dropdown({
   name,
@@ -48,10 +48,10 @@ export default function Dropdown({
   return (
     <div className={`relative inline-block ${margin && "mb-3"}`}>
       <button
-        className="flex items-center w-full gap-4 px-2 py-1 text-left capitalize border rounded-md playground__background"
+        className="flex items-center w-full px-2 py-1 text-left capitalize duration-150 border rounded-md playground__background focus:ring-2 ring-white/40"
         onClick={toggleList}>
-        {name}
-        <IoIosArrowDown className={`duration-200 ${isOpen ? "rotate-0" : "rotate-180"}`} />
+        {name} : <span className="ml-2 text-sm opacity-80">{stateValue}</span>
+        <BsArrowsExpand className={`ml-4`} />
       </button>
       <AnimatePresence>
         {isOpen && (
