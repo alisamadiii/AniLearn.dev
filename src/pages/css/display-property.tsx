@@ -7,6 +7,7 @@ import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace
 
 // you can use these components
 import { Information, CodeBlocks, Button_Tech } from "@components/Tech";
+import Image from "next/image";
 
 type Props = {};
 
@@ -16,6 +17,9 @@ export default function DisplayProperty({}: Props) {
   const Codes = `h1 {
   display: ${display};
 }`;
+
+  const IMAGE =
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80";
 
   return (
     <>
@@ -33,19 +37,17 @@ export default function DisplayProperty({}: Props) {
         />
 
         <Workplace className="">
-          <LiveChanges className="">
-            <div className="relative w-full p-4 overflow-hidden border rounded-lg playground__background">
-              <h1
-                className={`text-3xl text-white dark:text-white bg-primary`}
-                style={{ display }}>
-                Lorem Ipsum
-              </h1>
-              <p className="inline">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe laboriosam fuga veniam eum doloremque!
-                Pariatur aliquam sunt, quae nobis asperiores eligendi! Error sunt laborum dignissimos nostrum odit ipsum
-                rem ut!
-              </p>
-            </div>
+          <LiveChanges className="w-full p-4 border rounded-lg playground__background">
+            <p className="text-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+              <p
+                style={{ display }}
+                className="text-white bg-primary">
+                Hello World
+              </p>{" "}
+              Iure fugiat, obcaecati laboriosam quis maxime facilis necessitatibus officiis hic asperiores sint ullam
+              quo amet aliquam sunt, eius ea harum reprehenderit accusamus!
+            </p>
           </LiveChanges>
           <BringChanges className="">
             <motion.div
