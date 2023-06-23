@@ -91,7 +91,7 @@ export default function OpenGraph({}: Props) {
                 <span className="text-lg text-black dark:text-white">Website</span>
                 <input
                   type="url"
-                  placeholder="https://"
+                  placeholder="alirezasamadi.com"
                   id="website"
                   value={website}
                   onChange={(e) => setWebsite(e.target.value)}
