@@ -66,7 +66,6 @@ export default function Filter({}: Props) {
               margin={true}
               stateValue={ratio}
               setStateValue={setRatio}
-              subListClassName="w-40"
             />
           </BringChanges>
           <LiveChanges>

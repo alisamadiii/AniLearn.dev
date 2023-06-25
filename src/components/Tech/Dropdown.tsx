@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
@@ -12,7 +12,8 @@ type Props = {
   subListClassName?: string;
 };
 
-import { BsArrowsExpand } from "react-icons/bs";
+import { RxCaretSort } from "react-icons/rx";
+import { BsCheck } from "react-icons/bs";
 
 export default function Dropdown({
   name,
@@ -51,32 +52,34 @@ export default function Dropdown({
         className="flex items-center w-full px-2 py-1 text-left capitalize duration-150 border rounded-md playground__background focus:ring-2 ring-white/40"
         onClick={toggleList}>
         {name} : <span className="ml-2 text-sm opacity-80">{stateValue}</span>
-        <BsArrowsExpand className={`ml-4`} />
+        <RxCaretSort className={`ml-4`} />
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.ul
-            initial={{ opacity: 0, y: -5 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -5 }}
-            ref={dropdownRef}
-            className={twMerge(
-              "absolute z-20 w-full p-1 mt-2 overflow-auto border rounded-md playground__background max-h-60 space-y-1",
-              subListClassName
-            )}>
-            {lists.map((list, index) => (
-              <li
-                key={index}
-                className={`px-2 py-[2px] rounded-md cursor-pointer hover:bg-white-low-opacity ${
-                  stateValue == list && "bg-white-low-opacity dark:bg-white-low-opacity-d"
-                }`}
-                onClick={() => onClickHandler(list)}>
-                {list} {unit && unit}
-              </li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <motion.ul
+          initial={{ opacity: 0.5, y: -3 }}
+          animate={{ opacity: 1, y: 0 }}
+          ref={dropdownRef}
+          className={twMerge(
+            "absolute z-20 w-full p-1 mt-2 overflow-auto border rounded-md playground__background max-h-60 space-y-1",
+            subListClassName
+          )}>
+          {lists.map((list, index) => (
+            <li
+              key={index}
+              className={`flex items-center justify-between px-2 py-[2px] rounded-md cursor-pointer hover:bg-white-low-opacity ${
+                stateValue == list && "bg-white-low-opacity dark:bg-white-low-opacity-d"
+              }`}
+              onClick={() => onClickHandler(list)}>
+              {list} {unit && unit}{" "}
+              {stateValue == list && (
+                <span>
+                  <BsCheck />
+                </span>
+              )}
+            </li>
+          ))}
+        </motion.ul>
+      )}
     </div>
   );
 }
