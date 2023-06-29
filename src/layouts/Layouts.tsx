@@ -17,6 +17,7 @@ import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import Container from "./Container";
 import Logo from "@assets/Logo";
+import { buttonVariants } from "@components/Button";
 
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
@@ -86,7 +87,7 @@ export default function Layouts({ children }: Props) {
               <Link
                 href={"#get-started"}
                 scroll={false}
-                className="flex items-center px-4 py-2 text-xs rounded-full bg-button dark:bg-button-d group">
+                className={buttonVariants({ variant: "navbar" })}>
                 Start Now
                 <IoIosArrowForward className="duration-300 group-hover:translate-x-1" />
               </Link>

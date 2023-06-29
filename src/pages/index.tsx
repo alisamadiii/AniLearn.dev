@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -22,6 +21,7 @@ import ReasonComponent from "@components/Reason";
 import MetaTag from "@layouts/MetaTag";
 import { Testimonials } from "@contents/Testimonial";
 import Testimonial from "@components/Testimonial";
+import { Button, buttonVariants } from "@components/Button";
 
 export default function Home() {
   //
@@ -63,7 +63,7 @@ export default function Home() {
             <Link
               href={"#get-started"}
               scroll={false}
-              className="px-5 py-2 mt-12 text-sm text-black duration-200 bg-white rounded-full shadow-main-button hover:shadow-main-button-hover">
+              className={buttonVariants({ variant: "hero" })}>
               Start Now
             </Link>
           </Container>
