@@ -26,4 +26,6 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(({ className, variant,
   );
 });
 
+Button.displayName = "Button";
+
 export { Button, buttonVariants };
