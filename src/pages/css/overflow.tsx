@@ -7,7 +7,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Checkbox, Information, CodeBlocks } from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -36,13 +36,13 @@ export default function Overflow({}: Props) {
         <Workplace className="">
           <LiveChanges className="">
             {/* This is the place where you can see your changes live */}
-            <p
-              className="w-full max-w-[300px] h-40 mx-auto bg-box dark:bg-box-d p-4 rounded-lg"
+            <Playground
+              className="max-w-[300px] h-40"
               style={{ overflow }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolorem dolor et ut eum, magnam
               exercitationem excepturi laboriosam odio optio unde neque incidunt repellat iure id totam magni minus
               perspiciatis?
-            </p>
+            </Playground>
           </LiveChanges>
           <BringChanges className="w-full mx-auto mt-12 space-y-3 max-w-input">
             {/* This is the place where you can add your setting to change your items, e.g: buttons, ranges and more */}

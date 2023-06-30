@@ -7,7 +7,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Input } from "@components/Tech";
+import { Information, CodeBlocks, Input, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -36,8 +36,8 @@ export default function RoundedCorners({}: Props) {
 
         <Workplace className="">
           <LiveChanges className="">
-            <div
-              className="w-full h-40 mx-auto duration-100 border max-w-input bg-box border-white-low-opacity dark:bg-box-d dark:border-white-low-opacity-d"
+            <Playground
+              className="h-40 duration-100 max-w-input"
               style={{ borderRadius: `${topLeft}px ${topRight}px ${bottomLeft}px ${bottomRight}px` }}
             />
           </LiveChanges>

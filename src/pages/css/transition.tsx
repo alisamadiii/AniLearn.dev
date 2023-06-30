@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, Range, Dropdown } from "@components/Tech";
+import { Information, Range, Dropdown, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -55,10 +55,7 @@ export default function Transition({}: Props) {
             />
           </BringChanges>
           <LiveChanges className="">
-            <div
-              className={`relative w-full p-4 mt-12 space-y-4 overflow-hidden border rounded-lg playground__background flex flex-col ${
-                isClicked && "items-end"
-              }`}>
+            <Playground className={`relative mt-12 space-y-4 flex flex-col ${isClicked && "items-end"}`}>
               <motion.div
                 layout
                 transition={{ ease: "easeIn", duration, delay }}
@@ -83,7 +80,7 @@ export default function Transition({}: Props) {
                 className={`w-24 h-12 md:w-32 md:h-12 bg-primary rounded-md flex items-center justify-center text-white`}>
                 linear
               </motion.div>
-            </div>
+            </Playground>
           </LiveChanges>
           <button
             className={`px-4 py-2 mt-3 rounded-md duration-200 ${

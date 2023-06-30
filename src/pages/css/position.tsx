@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, Range, Dropdown, Button } from "@components/Tech";
+import { Information, Range, Dropdown, Button, Playground } from "@components/Tech";
 import { activateButton } from "@utils/ClassName";
 
 type Props = {};
@@ -45,7 +45,7 @@ export default function Position({}: Props) {
 
         <Workplace className="">
           <LiveChanges className="">
-            <div className="relative w-full overflow-y-auto border rounded-lg bg-box dark:bg-box-d h-96 border-white-low-opacity dark:border-white-low-opacity-d">
+            <Playground className="relative p-0 overflow-y-auto h-96">
               <nav
                 className={`${position} flex items-center w-full h-12 px-4 text-black dark:text-white z-20 ${
                   position == "absolute" ? "bg-white/90 dark:bg-black/90" : "bg-white dark:bg-black"
@@ -84,7 +84,7 @@ export default function Position({}: Props) {
                   </>
                 ))}
               </motion.section>
-            </div>
+            </Playground>
           </LiveChanges>
           <BringChanges className="">
             <div className="flex flex-wrap gap-4 mt-12">

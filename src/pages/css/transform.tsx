@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Range } from "@components/Tech";
+import { Information, CodeBlocks, Range, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -66,7 +66,7 @@ export default function Transform({}: Props) {
                 fileName="style.css"
                 wrapLongLines={true}
               />
-              <div className="relative flex items-center justify-center flex-grow p-4 overflow-hidden border rounded-lg h-52 playground__background before:content-['Without-Perspective'] before:bg-red-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
+              <Playground className="flex items-center justify-center flex-grow overflow-hidden h-52 before:content-['Without-Perspective'] before:bg-red-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
                 <Image
                   src={image || IMAGE}
                   width={400}
@@ -79,7 +79,7 @@ export default function Transform({}: Props) {
                     }) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`
                   }}
                 />
-              </div>
+              </Playground>
             </div>
             <div className="grow basis-80">
               <CodeBlocks
@@ -88,7 +88,7 @@ export default function Transform({}: Props) {
                 fileName="style.css"
                 wrapLongLines={true}
               />
-              <div className="relative flex items-center justify-center p-4 overflow-hidden border rounded-lg h-52 playground__background before:content-['Perspective'] before:bg-green-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
+              <Playground className="relative flex items-center justify-center p-4 overflow-hidden h-52 before:content-['Perspective'] before:bg-green-800 before:text-white before:px-2 before:py-1 before:rounded before:absolute before:top-0 before:left-0 before:text-xs">
                 <Image
                   src={image || IMAGE}
                   width={400}
@@ -101,7 +101,7 @@ export default function Transform({}: Props) {
                     }) perspective(200px) rotate(${rotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) skew(${skew}deg) skewX(${skewX}deg) skewY(${skewY}deg) translate(${translateX}px, ${translateY}px)`
                   }}
                 />
-              </div>
+              </Playground>
             </div>
           </LiveChanges>
           <BringChanges className="mt-12 space-y-4">

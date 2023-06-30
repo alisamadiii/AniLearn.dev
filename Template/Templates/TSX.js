@@ -22,7 +22,8 @@ import {
   Input,
   Range,
   Tabs,
-  Dropdown
+  Dropdown,
+  Playground
 } from "@components/Tech";
 
 type Props = {};

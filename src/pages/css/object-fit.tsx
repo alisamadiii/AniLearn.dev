@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Checkbox, Information, CodeBlocks, GivingComment, Input } from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, GivingComment, Input, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -51,8 +51,8 @@ export default function ObjectFit({}: Props) {
             />
           </BringChanges>
           <LiveChanges className="flex justify-center">
-            <div
-              className="overflow-hidden duration-200 border rounded-lg playground__background"
+            <Playground
+              className="p-0"
               style={{ width, height }}>
               <Image
                 src={image || IMAGE}
@@ -62,7 +62,7 @@ export default function ObjectFit({}: Props) {
                 className="w-full h-full"
                 style={{ objectFit }}
               />
-            </div>
+            </Playground>
           </LiveChanges>
           <BringChanges className="mt-12 space-y-6">
             <div className="flex flex-col items-start mx-auto max-w-playground">

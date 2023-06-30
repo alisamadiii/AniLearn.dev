@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks } from "@components/Tech";
+import { Information, CodeBlocks, Playground } from "@components/Tech";
 
 import { Gradients } from "@contents/Gradients";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -84,7 +84,7 @@ export default function Gradient({}: Props) {
                 {Gradients[selectedGradient].name}
               </motion.div>
             </AnimatePresence>
-            <div className="relative flex items-center justify-center w-full p-4 mt-12 overflow-hidden border rounded-lg h-52 playground__background">
+            <Playground className="flex items-center justify-center mt-8 h-52">
               <h1
                 className="text-4xl md:text-5xl text-center font-black text-transparent !bg-clip-text"
                 style={{
@@ -92,7 +92,7 @@ export default function Gradient({}: Props) {
                 }}>
                 Text-Gradient
               </h1>
-            </div>
+            </Playground>
           </LiveChanges>
           <BringChanges className="">
             <div className="flex gap-4 mt-4">
