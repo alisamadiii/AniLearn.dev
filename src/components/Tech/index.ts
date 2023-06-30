@@ -7,3 +7,4 @@ export { default as Information } from "./Information";
 export { default as Tabs } from "../Tabs";
 export { default as Dropdown } from "./Dropdown";
 export { Button, buttonVariants } from "../Button";
+export { default as Playground } from "./Playground";

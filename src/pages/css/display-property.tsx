@@ -6,8 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Button } from "@components/Tech";
-import Image from "next/image";
+import { Information, CodeBlocks, Button, Playground } from "@components/Tech";
 import { activateButton } from "@utils/ClassName";
 
 type Props = {};
@@ -38,17 +37,19 @@ export default function DisplayProperty({}: Props) {
         />
 
         <Workplace className="">
-          <LiveChanges className="w-full p-4 border rounded-lg playground__background">
-            <p className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-              <p
-                style={{ display }}
-                className="text-white bg-primary">
-                Hello World
-              </p>{" "}
-              Iure fugiat, obcaecati laboriosam quis maxime facilis necessitatibus officiis hic asperiores sint ullam
-              quo amet aliquam sunt, eius ea harum reprehenderit accusamus!
-            </p>
+          <LiveChanges>
+            <Playground>
+              <p className="text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                <span
+                  style={{ display }}
+                  className="text-white bg-primary">
+                  Hello World
+                </span>{" "}
+                Iure fugiat, obcaecati laboriosam quis maxime facilis necessitatibus officiis hic asperiores sint ullam
+                quo amet aliquam sunt, eius ea harum reprehenderit accusamus!
+              </p>
+            </Playground>
           </LiveChanges>
           <BringChanges className="">
             <motion.div

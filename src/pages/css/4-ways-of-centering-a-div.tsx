@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Checkbox, Information, CodeBlocks, Tabs } from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, Tabs, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -147,8 +147,8 @@ export const Flex = ({ state }: WaysOfCenteringADivProps) => {
       initial="hidden"
       animate="visible"
       exit="exit">
-      <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}
+      <Playground
+        className="max-w-playground h-36"
         style={{ display, justifyContent, alignItems }}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
@@ -157,7 +157,7 @@ export const Flex = ({ state }: WaysOfCenteringADivProps) => {
             state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
-      </motion.div>
+      </Playground>
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Flex"
@@ -187,8 +187,8 @@ export const Grid = ({ state }: WaysOfCenteringADivProps) => {
       initial="hidden"
       animate="visible"
       exit="exit">
-      <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}
+      <Playground
+        className={`max-w-playground h-36`}
         style={{ display, justifyContent, alignItems }}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
@@ -197,7 +197,7 @@ export const Grid = ({ state }: WaysOfCenteringADivProps) => {
             state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
-      </motion.div>
+      </Playground>
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Grid"
@@ -226,8 +226,8 @@ export const GridWay2 = ({ state }: WaysOfCenteringADivProps) => {
       initial="hidden"
       animate="visible"
       exit="exit">
-      <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}
+      <Playground
+        className="max-w-playground h-36"
         style={{ display, placeItems }}>
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
@@ -236,7 +236,7 @@ export const GridWay2 = ({ state }: WaysOfCenteringADivProps) => {
             state ? "bg-black/80 dark:bg-white/80" : "bg-black dark:bg-white"
           }`}
         />
-      </motion.div>
+      </Playground>
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Grid"
@@ -263,8 +263,7 @@ export const Transform = ({ state }: WaysOfCenteringADivProps) => {
       initial="hidden"
       animate="visible"
       exit="exit">
-      <motion.div
-        className={`isolate relative w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg gap-1 overflow-hidden p-2`}>
+      <Playground className="max-w-playground h-36">
         <AnimatePresence>{state && <ShowLinesComponent />}</AnimatePresence>
         <motion.div
           layout
@@ -276,7 +275,7 @@ export const Transform = ({ state }: WaysOfCenteringADivProps) => {
             left
           }}
         />
-      </motion.div>
+      </Playground>
       <BringChanges className="w-full mx-auto mt-6 space-y-3 max-w-playground">
         <Checkbox
           name="Position"

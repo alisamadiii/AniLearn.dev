@@ -6,7 +6,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, GivingComment, Tabs, Button } from "@components/Tech";
+import { Information, CodeBlocks, GivingComment, Tabs, Button, Playground } from "@components/Tech";
 import { activateButton } from "@utils/ClassName";
 
 type Props = {};
@@ -63,8 +63,8 @@ export const FirstTab = () => {
       />
 
       <LiveChanges className="">
-        <div
-          className={`w-full max-w-playground mx-auto h-36 bg-box/50 dark:bg-box-d/50 border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg flex gap-1 overflow-hidden`}
+        <Playground
+          className={`max-w-playground flex gap-2 h-36`}
           style={{ justifyContent, alignItems }}>
           <AnimatePresence initial={false}>
             {[...Array(4)].map((_, index) => (
@@ -82,7 +82,7 @@ export const FirstTab = () => {
               />
             ))}
           </AnimatePresence>
-        </div>
+        </Playground>
       </LiveChanges>
       <GivingComment comment="Justify Content">
         <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
@@ -175,8 +175,8 @@ export const SecondTab = () => {
       />
 
       <LiveChanges className="">
-        <div
-          className={`w-full max-w-playground mx-auto h-60 bg-box/50 dark:bg-box-d/50 border border-white-low-opacity dark:border-white-low-opacity-d rounded-lg flex flex-wrap gap-1 overflow-hidden`}
+        <Playground
+          className={`max-w-playground flex flex-wrap gap-1 h-60`}
           style={{ alignContent }}>
           <AnimatePresence initial={false}>
             {[...Array(4)].map((_, index) => (
@@ -194,7 +194,7 @@ export const SecondTab = () => {
               />
             ))}
           </AnimatePresence>
-        </div>
+        </Playground>
       </LiveChanges>
       <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
         <Button

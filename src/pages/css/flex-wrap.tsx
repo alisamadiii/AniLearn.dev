@@ -7,7 +7,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Checkbox, Information, CodeBlocks, GivingComment, Input } from "@components/Tech";
+import { Checkbox, Information, CodeBlocks, GivingComment, Input, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -49,10 +49,8 @@ export default function FlexWrap({}: Props) {
 
         <Workplace className="">
           <LiveChanges className="">
-            <div
-              className={`w-full min-w-[300px] max-w-playground mx-auto p-4 bg-box/50 dark:bg-box-d/50 border resize-x border-white-low-opacity dark:border-white-low-opacity-d rounded-lg flex gap-3 overflow-hidden ${
-                flexWrap && "flex-wrap"
-              }`}
+            <Playground
+              className={`w-full min-w-[300px] max-w-playground resize-x flex ${flexWrap && "flex-wrap"}`}
               ref={playground}>
               {[...Array(4)].map((_, index) => (
                 <Rectangular
@@ -61,7 +59,7 @@ export default function FlexWrap({}: Props) {
                   flexGrow={flexGrow}
                 />
               ))}
-            </div>
+            </Playground>
             <div
               className={`relative flex items-center justify-center gap-3 mx-auto text-right mt-3`}
               style={{ width: playgroundWidth }}>

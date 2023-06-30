@@ -8,7 +8,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Input } from "@components/Tech";
+import { Information, CodeBlocks, Input, Playground } from "@components/Tech";
 
 type Props = {};
 
@@ -86,19 +86,21 @@ export default function FlexOrder({}: Props) {
         />
 
         <Workplace className="">
-          <LiveChanges className="flex w-full gap-2 p-4 mx-auto border rounded-lg max-w-playground playground__background">
-            {rects.map((rect) => (
-              <motion.div
-                key={rect.id}
-                layout
-                className={`bg-black dark:bg-white rounded-lg w-11 h-11 text-white dark:text-black flex justify-center items-center transition-colors duration-200 ${
-                  rect.id == selected && "ring ring-primary/70"
-                }`}
-                style={{ order: rect.order }}
-                onClick={() => setSelected(rect.id)}>
-                {rect.id}
-              </motion.div>
-            ))}
+          <LiveChanges>
+            <Playground className="flex gap-2 max-w-playground">
+              {rects.map((rect) => (
+                <motion.div
+                  key={rect.id}
+                  layout
+                  className={`bg-black dark:bg-white rounded-lg w-11 h-11 text-white dark:text-black flex justify-center items-center transition-colors duration-200 ${
+                    rect.id == selected && "ring ring-primary/70"
+                  }`}
+                  style={{ order: rect.order }}
+                  onClick={() => setSelected(rect.id)}>
+                  {rect.id}
+                </motion.div>
+              ))}
+            </Playground>
           </LiveChanges>
           <BringChanges className="flex flex-col items-start w-full mx-auto mt-8 max-w-playground">
             <Input

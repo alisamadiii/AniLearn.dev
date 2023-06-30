@@ -5,7 +5,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Dropdown } from "@components/Tech";
+import { Information, CodeBlocks, Dropdown, Playground } from "@components/Tech";
 
 const cursorValues = [
   "auto",
@@ -73,12 +73,12 @@ export default function Cursor({}: Props) {
             />
           </BringChanges>
           <LiveChanges className="">
-            <div
-              className="flex flex-col items-center justify-center w-full mx-auto text-5xl text-black duration-200 bg-red-700 dark:text-white max-w-playground md:bg-box dark:md:bg-box-d h-96 rounded-xl hover:bg-box/70"
+            <Playground
+              className="flex flex-col items-center justify-center text-5xl text-black dark:text-white !bg-red-700 md:!bg-box dark:md:!bg-box-d max-w-playground h-96"
               style={{ cursor }}>
               <h3>Hover me</h3>
               <p className="mt-2 text-sm text-font-clr dark:text-font-clr-d">Not available for phone</p>
-            </div>
+            </Playground>
           </LiveChanges>
         </Workplace>
       </Container>
