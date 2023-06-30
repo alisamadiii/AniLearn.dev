@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 type Props = {};
 
 import { BsSun, BsFillMoonFill } from "react-icons/bs";
+import { buttonVariants } from "@components/Button";
 
 export default function Footer({}: Props) {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -38,32 +39,32 @@ export default function Footer({}: Props) {
       <ul className="flex flex-col md:flex-row">
         <Link
           href={"/"}
-          className="px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-button-d">
+          className={buttonVariants({ variant: "footer" })}>
           Home
         </Link>
         <Link
           href={"/about"}
-          className="px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-button-d">
+          className={buttonVariants({ variant: "footer" })}>
           About
         </Link>
         <Link
           href={"/html/inputs"}
-          className="px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-button-d">
+          className={buttonVariants({ variant: "footer" })}>
           Learning
         </Link>
         <Link
           href={"https://github.com/AliReza1083/AniLearn.dev"}
-          className="px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-button-d">
+          className={buttonVariants({ variant: "footer" })}>
           GitHub
         </Link>
         <Link
           href={"/features"}
-          className="px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-button-d">
+          className={buttonVariants({ variant: "footer" })}>
           Features
         </Link>
         <Link
           href={"https://github.com/AliReza1083/AniLearn.dev/issues/new/choose"}
-          className="px-3 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-button-d">
+          className={buttonVariants({ variant: "footer" })}>
           Found issue?
         </Link>
         <AnimatePresence>

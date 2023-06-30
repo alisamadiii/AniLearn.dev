@@ -6,7 +6,8 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, Button_Tech, Range, Dropdown } from "@components/Tech";
+import { Information, Range, Dropdown, Button } from "@components/Tech";
+import { activateButton } from "@utils/ClassName";
 
 type Props = {};
 
@@ -87,36 +88,36 @@ export default function Position({}: Props) {
           </LiveChanges>
           <BringChanges className="">
             <div className="flex flex-wrap gap-4 mt-12">
-              <Button_Tech
-                value="static"
-                setClassName={setPosition}
-                classNameValue="static"
-                className={position}
-              />
-              <Button_Tech
-                value="relative"
-                setClassName={setPosition}
-                classNameValue="relative"
-                className={position}
-              />
-              <Button_Tech
-                value="absolute"
-                setClassName={setPosition}
-                classNameValue="absolute"
-                className={position}
-              />
-              <Button_Tech
-                value="fixed"
-                setClassName={setPosition}
-                classNameValue="fixed"
-                className={position}
-              />
-              <Button_Tech
-                value="sticky"
-                setClassName={setPosition}
-                classNameValue="sticky"
-                className={position}
-              />
+              <Button
+                onClick={() => setPosition("static")}
+                variant={"workplace"}
+                className={`${activateButton(position, "static")}`}>
+                static
+              </Button>
+              <Button
+                onClick={() => setPosition("relative")}
+                variant={"workplace"}
+                className={`${activateButton(position, "relative")}`}>
+                relative
+              </Button>
+              <Button
+                onClick={() => setPosition("absolute")}
+                variant={"workplace"}
+                className={`${activateButton(position, "absolute")}`}>
+                absolute
+              </Button>
+              <Button
+                onClick={() => setPosition("fixed")}
+                variant={"workplace"}
+                className={`${activateButton(position, "fixed")}`}>
+                fixed
+              </Button>
+              <Button
+                onClick={() => setPosition("sticky")}
+                variant={"workplace"}
+                className={`${activateButton(position, "sticky")}`}>
+                sticky
+              </Button>
             </div>
             <div className="mt-8 mb-4">
               <Dropdown

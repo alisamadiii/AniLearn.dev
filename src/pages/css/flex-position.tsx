@@ -6,7 +6,8 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Button_Tech, GivingComment, Tabs } from "@components/Tech";
+import { Information, CodeBlocks, GivingComment, Tabs, Button } from "@components/Tech";
+import { activateButton } from "@utils/ClassName";
 
 type Props = {};
 
@@ -85,64 +86,64 @@ export const FirstTab = () => {
       </LiveChanges>
       <GivingComment comment="Justify Content">
         <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
-          <Button_Tech
-            value="start"
-            classNameValue="start"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="end"
-            classNameValue="end"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="center"
-            classNameValue="center"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="space-between"
-            classNameValue="space-between"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="space-evenly"
-            classNameValue="space-evenly"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
-          <Button_Tech
-            value="space-around"
-            classNameValue="space-around"
-            className={justifyContent}
-            setClassName={setJustifyContent}
-          />
+          <Button
+            onClick={() => setJustifyContent("start")}
+            variant={"workplace"}
+            className={`${activateButton(justifyContent, "start")}`}>
+            start
+          </Button>
+          <Button
+            onClick={() => setJustifyContent("end")}
+            variant={"workplace"}
+            className={`${activateButton(justifyContent, "end")}`}>
+            end
+          </Button>
+          <Button
+            onClick={() => setJustifyContent("center")}
+            variant={"workplace"}
+            className={`${activateButton(justifyContent, "center")}`}>
+            center
+          </Button>
+          <Button
+            onClick={() => setJustifyContent("space-between")}
+            variant={"workplace"}
+            className={`${activateButton(justifyContent, "space-between")}`}>
+            space-between
+          </Button>
+          <Button
+            onClick={() => setJustifyContent("space-evenly")}
+            variant={"workplace"}
+            className={`${activateButton(justifyContent, "space-evenly")}`}>
+            space-evenly
+          </Button>
+          <Button
+            onClick={() => setJustifyContent("space-around")}
+            variant={"workplace"}
+            className={`${activateButton(justifyContent, "space-around")}`}>
+            space-around
+          </Button>
         </BringChanges>
       </GivingComment>
       <GivingComment comment="Align Items">
         <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
-          <Button_Tech
-            value="start"
-            classNameValue="start"
-            className={alignItems}
-            setClassName={setAlignItems}
-          />
-          <Button_Tech
-            value="end"
-            classNameValue="end"
-            className={alignItems}
-            setClassName={setAlignItems}
-          />
-          <Button_Tech
-            value="center"
-            classNameValue="center"
-            className={alignItems}
-            setClassName={setAlignItems}
-          />
+          <Button
+            onClick={() => setAlignItems("start")}
+            variant={"workplace"}
+            className={`${activateButton(alignItems, "start")}`}>
+            start
+          </Button>
+          <Button
+            onClick={() => setAlignItems("end")}
+            variant={"workplace"}
+            className={`${activateButton(alignItems, "end")}`}>
+            end
+          </Button>
+          <Button
+            onClick={() => setAlignItems("center")}
+            variant={"workplace"}
+            className={`${activateButton(alignItems, "center")}`}>
+            center
+          </Button>
         </BringChanges>
       </GivingComment>
     </motion.div>
@@ -196,42 +197,42 @@ export const SecondTab = () => {
         </div>
       </LiveChanges>
       <BringChanges className="flex flex-wrap justify-center gap-3 mt-8">
-        <Button_Tech
-          value="start"
-          classNameValue="start"
-          className={alignContent}
-          setClassName={setAlignContent}
-        />
-        <Button_Tech
-          value="end"
-          classNameValue="end"
-          className={alignContent}
-          setClassName={setAlignContent}
-        />
-        <Button_Tech
-          value="center"
-          classNameValue="center"
-          className={alignContent}
-          setClassName={setAlignContent}
-        />
-        <Button_Tech
-          value="space-between"
-          classNameValue="space-between"
-          className={alignContent}
-          setClassName={setAlignContent}
-        />
-        <Button_Tech
-          value="space-evenly"
-          classNameValue="space-evenly"
-          className={alignContent}
-          setClassName={setAlignContent}
-        />
-        <Button_Tech
-          value="space-around"
-          classNameValue="space-around"
-          className={alignContent}
-          setClassName={setAlignContent}
-        />
+        <Button
+          onClick={() => setAlignContent("start")}
+          variant={"workplace"}
+          className={`${activateButton(alignContent, "start")}`}>
+          start
+        </Button>
+        <Button
+          onClick={() => setAlignContent("end")}
+          variant={"workplace"}
+          className={`${activateButton(alignContent, "end")}`}>
+          end
+        </Button>
+        <Button
+          onClick={() => setAlignContent("center")}
+          variant={"workplace"}
+          className={`${activateButton(alignContent, "center")}`}>
+          center
+        </Button>
+        <Button
+          onClick={() => setAlignContent("space-between")}
+          variant={"workplace"}
+          className={`${activateButton(alignContent, "space-between")}`}>
+          space-between
+        </Button>
+        <Button
+          onClick={() => setAlignContent("space-evenly")}
+          variant={"workplace"}
+          className={`${activateButton(alignContent, "space-evenly")}`}>
+          space-evenly
+        </Button>
+        <Button
+          onClick={() => setAlignContent("space-around")}
+          variant={"workplace"}
+          className={`${activateButton(alignContent, "space-around")}`}>
+          space-around
+        </Button>
       </BringChanges>
     </motion.div>
   );

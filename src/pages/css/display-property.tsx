@@ -6,8 +6,9 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import { Information, CodeBlocks, Button_Tech } from "@components/Tech";
+import { Information, CodeBlocks, Button } from "@components/Tech";
 import Image from "next/image";
+import { activateButton } from "@utils/ClassName";
 
 type Props = {};
 
@@ -53,30 +54,30 @@ export default function DisplayProperty({}: Props) {
             <motion.div
               layout
               className="flex flex-wrap gap-2 mt-12">
-              <Button_Tech
-                value="Block"
-                className={display}
-                classNameValue="block"
-                setClassName={setDisplay}
-              />
-              <Button_Tech
-                value="Inline"
-                className={display}
-                classNameValue="inline"
-                setClassName={setDisplay}
-              />
-              <Button_Tech
-                value="Inline-Block"
-                className={display}
-                classNameValue="inline-block"
-                setClassName={setDisplay}
-              />
-              <Button_Tech
-                value="None"
-                className={display}
-                classNameValue="none"
-                setClassName={setDisplay}
-              />
+              <Button
+                onClick={() => setDisplay("block")}
+                variant={"workplace"}
+                className={`${activateButton(display, "block")}`}>
+                block
+              </Button>
+              <Button
+                onClick={() => setDisplay("inline")}
+                variant={"workplace"}
+                className={`${activateButton(display, "inline")}`}>
+                inline
+              </Button>
+              <Button
+                onClick={() => setDisplay("inline-block")}
+                variant={"workplace"}
+                className={`${activateButton(display, "inline-block")}`}>
+                inline-block
+              </Button>
+              <Button
+                onClick={() => setDisplay("none")}
+                variant={"workplace"}
+                className={`${activateButton(display, "none")}`}>
+                none
+              </Button>
             </motion.div>
           </BringChanges>
         </Workplace>

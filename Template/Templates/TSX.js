@@ -17,7 +17,7 @@ import {
   Checkbox,
   Information,
   CodeBlocks,
-  Button_Tech,
+  Button,
   GivingComment,
   Input,
   Range,
