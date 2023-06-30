@@ -8,18 +8,7 @@ import MetaTag from "@layouts/MetaTag";
 import Workplace, { BringChanges, LiveChanges } from "@components/Tech/Workplace";
 
 // you can use these components
-import {
-  Checkbox,
-  Information,
-  CodeBlocks,
-  Button_Tech,
-  GivingComment,
-  Input,
-  Range,
-  Tabs,
-  Dropdown
-} from "@components/Tech";
-import { read } from "fs";
+import { Information, CodeBlocks, Input } from "@components/Tech";
 
 type Props = {};
 
