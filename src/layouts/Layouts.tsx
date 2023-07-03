@@ -47,7 +47,8 @@ export default function Layouts({ children }: Props) {
             <div className="sticky top-0 z-40 flex items-center justify-end gap-4 px-4 text-font-clr dark:text-font-clr-d h-14 bg-box/70 dark:bg-box-d/70 backdrop-blur-sm">
               <SearchBox />
               <a
-                href="#"
+                href="https://github.com/AliReza1083/AniLearn.dev"
+                target="_blank"
                 className="text-2xl">
                 <AiFillGithub />
               </a>
