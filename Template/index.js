@@ -8,7 +8,7 @@ const gradient = require("gradient-string");
 const { TemplateTSX } = require("./Templates/TSX");
 
 function createFiles(fileName, tech, contributor) {
-  const folderPathForTSX = `../anilearn/src/pages/${tech}`;
+  const folderPathForTSX = `../AniLearn.dev/src/pages/${tech}`;
 
   const filePathTSX = path.join(folderPathForTSX, `${fileName}.tsx`);
 
