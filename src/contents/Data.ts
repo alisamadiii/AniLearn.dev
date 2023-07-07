@@ -121,5 +121,11 @@ export const CSS = [
     name: "Rounded Corners",
     link: "/css/rounded-corners",
     new: true
+  },
+  {
+    id: 17,
+    name:"Opacity",
+    link: "/css/opacity",
+    new: true
   }
 ];
