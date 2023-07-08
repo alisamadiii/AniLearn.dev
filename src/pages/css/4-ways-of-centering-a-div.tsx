@@ -53,7 +53,7 @@ export default function CenteringADiv({}: Props) {
         description=""
       />
       <Container>
-        <Information content="<h1>4 ways of centering a div</h1><p>In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>" />
+        <Information content="<h1>4 ways of centering a div</h1><p>In CSS, you can use properties like FLexbox, Grid-box, position-absolute, and Margin.</p>" />
 
         <div className="grid items-start gap-4 my-8 lg:grid-cols-2">
           <CodeBlocks
