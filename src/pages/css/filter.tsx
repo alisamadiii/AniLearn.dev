@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 
 import Container from "@layouts/Container";
@@ -11,7 +11,8 @@ import { Information, CodeBlocks, Range, Dropdown } from "@components/Tech";
 type Props = {};
 
 export default function Filter({}: Props) {
-  const [image, setImage] = useState<null | string>(null);
+  const [imageUrl, setImageUrl] = useState<string>("");
+  const [isValidUrl, setIsValidUrl] = useState(true);
   const [ratio, setRatio] = useState<"landscape" | "portrait">("landscape");
   // Filters State Management
   const [blur, setBlur] = useState(0);
@@ -32,6 +33,14 @@ export default function Filter({}: Props) {
     filter: Hue-State(${hueRotate}deg); /* deg */
     filter: Saturate(${saturate}); /* Nothing */
 }`; // Use backtick for writing your code
+
+  useEffect(() => {
+    // Check if the image URL is valid
+    const checkImageUrl = new Image();
+    checkImageUrl.src = imageUrl;
+    checkImageUrl.onload = () => setIsValidUrl(true);
+    checkImageUrl.onerror = () => setIsValidUrl(false);
+  }, [imageUrl]);
 
   return (
     <>
@@ -54,10 +63,13 @@ export default function Filter({}: Props) {
               type="url"
               placeholder="https://"
               id="website"
-              value={image || ""}
-              onChange={(e) => setImage(e.target.value)}
+              value={imageUrl || ""}
+              onChange={(e) => setImageUrl(e.target.value)}
               className="w-full p-2 bg-transparent border rounded-md outline-none max-w-input border-white-low-opacity dark:border-white-low-opacity-d focus:border-primary dark:focus:border-primary placeholder:opacity-50"
             />
+            {!isValidUrl && imageUrl.length > 1 && (
+              <p className="w-full text-xs text-red-600 max-w-input">The provided URL is invalid.</p>
+            )}
             <small>Add your own Image URL</small>
 
             <Dropdown
@@ -72,13 +84,13 @@ export default function Filter({}: Props) {
             <ReactCompareSlider
               itemOne={
                 <ReactCompareSliderImage
-                  src={image || IMAGE}
+                  src={isValidUrl ? imageUrl : IMAGE}
                   alt="Image one"
                 />
               }
               itemTwo={
                 <ReactCompareSliderImage
-                  src={image || IMAGE}
+                  src={isValidUrl ? imageUrl : IMAGE}
                   alt="Image two"
                   style={{
                     filter: `blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hueRotate}deg) brightness(${brightness}%) saturate(${saturate}%)`
