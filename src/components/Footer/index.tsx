@@ -9,7 +9,7 @@ type Props = {};
 import { buttonVariants } from "@components/Button";
 import { Dropdown } from "@components/Tech";
 
-const themes = ["dark", "light", "orange", "spring"];
+const themes = ["dark", "light", "turquoise", "spring"];
 
 export default function Footer({}: Props) {
   const { theme, setTheme } = useTheme();

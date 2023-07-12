@@ -21,14 +21,14 @@
     --color-box: 220deg 14% 8%;
   }
 
-  [data-theme="orange"] {
-    --color-primary: 51deg 100% 50%;
-    --color-secondary: 38deg 100% 18%;
-    --color-button: 222deg 15% 13%;
-    --color-background: 228deg 16% 6%;
-    --color-font: 227, 229, 232, 0.8;
-    --color-heading: 0deg 0% 100%;
-    --color-box: 220deg 14% 8%;
+  [data-theme="turquoise"] {
+    --color-primary: 174 63% 40%;
+    --color-secondary: 175 38% 40%;
+    --color-button: 178 40% 87%;
+    --color-background: 177 41% 91%;
+    --color-font: 38, 51, 57;
+    --color-heading: 0deg 0% 0%;
+    --color-box: 178 40% 87%;
   }
 
   [data-theme="spring"] {
@@ -124,17 +124,17 @@ input[type="number"] {
       );
     }
 
-    [data-theme="orange"] #box::after {
+    [data-theme="turquoise"] #box::after {
       background: radial-gradient(
         600px circle at var(--mouse-x) var(--mouse-y),
-        hsl(51deg, 100%, 50%, 1),
+        hsl(174, 63%, 40%, 1),
         transparent 20%
       );
     }
-    [data-theme="orange"] #box::before {
+    [data-theme="turquoise"] #box::before {
       background: radial-gradient(
         500px circle at var(--mouse-x) var(--mouse-y),
-        hsl(51deg, 100%, 50%, 0.04),
+        hsl(174, 63%, 40%, 0.1),
         transparent 30%
       );
     }
