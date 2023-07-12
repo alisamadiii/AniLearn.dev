@@ -26,7 +26,7 @@ export default function Input({ name, value, unit, eResize, setValue, increaseFa
   };
 
   useEffect(() => {
-    if (value < 0) setValue(0);
+    if (value < 0) setValue!(0);
   }, [value]);
 
   return (
