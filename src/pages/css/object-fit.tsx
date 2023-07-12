@@ -71,13 +71,17 @@ export default function ObjectFit({}: Props) {
                 name="Width"
                 unit="px"
                 value={width}
+                setValue={setWidth}
                 onChange={(e) => setWidth(Number(e.target.value))}
+                eResize={true}
               />
               <Input
                 name="Height"
                 unit="px"
                 value={height}
+                setValue={setHeight}
                 onChange={(e) => setHeight(Number(e.target.value))}
+                eResize={true}
               />
             </div>
             <div className="mx-auto max-w-playground">
