@@ -10,24 +10,20 @@ module.exports = {
         input: "600px"
       },
       colors: {
-        primary: "#8000FF",
-        secondary: "#F8522E",
-        button: "#f2f2f2",
-        "font-clr": "rgba(0, 0, 0, .9)",
-        "background-clr": "white",
+        primary: "hsl(var(--color-primary) / <alpha-value>)",
+        secondary: "hsl(var(--color-secondary) / <alpha-value>)",
+        button: "hsl(var(--color-button) / <alpha-value>)",
+        "font-clr": "rgba(var(--color-font))",
+        "background-clr": "var(--color-background)",
         "blur-clr": "rgba(170, 63, 255, 0.07)",
-        box: "#f2f2f2",
+        box: "hsl(var(--color-box) / <alpha-value>)",
         "mouse-move": "rgba(92, 92, 92, 0.09)",
         "white-low-opacity": "rgba(0, 0, 0, 0.1)",
+        "white-low-opacity-d": "rgba(255, 255, 255, 0.07)",
         twitter: "#1DA1F2",
         linkedin: "#0A66C2",
-        "button-d": "#1C1F26",
-        "font-clr-d": "rgba(227, 229, 232, 0.80)",
-        "background-clr-d": "#0D0E12",
         "blur-clr-d": "rgba(170, 63, 255, 0.07)",
-        "box-d": "rgba(18, 20, 24)",
-        "mouse-move-d": "rgba(92, 92, 92, 0.09)",
-        "white-low-opacity-d": "rgba(255, 255, 255, 0.07)"
+        "mouse-move-d": "rgba(92, 92, 92, 0.09)"
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",

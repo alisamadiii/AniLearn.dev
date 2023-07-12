@@ -96,7 +96,9 @@ export default function Home() {
             <div className="absolute left-0 text-box dark:text-box-d opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
               Web development technologies
             </div>
-            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">technologies</small>
+            <small className="text-transparent uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text">
+              technologies
+            </small>
             <Heading_2 className="mt-2 text-4xl text-black dark:text-white">Web development technologies</Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
             {/* Gradient background */}
@@ -127,7 +129,9 @@ export default function Home() {
             <div className="absolute left-0 text-box dark:text-box-d opacity-[.2] text-3xl sm:text-5xl md:text-7xl lg:text-9xl pointer-events-none">
               Why this website?
             </div>
-            <small className="text-transparent uppercase bg-gradient-text bg-clip-text">reasons</small>
+            <small className="text-transparent uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text">
+              reasons
+            </small>
             <Heading_2 className="mt-2 text-4xl text-black dark:text-white">Why this website?</Heading_2>
             <p>Using a website that allows users to visually work with CSS offers several advantages:</p>
             {/* container */}

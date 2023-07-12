@@ -2,13 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 270deg 100% 50%;
+    --color-secondary: 11deg 94% 58%;
+    --color-font: 0, 0, 0, 0.9;
+    --color-background: white;
+    --color-button: 0deg 0% 95%;
+    --color-box: 0deg 0% 95%;
+  }
+
+  html.dark {
+    --color-button: 222deg 15% 13%;
+    --color-background: #0d0e12;
+    --color-font: 227, 229, 232, 0.8;
+    --color-box: 220deg 14% 8%;
+  }
+}
+
 html ::-webkit-scrollbar {
   width: 5px;
 }
 
 /* Handle */
 html ::-webkit-scrollbar-thumb {
-  @apply bg-box-d/50;
+  @apply bg-box/50;
   border-radius: 10px;
 }
 
@@ -115,7 +133,7 @@ input[type="number"] {
   }
 
   .playground__background {
-    @apply bg-box dark:bg-box-d border-white-low-opacity dark:border-white-low-opacity-d;
+    @apply bg-box border-white-low-opacity dark:border-white-low-opacity-d;
   }
 }
 

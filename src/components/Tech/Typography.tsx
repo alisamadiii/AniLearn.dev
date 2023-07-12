@@ -57,5 +57,9 @@ export function Paragraph({ children }: Props) {
 }
 
 export function Small_Gradient({ children }: Props) {
-  return <small className="text-transparent uppercase bg-gradient-text bg-clip-text">{children}</small>;
+  return (
+    <small className="text-transparent uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text">
+      {children}
+    </small>
+  );
 }

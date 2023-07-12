@@ -34,7 +34,7 @@ export default function Technology({ name, description, link, Icon }: Technology
         <p className="mb-8 text-base/6">{description}</p>
         <Link
           href={link}
-          className="mt-auto text-transparent bg-gradient-text bg-clip-text">
+          className="mt-auto text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">
           Start Learning...
         </Link>
       </div>
