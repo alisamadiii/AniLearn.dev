@@ -50,7 +50,7 @@ export default function FlexWrap({}: Props) {
         <Workplace className="">
           <LiveChanges className="">
             <Playground
-              className={`w-full min-w-[300px] max-w-playground resize-x flex ${flexWrap && "flex-wrap"}`}
+              className={`min-w-[300px] max-w-playground resize-x flex ${flexWrap && "flex-wrap"}`}
               ref={playground}>
               {[...Array(4)].map((_, index) => (
                 <Rectangular
@@ -95,8 +95,10 @@ export default function FlexWrap({}: Props) {
                 <Input
                   name="Flex Basis"
                   value={flexBasis}
+                  setValue={setFlexBasis}
                   unit="px"
                   onChange={(e) => onChangeHandler(e)}
+                  eResize={true}
                 />
               </GivingComment>
             </div>

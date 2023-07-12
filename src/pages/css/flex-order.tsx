@@ -107,6 +107,7 @@ export default function FlexOrder({}: Props) {
               name="order"
               value={filteringValues(selected)!}
               onChange={(e) => updatingValues(selected, e.target.valueAsNumber)}
+              eResize={false}
             />
           </BringChanges>
         </Workplace>

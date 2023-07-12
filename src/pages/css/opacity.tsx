@@ -80,13 +80,19 @@ export default function Opacity({}: Props) {
                 name="Width"
                 unit="px"
                 value={width}
-                onChange={(e) => setWidth(Number(e.target.value))}
+                setValue={setWidth}
+                onChange={(e) => setWidth(e.target.valueAsNumber)}
+                increaseFactor={1}
+                eResize={true}
               />
               <Input
                 name="Height"
                 unit="px"
                 value={height}
-                onChange={(e) => setHeight(Number(e.target.value))}
+                setValue={setHeight}
+                onChange={(e) => setHeight(e.target.valueAsNumber)}
+                increaseFactor={1}
+                eResize={true}
               />
             </div>
 
@@ -96,7 +102,10 @@ export default function Opacity({}: Props) {
                 <Input
                   name="Opacity"
                   value={opacity}
+                  setValue={setOpacity}
                   onChange={(e) => setOpacity(e.target.value)}
+                  increaseFactor={0.001}
+                  eResize={true}
                 />
               </GivingComment>
             </div>

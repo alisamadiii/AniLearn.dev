@@ -45,26 +45,34 @@ export default function RoundedCorners({}: Props) {
             <Input
               name="Top Left"
               value={topLeft}
+              setValue={setTopLeft}
               unit="px"
               onChange={(e) => setTopLeft(e.target.valueAsNumber)}
+              eResize={true}
             />
             <Input
               name="Top Right"
               value={topRight}
+              setValue={setTopRight}
               unit="px"
               onChange={(e) => setTopRight(e.target.valueAsNumber)}
+              eResize={true}
             />
             <Input
               name="Bottom Left"
               value={bottomLeft}
+              setValue={setBottomLeft}
               unit="px"
               onChange={(e) => setBottomLeft(e.target.valueAsNumber)}
+              eResize={true}
             />
             <Input
               name="Bottom Left"
               value={bottomRight}
+              setValue={setBottomRight}
               unit="px"
               onChange={(e) => setBottomRight(e.target.valueAsNumber)}
+              eResize={true}
             />
           </BringChanges>
         </Workplace>
