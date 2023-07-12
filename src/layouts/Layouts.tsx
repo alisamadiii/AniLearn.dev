@@ -22,6 +22,7 @@ import { buttonVariants } from "@components/Button";
 export default function Layouts({ children }: Props) {
   const [isNavbar, setIsNavbar] = useState<boolean>(false);
   const [navbarBg, setNavbarBg] = useState<boolean>(false);
+  const { setTheme } = useTheme();
   const router = useRouter();
 
   useEffect(() => {
@@ -74,7 +75,7 @@ export default function Layouts({ children }: Props) {
           <Container className="flex items-center justify-between">
             <Link
               href={"/"}
-              className="flex items-center gap-1 text-lg font-semibold text-black dark:text-white group">
+              className="flex items-center gap-1 text-lg font-semibold text-heading group">
               <Logo />
               AniLearn.dev
             </Link>

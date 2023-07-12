@@ -22,7 +22,7 @@ export default function Navbar_Tech({ isNavbar, setIsNavbar }: NavbarTechProps) 
           <Link
             href={"/"}
             onClick={() => setIsNavbar(false)}
-            className="text-lg font-black text-black dark:text-white">
+            className="text-lg font-black text-heading">
             AniLearn.dev
           </Link>
           <p className="text-xs">Learning something with animation doesn&apos;t get easier than this</p>
@@ -55,7 +55,7 @@ export const Links = ({ tech, techName }: LinksProps) => {
   return (
     <li className="mt-2">
       <button
-        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-black dark:text-white cursor-pointer ${
+        className={`w-full flex items-center justify-between gap-1 px-2 py-1 rounded mb-2 text-heading cursor-pointer ${
           open && "bg-white-low-opacity dark:bg-white-low-opacity-d"
         }`}
         onClick={() => setOpen(!open)}>

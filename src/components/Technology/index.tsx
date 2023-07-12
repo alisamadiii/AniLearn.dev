@@ -30,7 +30,7 @@ export default function Technology({ name, description, link, Icon }: Technology
         <div className="bg-[#dfdfdf] dark:bg-[#292929] p-2 rounded-md text-3xl text-black dark:text-white">
           <Icon />
         </div>
-        <Heading_3 className="mt-4 mb-1 text-2xl text-black dark:text-white">{name}</Heading_3>
+        <Heading_3 className="mt-4 mb-1 text-2xl">{name}</Heading_3>
         <p className="mb-8 text-base/6">{description}</p>
         <Link
           href={link}

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
+  darkMode: false,
   theme: {
     extend: {
       maxWidth: {
@@ -14,7 +14,8 @@ module.exports = {
         secondary: "hsl(var(--color-secondary) / <alpha-value>)",
         button: "hsl(var(--color-button) / <alpha-value>)",
         "font-clr": "rgba(var(--color-font))",
-        "background-clr": "var(--color-background)",
+        heading: "hsl(var(--color-heading) / <alpha-value>)",
+        "background-clr": "hsl(var(--color-background) / <alpha-value>)",
         "blur-clr": "rgba(170, 63, 255, 0.07)",
         box: "hsl(var(--color-box) / <alpha-value>)",
         "mouse-move": "rgba(92, 92, 92, 0.09)",
@@ -22,8 +23,7 @@ module.exports = {
         "white-low-opacity-d": "rgba(255, 255, 255, 0.07)",
         twitter: "#1DA1F2",
         linkedin: "#0A66C2",
-        "blur-clr-d": "rgba(170, 63, 255, 0.07)",
-        "mouse-move-d": "rgba(92, 92, 92, 0.09)"
+        "blur-clr-d": "rgba(170, 63, 255, 0.07)"
       },
       backgroundImage: {
         "gradient-text": "linear-gradient(270deg, #F8522E, #AA3FFF, #6557FF)",

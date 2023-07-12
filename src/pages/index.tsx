@@ -99,7 +99,7 @@ export default function Home() {
             <small className="text-transparent uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text">
               technologies
             </small>
-            <Heading_2 className="mt-2 text-4xl text-black dark:text-white">Web development technologies</Heading_2>
+            <Heading_2 className="mt-2 text-4xl text-heading">Web development technologies</Heading_2>
             <Heading_2 className="text-4xl">Practice Visually</Heading_2>
             {/* Gradient background */}
             <div className="absolute h-24 translate-y-24 w-96 bg-primary/20 -z-10 blur-3xl" />
@@ -132,7 +132,7 @@ export default function Home() {
             <small className="text-transparent uppercase bg-gradient-to-r from-primary to-secondary bg-clip-text">
               reasons
             </small>
-            <Heading_2 className="mt-2 text-4xl text-black dark:text-white">Why this website?</Heading_2>
+            <Heading_2 className="mt-2 text-4xl">Why this website?</Heading_2>
             <p>Using a website that allows users to visually work with CSS offers several advantages:</p>
             {/* container */}
             <div className="relative grid grid-cols-4 gap-4 mt-8">
@@ -144,7 +144,7 @@ export default function Home() {
         {/* ShoutOut */}
         <section className="flex items-center justify-center px-4 py-12 mt-24 bg-gradient-to-r from-primary to-secondary">
           <div className="relative w-full max-w-[1000px] bg-box dark:bg-box-d border border-white-low-opacity/90 dark:border-white-low-opacity-d/90 backdrop-blur-sm overflow-hidden rounded-xl flex flex-col gap-4 px-6 py-12 shadow-2xl">
-            <h2 className="font-medium text-black dark:text-white text-2xl/8">
+            <h2 className="font-medium text-heading text-2xl/8">
               I am making animated contents on Twitter, and I know they will be helpful when learning something.
             </h2>
             <div className="flex gap-2">
@@ -167,7 +167,7 @@ export default function Home() {
         {/* Testimonials */}
         <section className="mt-24">
           <Container>
-            <Heading_2 className="mt-2 mb-8 text-4xl text-black dark:text-white">Testimonials</Heading_2>
+            <Heading_2 className="mt-2 mb-8 text-4xl text-heading">Testimonials</Heading_2>
             <Masonry
               breakpointCols={breakpointColumnsObj}
               className="my-masonry-grid"

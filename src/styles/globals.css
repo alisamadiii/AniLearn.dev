@@ -7,16 +7,38 @@
     --color-primary: 270deg 100% 50%;
     --color-secondary: 11deg 94% 58%;
     --color-font: 0, 0, 0, 0.9;
-    --color-background: white;
+    --color-heading: 0deg 0% 0%;
+    --color-background: 0deg 0% 95%;
     --color-button: 0deg 0% 95%;
     --color-box: 0deg 0% 95%;
   }
 
-  html.dark {
+  [data-theme="dark"] {
     --color-button: 222deg 15% 13%;
-    --color-background: #0d0e12;
+    --color-background: 228deg 16% 6%;
     --color-font: 227, 229, 232, 0.8;
+    --color-heading: 0deg 0% 100%;
     --color-box: 220deg 14% 8%;
+  }
+
+  [data-theme="orange"] {
+    --color-primary: 51deg 100% 50%;
+    --color-secondary: 38deg 100% 18%;
+    --color-button: 222deg 15% 13%;
+    --color-background: 228deg 16% 6%;
+    --color-font: 227, 229, 232, 0.8;
+    --color-heading: 0deg 0% 100%;
+    --color-box: 220deg 14% 8%;
+  }
+
+  [data-theme="spring"] {
+    --color-primary: 1deg 16% 49%;
+    --color-secondary: 38deg 100% 18%;
+    --color-button: 204 51% 67%;
+    --color-background: 60deg 56% 91%;
+    --color-font: 92, 92, 92;
+    --color-heading: 1deg 16% 49%;
+    --color-box: 60deg 38% 87%;
   }
 }
 
@@ -87,18 +109,47 @@ input[type="number"] {
       transition: opacity 300ms;
     }
 
-    html.dark #box::after {
+    [data-theme="dark"] #box::after {
       background: radial-gradient(
         600px circle at var(--mouse-x) var(--mouse-y),
         rgba(255, 255, 255, 0.6),
         transparent 20%
       );
     }
-
-    html.dark #box::before {
+    [data-theme="dark"] #box::before {
       background: radial-gradient(
         500px circle at var(--mouse-x) var(--mouse-y),
         rgba(255, 255, 255, 0.04),
+        transparent 30%
+      );
+    }
+
+    [data-theme="orange"] #box::after {
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        hsl(51deg, 100%, 50%, 1),
+        transparent 20%
+      );
+    }
+    [data-theme="orange"] #box::before {
+      background: radial-gradient(
+        500px circle at var(--mouse-x) var(--mouse-y),
+        hsl(51deg, 100%, 50%, 0.04),
+        transparent 30%
+      );
+    }
+
+    [data-theme="spring"] #box::after {
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        hsl(1deg, 16%, 49%, 1),
+        transparent 20%
+      );
+    }
+    [data-theme="spring"] #box::before {
+      background: radial-gradient(
+        500px circle at var(--mouse-x) var(--mouse-y),
+        hsl(1deg, 16%, 49%, 0.2),
         transparent 30%
       );
     }
@@ -126,10 +177,13 @@ input[type="number"] {
   }
 
   .information h1 {
-    @apply relative pb-4 mt-6 mb-3 text-4xl font-bold text-black capitalize border-b-2 dark:text-white border-white-low-opacity dark:border-white-low-opacity-d;
+    @apply relative pb-4 mt-6 mb-3 text-4xl font-bold capitalize border-b-2 text-heading border-white-low-opacity dark:border-white-low-opacity-d;
   }
   .information p {
     @apply mb-3 text-lg font-light;
+  }
+  .information code {
+    @apply text-heading;
   }
 
   .playground__background {
