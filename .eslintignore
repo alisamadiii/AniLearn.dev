@@ -1,0 +1,18 @@
+<!-- Folders -->
+
+/.next
+/.contentlayer
+/.husky
+/supabase
+
+<!-- Files -->
+
+pnpm-lock.yaml
+postcss.config.js
+tailwind.config.js
+next.config.js
+next-env.d.ts
+.eslintrc.js
+
+contentlayer.config.js
+commitlint.config.js
