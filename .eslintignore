@@ -17,3 +17,5 @@ next-env.d.ts
 
 contentlayer.config.js
 commitlint.config.js
+
+/components/MdxComponents.tsx

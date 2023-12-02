@@ -9,13 +9,13 @@ import Button, { buttonVariants } from "./button";
 import { useGlobalStore } from "@/context";
 
 const navItems = {
-  "/html": {
+  "/techs/html": {
     name: "HTML",
   },
-  "/css": {
+  "/techs/css": {
     name: "CSS",
   },
-  "/javascript": {
+  "/techs/javascript": {
     name: "JavaScript",
   },
 };

@@ -18,6 +18,7 @@ const config: Config = {
         foreground: "rgba(var(--foreground) / <alpha-value>)",
         primary: "rgba(var(--primary) / <alpha-value>)",
         paragraph: "rgba(var(--paragraph) / <alpha-value>)",
+        muted: "rgba(var(--muted) / <alpha-value>)",
         "outline-button": "rgba(var(--outline-button) / <alpha-value>)",
         html: "#E34C26",
         css: "#264DE4",
