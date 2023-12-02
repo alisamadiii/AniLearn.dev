@@ -7,7 +7,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary px-6 py-1 rounded-lg",
+        default: "bg-primary px-6 py-1 rounded-lg text-white font-medium",
+        outline: "bg-outline-button border border-primary py-2 rounded",
       },
     },
     defaultVariants: {

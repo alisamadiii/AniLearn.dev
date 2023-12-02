@@ -6,10 +6,66 @@
   --background: 255 255 255;
   --foreground: 0 0 0;
   --primary: 161 119 49;
+  --paragraph: 51 51 51;
+  --outline-button: 255 255 255;
 }
 
 html.dark {
   --background: 23 24 29;
   --foreground: 255 255 255;
   --primary: 161 119 49;
+  --paragraph: 193 192 180;
+  --outline-button: 35 32 33;
+}
+
+.grid-background::after {
+  --nr: 30; /* number of rows */
+  --nc: 60; /* number of columns */
+  --b: 0.5px; /* border length */
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: 10px auto;
+  z-index: -9999;
+
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      transparent 90deg,
+      #d9d9d94e 0
+    )
+    calc(-1 * var(--b)) calc(-1 * var(--b)) / calc(100% / var(--nc))
+    calc(100% / var(--nr));
+}
+
+html.dark .grid-background::after {
+  --nr: 30; /* number of rows */
+  --nc: 60; /* number of columns */
+  --b: 0.5px; /* border length */
+
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      transparent 90deg,
+      rgba(34, 35, 38, 0.5) 0
+    )
+    calc(-1 * var(--b)) calc(-1 * var(--b)) / calc(100% / var(--nc))
+    calc(100% / var(--nr));
+}
+
+#rounded-animation::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  background-image: conic-gradient(white 20deg, transparent 100deg);
+  border-radius: 16px;
+  z-index: -2;
+}
+
+#rounded-animation::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 16px;
+  z-index: -1;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
 }

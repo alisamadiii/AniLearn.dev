@@ -30,7 +30,8 @@
     "rehype-pretty-code": "^0.11.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
-    "tailwind-merge": "^2.0.0"
+    "tailwind-merge": "^2.0.0",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",

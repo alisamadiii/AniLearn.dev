@@ -1,11 +1,12 @@
 "use client";
 
-import { type Variants , motion, AnimatePresence } from "framer-motion";
+import { type Variants, motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
 
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Button, { buttonVariants } from "./button";
+import { useGlobalStore } from "@/context";
 
 const navItems = {
   "/html": {
@@ -21,6 +22,7 @@ const navItems = {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { setHoverTech } = useGlobalStore();
 
   const listAnimate: Variants = {
     hidden: { height: 0 },
@@ -33,8 +35,15 @@ export default function Navbar() {
     exit: { x: -30, opacity: 0 },
   };
 
+  const mouseMove = (value: "html" | "css" | "javascript") => {
+    setHoverTech(value);
+  };
+  const mouseLeave = () => {
+    setHoverTech(null);
+  };
+
   return (
-    <nav className="fixed left-0 top-0 w-full bg-background px-4 shadow-navbar">
+    <nav className="fixed left-0 top-0 z-50 w-full bg-background px-4 shadow-navbar">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -42,14 +51,18 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="absolute left-0 top-16 -z-20 h-screen w-full bg-white/50 backdrop-blur-sm dark:bg-black/50 md:hidden"
-            onClick={() => { setIsOpen(false); }}
+            onClick={() => {
+              setIsOpen(false);
+            }}
           />
         )}
       </AnimatePresence>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between">
         <div className="flex items-center gap-8">
-          <h3 className="text-xl font-bold">AniLearn.dev</h3>
-          <ul className="hidden gap-6 md:flex">
+          <Link href={"/"} className="text-xl font-bold">
+            AniLearn.dev
+          </Link>
+          <ul className="hidden md:flex">
             {Object.entries(navItems).map(([path, { name }], index) => {
               return (
                 <motion.li
@@ -60,7 +73,12 @@ export default function Navbar() {
                     type: "tween",
                     ease: "easeOut",
                   }}
-                  className="text-foreground/70 hover:text-foreground"
+                  className="px-4 text-foreground/70 hover:text-foreground"
+                  /* eslint-disable */
+                  // @ts-ignore
+                  onMouseEnter={() => mouseMove(name.toLowerCase())}
+                  /* eslint-enable */
+                  onMouseLeave={mouseLeave}
                 >
                   <Link href={path} className="inline-block w-full text-sm">
                     {name}
@@ -123,8 +141,10 @@ export default function Navbar() {
           </AnimatePresence>
         </div>
         <button
-          className="relative rounded border border-foreground/20 p-0.5 text-xl text-foreground/80 focus:border-foreground md:hidden"
-          onClick={() => { setIsOpen(!isOpen); }}
+          className="relative rounded border border-foreground/20 p-0.5 text-xl text-foreground/80 duration-200 focus:border-foreground focus:shadow-ham-menu md:hidden"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
         >
           {isOpen ? <IoMdClose /> : <IoMdMenu />}
         </button>
