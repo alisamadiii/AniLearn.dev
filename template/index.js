@@ -7,7 +7,7 @@ const gradient = require("gradient-string");
 
 const { TemplateMDX } = require("./mdx");
 
-const folderName = "anilearn";
+const folderName = "AniLearn.dev";
 
 async function createFiles(fileName, tech, contributor) {
   const folderPathForTSX = `../${folderName}/contents/${tech}`;
