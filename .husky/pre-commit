@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run check-types
-pnpm dlx lint-staged --concurrent false
+npx lint-staged --concurrent false

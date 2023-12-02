@@ -12,7 +12,8 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
     "test-all": "npm run check-types && npm run format --white && npm run check-lint --fix && npm run build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "template": "node ./template"
   },
   "dependencies": {
     "next": "14.0.3",
