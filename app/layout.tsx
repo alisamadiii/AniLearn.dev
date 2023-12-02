@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" id="top">
       <body
         className={`${playfairDisplay.variable} ${inter.variable} bg-background font-body text-foreground`}
       >

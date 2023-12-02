@@ -15,7 +15,7 @@ const components = {
   ),
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="mb-6 mt-12 scroll-m-20 text-3xl font-bold tracking-tight"
+      className="mb-6 mt-8 scroll-m-20 border-b border-foreground/20 py-2 text-2xl font-bold tracking-tight"
       {...props}
     />
   ),
