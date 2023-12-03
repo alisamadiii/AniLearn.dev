@@ -32,11 +32,13 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-use-measure": "^2.1.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.11.0",
     "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
+    "swiper": "^11.0.5",
     "tailwind-merge": "^2.0.0",
     "unist-util-visit": "^5.0.0",
     "zustand": "^4.4.7"

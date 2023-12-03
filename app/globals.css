@@ -105,13 +105,18 @@ html.dark .grid-background::after {
   padding: 0.2rem;
   border-radius: 0.2rem;
 }
+
 [data-highlighted-line] {
   background-color: rgba(46, 46, 51, 0.5);
   padding: 0.2rem;
 }
 
-[data-chars-id="s"] {
-  border-radius: 0.2rem;
+[data-chars-id="g"] {
+  @apply bg-green-500/20;
+}
+
+[data-chars-id="r"] {
+  @apply bg-primary/20;
 }
 
 code [data-line] {
@@ -132,4 +137,29 @@ code[data-line-numbers] > [data-line]::before {
   width: 1rem;
   text-align: right;
   color: gray;
+}
+
+/* Swiper */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

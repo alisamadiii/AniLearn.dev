@@ -7,15 +7,11 @@ const { createSpinner } = require("nanospinner");
 const figlet = require("figlet");
 const gradient = require("gradient-string");
 
-const folderName = "AniLearn.dev";
-
-// "It is an open-source project, this page is going to be written by ${contributor}";
-
 const TemplateMDX = (fileName, tech, contributor) => {
   return `---
   title: ""
   description: ""
-  created_at: ""
+  created_at: 2024/01/01
   level: ""
 ---
 

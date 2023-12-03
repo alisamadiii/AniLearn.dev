@@ -1,14 +1,16 @@
+import Button from "@/components/button";
+import Input from "@/components/input";
 import React from "react";
 
 export default function OpenGraph() {
   return (
     <div>
-      <h1>Open Graph</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ex eum
-        nemo non, iusto temporibus quibusdam explicabo eos maiores dolor, a
-        magnam iure voluptas harum molestiae deleniti ut architecto accusantium!
-      </p>
+      <form action="">
+        <label className="mx-auto grid w-full max-w-md grid-cols-3 gap-4">
+          <Input placeholder="url" className="col-span-2" />
+          <Button>Get</Button>
+        </label>
+      </form>
     </div>
   );
 }

@@ -11,5 +11,9 @@ interface Props {
 export default function ComponentPreview({ name }: Props) {
   const Component = Index[name].component;
 
-  return <Component />;
+  return (
+    <div className="mb-12">
+      <Component />
+    </div>
+  );
 }

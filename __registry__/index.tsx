@@ -13,10 +13,13 @@ export const Index: Record<string, any> = {
     name: "flex-position",
     component: React.lazy(() => import("@/registry/css/flex-position.tsx")),
   },
+  "my-open-graph": {
+    name: "my-open-graph",
+    component: React.lazy(() => import("@/registry/html/my-open-graph.tsx")),
+  },
   "open-graph": {
     name: "open-graph",
     component: React.lazy(() => import("@/registry/html/open-graph.tsx")),
   },
 };
-
 /* eslint-enable */
