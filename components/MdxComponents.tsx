@@ -44,7 +44,7 @@ const components = {
     />
   ),
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code className={`text-sm`} {...props}></code>
+    <code className={`text-xs md:text-sm`} {...props}></code>
   ),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote

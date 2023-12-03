@@ -71,3 +71,65 @@ html.dark .grid-background::after {
   z-index: -1;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
 }
+
+/* Code Wrapper */
+[data-rehype-pretty-code-fragment] {
+  @apply my-8 mb-3 overflow-hidden rounded-lg border border-foreground/20 bg-[rgb(24,24,27)];
+}
+
+[data-rehype-pretty-code-fragment] > [data-rehype-pretty-code-title] {
+  @apply border-b border-white/20 px-4 py-2 text-white;
+}
+
+[data-rehype-pretty-code-fragment] > pre {
+  @apply overflow-auto py-2 outline-none duration-100;
+}
+
+[data-rehype-pretty-code-fragment] > pre::-webkit-scrollbar {
+  height: 4px;
+}
+[data-rehype-pretty-code-fragment] > pre::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-white/50;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  @apply py-3;
+}
+
+[data-rehype-pretty-code-fragment]:has([data-rehype-pretty-code-title]) code {
+  @apply py-0 pb-3;
+}
+
+[data-highlighted-chars] {
+  background-color: rgba(63, 63, 70, 0.5);
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+}
+[data-highlighted-line] {
+  background-color: rgba(46, 46, 51, 0.5);
+  padding: 0.2rem;
+}
+
+[data-chars-id="s"] {
+  border-radius: 0.2rem;
+}
+
+code [data-line] {
+  padding: 0.125rem 1rem;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+  @apply mr-4 md:mr-8;
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  color: gray;
+}
