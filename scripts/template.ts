@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const path = require("path");
 const fs = require("fs");
 const inquirer = require("inquirer");
@@ -5,14 +7,27 @@ const { createSpinner } = require("nanospinner");
 const figlet = require("figlet");
 const gradient = require("gradient-string");
 
-const { TemplateMDX } = require("./mdx");
-
 const folderName = "AniLearn.dev";
 
-async function createFiles(fileName, tech, contributor) {
-  const folderPathForTSX = `../${folderName}/contents/${tech}`;
+// "It is an open-source project, this page is going to be written by ${contributor}";
 
-  const filePathTSX = path.join(folderPathForTSX, `${fileName}.mdx`);
+const TemplateMDX = (fileName, tech, contributor) => {
+  return `---
+  title: ""
+  description: ""
+  created_at: ""
+  level: ""
+---
+
+# ${fileName}
+`;
+};
+
+async function createFiles(fileName, tech, contributor) {
+  const filePathTSX = path.join(
+    process.cwd(),
+    `contents/techs/${tech}/${fileName}.mdx`
+  );
 
   const Template_1 = createSpinner(
     `File ${fileName} created successfully! -- TSX`

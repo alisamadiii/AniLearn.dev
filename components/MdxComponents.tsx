@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import { cn } from "@/utils";
+import ComponentPreview from "./ComponentPreview";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -90,6 +91,7 @@ const components = {
   Image: ({ className, alt, ...props }: React.ComponentProps<typeof Image>) => (
     <Image className={cn("rounded-md", className)} alt={alt} {...props} />
   ),
+  ComponentPreview,
 };
 
 export function Mdx({ code }: { code: string }) {

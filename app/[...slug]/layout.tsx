@@ -28,8 +28,6 @@ export default async function ContentLayout({ children, params }: Props) {
 
   const toc = await getTableOfContents(findingContents.body.raw);
 
-  console.log(findingContents);
-
   return (
     <div className="mx-auto mt-20 grid max-w-7xl grid-cols-5 items-start gap-8 px-4 md:mt-32">
       <div className="absolute right-0 top-0 h-1/2 w-1/2 bg-primary/5 blur-3xl"></div>

@@ -12,8 +12,6 @@ interface Props {
 export default function LeftNavbarItems({ techs }: Props) {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <>
       <h2 className="mb-2 mt-6 text-xs font-medium [&:nth-of-type(1)]:mt-0">
