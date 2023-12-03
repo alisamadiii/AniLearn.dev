@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Button, { buttonVariants } from "./button";
 import { useGlobalStore } from "@/context";
+import Theme from "./theme";
 
 const navItems = {
   "/techs/html": {
@@ -140,16 +141,20 @@ export default function Navbar() {
             )}
           </AnimatePresence>
         </div>
-        <button
-          className="relative rounded border border-foreground/20 p-0.5 text-xl text-foreground/80 duration-200 focus:border-foreground focus:shadow-ham-menu md:hidden"
-          onClick={() => {
-            setIsOpen(!isOpen);
-          }}
-        >
-          {isOpen ? <IoMdClose /> : <IoMdMenu />}
-        </button>
-        <div className="hidden md:block">
-          <Button variant={"default"}>Get start</Button>
+
+        <div className="flex items-center gap-3">
+          <Theme />
+          <button
+            className="relative rounded border border-foreground/20 p-0.5 text-xl text-foreground/80 duration-200 focus:border-foreground focus:shadow-ham-menu md:hidden"
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          >
+            {isOpen ? <IoMdClose /> : <IoMdMenu />}
+          </button>
+          <div className="hidden md:block">
+            <Button variant={"default"}>Get start</Button>
+          </div>
         </div>
       </div>
     </nav>

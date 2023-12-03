@@ -4,7 +4,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/navbar";
-import Theme from "@/components/theme";
 import Layout from "@/components/layout";
 
 const inter = Inter({ subsets: ["latin"], variable: "--body-font" });
@@ -30,7 +29,6 @@ export default function RootLayout({
       >
         <Layout>
           <Navbar />
-          <Theme />
           {children}
         </Layout>
       </body>

@@ -2,16 +2,34 @@
 
 import React from "react";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+
+import { IoSunny, IoMoon } from "react-icons/io5";
 
 export default function Theme() {
-  const { theme, setTheme } = useTheme();
+  const { theme: themeColor, setTheme } = useTheme();
 
-  console.log(theme);
+  const themes = ["light", "dark"];
 
   return (
-    <div className="fixed bottom-0 left-0 bg-background p-4">
-      <button onClick={() => { setTheme("light"); }}>light</button>
-      <button onClick={() => { setTheme("dark"); }}>dark</button>
+    <div className="flex overflow-hidden rounded">
+      {themes.map((theme, index) => (
+        <button
+          key={index}
+          onClick={() => {
+            setTheme(theme);
+          }}
+          className="relative isolate p-[5px] text-lg [&:nth-of-type(1)]:shadow-[inset_2px_2px_4px_rgba(0,0,0,.1)] dark:[&:nth-of-type(1)]:shadow-[inset_2px_2px_4px_rgba(255,255,255,.1)] [&:nth-of-type(2)]:shadow-[inset_-2px_2px_4px_rgba(0,0,0,.1)] dark:[&:nth-of-type(2)]:shadow-[inset_-2px_2px_4px_rgba(255,255,255,.1)]"
+        >
+          {theme === "light" ? <IoSunny /> : <IoMoon />}
+          {themeColor === theme && (
+            <motion.span
+              layoutId="theme-toggle"
+              className="absolute inset-0 -z-10 bg-muted/20"
+            />
+          )}
+        </button>
+      ))}
     </div>
   );
 }
