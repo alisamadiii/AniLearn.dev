@@ -34,8 +34,8 @@ for (const folder of READ_PATH) {
       const SUB_READ_FILES = fs.readdirSync(SUB_FOLDER_PATH);
       for (const subFiles of SUB_READ_FILES) {
         index += `
-        "inputs-${subFiles.replace(".tsx", "")}": {
-          name: "inputs-${subFiles.replace(".tsx", "")}",
+        "${file}-${subFiles.replace(".tsx", "")}": {
+          name: "${file}-${subFiles.replace(".tsx", "")}",
           component: React.lazy(() => import("@/registry/${folder}/${file}/${subFiles}")),
         },`;
       }

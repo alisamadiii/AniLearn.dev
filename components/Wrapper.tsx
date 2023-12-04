@@ -15,7 +15,7 @@ export function PreviewWrapper({
   children,
   wrapperClassName,
   className,
-  comment,
+  comment = "",
   ...props
 }: Props) {
   const [ref, { height }] = useMeasure();

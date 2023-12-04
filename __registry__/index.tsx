@@ -12,6 +12,30 @@ export const Index: Record<string, any> = {
     name: "flex-position",
     component: React.lazy(() => import("@/registry/css/flex-position.tsx")),
   },
+  "flexbox-align-content": {
+    name: "flexbox-align-content",
+    component: React.lazy(
+      () => import("@/registry/css/flexbox/align-content.tsx")
+    ),
+  },
+  "flexbox-align-items": {
+    name: "flexbox-align-items",
+    component: React.lazy(
+      () => import("@/registry/css/flexbox/align-items.tsx")
+    ),
+  },
+  "flexbox-align-self": {
+    name: "flexbox-align-self",
+    component: React.lazy(
+      () => import("@/registry/css/flexbox/align-self.tsx")
+    ),
+  },
+  "flexbox-justify-content": {
+    name: "flexbox-justify-content",
+    component: React.lazy(
+      () => import("@/registry/css/flexbox/justify-content.tsx")
+    ),
+  },
   "inputs-checkbox": {
     name: "inputs-checkbox",
     component: React.lazy(() => import("@/registry/html/inputs/checkbox.tsx")),
