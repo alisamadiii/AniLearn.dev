@@ -11,8 +11,8 @@ const TemplateMDX = (fileName, tech, contributor) => {
   return `---
   title: ""
   description: ""
-  created_at: 2024/01/01
   level: ""
+  created_at: 2024-01-01
 ---
 
 # ${fileName}

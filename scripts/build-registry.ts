@@ -18,11 +18,28 @@ for (const folder of READ_PATH) {
   const READ_FILES = fs.readdirSync(FOLDER_PATH);
 
   for (const file of READ_FILES) {
-    index += `
+    const stats = fs.statSync(`${FOLDER_PATH}/${file}`);
+
+    if (!stats.isDirectory()) {
+      index += `
         "${file.replace(".tsx", "")}": {
           name: "${file.replace(".tsx", "")}",
           component: React.lazy(() => import("@/registry/${folder}/${file}")),
         },`;
+    } else {
+      const SUB_FOLDER_PATH = path.join(
+        process.cwd(),
+        `registry/${folder}/${file}`
+      );
+      const SUB_READ_FILES = fs.readdirSync(SUB_FOLDER_PATH);
+      for (const subFiles of SUB_READ_FILES) {
+        index += `
+        "inputs-${subFiles.replace(".tsx", "")}": {
+          name: "inputs-${subFiles.replace(".tsx", "")}",
+          component: React.lazy(() => import("@/registry/${folder}/${file}/${subFiles}")),
+        },`;
+      }
+    }
   }
 }
 

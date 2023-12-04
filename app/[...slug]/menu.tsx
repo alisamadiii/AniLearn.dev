@@ -42,7 +42,9 @@ export default function Menu() {
               animate="visible"
               exit="exit"
               className="absolute inset-0 bg-background/90"
-              onClick={() => { setIsMenuOpen(false); }}
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
             />
             <motion.div
               variants={scrollingUp}
@@ -66,8 +68,10 @@ export default function Menu() {
       </AnimatePresence>
 
       <button
-        className="fixed bottom-4 right-4 rounded border border-foreground/20 bg-background p-1 text-xl md:hidden"
-        onClick={() => { setIsMenuOpen(true); }}
+        className="fixed bottom-4 right-4 z-40 rounded border border-foreground/20 bg-background p-1 text-xl md:hidden"
+        onClick={() => {
+          setIsMenuOpen(true);
+        }}
       >
         <TfiMenuAlt />
       </button>

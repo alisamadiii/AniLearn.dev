@@ -3,6 +3,7 @@
 import { PreviewWrapper } from "@/components/Wrapper";
 import React, { useState } from "react";
 import { AnimatePresence, type Variants, motion } from "framer-motion";
+import Image from "next/image";
 
 export default function MyOpenGraph() {
   const [platforms, setPlatforms] = useState<
@@ -28,8 +29,10 @@ export default function MyOpenGraph() {
         {usePlatforms.map((platform, index) => (
           <button
             key={index}
-            className="relative cursor-pointer px-3 py-1 capitalize"
-            onClick={() => { setPlatforms(platform); }}
+            className="relative isolate cursor-pointer px-3 py-1 capitalize"
+            onClick={() => {
+              setPlatforms(platform);
+            }}
           >
             {platform}
             {platform === platforms && (
@@ -52,7 +55,10 @@ export default function MyOpenGraph() {
             exit="exit"
             className="bg-[#3a3b3c] text-white"
           >
-            <img
+            <Image
+              width={800}
+              height={600}
+              alt=""
               className="aspect-video w-full object-cover"
               src="https://www.alirezasamadi.com/opengraph-image.png?4d5769bf8ffd2998"
             />
@@ -76,7 +82,10 @@ export default function MyOpenGraph() {
             exit="exit"
             className="overflow-hidden rounded-2xl"
           >
-            <img
+            <Image
+              width={800}
+              height={600}
+              alt=""
               className="aspect-video w-full object-cover"
               src="https://www.alirezasamadi.com/opengraph-image.png?4d5769bf8ffd2998"
             />
@@ -109,7 +118,10 @@ export default function MyOpenGraph() {
                 maintaining the user interface of web applications.
               </p>
             </div>
-            <img
+            <Image
+              width={800}
+              height={600}
+              alt=""
               className="aspect-video w-full object-cover"
               src="https://www.alirezasamadi.com/opengraph-image.png?4d5769bf8ffd2998"
             />
@@ -124,7 +136,10 @@ export default function MyOpenGraph() {
               exit="exit"
               className="bg-slate-700 text-white"
             >
-              <img
+              <Image
+                width={800}
+                height={600}
+                alt=""
                 className="aspect-video w-full object-cover"
                 src="https://www.alirezasamadi.com/opengraph-image.png?4d5769bf8ffd2998"
               />

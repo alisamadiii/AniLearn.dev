@@ -22,7 +22,13 @@ const components = {
   ),
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className="mb-6 mt-8 scroll-m-20 text-2xl font-bold tracking-tight"
+      className="mb-6 mt-8 scroll-m-20 text-xl font-bold tracking-tight"
+      {...props}
+    />
+  ),
+  h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h4
+      className="mb-6 mt-8 scroll-m-20 text-lg font-medium tracking-tight"
       {...props}
     />
   ),

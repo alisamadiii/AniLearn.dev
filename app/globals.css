@@ -163,3 +163,41 @@ code[data-line-numbers] > [data-line]::before {
   height: 100%;
   object-fit: cover;
 }
+
+#grid-preview::after {
+  --nr: 30; /* number of rows */
+  --nc: 60; /* number of columns */
+  --b: 0.5px; /* border length */
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      transparent 90deg,
+      rgb(238, 238, 238) 0
+    )
+    calc(-1 * var(--b)) calc(-1 * var(--b)) / calc(100% / var(--nc))
+    calc(100% / var(--nr));
+}
+
+html.dark #grid-preview::after {
+  --nr: 30; /* number of rows */
+  --nc: 60; /* number of columns */
+  --b: 0.5px; /* border length */
+
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      transparent 90deg,
+      rgba(23 24 29) 0
+    )
+    calc(-1 * var(--b)) calc(-1 * var(--b)) / calc(100% / var(--nc))
+    calc(100% / var(--nr));
+}
+
+#grid-preview::before {
+  @apply absolute right-0 top-0 -z-20 h-1/2 w-1/2 bg-primary/10 blur-[150px];
+  content: "";
+}

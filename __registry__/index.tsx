@@ -13,6 +13,26 @@ export const Index: Record<string, any> = {
     name: "flex-position",
     component: React.lazy(() => import("@/registry/css/flex-position.tsx")),
   },
+  "inputs-email": {
+    name: "inputs-email",
+    component: React.lazy(() => import("@/registry/html/inputs/email.tsx")),
+  },
+  "inputs-password": {
+    name: "inputs-password",
+    component: React.lazy(() => import("@/registry/html/inputs/password.tsx")),
+  },
+  "inputs-reset": {
+    name: "inputs-reset",
+    component: React.lazy(() => import("@/registry/html/inputs/reset.tsx")),
+  },
+  "inputs-text": {
+    name: "inputs-text",
+    component: React.lazy(() => import("@/registry/html/inputs/text.tsx")),
+  },
+  "inputs-url": {
+    name: "inputs-url",
+    component: React.lazy(() => import("@/registry/html/inputs/url.tsx")),
+  },
   "my-open-graph": {
     name: "my-open-graph",
     component: React.lazy(() => import("@/registry/html/my-open-graph.tsx")),
@@ -22,4 +42,3 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/html/open-graph.tsx")),
   },
 };
-/* eslint-enable */
