@@ -40,7 +40,7 @@ export default function File() {
   };
 
   return (
-    <PreviewWrapper className="space-y-4" comment="only one File">
+    <PreviewWrapper className="space-y-4" comment="image, video, and pdf">
       <label className="flex w-32">
         <input type="file" className="hidden" onChange={uploadingHandler} />
         <div
@@ -68,7 +68,9 @@ export default function File() {
             <div className="grid grid-cols-3 items-center py-4">
               <div>
                 <button
-                  onClick={() => { changingPageHandler("prev"); }}
+                  onClick={() => {
+                    changingPageHandler("prev");
+                  }}
                   className="rounded-full p-2 hover:bg-muted/20 active:bg-muted/30 disabled:cursor-not-allowed disabled:opacity-50"
                   disabled={pageNumber === 1}
                 >
@@ -80,7 +82,9 @@ export default function File() {
               </p>
               <div className="flex items-center justify-end">
                 <button
-                  onClick={() => { changingPageHandler("next"); }}
+                  onClick={() => {
+                    changingPageHandler("next");
+                  }}
                   className="rounded-full p-2 hover:bg-muted/20 active:bg-muted/30 disabled:cursor-not-allowed disabled:opacity-50"
                   disabled={pageNumber === numPages}
                 >

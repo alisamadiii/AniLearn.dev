@@ -44,7 +44,9 @@ export default function Text() {
       <Input
         type="search"
         value={value}
-        onChange={(e) => { setValue(e.target.value); }}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
         placeholder="search"
       />
       <ul className="h-96">
@@ -54,7 +56,7 @@ export default function Text() {
             animate={{ opacity: 1 }}
             key={user.name}
             layoutId={user.name}
-            className="mb-1 bg-muted/10 p-3 hover:bg-muted/20"
+            className="mb-1 bg-muted/10 p-3 backdrop-blur-md hover:bg-muted/20"
           >
             <h3>{user.name}</h3>
             <p className="text-xs text-muted">{user.bio}</p>

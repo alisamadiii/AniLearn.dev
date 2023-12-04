@@ -32,7 +32,7 @@ export function PreviewWrapper({
     >
       <div ref={ref} className={cn("relative p-4", className)} {...props}>
         {children}
-        {comment ?? (
+        {comment?.length !== 0 && (
           <p className="text-end text-sm text-green-500">{comment}</p>
         )}
       </div>
