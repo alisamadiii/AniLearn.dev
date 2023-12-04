@@ -201,3 +201,21 @@ html.dark #grid-preview::after {
   @apply absolute right-0 top-0 -z-20 h-1/2 w-1/2 bg-primary/10 blur-[150px];
   content: "";
 }
+
+/* PDF */
+.react-pdf__Document {
+  @apply rounded;
+  overflow: hidden;
+}
+
+.react-pdf__Document > .react-pdf__Page {
+  min-width: 100% !important;
+  min-height: 100% !important;
+  width: 100%;
+  height: 100%;
+}
+
+.react-pdf__Document > .react-pdf__Page > .react-pdf__Page__canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

@@ -8,14 +8,16 @@ export default function Text() {
   const [isValid, setIsValid] = useState<null | boolean>(null);
 
   useEffect(() => {
-    if (value.length === 0) { setIsValid(null); return; }
+    if (value.length === 0) {
+      setIsValid(null);
+      return;
+    }
 
     setIsValid(EmailValidator.validate(value));
   }, [value]);
 
   return (
     <PreviewWrapper
-      comment="Hit Enter"
       className="space-y-4"
       wrapperClassName={`${
         isValid === true
@@ -28,7 +30,9 @@ export default function Text() {
       <Input
         type="email"
         className="w-72"
-        onChange={(e) => { setValue(e.target.value); }}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
       />
       <p className="text-muted">
         email: <span className="text-foreground">{value ?? "..."}</span>

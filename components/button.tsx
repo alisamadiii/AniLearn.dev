@@ -3,7 +3,7 @@ import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/utils";
 
 export const buttonVariants = cva(
-  "inline-block w-full text-center duration-200 hover:bg-opacity-70",
+  "inline-block w-full text-center duration-200 hover:bg-opacity-70 cursor-pointer",
   {
     variants: {
       variant: {

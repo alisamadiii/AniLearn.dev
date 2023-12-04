@@ -9,7 +9,7 @@ export default function Text() {
       <form className="flex flex-col gap-3">
         <Input type="text" placeholder="first" />
         <Input type="email" placeholder="last" />
-        <Button className="w-72 rounded py-2" type="reset">
+        <Button className="w-72 rounded bg-red-600 py-2" type="reset">
           Reset
         </Button>
       </form>
