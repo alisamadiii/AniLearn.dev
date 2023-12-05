@@ -1,9 +1,11 @@
 import React, { useState, type InputHTMLAttributes } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {}
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  checked?: boolean;
+}
 
-export default function Checkbox({ ...props }: Props) {
+export default function Checkbox({ checked = false, ...props }: Props) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -11,17 +13,17 @@ export default function Checkbox({ ...props }: Props) {
   };
 
   return (
-    <div>
+    <>
       <input
         type="checkbox"
         className="peer hidden"
-        checked={isChecked}
+        checked={isChecked || checked}
         onChange={handleCheckboxChange}
         {...props}
       />
       <span className="border-border bg-box flex h-4 w-4 items-center justify-center rounded border peer-checked:border-blue-900 peer-checked:bg-blue-700">
         <AnimatePresence>
-          {isChecked && (
+          {(isChecked || checked) && (
             <svg
               height="100%"
               viewBox="0 0 11 10"
@@ -42,6 +44,6 @@ export default function Checkbox({ ...props }: Props) {
           )}
         </AnimatePresence>
       </span>
-    </div>
+    </>
   );
 }

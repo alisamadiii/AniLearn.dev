@@ -8,6 +8,26 @@ export const Index: Record<string, any> = {
     name: "border-radius",
     component: React.lazy(() => import("@/registry/css/border-radius.tsx")),
   },
+  "center-flexbox": {
+    name: "center-flexbox",
+    component: React.lazy(() => import("@/registry/css/center/flexbox.tsx")),
+  },
+  "center-gridbox-2": {
+    name: "center-gridbox-2",
+    component: React.lazy(() => import("@/registry/css/center/gridbox-2.tsx")),
+  },
+  "center-gridbox": {
+    name: "center-gridbox",
+    component: React.lazy(() => import("@/registry/css/center/gridbox.tsx")),
+  },
+  "center-margin": {
+    name: "center-margin",
+    component: React.lazy(() => import("@/registry/css/center/margin.tsx")),
+  },
+  "center-position": {
+    name: "center-position",
+    component: React.lazy(() => import("@/registry/css/center/position.tsx")),
+  },
   "flex-position": {
     name: "flex-position",
     component: React.lazy(() => import("@/registry/css/flex-position.tsx")),

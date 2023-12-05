@@ -15,12 +15,14 @@ export default function AlignSelf() {
           <button
             key={index}
             className="relative isolate cursor-pointer px-3 py-1 capitalize"
-            onClick={() => { setPosition(p); }}
+            onClick={() => {
+              setPosition(p);
+            }}
           >
             {p}
             {position === p && (
               <motion.span
-                layoutId="position"
+                layoutId="AlignSelf"
                 transition={{ duration: 0.2 }}
                 className="absolute inset-0 -z-10 rounded bg-foreground/30 dark:bg-foreground/10"
               />
