@@ -114,11 +114,19 @@ html.dark .grid-background::after {
 }
 
 [data-chars-id="g"] {
-  @apply bg-green-500/20;
+  @apply bg-green-500/10;
 }
 
 [data-chars-id="r"] {
-  @apply bg-primary/20;
+  @apply bg-red-500/10;
+}
+
+[data-chars-id="y"] {
+  @apply bg-yellow-500/10;
+}
+
+[data-chars-id="p"] {
+  @apply bg-purple-500/10;
 }
 
 code [data-line] {

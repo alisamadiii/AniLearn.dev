@@ -84,4 +84,10 @@ export const Index: Record<string, any> = {
     name: "open-graph",
     component: React.lazy(() => import("@/registry/html/open-graph.tsx")),
   },
+  "array-methods-length": {
+    name: "array-methods-length",
+    component: React.lazy(
+      () => import("@/registry/js/array-methods/length.tsx")
+    ),
+  },
 };

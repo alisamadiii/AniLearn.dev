@@ -38,6 +38,12 @@ const components = {
       {...props}
     />
   ),
+  a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+    <a
+      className="text-muted-3 scroll-m-20 text-base leading-7 hover:text-white"
+      {...props}
+    />
+  ),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
       className="my-5 scroll-m-20 pl-8 text-base leading-7 text-[#434343]"
@@ -46,7 +52,7 @@ const components = {
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
     <li
-      className="text-muted-3 relative my-2 flex items-center before:absolute before:h-1 before:w-1 before:-translate-x-5 before:rounded-full before:bg-muted"
+      className="relative my-2 flex items-center text-muted before:absolute before:h-1 before:w-1 before:-translate-x-5 before:rounded-full before:bg-muted"
       {...props}
     />
   ),
