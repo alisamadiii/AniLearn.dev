@@ -9,7 +9,8 @@
   --paragraph: 51 51 51;
   --muted: 51 51 51;
   --outline-button: 255 255 255;
-  --grid-color: rgb(0, 0, 0, 0.1);
+  --grid-color: rgba(0, 0, 0, 0.041);
+  --box: 226 226 226;
 }
 
 html.dark {
@@ -19,41 +20,41 @@ html.dark {
   --paragraph: 193 192 180;
   --muted: 161 161 161;
   --outline-button: 35 32 33;
-  --grid-color: rgba(23, 24, 29);
+  --grid-color: rgb(27, 27, 27);
+  --box: 19 20 26;
 }
 
 .grid-background::after {
-  --nr: 30; /* number of rows */
-  --nc: 60; /* number of columns */
-  --b: 0.5px; /* border length */
-
   content: "";
   position: absolute;
   inset: 0;
-  margin: 10px auto;
-  z-index: -9999;
-
-  background: conic-gradient(
-      from 90deg at var(--b) var(--b),
-      transparent 90deg,
-      #d9d9d94e 0
-    )
-    calc(-1 * var(--b)) calc(-1 * var(--b)) / calc(100% / var(--nc))
-    calc(100% / var(--nr));
-}
-
-html.dark .grid-background::after {
-  --nr: 30; /* number of rows */
-  --nc: 60; /* number of columns */
-  --b: 0.5px; /* border length */
-
-  background: conic-gradient(
-      from 90deg at var(--b) var(--b),
-      transparent 90deg,
-      rgba(34, 35, 38, 0.5) 0
-    )
-    calc(-1 * var(--b)) calc(-1 * var(--b)) / calc(100% / var(--nc))
-    calc(100% / var(--nr));
+  background-color: transparent;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--grid-color) 25%,
+      var(--grid-color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--grid-color) 75%,
+      var(--grid-color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--grid-color) 25%,
+      var(--grid-color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--grid-color) 75%,
+      var(--grid-color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 60px 60px;
+  z-index: -1;
 }
 
 #rounded-animation::before {

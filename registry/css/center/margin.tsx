@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { PreviewWrapper } from "@/components/Wrapper";
 import Checkbox from "@/components/checkbox";
+import { Box } from "@/components/box";
 
 const initialValue = {
   width: false,
@@ -44,18 +45,18 @@ export default function Margin() {
           </span>
         </label>
       </div>
-      <div
-        className="flex h-52 grow rounded-lg bg-muted/20 p-2 backdrop-blur-3xl dark:bg-muted/10"
+      <Box
+        className="flex"
         style={{ justifyContent: value.margin ? "center" : "start" }}
       >
         <motion.div
           layout
           animate={{
-            width: value.width ? 300 : 32,
+            width: value.width ? "var(--width)" : 32,
           }}
-          className="h-8 w-8 rounded-lg bg-foreground"
+          className="h-8 w-8 rounded-lg bg-foreground [--width:100px] md:[--width:300px]"
         />
-      </div>
+      </Box>
     </PreviewWrapper>
   );
 }

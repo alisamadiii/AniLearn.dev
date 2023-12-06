@@ -28,6 +28,10 @@ export const Index: Record<string, any> = {
     name: "center-position",
     component: React.lazy(() => import("@/registry/css/center/position.tsx")),
   },
+  cursor: {
+    name: "cursor",
+    component: React.lazy(() => import("@/registry/css/cursor.tsx")),
+  },
   "flex-position": {
     name: "flex-position",
     component: React.lazy(() => import("@/registry/css/flex-position.tsx")),

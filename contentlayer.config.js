@@ -37,6 +37,10 @@ const Contents = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    link_content: {
+      type: "string",
+      required: false,
+    },
   },
   computedFields,
 }));

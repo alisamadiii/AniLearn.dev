@@ -8,6 +8,8 @@ import { DashboardTableOfContents } from "@/components/toc";
 import ScrollUp from "./scroll-up";
 import Menu from "./menu";
 
+import { IoVideocam, IoLogoGithub } from "react-icons/io5";
+
 interface Props {
   children: React.ReactNode;
   params: {
@@ -46,10 +48,20 @@ export default async function ContentLayout({ children, params }: Props) {
         <div className="flex flex-col pt-2">
           <a
             href={`${process.env.NEXT_PUBLIC_EDIT_URL}${findingContents._id}`}
-            className="inline-block py-1 text-sm text-muted focus:text-foreground"
+            target="_blank"
+            className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground" rel="noreferrer"
           >
-            Edit this page on GitHub
+            <IoLogoGithub /> Edit this page on GitHub
           </a>
+          {findingContents.link_content && (
+            <a
+              href={findingContents.link_content}
+              target="_blank"
+              className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground" rel="noreferrer"
+            >
+              <IoVideocam /> Video Lesson
+            </a>
+          )}
           <ScrollUp />
         </div>
       </div>

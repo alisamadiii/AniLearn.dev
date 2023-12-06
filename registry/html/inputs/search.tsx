@@ -56,7 +56,7 @@ export default function Text() {
             animate={{ opacity: 1 }}
             key={user.name}
             layoutId={user.name}
-            className="mb-1 bg-muted/10 p-3 backdrop-blur-md hover:bg-muted/20"
+            className="mb-1 bg-box/50 p-3 shadow-md backdrop-blur-md hover:bg-box"
           >
             <h3>{user.name}</h3>
             <p className="text-xs text-muted">{user.bio}</p>

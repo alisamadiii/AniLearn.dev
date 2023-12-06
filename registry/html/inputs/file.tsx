@@ -45,7 +45,7 @@ export default function File() {
         <input type="file" className="hidden" onChange={uploadingHandler} />
         <div
           className={buttonVariants({
-            className: "flex items-center justify-center gap-2 bg-blue-700",
+            className: "flex items-center justify-center gap-2 !bg-blue-700",
           })}
         >
           <BsImage />

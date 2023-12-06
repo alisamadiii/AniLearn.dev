@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { PreviewWrapper } from "@/components/Wrapper";
 import Checkbox from "@/components/checkbox";
+import { Box } from "@/components/box";
 
 const initialValue = {
   display: false,
@@ -56,8 +57,7 @@ export default function Flexbox() {
           </span>
         </label>
       </div>
-      <div
-        className="h-52 grow rounded-lg bg-muted/20 p-2 backdrop-blur-3xl dark:bg-muted/10"
+      <Box
         style={{
           display: value.display ? "flex" : undefined,
           justifyContent: value.justifyContent ? "center" : undefined,
@@ -65,7 +65,7 @@ export default function Flexbox() {
         }}
       >
         <motion.div layout className="h-8 w-8 rounded-lg bg-foreground" />
-      </div>
+      </Box>
     </PreviewWrapper>
   );
 }

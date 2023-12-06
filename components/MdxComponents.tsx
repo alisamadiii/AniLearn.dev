@@ -52,7 +52,7 @@ const components = {
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
     <li
-      className="relative my-2 flex items-center text-muted before:absolute before:h-1 before:w-1 before:-translate-x-5 before:rounded-full before:bg-muted"
+      className="relative my-1 flex items-center text-muted before:absolute before:h-1 before:w-1 before:-translate-x-5 before:rounded-full before:bg-muted"
       {...props}
     />
   ),

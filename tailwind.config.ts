@@ -21,6 +21,7 @@ const config: Config = {
         paragraph: "rgba(var(--paragraph) / <alpha-value>)",
         muted: "rgba(var(--muted) / <alpha-value>)",
         "outline-button": "rgba(var(--outline-button) / <alpha-value>)",
+        box: "rgba(var(--box) / <alpha-value>)",
         html: "#E34C26",
         css: "#264DE4",
         js: "#F0DB4F",

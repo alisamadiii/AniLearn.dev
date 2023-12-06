@@ -9,7 +9,7 @@ const gradient = require("gradient-string");
 
 const TemplateMDX = (fileName, tech, contributor) => {
   return `---
-  title: ""
+  title: "${fileName}"
   description: ""
   level: ""
   created_at: 2024-01-01

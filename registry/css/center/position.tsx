@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { PreviewWrapper } from "@/components/Wrapper";
 import Checkbox from "@/components/checkbox";
+import { Box } from "@/components/box";
 
 const initialValue = {
   position: false,
@@ -78,7 +79,7 @@ export default function Position() {
           </span>
         </label>
       </div>
-      <div className="relative h-52 grow rounded-lg bg-muted/20 p-2 backdrop-blur-3xl dark:bg-muted/10">
+      <Box>
         <motion.div
           layout
           animate={{
@@ -90,7 +91,7 @@ export default function Position() {
           }}
           className="h-8 w-8 rounded-lg bg-foreground"
         />
-      </div>
+      </Box>
     </PreviewWrapper>
   );
 }
