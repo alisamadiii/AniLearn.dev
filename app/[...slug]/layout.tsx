@@ -49,7 +49,8 @@ export default async function ContentLayout({ children, params }: Props) {
           <a
             href={`${process.env.NEXT_PUBLIC_EDIT_URL}${findingContents._id}`}
             target="_blank"
-            className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground" rel="noreferrer"
+            className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground"
+            rel="noreferrer"
           >
             <IoLogoGithub /> Edit this page on GitHub
           </a>
@@ -57,7 +58,8 @@ export default async function ContentLayout({ children, params }: Props) {
             <a
               href={findingContents.link_content}
               target="_blank"
-              className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground" rel="noreferrer"
+              className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground"
+              rel="noreferrer"
             >
               <IoVideocam /> Video Lesson
             </a>
