@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Navbar from "@/components/navbar";
 import Layout from "@/components/layout";
+import { SearchContainer } from "@/components/search-panel";
 
 const inter = Inter({ subsets: ["latin"], variable: "--body-font" });
 const playfairDisplay = Playfair_Display({
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Layout>
           <Navbar />
           {children}
+          <SearchContainer />
         </Layout>
       </body>
     </html>

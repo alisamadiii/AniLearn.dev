@@ -11,6 +11,27 @@ interface Props {
   };
 }
 
+// or Dynamic metadata
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string[] };
+}) {
+  const currentSlug = `/${params.slug.join("/")}`;
+
+  const findingContents = allContents.find(
+    (content) => content.slug === currentSlug
+  );
+
+  if (!findingContents) {
+    return {};
+  }
+
+  return {
+    title: findingContents.title,
+  };
+}
+
 export default function page({ params }: Props) {
   const currentSlug = `/${params.slug.join("/")}`;
 

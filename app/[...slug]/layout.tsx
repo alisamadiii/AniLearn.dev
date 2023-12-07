@@ -9,6 +9,7 @@ import ScrollUp from "./scroll-up";
 import Menu from "./menu";
 
 import { IoVideocam, IoLogoGithub } from "react-icons/io5";
+import { SearchBox } from "@/components/search-panel";
 
 interface Props {
   children: React.ReactNode;
@@ -35,6 +36,7 @@ export default async function ContentLayout({ children, params }: Props) {
       <div className="absolute right-0 top-0 h-1/2 w-1/2 bg-primary/5 blur-3xl"></div>
 
       <nav className="sticky top-32 hidden md:block">
+        <SearchBox />
         <LeftNavbarItems techs="HTML" />
         <LeftNavbarItems techs="CSS" />
         <LeftNavbarItems techs="JavaScript" />

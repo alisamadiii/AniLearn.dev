@@ -5,6 +5,8 @@ interface GlobalStore {
   setHoverTech: (a: "html" | "css" | "javascript" | null) => void;
   isMenuOpen: boolean;
   setIsMenuOpen: (a: boolean) => void;
+  isSearchPanel: boolean;
+  setIsSearchPanel: (a: boolean) => void;
 }
 
 const useGlobalStore = create<GlobalStore>()((set) => ({
@@ -15,6 +17,10 @@ const useGlobalStore = create<GlobalStore>()((set) => ({
   isMenuOpen: false,
   setIsMenuOpen: (isMenuOpen: boolean) => {
     set({ isMenuOpen });
+  },
+  isSearchPanel: false,
+  setIsSearchPanel: (isSearchPanel: boolean) => {
+    set({ isSearchPanel });
   },
 }));
 
