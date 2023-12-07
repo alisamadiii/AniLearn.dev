@@ -20,7 +20,7 @@ export function Content({ style }: Props) {
 
   return (
     <AnimatePresence mode="wait">
-      {image ? (
+      {image.isImage ? (
         <motion.div
           key={"image"}
           variants={animate}
@@ -30,12 +30,12 @@ export function Content({ style }: Props) {
           transition={{ duration: 0.1, ease: "backOut" }}
         >
           <Image
-            src={"/my-image.png"}
+            src={image.url ?? "/my-image.png"}
             width={160}
             height={160}
             alt="my-image"
             style={style}
-            className="mx-auto"
+            className="mx-auto h-[160px] w-[160px] rounded-lg object-cover"
           />
         </motion.div>
       ) : (

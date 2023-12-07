@@ -19,12 +19,18 @@ const useGlobalStore = create<GlobalStore>()((set) => ({
 }));
 
 interface TransformStore {
-  image: boolean;
-  setImage: (a: boolean) => void;
+  image: {
+    isImage: boolean;
+    url: string | null;
+  };
+  setImage: (a: { isImage: boolean; url: string | null }) => void;
 }
 
 const useTransformStore = create<TransformStore>()((set) => ({
-  image: false,
+  image: {
+    isImage: false,
+    url: null,
+  },
   setImage: (image) => {
     set({ image });
   },
