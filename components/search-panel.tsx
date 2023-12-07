@@ -1,12 +1,18 @@
 "use client";
 
-import React, { type ChangeEvent, useEffect, useRef, useState } from "react";
+import React, {
+  type ChangeEvent,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+} from "react";
 import Link from "next/link";
 import Fuse from "fuse.js";
 
 import { allContents } from "@/.contentlayer/generated";
 import { useGlobalStore } from "@/context";
-import { IoMdSearch , IoIosArrowForward } from "react-icons/io";
+import { IoMdSearch, IoIosArrowForward } from "react-icons/io";
 import { CgHashtag } from "react-icons/cg";
 
 /*eslint-disable*/
@@ -61,12 +67,13 @@ export function SearchContainer() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: any) => {
       if ((event.ctrlKey || event.metaKey) && event.key === "k") {
         setIsSearchPanel(true);
         event.preventDefault();
       } else if (event.key === "Escape") {
         setIsSearchPanel(false);
+        event.preventDefault();
       }
     };
 
@@ -104,6 +111,23 @@ export function SearchContainer() {
     console.log(allContents);
   }, [isSearchPanel]);
 
+  const searchPanelRef = useRef<null | HTMLUListElement>(null);
+
+  const handleLinkFocus = (e: KeyboardEvent<HTMLAnchorElement>) => {
+    if (e.key === "Tab" && searchPanelRef.current) {
+      e.preventDefault();
+
+      const links = searchPanelRef.current.querySelectorAll("a");
+
+      if (links) {
+        const currentIndex = Array.from(links).indexOf(e.currentTarget);
+        const nextIndex = (currentIndex + 1) % links.length;
+
+        links[nextIndex].focus();
+      }
+    }
+  };
+
   return (
     isSearchPanel && (
       <div className="fixed left-0 top-0 isolate z-[60] flex h-full w-full justify-center px-4 pt-4 md:pt-24">
@@ -126,13 +150,14 @@ export function SearchContainer() {
           </label>
           {/* contents */}
           {inputField.length > 0 && contents.length > 0 ? (
-            <ul className="space-y-2 overflow-auto p-4">
+            <ul className="space-y-2 overflow-auto p-4" ref={searchPanelRef}>
               {contents.map((content, index) => (
-                <li key={index}>
+                <li key={index} className="your-search-panel-class">
                   <Link
                     href={content.slug}
                     className="flex items-center gap-4 rounded-md p-2 text-sm text-muted outline-none duration-100 focus:bg-primary/10 focus:text-foreground"
                     onClick={closingHandler}
+                    onKeyDown={handleLinkFocus}
                   >
                     <span className="flex h-4 w-4 items-center justify-center rounded bg-muted/20 text-xs">
                       <CgHashtag />
