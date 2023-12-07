@@ -5,7 +5,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean;
 }
 
-export default function Checkbox({ checked = false, ...props }: Props) {
+export default function Checkbox({ checked, ...props }: Props) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -21,7 +21,7 @@ export default function Checkbox({ checked = false, ...props }: Props) {
         onChange={handleCheckboxChange}
         {...props}
       />
-      <span className="border-border bg-box flex h-4 w-4 items-center justify-center rounded border peer-checked:border-blue-900 peer-checked:bg-blue-700">
+      <span className="border-border flex h-4 w-4 items-center justify-center rounded border bg-box peer-checked:border-blue-900 peer-checked:bg-blue-700">
         <AnimatePresence>
           {(isChecked || checked) && (
             <svg

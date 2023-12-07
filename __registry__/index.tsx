@@ -60,6 +60,56 @@ export const Index: Record<string, any> = {
       () => import("@/registry/css/flexbox/justify-content.tsx")
     ),
   },
+  "transform-rotate-x": {
+    name: "transform-rotate-x",
+    component: React.lazy(
+      () => import("@/registry/css/transform/rotate-x.tsx")
+    ),
+  },
+  "transform-rotate-y": {
+    name: "transform-rotate-y",
+    component: React.lazy(
+      () => import("@/registry/css/transform/rotate-y.tsx")
+    ),
+  },
+  "transform-rotate": {
+    name: "transform-rotate",
+    component: React.lazy(() => import("@/registry/css/transform/rotate.tsx")),
+  },
+  "transform-scale-x": {
+    name: "transform-scale-x",
+    component: React.lazy(() => import("@/registry/css/transform/scale-x.tsx")),
+  },
+  "transform-scale-y": {
+    name: "transform-scale-y",
+    component: React.lazy(() => import("@/registry/css/transform/scale-y.tsx")),
+  },
+  "transform-scale": {
+    name: "transform-scale",
+    component: React.lazy(() => import("@/registry/css/transform/scale.tsx")),
+  },
+  "transform-setting": {
+    name: "transform-setting",
+    component: React.lazy(() => import("@/registry/css/transform/setting.tsx")),
+  },
+  "transform-skew-x": {
+    name: "transform-skew-x",
+    component: React.lazy(() => import("@/registry/css/transform/skew-x.tsx")),
+  },
+  "transform-skew-y": {
+    name: "transform-skew-y",
+    component: React.lazy(() => import("@/registry/css/transform/skew-y.tsx")),
+  },
+  "transform-skew": {
+    name: "transform-skew",
+    component: React.lazy(() => import("@/registry/css/transform/skew.tsx")),
+  },
+  "transform-translate": {
+    name: "transform-translate",
+    component: React.lazy(
+      () => import("@/registry/css/transform/translate.tsx")
+    ),
+  },
   "inputs-checkbox": {
     name: "inputs-checkbox",
     component: React.lazy(() => import("@/registry/html/inputs/checkbox.tsx")),

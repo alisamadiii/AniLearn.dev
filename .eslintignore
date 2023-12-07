@@ -20,6 +20,7 @@ commitlint.config.js
 
 /components/MdxComponents.tsx
 /components/select.tsx
+/components/slider.tsx
 /scripts
 /components/video.tsx
 /__registry__
