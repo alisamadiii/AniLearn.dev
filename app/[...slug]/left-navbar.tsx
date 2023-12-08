@@ -4,6 +4,7 @@ import React from "react";
 import { allContents } from "contentlayer/generated";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { differenceInDays } from "date-fns";
 
 interface Props {
   techs: "HTML" | "CSS" | "JavaScript";
@@ -28,7 +29,7 @@ export default function LeftNavbarItems({ techs }: Props) {
               content.slugAsParams.includes("/") && (
                 <li
                   key={index}
-                  className={`text-sm hover:underline ${
+                  className={`space-x-2 text-sm hover:underline ${
                     pathname === content.slug ? "text-foreground" : "text-muted"
                   }`}
                 >
@@ -38,6 +39,22 @@ export default function LeftNavbarItems({ techs }: Props) {
                   >
                     {content.title}
                   </Link>
+                  {differenceInDays(new Date(), new Date(content.created_at)) <
+                    3 &&
+                    differenceInDays(
+                      new Date(),
+                      new Date(content.created_at)
+                    ) >= 0 && (
+                      <span className="rounded-full bg-foreground px-2 py-1 text-[10px] text-background">
+                        New
+                      </span>
+                    )}
+                  {differenceInDays(new Date(), new Date(content.created_at)) <
+                    0 && (
+                    <span className="rounded-full bg-foreground px-2 py-1 text-[10px] text-background">
+                      Coming...
+                    </span>
+                  )}
                 </li>
               )
           )}

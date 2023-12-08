@@ -41,6 +41,10 @@ const Contents = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
+    working: {
+      type: "boolean",
+      required: false,
+    },
   },
   computedFields,
 }));
