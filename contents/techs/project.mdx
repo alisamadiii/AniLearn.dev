@@ -1,0 +1,110 @@
+---
+  title: "Project"
+  description: "Know what stacks we are using for this project"
+  level: ""
+  created_at: 2024-01-01
+---
+
+- Next.js
+- TypeScript
+- Contentlayer
+- Tailwind CSS
+- Eslint
+
+## Committing any changes
+
+Whenever you are ready to commit your changes, something will run to check if there is any error or any other issues.
+
+If there was any issues, your commit will canceled, so that you can fix the issues.
+
+- Eslint
+- Prettier
+- Husky
+- Lintstaged
+- Commitlint
+
+### Commitlint
+
+Your comment should be written in a way that most of the people must be able to understand on what you have brought changes, because of this, I prefer to use [Commitlint](https://github.com/conventional-changelog/commitlint) for writing a comment.
+
+- build
+- chore
+- ci
+- docs
+- feat
+- fix
+- perf
+- refactor
+- revert
+- style
+- test
+
+![image](https://github.com/conventional-changelog/commitlint/raw/master/docs/assets/commitlint.svg)
+
+For Example:
+
+```bash
+fix(bug-button): <your message>
+feat(google-auth): <your message>
+
+# Otherwise your commit will not be accepted.
+```
+
+[See more...](https://github.com/AliReza1083/AniLearn.dev/commits/main)
+
+## File Structures
+
+### MDX Files
+
+```
+└── contents
+    └── techs
+        ├── css
+            └── *.mdx
+        ├── html
+            └── *.mdx
+        ├── javascript
+            └── *.mdx
+        └── *.mdx
+```
+
+by running npm run template, it will generate the file for you.
+
+### Components in MDX
+
+```
+└── registry
+    ├── css
+        └── <folder>
+            └── *.tsx
+    ├── html
+        └── *.tsx
+    └── javascript
+        └── *.tsx
+```
+
+There is a folder (**registry**) where it contains all the imported component.
+
+```jsx title="__registry__.tsx" /center-flexbox/#g
+export const Index: Record<string, any> = {
+  "border-radius": {
+    name: "border-radius",
+    component: React.lazy(() => import("@/registry/css/border-radius.tsx")),
+  },
+  "center-flexbox": {
+    name: "center-flexbox",
+    component: React.lazy(() => import("@/registry/css/center/flexbox.tsx")),
+  },
+  // ...
+}
+```
+
+and we can easily use the components inside an MDX file:
+
+```md title="index.mdx" /center-flexbox/#g
+When using Position or Margin for centering, we need to target the element not it's parent element.
+
+<ComponentPreview name="center-flexbox" />
+```
+
+but when you can create any files inside the registry folder, you need to run npm run build:registry, so that the **registry** folder be updated.

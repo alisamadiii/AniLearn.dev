@@ -10,6 +10,9 @@ import Menu from "./menu";
 
 import { IoVideocam, IoLogoGithub } from "react-icons/io5";
 import { SearchBox } from "@/components/search-panel";
+import Link from "next/link";
+
+import { FaHandsHelping } from "react-icons/fa";
 
 interface Props {
   children: React.ReactNode;
@@ -37,6 +40,17 @@ export default async function ContentLayout({ children, params }: Props) {
 
       <nav className="sticky top-32 hidden md:block">
         <SearchBox />
+        <div className="mb-6 mt-6">
+          <Link
+            href={"/techs/contributing"}
+            className="flex items-center gap-2 text-muted hover:text-foreground"
+          >
+            <span className="rounded bg-muted/20 p-1 text-foreground">
+              <FaHandsHelping />
+            </span>{" "}
+            Contributing
+          </Link>
+        </div>
         <LeftNavbarItems techs="HTML" />
         <LeftNavbarItems techs="CSS" />
         <LeftNavbarItems techs="JavaScript" />

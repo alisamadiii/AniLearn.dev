@@ -40,7 +40,7 @@ const components = {
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className="text-muted-3 scroll-m-20 text-base leading-7 hover:text-white"
+      className="scroll-m-20 text-base leading-7 text-blue-600 underline hover:text-blue-800 hover:no-underline"
       {...props}
     />
   ),

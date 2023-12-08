@@ -135,7 +135,7 @@ export function SearchContainer() {
           className="absolute inset-0 -z-10 bg-background/60 backdrop-blur-sm"
           onClick={closingHandler}
         />
-        <div className="absolute flex max-h-96 w-full max-w-lg flex-col rounded-lg border border-foreground/20 bg-box">
+        <div className="absolute flex max-h-96 w-full max-w-lg flex-col rounded-lg border border-foreground/20 bg-white shadow-2xl dark:bg-box">
           {/* search */}
           <label className="flex items-center gap-4 border-b border-foreground/10 px-4 py-3">
             <IoMdSearch className="text-xl" />
@@ -155,7 +155,7 @@ export function SearchContainer() {
                 <li key={index} className="your-search-panel-class">
                   <Link
                     href={content.slug}
-                    className="flex items-center gap-4 rounded-md p-2 text-sm text-muted outline-none duration-100 focus:bg-primary/10 focus:text-foreground"
+                    className="flex items-center gap-4 rounded-md p-2 text-sm text-muted outline-none duration-100 focus:bg-primary/30 focus:text-foreground dark:focus:bg-primary/10"
                     onClick={closingHandler}
                     onKeyDown={handleLinkFocus}
                   >
