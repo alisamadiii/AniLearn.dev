@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
+import { codeImport } from "remark-code-import";
 
 const computedFields = {
   slug: {
@@ -53,7 +54,7 @@ export default makeSource({
   contentDirPath: "./contents",
   documentTypes: [Contents],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
       rehypeSlug,
       [
