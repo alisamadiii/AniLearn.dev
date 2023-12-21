@@ -1,7 +1,7 @@
 import { PreviewWrapper } from "@/components/Wrapper";
 import { Box } from "@/components/box";
 import { Slider } from "@/components/slider";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const initialValues = {
   top: 0,
@@ -10,15 +10,34 @@ const initialValues = {
   left: 0,
 };
 
+type Position = "top" | "right" | "bottom" | "left";
+
 export default function BorderRadius() {
   const [values, setValues] = useState(initialValues);
+  const [isChanging, setIsChanging] = useState<{
+    isShown: boolean;
+    position: Position;
+  }>({
+    isShown: false,
+    position: "top",
+  });
 
-  const onValueChangeHandler = (
-    position: "top" | "right" | "bottom" | "left",
-    value: number
-  ) => {
+  const onValueChangeHandler = (position: Position, value: number) => {
     setValues({ ...values, [position]: value });
+    setIsChanging({ ...isChanging, position });
   };
+
+  useEffect(() => {
+    setIsChanging({ ...isChanging, isShown: true });
+
+    const timeout = setTimeout(() => {
+      setIsChanging({ ...isChanging, isShown: false });
+    }, 200);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [values]);
 
   return (
     <PreviewWrapper>
@@ -27,7 +46,13 @@ export default function BorderRadius() {
         style={{
           borderRadius: `${values.top}px ${values.right}px ${values.bottom}px ${values.left}px`,
         }}
-      />
+      >
+        {isChanging.isShown && (
+          <>
+            <p className="text-xs">{values[isChanging.position]}px</p>
+          </>
+        )}
+      </Box>
 
       <ul className="grid grid-cols-2 gap-4">
         <li className="flex">
@@ -36,7 +61,9 @@ export default function BorderRadius() {
             min={0}
             max={100}
             defaultValue={[0]}
-            onValueChange={(value) => { onValueChangeHandler("top", value[0]); }}
+            onValueChange={(value) => {
+              onValueChangeHandler("top", value[0]);
+            }}
           />
         </li>
         <li className="flex">
@@ -45,7 +72,9 @@ export default function BorderRadius() {
             min={0}
             max={100}
             defaultValue={[0]}
-            onValueChange={(value) => { onValueChangeHandler("right", value[0]); }}
+            onValueChange={(value) => {
+              onValueChangeHandler("right", value[0]);
+            }}
           />
         </li>
         <li className="flex">
@@ -54,7 +83,9 @@ export default function BorderRadius() {
             min={0}
             max={100}
             defaultValue={[0]}
-            onValueChange={(value) => { onValueChangeHandler("bottom", value[0]); }}
+            onValueChange={(value) => {
+              onValueChangeHandler("bottom", value[0]);
+            }}
           />
         </li>
         <li className="flex">
@@ -63,7 +94,9 @@ export default function BorderRadius() {
             min={0}
             max={100}
             defaultValue={[0]}
-            onValueChange={(value) => { onValueChangeHandler("left", value[0]); }}
+            onValueChange={(value) => {
+              onValueChangeHandler("left", value[0]);
+            }}
           />
         </li>
       </ul>

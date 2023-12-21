@@ -4,9 +4,17 @@
 import * as React from "react";
 
 export const Index: Record<string, any> = {
-  "border-radius": {
-    name: "border-radius",
-    component: React.lazy(() => import("@/registry/css/border-radius.tsx")),
+  "border-radius-index": {
+    name: "border-radius-index",
+    component: React.lazy(
+      () => import("@/registry/css/border-radius/index.tsx")
+    ),
+  },
+  "border-radius-whole": {
+    name: "border-radius-whole",
+    component: React.lazy(
+      () => import("@/registry/css/border-radius/whole.tsx")
+    ),
   },
   "center-flexbox": {
     name: "center-flexbox",
