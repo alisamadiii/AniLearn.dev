@@ -68,6 +68,16 @@ export const Index: Record<string, any> = {
       () => import("@/registry/css/flexbox/justify-content.tsx")
     ),
   },
+  "object-fit-contain": {
+    name: "object-fit-contain",
+    component: React.lazy(
+      () => import("@/registry/css/object-fit/contain.tsx")
+    ),
+  },
+  "object-fit-cover": {
+    name: "object-fit-cover",
+    component: React.lazy(() => import("@/registry/css/object-fit/cover.tsx")),
+  },
   "transform-rotate-x": {
     name: "transform-rotate-x",
     component: React.lazy(

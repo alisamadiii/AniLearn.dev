@@ -5,7 +5,8 @@ import "./globals.css";
 
 import Navbar from "@/components/navbar";
 import Layout from "@/components/layout";
-import { SearchContainer } from "@/components/search-panel";
+
+import ModalProvider from "@/providers/ModalProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--body-font" });
 const playfairDisplay = Playfair_Display({
@@ -29,9 +30,9 @@ export default function RootLayout({
         className={`${playfairDisplay.variable} ${inter.variable} bg-background font-body text-foreground`}
       >
         <Layout>
+          <ModalProvider />
           <Navbar />
           {children}
-          <SearchContainer />
         </Layout>
       </body>
     </html>

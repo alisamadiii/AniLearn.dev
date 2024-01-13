@@ -36,7 +36,7 @@ const Contents = defineDocumentType(() => ({
     },
     level: {
       type: "string",
-      required: true,
+      required: false,
     },
     link_content: {
       type: "string",
@@ -44,6 +44,10 @@ const Contents = defineDocumentType(() => ({
     },
     working: {
       type: "boolean",
+      required: false,
+    },
+    contributor: {
+      type: "string",
       required: false,
     },
   },

@@ -40,7 +40,7 @@ export default function LeftNavbarItems({ techs }: Props) {
                     {content.title}
                   </Link>
                   {differenceInDays(new Date(), new Date(content.created_at)) <
-                    3 &&
+                    7 &&
                     differenceInDays(
                       new Date(),
                       new Date(content.created_at)

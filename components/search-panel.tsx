@@ -11,9 +11,9 @@ import Link from "next/link";
 import Fuse from "fuse.js";
 
 import { allContents } from "@/.contentlayer/generated";
-import { useGlobalStore } from "@/context";
 import { IoMdSearch, IoIosArrowForward } from "react-icons/io";
 import { CgHashtag } from "react-icons/cg";
+import { useSearchBox } from "@/hooks/useModal";
 
 /*eslint-disable*/
 function boldText(value: string, searchedText: string) {
@@ -32,11 +32,29 @@ function boldText(value: string, searchedText: string) {
 /* eslint-enable */
 
 export function SearchBox() {
-  const { setIsSearchPanel } = useGlobalStore();
+  const { onOpen, onClose } = useSearchBox();
 
   const openingHandler = () => {
-    setIsSearchPanel(true);
+    onOpen();
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event: any) => {
+      event.preventDefault();
+      if ((event.ctrlKey || event.metaKey) && event.key === "k") {
+        onOpen();
+        console.log("asdf");
+      } else if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <button
@@ -53,12 +71,13 @@ export function SearchBox() {
 export function SearchContainer() {
   const [inputField, setInputField] = useState("");
   const [contents, setContents] = useState(allContents);
-  const { isSearchPanel, setIsSearchPanel } = useGlobalStore();
+
+  const { isOpen, onClose } = useSearchBox();
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const closingHandler = () => {
-    setIsSearchPanel(false);
+    onClose();
     setInputField("");
   };
 
@@ -67,29 +86,11 @@ export function SearchContainer() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (event: any) => {
-      if ((event.ctrlKey || event.metaKey) && event.key === "k") {
-        setIsSearchPanel(true);
-        event.preventDefault();
-      } else if (event.key === "Escape") {
-        setIsSearchPanel(false);
-        event.preventDefault();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  useEffect(() => {
     // Focus on the input when the search box is visible
-    if (isSearchPanel && inputRef.current) {
+    if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
-  }, [isSearchPanel]);
+  }, [isOpen]);
 
   const fuse = new Fuse(allContents, {
     keys: ["title", "description"],
@@ -104,12 +105,12 @@ export function SearchContainer() {
 
   // Document Overflow
   useEffect(() => {
-    isSearchPanel
+    isOpen
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "");
 
     console.log(allContents);
-  }, [isSearchPanel]);
+  }, [isOpen]);
 
   const searchPanelRef = useRef<null | HTMLUListElement>(null);
 
@@ -128,67 +129,69 @@ export function SearchContainer() {
     }
   };
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    isSearchPanel && (
-      <div className="fixed left-0 top-0 isolate z-[60] flex h-full w-full justify-center px-4 pt-4 md:pt-24">
-        <div
-          className="absolute inset-0 -z-10 bg-background/60 backdrop-blur-sm"
-          onClick={closingHandler}
-        />
-        <div className="absolute flex max-h-96 w-full max-w-lg flex-col rounded-lg border border-foreground/20 bg-white shadow-2xl dark:bg-box">
-          {/* search */}
-          <label className="flex items-center gap-4 border-b border-foreground/10 px-4 py-3">
-            <IoMdSearch className="text-xl" />
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder="Search documentations"
-              className="grow bg-transparent text-sm outline-none placeholder:text-muted"
-              onChange={onChangeHandler}
-            />
-            <span className="rounded bg-muted/20 p-1 text-[8px]">ESC</span>
-          </label>
-          {/* contents */}
-          {inputField.length > 0 && contents.length > 0 ? (
-            <ul className="space-y-2 overflow-auto p-4" ref={searchPanelRef}>
-              {contents.map((content, index) => (
-                <li key={index} className="your-search-panel-class">
-                  <Link
-                    href={content.slug}
-                    className="flex items-center gap-4 rounded-md p-2 text-sm text-muted outline-none duration-100 focus:bg-primary/30 focus:text-foreground dark:focus:bg-primary/10"
-                    onClick={closingHandler}
-                    onKeyDown={handleLinkFocus}
-                  >
-                    <span className="flex h-4 w-4 items-center justify-center rounded bg-muted/20 text-xs">
-                      <CgHashtag />
-                    </span>
-                    <div className="flex grow flex-col">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: boldText(content.title, inputField),
-                        }}
-                      />
-                      <span
-                        className="text-[10px] leading-4"
-                        dangerouslySetInnerHTML={{
-                          __html: boldText(content.description, inputField),
-                        }}
-                      />
-                    </div>
-                    <span>
-                      <IoIosArrowForward />
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="py-12 text-center text-muted">
-              <h2>No recent searches</h2>
-            </div>
-          )}
-        </div>
+    <div className="fixed left-0 top-0 isolate z-[60] flex h-full w-full justify-center px-4 pt-4 md:pt-24">
+      <div
+        className="absolute inset-0 -z-10 bg-background/60 backdrop-blur-sm"
+        onClick={closingHandler}
+      />
+      <div className="absolute flex max-h-96 w-full max-w-lg flex-col rounded-lg border border-foreground/20 bg-white shadow-2xl dark:bg-box">
+        {/* search */}
+        <label className="flex items-center gap-4 border-b border-foreground/10 px-4 py-3">
+          <IoMdSearch className="text-xl" />
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Search documentations"
+            className="grow bg-transparent text-sm outline-none placeholder:text-muted"
+            onChange={onChangeHandler}
+          />
+          <span className="rounded bg-muted/20 p-1 text-[8px]">ESC</span>
+        </label>
+        {/* contents */}
+        {inputField.length > 0 && contents.length > 0 ? (
+          <ul className="space-y-2 overflow-auto p-4" ref={searchPanelRef}>
+            {contents.map((content, index) => (
+              <li key={index} className="your-search-panel-class">
+                <Link
+                  href={content.slug}
+                  className="flex items-center gap-4 rounded-md p-2 text-sm text-muted outline-none duration-100 focus:bg-primary/30 focus:text-foreground dark:focus:bg-primary/10"
+                  onClick={closingHandler}
+                  onKeyDown={handleLinkFocus}
+                >
+                  <span className="flex h-4 w-4 items-center justify-center rounded bg-muted/20 text-xs">
+                    <CgHashtag />
+                  </span>
+                  <div className="flex grow flex-col">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: boldText(content.title, inputField),
+                      }}
+                    />
+                    <span
+                      className="text-[10px] leading-4"
+                      dangerouslySetInnerHTML={{
+                        __html: boldText(content.description, inputField),
+                      }}
+                    />
+                  </div>
+                  <span>
+                    <IoIosArrowForward />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="py-12 text-center text-muted">
+            <h2>No recent searches</h2>
+          </div>
+        )}
       </div>
-    )
+    </div>
   );
 }
