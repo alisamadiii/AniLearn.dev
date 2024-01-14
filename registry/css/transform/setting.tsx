@@ -16,7 +16,8 @@ export default function TransformSetting() {
     const { value } = event.target;
 
     if (value.length === 0) {
-      setImageResponse(null); return;
+      setImageResponse(null);
+      return;
     }
 
     // eslint-disable-next-line
@@ -57,7 +58,7 @@ export default function TransformSetting() {
                 ? "border-green-500 focus:border-green-700"
                 : imageResponse === 404 && "border-red-500 focus:border-red-700"
             }`}
-            onChange={onChangeHandler} // eslint-disable-line
+            onChange={onChangeHandler}
           />
         )}
         {imageResponse && (

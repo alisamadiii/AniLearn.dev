@@ -45,8 +45,6 @@ export default function Menu() {
     }
   };
 
-  console.log(opacity);
-
   return (
     <>
       <AnimatePresence>

@@ -40,12 +40,13 @@ export function SearchBox() {
 
   useEffect(() => {
     const handleKeyDown = (event: any) => {
-      event.preventDefault();
       if ((event.ctrlKey || event.metaKey) && event.key === "k") {
         onOpen();
         console.log("asdf");
+        event.preventDefault();
       } else if (event.key === "Escape") {
         onClose();
+        event.preventDefault();
       }
     };
 
