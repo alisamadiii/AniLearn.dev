@@ -52,7 +52,10 @@ export default function Menu() {
       <AnimatePresence>
         {isOpen && (
           <nav className="fixed bottom-0 left-0 z-50 h-full w-full md:hidden">
-            <div className="absolute inset-0 bg-background" />
+            <div
+              className="absolute inset-0 bg-background"
+              style={{ opacity }}
+            />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
