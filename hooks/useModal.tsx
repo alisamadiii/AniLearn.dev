@@ -8,8 +8,28 @@ interface SearchBox {
 
 const useSearchBox = create<SearchBox>()((set) => ({
   isOpen: false,
-  onOpen: () => { set({ isOpen: true }); },
-  onClose: () => { set({ isOpen: false }); },
+  onOpen: () => {
+    set({ isOpen: true });
+  },
+  onClose: () => {
+    set({ isOpen: false });
+  },
 }));
 
-export { useSearchBox };
+interface MenuBar {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+const useMenuBar = create<MenuBar>()((set) => ({
+  isOpen: false,
+  onOpen: () => {
+    set({ isOpen: true });
+  },
+  onClose: () => {
+    set({ isOpen: false });
+  },
+}));
+
+export { useSearchBox, useMenuBar };
