@@ -41,6 +41,7 @@ export default function LeftNavbarItems({ techs }: Props) {
                   </Link>
                   {differenceInDays(new Date(), new Date(content.created_at)) <
                     7 &&
+                    !content.completed &&
                     differenceInDays(
                       new Date(),
                       new Date(content.created_at)
@@ -49,8 +50,7 @@ export default function LeftNavbarItems({ techs }: Props) {
                         New
                       </span>
                     )}
-                  {differenceInDays(new Date(), new Date(content.created_at)) <
-                    0 && (
+                  {content.completed && (
                     <span className="rounded-full bg-foreground px-2 py-1 text-[10px] text-background">
                       Coming...
                     </span>

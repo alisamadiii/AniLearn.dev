@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContentsPage() {
   return (
-    <div className="mx-auto mt-24 max-w-7xl px-4">
+    <div className="mx-auto mt-24 w-full max-w-7xl px-4">
       <h1 className="text-3xl font-bold md:text-5xl">Choose a Technology</h1>
       <div className="my-8 flex flex-wrap gap-4">
         <Link

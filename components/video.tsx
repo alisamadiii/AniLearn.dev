@@ -160,7 +160,7 @@ export default function Video({ url }: Props) {
         onWaiting={handleWaiting}
         onCanPlay={handleCanPlay}
       ></video>
-      {/* Loading when the video stopped working due to slow connection */}
+      {/* Loading when the video stopped completed due to slow connection */}
       {loading && (
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <BarLoader color="white" />

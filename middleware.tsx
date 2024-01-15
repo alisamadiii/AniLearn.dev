@@ -11,7 +11,7 @@ export function middleware(req: NextRequest) {
     );
 
     if (findingContent) {
-      if (findingContent.working) {
+      if (findingContent.completed) {
         return NextResponse.rewrite(new URL("/under-construction", req.url));
       }
     }

@@ -42,7 +42,7 @@ const Contents = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
-    working: {
+    completed: {
       type: "boolean",
       required: false,
     },
