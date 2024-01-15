@@ -17,7 +17,7 @@ export default function UnderConstruction() {
         <div className="absolute bottom-0 left-0 h-52 w-52 bg-foreground/30 blur-3xl dark:bg-foreground/10" />
         <div className="grid_bg absolute inset-0 opacity-30" />
       </div>
-      <div className="relative mx-auto flex h-svh max-w-7xl flex-col items-center justify-center gap-4 px-4 md:gap-8">
+      <div className="relative mx-auto flex h-svh w-full max-w-7xl flex-col items-center justify-center gap-4 px-4 md:gap-8">
         <BackButton />
         <Balancer
           as={"h1"}
@@ -32,7 +32,8 @@ export default function UnderConstruction() {
           <a
             target="_blank"
             href="https://github.com/AliReza1083/AniLearn.dev"
-            className="text-foreground underline hover:no-underline" rel="noreferrer"
+            className="text-foreground underline hover:no-underline"
+            rel="noreferrer"
           >
             repository
           </a>
