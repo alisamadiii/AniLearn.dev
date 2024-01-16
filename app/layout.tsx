@@ -8,6 +8,7 @@ import Layout from "@/components/layout";
 
 import ModalProvider from "@/providers/ModalProvider";
 import Footer from "@/components/Footer";
+import TopBanner from "@/components/TopBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--body-font" });
 const playfairDisplay = Playfair_Display({
@@ -32,8 +33,11 @@ export default function RootLayout({
       >
         <Layout>
           <ModalProvider />
+          <TopBanner />
           <Navbar />
-          <div className="flex min-h-screen w-full flex-col">{children}</div>
+          <div className="flex min-h-[calc(100dvh-64px)] w-full flex-col">
+            {children}
+          </div>
           <Footer />
         </Layout>
       </body>

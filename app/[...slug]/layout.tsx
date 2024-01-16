@@ -35,10 +35,10 @@ export default async function ContentLayout({ children, params }: Props) {
   const toc = await getTableOfContents(findingContents.body.raw);
 
   return (
-    <div className="mx-auto mb-12 mt-20 grid w-full max-w-7xl grid-cols-5 items-start gap-8 px-4 md:mt-32">
+    <div className="mx-auto mb-12 mt-4 grid w-full max-w-7xl grid-cols-5 items-start gap-8 px-4 md:mt-12">
       <div className="absolute right-0 top-0 h-1/2 w-1/2 bg-primary/5 blur-3xl"></div>
 
-      <nav className="sticky top-32 hidden md:block">
+      <nav className="sticky top-24 hidden md:block">
         <SearchBox />
         <div className="mb-6 mt-6">
           <Link
@@ -59,7 +59,7 @@ export default async function ContentLayout({ children, params }: Props) {
       <Menu />
 
       <div className="col-span-5 md:col-span-4 lg:col-span-3">{children}</div>
-      <div className="sticky top-32 hidden divide-y-[1px] divide-foreground/20 lg:block">
+      <div className="sticky top-24 hidden divide-y-[1px] divide-foreground/20 lg:block">
         <DashboardTableOfContents toc={toc} />
         <div className="flex flex-col pt-2">
           <a

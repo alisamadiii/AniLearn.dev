@@ -44,7 +44,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full bg-background px-4 shadow-navbar">
+    <nav className="sticky left-0 top-0 z-50 w-full bg-background px-4 shadow-navbar">
       <AnimatePresence>
         {isOpen && (
           <motion.div

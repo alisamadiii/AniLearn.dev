@@ -6,7 +6,7 @@ import React from "react";
 export default function Home() {
   return (
     <main className="mx-auto max-w-7xl">
-      <header className="relative grid h-screen content-center justify-center gap-16 overflow-hidden">
+      <header className="relative grid h-[calc(100dvh-64px)] content-center justify-center gap-16 overflow-hidden">
         <div className="flex flex-col items-center gap-10 px-4 md:-translate-y-8">
           <h1 className="text-center font-display text-5xl md:text-7xl">
             Animation eases learning process.
