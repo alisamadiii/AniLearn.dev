@@ -13,6 +13,7 @@ function formatTime(time: number): string {
 }
 
 function gettingSearchParams(searchParams: any, value: string) {
+  // @ts-ignore
   return new URLSearchParams(Array.from(searchParams.entries())).get(value);
 }
 

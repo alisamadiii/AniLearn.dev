@@ -15,7 +15,9 @@ export default function ScaleX() {
         max={1.5}
         min={-1.5}
         step={0.01}
-        onValueChange={(value: any) => { setValue(value); }}
+        onValueChange={(value: any) => {
+          setValue(value);
+        }}
       />
       <Content style={{ transform: `scaleX(${value})` }} />
       <small className="inline-block w-full text-center">{value}</small>

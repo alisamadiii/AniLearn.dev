@@ -15,7 +15,8 @@ export default function Footer() {
             <a
               href="https://twitter.com/alirdev"
               target="_blank"
-              className="text-foreground underline" rel="noreferrer"
+              className="text-foreground underline"
+              rel="noreferrer"
             >
               Ali Reza
             </a>
@@ -23,7 +24,8 @@ export default function Footer() {
             <a
               href="https://github.com/AliReza1083/AniLearn.dev"
               target="_blank"
-              className="text-foreground underline" rel="noreferrer"
+              className="text-foreground underline"
+              rel="noreferrer"
             >
               GitHub
             </a>
