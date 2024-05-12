@@ -10,7 +10,7 @@ import React, {
 import Link from "next/link";
 import Fuse from "fuse.js";
 
-import { allContents } from "@/.contentlayer/generated";
+import { allDocuments } from "@/.contentlayer/generated";
 import { IoMdSearch, IoIosArrowForward } from "react-icons/io";
 import { CgHashtag } from "react-icons/cg";
 import { useSearchBox } from "@/hooks/useModal";
@@ -71,7 +71,9 @@ export function SearchBox() {
 
 export function SearchContainer() {
   const [inputField, setInputField] = useState("");
-  const [contents, setContents] = useState(allContents);
+  const [contents, setContents] = useState(allDocuments);
+
+  console.log(contents);
 
   const { isOpen, onClose } = useSearchBox();
 
@@ -93,7 +95,7 @@ export function SearchContainer() {
     }
   }, [isOpen]);
 
-  const fuse = new Fuse(allContents, {
+  const fuse = new Fuse(allDocuments, {
     keys: ["title", "description"],
   });
 
@@ -110,7 +112,7 @@ export function SearchContainer() {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "");
 
-    console.log(allContents);
+    console.log(allDocuments);
   }, [isOpen]);
 
   const searchPanelRef = useRef<null | HTMLUListElement>(null);

@@ -28,12 +28,14 @@ const config: Config = {
       },
       fontFamily: {
         body: "var(--body-font)",
-        display: "var(--display-font)",
       },
       boxShadow: {
         navbar: "0 4px 50px rgba(0, 0, 0, .25)",
         "ham-menu":
           "0 0 0 2px rgba(var(--background)), 0 0 0 4px rgba(var(--foreground))",
+      },
+      margin: {
+        "content-top": "80px",
       },
       animation: {
         html: "rotate 5s infinite linear",

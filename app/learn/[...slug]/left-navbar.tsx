@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { allContents } from "contentlayer/generated";
+import { allLearns } from "contentlayer/generated";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { differenceInDays } from "date-fns";
@@ -19,7 +19,7 @@ export default function LeftNavbarItems({ techs }: Props) {
         {techs}
       </h2>
       <ul>
-        {allContents
+        {allLearns
           .filter((content) =>
             content.slugAsParams.includes(techs.toLowerCase())
           )

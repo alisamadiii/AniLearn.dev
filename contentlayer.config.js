@@ -17,9 +17,9 @@ const computedFields = {
   },
 };
 
-const Contents = defineDocumentType(() => ({
-  name: "Contents",
-  filePathPattern: "techs/**/*.mdx",
+const LearningConcept = defineDocumentType(() => ({
+  name: "Learn",
+  filePathPattern: "learn/**/*.mdx",
   contentType: "mdx",
   fields: {
     title: {
@@ -56,7 +56,7 @@ const Contents = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./contents",
-  documentTypes: [Contents],
+  documentTypes: [LearningConcept],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [

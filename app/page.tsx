@@ -1,36 +1,33 @@
-import { buttonVariants } from "@/components/button";
-import TechIcons from "@/components/techSVG";
-import Link from "next/link";
+import CompareDesign from "@/components/home/CompareDesign";
+import Learn from "@/components/home/Learn";
+import GradientWave from "@/components/home/gradient-wave";
+import TextAnimation from "@/components/home/text-animation";
 import React from "react";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-7xl">
-      <header className="relative grid h-[calc(100dvh-64px)] content-center justify-center gap-16 overflow-hidden">
-        <div className="flex flex-col items-center gap-10 px-4 md:-translate-y-8">
-          <h1 className="text-center font-display text-5xl md:text-7xl">
-            Animation eases learning process.
-          </h1>
-          <p className="text-center text-xl">
-            We offer top-notch content for easy learning, with clear visual
-            development principles.
-          </p>
-          <Link
-            href={"/contents"}
-            className={buttonVariants({
-              variant: "outline",
-              className: "px-12 md:w-32 md:px-0",
-            })}
-          >
-            Get started
-          </Link>
+    <main className="isolate flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-32 md:py-0">
+      <TextAnimation>
+        <h1 className="text-center font-display text-[min(8vw,74px)] tracking-tight text-[#263C48]">
+          Learn. Use. Improve
+        </h1>
+        <p className="mt-5 max-w-xl text-center text-xl font-normal text-[#60727A]">
+          We offer top-notch content for easy learning, with clear visual
+          development principles.
+        </p>
+      </TextAnimation>
+
+      <div className="mt-20 flex w-full flex-col items-center justify-center gap-12 md:flex-row">
+        <div className="h-96 w-full max-w-96 overflow-hidden rounded-[54px] border-2 border-white bg-[#F9FBFC] shadow-[0_4px_38px_rgba(0,0,0,.03)] duration-300 md:-translate-y-14 md:hover:-translate-y-20">
+          <CompareDesign />
         </div>
-        <div className="flex w-[100vw] justify-center gap-3 md:absolute md:bottom-0 md:left-1/2 md:w-auto md:-translate-x-1/2 md:translate-y-12 md:scale-150">
-          <TechIcons tech="html" />
-          <TechIcons tech="css" />
-          <TechIcons tech="js" />
+        <div className="h-96 w-full max-w-96 overflow-hidden rounded-[54px] border-2 border-white bg-[#F9FBFC] shadow-[0_4px_38px_rgba(0,0,0,.03)] duration-300 md:hover:-translate-y-4">
+          <Learn />
         </div>
-      </header>
+        <div className="h-96 w-full max-w-96 overflow-hidden rounded-[54px] border-2 border-white bg-[#F9FBFC] shadow-[0_4px_38px_rgba(0,0,0,.03)] duration-300 md:-translate-y-6 md:hover:-translate-y-12"></div>
+      </div>
+
+      <GradientWave />
     </main>
   );
 }

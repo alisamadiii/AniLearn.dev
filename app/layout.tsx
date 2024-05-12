@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/navbar";
@@ -11,10 +11,6 @@ import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--body-font" });
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--display-font",
-});
 
 export const metadata: Metadata = {
   title: "AniLearn",
@@ -29,16 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" id="top">
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} bg-background font-body text-foreground`}
+        className={`${inter.variable} bg-background font-body text-foreground`}
       >
         <Layout>
           <ModalProvider />
-          <TopBanner />
+          {/* <TopBanner /> */}
           <Navbar />
-          <div className="flex min-h-[calc(100dvh-64px)] w-full flex-col">
-            {children}
-          </div>
-          <Footer />
+          {children}
+          {/* <Footer /> */}
         </Layout>
       </body>
     </html>

@@ -12,4 +12,20 @@ function formatTime(time: number): string {
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-export { cn, formatTime };
+function gettingSearchParams(searchParams: any, value: string) {
+  return new URLSearchParams(Array.from(searchParams.entries())).get(value);
+}
+
+function extractNumbersFromString(str: string) {
+  // Use regular expression to match all numbers, including negative numbers
+  const numbers = str.match(/-?\d+/g);
+
+  // If numbers are found, convert them to integers
+  if (numbers) {
+    return numbers.map(Number);
+  } else {
+    return [];
+  }
+}
+
+export { cn, formatTime, gettingSearchParams, extractNumbersFromString };

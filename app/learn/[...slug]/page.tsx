@@ -1,6 +1,6 @@
 import React from "react";
 
-import { allContents } from "contentlayer/generated";
+import { allLearns } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Mdx } from "@/components/MdxComponents";
 import ScalingDown from "@/components/scaling-down";
@@ -19,7 +19,7 @@ export async function generateMetadata({
 }) {
   const currentSlug = `/${params.slug.join("/")}`;
 
-  const findingContents = allContents.find(
+  const findingContents = allLearns.find(
     (content) => content.slug === currentSlug
   );
 
@@ -33,10 +33,10 @@ export async function generateMetadata({
 }
 
 export default function page({ params }: Props) {
-  const currentSlug = `/${params.slug.join("/")}`;
+  const currentSlug = `${params.slug.join("/")}`;
 
-  const findingContents = allContents.find(
-    (content) => content.slug === currentSlug
+  const findingContents = allLearns.find(
+    (content) => content.slugAsParams === currentSlug
   );
 
   if (findingContents === undefined || findingContents === null) {
@@ -73,7 +73,7 @@ export default function page({ params }: Props) {
             ))}
           </div>
           <h1 className="mt-2 text-3xl font-bold">{findingContents.title}</h1>
-          <p className="my-2 text-paragraph">{findingContents.description}</p>
+          <p className="my-2">{findingContents.description}</p>
         </div>
         <Mdx code={findingContents.body.code} />
       </ScalingDown>

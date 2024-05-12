@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import { usePathname } from "next/navigation";
 
@@ -11,11 +11,17 @@ interface Props {
 export default function Layout({ children }: Props) {
   const pathname = usePathname();
 
+  // useEffect(() => {
+  //   if (pathname === "/") {
+  //     document.body.style.background = "#F3F7F9";
+  //   } else {
+  //     document.body.style.background = "#ffffff";
+  //   }
+  // }, [pathname]);
+
   return (
     <ThemeProvider attribute="class">
-      <main className={`${pathname === "/" && "grid-background"}`}>
-        {children}
-      </main>
+      <main>{children}</main>
     </ThemeProvider>
   );
 }

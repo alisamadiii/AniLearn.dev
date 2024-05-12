@@ -1,4 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import { RxCopy } from "react-icons/rx";
+import { TbClipboardCheck } from "react-icons/tb";
 
 import Link from "next/link";
 
@@ -6,6 +10,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import { cn } from "@/utils";
 import ComponentPreview from "./ComponentPreview";
+import CopyButton from "./copy-button";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -33,10 +38,7 @@ const components = {
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <p
-      className="text-muted-3 my-5 scroll-m-20 text-base leading-7"
-      {...props}
-    />
+    <p className="my-5 scroll-m-20 text-base leading-7 text-muted" {...props} />
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
@@ -56,8 +58,35 @@ const components = {
       {...props}
     />
   ),
+  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement> & {}) => {
+    const preRef = useRef<HTMLPreElement>(null);
+
+    const [showLess, setShowLess] = useState(false);
+
+    useEffect(() => {
+      if (preRef.current) {
+        const lineCount = preRef.current.textContent?.split("\n").length || 0;
+
+        if (lineCount >= 15) {
+          setShowLess(true);
+        } else {
+          setShowLess(false);
+        }
+      }
+    }, []);
+
+    return (
+      <>
+        <pre ref={preRef} {...props} />
+        <CopyButton value={preRef.current?.textContent || ""} />
+      </>
+    );
+  },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code className={`text-xs md:text-sm`} {...props}></code>
+    <code
+      className={`rounded bg-primary px-2 py-1 text-xs text-white md:text-sm`}
+      {...props}
+    ></code>
   ),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote
