@@ -15,7 +15,9 @@ export default function Scale() {
         max={1.5}
         min={0.5}
         step={0.01}
-        onValueChange={(value: any) => { setValue(value); }}
+        onValueChange={(value: any) => {
+          setValue(value);
+        }}
       />
       <Content style={{ scale: `${value}` }} />
       <small className="inline-block w-full text-center">{value}</small>

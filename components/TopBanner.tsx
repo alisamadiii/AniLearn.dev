@@ -24,7 +24,8 @@ export default function TopBanner() {
                 <a
                   href="https://github.com/AliReza1083/AniLearn.dev"
                   target="_blank"
-                  className="underline" rel="noreferrer"
+                  className="underline"
+                  rel="noreferrer"
                 >
                   open-source
                 </a>
@@ -35,7 +36,12 @@ export default function TopBanner() {
           </motion.div>
         )}
       </AnimatePresence>
-      <button className="absolute right-4" onClick={() => { setIsOpen(false); }}>
+      <button
+        className="absolute right-4"
+        onClick={() => {
+          setIsOpen(false);
+        }}
+      >
         <IoCloseSharp />
       </button>
     </div>

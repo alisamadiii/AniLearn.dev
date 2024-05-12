@@ -14,7 +14,9 @@ export default function SkewX() {
         defaultValue={[value]}
         max={360}
         step={1}
-        onValueChange={(value: any) => { setValue(value); }}
+        onValueChange={(value: any) => {
+          setValue(value);
+        }}
       />
       <Content style={{ transform: `skewX(${value}deg)` }} />
       <small className="inline-block w-full text-center">{value} deg°</small>
