@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run check-types
-npx lint-staged --concurrent false
+pnpm check-types
+pnpm dlx lint-staged --concurrent false
