@@ -21,9 +21,9 @@ export default function Translate() {
           max={100}
           min={-100}
           step={1}
-          onValueChange={(value: any) => {
-            setValues({ ...values, [translate]: value });
-          }}
+          onValueChange={(value: any) =>
+            { setValues({ ...values, [translate]: value }); }
+          }
         />
       ))}
       <Content

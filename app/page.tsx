@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="isolate flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-32 md:py-0">
       <TextAnimation>
-        <h1 className="font-display text-center text-[min(8vw,74px)] tracking-tight text-[#263C48]">
+        <h1 className="text-center font-display text-[min(8vw,74px)] tracking-tight text-[#263C48]">
           Learn. Use. Improve
         </h1>
         <p className="mt-5 max-w-xl text-center text-xl font-normal text-[#60727A]">

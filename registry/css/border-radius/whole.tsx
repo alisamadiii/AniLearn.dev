@@ -27,9 +27,7 @@ export default function WholeBorderRadius() {
           min={0}
           max={100}
           defaultValue={[value]}
-          onValueChange={(value) => {
-            onValueChangeHandler(value[0]);
-          }}
+          onValueChange={(value) => { onValueChangeHandler(value[0]); }}
         />
       </div>
 

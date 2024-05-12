@@ -44,11 +44,7 @@ export default function Cursor() {
 
   return (
     <PreviewWrapper className="space-y-4">
-      <Select
-        onValueChange={(value) => {
-          setCursor(value);
-        }}
-      >
+      <Select onValueChange={(value) => { setCursor(value); }}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Cursor" />
         </SelectTrigger>

@@ -7,10 +7,7 @@ export default function Url() {
   const [isValid, setIsValid] = useState<null | boolean>(null);
 
   useEffect(() => {
-    if (value.length === 0) {
-      setIsValid(null);
-      return;
-    }
+    if (value.length === 0) { setIsValid(null); return; }
 
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
     const result = urlRegex.test(value);
@@ -29,12 +26,7 @@ export default function Url() {
             : ""
       }`}
     >
-      <Input
-        type="text"
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      />
+      <Input type="text" onChange={(e) => { setValue(e.target.value); }} />
       <p className="text-muted">
         url: <span className="text-foreground">{value ?? "..."}</span>
       </p>

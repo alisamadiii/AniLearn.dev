@@ -13,9 +13,7 @@ export default function Theme() {
       {themes.map((theme, index) => (
         <button
           key={index}
-          onClick={() => {
-            setTheme(theme);
-          }}
+          onClick={() => { setTheme(theme); }}
           className={`relative isolate p-[5px] text-lg [&:nth-of-type(1)]:shadow-[inset_2px_2px_4px_rgba(0,0,0,.1)] dark:[&:nth-of-type(1)]:shadow-[inset_2px_2px_4px_rgba(255,255,255,.1)] [&:nth-of-type(2)]:shadow-[inset_-2px_2px_4px_rgba(0,0,0,.1)] dark:[&:nth-of-type(2)]:shadow-[inset_-2px_2px_4px_rgba(255,255,255,.1)] ${
             themeColor === theme ? "bg-muted/20" : ""
           }`}

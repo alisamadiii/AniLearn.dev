@@ -21,7 +21,7 @@ export default function UnderConstruction() {
         <BackButton />
         <Balancer
           as={"h1"}
-          className="font-display w-full text-center text-4xl font-bold md:text-6xl"
+          className="w-full text-center font-display text-4xl font-bold md:text-6xl"
         >
           This page will be finished ASAP
         </Balancer>

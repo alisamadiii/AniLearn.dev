@@ -13,9 +13,7 @@ export default function Rotate() {
         defaultValue={[value]}
         max={360}
         step={1}
-        onValueChange={(value: any) => {
-          setValue(value);
-        }}
+        onValueChange={(value: any) => { setValue(value); }}
       />
       <Content style={{ rotate: `${value}deg` }} />
       <small className="inline-block w-full text-center">{value} deg°</small>

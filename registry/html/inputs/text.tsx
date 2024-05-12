@@ -7,12 +7,7 @@ export default function Text() {
 
   return (
     <PreviewWrapper className="space-y-4">
-      <Input
-        type="text"
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      />
+      <Input type="text" onChange={(e) => { setValue(e.target.value); }} />
       <p className="text-muted">
         name: <span className="text-foreground">{value ?? "..."}</span>
       </p>

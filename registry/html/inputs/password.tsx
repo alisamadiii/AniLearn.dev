@@ -7,12 +7,7 @@ export default function Password() {
 
   return (
     <PreviewWrapper className="space-y-4">
-      <Input
-        type="password"
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      />
+      <Input type="password" onChange={(e) => { setValue(e.target.value); }} />
       <p className="text-muted">
         password: <span className="text-foreground">{value ?? "..."}</span>
       </p>
