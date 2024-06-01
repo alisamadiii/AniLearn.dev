@@ -1,18 +1,11 @@
 "use client";
 
-import {
-  type Variants,
-  motion,
-  AnimatePresence,
-  LayoutGroup,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
 
-import { IoMdMenu, IoMdClose } from "react-icons/io";
-import Button, { buttonVariants } from "./button";
-import { useGlobalStore } from "@/context";
-import Theme from "./theme";
+import { IoMdMenu } from "react-icons/io";
+import Button from "./button";
 import { usePathname } from "next/navigation";
 
 const navItems = {

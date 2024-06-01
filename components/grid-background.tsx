@@ -1,9 +1,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useRef } from "react";
+import React from "react";
 
-type Props = {};
-
-export default function GridBackground({}: Props) {
+export default function GridBackground() {
   const { scrollY } = useScroll();
 
   const y = useTransform(scrollY, [0, 500], ["0%", "-100%"]);
@@ -15,6 +13,7 @@ export default function GridBackground({}: Props) {
     >
       {Array.from({ length: 400 }).map((_, index) => (
         <div
+          key={index}
           className={`aspect-square w-14 grow border border-primary/[.02] ${[56, 82, 30, 5].includes(index) ? "bg-primary/5" : ""}`}
         ></div>
       ))}

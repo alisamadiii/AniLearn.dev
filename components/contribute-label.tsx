@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-export default function ContributeLabel({}: Props) {
+export default function ContributeLabel() {
   return (
     <div className="mb-4 mt-12 flex items-center justify-center">
       <a href="#">

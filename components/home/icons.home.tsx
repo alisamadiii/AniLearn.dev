@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {
+interface Props {
   name: "html" | "css" | "js";
-};
+}
 
 export default function IconHome({ name }: Props) {
   const currentIcon = {

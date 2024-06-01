@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaUser, FaRegUser } from "react-icons/fa";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 
-type Props = {};
-
-export default function CollaborationAnimation({}: Props) {
+export default function CollaborationAnimation() {
   const [section, setSection] = useState(1);
 
   useEffect(() => {
@@ -82,6 +80,7 @@ export default function CollaborationAnimation({}: Props) {
           {section === 4 &&
             Array.from({ length: 4 }).map((_, index) => (
               <motion.span
+                key={index}
                 initial={{ scale: 0 }}
                 animate={{
                   scale: 1,

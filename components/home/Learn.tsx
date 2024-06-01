@@ -4,9 +4,7 @@ import React, { useEffect, useState } from "react";
 import { LayoutGroup, motion } from "framer-motion";
 import IconHome from "./icons.home";
 
-type Props = {};
-
-export default function Learn({}: Props) {
+export default function Learn() {
   const [currentTech, setCurrentTech] = useState(1);
 
   useEffect(() => {

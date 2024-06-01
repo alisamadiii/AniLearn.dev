@@ -2,11 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { useAnimate, motion, AnimatePresence } from "framer-motion";
-import useMeasure from "react-use-measure";
 
-type Props = {};
-
-export default function CompareDesign({}: Props) {
+export default function CompareDesign() {
   const [generateNum, setGenerateNum] = useState(0);
   const [generateNum2, setGenerateNum2] = useState(0);
 

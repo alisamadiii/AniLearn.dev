@@ -1,16 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { ThemeProvider } from "next-themes";
-import { usePathname } from "next/navigation";
+import React from "react";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export default function Layout({ children }: Props) {
-  const pathname = usePathname();
-
   // useEffect(() => {
   //   if (pathname === "/") {
   //     document.body.style.background = "#F3F7F9";
@@ -20,8 +16,8 @@ export default function Layout({ children }: Props) {
   // }, [pathname]);
 
   return (
-    <ThemeProvider attribute="class">
-      <main>{children}</main>
-    </ThemeProvider>
+    // <ThemeProvider>
+    <main>{children}</main>
+    // </ThemeProvider>
   );
 }

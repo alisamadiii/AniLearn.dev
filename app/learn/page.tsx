@@ -4,16 +4,13 @@ import Link from "next/link";
 import React from "react";
 import { FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { motion } from "framer-motion";
 
 import { allLearns } from "@/.contentlayer/generated";
 import CollaborationAnimation from "@/components/collaboration-animation";
 import ContributeLabel from "@/components/contribute-label";
 import GridBackground from "@/components/grid-background";
 
-type Props = {};
-
-export default function LearnPage({}: Props) {
+export default function LearnPage() {
   const collaboration = allLearns.find((learn) =>
     learn.slug.includes("contributing")
   );
@@ -48,7 +45,7 @@ export default function LearnPage({}: Props) {
           .map(
             (learn) =>
               learn.slug.split("/").length > 3 && (
-                <li>
+                <li key={learn._id}>
                   <Link
                     href={learn.slug}
                     className="group relative isolate inline-block h-full w-full overflow-hidden rounded-xl border p-4 duration-200 hover:-translate-y-1"

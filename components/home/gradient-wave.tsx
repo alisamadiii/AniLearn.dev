@@ -3,9 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-export default function GradientWave({}: Props) {
+export default function GradientWave() {
   return (
     <div className="absolute left-0 top-0 -z-10 hidden h-full w-full overflow-hidden md:block">
       {/* Right */}
@@ -35,8 +33,8 @@ export default function GradientWave({}: Props) {
               y2="958.223"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#DEE9EE" />
-              <stop offset="1" stop-color="#DEE9EE" stop-opacity="0" />
+              <stop stopColor="#DEE9EE" />
+              <stop offset="1" stopColor="#DEE9EE" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -69,8 +67,8 @@ export default function GradientWave({}: Props) {
               y2="958.223"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#DEE9EE" />
-              <stop offset="1" stop-color="#DEE9EE" stop-opacity="0" />
+              <stop stopColor="#DEE9EE" />
+              <stop offset="1" stopColor="#DEE9EE" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>

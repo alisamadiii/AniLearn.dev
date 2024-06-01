@@ -7,7 +7,10 @@ import { Slider } from "@/components/slider";
 import { extractNumbersFromString, gettingSearchParams } from "@/utils";
 import useMeasure from "react-use-measure";
 
-type Props = { index: number; clipContent: boolean };
+interface Props {
+  index: number;
+  clipContent: boolean;
+}
 
 export default function ShadowBox({ index, clipContent }: Props) {
   const searchParams = useSearchParams();
@@ -218,7 +221,7 @@ const ShadowColor = memo(
                 className="mt-4 flex flex-wrap gap-1 px-4"
               >
                 {popularColors.map((color) => (
-                  <li>
+                  <li key={color}>
                     <button
                       className="h-8 w-8 rounded"
                       onClick={() => onShadowColorChange(color)}
@@ -234,3 +237,5 @@ const ShadowColor = memo(
     );
   }
 );
+
+ShadowColor.displayName = "ShadowColor";

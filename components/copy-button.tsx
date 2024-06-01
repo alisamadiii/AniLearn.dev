@@ -3,9 +3,9 @@ import { RxCopy } from "react-icons/rx";
 import { TbClipboardCheck } from "react-icons/tb";
 import { AnimatePresence, motion } from "framer-motion";
 
-type Props = {
+interface Props {
   value: string;
-};
+}
 
 export default function CopyButton({ value }: Props) {
   const [isCopied, setIsCopied] = useState(false);

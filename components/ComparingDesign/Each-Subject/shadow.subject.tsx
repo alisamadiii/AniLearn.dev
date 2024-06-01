@@ -1,11 +1,9 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { type ChangeEvent, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import ShadowBox from "../components/shadow-box";
 import Checkbox from "@/components/checkbox";
 
-type Props = {};
-
-export default function ShadowSubject({}: Props) {
+export default function ShadowSubject() {
   const [clipContent, setClipContent] = useState(false);
   const searchParams = useSearchParams();
   const squaresNum = Number(useSearchParams().get("squares"));

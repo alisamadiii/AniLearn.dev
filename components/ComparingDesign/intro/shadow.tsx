@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { useAnimate, motion, useMotionValue } from "framer-motion";
 
-type Props = {};
-
-export default function Shadow({}: Props) {
+export default function Shadow() {
   const [scope, animate] = useAnimate();
 
   const width1 = useMotionValue(200);

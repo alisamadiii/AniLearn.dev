@@ -3,9 +3,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
 export default function TextAnimation({ children }: Props) {
   return (

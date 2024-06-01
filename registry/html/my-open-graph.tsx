@@ -2,13 +2,7 @@
 
 import { PreviewWrapper } from "@/components/Wrapper";
 import React, { useState } from "react";
-import {
-  AnimatePresence,
-  type Variants,
-  motion,
-  MotionConfig,
-} from "framer-motion";
-import Image from "next/image";
+import { motion, MotionConfig } from "framer-motion";
 
 export default function MyOpenGraph() {
   const [platforms, setPlatforms] = useState<
@@ -21,20 +15,6 @@ export default function MyOpenGraph() {
     "linkedin",
     "discord",
   ];
-
-  const contentAnimation: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.2, type: "spring", bounce: 0 },
-    },
-    exit: {
-      opacity: 0,
-      y: 30,
-      transition: { duration: 0.2, type: "spring", bounce: 0 },
-    },
-  };
 
   return (
     <PreviewWrapper className="px-4 md:px-14 lg:px-24">

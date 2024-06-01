@@ -7,8 +7,6 @@ import Navbar from "@/components/navbar";
 import Layout from "@/components/layout";
 
 import ModalProvider from "@/providers/ModalProvider";
-import Footer from "@/components/Footer";
-import TopBanner from "@/components/TopBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--body-font" });
 
@@ -23,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" id="top">
+    <html lang="en" id="top">
       <body
         className={`${inter.variable} bg-background font-body text-foreground`}
       >

@@ -10,9 +10,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ShadowSubject from "@/components/ComparingDesign/Each-Subject/shadow.subject";
 
-type Props = {};
-
-export default function CompareDesign({}: Props) {
+export default function CompareDesign() {
   const subject = useSearchParams().get("subject");
 
   return (
