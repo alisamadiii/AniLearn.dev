@@ -57,10 +57,10 @@ export default async function ContentLayout({ children, params }: Props) {
       </nav>
 
       <Menu />
-
+      {/* 
       <div className="col-span-5 md:col-span-4 lg:col-span-3">
         <div className="mx-auto max-w-3xl px-4 py-4">{children}</div>
-      </div>
+      </div> */}
 
       <div className="sticky top-24 hidden divide-y-[1px] divide-foreground/20 lg:block">
         <DashboardTableOfContents toc={toc} />
