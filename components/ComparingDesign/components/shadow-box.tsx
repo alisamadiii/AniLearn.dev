@@ -1,73 +1,39 @@
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useState } from "react";
 import { BsShadows } from "react-icons/bs";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { Slider } from "@/components/slider";
-import { extractNumbersFromString, gettingSearchParams } from "@/utils";
 import useMeasure from "react-use-measure";
+import { type ShadowsType } from "@/app/compare-design/shadow/page";
 
 interface Props {
-  index: number;
+  shadow: ShadowsType;
+  setShadows: (a: ShadowsType[]) => void;
   clipContent: boolean;
 }
 
-export default function ShadowBox({ index, clipContent }: Props) {
-  const searchParams = useSearchParams();
-  const color = useSearchParams().get("color");
-
-  const [shadow, setShadow] = useState<string[]>(
-    gettingSearchParams(searchParams, `shadow-${index}`)?.split(" ") || ["0"]
-  );
-
+const ShadowBox = memo(({ shadow, setShadows, clipContent }: Props) => {
   const [ref, { height }] = useMeasure();
 
-  const router = useRouter();
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const current = new URLSearchParams(Array.from(searchParams.entries()));
-
-      current.set(`shadow-${index}`, shadow.toString().replaceAll(/,/g, " "));
-
-      router.push(`compare-design?${current}`, { scroll: false });
-    }, 200);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [shadow]);
+  const { x, y, blur, spread, color } = shadow;
 
   const onChangeHandler = (
     value: any,
     action: "x" | "y" | "blur" | "spread" | "color"
   ) => {
-    let newValue = [...shadow];
-
-    if (action === "x") {
-      newValue[0] = `${value}px`;
-    } else if (action === "y") {
-      newValue[1] = `${value}px`;
-    } else if (action === "blur") {
-      newValue[2] = `${value}px`;
-    } else if (action === "spread") {
-      newValue[3] = `${value}px`;
-    } else if (action === "color") {
-      newValue[4] = value;
-    }
-
-    setShadow(newValue);
+    // @ts-ignore
+    setShadows((prev: ShadowsType[]) => {
+      return prev.map((p) => {
+        if (p.id === shadow.id) {
+          return { ...p, [action]: value };
+        } else {
+          return p;
+        }
+      });
+    });
   };
 
-  const onShadowColorChange = (value: string) => {
-    let newValue = [...shadow];
-
-    newValue[4] = value;
-
-    setShadow(newValue);
-  };
-
-  console.log(shadow.toString().replaceAll(/,/g, " "));
+  console.log(shadow);
 
   return (
     <motion.div
@@ -76,14 +42,13 @@ export default function ShadowBox({ index, clipContent }: Props) {
     >
       <div
         ref={ref}
-        key={index}
         className={`flex flex-col items-center justify-center gap-12 p-4 md:p-8 ${clipContent && "overflow-hidden"}`}
       >
         <div
           className="aspect-square w-1/2 rounded-xl"
           style={{
-            background: `#${color}` || "#263c48",
-            boxShadow: shadow.toString().replaceAll(/,/g, " "),
+            background: "#263c48",
+            boxShadow: `${x}px ${y}px ${blur}px ${spread}px ${color}`,
           }}
         />
 
@@ -95,7 +60,7 @@ export default function ShadowBox({ index, clipContent }: Props) {
               min={-100}
               max={100}
               step={1}
-              value={[extractNumbersFromString(shadow[0])[0]]}
+              value={[shadow.x]}
               onValueChange={(value: number[]) => {
                 onChangeHandler(value[0], "x");
               }}
@@ -108,7 +73,7 @@ export default function ShadowBox({ index, clipContent }: Props) {
               min={-100}
               max={100}
               step={1}
-              value={[extractNumbersFromString(shadow[1])[0]]}
+              value={[shadow.y]}
               onValueChange={(value: number[]) => {
                 onChangeHandler(value[0], "y");
               }}
@@ -121,7 +86,7 @@ export default function ShadowBox({ index, clipContent }: Props) {
               min={0}
               max={100}
               step={1}
-              value={[extractNumbersFromString(shadow[2])[0]]}
+              value={[shadow.blur]}
               onValueChange={(value: number[]) => {
                 onChangeHandler(value[0], "blur");
               }}
@@ -134,22 +99,23 @@ export default function ShadowBox({ index, clipContent }: Props) {
               min={0}
               max={50}
               step={1}
-              value={[extractNumbersFromString(shadow[3])[0]]}
+              value={[shadow.spread]}
               onValueChange={(value: number[]) => {
                 onChangeHandler(value[0], "spread");
               }}
             />
           </div>
 
-          <ShadowColor
-            index={index}
-            onShadowColorChange={onShadowColorChange}
-          />
+          {/* <ShadowColor color onShadowColorChange={() => {}} /> */}
         </div>
       </div>
     </motion.div>
   );
-}
+});
+
+ShadowBox.displayName = "ShadowBox";
+
+export default ShadowBox;
 
 const popularColors = [
   "#FF5733",
