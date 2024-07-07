@@ -81,34 +81,34 @@ html.dark {
 }
 
 /* Code Wrapper */
-[data-rehype-pretty-code-fragment] {
+[data-rehype-pretty-code-figure] {
   @apply relative my-4 overflow-hidden rounded-lg border border-foreground/20 bg-[rgb(24,24,27)];
 }
 
-[data-rehype-pretty-code-fragment] > pre::-webkit-scrollbar {
+[data-rehype-pretty-code-figure] > pre::-webkit-scrollbar {
   width: 5px;
 }
 
-[data-rehype-pretty-code-fragment] > [data-rehype-pretty-code-title] {
+[data-rehype-pretty-code-figure] > [data-rehype-pretty-code-title] {
   @apply border-b border-white/20 px-4 py-2 text-white;
 }
 
-[data-rehype-pretty-code-fragment] > pre {
+[data-rehype-pretty-code-figure] > pre {
   @apply max-h-[500px] overflow-auto py-2 outline-none duration-100;
 }
 
-[data-rehype-pretty-code-fragment] > pre::-webkit-scrollbar {
+[data-rehype-pretty-code-figure] > pre::-webkit-scrollbar {
   height: 4px;
 }
-[data-rehype-pretty-code-fragment] > pre::-webkit-scrollbar-thumb {
+[data-rehype-pretty-code-figure] > pre::-webkit-scrollbar-thumb {
   @apply rounded-full bg-white/50;
 }
 
-[data-rehype-pretty-code-fragment] code {
+[data-rehype-pretty-code-figure] code {
   @apply bg-transparent py-3;
 }
 
-[data-rehype-pretty-code-fragment]:has([data-rehype-pretty-code-title]) code {
+[data-rehype-pretty-code-figure]:has([data-rehype-pretty-code-title]) code {
   @apply py-0 pb-3;
 }
 
