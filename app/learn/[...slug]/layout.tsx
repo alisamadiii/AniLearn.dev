@@ -66,7 +66,7 @@ export default async function ContentLayout({ children, params }: Props) {
         <DashboardTableOfContents toc={toc} />
         <div className="flex flex-col pt-2">
           <a
-            href={`${process.env.NEXT_PUBLIC_EDIT_URL}${findingContents._id}`}
+            href={`https://github.com/AliReza1083/AniLearn.dev/tree/main/contents/${findingContents._id}`}
             target="_blank"
             className="flex items-center gap-2 py-1 text-sm text-muted focus:text-foreground"
             rel="noreferrer"

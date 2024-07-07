@@ -1,9 +1,9 @@
 import React from "react";
 
 import TextAnimation from "@/components/home/text-animation";
-import CompareDesign from "./compare-design/page";
 import Learn from "@/components/home/Learn";
 import GradientWave from "@/components/home/gradient-wave";
+import CompareDesign from "@/components/home/CompareDesign";
 
 export default function Home() {
   return (
