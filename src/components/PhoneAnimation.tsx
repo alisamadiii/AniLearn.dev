@@ -4,9 +4,7 @@ import React from "react";
 import { motion, MotionConfig } from "framer-motion";
 import Logo from "./Logo";
 
-type Props = {};
-
-export default function PhoneAnimation({}: Props) {
+export default function PhoneAnimation() {
   return (
     <MotionConfig transition={{ duration: 2, ease: "easeOut" }}>
       <div className="relative flex items-center justify-center">

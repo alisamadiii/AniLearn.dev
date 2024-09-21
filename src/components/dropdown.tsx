@@ -12,8 +12,6 @@ type Props = {
   exit?: boolean | "mobile" | "desktop";
 };
 
-const lists = ["Hello", "World", "This", "Is", "A", "Test"];
-
 export function Dropdown({ children, align = "center", exit = true }: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
 

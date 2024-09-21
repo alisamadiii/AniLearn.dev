@@ -75,6 +75,7 @@ export default function TextMixBlendMode() {
       <div className="mb-8 flex flex-wrap gap-2">
         {mixBlends.map((value) => (
           <Button
+            key={value}
             variant={"white"}
             className={cn(
               "duration-100",
