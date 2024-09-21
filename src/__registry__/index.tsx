@@ -4,6 +4,12 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 
 export const Index: Record<string, any> = {
+  "css-aspect-ratio": {
+    name: "css-aspect-ratio",
+    component: dynamic(() => import("@/preview/css/aspect-ratio.tsx"), {
+      ssr: false,
+    }),
+  },
   "css-border-radius-2": {
     name: "css-border-radius-2",
     component: dynamic(() => import("@/preview/css/border-radius-2.tsx"), {

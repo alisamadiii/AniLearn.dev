@@ -30,7 +30,9 @@ export default function DocsLayout({ children }: Props) {
           </div>
           <Menu />
         </div>
-        <div className="animate-fade-in px-4 opacity-0 md:px-8">{children}</div>
+        <div className="animate-fade-in px-4 pb-8 opacity-0 md:px-8">
+          {children}
+        </div>
       </main>
       <Right />
     </div>

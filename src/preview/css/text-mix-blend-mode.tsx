@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import SyntaxHighlighter from "@/components/SyntaxHighlighter";
 import Wrapper from "@/components/Wrapper";
 import { Button } from "@/components/Button";
-import { cn } from "@/utils";
+import { cn, showcaseImage } from "@/utils";
 
 type MixBlendMode =
   | "normal"
@@ -57,9 +57,7 @@ export default function TextMixBlendMode() {
       <Wrapper>
         <div className="absolute inset-0 -z-10">
           <Image
-            src={
-              "https://images.unsplash.com/photo-1515266591878-f93e32bc5937?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
+            src={showcaseImage}
             fill
             alt="background-nature-blue"
             objectFit="cover"
