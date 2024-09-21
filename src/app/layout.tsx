@@ -23,7 +23,7 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <body className="px-4">
         <ThemeProvider attribute="class" disableTransitionOnChange>
           {children}
           <ThemeButton />

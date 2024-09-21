@@ -28,11 +28,11 @@ export default function Menu() {
           <motion.div
             layoutId="wrapper"
             className="absolute inset-0 -z-10 bg-background"
-            style={{ borderRadius: 6, originY: "0px" }}
+            style={{ borderRadius: 6 }}
           />
         </button>
 
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           {isOpen && (
             <div className="relative flex justify-center">
               <motion.div
