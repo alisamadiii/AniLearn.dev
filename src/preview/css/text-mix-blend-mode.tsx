@@ -3,8 +3,8 @@ import React, { useState } from "react";
 
 import SyntaxHighlighter from "@/components/SyntaxHighlighter";
 import Wrapper from "@/components/Wrapper";
-import { Button } from "@/components/Button";
-import { cn, showcaseImage } from "@/utils";
+import { showcaseImage, showcaseImage2 } from "@/utils";
+import { Button } from "@/components/ui/button";
 
 type MixBlendMode =
   | "normal"
@@ -70,16 +70,33 @@ export default function TextMixBlendMode() {
           Text Mix Blend
         </h1>
       </Wrapper>
+      <Wrapper>
+        <div className="absolute aspect-square w-48 -translate-x-12 overflow-hidden rounded-full">
+          <Image
+            src={showcaseImage}
+            fill
+            alt="background-nature-blue"
+            objectFit="cover"
+          />
+        </div>
+        <div
+          className="absolute aspect-square w-48 translate-x-12 overflow-hidden rounded-full"
+          style={{ mixBlendMode: mixBlend }}
+        >
+          <Image
+            src={showcaseImage2}
+            fill
+            alt="background-nature-blue"
+            objectFit="cover"
+          />
+        </div>
+      </Wrapper>
       <div className="mb-8 flex flex-wrap gap-2">
         {mixBlends.map((value) => (
           <Button
             key={value}
-            variant={"white"}
-            className={cn(
-              "duration-100",
-              mixBlend === value &&
-                "bg-foreground text-white hover:bg-opacity-90"
-            )}
+            variant={value === mixBlend ? "default" : "outline"}
+            className="duration-0"
             onClick={() => setMixBlend(value)}
           >
             {value}

@@ -1,5 +1,9 @@
 // contentlayer.config.js
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import {
+  defineDocumentType,
+  makeSource,
+  defineNestedType
+} from "contentlayer2/source-files";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -52,6 +56,29 @@ var computedFields = {
     }
   }
 };
+var Credits = defineNestedType(() => ({
+  name: "Credits",
+  fields: {
+    url: {
+      type: "string"
+    },
+    name: {
+      type: "string"
+    }
+  }
+}));
+var LinksProperties = defineNestedType(() => ({
+  name: "LinksProperties",
+  fields: {
+    doc: {
+      type: "string"
+    },
+    credit: {
+      type: "nested",
+      of: Credits
+    }
+  }
+}));
 var Contents = defineDocumentType(() => ({
   name: "Contents",
   filePathPattern: "./**/*.mdx",
@@ -60,6 +87,10 @@ var Contents = defineDocumentType(() => ({
     title: {
       type: "string",
       required: true
+    },
+    links: {
+      type: "nested",
+      of: LinksProperties
     }
   },
   computedFields
@@ -95,4 +126,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-SMGMERT5.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-66BR57DW.mjs.map

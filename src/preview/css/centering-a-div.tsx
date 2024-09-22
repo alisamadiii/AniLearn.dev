@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SyntaxHighlighter from "@/components/SyntaxHighlighter";
 import Wrapper from "@/components/Wrapper";
 import { cn } from "@/utils";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 
 type value = "flexbox" | "gridbox" | "translate";
 

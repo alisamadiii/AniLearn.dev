@@ -1,46 +1,37 @@
+// contentlayer.config.js
 import {
   defineDocumentType,
   makeSource,
-  defineNestedType,
+  defineNestedType
 } from "contentlayer2/source-files";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-
-const computedFields = {
+var computedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `/${doc._raw.flattenedPath}`
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
   },
   headings: {
     type: "list",
     of: { type: "string" },
     resolve: (doc) => {
       const content = doc.body.raw;
-
       const headingMatches = [];
       const lines = content.split("\n");
       let inCodeBlock = false;
-
-      // Simple slugify function
       const slugify = (text) => {
-        return text
-          .toLowerCase()
-          .trim()
-          .replace(/[\s+]/g, "-")
-          .replace(/[^\w\-]+/g, "");
+        return text.toLowerCase().trim().replace(/[\s+]/g, "-").replace(/[^\w\-]+/g, "");
       };
-
       lines.forEach((line) => {
         if (line.trim().startsWith("```")) {
           inCodeBlock = !inCodeBlock;
         }
-
         if (!inCodeBlock) {
           const match = line.match(/^(#{1,3})\s(.+)$/);
           if (match) {
@@ -49,67 +40,53 @@ const computedFields = {
             headingMatches.push({
               level: hashes.length,
               text,
-              id,
+              id
             });
           }
         }
       });
-
       return headingMatches;
-    },
+    }
   },
   tech: {
     type: "string",
     resolve: (doc) => {
       const pathParts = doc._raw.flattenedPath.split("/");
       return pathParts.length > 1 ? pathParts[pathParts.length - 2] : null;
-    },
-  },
+    }
+  }
 };
-
-const Credits = defineNestedType(() => ({
-  name: "Credits",
-  fields: {
-    url: {
-      type: "string",
-    },
-    name: {
-      type: "string",
-    },
-  },
-}));
-
-const LinksProperties = defineNestedType(() => ({
+var LinksProperties = defineNestedType(() => ({
   name: "LinksProperties",
   fields: {
     doc: {
-      type: "string",
+      type: "string"
     },
-    credit: {
-      type: "nested",
-      of: Credits,
+    source: {
+      type: "string"
     },
-  },
+    name: {
+      type: "list"
+    }
+  }
 }));
-
-const Contents = defineDocumentType(() => ({
+var Contents = defineDocumentType(() => ({
   name: "Contents",
   filePathPattern: "./**/*.mdx",
   contentType: "mdx",
   fields: {
     title: {
       type: "string",
-      required: true,
+      required: true
     },
     links: {
       type: "nested",
-      of: LinksProperties,
-    },
+      of: LinksProperties
+    }
   },
-  computedFields,
+  computedFields
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "./src/contents",
   documentTypes: [Contents],
   mdx: {
@@ -120,8 +97,8 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: { light: "github-light-default", dark: "github-dark-dimmed" },
-          keepBackground: false,
-        },
+          keepBackground: false
+        }
       ],
       [
         rehypeAutolinkHeadings,
@@ -130,10 +107,14 @@ export default makeSource({
           content: (node) => node.children,
           properties: {
             className: ["subheading-anchor"],
-            ariaLabel: "Link to section",
-          },
-        },
-      ],
-    ],
-  },
+            ariaLabel: "Link to section"
+          }
+        }
+      ]
+    ]
+  }
 });
+export {
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-FVISLNRQ.mjs.map

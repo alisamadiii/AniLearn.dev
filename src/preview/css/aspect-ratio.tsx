@@ -34,9 +34,7 @@ export default function AspectRatio() {
             onChange={(event) => onChangeHandler(event.target.value)}
             disabled={fixedHeight}
           />
-          <p className="mt-1 text-xs text-muted">
-            Click space to add &quot;/&quot;.
-          </p>
+          <p className="mt-1 text-xs">Click space to add &quot;/&quot;.</p>
         </div>
         <label className="flex items-center gap-2">
           Fixed Height

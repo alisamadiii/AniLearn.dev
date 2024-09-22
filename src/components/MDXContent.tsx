@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer2/hooks";
 import Image from "next/image";
 import { cn } from "@/utils";
 import TechIcons from "./TechIcons";
@@ -19,7 +19,7 @@ const components = {
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className="hover:text-primary-hover group mb-8 flex scroll-m-12 items-center gap-2 text-4xl font-bold [&+p]:!mt-0 [&_a]:text-inherit [&_code]:text-[21px]"
+      className="group mb-8 flex scroll-m-12 items-center gap-2 text-4xl font-bold hover:text-primary-hover [&+p]:!mt-0 [&_a]:text-inherit [&_code]:text-[21px]"
       {...props}
     >
       {children}
@@ -53,7 +53,7 @@ const components = {
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="border-t-wrapper-2 hover:text-primary-hover [&_a:hover]:text-primary-hover group mb-6 mt-12 flex w-full scroll-m-12 items-center gap-2 pt-6 text-2xl font-medium [&+p]:!mt-0 [&_a]:text-inherit [&_code]:text-[21px]"
+      className="group mb-6 mt-12 flex w-full scroll-m-12 items-center gap-2 border-t pt-6 text-2xl font-medium hover:text-primary-hover [&+p]:!mt-0 [&_a:hover]:text-primary-hover [&_a]:text-inherit [&_code]:text-[21px]"
       {...props}
     >
       {children}
@@ -88,7 +88,7 @@ const components = {
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className="hover:text-primary-hover [&_a:hover]:text-primary-hover group mb-[0.6rem] mt-[1.6rem] flex scroll-m-12 items-center gap-2 text-xl font-medium [&+p]:!mt-0 [&_a]:text-inherit [&_code]:text-[21px]"
+      className="group mb-[0.6rem] mt-[1.6rem] flex scroll-m-12 items-center gap-2 text-xl font-medium hover:text-primary-hover [&+p]:!mt-0 [&_a:hover]:text-primary-hover [&_a]:text-inherit [&_code]:text-[21px]"
       {...props}
     >
       {children}
@@ -131,27 +131,27 @@ const components = {
   ),
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className="border-code bg-code rounded-md px-[0.25rem] py-[0.12rem] text-sm"
+      className="rounded-md border-code bg-code px-[0.25rem] py-[0.12rem] text-sm"
       {...props}
     ></code>
   ),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote
-      className="border-wrapper rounded-md p-[22.4px] text-sm [&_code]:text-xs [&_li]:block [&_li]:text-sm [&_p]:my-0"
+      className="rounded-md border-wrapper p-[22.4px] text-sm [&_code]:text-xs [&_li]:block [&_li]:text-sm [&_p]:my-0"
       {...props}
     ></blockquote>
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <table
       className={cn(
-        "[&_a>code]: [&_a>code]:!text-primary my-8 w-full text-sm [&>thead]:hidden [&_a>code:hover]:text-opacity-70 [&_code]:text-[12.25px]",
+        "[&_a>code]: my-8 w-full text-sm [&>thead]:hidden [&_a>code:hover]:text-opacity-70 [&_a>code]:!text-primary [&_code]:text-[12.25px]",
         className
       )}
       {...props}
     />
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-    <tr className={cn("border-t-wrapper-2 h-[41px]", className)} {...props} />
+    <tr className={cn("h-[41px] border-t-wrapper-2", className)} {...props} />
   ),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th className={cn("px-4 py-2 text-left font-bold", className)} {...props} />
@@ -189,7 +189,7 @@ const components = {
       <figure
         ref={figureRef}
         className={cn(
-          "border-wrapper group relative my-4 w-full overflow-auto rounded-md [&_[data-line]]:px-[20px] [&_code]:rounded-none [&_code]:border-none [&_code]:!bg-transparent [&_code]:px-0 [&_code]:py-[20px] [&_code]:text-[13px]",
+          "group relative my-4 w-full overflow-auto rounded-md border-wrapper [&_[data-line]]:px-[20px] [&_code]:rounded-none [&_code]:border-none [&_code]:!bg-transparent [&_code]:px-0 [&_code]:py-[20px] [&_code]:text-[13px]",
           !initialized && "max-h-[400px] overflow-hidden",
           isLong && "max-h-[400px]",
           spanNum > 30 && isLong && "overflow-hidden",
@@ -208,12 +208,12 @@ const components = {
         {spanNum > 30 && (
           <div
             className={cn(
-              "from-code-gradient-from to-code-gradient-to pointer-events-none sticky bottom-0 left-0 flex h-[100px] w-full items-center justify-center bg-gradient-to-b",
+              "pointer-events-none sticky bottom-0 left-0 flex h-[100px] w-full items-center justify-center bg-gradient-to-b from-code-gradient-from to-code-gradient-to",
               !isLong && "h-12 from-transparent to-transparent"
             )}
           >
             <button
-              className="bg-foreground text-background pointer-events-auto absolute bottom-6 rounded-lg px-3 py-2 text-sm"
+              className="pointer-events-auto absolute bottom-6 rounded-lg bg-foreground px-3 py-2 text-sm text-background"
               onClick={() => {
                 setIsLong(!isLong);
                 if (figureRef.current) {
@@ -256,7 +256,7 @@ const components = {
     return (
       <figcaption
         ref={copyTextRef}
-        className="border-b-wrapper bg-code-figcaption text-muted sticky left-0 top-0 flex h-[48px] items-center gap-2 pl-4 pr-3 text-[13px]"
+        className="sticky left-0 top-0 flex h-[48px] items-center gap-2 border-b-wrapper bg-code-figcaption pl-4 pr-3 text-[13px] text-muted"
         {...props}
       >
         <TechIcons
@@ -297,7 +297,7 @@ const components = {
   a: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn(
-        "text-primary hover:text-primary-hover font-medium",
+        "font-medium text-primary hover:text-primary-hover",
         className
       )}
       {...props}

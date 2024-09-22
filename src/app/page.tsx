@@ -1,5 +1,5 @@
-import { buttonVariants } from "@/components/Button";
 import PhoneAnimation from "@/components/PhoneAnimation";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
@@ -16,7 +16,6 @@ export default function Home() {
         <Link
           href={"/start"}
           className={buttonVariants({
-            variant: "gradient",
             className: "!h-12 w-[152px]",
           })}
         >
